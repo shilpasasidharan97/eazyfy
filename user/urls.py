@@ -3,4 +3,7 @@ from . import views
 
 app_name = 'user'
 
-urlpatterns = []
+urlpatterns = [
+    path('base',views.base,name='base'),
+    path('',views.index,name='index'),
+]

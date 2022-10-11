@@ -23,7 +23,7 @@ urlpatterns = [
     path('official/',include('official.urls')),
     path('franchise/',include('franchise.urls')),
     path('pickupboy/',include('pickupboy.urls')),
-    path('/',include('user.urls')),
+    path('',include('user.urls')),
 
 
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
