@@ -8297,6 +8297,8 @@ a {
       padding-right: 15px;
       padding-left: 15px; } }
 
+
+      
 /*sp*/
 .row.sp4,
 .sp4 {
@@ -9244,7 +9246,7 @@ svg.pulse-svg {
   width: 100%; }
 
 [data-header-position="fixed"] .content-body {
-  padding-top: 7.5rem; }
+  padding-top: 2.5rem; }
 
 [data-header-position="fixed"] .deznav {
   margin-top: 0; }
