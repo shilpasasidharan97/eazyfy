@@ -9015,7 +9015,7 @@ a {
   z-index: 999; }
 
 .hamburger .line {
-  background: var(--primary);
+  background: #9507f7;
   display: block;
   height: 3px;
   border-radius: 3px;
@@ -9166,7 +9166,7 @@ svg.pulse-svg {
   border-radius: 3.5rem;
   height: 12px;
   position: absolute;
-  background: var(--primary);
+  background: #ff0000;
   right: 5px;
   top: 8px;
   border: 2px solid #fff;
