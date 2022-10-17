@@ -1,0 +1,115 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>EEazyfy</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'user/imgs/theme/favicon.svg' %}">
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="{% static 'user/css/maind6c3.css' %}">
+
+
+
+</head>
+
+<body>
+
+
+
+    <!-- #### HEADER ####-->
+                    
+                    
+{% include 'user/partials/header.html' %}
+<!-- #### END HEADER ####-->
+
+
+
+{% block content %}
+
+{% endblock %}
+<!-- #### Footer start ### -->
+{% include 'user/partials/footer.html' %}
+<!-- #### footer end #### -->
+
+    <!-- Modal -->
+    <!-- <div class="modal fade custom-modal" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">              
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+                <div class="modal-body">
+                    <div class="deal" style="background-image: url('assets/imgs/banner/menu-banner-7.png')">
+                        <div class="deal-top">
+                            <h2 class="text-brand">Deal of the Day</h2>
+                            <h5>Limited quantities.</h5>
+                        </div>
+                        <div class="deal-content">
+                            <h6 class="product-title"><a href="shop-product-right.html">Summer Collection New Morden Design</a></h6>
+                            <div class="product-price"><span class="new-price">₹ 139.00</span><span class="old-price">₹ 160.99</span></div>
+                        </div>
+                        <div class="deal-bottom">
+                            <p>Hurry Up! Offer End In:</p>
+                            <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"><span class="countdown-section"><span class="countdown-amount hover-up">03</span><span class="countdown-period"> days </span></span><span class="countdown-section"><span class="countdown-amount hover-up">02</span><span class="countdown-period"> hours </span></span><span class="countdown-section"><span class="countdown-amount hover-up">43</span><span class="countdown-period"> mins </span></span><span class="countdown-section"><span class="countdown-amount hover-up">29</span><span class="countdown-period"> sec </span></span></div>
+                            <a href="shop-grid-right.html" class="btn hover-up">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>        
+        </div>
+        </div>
+    </div> -->
+
+
+
+
+ 
+
+    <!-- Preloader Start -->
+    <!-- <div id="preloader-active">
+        <div class="preloader d-flex align-items-center justify-content-center">
+            <div class="preloader-inner position-relative">
+                <div class="text-center">
+                    <h5 class="mb-10">Now Loading</h5>
+                    <div class="loader">
+                        <div class="bar bar1"></div>
+                        <div class="bar bar2"></div>
+                        <div class="bar bar3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+    <!-- Vendor JS-->
+    <script src="{% static 'user/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'user/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'user/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
+    <script src="{% static 'user/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'user/js/plugins/slick.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery.syotimer.min.js' %}"></script>
+    <script src="{% static 'user/js/plugins/wow.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery-ui.js' %}"></script>
+    <script src="{% static 'user/js/plugins/perfect-scrollbar.js' %}"></script>
+    <script src="{% static 'user/js/plugins/magnific-popup.js"></script>
+    <script src="{% static 'user/js/plugins/select2.min.js' %}"></script>
+    <script src="{% static 'user/js/plugins/waypoints.js' %}"></script>
+    <script src="{% static 'user/js/plugins/counterup.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'user/js/plugins/images-loaded.js' %}"></script>
+    <script src="{% static 'user/js/plugins/isotope.js' %}"></script>
+    <script src="{% static 'user/js/plugins/scrollup.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery.vticker-min.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery.theia.sticky.js' %}"></script>
+    <script src="{% static 'user/js/plugins/jquery.elevatezoom.js' %}"></script>
+    <!-- Template  JS -->
+    <script src="{% static 'user/js/maind6c3.js' %}"></script>
+    <script src="{% static 'user/js/shopd6c3.js' %}"></script>
+</body>
+
+</html>
