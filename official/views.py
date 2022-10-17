@@ -21,5 +21,17 @@ def franchise(request):
     return render(request,'official/franchise.html')
 
 
+def viewFranchiseDetails(request):
+    return render(request,'official/view_franchise.html')
+
+
 def brand(request):
     return render(request,'official/brand.html')
+
+
+def Model(request):
+    return render(request,'official/model.html')
+
+
+def addModel(request):
+    return render(request,'official/add_model.html')
