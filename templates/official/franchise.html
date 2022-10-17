@@ -1,0 +1,352 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4>Hi, welcome back!</h4>
+            <span>Button Group</span>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)">Cards</a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="" style="margin-right: 10px;">
+        <a href="" class="btn btn-rounded btn-md" style="float: right;" data-bs-toggle="modal"
+            data-bs-target=".bd-example-modal-lg">
+            <span class="btn-icon-start text-info">
+                <i class="fa fa-plus" style="color: #5f009a;"></i>
+            </span>Add Product
+        </a>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="sub-header">
+        <div class="d-flex align-items-center flex-wrap me-auto">
+            <h3 class="dashboard_bar">Total Franchises</h3>
+        </div>
+
+    </div>
+
+
+    <div class="tab-content project-list-group" id="">
+        <div class="tab-pane fade active show" id="">
+
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">FRANCHISEID : 000441425</p>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/branch/franchise.png' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Calicut</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
+                        <div class="d-flex align-items-end">
+                            <div class="project-media text-end">
+                                <a type="button" href="{% url 'official:franchisedetails' %}" class="btn btn-outline-info">View</a>
+                            </div>
+                            <div class="ms-2">
+                                <button  onclick="deleteFRanchise()" class="btn btn-outline-danger">Delete</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">FRANCHISEID : 000441425</p>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/branch/franchise.png' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Calicut</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
+                        <div class="d-flex align-items-end">
+                            <div class="project-media text-end">
+                                <a type="button" href="" class="btn btn-outline-info">View</a>
+                            </div>
+                            <div class="ms-2">
+                                <a type="button" href="" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">FRANCHISEID : 000441425</p>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/branch/franchise.png' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Calicut</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
+                        <div class="d-flex align-items-end">
+                            <div class="project-media text-end">
+                                <a type="button" href="" class="btn btn-outline-info">View</a>
+                            </div>
+                            <div class="ms-2">
+                                <a type="button" href="" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">FRANCHISEID : 000441425</p>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/branch/franchise.png' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Calicut</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
+                        <div class="d-flex align-items-end">
+                            <div class="project-media text-end">
+                                <a type="button" href="" class="btn btn-outline-info">View</a>
+                            </div>
+                            <div class="ms-2">
+                                <a type="button" href="" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">FRANCHISEID : 000441425</p>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/branch/franchise.png' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Calicut</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
+                        <div class="d-flex align-items-end">
+                            <div class="project-media text-end">
+                                <a type="button" href="" class="btn btn-outline-info">View</a>
+                            </div>
+                            <div class="ms-2">
+                                <a type="button" href="" class="btn btn-outline-danger">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <nav class="mt-5">
+                <ul class="pagination pagination-gutter pagination-primary no-bg">
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-left"></i></a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a>
+                    </li>
+                    <li class="page-item "><a class="page-link" href="javascript:void(0)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+<!-- Brand Add Modal -->
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Franchise</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom04">Franchise ID <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="validationCustom04"
+                                        placeholder="franchise id.." required>
+                                    <div class="invalid-feedback">
+                                        Please enter a Franchise Id.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom01">Username
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="validationCustom01"
+                                        placeholder="Enter a username.." required>
+                                    <div class="invalid-feedback">
+                                        Please enter a username.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom03">Password
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="password" class="form-control" id="validationCustom03"
+                                        placeholder="Choose a safe one.." required>
+                                    <div class="invalid-feedback">
+                                        Please enter a password.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom02">Email <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="validationCustom02"
+                                        placeholder="Your valid email.." required>
+                                    <div class="invalid-feedback">
+                                        Please enter a Email.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom08">Franchise Name
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="validationCustom08" placeholder=""
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Please enter franchise name ..
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom08">Franchise Photo
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="file" class="form-control" id="validationCustom08" placeholder=""
+                                        required>
+                                    <div class="invalid-feedback">
+                                        Upload Photo ..
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom08">Phone (US)
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="validationCustom08"
+                                        placeholder="212-999-0000" required>
+                                    <div class="invalid-feedback">
+                                        Please enter a phone no.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom08">Address
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <textarea class="form-control" id="validationCustom04" rows="10"
+                                        placeholder="What would you like to see?" required></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter Address ..
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row mt-5 text-end">
+                                <div class="col-lg-8 ms-auto">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteFRanchise() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+</script>
+
+
+{% endblock %}
