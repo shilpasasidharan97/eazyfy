@@ -1,0 +1,136 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-8 mt-3">
+        <div class="card mt-5" >
+            <div class="card-header">
+                <h3 class="text-center questionhead">Tell us a few things about  device!</h3>
+            </div>
+            <div class="card-body">
+                
+                <div class="form-container cf-form">
+                    <form id="questionnaire-form">
+                      <div class="slide-container">
+                        <div class="slide">
+                          <h5 class="questionhead"> Do you have more than 100 students? </h5>
+                          <div class="row">
+                            <div class="">
+                                <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox2">YES</label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox3">NO</label>
+                                </div>
+                            </div>
+                           
+                        </div>
+                        </div>
+                        <div class="slide">
+                            <h5 class="questionhead"> Do you have more than 100 students? </h5>
+                            <div class="row">
+                              <div class="">
+                                  <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                      <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                      <label class="form-check-label" for="customCheckBox2">YES</label>
+                                  </div>
+                              </div>
+                              <div class="">
+                                  <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                      <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                      <label class="form-check-label" for="customCheckBox3">NO</label>
+                                  </div>
+                              </div>
+                             
+                          </div>
+                          </div>
+                          <div class="slide">
+                            <h5 class="questionhead"> Do you have more than 100 students? </h5>
+                            <div class="row">
+                              <div class="">
+                                  <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                      <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                      <label class="form-check-label" for="customCheckBox2">YES</label>
+                                  </div>
+                              </div>
+                              <div class="">
+                                  <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                      <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                      <label class="form-check-label" for="customCheckBox3">NO</label>
+                                  </div>
+                              </div>
+                             
+                          </div>
+                          </div>
+                        <div class="slide">
+                          <h5 class="questionhead"> Do you host at least one recital per year? </h5>
+                          <div class="row">
+                            <div class="">
+                                <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox2">YES</label>
+                                </div>
+                            </div>
+                            <div class="">
+                                <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox3">NO</label>
+                                </div>
+                            </div>
+                           
+                        </div>
+                          
+                          
+                        <div class="slide">
+                          <h5 class="questionhead"> Do you usually have your recital recorded? * </h5>
+                         
+                            <div class="">
+                                <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox2">YES</label>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-xxl-6 col-6">
+                                <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                    <input type="radio" class="form-check-input" type="radio" id="match_2" name="num_students">
+                                    <label class="form-check-label" for="customCheckBox3">NO</label>
+                                </div>
+                            </div>
+                           
+                        
+                        </div>
+                        
+                      </div>
+                        <div class="text-center">
+                            <button type="button" class="btn btn-secondary">Submit</button>
+                        </div>
+
+                    </form>
+                    
+                  </div>
+             </div>
+
+            </div>
+        </div>
+    </div>
+
+<div class=" col-lg-4 mt-4">
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary"></a>
+        </div>
+      </div>
+    </div>
+</div> 
+
+
+
+{% endblock %}
