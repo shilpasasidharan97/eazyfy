@@ -83,7 +83,7 @@
             autoplay: true,
             slidesToShow: 6,
             slidesToScroll: 1,
-            loop: false,
+            loop: true,
             adaptiveHeight: true,
             responsive: [
                 {
@@ -121,14 +121,14 @@
         var appendArrowsClassName = '#'+id+'-arrows'
 
         $(sliderID).slick({
-            dots: false,
+            dots: true,
             infinite: true,
             speed: 1000,
             arrows: true,
             autoplay: true,
             slidesToShow: 4,
             slidesToScroll: 1,
-            loop: false,
+            loop: true,
             adaptiveHeight: true,
             responsive: [
                 {
@@ -181,7 +181,7 @@
         autoplay: true,
         fade: false,
         loop: true,
-        dots: false,
+        dots: true,
         arrows: true,
         prevArrow: '<span class="pro-icon-1-prev"><i class="fi-rs-angle-small-left"></i></span>',
         nextArrow: '<span class="pro-icon-1-next"><i class="fi-rs-angle-small-right"></i></span>',
@@ -293,7 +293,7 @@
         slidesToScroll: 1,
         fade: false,
         loop: true,
-        dots: false,
+        dots: true,
         arrows: false,
         responsive: [
             {
@@ -415,7 +415,7 @@
         slidesToShow: 4,
         slidesToScroll: 1,
         asNavFor: '.pro-dec-big-img-slider',
-        dots: false,
+        dots: true,
         focusOnSelect: true,
         fade: false,
         arrows: false,
