@@ -9,5 +9,8 @@ def index(request):
 def add_pickupboy(request):
     return render(request,"franchise/add-pickupboy.html")
 
+def profile(request):
+    return render(request,"franchise/profile.html")
+
 def order(request):
     return render(request,"franchise/order.html")
