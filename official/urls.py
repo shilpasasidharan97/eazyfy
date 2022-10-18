@@ -10,8 +10,9 @@ urlpatterns = [
     path('home',views.home,name='home'),
     path('franchise',views.franchise,name='franchise'),
     path('franchisedetails',views.viewFranchiseDetails,name='franchisedetails'),
+    path('pickupboylist',views.pickUpBoyList,name='pickupboylist'),
     path('brand',views.brand,name='brand'),
     path('model',views.Model,name='model'),
-    path('addmodel',views.addModel,name='addmodel'),
+    path('questionsadding',views.questionAdding,name='questionsadding')
      
 ]
