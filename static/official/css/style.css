@@ -13581,7 +13581,7 @@ a.active {
   display: flex;
   height: 100%;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   font-size: 1.125rem;
   color: #fff;
@@ -32244,6 +32244,7 @@ button:focus {
 .btn.active {
   outline: 0 !important;
   color: #fff;
+  background-color: #FF4C41;
 }
 
 @media only screen and (max-width: 1400px) {

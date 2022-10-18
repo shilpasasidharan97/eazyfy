@@ -6,14 +6,14 @@
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4>Hi, welcome back!</h4>
-            <span>Button Group</span>
+            <h4>Brands</h4>
+            <!-- <span>Button Group</span> -->
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="javascript:void(0)">Bootstrap</a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)">Cards</a></li>
+            <li class=""><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class="breadcrumb-item active"><a href="javascript:void(0)"> Brand</a></li>
         </ol>
     </div>
 </div>
@@ -45,7 +45,7 @@
                         <a class="dropdown-item" href="view-invoice.html">
                             <i class="far fa-eye me-2"></i>View
                         </a>
-                        <a class="dropdown-item" href="javascript:void(0);">
+                        <a class="dropdown-item" href="javascript:void(0);" onclick="deleteBrand()">
                             <i class="far fa-trash-alt me-2"></i>Delete
                         </a>
                     </div>
@@ -257,6 +257,28 @@
     </div>
 </div>
 
-
+<!-- delete Brand -->
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteBrand() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+</script>
 
 {% endblock %}

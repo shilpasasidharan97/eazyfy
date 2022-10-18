@@ -5,9 +5,24 @@
 
 
 
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Franchises Name</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class=" avtive"><a href="{% url 'official:franchise' %}"> Franchise  / </a></li>
+            <li class=""><a href="javascript:void(0)">Franchise</a></li>
+        </ol>
+    </div>
+</div>
+
 <div class="container-fluid">
-    <div class="form-head mb-sm-5 mb-3 d-flex align-items-center flex-wrap">
-        <h2 class="font-w600 mb-0 me-auto mb-2 text-black">FRanchise Name</h2>
+    <div class="form-head mb-sm-5 mb-3 d-flex align-items-center flex-wrap text-end">
+        <!-- <h2 class="font-w600 mb-0 me-auto mb-2 text-black">FRanchise Name</h2> -->
         <!-- <a href="javascript:void(0);" class="btn btn-outline-secondary me-3 mb-2"><i
                 class="las la-calendar scale5 me-2"></i>Filter Periode</a> -->
         <a href="javascript:void(0);" class="btn btn-secondary mb-2">+ Add Wallet</a>
