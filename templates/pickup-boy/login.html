@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <title>EAZYFY</title>
+
+    <link rel="shortcut icon" href="{% static 'official/imgages/logo/logo.png' %}">
+
+    <link rel="stylesheet" href="{% static 'official/css/bootstrap.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'official/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'official/plugins/fontawesome/css/all.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'official/css/style.css' %}">
+</head>
+
+<body>
+
+    <div class="main-wrapper login-body">
+        <div class="login-wrapper">
+            <div class="container">
+                <img class="img-fluid logo-dark mb-2" src="{% static 'official/images/logo/eazyfy.png' %}" alt="Logo">
+                <div class="loginbox">
+                    <div class="login-right">
+                        <div class="login-right-wrap">
+                            <h1>Login</h1>
+                            <p class="account-subtitle">Access to our dashboard</p>
+                            <form>
+                                <div class="form-group">
+                                    <label class="form-control-label"> Phone Number</label>
+                                    <input type="email" class="form-control">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-control-label">Password</label>
+                                    <div class="pass-group">
+                                        <input type="password" class="form-control pass-input">
+                                        <span class="fas fa-eye toggle-password"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="custom-control custom-checkbox">
+                                                <input type="checkbox" class="custom-control-input" id="cb1">
+                                                <label class="custom-control-label" for="cb1">Remember me</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 text-end">
+                                            <a class="forgot-link" href="{% url 'official:forgotpassword' %}">Forgot Password ?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="btn btn-lg btn-block btn-primary w-100" type="submit">Login</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="{% static 'official/js/jquery-3.6.0.min.js' %}"></script>
+
+    <script src="{% static 'official/js/bootstrap.bundle.min.js' %}"></script>
+
+    <script src="{% static 'official/js/feather.min.js' %}"></script>
+
+    <script src="{% static 'official/js/script.js' %}"></script>
+</body>
+
+</html>
