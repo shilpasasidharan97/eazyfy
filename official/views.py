@@ -25,6 +25,10 @@ def viewFranchiseDetails(request):
     return render(request,'official/view_franchise.html')
 
 
+def pickUpBoyList(request):
+    return render(request,'official/pickupboy_list.html')
+
+
 def brand(request):
     return render(request,'official/brand.html')
 
@@ -33,5 +37,6 @@ def Model(request):
     return render(request,'official/model.html')
 
 
-def addModel(request):
-    return render(request,'official/add_model.html')
+def questionAdding(request):
+    return render(request,'official/questions_adding.html')
+
