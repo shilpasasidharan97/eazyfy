@@ -37,6 +37,21 @@ def Model(request):
     return render(request,'official/model.html')
 
 
+def modelSpecification(request):
+    return render(request,'official/specification.html')
+
+
 def questionAdding(request):
     return render(request,'official/questions_adding.html')
 
+
+def userRequestList(request):
+    return render(request,'official/user_request.html')
+
+
+def userDetails(request):
+    return render(request,'official/view_userdetails.html')
+
+
+def transactionHistory(request):
+    return render(request,'official/transaction_history.html')
