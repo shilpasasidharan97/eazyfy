@@ -7,7 +7,7 @@ urlpatterns = [
     path('loginpage',views.loginPage,name='loginpage'),
     path('forgotpassword',views.forgotPassword,name='forgotpassword'),
     
-    path('home',views.home,name='home'),
+    path('',views.home,name='home'),
     path('franchise',views.franchise,name='franchise'),
     path('franchisedetails',views.viewFranchiseDetails,name='franchisedetails'),
     path('pickupboylist',views.pickUpBoyList,name='pickupboylist'),
