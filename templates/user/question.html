@@ -1,0 +1,296 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-3">
+      <div class="wizard card-like">
+        <form action="#">
+          <div class="wizard-header">
+            <div class="row">
+              <div class="col-xs-12">
+                
+                <h3>Tell us few things about your device</h3><hr>
+              </div>
+            </div>
+          </div>
+
+          <div class="wizard-body">
+            <div class="step initial active">
+              <div class="row">
+                <div class="col-sm-12">
+                    <div class="slide">
+                        <h5 class="questionhead">1. Are you able to make and receive calls? </h5>
+                        <span style="color: grey;">Check your device for cellular network connectivity issues.</span>
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_1" name="match_1">
+                                  <label class="form-check-label" for="customCheckBox2">YES</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 clearfix">
+                              <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_1" name="match_1">
+                                  <label class="form-check-label" for="customCheckBox3">NO</label>
+                              </div>
+                          </div>
+                         
+                      </div>
+                      </div>
+                </div>
+              </div>
+              <br>
+              <div class="row">
+                <div class="col-sm-12">
+                    <div class="slide">
+                        <h5 class="questionhead">2. Is your device's touch screen working properly?</h5>
+                        <span style="color: grey;">Check the touch screen functionality of your phone.</span>
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_2" name="match_2">
+                                  <label class="form-check-label" for="customCheckBox2">YES</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_2" name="match_2">
+                                  <label class="form-check-label" for="customCheckBox3">NO</label>
+                              </div>
+                          </div>
+                         
+                      </div>
+                        <br>
+                        
+                      <div class="slide">
+                        <h5 class="questionhead"> 3. Is your phone's screen original? </h5>
+                        <span style="color: grey;">Pick "Yes" if screen was never changed or was changed by Authorized Service Center. Pick "No" if screen was changed at local shop.
+                            </span>
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_3" name="match_3">
+                                  <label class="form-check-label" for="customCheckBox2">YES</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_3" name="nmatch_3">
+                                  <label class="form-check-label" for="customCheckBox3">NO</label>
+                              </div>
+                          </div>
+                         
+                      </div>
+                      </div>
+                      <br>
+                    </div>
+                </div>
+               
+                <div class="col-sm-12">
+                    <div class="slide">
+                        <h5 class="questionhead">4. Is your device under brand warranty?</h5>
+                        <span style="color: grey;">You can get a better price for your device if it's under brand's warranty with a valid bill.</span>
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
+                                  <label class="form-check-label" for="customCheckBox2">YES</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-sm-4 ">
+                              <div class="form-check custom-checkbox mb-3 checkbox-success" >
+                                <input type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
+                                  <label class="form-check-label" for="customCheckBox3">NO</label>
+                              </div>
+                          </div>
+                         
+                      </div>
+                      </div>
+                      <br>
+                </div>
+                
+                <div class="col-sm-12">
+                    <div class="slide">
+                        <h5 class="questionhead"> 5. Do you have valid bill with same IMEI? </h5>
+                        <span style="color: grey;">Make sure your bill has device IMEI mentioned on it.</span>
+                        <div class="row">
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-info">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_5" name="match_5">
+                                  <label class="form-check-label" for="customCheckBox2">YES</label>
+                              </div>
+                          </div>
+                          <div class="col-lg-4 col-sm-4">
+                              <div class="form-check custom-checkbox mb-3 checkbox-success">
+                                  <input type="radio" class="form-check-input" type="radio" id="match_5" name="match_5">
+                                  <label class="form-check-label" for="customCheckBox3">NO</label>
+                              </div>
+                          </div>
+                         
+                      </div>
+                      </div>
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="step">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" class="form-control" id="firstname">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" class="form-control" id="lastname">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatEmail">Repeat Email address:</label>
+                    <input type="email" class="form-control" id="repeatEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatPassword">Repeat Password:</label>
+                    <input type="password" class="form-control" id="repeatPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatPassword">Repeat Password:</label>
+                    <input type="password" class="form-control" id="repeatPassword">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="firstname">First Name:</label>
+                    <input type="text" class="form-control" id="firstname">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="lastname">Last Name:</label>
+                    <input type="text" class="form-control" id="lastname">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Email address:</label>
+                    <input type="email" class="form-control" id="email">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatEmail">Repeat Email address:</label>
+                    <input type="email" class="form-control" id="repeatEmail">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatPassword">Repeat Password:</label>
+                    <input type="password" class="form-control" id="repeatPassword">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="repeatPassword">Repeat Password:</label>
+                    <input type="password" class="form-control" id="repeatPassword">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wizard-footer">
+            <div class="row">
+              <div class="col-xs-6 pull-left block-center">
+                <button id="wizard-prev" style="display:none" type="button" class="btn btn-irv btn-irv-default">
+                  Previous
+                </button>
+              </div>
+              <div class="col-xs-6 pull-right text-center">
+                <button id="wizard-next" type="button" class="btn btn-irv">
+                 continue
+                </button>
+              </div>
+              <div class="col-xs-6 pull-right block-center">
+                <button id="wizard-subm" style="display:none" type="button" class="btn btn-irv">
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="wizard card-like">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </div>
+      </div>
+ </div>
+</div>
+
+
+{% endblock %}
+
+
+
