@@ -21,6 +21,7 @@ urlpatterns = [
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
     path('userdetails',views.userDetails,name='userdetails'),
 
+    path('wallet',views.wallet,name='wallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
      
 ]

@@ -55,3 +55,7 @@ def userDetails(request):
 
 def transactionHistory(request):
     return render(request,'official/transaction_history.html')
+
+
+def wallet(request):
+    return render(request,'official/wallet.html')
