@@ -13,5 +13,9 @@ urlpatterns = [
     path('account',views.account,name='account'),
     path('privacy',views.privacy,name='privacy'),
     path('shops',views.shops,name='shops'),
-    path('question',views.question,name='question')
+    path('question',views.question,name='question'),
+
+
+    path('my',views.my,name='my')
+    
 ]
