@@ -2,52 +2,65 @@
 {% load static %}
 {% block content %}
 
-<main class="main">
-    <section class="home-slider position-relative pt-25 pb-20">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="position-relative">
-                        <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
-                            <div class="single-hero-slider single-animation-wrap">
-                                <div class="container">
-                                    <div class="slider-1-height-3 slider-animated-1">
-                                        <div class="hero-slider-content-2">
-                                            <!-- <p class="animated">Save more with coupons & up to 70% off</p> -->
-                                            <h4 class="animated color-banner-text1">Trade-In Offer</h4>
-                                            <h2 class="animated fw-900 color-banner-text2">Supper Value Deals</h2>
-                                            <!-- <h1 class="animated fw-900 text-brand">On All Products</h1> -->
-                                            <!-- <p class="animated">Save more with coupons & up to 70% off</p> -->
-                                            <a class="animated btn btn-brush btn-brush-3"
-                                                href="shop-product-right.html"> Shop Now </a>
-                                        </div>
-                                        <div class="slider-img">
-                                            <img src="{% static 'user/imgs/slider/bnr1.jpg' %}" alt="">
-                                        </div>
+
+<section class="home-slider position-relative ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="position-relative">
+                    <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="slider-1-height-3 slider-animated-1">
+                                    <div class="hero-slider-content-2">
+                                        <h4 class="animated">Trade-In Offer</h4>
+                                        <h3 class="animated fw-900">Supper Value Deals</h3>
+                                        <h4 class="animated fw-900 text-brand">On All Products</h4>
+                                        <!-- <p class="animated">Save more with coupons & up to 70% off</p> -->
+                                        <a class="animated btn btn-brush btn-brush-3" href="shop-product-right.html"> Shop Now </a>
+                                    </div>
+                                    <div class="slider-img">
+                                        <img src="{% static 'user/imgs/slider/bnr1.jpg' %}" alt="">
                                     </div>
                                 </div>
                             </div>
-
                         </div>
-                        <div class="slider-arrow hero-slider-1-arrow style-3"></div>
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="slider-1-height-3 slider-animated-1">
+                                    <div class="hero-slider-content-2">
+                                        <h4 class="animated">Tech Promotions</h4>
+                                        <h3 class="animated fw-900">Tech Trending</h3>
+                                        <h4 class="animated fw-900 text-brand">Great Collection</h4>
+                                        <!-- <p class="animated">Save more with coupons & up to 20% off</p> -->
+                                        <a class="animated btn btn-brush btn-brush-3" href="shop-product-right.html"> Sell phone </a>
+                                    </div>
+                                    <div class="slider-img">
+                                        <img src="{% static 'user/imgs/slider/bnr1.jpg' %}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    <div class="slider-arrow hero-slider-1-arrow style-3"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
     
 <!-- grid section -->
 
 
 
-    <section class="featured section-padding position-relative">
+    <section class="featured section-padding position-relative" style="margin-left: 1%;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-2 col-sm-2 col-3 col-xs-3 grid-item">
                     <div class="banner-features wow fadeIn animated hover-up">
                         <img src="{% static 'user/imgs/theme/icons/cqash.png' %}" alt="" class="service-icon">
 
-                        <h4 class="bg-1 servicetext " >Sell Phone</h4>
+                        <a href="sell"><h4 class="bg-1 servicetext">Sell Phone</h4></a>
                     </div>
                 </div>
                 <div class="col-lg-2 col-2  col-sm-2 col-3 col-xs-3 grid-item">
@@ -93,13 +106,78 @@
                         <h4 class="bg-1 servicetext">Sell Phone</h4>
                     </div>
                 </div>
+                <div class="col-lg-2 col-2 col-sm-2 col-3 col-xs-3 grid-item">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img src="{% static 'user/imgs/theme/icons/cqash.png' %}" alt="" class="service-icon">
+
+                        <a href="sell"><h4 class="bg-1 servicetext">Sell Phone</h4></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-2 col-sm-2 col-3 col-xs-3 grid-item">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img src="{% static 'user/imgs/theme/icons/cqash.png' %}" alt="" class="service-icon">
+
+                        <a href="sell"><h4 class="bg-1 servicetext">Sell Phone</h4></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-2 col-sm-2 col-3 col-xs-3 grid-item">
+                    <div class="banner-features wow fadeIn animated hover-up">
+                        <img src="{% static 'user/imgs/theme/icons/cqash.png' %}" alt="" class="service-icon">
+
+                        <a href="sell"><h4 class="bg-1 servicetext">Sell Phone</h4></a>
+                    </div>
+                </div>
 
 
             </div>
         </div>
     </section>
     <!-- ------------------------- -->
-
+    <section class="featured section-padding">
+        <div class="container">
+            <div class="row">
+                <h3 class="section-title mb-20">How<span>Eazify</span> Works</h3>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-2.png' %}" alt="">
+                        <h4 class="bg-3">Online order</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-5.png' %}" alt="">
+                        <h4 class="bg-5">Happy Sell</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-1.png' %}" alt="">
+                        <h4 class="bg-1">Sheduled Pickup</h4>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-3.png' %}" alt="">
+                        <h4 class="bg-2">Best money value</h4>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-4.png' %}" alt="">
+                        <h4 class="bg-4">Fast money</h4>
+                    </div>
+                </div>
+               
+                <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
+                    <div class="banner-features wow fadeIn animated hover-up animated">
+                        <img src="{% static 'user/imgs/theme/icons/feature-6.png' %}" alt="">
+                        <h4 class="bg-6">24/7 Support</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <!-- repair service section -->
@@ -107,10 +185,10 @@
         <div class="container">
             <div class="banner-img banner-big wow fadeIn animated f-none">
                 <img src="assets/imgs/banner/sp1.jpg" alt="">
-                <img src="{% static 'user/imgs/banner/sp1.jpg' %}" alt="">
+                <img src="{% static 'user/imgs/banner/B1 (1).jpg' %}" alt="">
                 <div class="banner-text ">
                     <h4 class="mb-1 mt-40 text-brand">Repair Services</h4>
-                    <h1 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h1>
+                    <h4 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h4>
                     <a href="shop-grid-right.html" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a>
                 </div>
             </div>
@@ -157,41 +235,69 @@
         </div>
     </section>
 
+
+
     <!-- featured brand -->
-    <section class="section-padding">
-        <div class="container">
-            <h3 class="section-title mb-20 wow fadeIn animated"><span>Featured</span> Brands</h3>
-            <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
-                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-3-arrows">
-                </div>
-                <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/apple.jpg' %}" alt="">
-
+    <section class="popular-categories section-padding mt-15">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Select</span> your phone brand</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shops"><img src="{% static 'user/imgs/banner/apple.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">T-Shirt</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/nok.jpg' %}" alt="">
-
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/oppo.jpg' %}" alt="">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Sandan</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/one.jpg' %}" alt="">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Scarf Cap</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/sam.jpg' %}" alt="">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Shoes</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/honor.jpg' %}" alt="">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Pillowcase</a></h5> -->
                     </div>
-                    <div class="brand-logo">
-                        <img class="" src="{% static 'user/imgs/banner/nok.jpg' %}" alt="">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Jumpsuits</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Hats</a></h5> -->
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
 
     <!-- new arrivals -->
     <section class="section-padding">
@@ -523,7 +629,7 @@
 
     <!-- test contet -->
     <section id="testimonials" class="section-padding">
-        <div class="container pt-25">
+        <div class="container-fluid pt-25">
             <div class="row mb-50">
                 <div class="col-lg-12 col-md-12 text-center">
                     <h6 class="mt-0 mb-10 text-uppercase  text-brand font-sm wow fadeIn animated animated"
@@ -765,6 +871,6 @@
         </div>
     </section> -->
 
-</main>
+
 
 {% endblock %}

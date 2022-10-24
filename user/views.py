@@ -34,4 +34,8 @@ def shops(request):
 def question(request):
     return render(request,"user/question.html")  
 
-    
+def my(request):
+    return render(request,"user/my.html")  
+
+def spec(request):
+    return render(request,"user/spec-product.html")  
