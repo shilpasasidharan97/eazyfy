@@ -37,4 +37,5 @@ def question(request):
 def my(request):
     return render(request,"user/my.html")  
 
-    
+def spec(request):
+    return render(request,"user/spec-product.html")  

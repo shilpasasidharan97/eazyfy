@@ -4458,7 +4458,7 @@ table .product-thumbnail img {
 
 .size-filter.list-filter li a {
   border: 1px solid #e5e5e5;
-  color: #555;
+  color:black;
   height: 30px;
   line-height: 30px;
   min-width: 30px;
@@ -4632,6 +4632,8 @@ table .product-thumbnail img {
   background-color: #000;
   margin-bottom: 30px;
   border-radius: 10px;
+  height: 410px;
+  width: 351px;
 }
 
 .detail-gallery .slick-slider img {
@@ -9337,6 +9339,7 @@ span.fi-rs-apps {
   margin-right: 200px !important;
 }
 
+
 @media only screen and (max-width: 768px) {
   .logo.logo-width-1 {
     margin-right: 0;
@@ -10063,8 +10066,8 @@ span.fi-rs-apps {
 }
 
 .grid-item {
-  background-color: rgba(255, 255, 255, 0.8);
-  border: 1px solid rgba(112, 112, 112, 0.12);;
+  background-color:rgb(246 246 246);
+  /* border: 1px solid rgba(112, 112, 112, 0.12);; */
   padding: 20px;
   font-size: 30px;
   text-align: center;
