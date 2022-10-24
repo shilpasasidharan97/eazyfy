@@ -1,6 +1,8 @@
 {% extends 'pickup-boy/partials/base.html' %}
 {% block content %}
 {% load static %}
+
+
 <div class="form-head d-flex align-items-center flex-wrap">
     <h3 class="font-w600 mb-0 me-auto mb-2 text-black">Questions</h3>
 </div>
@@ -9,10 +11,11 @@
                 <div class="card">
                     <div class="card-header">
                         <h4 class="card-title">Form step</h4>
+                        <span class="badge badge-xl badge-outline-secondary">₹10,000</span>
                     </div>
                     <div class="card-body">
                         <div id="smartwizard" class="form-wizard order-create sw sw-theme-default sw-justified">
-                            <ul class="nav nav-wizard">
+                            <ul class="nav nav-wizard" style="display: none;">
                                 <li><a class="nav-link inactive active" href="#wizard_Service"> 
                                     <span>1</span> 
                                 </a></li>
@@ -122,29 +125,70 @@
                                     </div>
                                 </div>
                                 <div id="wizard_Time" class="tab-pane" role="tabpanel" style="display: none;">
+                                    <p>select these</p>
                                     <div class="row">
-                                        <div class="col-lg-6 mb-2">
-                                            <div class="form-group">
-                                                <label class="text-label">Company Name*</label>
-                                                <input type="text" name="firstName" class="form-control" placeholder="Cellophane Square" required="">
+                                        <div class="col-lg-3 col-xs-6  col-6 col-sm-3 mb-2">
+                                            <div class="card border-primary">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <span class="checkbox-control__target"></span>
+                                                  </label>
+                                                <img class="card-img-top img-fluid" src="{% static 'official/images/card/crack.png' %}" alt="Card image cap">
+                                               
+                                                <div class="card-body">
+                                                    <p class="card-text">He lay on his armour-like back, and if he lifted his head a little
+                                                    </p>
+                                                </div>
+
+                                                
+
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-2">
-                                            <div class="form-group">
-                                                <label class="text-label">Company Email Address*</label>
-                                                <input type="email" class="form-control" id="emial1" placeholder="example@example.com.com" required="">
+                                        <div class="col-lg-3 col-xs-6 col-6 col-sm-3 mb-2">
+                                            <div class="card border-primary">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <span class="checkbox-control__target"></span>
+                                                  </label>
+                                                <img class="card-img-top img-fluid" src="{% static 'official/images/card/crack.png' %}" alt="Card image cap">
+                                               
+                                                <div class="card-body">
+                                                    <p class="card-text">He lay on his armour-like back, and if he lifted his head a little
+                                                    </p>
+                                                </div>
+                                                
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-2">
-                                            <div class="form-group">
-                                                <label class="text-label">Company Phone Number*</label>
-                                                <input type="text" name="phoneNumber" class="form-control" placeholder="(+1)408-657-9007" required="">
+
+                                        <div class="col-lg-3 col-xs-6 col-6 col-sm-3 mb-2">
+                                            <div class="card border-primary">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <span class="checkbox-control__target"></span>
+                                                  </label>
+                                                <img class="card-img-top img-fluid" src="{% static 'official/images/card/crack.png' %}" alt="Card image cap">
+                                                
+                                                <div class="card-body">
+                                                    <p class="card-text">He lay on his armour-like back, and if he lifted his head a little
+                                                    </p>
+                                                </div>
+                                             
                                             </div>
                                         </div>
-                                        <div class="col-lg-6 mb-2">
-                                            <div class="form-group">
-                                                <label class="text-label">Your position in Company*</label>
-                                                <input type="text" name="place" class="form-control" required="">
+
+                                        <div class="col-lg-3 col-xs-6 col-6 col-sm-3 mb-2">
+                                            <div class="card border-primary">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input">
+                                                    <span class="checkbox-control__target"></span>
+                                                  </label>
+                                                <img class="card-img-top img-fluid" src="{% static 'official/images/card/crack.png' %}" alt="Card image cap">
+                                               
+                                                <div class="card-body">
+                                                    <p class="card-text">He lay on his armour-like back, and if he lifted his head a little
+                                                    </p>
+                                                </div>
+                                               
                                             </div>
                                         </div>
                                     </div>
