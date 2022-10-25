@@ -2,7 +2,7 @@
   margin-top: 50px;
   margin-bottom: 50px;
   color:#411057;;
-  background: rgb(238 236 239);
+  background: #ffffff;
   border-radius: 6px;
   padding: 50px;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
@@ -17,7 +17,7 @@
   transition: all 0.3s;
 }
 .btn-irv:hover {
-  background: #02738d;
+  background: #640097;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -94,3 +94,6 @@
   margin-top: 30px;
 }
 
+.bgph{
+  background-color: #ddc8e7;;
+  }
