@@ -1,0 +1,302 @@
+{% extends 'pickup-boy/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="card-title">Complete</h4>
+    </div>
+    <div class="card-body">
+        <div id="smartwizard" class="form-wizard order-create sw sw-theme-default sw-justified">
+            <ul class="nav nav-wizard" style="display: none;">
+                <li><a class="nav-link inactive active" href="#wizard_Service"> 
+                    <span>1</span> 
+                </a></li>
+                <li><a class="nav-link inactive done" href="#wizard_Time">
+                    <span>2</span>
+                </a></li>
+                <li><a class="nav-link inactive" href="#wizard_Details">
+                    <span>3</span>
+                </a></li>
+                <li><a class="nav-link inactive" href="#wizard_Payment">
+                    <span>4</span>
+                </a></li>
+            </ul>
+            <div class="tab-content" style="height: 473px;">
+                <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
+                    <div class="row">
+                        <div class="col-lg-6 mb-2">
+                            <div class="form-group">
+                                <label class="text-label">Brand</label>
+                                <input type="text" name="firstName" class="form-control" placeholder="Parsley" required="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-2">
+                            <div class="form-group">
+                                <label class="text-label">Mobile Model</label>
+                                <input type="text" name="lastName" class="form-control" placeholder="Montana" required="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-2">
+                            <div class="form-group">
+                                <label class="text-label">IMEI Number</label>
+                                <input type="text" name="lastName" class="form-control" placeholder="Montana" required="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 mb-2">
+                            <div class="form-group">
+                                <label class="text-label">Example data</label>
+                                <input type="text" name="lastName" class="form-control" placeholder="Montana" required="">
+                            </div>
+                        </div>
+                       
+                        <div class="col-lg-12 mb-3">
+                            <div class="form-group">
+                                <label class="text-label">Where are you from*</label>
+                                <input type="text" name="place" class="form-control" required="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="wizard_Time" class="tab-pane" role="tabpanel" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Product Live Photo</h4>
+                                </div>
+                    
+                                <div class="card-body">
+                                    <span> Upload front of the Product</span>
+                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                    
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <video id="video" width="320" height="240" autoplay></video>
+                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="dataurl-container">
+                                                <canvas id="canvas" width="320" height="240"></canvas>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                                </form>
+                    
+                                            </div>
+                    
+                                        </div>
+                    
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div> 
+
+
+                    </div>
+                </div>
+                <div id="wizard_Details" class="tab-pane" role="tabpanel" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Product Live Photo</h4>
+                                </div>
+                    
+                                <div class="card-body">
+                                    <span> Upload One side of the Product</span>
+                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                    
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <video id="video" width="320" height="240" autoplay></video>
+                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="dataurl-container">
+                                                <canvas id="canvas" width="320" height="240"></canvas>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                                </form>
+                    
+                                            </div>
+                    
+                                        </div>
+                    
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div> 
+
+
+                    </div>
+                </div>
+                <div id="wizard_Payment" class="tab-pane" role="tabpanel" style="display: none;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h4 class="card-title">Product Live Photo</h4>
+                                </div>
+                    
+                                <div class="card-body">
+                                    <span> Upload Another side of the Product</span>
+                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                    
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <video id="video" width="320" height="240" autoplay></video>
+                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div id="dataurl-container">
+                                                <canvas id="canvas" width="320" height="240"></canvas>
+                                                <form action="" method="post">
+                                                    {% csrf_token %}
+                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                                </form>
+                    
+                                            </div>
+                    
+                                        </div>
+                    
+                                    </div>
+                    
+                                </div>
+                            </div>
+                        </div> 
+
+
+                    </div>
+                </div>
+            </div><div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;"><button class="btn btn-primary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-primary sw-btn-next" type="button">Next</button></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ######################################################script ######################################## -->
+
+
+<style type="text/css">
+    .startcam {
+        width: 120px;
+        padding: 10px;
+        display: block;
+        margin: 20px auto;
+        border: 2px solid;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .click {
+        width: 120px;
+        padding: 10px;
+        display: block;
+        margin: 20px auto;
+        border: 2px solid;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    .submit {
+        width: 120px;
+        padding: 10px;
+        display: block;
+        margin: 20px auto;
+        border: 2px solid;
+        cursor: pointer;
+        background-color: white;
+    }
+
+    #start-camera {
+        margin-top: 50px;
+    }
+
+    #video {
+        display: none;
+        margin: 50px auto 0 auto;
+    }
+
+    #click-photo {
+        display: none;
+    }
+
+    #dataurl-container {
+        display: none;
+    }
+
+    #canvas {
+        display: block;
+        margin: 0 auto 20px auto;
+    }
+
+    #dataurl-header {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    #dataurl {
+        display: block;
+        height: 100px;
+        width: 320px;
+        margin: 10px auto;
+        resize: none;
+        outline: none;
+        border: 1px solid #111111;
+        padding: 5px;
+        font-size: 13px;
+        box-sizing: border-box;
+    }
+</style>
+<!-- ######################################################script ######################################## -->
+
+<script>
+
+    let camera_button = document.querySelector("#start-camera");
+
+    let video = document.querySelector("#video");
+    let click_button = document.querySelector("#click-photo");
+    let canvas = document.querySelector("#canvas");
+    let dataurl = document.querySelector("#dataurl");
+    let dataurl_container = document.querySelector("#dataurl-container");
+
+    camera_button.addEventListener('click', async function () {
+        let stream = null;
+
+        try {
+            stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+        }
+        catch (error) {
+            alert(error.message);
+            return;
+        }
+
+        video.srcObject = stream;
+
+        video.style.display = 'block';
+        camera_button.style.display = 'none';
+        click_button.style.display = 'block';
+    });
+
+    click_button.addEventListener('click', function () {
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        let image_data_url = canvas.toDataURL('image/jpeg');
+
+        dataurl.value = image_data_url;
+        dataurl_container.style.display = 'block';
+    });
+
+
+
+
+
+</script>
+
+{% endblock %}
