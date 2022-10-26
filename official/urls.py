@@ -10,12 +10,13 @@ urlpatterns = [
     path('',views.home,name='home'),
 
     path('franchise',views.franchise,name='franchise'),
-    path('franchisedetails',views.viewFranchiseDetails,name='franchisedetails'),
-    path('pickupboylist',views.pickUpBoyList,name='pickupboylist'),
+    path('franchisedetails/<int:id>',views.viewFranchiseDetails,name='franchisedetails'),
+    path('pickupboylist/<int:id>',views.pickUpBoyList,name='pickupboylist'),
+    path('deletefranchise/<int:id>',views.DeleteFranchise, name='deletefranchise'),
 
     path('brand',views.brand,name='brand'),
-    path('model',views.Model,name='model'),
-    path('modelspecification',views.modelSpecification,name='modelspecification'),
+    path('model/<int:id>',views.Model,name='model'),
+    path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
@@ -23,5 +24,7 @@ urlpatterns = [
 
     path('wallet',views.wallet,name='wallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
+
+    path('logout_view',views.logout_view,name='logout_view'),
      
 ]

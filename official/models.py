@@ -41,6 +41,9 @@ class Franchise(models.Model):
     address = models.CharField(max_length=500, null=True)
     password = models.CharField(max_length=20)
 
+    def __str__(self):
+        return str(self.name)
+
 
 class PickUpBoy(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete=models.CASCADE)
@@ -53,6 +56,8 @@ class PickUpBoy(models.Model):
     address = models.CharField(max_length=500, null=True)
     password = models.CharField(max_length=20)
 
+    def __str__(self):
+        return str(self.name)
 
 class User(AbstractUser):
     username = None
@@ -72,3 +77,37 @@ class User(AbstractUser):
         return str(self.phone_number)
 
 
+
+class Brand(models.Model):
+    image = models.FileField(upload_to='Brand', null=True)
+    name = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        verbose_name_plural = ("Brand")
+
+    def __str__(self):
+        return str(self.name)
+
+
+class BrandModel(models.Model):
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
+    image = models.FileField(upload_to='Brand Model', null=True)
+    name = models.CharField(max_length=100, null=True)
+
+    class Meta:
+        verbose_name_plural = ("Brand Model")
+
+    def __str__(self):
+        return str(self.name)
+
+
+class ModelSpecifications(models.Model):
+    Brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
+    RAM = models.CharField(max_length=100, null="True")
+    color = models.CharField(max_length=30, null=True)
+    internal_storage = models.CharField(max_length=30, null=True)
+    year = models.IntegerField(null=True)
+    price = models.FloatField(null=True)
+
+    class Meta:
+        verbose_name_plural = ("Model Specifications")
