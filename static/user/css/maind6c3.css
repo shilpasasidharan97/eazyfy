@@ -1951,7 +1951,7 @@ label {
 }
 
 .hero-slider-1.style-3 .slider-1-height-3 {
-  height: 339px !important;
+  height: 320px !important;
 }
 
 .hero-slider-1.style-3 .slider-img {
@@ -2109,7 +2109,7 @@ label {
 
 .slider-arrow .slider-btn {
   cursor: pointer;
-  background: #e1d3e7;
+  background: #f9f0fd;
   width: 45px;
   height: 45px;
   position: absolute;
@@ -2365,6 +2365,10 @@ label {
   border: 1px solid #e2e9e1;
   border-radius: 1.5rem;
 }
+.card2{
+  box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
+  border-radius: 7%;
+}
 
 .card .card-header {
   padding: 1rem;
@@ -2464,7 +2468,7 @@ label {
 
 .dashboard-menu ul li a.active {
   color: #fff;
-  background-color: #088178;
+  background-color: #410062;
 }
 
 .dashboard-menu ul li a.active i {
@@ -3206,7 +3210,7 @@ table .product-thumbnail img {
 
 .banner-img .banner-text {
   position: absolute;
-  top: 50%;
+  top: 71%;
   z-index: 2;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
@@ -7853,7 +7857,7 @@ span.fi-rs-apps {
 }
 
 .newsletter {
-  background-color: #dacae1;
+  background-color: #8d689c;;
 }
 
 .newsletter .icon-email {
@@ -9496,7 +9500,7 @@ span.fi-rs-apps {
 
 
 .wusbanner {
-  background-color: #dee2e6;
+  background-color:#fbf5ff;
   /* height: 270px; */
   /* margin-top: 7px; */
   line-height: 21px;
