@@ -48,10 +48,10 @@
                     <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
                         <div class="d-flex align-items-end">
                             <div class="project-media text-end">
-                                <a type="button" href="{% url 'official:franchisedetails' %}" class="btn btn-outline-info">View</a>
+                                <a type="button" href="{% url 'official:franchisedetails' franchise_list.id %}" class="btn btn-outline-info">View</a>
                             </div>
                             <div class="ms-2">
-                                <button  onclick="deleteFRanchise()" class="btn btn-outline-danger">Delete</button>
+                                <button  onclick="deleteFRanchise({{franchise_list.id}})" class="btn btn-outline-danger">Delete</button>
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function deleteFRanchise() {
+    function deleteFRanchise(id) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -219,6 +219,7 @@
                     'Your file has been deleted.',
                     'success'
                 )
+                window.location.href = "/official/deletefranchise/" + id
             }
         })
     }

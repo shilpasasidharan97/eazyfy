@@ -43,15 +43,16 @@
         </div>
     </div> -->
     
+    {% for model in models %}
     <div class="col-xl-3 col-xxl-4 col-sm-6">
         <div class="card user-card">
             <div class="card-body pb-0">
                 <div class="d-flex mb-3 align-items-center">
                     <div class="dz-media me-3 rounded-circle">
-                        <img src="../static/images/users/pic2.jpg" alt="">
+                        <img src="{{model.image.url}}" alt="">
                     </div>
                     <div>
-                        <h5 class="title"><a href="javascript:void(0);">Mi Note 10 s</a></h5>
+                        <h5 class="title"><a href="javascript:void(0);">{{model.name}}</a></h5>
                         <span class="text-info">2022</span>
                     </div>
                 </div>
@@ -69,11 +70,13 @@
                 </ul>
             </div>
             <div class="card-footer text-center">
-                <a href="{% url 'official:modelspecification' %}" class="btn btn-primary btn-xs" >Spec Adding</a>
+                <a href="{% url 'official:modelspecification' model.id %}" class="btn btn-primary btn-xs" >Spec Adding</a>
                 <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="deleteModel()">Delete</a>
             </div>
         </div>
     </div>
+    {% endfor %}
+
 </div>
 <nav>
     <ul class="pagination pagination-gutter pagination-primary no-bg">
@@ -105,33 +108,33 @@
             </div>
             <div class="modal-body">
                 <div class="basic-form">
-                    <form>
-
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
                         <div class="row">
-                            <div class="mb-3 col-md-6">
+                            <div class="mb-3 col-md-12">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" >
+                                <input type="text" class="form-control" name="name">
+                            </div>
+                            <!-- <div class="mb-3 col-md-6">
+                                <label>Internal Storage</label>
+                                <input type="text" class="form-control" name="internal_storage">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Year</label>
-                                <input type="email" class="form-control">
+                                <input type="email" class="form-control" name="year">
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label class="form-label">RAM</label>
-                                <input type="password" class="form-control">
+                                <label class="form-label">Color</label>
+                                <input type="text" class="form-control" name="color">
                             </div>
-                            <div class="mb-3 col-md-6">
-                                <label>Internal Storage</label>
-                                <input type="text" class="form-control">
-                            </div>
-                        </div>
+                        </div> -->
                         <div class="row">
-                            <div class="mb-3 col-md-2">
+                            <div class="mb-3 col-md-12">
                                 <label class="form-label">Image</label>
-                                <input type="file" class="form-control">
+                                <input type="file" class="form-control" name="image">
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary text-end">SUbmit</button>
+                        <button type="submit" class="btn btn-primary text-center">SUbmit</button>
                     </form>
                 </div>
             </div>
