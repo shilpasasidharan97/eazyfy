@@ -1,0 +1,261 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Specification</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class=" avtive"><a href="{% url 'official:brand' %}"> Brand / </a></li>
+            <li class=" avtive"><a href="{% url 'official:model' %}"> Model / </a></li>
+            <li class=""><a href="javascript:void(0)">Specification</a></li>
+        </ol>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="" style="margin-right: 10px;">
+        <a href="" class="btn btn-rounded btn-md" style="float: right;" data-bs-toggle="modal"
+            data-bs-target="#exampleModalCenter">
+            <span class="btn-icon-start text-info">
+                <i class="fa fa-plus" style="color: #5f009a;"></i>
+            </span> Add Spec
+        </a>
+    </div>
+</div>
+
+
+<div class="row mt-4">
+    <div class="tab-content project-list-group" id="myTabContent">
+        <div class="tab-pane fade active show" id="navpills-1">
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-3 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media d-flex">
+                                <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
+
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="title font-w600 mb-2">
+                                    <a href="../post_details/index.html" class="text-black">mi note 10S</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep
+                            8th, 2020
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>RAM</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Internal Storage</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Price</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black"> ₹15000</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex project-status align-items-center">
+                            <a href="" class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#editSpec">Edit</a>
+                            <button type="button" class="btn btn-outline-danger" onclick="deleteSpec()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-3 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media d-flex">
+                                <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
+
+                            </div>
+                            <div class="ms-2">
+                                <h5 class="title font-w600 mb-2">
+                                    <a href="../post_details/index.html" class="text-black">mi note 10S</a>
+                                </h5>
+                            </div>
+                        </div>
+                        <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep
+                            8th, 2020
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>RAM</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Internal Storage</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Price</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black"> ₹15000</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex project-status align-items-center">
+                            <a href="" class="btn btn-outline-primary">Edit</a>
+                            <button type="button" class="btn btn-outline-danger" onclick="deleteSpec()">Delete</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="mt-5">
+                <ul class="pagination pagination-gutter pagination-primary no-bg">
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-left"></i></a>
+                    </li>
+                    <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- spec modal -->
+<div class="modal fade" id="exampleModalCenter">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Add Specification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="basic-form">
+                    <form>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">RAM</label>
+                                <input type="text" class="form-control" >
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Internal Storage</label>
+                                <input type="number" class="form-control">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Price</label>
+                                <input type="integer" class="form-control">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary text-end">SUbmit</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- edit modal -->
+<div class="modal fade" id="editSpec">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"> Edit Specification</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="basic-form">
+                    <form>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">RAM</label>
+                                <input type="text" class="form-control" value="6GB">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Internal Storage</label>
+                                <input type="number" class="form-control" value="64gb">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Price</label>
+                                <input type="integer" class="form-control" value="15000">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary text-end align-items-end">Change</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteSpec() {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+            }
+        })
+    }
+</script>
+{% endblock %}

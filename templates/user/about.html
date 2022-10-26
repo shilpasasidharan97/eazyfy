@@ -1,269 +1,622 @@
 ﻿{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
-    <main class="main single-page">
-        <div class="page-header breadcrumb-wrap">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Pages
-                    <span></span> About us
+
+<style>
+    #cards .card1 {
+        border-radius: 20px;
+        min-height: 100%;
+    }
+
+    #cards .heading-border {
+        position: absolute;
+        width: 100%;
+        top: 60%;
+    }
+
+    #cards .card1 .user-picture img {
+        position: absolute;
+        top: -40%;
+        right: 3%;
+        background: #f8f9fa !important;
+        padding: 10px;
+    }
+
+    #cards .card1 .user-content .user-name {
+        margin-right: 150px;
+    }
+
+
+    .accent-bg {
+        color: #fff;
+        background-color: #dbcae8;
+    }
+
+    .mar-t40 {
+        margin-top: 40px;
+    }
+
+    .layout.center,
+    .layout.center-center {
+        align-items: center;
+    }
+
+    .layout.vertical {
+        flex-direction: column;
+    }
+
+    .frame-size {
+        width: 100%;
+        margin: 0 auto;
+        max-width: 1420px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .layout {
+        display: flex;
+    }
+
+    .pad-t40 {
+        padding-top: 40px;
+    }
+
+    .layout.justified {
+        justify-content: space-between;
+    }
+
+    .layout.wrap {
+        flex-wrap: wrap;
+    }
+
+    .layout.horizontal {
+        flex-direction: row;
+    }
+
+    .flwidth {
+        width: 100%;
+    }
+
+    .layout {
+        display: flex;
+    }
+
+    .pad0 {
+        padding: 0;
+    }
+
+    .mar-b40 {
+        margin-bottom: 40px;
+    }
+
+    .layout.center-center {
+        justify-content: center;
+    }
+
+    .layout.center,
+    .layout.center-center {
+        align-items: center;
+    }
+
+    .layout.horizontal {
+        flex-direction: row;
+    }
+
+    .jss97 {
+        width: 25%;
+        padding: 16px;
+    }
+
+    .layout {
+        display: flex;
+    }
+
+    .mar-b20 {
+        margin-bottom: 20px;
+    }
+
+    .pad16 {
+        padding: 16px;
+    }
+
+    .layout.center-justified,
+    .layout.center-center {
+        justify-content: center;
+    }
+
+    .layout.center,
+    .layout.center-center {
+        align-items: center;
+    }
+
+    .layout.horizontal {
+        flex-direction: row;
+    }
+
+    .jss98 {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+    }
+
+    .img-resp {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+    }
+
+    .layout.vertical {
+        flex-direction: column;
+    }
+
+    .jss103 {
+        margin-left: 8px;
+    }
+
+    .flwidth {
+        width: 100%;
+    }
+
+    .layout {
+        display: flex;
+    }
+
+    .font18-16 {
+        font-size: calc(1rem + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
+        line-height: 1.43;
+    }
+
+    .font-semi-bold {
+        font-weight: 600;
+    }
+
+    .font16-14 {
+        font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .font-semi-bold {
+        font-weight: 600;
+    }
+
+    @media (max-width: 959.95px) {
+        .layout.vertical-mob {
+            flex-direction: column;
+            width: 142px;
+        }
+    }
+
+    @media (max-width: 959.95px) {
+
+        .layout.horizontal-mob,
+        .layout.vertical-mob {
+            display: flex;
+        }
+    }
+</style>
+
+<main class="main single-page">
+    <div class="page-header breadcrumb-wrap">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" rel="nofollow">Home</a>
+                <span></span> About us
+            </div>
+        </div>
+    </div>
+
+
+    <section class="section-padding">
+        <div class="container pt-25">
+            <div class="row">
+                <div class="col-lg-6 align-self-center mb-lg-0 mb-4">
+                    <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">Our Company</h6>
+                    <h3 class="font-heading mb-40 ">
+                        We are Building The Destination For Getting Things Done
+                    </h3>
+                    <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum
+                        sapien metus.</p>
+                    <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum
+                        sapien metus. Sit mi, pharetra, morbi arcu id. Pellentesque dapibus nibh augue senectus. </p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="{% static 'user/imgs/page/about-1.png' %}" alt="">
                 </div>
             </div>
         </div>
-        <section class="section-padding">
-            <div class="container pt-25">
-                <div class="row">
-                    <div class="col-lg-6 align-self-center mb-lg-0 mb-4">
-                        <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">Our Company</h6>
-                        <h1 class="font-heading mb-40">
-                            We are Building The Destination For Getting Things Done
-                        </h1>
-                        <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum sapien metus.</p>
-                        <p>Tempus ultricies augue luctus et ut suscipit. Morbi arcu, ultrices purus dolor erat bibendum sapien metus. Sit mi, pharetra, morbi arcu id. Pellentesque dapibus nibh augue senectus. </p>
-                    </div>
-                    <div class="col-lg-6">
-                        <img src="assets/imgs/page/about-1.png" alt="">
-                    </div>
+    </section>
+
+
+    <section id="team" class="pt-25 wow fadeIn animated">
+        <div class="container">
+            <div class="row mb-50 align-items-center">
+                <div class="col-md-6">
+                    <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">Our Team</h6>
+                    <h3 class="mb-15 wow fadeIn animated">Top team of experts</h3>
+                    <p class="text-grey-3 wow fadeIn animated">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Ratione optio perferendis sequi mollitia quis autem ea cupiditate possimus!</p>
+                </div>
+                <div class="col-md-6 text-md-end mt-30">
+                    <a
+                        class="btn btn-outline btn-lg btn-brand-outline font-weight-bold text-brand text-hover-white border-radius-5 btn-shadow-brand hover-up">All
+                        Members</a>
                 </div>
             </div>
-        </section>
-        <section id="team" class="pt-25 wow fadeIn animated">
-            <div class="container">
-                <div class="row mb-50 align-items-center">
-                    <div class="col-md-6">
-                        <h6 class="mt-0 mb-15 text-uppercase font-sm text-brand wow fadeIn animated">Our Team</h6>
-                        <h2 class="mb-15 wow fadeIn animated">Top team of experts</h2>
-                        <p class="text-grey-3 wow fadeIn animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione optio perferendis sequi mollitia quis autem ea cupiditate possimus!</p>
+            <!-- <div class="position-relative">
+                <div class="row wow fadeIn animated">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="blog-card border-radius-10 overflow-hidden text-center">
+                            <img src="assets/imgs/page/avatar-1.jpg" alt="" class="border-radius-10 mb-30 hover-up">
+                            <h4 class="fw-500 mb-0">Patric Adams</h4>
+                            <p class="fw-400 text-brand mb-10">CEO & Co-Founder</p>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 text-md-end mt-30">
-                        <a class="btn btn-outline btn-lg btn-brand-outline font-weight-bold text-brand text-hover-white border-radius-5 btn-shadow-brand hover-up">All Members</a>
+                    
+                    <div class="col-lg-3 col-md-6">
+                        <div class="blog-card border-radius-10 overflow-hidden text-center">
+                            <img src="assets/imgs/page/avatar-2.jpg" alt="" class="border-radius-10 mb-30 hover-up">
+                            <h4 class="fw-500 mb-0">Dilan Specter</h4>
+                            <p class="fw-400 text-brand mb-10">Head Engineer</p>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="blog-card border-radius-10 overflow-hidden text-center">
+                            <img src="assets/imgs/page/avatar-3.jpg" alt="" class="border-radius-10 mb-30 hover-up">
+                            <h4 class="fw-500 mb-0">Tomas Baker</h4>
+                            <p class="fw-400 text-brand mb-10">Senior Planner</p>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="blog-card border-radius-10 overflow-hidden text-center">
+                            <img src="assets/imgs/page/avatar-4.jpg" alt="" class="border-radius-10 mb-30 hover-up">
+                            <h4 class="fw-500 mb-0">Norton Mendos</h4>
+                            <p class="fw-400 text-brand mb-10">Project Manager</p>
+                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
+                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="position-relative">
-                    <div class="row wow fadeIn animated">
-                        <div class="col-lg-3 col-md-6">
-                            <div class="blog-card border-radius-10 overflow-hidden text-center">
-                                <img src="assets/imgs/page/avatar-1.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                                <h4 class="fw-500 mb-0">Patric Adams</h4>
-                                <p class="fw-400 text-brand mb-10">CEO & Co-Founder</p>
-                                <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
+            </div> -->
+        </div>
+    </section>
+
+
+
+
+    <section class="mt-400 pb-50">
+        <div class="accent-bg mar-t40">
+            <div class="layout vertical center card-header frame-size pad-t40">
+                <ul class="layout horizontal wrap justified pad0 mar-b40 flwidth">
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98">
+                            <img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/15_lakh_customer_500baeebe850.png">
+                        </div>
+                        <div class="layout vertical center-center-mob flwidth jss103">
+                            <span class="font-semi-bold font18-16">1.4 Cr+</span>
+                            <span class="font-semi-bold font16-14">Customers</span>
+                        </div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98">
+                            <img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/cash_efc77232393e.png">
+                        </div>
+                        <div class="layout vertical center-center-mob flwidth jss103">
+                            <span class="font-semi-bold font18-16">50 Lakh+</span>
+                            <span class="font-semi-bold font16-14">Devices Bought</span>
+                        </div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98">
+                            <img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/cash_efc77232393e.png">
+                        </div>
+                        <div class="layout vertical center-center-mob flwidth jss103">
+                            <span class="font-semi-bold font18-16">2500 Cr+</span>
+                            <span class="font-semi-bold font16-14">Cash Given</span>
+                        </div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98">
+                            <img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/Offline_Stores_13a0b9059bcb.png">
+                        </div>
+                        <div class="layout vertical center-center-mob flwidth jss103">
+                            <span class="font-semi-bold font18-16">150+</span>
+                            <span class="font-semi-bold font16-14">Offline Stores</span>
+                        </div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98"><img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/1_Mn_10aad13ff451.png"></div>
+                        <div class="layout vertical center-center-mob flwidth jss103"><span
+                                class="font-semi-bold font18-16">10 Mn+</span><span class="font-semi-bold font16-14">
+                                Devices
+                            </span></div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98"><img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/10_Lakh_387a3153d208.png"></div>
+                        <div class="layout vertical center-center-mob flwidth jss103"><span
+                                class="font-semi-bold font18-16">40 Lakh+</span><span
+                                class="font-semi-bold font16-14">Devices Sold</span></div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98"><img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/Serviceable_locations_c06cb8ac9185.png"></div>
+                        <div class="layout vertical center-center-mob flwidth jss103"><span
+                                class="font-semi-bold font18-16">15000+</span><span
+                                class="font-semi-bold font16-14">Serviceable Locations</span></div>
+                    </li>
+                    <li class="layout horizontal vertical-mob center-center pad16 mar-b20 jss97">
+                        <div class="layout horizontal center-center flwidth jss98"><img alt="Cashify" class="img-resp"
+                                src="https://s3n.cashify.in/imageLibrary/Services_d9a04f70e9d8.png"></div>
+                        <div class="layout vertical center-center-mob flwidth jss103"><span
+                                class="font-semi-bold font18-16">1000+</span><span
+                                class="font-semi-bold font16-14">Partners</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+    <section id="work" class="mt-400 pb-50">
+        <div class="container">
+            <div class="row mb-50">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <h6 class="mt-0 mb-5 text-uppercase  text-brand font-sm wow fadeIn animated">Evara Coporation</h6>
+                    <h3 class="mb-15 text-grey-1 wow fadeIn animated">Our main branches<br> around the world</h3>
+                    <p class="w-50 m-auto text-grey-3 wow fadeIn animated">At vero eos et accusamus et iusto odio
+                        dignissimos ducimus quiblanditiis praesentium. ebitis nesciunt voluptatum dicta reprehenderit
+                        accusamus</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 text-center mb-md-0 mb-4">
+                    <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
+                        src="assets/imgs/page/company-1.jpg" alt="">
+                    <h4 class="mt-30 mb-15 wow fadeIn animated">New York, USA</h4>
+                    <p class="text-grey-3 wow fadeIn animated">27 Division St, New York<br>NY 10002, USA</p>
+                </div>
+                <div class="col-md-4 text-center mb-md-0 mb-4">
+                    <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
+                        src="assets/imgs/page/company-2.jpg" alt="">
+                    <h4 class="mt-30 mb-15 wow fadeIn animated">Paris, France</h4>
+                    <p class="text-grey-3 wow fadeIn animated">22 Rue des Carmes<br> 75005 Paris</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
+                        src="assets/imgs/page/company-3.jpg" alt="">
+                    <h4 class="mt-30 mb-15 wow fadeIn animated">Jakarta, Indonesia</h4>
+                    <p class="text-grey-3 wow fadeIn animated">2476 Raya Yogyakarta,<br>89090 Indonesia</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- team -->
+    <section id="testimonials" class="section-padding section-border">
+        <div class="container pt-25">
+            <div class="row mb-50">
+                <div class="col-lg-12 col-md-12 text-center">
+                    <!-- <h6 class="mt-0 mb-10 text-uppercase  text-brand font-sm wow fadeIn animated">some facts</h6> -->
+                    <h3 class="mb-15 text-grey-1 wow fadeIn animated">Team</h3>
+                    <p class="w-50 m-auto text-grey-3 wow fadeIn animated">At vero eos et accusamus et iusto odio
+                        dignissimos ducimus quiblanditiis praesentium. ebitis nesciunt voluptatum dicta reprehenderit
+                        accusamus</p>
+                </div>
+            </div>
+
+
+
+            <div class="row align-items-center mt-5">
+                <section id="cards">
+                    <div class="container py-2">
+                        <!-- cards -->
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture">
+                                            <img src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">Carry Johnshon</h5>
+                                            <p class="text-muted small">CFO
+                                            </p>
+
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4 " style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture ">
+                                            <img src="https://images.unsplash.com/photo-1582003457856-20898dd7e1ea?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">Alex Carry</h5>
+                                            <p class=" text-muted small ">CFO</p>
+                                            <div class="mt-5"></div>
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture">
+                                            <img src="https://images.unsplash.com/photo-1492447166138-50c3889fccb1?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">John Smith</h5>
+                                            <p class="text-muted small">CFO
+                                            </p>
+                                            <div class="mt-5">
+                                            </div>
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture">
+                                            <img src="https://i.picsum.photos/id/836/130/130.jpg?hmac=Sot_REUw5W-XSuE6FmCjT9JenhZfiNqZYs3AQbfrZsc"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">George Alex</h5>
+                                            <p class="text-muted small">CFO
+                                            </p>
+
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture">
+                                            <img src="https://images.unsplash.com/photo-1495603889488-42d1d66e5523?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">Carry Johnshon</h5>
+                                            <p class=" text-capitalize text-muted small">CFO
+                                            </p>
+
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
+                                <div class="card shadow-sm border-0 card1">
+                                    <div class="card-body">
+                                        <div class="user-picture">
+                                            <img src="https://images.unsplash.com/photo-1582003457856-20898dd7e1ea?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=130&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=130"
+                                                class="shadow-sm rounded-circle" height="130" width="130" />
+                                        </div>
+                                        <div class="user-content">
+                                            <h5 class="">Alex Carry</h5>
+                                            <p class=" text-capitalize text-muted small">CFO
+                                            </p>
+                                            <p class="small text-muted mb-0">Lorem ipsum dolor sit amet consectetur
+                                                adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus
+                                                quaerat dolores ut, cupiditate molestiae commodi! Distinctio
+                                                praesentium, debitis aut minima doloribus earum
+                                                quia commodi.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!--col-->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="blog-card border-radius-10 overflow-hidden text-center">
-                                <img src="assets/imgs/page/avatar-2.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                                <h4 class="fw-500 mb-0">Dilan Specter</h4>
-                                <p class="fw-400 text-brand mb-10">Head Engineer</p>
-                                <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--col-->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="blog-card border-radius-10 overflow-hidden text-center">
-                                <img src="assets/imgs/page/avatar-3.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                                <h4 class="fw-500 mb-0">Tomas Baker</h4>
-                                <p class="fw-400 text-brand mb-10">Senior Planner</p>
-                                <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--col-->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="blog-card border-radius-10 overflow-hidden text-center">
-                                <img src="assets/imgs/page/avatar-4.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                                <h4 class="fw-500 mb-0">Norton Mendos</h4>
-                                <p class="fw-400 text-brand mb-10">Project Manager</p>
-                                <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                    <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--col-->
+                    </div>
+                    <!-- /cards -->
+                </section>
+                <!-- /Ui cards -->
+            </div>
+
+            <div class="row mt-30">
+                <div class="col-12 text-center">
+                    <p class="wow fadeIn animated">
+                        <a class="btn btn-brand text-white btn-shadow-brand hover-up btn-lg">View More</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- <section class="section-padding">
+        <div class="container pb-25">
+            <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Clients</h3>
+            <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
+                <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-2.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png" alt="">
+                    </div>
+                    <div class="brand-logo">
+                        <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
                     </div>
                 </div>
             </div>
-        </section>
-        <section id="work" class="mt-40 pt-50 pb-50 section-border">
-            <div class="container">
-                <div class="row mb-50">
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <h6 class="mt-0 mb-5 text-uppercase  text-brand font-sm wow fadeIn animated">Evara Coporation</h6>
-                        <h2 class="mb-15 text-grey-1 wow fadeIn animated">Our main branches<br> around the world</h2>
-                        <p class="w-50 m-auto text-grey-3 wow fadeIn animated">At vero eos et accusamus et iusto odio dignissimos ducimus quiblanditiis praesentium. ebitis nesciunt voluptatum dicta reprehenderit accusamus</p>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 text-center mb-md-0 mb-4">
-                        <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated" src="assets/imgs/page/company-1.jpg" alt="">
-                        <h4 class="mt-30 mb-15 wow fadeIn animated">New York, USA</h4>
-                        <p class="text-grey-3 wow fadeIn animated">27 Division St, New York<br>NY 10002, USA</p>
-                    </div>
-                    <div class="col-md-4 text-center mb-md-0 mb-4">
-                        <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated" src="assets/imgs/page/company-2.jpg" alt="">
-                        <h4 class="mt-30 mb-15 wow fadeIn animated">Paris, France</h4>
-                        <p class="text-grey-3 wow fadeIn animated">22 Rue des Carmes<br> 75005 Paris</p>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated" src="assets/imgs/page/company-3.jpg" alt="">
-                        <h4 class="mt-30 mb-15 wow fadeIn animated">Jakarta, Indonesia</h4>
-                        <p class="text-grey-3 wow fadeIn animated">2476 Raya Yogyakarta,<br>89090 Indonesia</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="testimonials" class="section-padding">
-            <div class="container pt-25">
-                <div class="row mb-50">
-                    <div class="col-lg-12 col-md-12 text-center">
-                        <h6 class="mt-0 mb-10 text-uppercase  text-brand font-sm wow fadeIn animated">some facts</h6>
-                        <h2 class="mb-15 text-grey-1 wow fadeIn animated">Take a look what<br> our clients say about us</h2>
-                        <p class="w-50 m-auto text-grey-3 wow fadeIn animated">At vero eos et accusamus et iusto odio dignissimos ducimus quiblanditiis praesentium. ebitis nesciunt voluptatum dicta reprehenderit accusamus</p>
-                    </div>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-1.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    J. Bezos
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-3.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    B.Gates
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-2.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    B. Meyers
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-4.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    J. Bezos
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-5.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    B.Gates
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="hero-card box-shadow-outer-6 wow fadeIn animated mb-30 hover-up d-flex">
-                            <div class="hero-card-icon icon-left-2 hover-up ">
-                                <img class="btn-shadow-brand hover-up border-radius-5 bg-brand-muted" src="assets/imgs/page/avatar-1.jpg" alt="">
-                            </div>
-                            <div class="pl-30">
-                                <h5 class="mb-5 fw-500">
-                                    B. Meyers
-                                </h5>
-                                <p class="font-sm text-grey-5">Adobe Jsc</p>
-                                <p class="text-grey-3">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis nesciunt voluptatum dicta reprehenderit accusamus voluptatibus voluptas."</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-30">
-                    <div class="col-12 text-center">
-                        <p class="wow fadeIn animated">
-                            <a class="btn btn-brand text-white btn-shadow-brand hover-up btn-lg">View More</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="section-padding">
-            <div class="container pb-25">
-                <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Clients</h3>
-                <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
-                    <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-2.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png" alt="">
-                        </div>
-                        <div class="brand-logo">
-                            <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section> -->
+</main>
 
 {% endblock %}
