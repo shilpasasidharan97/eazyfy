@@ -51,7 +51,7 @@
                 <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Completed<span class="badge badge-pill badge-warning shadow-warning">4</span></a>
             </li>
             <li class="nav-item">
-                <a href="#navpills-4" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Closed <span class="badge badge-pill badge-danger shadow-danger">1</span></a>
+                <a href="#navpills-4" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Order Queues<span class="badge badge-pill badge-danger shadow-danger"><i class="fa fa-shopping-cart"></i></span></a>
             </li>
         </ul>
     </div>
@@ -350,7 +350,7 @@
                 </div>
             </div>
         </div>
-
+{% comment %}
         <nav class="mt-5">
             <ul class="pagination pagination-gutter pagination-primary no-bg">
                 <li class="page-item page-indicator">
@@ -368,6 +368,8 @@
                 </li>
             </ul>
         </nav>
+        {% endcomment %}
+
     </div>
 
 <!-- ####################NAVPILL ##########################--> 
@@ -839,7 +841,15 @@
                 </div>
                 <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <span>Pickup Boy</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">Irfan</h5>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
@@ -866,11 +876,25 @@
             </div>
             <div class="modal-body">
 <div>
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum voluptas, quibusdam aperiam</span>
             </div>
-                <div class="btn-group mb-1">
-                    <button type="button" class="btn btn-secondary">Select Pick-Up Boy</button>
-                    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">
+            <div class="text-center">
+                <div class="basic-dropdown">
+                    <div class="dropdown">
+                        <button type="button" class="btn btn-secondary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select pickup Boy
+                        </button>
+                        <div class="dropdown-menu" style="">
+                            <a class="dropdown-item" href="#">pickup Boy1</a>
+                            <a class="dropdown-item" href="#">pickup Boy2</a>
+                            <a class="dropdown-item" href="#">pickup Boy3</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- <div class="btn-group mb-1">
+                    <button type="button" class="btn btn-secondary ">Select Pick-Up Boy</button>
+                    <button type="button" class="btn btn-secondary dropdown-toggle show" data-bs-toggle="dropdown">
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="#">Pickup boy1</a>
@@ -878,7 +902,9 @@
                         <a class="dropdown-item" href="#">Pickup boy3</a>
                         
                     </div>
-                </div>
+                </div> -->
+            </div>
+               
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>

@@ -23,5 +23,7 @@ urlpatterns = [
 
     path('wallet',views.wallet,name='wallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
+
+    path('profile',views.profile,name='profile'),
      
 ]

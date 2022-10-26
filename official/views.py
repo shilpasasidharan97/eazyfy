@@ -103,3 +103,6 @@ def transactionHistory(request):
 
 def wallet(request):
     return render(request,'official/wallet.html')
+
+def profile(request):
+    return render(request,'official/profile.html')
