@@ -15,7 +15,7 @@ i[class^="fi-rs-"]:before, i[class*=" fi-rs-"]:before, span[class^="fi-rs-"]:bef
     font-weight: normal !important;
     font-variant: normal;
     text-transform: none;
-    line-height: 1 !important;
+    line-height: 3 !important;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

@@ -4,10 +4,10 @@
     <div class="deznav-scroll">
         <div class="main-profile">
             <div class="image-bx">
-                <img src="{% static 'official/images/Untitled-1.jpg' %}" alt="">
+                <img src="{% static 'official/images/avatar/default-1.JPG' %}" alt="">
                 <a href="javascript:void(0);"><i class="fa fa-cog" aria-hidden="true"></i></a>
             </div>
-            <h5 class="name"><span class="font-w400">Hello,</span> Marquez</h5>
+            <h5 class="name"><span class="font-w400">Hello,</span> ADMIN</h5>
         </div>
 
 
@@ -17,6 +17,18 @@
                 <a href="{% url 'official:home' %}" class="ai-icon" aria-expanded="false">
                     <i class="flaticon-381-settings-2"></i>
                     <span class="nav-text">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'official:userrequestlist' %}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">User Request</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'official:wallet' %}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">Wallet</span>
                 </a>
             </li>
             <li>
@@ -31,7 +43,18 @@
                     <span class="nav-text">Product</span>
                 </a>
             </li>
-
+            <li>
+                <a href="{% url 'official:questionsadding' %}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">Questions</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'official:transactionhistory' %}" class="ai-icon" aria-expanded="false">
+                    <i class="flaticon-381-settings-2"></i>
+                    <span class="nav-text">Transaction History</span>
+                </a>
+            </li>
         </ul>
     </div>
 </div>
