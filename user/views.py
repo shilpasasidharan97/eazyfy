@@ -39,3 +39,9 @@ def my(request):
 
 def spec(request):
     return render(request,"user/spec-product.html")  
+
+def buy(request):
+    return render(request,"user/buyphone.html")  
+
+def repair(request):
+    return render(request,"user/repairphone.html")  
