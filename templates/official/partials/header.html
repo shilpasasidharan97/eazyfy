@@ -96,7 +96,7 @@ C67,8.3,67.3,9,67.6,9.6z" />
                                     <li>
                                         <div class="timeline-panel">
                                             <div class="media me-2">
-                                                <img alt="image" width="50" src="static/images/avatar/1.jpg">
+                                                <img alt="image" width="50" src="{% static 'official/images/avatar/1.jpg' %}">
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -126,10 +126,43 @@ C67,8.3,67.3,9,67.6,9.6z" />
                                             </div>
                                         </div>
                                     </li>
+                                    <li>
+                                        <div class="timeline-panel">
+                                            <div class="media me-2">
+                                                <img alt="image" width="50" src="{% static 'official/images/avatar/1.jpg' %}">
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="mb-1">Dr sultads Send you Photo</h6>
+                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-panel">
+                                            <div class="media me-2 media-danger">
+                                                KG
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="mb-1">Resport created successfully</h6>
+                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="timeline-panel">
+                                            <div class="media me-2 media-primary">
+                                                <i class="fa fa-home"></i>
+                                            </div>
+                                            <div class="media-body">
+                                                <h6 class="mb-1">Reminder : Treatment Time!</h6>
+                                                <small class="d-block">29 July 2020 - 02:26 PM</small>
+                                            </div>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
-                            <a class="all-notification" href="javascript:void(0)">See all notifications <i
-                                    class="ti-arrow-right"></i></a>
+                            <!-- <a class="all-notification" href="javascript:void(0)">See all notifications <i
+                                    class="ti-arrow-right"></i></a> -->
                         </div>
                     </li>
 
@@ -138,14 +171,14 @@ C67,8.3,67.3,9,67.6,9.6z" />
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
                             <img src="{% static 'official/images/avatar/default-1.JPG' %}" width="20" alt="" />
                             <div class="header-info">
-                                <span>John</span>
+                                <span>Admin</span>
                                 <small>Super Admin</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end">
 
                             <!-- profile -->
-                            <a href="" class="dropdown-item ai-icon">
+                            <a href="{% url 'official:profile' %}" class="dropdown-item ai-icon">
                                 <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18"
                                     height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
@@ -155,21 +188,9 @@ C67,8.3,67.3,9,67.6,9.6z" />
                                 <span class="ms-2">Profile </span>
                             </a>
 
-                            <!-- inbox -->
-                            <a href="" class="dropdown-item ai-icon">
-                                <svg id="icon-inbox" xmlns="http://www.w3.org/2000/svg" class="text-success" width="18"
-                                    height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                    stroke-linecap="round" stroke-linejoin="round">
-                                    <path
-                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                    </path>
-                                    <polyline points="22,6 12,13 2,6"></polyline>
-                                </svg>
-                                <span class="ms-2">Inbox </span>
-                            </a>
-
+                           
                             <!-- logout -->
-                            <a href="" class="dropdown-item ai-icon">
+                            <a href="{% url 'official:logout_view' %}" class="dropdown-item ai-icon">
                                 <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18"
                                     height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" stroke-linejoin="round">
