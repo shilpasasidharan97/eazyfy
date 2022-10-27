@@ -1955,10 +1955,32 @@ label {
   height: 320px !important;
 }
 
+/* vivek */
+
 @media screen and (max-width: 640px) {
   .hero-slider-1.style-3 .slider-1-height-3 {
-    height: 75px !important;
+    height: 109px !important;
   }
+  .banner-features{
+    height: 90px !important;
+    text-align: center;
+  }
+
+  .works{
+    height: 0px !important;
+    display: inline-block;
+  }
+
+  .section-padding{
+    padding: 15px;
+  }
+  .service-category{
+    margin: 10px 0 10px 0;
+  }
+}
+
+.service-category{
+  margin: 10px 0 10px 0;
 }
 
 .hero-slider-1.style-3 .slider-img {
@@ -3421,7 +3443,7 @@ table .product-thumbnail img {
 
 .banner-features h4 {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 500;
   /* display: inline-block; */
   padding: 9px 8px 6px 8px;
   line-height: 1;
@@ -7344,7 +7366,7 @@ span.fi-rs-apps {
 }
 
 .main-menu.main-menu-padding-1>nav>ul>li {
-  padding: 0 17px;
+  padding: 0px 27px;
 }
 
 .main-menu.main-menu-padding-1>nav>ul>li:first-child {
@@ -10054,7 +10076,7 @@ span.fi-rs-apps {
 /*small phone*/
 @media only screen and (max-width: 480px) {
   .service-icon {
-    width: 53px;
+    width: 37px;
   }
 
   .card-1 figure img {
@@ -10282,6 +10304,7 @@ span.fi-rs-apps {
 
   .banner-features {
     margin-bottom: 15px;
+    height: 90px;
   }
 
   .product-cart-wrap:not(:last-child),
@@ -10426,6 +10449,7 @@ span.fi-rs-apps {
     padding: 3px 0;
   }
 
+
   .header-height-2 {
     min-height: 40px;
   }
@@ -10463,7 +10487,7 @@ span.fi-rs-apps {
 /*# sourceMappingURL=main.css.map */
 
 .servicetext {
-  font-size: 13px !important;
+  font-size: 11px !important;
 }
 
 .grid-item {

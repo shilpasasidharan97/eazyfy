@@ -7,6 +7,85 @@
         background-color: #fff;
     }
 
+    .layout.center-justified,
+    .layout.center-center {
+        justify-content: center;
+    }
+
+
+    .layout.center,
+    .layout.center-center {
+        align-items: center;
+        border-radius: 10px;
+        padding: 0px 6px;
+    }
+
+    .layout.vertical {
+        flex-direction: column;
+    }
+
+    .list-search,
+    .list-search .list-container {
+        max-width: 510px;
+    }
+
+    .list-search {
+        position: relative;
+    }
+
+
+    .layout.horizontal {
+        flex-direction: row;
+    }
+
+    .list-search .drill-search {
+        min-width: 330px;
+        border: 1px solid rgba(112, 112, 112, 0.12);
+    }
+
+    .flwidth {
+        /* width: 100%; */
+    }
+
+    .card-shadow {
+        box-shadow: 0 0 10px 0 rgb(0 0 0 / 11%);
+        background-color: #FFFFFF;
+    }
+
+    .layout {
+        display: flex;
+    }
+
+    a,
+    button,
+    select,
+    textarea,
+    input[type="text"],
+    input[type="number"],
+    input[type="search"],
+    input[type="tel"] {
+        border: 0;
+        outline: 0;
+        -webkit-appearance: none;
+    }
+
+
+    .card {
+        background-color: #FFFFFF;
+    }
+
+    .font16-14 {
+        font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+        line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+    }
+
+    .mar-r10 {
+        margin-right: 10px;
+    }
+
+    .search-input {
+        font-family: Montserrat, sans-serif;
+    }
 
 
 
@@ -95,7 +174,7 @@
 
 <!-- Modal Franchise -->
 
-<div class="modal fade custom-modal" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel"
+<!-- <div class="modal fade custom-modal" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel"
     aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">              
@@ -108,8 +187,25 @@
                         </div>
                         <div class="deal-content">
                             <form class="form-subcriber d-flex wow fadeIn animated animated animated" style="visibility: visible;">
-                                <input type="text" class="form-control bg-white font-small" placeholder="Enter your email">
-                                
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="flwidth layout vertical list-search center-center">
+                                                <a class="flwidth">
+                                                    <label for="list-search-input"
+                                                        class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
+                                                        <span id="search-icon" class="search-icon layout center-center">
+                                                            <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
+                                                        </span>
+                                                        <input type="search" id="pd_list_search_input" autocomplete="off"
+                                                            placeholder="Search your Mobile Phone to sell"
+                                                            class="font16-14 flwidth card mar-r10 search-input">
+                                                    </label>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>                                
                             </form>
                         </div>
                         <div class="deal-bottom">
@@ -195,7 +291,7 @@
         </div>
     </div>
     {% endcomment %}
-</div>
+</div> -->
 
 
 <!-- Quick view -->
