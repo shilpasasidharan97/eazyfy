@@ -10,6 +10,7 @@ from .models import *
 def base(request):
     return render(request,'official/partials/base.html')
 
+
 def loginPage(request):
     if request.method == 'POST':
         phone = request.POST['phone']

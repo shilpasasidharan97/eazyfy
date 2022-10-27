@@ -45,3 +45,5 @@ def buy(request):
 
 def repair(request):
     return render(request,"user/repairphone.html")  
+def payment(request):
+    return render(request,"user/payment.html")      

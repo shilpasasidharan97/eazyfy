@@ -2,323 +2,434 @@
 {% load static %}
 {% block content %}
 
+<!-- modal -->
+<div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div class="modal-body" style="height: 300px;">
 
-    <main class="main">
-        <div class="page-header breadcrumb-wrap">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> sell phone
-                    <span></span> select your model spec
+                <div class="row">
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="detail-gallery">
+                      
+                            <img class="default-img " src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                            alt="">
+                            
+                        </div>
+                     
+                       
+                    </div>
+
+
+                    <div class="col-md-6 col-sm-12 col-xs-12">
+                        <div class="detail-info">
+                            <h3 class="title-detail mt-30">Iphone 11</h3>
+                            <div class="product-detail-rating">
+                                <div class="pro-details-brand">
+                                    <span> Veriant: <a href="shop-grid-right.html">16GB</a></span>
+                                </div>
+                               
+                            </div>
+                            <div class="clearfix product-price-cover">
+                                <div class="product-price primary-color float-left">
+                                    <ins><span class="text-brand">120.00</span></ins>
+                                    <ins><span class="old-price font-md ml-15">200.00</span></ins>
+                                    <span class="save-price  font-md color3 ml-15">25% Off</span>
+                                </div>
+                            </div>
+                            <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+                            <div class="short-desc mb-30">
+                                <button type="submit" class="button button-add-to-cart close"  aria-label="Close">Confirm</button>
+                            </div>
+                        </div>
+                        <!-- Detail Info -->
+                    </div>
+
                 </div>
             </div>
         </div>
-        <section class="mt-50 mb-50">
-            <div class="container shade-box" >
-                <div class="row flex-row-reverse">
-                    <div >
-                        <div class="product-detail accordion-detail">
-                            <div class="row mb-50">
-                                <div class="col-md-4 col-sm-12 col-xs-12" >
-                                    <div class="detail-gallery">
-                                        <!-- <span class="zoom-icon"><i class="fi-rs-search"></i></span> -->
-                                        <!-- MAIN SLIDES -->
-                                        <div class="product-image-slider">
-                                            <figure class="border-radius-10">
-                                                <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                            </figure>
-                                          
-                                        </div>
-                                      
-                                    </div>
-                                    <!-- End Gallery -->
-                                   
-                                </div>
-                                <div class="col-md-6 col-sm-12 col-xs-12" style="margin-top: 6%;">
-                                    <div class="detail-info">
-                                        <h2 class="title-detail">Iphone 11</h2>
-                                        <div class="product-detail-rating">
-                                            <div class="pro-details-brand">
-                                                <span style="color: violet;"> 30220+ <a href=""> already sold on easyfy</a></span>
-                                            </div>
-                                           
-                                           
-                                        </div>
-                                        <!-- <div class="clearfix product-price-cover">
-                                            <div class="product-price primary-color float-left">
-                                                <ins><span class="text-brand">₹120.00</span></ins>
-                                                
-                                            </div>
-                                        </div> -->
-                                        <div class="bt-1 border-color-1 mt-15 mb-15"></div>
-                                       
-                                       
-                                        <div class="attr-detail attr-size">
-                                            <strong class="mr-10">Choose a variant</strong>
-                                          
-                                            <ul class="list-filter size-filter font-small">
-                                                <li style="width: 97px;"  class="active"><a href="#">16 GB</a></li>
-                                                <li style="width: 97px;"><a href="#">32 GB</a></li>
-                                                <li style="width: 97px;"><a href="#">64 GB</a></li>
-                                               
-                                            </ul>
-                                        </div> <br>
-                                        <div class="attr-detail attr-color mb-15">
-                                            <a href="shop-grid-right.html" class="btn btn-sm btn-default">Get exact value -><i class="fa fa-arrow-circle-right"></i> </a>
-                                           
-                                        </div>
-                                        <div class="bt-1 border-color-1 mt-30 mb-30"></div>
-                                        
-                                    
-                                    </div>
-                                    <!-- Detail Info -->
-                                </div>
-                            </div>
-                     
-                                                    </div>
-                                                </div>
-                                               
-                                            </div>
-                                        </div> 
-                              <br><br>
-                               
-                                        <section class="section-padding">
-                                            <div class="container wow fadeIn animated">
-                                                <h3 class="section-title mb-20"><span>New</span> Arrivals</h3>
-                                                <div class="carausel-6-columns-cover position-relative">
-                                                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows">
-                                                    </div>
-                                                    <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                                    
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="hot">Hot</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Lorem ipsum dolor</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 238.85 </span>
-                                                                    <span class="old-price">₹ 245.8</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="new">New</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Aliquam posuere</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 173.85 </span>
-                                                                    <span class="old-price">₹ 185.8</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="sale">Sale</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Sed dapibus orci</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 215.85 </span>
-                                                                    <span class="old-price">₹ 235.8</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="hot">.33%</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Donec congue</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 83.8 </span>
-                                                                    <span class="old-price">₹ 125.2</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="hot">-25%</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Curabitur porta</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 1238.85 </span>
-                                                                    <span class="old-price">₹ 1245.8</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                                <div class="product-badges product-badges-position product-badges-mrg">
-                                                                    <span class="new">New</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Praesent maximus</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 123 </span>
-                                                                    <span class="old-price">₹ 156</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                        <div class="product-cart-wrap small hover-up">
-                                                            <div class="product-img-action-wrap">
-                                                                <div class="product-img product-img-zoom">
-                                                                    <a href="shop-product-right.html">
-                                                                        <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                        <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                                                    </a>
-                                                                </div>
-                                                                <div class="product-action-1">
-                                                                    <a aria-label="Quick view" class="action-btn small hover-up" data-bs-toggle="modal"
-                                                                        data-bs-target="#quickViewModal">
-                                                                        <i class="fi-rs-eye"></i></a>
-                                                                    <a aria-label="Add To Wishlist" class="action-btn small hover-up"
-                                                                        href="shop-wishlist.html" tabindex="0"><i class="fi-rs-heart"></i></a>
-                                                                    <a aria-label="Compare" class="action-btn small hover-up" href="shop-compare.html"
-                                                                        tabindex="0"><i class="fi-rs-shuffle"></i></a>
-                                                                </div>
-                                                            </div>
-                                                            <div class="product-content-wrap">
-                                                                <h2><a href="shop-product-right.html">Vestibulum ante</a></h2>
-                                    
-                                                                <div class="product-price">
-                                                                    <span>₹ 238.85 </span>
-                                                                    <span class="old-price">₹ 245.8</span>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!--End product-cart-wrap-2-->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </section>
-                           
-                        </div>
+    </div>
+</div>
+<!-- end modal -->
+<div class="featured section-padding">
+    <div class="container">
+        <div class="row">
+            <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
+            <div class="page-header breadcrumb-wrap">
+                <div class="container">
+                    <div class="breadcrumb">
+                        <a href="index.html" rel="nofollow">Home</a>
+                        <span> sell phone</span>
+                        <span></span> phone-spec
                     </div>
-                   
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </div>
+</div>
+<section class="mb-50">
+    <div class="container shade-box">
+        <div class="row flex-row-reverse">
+            <div>
+                <div class="product-detail accordion-detail">
+                    <div class="row mb-50">
+                        <div class="col-sm-4 col-md-4 col-4">
+                            <div class="">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom ">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img " src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                                alt="">
+
+                                        </a>
+
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-sm-8 col-md-8 col-8">
+                            <h2 class="title-detail">Iphone 11</h2>
+                            <div class="product-detail-rating">
+                                <div class="pro-details-brand">
+                                    <h5 style="color: violet;"> 30220+ <a href=""> already sold on easyfy</a></h5>
+                                </div>
+                            </div>
+                            <div class="detail-info">
+                                <div class="bt-1 border-color-1 mt-15 mb-15"></div>
+
+
+                                <div class="attr-detail attr-size">
+
+
+                                    <div class="list-filter size-filter font-small row">
+
+                                        <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
+                                                class="btn btn-secondary">16GB</a></div>
+                                        <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
+                                                class="btn">32GB</a></div>
+                                        <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
+                                                class="btn">64GB</a></div>
+                                    </div>
+                                </div> <br>
+                                <div class="attr-detail attr-color mb-15">
+                                    <h6> <a href="question" class="btn btn-sm btn-default">Get exact value <i
+                                                class="fi-rs-arrow-right"></i> </a></h6>
+
+                                </div>
+                                <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+
+
+                            </div>
+                        </div>
+
+                        <!-- Detail Info -->
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <br><br>
+
+
+    <section class="popular-categories section-padding mt-15">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most </span>selling brand</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shops"><img src="{% static 'user/imgs/banner/apple.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">T-Shirt</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/banner/honor.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Sandan</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/nok.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Scarf Cap</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/one.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Shoes</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/sam.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Pillowcase</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/oppo.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Jumpsuits</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/real.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Hats</a></h5> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows">
+                </div>
+                <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot">Hot</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 238.85 </span>
+                                                        <span class="old-price">₹ 245.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="new">New</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 173.85 </span>
+                                                        <span class="old-price">₹ 185.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="sale">Sale</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 215.85 </span>
+                                                        <span class="old-price">₹ 235.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot">.33%</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 83.8 </span>
+                                                        <span class="old-price">₹ 125.2</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot">-25%</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 1238.85 </span>
+                                                        <span class="old-price">₹ 1245.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="new">New</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 123 </span>
+                                                        <span class="old-price">₹ 156</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 238.85 </span>
+                                                        <span class="old-price">₹ 245.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot">.33%</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 83.8 </span>
+                                                        <span class="old-price">₹ 125.2</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                                        <span class="hot">-25%</span>
+                                                    </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                                        <span>₹ 1238.85 </span>
+                                                        <span class="old-price">₹ 1245.8</span>
+                                                    </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+    </div>
+
+    </div>
+    </div>
+</section>
 
 
 
-    
+
+
 
 {% endblock %}
