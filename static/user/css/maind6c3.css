@@ -226,7 +226,7 @@ a:hover {
 }
 
 ::selection {
-  background: #088178;
+  background: #610098;
   /* WebKit/Blink Browsers */
   color: #fff;
 }
@@ -1133,8 +1133,10 @@ button[type='submit']:hover {
   padding: 12px 30px;
   border-radius: 4px;
   color: #fff;
+
   border: 1px solid #621299;
   background-color: #621299;
+
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
@@ -1956,7 +1958,9 @@ label {
 }
 
 /* vivek */
-
+.selling-phone{
+  padding: 15px;
+}
 @media screen and (max-width: 640px) {
   .hero-slider-1.style-3 .slider-1-height-3 {
     height: 109px !important;
@@ -2225,7 +2229,7 @@ label {
 }
 
 .carausel-6-columns-cover .product-img {
-  border: 1px solid #e6d3f2
+  border: 1px solid #ececec;
 }
 
 .carausel-6-columns-cover .slider-arrow {
@@ -2297,7 +2301,7 @@ label {
   position: relative;
   background: #fff;
   text-align: center;
-  border: 1px solid #e6d3f2;
+  border: 1px solid #e3e3e3;
   border-radius: 20px;
 }
 
@@ -4632,13 +4636,20 @@ table .product-thumbnail img {
   border-radius: 4px;
   padding: 0 7px;
   background: #fff;
+  color: black;
+  font-weight: 500;
 }
 
 .size-filter.list-filter li a {
   border: 1px solid #e5e5e5;
-  color: black;
-  height: 30px;
+
+ /* color:black; */
+  
+ /* height: 42px; */
+  /* line-height: 40px; */
+ height: 30px;
   line-height: 30px;
+
   min-width: 30px;
   text-align: center;
   text-transform: uppercase;
@@ -4647,8 +4658,8 @@ table .product-thumbnail img {
 .size-filter.list-filter li a:hover,
 .size-filter.list-filter li.active a {
   color: #fff;
-  background-color: #088178;
-  border-color: #088178;
+  background-color: #640097;
+  border-color: #640097;
 }
 
 .detail-qty {

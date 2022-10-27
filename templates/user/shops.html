@@ -2,538 +2,710 @@
 {% load static %}
 {% block content %}
 
-
-
-<body>
-    <!-- Quick view -->
-    <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModal" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">              
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
-                <div class="modal-body">
-                    <div class="row">
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="detail-gallery">
-                                <span class="zoom-icon"><i class="fi-rs-search"></i></span>
-                                <!-- MAIN SLIDES -->
-                                <div class="product-image-slider">
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                    <figure class="border-radius-10">
-                                        <img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt="product image">
-                                    </figure>
-                                </div>
-                                <!-- THUMBNAILS -->
-                                <div class="slider-nav-thumbnails pl-15 pr-15">
-                                    <div><img src="assets/imgs/shop/thumbnail-3.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-4.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-5.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-6.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-7.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-8.jpg" alt="product image"></div>
-                                    <div><img src="assets/imgs/shop/thumbnail-9.jpg" alt="product image"></div>
-                                </div>
+    <main class="main">
+        <div class="featured section-padding">
+            <div class="container">
+                <div class="row">
+                    <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
+                    <div class="page-header breadcrumb-wrap">
+                        <div class="container">
+                            <div class="breadcrumb">
+                                <a href="index.html" rel="nofollow">Home</a>
+                                <span> sell phone</span>
+                                <!-- <span></span> Technology -->
                             </div>
-                            <!-- End Gallery -->
-                            <div class="social-icons single-share">
-                                <ul class="text-grey-5 d-inline-block">
-                                    <li><strong class="mr-10">Share this:</strong></li>
-                                    <li class="social-facebook"><a href="#"><img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt=""></a></li>
-                                    <li class="social-twitter"> <a href="#"><img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt=""></a></li>
-                                    <li class="social-instagram"><a href="#"><img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt=""></a></li>
-                                    <li class="social-linkedin"><a href="#"><img src="{% static 'user/imgs/shop/product-16-2.jpg' %}" alt=""></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-12 col-xs-12">
-                            <div class="detail-info">
-                                <h3 class="title-detail mt-30">Shifa </h3>
-                                <div class="product-detail-rating">
-                                    <div class="pro-details-brand">
-                                        <span> Brands: <a href="shop-grid-right.html">Bootstrap</a></span>
-                                    </div>
-                                    <div class="product-rate-cover text-end">
-                                        <div class="product-rate d-inline-block">
-                                            <div class="product-rating" style="width:90%">
-                                            </div>
-                                        </div>
-                                        <span class="font-small ml-5 text-muted"> (25 reviews)</span>
-                                    </div>
-                                </div>
-                                <div class="clearfix product-price-cover">
-                                    <div class="product-price primary-color float-left">
-                                        <ins><span class="text-brand">$120.00</span></ins>
-                                        <ins><span class="old-price font-md ml-15">$200.00</span></ins>
-                                        <span class="save-price  font-md color3 ml-15">25% Off</span>
-                                    </div>
-                                </div>
-                                <div class="bt-1 border-color-1 mt-15 mb-15"></div>
-                                <div class="short-desc mb-30">
-                                    <p class="font-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquam rem officia, corrupti reiciendis minima nisi modi,!</p>
-                                </div>
-                                
-                                <div class="attr-detail attr-color mb-15">
-                                    <strong class="mr-10">Color</strong>
-                                    <ul class="list-filter color-filter">
-                                        <li><a href="#" data-color="Red"><span class="product-color-red"></span></a></li>
-                                        <li><a href="#" data-color="Yellow"><span class="product-color-yellow"></span></a></li>
-                                        <li class="active"><a href="#" data-color="White"><span class="product-color-white"></span></a></li>
-                                        <li><a href="#" data-color="Orange"><span class="product-color-orange"></span></a></li>
-                                        <li><a href="#" data-color="Cyan"><span class="product-color-cyan"></span></a></li>
-                                        <li><a href="#" data-color="Green"><span class="product-color-green"></span></a></li>
-                                        <li><a href="#" data-color="Purple"><span class="product-color-purple"></span></a></li>
-                                    </ul>
-                                </div>
-                                <div class="attr-detail attr-size">
-                                    <strong class="mr-10">Size</strong>
-                                    <ul class="list-filter size-filter font-small">
-                                        <li><a href="#">S</a></li>
-                                        <li class="active"><a href="#">M</a></li>
-                                        <li><a href="#">L</a></li>
-                                        <li><a href="#">XL</a></li>
-                                        <li><a href="#">XXL</a></li>
-                                    </ul>
-                                </div>
-                                <div class="bt-1 border-color-1 mt-30 mb-30"></div>
-                                <div class="detail-extralink">
-                                    <div class="detail-qty border radius">
-                                        <a href="#" class="qty-down"><i class="fi-rs-angle-small-down"></i></a>
-                                        <span class="qty-val">1</span>
-                                        <a href="#" class="qty-up"><i class="fi-rs-angle-small-up"></i></a>
-                                    </div>
-                                    <div class="product-extra-link2">
-                                        <button type="submit" class="button button-add-to-cart">Add to cart</button>
-                                        <a aria-label="Add To Wishlist" class="action-btn hover-up" href="shop-wishlist.html"><i class="fi-rs-heart"></i></a>
-                                        <a aria-label="Compare" class="action-btn hover-up" href="shop-compare.html"><i class="fi-rs-shuffle"></i></a>
-                                    </div>
-                                </div>
-                                <ul class="product-meta font-xs color-grey mt-50">
-                                    <li class="mb-5">SKU: <a href="#">FWM15VKT</a></li>
-                                    <li class="mb-5">Tags: <a href="#" rel="tag">Cloth</a>, <a href="#" rel="tag">Women</a>, <a href="#" rel="tag">Dress</a> </li>
-                                    <li>Availability:<span class="in-stock text-success ml-5">8 Items In Stock</span></li>
-                                </ul>
-                            </div>
-                            <!-- Detail Info -->
                         </div>
                     </div>
-                </div>        
-        </div>
-        </div>
-    </div>
-    
-   
-
-    <main class="main">
-        <div class="page-header breadcrumb-wrap">
-            <div class="container">
-                <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
-                    <span></span> Shop
                 </div>
             </div>
         </div>
-        <section class="mt-50 mb-50">
+    
+        <section class="featured section-padding">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="shop-product-fillter">
-                            <div class="totall-product">
-                                <h3 class="section-title mb-20 wow fadeIn animated"><span>Sell old</span> Apple  Mobile phone</h3>
-                                <p> select  <strong class="text-brand">your model</strong></p>
-                            </div>
-                            
-                        </div>
-                        <div class="row product-grid-3">
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
+                    <h4 class="section-title mb-20">Select model</h4>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="question">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                            <a href="spec">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                                    alt="">
+                                                  
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                                    alt="">
+                                                    
                                             </a>
                                         </div>
-                                        
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="question">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="question">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="question">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="question">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                        
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                        
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                      
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                        
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                      
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                      
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                      
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                       
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-3 col-md-4 col-sm-4 col-4">
-                                <div class="product-cart-wrap mb-30">
-                                    <div class="product-img-action-wrap">
-                                        <div class="product-img product-img-zoom">
-                                            <a href="shop-product-right.html">
-                                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                            </a>
-                                        </div>
-                                    
-                                        <div class="product-badges product-badges-position product-badges-mrg">
-                                            <!-- <span class="hot">Hot</span> -->
-                                        </div>
-                                    </div>
-                                    <div class="product-content-wrap">
-                                        <div class="product-category">
-                                            <!-- <a href="shop-grid-right.html">Music</a> -->
-                                        </div>
-                                        <h2><a href="shop-product-right.html">Iphone 11</a></h2>
-                                       
+                                        <h6>Iphone</h6>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-cart-wrap small hover-up">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="shop-product-right.html">
+                                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                                        alt="">
+                                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                                        alt="">
+
+                                                        
+                                                </a>
+                                            </div>
+
+                                            <h6>Iphone</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 1.jpg' %}"                                           
+                                                      alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 1.jpg' %}">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"                                                 alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 3.jpg' %}"                                                   alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 3.jpg' %}">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+    
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"                                                    alt="">
+    
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"                                                   alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-cart-wrap small hover-up">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="shop-product-right.html">
+                                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 1.jpg'' %}"                                                       alt="">
+                                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 1.jpg'' %}"                                                       alt="">
+                                                </a>
+                                            </div>
+                                            <h6>Iphone</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+    
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}"                                                   alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}"                                                   alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}"                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}"                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}" 
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 3.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 3.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"
+                                                    alt="">
+    
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-cart-wrap small hover-up">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="shop-product-right.html">
+                                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"                                                       alt="">
+                                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"                                                       alt="">
+                                                </a>
+                                            </div>
+                                            <h6>Iphone</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-cart-wrap small hover-up">
+                                        <div class="product-img-action-wrap">
+                                            <div class="product-img product-img-zoom">
+                                                <a href="shop-product-right.html">
+                                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}"                                                       alt="">
+                                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}"                                                       alt="">
+                                                </a>
+                                            </div>
+                                            <h6>Iphone</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+    
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 1.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 1.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+    
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 4 (1).jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2" style="padding: 1%;">
+                        <div class="card2">
+                            <div class="card-body">
+    
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2 (1).jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                        <h6>Iphone</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
+    
+
+        <div class="featured section-padding">
+            <div class="container">
+                <div class="row">
+                    <h3 class="section-title mb-20">Why <span>sell</span> on Eazyfy </h3>
+                   
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+        <div class=" row">
+        <div class="card col-lg-4" style="border: none;">
+            <img class="card-img-top" style="width: 35%; margin-left: 33%;" src="{% static 'user/imgs/theme/price2.png' %}" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="text-center">safe & secure</h4>
+              <p class="card-text text-center">Select your device & we’ll help you unlock the best selling price based on the present conditions of your gadget & the current market price.</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+          <div class="card col-lg-4" style="border: none;">
+            <img class="card-img-top"  style="width: 35%; margin-left: 33%;" src="{% static 'user/imgs/theme/book-pickup.png' %}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="text-center">Instant payment</h4>
+              <p class="card-text text-center">On accepting the price offered for your device, we’ll arrange a free pick up.</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+          <div class="card col-lg-4" style="border: none;">
+            <img class="card-img-top"  style="width: 35%; margin-left: 33%;" src="{% static 'user/imgs/theme/get-paid.png' %}" alt="Card image cap">
+            <div class="card-body">
+                <h4 class="text-center">Best price</h4>
+              <p class="card-text text-center">Instant Cash will be handed over to you at time of pickup or through payment mode of your choice.</p>
+              <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+    <section class="popular-categories section-padding mt-15">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most </span>selling brand</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shops"><img src="{% static 'user/imgs/banner/apple.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">T-Shirt</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/banner/honor.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Sandan</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/nok.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Scarf Cap</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/one.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Shoes</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/sam.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Pillowcase</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/oppo.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Jumpsuits</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/real.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="shop-grid-right.html">Hats</a></h5> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section-padding">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows">
+                </div>
+                <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">Hot</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 238.85 </span>
+                                <span class="old-price">₹ 245.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="new">New</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 173.85 </span>
+                                <span class="old-price">₹ 185.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="sale">Sale</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 215.85 </span>
+                                <span class="old-price">₹ 235.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">.33%</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 83.8 </span>
+                                <span class="old-price">₹ 125.2</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">-25%</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 1238.85 </span>
+                                <span class="old-price">₹ 1245.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="new">New</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 123 </span>
+                                <span class="old-price">₹ 156</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 238.85 </span>
+                                <span class="old-price">₹ 245.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">.33%</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 83.8 </span>
+                                <span class="old-price">₹ 125.2</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="shop-product-right.html">
+                                    <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                            <!-- <div class="product-badges product-badges-position product-badges-mrg">
+                                <span class="hot">-25%</span>
+                            </div> -->
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+
+                            <!-- <div class="product-price">
+                                <span>₹ 1238.85 </span>
+                                <span class="old-price">₹ 1245.8</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="banner-2 section-padding pb-0">
+        <div class="container">
+            <div class="banner-img banner-big wow fadeIn animated f-none">
+                <img src="assets/imgs/banner/sp1.jpg" alt="">
+                <img src="{% static 'user/imgs/banner/playstore.jpg' %}" alt="">
+                <div class="banner-text " style="margin-left: 49%;">
+                    <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active"
+                            src="{% static 'user/imgs/theme/app-store.jpg' %}" alt=""></a>
+                    <a href="#" class="hover-up"><img src="{% static 'user/imgs/theme/google-play.jpg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section><br><br>
     </main>
    
     
