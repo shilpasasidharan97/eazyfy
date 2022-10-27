@@ -843,9 +843,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Spartan", sans-serif;
+  font-family: "Montserrat", "sans-serif";
   color: #222222;
-  font-weight: 600;
+  font-weight: 400;
   line-height: 1.2;
 }
 
@@ -897,7 +897,7 @@ b {
 
 strong,
 .fw-600 {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .fw-900 {
@@ -909,7 +909,7 @@ strong,
 }
 
 .section-title {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .section-title.style-1 {
@@ -2714,7 +2714,7 @@ label {
 
 .page-header.breadcrumb-wrap {
   padding: 8px;
-  background-color: #f7f8f9;
+  /* background-color: #f7f8f9; */
 }
 
 .page-header .breadcrumb {
@@ -5607,6 +5607,7 @@ h6.post-title {
 .logo.logo-width-1 {
   margin-left: 29px;
   margin-right: 66px;
+
 }
 
 .logo.logo-width-1 a img {
@@ -9038,7 +9039,7 @@ span.fi-rs-apps {
 }
 
 .mb-20 {
-  margin-bottom: 20px !important;
+  margin-bottom: 10px !important;
 }
 
 .mb-25 {
@@ -9511,7 +9512,8 @@ span.fi-rs-apps {
 
 
 .wusbanner {
-  background-color: #fbf5ff;
+
+  background-color:#f6e8ff;
   /* height: 270px; */
   /* margin-top: 7px; */
   line-height: 21px;
