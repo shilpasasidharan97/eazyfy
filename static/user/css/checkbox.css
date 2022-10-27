@@ -266,7 +266,11 @@
       /* end franchise dropdown */
 
       .shade-box{
-        border: solid 1px #d4d1d1;
+        border-radius: 17px;
         padding-top: 18px;
-        box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgb(0 0 0 / 22%);
+        box-shadow: 2px 1px 23px rgb(0 0 0 / 11%);
+      }
+      .img1{
+        margin-left: 22%;
+    margin-top: 73px
       }
