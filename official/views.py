@@ -155,11 +155,11 @@ def wallet(request):
     return render(request,'official/wallet.html')
 
 
-
-
-
+def profile(request):
+    return render(request,'official/profile.html')
 
 
 def logout_view(request):
     logout(request)
     return redirect('/official/loginpage')
+
