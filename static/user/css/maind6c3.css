@@ -1131,8 +1131,8 @@ button.submit:hover, button[type='submit']:hover {
   padding: 12px 30px;
   border-radius: 4px;
   color: #fff;
-  border: 1px solid #046963;
-  background-color: #088178;
+  border: 1px solid #640097;
+  background-color: #640097;
   cursor: pointer;
   -webkit-transition: all 300ms linear 0s;
   transition: all 300ms linear 0s;
@@ -4606,8 +4606,8 @@ table .product-thumbnail img {
 .size-filter.list-filter li a {
   border: 1px solid #e5e5e5;
   color:black;
-  height: 30px;
-  line-height: 30px;
+  height: 42px;
+  line-height: 40px;
   min-width: 30px;
   text-align: center;
   text-transform: uppercase;
@@ -4616,8 +4616,8 @@ table .product-thumbnail img {
 .size-filter.list-filter li a:hover,
 .size-filter.list-filter li.active a {
   color: #fff;
-  background-color: #088178;
-  border-color: #088178;
+  background-color: #640097;
+  border-color: #640097;
 }
 
 .detail-qty {

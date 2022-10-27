@@ -569,29 +569,35 @@
             </div>
 
             <div class="step row">
-              <div class="form-check col-lg-12">
+              <div class="form-check col-lg-4">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                 <label class="form-check-label" for="flexRadioDefault1">
-                  Default radio
+                 <h5> Below 3 months</h5> 
                 </label>
               </div>
-              <div class="form-check">
+              <div class="form-check col-lg-4">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
-                  Default checked radio
+                 <h5> 3 months to 6 months</h5>
                 </label>
               </div>
-              <div class="form-check">
+              <div class="form-check col-lg-4">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
-                  Default checked radio
+                  <h5>  6 months to 11 months</h5>
                 </label>
               </div>
-              <div class="form-check">
+              <div class="form-check col-lg-4">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
-                  Default checked radio
+                  <h5> above 11 months</h5>
                 </label>
+              </div><br><br><br><br><br><br><br><br>
+              <div class="product-action-1">
+                <button  data-bs-toggle="modal" data-bs-target="#quickViewModal" class="btn btn-irv ">
+                 continue
+                </button>
+            
               </div>
             </div>
           </div>
@@ -619,15 +625,14 @@
 
       </div>
     </div>
-    <div class="col-lg-4">
+    <div class="col-lg-4 ">
       <div class="wizard card-like">
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 18rem; border: none;">
           <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap">
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-              content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title text-center">Iphone 11</h5>
+           
+            
           </div>
         </div>
       </div>
@@ -635,7 +640,28 @@
   </div>
 </div>
 
-  
+<!-- <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+  <div class="modal-content">              
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+          <div class="modal-body" style=" height: 663px;">
+              <div class="row">
+                  <div class="col-md-6 col-sm-12 col-xs-12">
+                     jklljj
+                  </div>
+                  
+              </div>
+          </div>        
+  </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+
 
     {% endblock %}
 
