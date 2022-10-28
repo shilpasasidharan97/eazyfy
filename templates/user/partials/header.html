@@ -172,100 +172,30 @@
     /* end franchise dropdown */
 </style>
 
-<!-- Modal Franchise -->
-
-<div class="modal fade custom-modal" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel"
-    aria-hidden="true">
+<div class="modal fade custom-modal show" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
     <div class="modal-dialog">
-        <div class="modal-content">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div class="modal-content">              
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
             <div class="modal-body">
                 <div class="deal" style="background-image: url('assets/imgs/banner/menu-banner-7.png')">
                     <div class="deal-top">
-                        <h2 class="text-brand">Choose Your Location to sell Your Mobile Phone</h2>
-
+                        <h2 class="text-brand">Deal of the Day</h2>
+                        <h5>Limited quantities.</h5>
                     </div>
                     <div class="deal-content">
-                        <form class="form-subcriber d-flex wow fadeIn animated animated animated"
-                            style="visibility: visible;">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <div class="flwidth layout vertical list-search center-center">
-                                            <a class="flwidth">
-                                                <label for="list-search-input"
-                                                    class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
-                                                    <span id="search-icon" class="search-icon layout center-center">
-                                                        <img alt="product_search" class=""
-                                                            src="{% static 'user/imgs/ProductSearch.svg' %}">
-                                                    </span>
-                                                    <input type="search" id="pd_list_search_input" autocomplete="off"
-                                                        placeholder="Search your Mobile Phone to sell"
-                                                        class="font16-14 flwidth card mar-r10 search-input">
-                                                </label>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
+                        <h6 class="product-title"><a href="shop-product-right.html">Summer Collection New Morden Design</a></h6>
+                        <div class="product-price"><span class="new-price">$139.00</span><span class="old-price">$160.99</span></div>
                     </div>
                     <div class="deal-bottom">
-                        <div class="row">
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-
-                            </div>
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-                            </div>
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-                            </div>
-                            <div class="col-2 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
-                        </div>
+                        <p>Hurry Up! Offer End In:</p>
+                        <div class="deals-countdown" data-countdown="2025/03/25 00:00:00"><span class="countdown-section"><span class="countdown-amount hover-up">03</span><span class="countdown-period"> days </span></span><span class="countdown-section"><span class="countdown-amount hover-up">07</span><span class="countdown-period"> hours </span></span><span class="countdown-section"><span class="countdown-amount hover-up">04</span><span class="countdown-period"> mins </span></span><span class="countdown-section"><span class="countdown-amount hover-up">14</span><span class="countdown-period"> sec </span></span></div>
+                        <a href="shop-grid-right.html" class="btn hover-up">Shop Now <i class="fi-rs-arrow-right"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>        
+    </div>
     </div>
 </div>
-
-
-
-
 <header class="header-area header-style-1 header-height-2">
 
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
@@ -300,7 +230,7 @@
 
                             </div>
                             <div class="header-action-icon-2">
-                                <button class="btn  btn-sm"><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
+                                <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
 
                             </div>
                         </div>
@@ -507,126 +437,29 @@
 
                                 </li>
                                 <li>
-                                    <a href="sell">Sell phones <i class="fi-rs-angle-down"></i></a>
+                                    <a href="{% url 'user:sell' %}">Sell phones <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li style="font-weight: bold;">Our top Brands</li>
-                                        <li><a href="page-about.html">Apple</a></li>
-                                        <li><a href="page-contact.html">Samsung</a></li>
-                                        <li><a href="page-account.html">Xiaomi</a></li>
-                                        <li><a href="page-login-register.html">One plus</a></li>
-                                        <li><a href="page-purchase-guide.html">Nokia</a></li>
-                                        <li><a href="page-privacy-policy.html">Poco</a></li>
-                                        <li><a href="page-terms.html">vivo</a></li>
-                                        <li><a href="page-404.html">more</a></li>
+                                        <li><a href="{% url 'user:shops' %}">Apple</a></li>
+                                        <li><a href="{% url 'user:shops' %}">Samsung</a></li>
+                                        <li><a href="{% url 'user:shops' %}">Xiaomi</a></li>
+                                        <li><a href="{% url 'user:shops' %}">One plus</a></li>
+                                        <li><a href="{% url 'user:shops' %}">Nokia</a></li>
+                                        <li><a href="{% url 'user:shops' %}">Poco</a></li>
+                                        <li><a href="{% url 'user:shops' %}">vivo</a></li>
+                                        <li><a href="{% url 'user:sell' %}">more</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="shop-grid-right.html">Sell gadgets </i></a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="shop-grid-right.html">Shop Grid – Right Sidebar</a></li>
-                                            <li><a href="shop-grid-left.html">Shop Grid – Left Sidebar</a></li>
-                                            <li><a href="shop-list-right.html">Shop List – Right Sidebar</a></li>
-                                            <li><a href="shop-list-left.html">Shop List – Left Sidebar</a></li>
-                                            <li><a href="shop-fullwidth.html">Shop - Wide</a></li>
-                                            <li><a href="#">Single Product <i class="fi-rs-angle-right"></i></a>
-                                                <ul class="level-menu">
-                                                    <li><a href="shop-product-right.html">Product – Right Sidebar</a>
-                                                    </li>
-                                                    <li><a href="shop-product-left.html">Product – Left Sidebar</a></li>
-                                                    <li><a href="shop-product-full.html">Product – No sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="shop-filter.html">Shop – Filter</a></li>
-                                            <li><a href="shop-wishlist.html">Shop – Wishlist</a></li>
-                                            <li><a href="shop-cart.html">Shop – Cart</a></li>
-                                            <li><a href="shop-checkout.html">Shop – Checkout</a></li>
-                                            <li><a href="shop-compare.html">Shop – Compare</a></li>
-                                        </ul> -->
+                                <li class="position-static">
+                                    <a href="#">Buy phones</i></a>
                                 </li>
-                                <li class="position-static"><a href="#">Buy phones</i></a>
-                                    <!-- <ul class="mega-menu">
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Women's Fashion</a>
-                                                <ul>
-                                                    <li><a href="shop-product-right.html">Dresses</a></li>
-                                                    <li><a href="shop-product-right.html">Blouses & Shirts</a></li>
-                                                    <li><a href="shop-product-right.html">Hoodies & Sweatshirts</a></li>
-                                                    <li><a href="shop-product-right.html">Wedding Dresses</a></li>
-                                                    <li><a href="shop-product-right.html">Prom Dresses</a></li>
-                                                    <li><a href="shop-product-right.html">Cosplay Costumes</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Men's Fashion</a>
-                                                <ul>
-                                                    <li><a href="shop-product-right.html">Jackets</a></li>
-                                                    <li><a href="shop-product-right.html">Casual Faux Leather</a></li>
-                                                    <li><a href="shop-product-right.html">Genuine Leather</a></li>
-                                                    <li><a href="shop-product-right.html">Casual Pants</a></li>
-                                                    <li><a href="shop-product-right.html">Sweatpants</a></li>
-                                                    <li><a href="shop-product-right.html">Harem Pants</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-22">
-                                                <a class="menu-title" href="#">Technology</a>
-                                                <ul>
-                                                    <li><a href="shop-product-right.html">Gaming Laptops</a></li>
-                                                    <li><a href="shop-product-right.html">Ultraslim Laptops</a></li>
-                                                    <li><a href="shop-product-right.html">Tablets</a></li>
-                                                    <li><a href="shop-product-right.html">Laptop Accessories</a></li>
-                                                    <li><a href="shop-product-right.html">Tablet Accessories</a></li>
-                                                </ul>
-                                            </li>
-                                            <li class="sub-mega-menu sub-mega-menu-width-34">
-                                                <div class="menu-banner-wrap">
-                                                    <a href="shop-product-right.html"><img
-                                                            src="{% static 'user/imgs/banner/menu-banner.jpg' %}"
-                                                            alt="Evara"></a>
-                                                    <div class="menu-banner-content">
-                                                        <h4>Hot deals</h4>
-                                                        <h3>Don't miss<br> Trending</h3>
-                                                        <div class="menu-banner-price">
-                                                            <span class="new-price text-success">Save to 50%</span>
-                                                        </div>
-                                                        <div class="menu-banner-btn">
-                                                            <a href="shop-product-right.html">Shop now</a>
-                                                        </div>
-                                                    </div>
-                                                    <div class="menu-banner-discount">
-                                                        <h3>
-                                                            <span>35%</span>
-                                                            off
-                                                        </h3>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul> -->
-                                </li>
-                                <li><a href="blog-category-grid.html">Find new gadgets</a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="blog-category-grid.html">Blog Category Grid</a></li>
-                                            <li><a href="blog-category-list.html">Blog Category List</a></li>
-                                            <li><a href="blog-category-big.html">Blog Category Big</a></li>
-                                            <li><a href="blog-category-fullwidth.html">Blog Category Wide</a></li>
-                                            <li><a href="#">Single Post <i class="fi-rs-angle-right"></i></a>
-                                                <ul class="level-menu level-menu-modify">
-                                                    <li><a href="blog-post-left.html">Left Sidebar</a></li>
-                                                    <li><a href="blog-post-right.html">Right Sidebar</a></li>
-                                                    <li><a href="blog-post-fullwidth.html">No Sidebar</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul> -->
-                                </li>
-                                <li><a href="#">Eazyfy store</i></a>
-                                    <!-- <ul class="sub-menu">
-                                            <li><a href="page-about.html">About Us</a></li>
-                                            <li><a href="page-contact.html">Contact</a></li>
-                                            <li><a href="page-account.html">My Account</a></li>
-                                            <li><a href="page-login-register.html">login/register</a></li>
-                                            <li><a href="page-purchase-guide.html">Purchase Guide</a></li>
-                                            <li><a href="page-privacy-policy.html">Privacy Policy</a></li>
-                                            <li><a href="page-terms.html">Terms of Service</a></li>
-                                            <li><a href="page-404.html">404 Page</a></li>
-                                        </ul> -->
+                                <li>
+                                    <a href="{% url 'user:repair' %}">Repair Phone </i></a>
+                                <li>
+                                    <a href="shop-grid-right.html">Sell gadgets </i></a>      
+                                </li>            
+                                <li>
+                                    <a href="blog-category-grid.html">Find new gadgets</a>                  
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -635,13 +468,10 @@
                                         <li><a href="account">My Account</a></li>
                                         <li><a href="login">login/register</a></li>
                                         <li><a href="privacy">Privacy Policy</a></li>
-                                        <li><a href="terms">Terms of Service</a></li>
+                                        <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
                                     </ul>
                                 </li>
-                                <!-- <li>
-                                        <a href="contact">Contact</a>
-                                    </li> -->
                             </ul>
                         </nav>
                     </div>

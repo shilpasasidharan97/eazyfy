@@ -1046,6 +1046,10 @@ h5.widget-title {
   padding: 8px 18px !important;
   font-size: 12px;
 }
+.btn-login{
+  padding: 0px 18px !important;
+  font-size: 12px;
+}
 
 .btn-md {
   padding: 10px 24px !important;
@@ -1074,7 +1078,7 @@ h5.widget-title {
 }
 
 .btn-shadow-brand:hover {
-  border: 1px solid #088178;
+  /* border: 1px solid #088178; */
 }
 
 .btn-brand {
@@ -1451,14 +1455,14 @@ textarea:focus {
   color: #ffffff;
   border: none;
 
-  background-color: #088178;
-  border: 1px solid #046963;
+  background-color: #539f23;
+  border: 1px solid #539f23;
 
   border-radius: 5px;
 }
 
 .contact-from-area .contact-form-style button:hover {
-  background-color: #046963 !important;
+  background-color: #539f23 !important;
 }
 
 .form-group {
@@ -1554,8 +1558,8 @@ label {
 }
 
 .custome-checkbox input[type="checkbox"]:checked+.form-check-label::before {
-  background-color: #088178;
-  border-color: #088178;
+  background-color: #539f23;
+  border-color: #539f23;
 }
 
 .custome-checkbox input[type="checkbox"]:checked+.form-check-label::after {
@@ -1962,7 +1966,38 @@ label {
   height: 320px !important;
 }
 
+
 /* vivek */
+.service-image{
+  padding: 0px 14px 14px 14px;
+}
+.title-detail{
+  font-size: 20px !important;
+}
+
+.whysell{
+  box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
+  width: 348px;
+}
+
+.card3 {
+  box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
+  border-radius: 7%;
+  height: 178px;
+}
+.input{
+  border: 1px  solid #e2e9e1 !important;
+}
+.brand-text{
+  color: #621299;
+}
+.footer-logo{
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+.product-name{
+  font-size: 14px !important;
+}
 .selling-phone{
   padding: 15px;
 }
@@ -1990,6 +2025,8 @@ label {
 
 .service-category{
   margin: 10px 0 10px 0;
+  width: 14.2% !important;
+  flex: 0 0 auto;
 }
 
 .hero-slider-1.style-3 .slider-img {
@@ -7416,7 +7453,7 @@ span.fi-rs-apps {
 }
 
 .main-menu>nav>ul>li ul.sub-menu li a:hover {
-  color: #088178;
+  color: #5f009a;
 }
 
 .main-menu>nav>ul>li ul.mega-menu li .menu-banner-wrap .menu-banner-content h4 {
@@ -9551,7 +9588,7 @@ span.fi-rs-apps {
 
 .wusbanner {
 
-  background-color:#f6e8ff;
+  background-color:#f6e8ffcf;
   /* height: 270px; */
   /* margin-top: 7px; */
   line-height: 21px;
@@ -10503,7 +10540,7 @@ span.fi-rs-apps {
 /*# sourceMappingURL=main.css.map */
 
 .servicetext {
-  font-size: 11px !important;
+  font-size: 13px !important;
 }
 
 .grid-item {
@@ -10523,4 +10560,99 @@ span.fi-rs-apps {
 
 .color-banner-text2 {
   color: white
+}
+
+
+/* shilpa */
+.banner-texts {
+  padding: 20px 0px;
+}
+
+.layout.center-justified,
+.layout.center-center {
+  justify-content: center;
+}
+
+
+.layout.center,
+.layout.center-center {
+  align-items: center;
+  border-radius: 10px;
+  padding: 0px 6px;
+}
+
+.layout.vertical {
+  flex-direction: column;
+}
+
+.list-search,
+.list-search .list-container {
+  max-width: 510px;
+}
+
+.list-search {
+  position: relative;
+}
+
+
+.layout.horizontal {
+  flex-direction: row;
+}
+
+.list-search .drill-search {
+  min-width: 330px;
+  border: 1px solid rgba(112, 112, 112, 0.12);
+}
+
+.flwidth {
+  width: 100%;
+}
+
+.card-shadow {
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 11%);
+  background-color: #FFFFFF;
+}
+
+.layout {
+  display: flex;
+}
+
+a,
+button,
+select,
+textarea,
+input[type="text"],
+input[type="number"],
+input[type="search"],
+input[type="tel"] {
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+
+.card {
+  background-color: #FFFFFF;
+}
+
+.font16-14 {
+  font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+  line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+}
+
+.mar-r10 {
+  margin-right: 10px;
+}
+
+.search-input {
+  font-family: Montserrat, sans-serif;
+}
+
+.jss87::after,
+.jss87::before {
+  width: 2rem;
+  margin: 5px 1rem;
+  content: '';
+  display: inline-block;
+  border-top: 1px solid black;
 }
