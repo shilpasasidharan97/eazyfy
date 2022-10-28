@@ -14,7 +14,7 @@ def contact(request):
     return render(request,"user/contact.html")
 
 def termsAndConditions(request):
-    return render(request,"user/terms-and-conditions.html.html")
+    return render(request,"user/terms-and-conditions.html")
 
 def login(request):
     return render(request,"user/login.html")
