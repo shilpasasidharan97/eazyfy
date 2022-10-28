@@ -13,8 +13,8 @@ def about(request):
 def contact(request):
     return render(request,"user/contact.html")
 
-def terms(request):
-    return render(request,"user/tandc.html")
+def termsAndConditions(request):
+    return render(request,"user/terms-and-conditions.html.html")
 
 def login(request):
     return render(request,"user/login.html")
