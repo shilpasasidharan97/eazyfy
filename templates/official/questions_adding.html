@@ -3,7 +3,141 @@
 {% load static %}
 
 
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Specification</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class=" avtive"><a href="{% url 'official:brand' %}"> Brand / </a></li>
+            {% comment %} <li class=" avtive"><a href="{% url 'official:model' %}"> Model / </a></li> {% endcomment %}
+            <li class=""><a href="javascript:void(0)">Add verification Questions</a></li>
+        </ol>
+    </div>
+</div>
 
+<div class="row">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Vertical Form</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <form>
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Question</label>
+                        <div class="col-sm-9">
+                            <input type="Text" class="form-control" placeholder="Email">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Question Type</label>
+                        <div class="col-sm-9">
+                            <div class="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    Select
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item">Image Type</a>
+                                    <a class="dropdown-item">Objective Type</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <fieldset class="mb-3">
+                        <div class="row">
+                            <label class="col-form-label col-sm-3 pt-0">Radios</label>
+                            <div class="col-sm-9">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option1"
+                                        checked="">
+                                    <label class="form-check-label">
+                                        First radio
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2">
+                                    <label class="form-check-label">
+                                        Second radio
+                                    </label>
+                                </div>
+                                <div class="form-check disabled">
+                                    <input class="form-check-input" type="radio" name="gridRadios" value="option3"
+                                        disabled="">
+                                    <label class="form-check-label">
+                                        Third disabled radio
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+              
+                    <div class="mb-3 row  " id="appendjobcard" onclick="addcard()">
+                        <div class="col-6 p-5 border card">
+                            <div class="row">
+                                <div class="mb-3">
+                                    <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>   
+                                </div>
+                                <input type="file" class="form-file-input form-control">
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <button type="button" class="btn btn-rounded btn-info add-card-items"><span class="btn-icon-start text-info"><i class="fa fa-plus color-info"></i>
+                            </span>Add</button>
+                        </div>
+                        
+                       
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+<script>
+    // $(document).ready(function (){
+    //     alert()
+    //     $(document).on("click", ".add-card-items", function () {
+    //         $("#appendjobcard").append('<div class="col-6 p-5 border card">\
+    //             <div class="">\
+    //                 <div class="mb-3">\
+    //                     <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>\
+    //                 </div>\
+    //                 <input type="file" class="form-file-input form-control">\
+    //             </div>\
+    //         </div>')         
+    //         // $(".add-table-items").append(experiencecontent);
+    //         return false;
+    //     });
+    // })
+
+    function addcard(){
+        alert()
+        $("#appendjobcard").append('<div class="col-6 p-5 border card">\
+                <div class="row">\
+                    <div class="mb-3">\
+                        <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>\
+                    </div>\
+                    <input type="file" class="form-file-input form-control">\
+                </div>\
+            </div>')         
+        return false;
+    }
+
+</script>
 
 
 {% endblock %}

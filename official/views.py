@@ -136,6 +136,11 @@ def modelSpecification(request,id):
     return render(request,'official/specification.html', context)
 
 
+
+def questions(request):
+    return render(request,'official/questions.html')
+
+
 def questionAdding(request):
     return render(request,'official/questions_adding.html')
 
