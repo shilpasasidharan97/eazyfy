@@ -631,9 +631,9 @@
                   <h5> above 11 months</h5>
                 </label>
               </div><br><br><br><br><br><br><br><br>
-              <div class="product-action-1">
-                <button data-bs-toggle="modal" data-bs-target="#quickViewModal" class="btn btn-irv " data-toggle="modal" data-target="#exampleModal">
-                  continue
+              <div class="product-action-1 ">
+                <button data-bs-toggle="modal" data-bs-target="#quickViewModal" class="btn btn-irv col-xs-6 pull-right text-center mrgin" data-toggle="modal" data-target="#exampleModal">
+                  CONTINUE
                 </button>
 
               </div>
@@ -655,7 +655,7 @@
             </div>
             <div class="col-xs-6 pull-right text-center">
               <button id="wizard-next" type="button" class="btn btn-irv">
-                continue
+                CONTINUE
               </button>
             </div><br><br>
           </div>
@@ -752,7 +752,7 @@
                       </div>
       
                       <div class="d-grid">
-                        <a href="payment"><button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Sign in </a></button>
+                        <a  href="{% url 'user:payment' %}"><button  class="btn  text-uppercase fw-bold " type="submit">  Sign in </a></button>
                         <!-- <div class="text-center">
                           <a class="small" href="#">Forgot password?</a>
                         </div> -->

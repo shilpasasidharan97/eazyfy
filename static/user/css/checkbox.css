@@ -274,3 +274,11 @@
         margin-left: 22%;
     margin-top: 73px
       }
+
+     
+
+      @media  (min-width: 767px) {
+        .mrgin{
+          margin-left: 186px
+        }
+      }
