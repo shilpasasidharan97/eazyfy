@@ -125,6 +125,13 @@ class Questions(models.Model):
     questions = models.CharField(max_length = 500,null = True)
     question_type = models.CharField(max_length = 15,choices = question_type)
 
+
+class QuestionOption(models.Model):
+    question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
+    image_upload = models.FileField(upload_to = 'Question  Image',null = True)
+    image_description = models.CharField(max_length = 500,null = True)
+
+    
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
