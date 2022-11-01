@@ -18,7 +18,7 @@ def loginPage(request):
         phone = request.POST['phone']
         password = request.POST['password']
 
-        user = authenticate(phone_number=phone, password=password)
+        user = authenticate(request,phone_number=phone, password=password)
         if user is not None:
             login(request, user)
             if user.is_superuser == True:
@@ -27,6 +27,8 @@ def loginPage(request):
                 return redirect('franchise:index')
             elif user.is_pickupboy == True:
                 return redirect('pickupboy:index')
+            # elif user.is_customer == True:
+            #     return redirect('user:about')
             # elif user.Student !=None:
             #     return redirect('student:home')
         else:
