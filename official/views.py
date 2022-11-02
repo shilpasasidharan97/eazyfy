@@ -3,7 +3,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.http import JsonResponse
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -16,7 +18,7 @@ def loginPage(request):
         phone = request.POST['phone']
         password = request.POST['password']
 
-        user = authenticate(phone_number=phone, password=password)
+        user = authenticate(request,phone_number=phone, password=password)
         if user is not None:
             login(request, user)
             if user.is_superuser == True:
@@ -25,6 +27,8 @@ def loginPage(request):
                 return redirect('franchise:index')
             elif user.is_pickupboy == True:
                 return redirect('pickupboy:index')
+            # elif user.is_customer == True:
+            #     return redirect('user:about')
             # elif user.Student !=None:
             #     return redirect('student:home')
         else:
@@ -138,6 +142,47 @@ def modelSpecification(request,id):
 
 
 def questions(request):
+
+    device_type = DeviceType.objects.all()
+    context = {
+        "device_type":device_type
+    }
+    return render(request,'official/questions.html', context)
+
+
+@csrf_exempt
+def savedata(request):
+    question = request.POST['addquestion']
+    qst_type = request.POST['radio']
+    image_description = request.POST['description']
+    imagess = request.FILES.get("images", "Photo Not Uploded")
+
+    print(question,"@"*5)
+    print(qst_type,"#"*5)
+    print(image_description,"$"*5)
+    print(imagess,"%"*5)
+
+
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    
+    if qst_type == 'image_type' :
+        # pass
+        new_option = QuestionOption(image_upload=imagess,image_description=image_description, question=new_question)
+        new_option.save()
+        data = {
+            "gg":0
+        }
+        return JsonResponse(data)
+    else:
+        pass
+        # device_type = DeviceType.objects.get(device_type="Mobile")
+        # new_question = Questions(questions=question, question_type=type,device_type=device_type)
+        # new_question.save()
+        # print(new_question,'shifa'*20
+    return JsonResponse(data)
+
     return render(request,'official/questions.html')
 
 
