@@ -631,9 +631,9 @@
                   <h5> above 11 months</h5>
                 </label>
               </div><br><br><br><br><br><br><br><br>
-              <div class="product-action-1">
-                <button data-bs-toggle="modal" data-bs-target="#quickViewModal" class="btn btn-irv ">
-                  continue
+              <div class="product-action-1 ">
+                <button data-bs-toggle="modal" data-bs-target="#quickViewModal" class="btn btn-irv col-xs-6 pull-right text-center mrgin" data-toggle="modal" data-target="#exampleModal">
+                  CONTINUE
                 </button>
 
               </div>
@@ -646,17 +646,18 @@
                   Previous
                 </button>
               </div> -->
-              <div class="col-xs-6 pull-right text-center">
-                <button id="wizard-next" type="button" class="btn btn-irv">
-                  continue
-                </button>
-              </div><br><br>
+              
               <!-- <div class="col-xs-6 pull-right block-center">
                 <button id="wizard-subm" style="display:none" type="button" class="btn btn-irv">
                   Submit
                 </button> 
               </div> -->
             </div>
+            <div class="col-xs-6 pull-right text-center">
+              <button id="wizard-next" type="button" class="btn btn-irv">
+                CONTINUE
+              </button>
+            </div><br><br>
           </div>
         </form>
 
@@ -697,23 +698,78 @@
   </div>
 </div>
 
-<!-- <div class="modal fade custom-modal" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-  <div class="modal-content">              
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
-          <div class="modal-body" style=" height: 663px;">
-              <div class="row">
-                  <div class="col-md-6 col-sm-12 col-xs-12">
-                     jklljj
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" >
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class=" modal-content " style="width: 739px;" >
+      <div class="container-fluid ps-md-0">
+        <div class="row g-0">
+          <div class="d-none d-md-flex col-md-4 col-lg-4 bg-image" style="background-color:#660095; height:639px ">
+          <h2 style="color: white; padding: 17px;">Login/Sign Up</h2>
+        
+          <div class="col-lg-12">
+            <img style="margin-left: -179px;
+            margin-top: 361px;" src="{% static 'user/imgs/theme/login.png' %}">
+          </div>
+        </div>
+           
+          
+          <div class="col-lg-1"></div>
+          <div class="col-md-7 col-lg-6">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="login d-flex align-items-center py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9 col-lg-12 mx-auto">
+                    <h1 class="login-heading mb-4">Welcome back!</h1>
+                   
+                    <!-- Sign In Form -->
+                    <form>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Enter your phone number</label>
+                      </div>
+                      <!-- <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div> -->
+      
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                        <label class="form-check-label" for="rememberPasswordCheck">
+                         I agree with <a href="terms">  <span style="color:#630f63;"> terms and conditions  </a></span>
+                        </label>
+                      </div>
+      
+                      <div class="d-grid">
+                        <a  href="{% url 'user:payment' %}"><button  class="btn  text-uppercase fw-bold " type="submit">  Sign in </a></button>
+                        <!-- <div class="text-center">
+                          <a class="small" href="#">Forgot password?</a>
+                        </div> -->
+                      </div>
+                        
+                    </form>
+                    <!-- <h4>login to unlock the best price</h4> -->
                   </div>
-                  
+                </div>
               </div>
-          </div>        
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  </div>
-</div> -->
-
-
+</div>
 
 
 

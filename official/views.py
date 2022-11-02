@@ -142,6 +142,7 @@ def modelSpecification(request,id):
 
 
 def questions(request):
+
     device_type = DeviceType.objects.all()
     context = {
         "device_type":device_type
@@ -182,6 +183,7 @@ def savedata(request):
         # print(new_question,'shifa'*20
     return JsonResponse(data)
 
+    return render(request,'official/questions.html')
 
 ############ trial
 

@@ -96,13 +96,13 @@
     z-index: 999;
     cursor: pointer;
 }  
-.quiz_checkbox:checked ~ .single_quiz_card{border: 1px solid #2575fc;}
-.quiz_checkbox:checked:hover ~ .single_quiz_card{border: 1px solid #2575fc;}
+.quiz_checkbox:checked ~ .single_quiz_card{border: 1px solid #448d41;}
+.quiz_checkbox:checked:hover ~ .single_quiz_card{border: 1px solid #448d41;}
 
-.quiz_checkbox:checked ~ .single_quiz_card .quiz_card_content .quiz_card_title{background-color:#2575fc; color: #ffffff;}
+.quiz_checkbox:checked ~ .single_quiz_card .quiz_card_content .quiz_card_title{background-color:#448d41; color: #ffffff;}
 .quiz_checkbox:checked ~ .single_quiz_card .quiz_card_content .quiz_card_title h3{color: #ffffff;}
 .quiz_checkbox:checked ~ .single_quiz_card .quiz_card_content .quiz_card_title h3 i{opacity: 1;}
-.quiz_checkbox:checked:hover ~ .quiz_card_title{border: 1px solid #2575fc;}
+.quiz_checkbox:checked:hover ~ .quiz_card_title{border: 1px solid #448d41;}
 
 /*Icon Selector*/
 
@@ -273,4 +273,12 @@
       .img1{
         margin-left: 22%;
     margin-top: 73px
+      }
+
+     
+
+      @media  (min-width: 767px) {
+        .mrgin{
+          margin-left: 186px
+        }
       }
