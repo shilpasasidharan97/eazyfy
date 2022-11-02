@@ -1,0 +1,76 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+
+<span>{{qst_count}}.</span>
+<p>{{question.questions}}</p>
+
+<h1 id="subno"></h1>
+<div class="row">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Vertical Form</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <!--  -->
+                    <div class="mb-3 row  ">
+                        <div class="col-6 p-5 border qcard card">
+                            <div class="row">
+                                <div class="mb-3">
+                                    <textarea class="form-control" rows="4" cols="50" id="description" name="description"></textarea>
+                                </div>
+                                <input type="file" class="" name="images" id="images">
+                            </div>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="mb-3 row">                   
+                        <div class="form-group">
+                            <button class="btn btn-primary" onclick="QuestionImageAdding()">Upload and Next</button>
+                            <!-- <button class="btn btn-success" onclick="" >Add sub question</button> -->
+                            <button class="btn btn-danger">finish</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
+<script>
+
+function QuestionImageAdding(){
+    var discription = $("#question").val()
+    $.ajax({
+        url : "/official/questionsave",
+        type : "POST",
+        data : {
+            "qst":question,
+        },
+        success : function(responce) {
+            $("#qno").html(responce.qstno)
+            $("#question").val("")
+
+            
+        }
+    })
+}
+
+    
+
+</script>
+
+
+
+
+{% endblock %}

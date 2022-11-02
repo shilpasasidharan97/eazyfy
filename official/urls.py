@@ -22,6 +22,13 @@ urlpatterns = [
     path('questionsadding',views.questionAdding,name='questionsadding'),
     path('savedata/', views.savedata, name="savedata"),
 
+    #trial
+    path('questionsave', views.questsave, name="questionsave"),
+    path('suquestionAdding', views.subquestionFirst, name="suquestionAdding"),
+    path('suquestionAddingPage/<str:id>', views.subquestionPage, name="suquestionAddingPage"),
+
+
+
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
     path('userdetails',views.userDetails,name='userdetails'),
 
