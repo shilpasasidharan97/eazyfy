@@ -56,6 +56,7 @@ class QuestionsAdmin(admin.ModelAdmin):
     search_fields = ('questions',)
 
 
+
 admin.site.register(Questions, QuestionsAdmin)
 
 
@@ -68,3 +69,4 @@ admin.site.register(Dedection, DedectionAdmin)
 
 
 admin.site.register(QuestionOption)
+

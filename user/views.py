@@ -132,9 +132,15 @@ def buy(request):
 def repair(request):
     return render(request,"user/repairphone.html")  
 def payment(request):
+
     return render(request,"user/payment.html")      
 
 
 def registration(request):
 
     return render(request,"web/registration.html")
+
+    return render(request,"user/payment.html")     
+def comingsoon(request):
+    return render(request,"user/comingsoon.html")      
+
