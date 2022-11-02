@@ -1,3 +1,4 @@
+from random import choices
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser, BaseUserManager
@@ -111,3 +112,20 @@ class ModelSpecifications(models.Model):
 
     class Meta:
         verbose_name_plural = ("Model Specifications")
+
+
+
+class DeviceType(models.Model):
+    device_choices =  (('Mobile', 'Mobile'), ('TV', 'TV'),('Laptop','Laptop'))
+    device_type = models.CharField(max_length = 10,choices = device_choices)
+
+class Questions(models.Model):
+    question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
+    device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
+    questions = models.CharField(max_length = 500,null = True)
+    question_type = models.CharField(max_length = 15,choices = question_type)
+
+class Dedection(models.Model):
+    questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
+    spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
+    dedection_amount = models.IntegerField(null = True, blank = True)

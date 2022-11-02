@@ -179,7 +179,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="index.html"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}" alt="logo"></a>
+                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}" alt="logo"></a>
                 </div>
                 <div class="header-right text-brand">
                     <div class="">
@@ -221,7 +221,8 @@
         <div class="container">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="index.html"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a>
+                    <a href="{% url 'user:index' %}">
+                        <img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a>
                 </div>
 
                 <div class="header-nav d-none d-lg-flex">
@@ -252,10 +253,10 @@
                                 <li>
                                     <a href="{% url 'user:repair' %}">Repair Phone </i></a>
                                 <li>
-                                    <a href="">Sell gadgets </i></a>      
+                                    <a href="{% url 'user:comingsoon' %}">Sell gadgets </i></a>      
                                 </li>            
                                 <li>
-                                    <a href="blog-category-grid.html">Find new gadgets</a>                  
+                                    <a href="{% url 'user:comingsoon' %}">Find new gadgets</a>                  
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
@@ -275,8 +276,7 @@
                 <!-- <div class="hotline d-none d-lg-block">
                         <p><i class="fi-rs-headset"></i><span>Hotline</span> 1900 - 888 </p>
                     </div> -->
-                <p class="mobile-promotion">Happy <span class="text-brand">Mother's Day</span>. Big Sale Up to 40%
-                </p>
+               
                 <div class="header-action-right d-block d-lg-none">
                     <div class="header-action-2">
                         <!-- <div class="header-action-icon-2">
@@ -345,7 +345,7 @@
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
             <div class="mobile-header-logo">
-                <a href="index.html"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a>
+                <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
@@ -373,7 +373,7 @@
                                 phone</a>
                             
                         </li>
-                        <li class="menu-item-has-children"><span class="menu-expand"></span>>Sell gadgets</a>
+                        <li class="menu-item-has-children"><span class="menu-expand"></span>Sell gadgets</a>
                           
                         </li>
                         <li class="menu-item-has-children"><span class="menu-expand"></span>Buy phones</a>

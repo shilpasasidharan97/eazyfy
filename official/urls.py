@@ -17,6 +17,8 @@ urlpatterns = [
     path('brand',views.brand,name='brand'),
     path('model/<int:id>',views.Model,name='model'),
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
+
+    path('questions',views.questions,name='questions'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
