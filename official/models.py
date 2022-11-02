@@ -64,16 +64,23 @@ class PickUpBoy(models.Model):
 
 
 class CutomerRegistration(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
     email = models.EmailField(max_length=500,null=True)
     phone_number = PhoneField(null=True)
     password = models.CharField(max_length=20,null=True)
 
 
+    def __str__(self):
+        return str(self.name)
+    
+    class Meta:
+        verbose_name_plural = ("Customer")
 
 
 
 class User(AbstractUser):
     username = None
+    email = models.EmailField(max_length=150, null=True, blank=True)
     phone_number = models.CharField(max_length=15,unique=True)
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
     pickup_boy = models.ForeignKey(PickUpBoy, on_delete=models.CASCADE, null=True, blank=True)
@@ -95,6 +102,8 @@ class CutomerProfile(models.Model):
     user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
     auth_token = models.CharField(max_length=100 ,blank = True, null = True)
     test_id = models.CharField(max_length=100 ,default = uuid.uuid4)
+    forget_password_token = models.CharField(max_length=100, blank=True,null=True)
+
 
 
 class Brand(models.Model):
@@ -149,7 +158,6 @@ class QuestionOption(models.Model):
     image_upload = models.FileField(upload_to = 'Question  Image',null = True)
     image_description = models.CharField(max_length = 500,null = True)
 
-    
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)

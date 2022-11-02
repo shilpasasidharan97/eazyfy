@@ -10,8 +10,13 @@ urlpatterns = [
     path('terms-and-conditions',views.termsAndConditions,name='terms-and-conditions'),
 
     path('registration',views.UserRegistration,name='registration'),
+    path('checkphonenumber',views.checkPhoneNumber,name='checkphonenumber'),
     path('otp-page/<str:id>',views.otp_fun,name="otp"),
+    path('forgot',views.forgot,name="forgot"),
+    path('resetPassword/<token>',views.resetPassword,name="resetPassword"),
+    path('resendotp/<token>',views.resendOtp,name="resendotp"),
     path('login',views.customerlogin,name="login"),
+
     
 
     path('sell',views.sell,name='sell'),
@@ -23,6 +28,7 @@ urlpatterns = [
     path('buy',views.buy,name='buy'),
     path('repair',views.repair,name='repair'),
     path('payment',views.payment,name='payment'),
+    path('comingsoon',views.comingsoon,name='comingsoon'),
 
 
     path('my',views.my,name='my')

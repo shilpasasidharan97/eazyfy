@@ -62,26 +62,32 @@
 
         <div class="row">
             <div class="col-sm-3 col-3 col-xs-3 col-md-3  col-lg-2 service-category" >
+                <a href="{% url 'user:sell' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
 
-                    <a href="sell">
+                   
                         <h4 class="bg-1 servicetext">Sell Phone</h4>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:buy' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
+                </a>
                 </div>
             </div>
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:repair' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Repair Phone</h4>
+                </a>
                 </div>
             </div>
+
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">

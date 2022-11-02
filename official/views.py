@@ -142,6 +142,7 @@ def modelSpecification(request,id):
 
 
 def questions(request):
+
     device_type = DeviceType.objects.all()
     context = {
         "device_type":device_type
@@ -182,6 +183,53 @@ def savedata(request):
         # print(new_question,'shifa'*20
     return JsonResponse(data)
 
+    return render(request,'official/questions.html')
+
+############ trial
+
+@csrf_exempt
+def questsave(request):
+    question = request.POST['qst']
+    qst_type = "Objective"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    countt = qst_count + 1
+    data = {
+        "qstno":countt,
+    }
+    return JsonResponse(data)
+
+
+@csrf_exempt
+def subquestionFirst(request):
+    print("#"*20)
+    question = request.POST['qst']
+    qst_type = "image_type"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    # qst_count = Questions.objects.filter(device_type=device_type).count()
+    qest_pk = new_question.id
+    # countt = qst_count + 1
+    data = {
+        # "qstno":qst_count,
+        "qest_pk":qest_pk,
+    }
+    return JsonResponse(data)
+
+
+def subquestionPage(request,id):
+    print("&"*20)
+    question = Questions.objects.get(id=id)
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    context = {
+        "question":question,
+        "qst_count":qst_count,
+    }
+    return render(request,'official/sub-question.html',context)
 
 
 def questionAdding(request):
