@@ -53,7 +53,8 @@ admin.site.register(DeviceType)
 
 class QuestionsAdmin(admin.ModelAdmin):
     list_display = ('questions','question_type' )
-    search_fields = ('questions','question_type')
+    search_fields = ('questions',)
+
 
 
 admin.site.register(Questions, QuestionsAdmin)
@@ -65,3 +66,7 @@ class DedectionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Dedection, DedectionAdmin)
+
+
+admin.site.register(QuestionOption)
+

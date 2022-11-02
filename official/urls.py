@@ -20,6 +20,7 @@ urlpatterns = [
 
     path('questions',views.questions,name='questions'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
+    path('savedata/', views.savedata, name="savedata"),
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
     path('userdetails',views.userDetails,name='userdetails'),

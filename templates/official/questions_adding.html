@@ -26,85 +26,260 @@
         </div>
         <div class="card-body">
             <div class="basic-form">
-                <form>
+                <form  id="addquestionForm" >
+                    {% csrf_token %}
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Question</label>
                         <div class="col-sm-9">
-                            <input type="Text" class="form-control" placeholder="Email">
+                            <input type="Text" class="form-control" id="question" placeholder="Add Questions"
+                                name="addquestion">
                         </div>
+                    </div>
+
+                    <div class="mb-3 row" hidden>
+                        <label class="col-sm-3 col-form-label">Device Type</label>
+                        <select name="" id="devicetype">
+                            {% for type in device_type %}
+                            <option value="{{type.device_type}}">{{type.device_type}}</option>
+                            {% endfor %}
+                        </select>
                     </div>
 
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Question Type</label>
-                        <div class="col-sm-9">
-                            <div class="dropdown">
-                                <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                    Select
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item">Image Type</a>
-                                    <a class="dropdown-item">Objective Type</a>
-
-                                </div>
-                            </div>
+                        <div class="form-group">
+                            <ul>
+                                <li>
+                                    <input type="radio" name="radio" id="objective"  value="Objective" class="form-check-input">
+                                    Objective Type
+                                </li>
+                                <li>
+                                    <input type="radio" id="image_type" value="image_type" name="radio"
+                                        class="form-check-input">
+                                    Image type
+                                </li>
+                                
+                            </ul>
                         </div>
                     </div>
 
-
-                    <fieldset class="mb-3">
-                        <div class="row">
-                            <label class="col-form-label col-sm-3 pt-0">Radios</label>
-                            <div class="col-sm-9">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" value="option1"
-                                        checked="">
-                                    <label class="form-check-label">
-                                        First radio
-                                    </label>
-                                </div>
-                                <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="gridRadios" value="option2">
-                                    <label class="form-check-label">
-                                        Second radio
-                                    </label>
-                                </div>
-                                <div class="form-check disabled">
-                                    <input class="form-check-input" type="radio" name="gridRadios" value="option3"
-                                        disabled="">
-                                    <label class="form-check-label">
-                                        Third disabled radio
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                    </fieldset>
-              
-                    <div class="mb-3 row  " id="appendjobcard" onclick="addcard()">
-                        <div class="col-6 p-5 border card">
+                    <div class="mb-3 row  " id="appendjobcard">
+                        <div class="col-6 p-5 border qcard card">
                             <div class="row">
                                 <div class="mb-3">
-                                    <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>   
+                                    <textarea class="form-control" rows="4" cols="50" id="comment" name="description"></textarea>
                                 </div>
-                                <input type="file" class="form-file-input form-control">
+                                <input type="file" class="" name="images" id="images">
                             </div>
                         </div>
-
-                        <div class="col-6">
-                            <button type="button" class="btn btn-rounded btn-info add-card-items"><span class="btn-icon-start text-info"><i class="fa fa-plus color-info"></i>
-                            </span>Add</button>
-                        </div>
                         
-                       
-                        <div class="col-sm-10">
-                            <button type="submit" class="btn btn-primary">Upload</button>
-                        </div>
+                    </div>
+
+                    
+                    <div class="col-sm-10" id="upload">
+                        <button type="submit" class="btn btn-primary">Upload</button>
                     </div>
                 </form>
+                <div class="col-6" id="addcardbtn">
+                    <button  onclick="addcard()"
+                        class="btn btn-rounded btn-info add-card-items"><span
+                            class="btn-icon-start text-info"><i class="fa fa-plus color-info"></i>
+                        </span>Add
+                    </button>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+<script>
+    function addcard() {
+        // alert("FORM CAAARD")
+        $("#appendjobcard").append('<div class="col-6 p-5 border qcard card">\
+                <div class="row">\
+                    <div class="mb-3">\
+                        <textarea class="form-control" rows="4" cols="50" id="comment" name="description"></textarea>\
+                    </div>\
+                    <input type="file" class="" name="images" id="images">\
+                </div>\
+            </div>')
+        return false;
+    }
+
+    $(document).ready(function () {
+        $('#appendjobcard').hide()
+        $('#upload').hide()
+        $('#addcardbtn').hide()
+
+    })
+    $('#image_type').click(function () {
+        $('#appendjobcard').show()
+        $('#upload').show()
+        $('#addcardbtn').show()
+    })
+    $('#objective').click(function () {
+        $('#appendjobcard').hide()
+        $('#upload').show()
+        $('#addcardbtn').hide()
+        
+    })
+
+
+// $(document).ready(function () {
+    
+//     $("#addquestionForm").submit(function (e) {
+//         alert("FORM SAVING")
+//         // alert()
+//         // var data = $("#categorysave").serializeArray();
+//         var formData = new FormData(e.target);
+//         e.preventDefault();
+//         console.log(formData)
+//         $.ajax({
+//             url: "/official/savedata/",
+//             type: "POST",
+//             data: formData,
+//             contentType: false,
+//             processData: false,
+//             cache: false,
+//             success: function (responce) {
+//                 alert()
+//                 // window.location.reload()
+                
+//             }
+            
+//         });
+
+//     });
+//     return false;
+
+// });
+
+
+$(document).ready(function () {
+    
+    $("#addquestionForm").submit(function (e) {
+        // alert("FORM SAVING")
+        // alert()
+        // var data = $("#categorysave").serializeArray();
+        data = []
+        var arr = [];
+        // var boxcount = $(".qcard").length;
+        var question = $("#question").val()
+
+        // alert(boxcount)
+        
+
+        var formData = new FormData(e.target);
+        e.preventDefault();
+        console.log(formData)
+        
+        
+        // $.ajax({
+        //     url: "/official/savedata/",
+        //     type: "POST",
+        //     data: formData,
+        //     contentType: false,
+        //     processData: false,
+        //     cache: false,
+        //     success: function (responce) {
+        //         alert()
+        //         // window.location.reload()
+                
+        //     }
+            
+        // });
+
+    });
+    return false;
+
+});
+
+
+
+// data = []
+//     // var arr = [];
+//     // $('input.packagetitle:checkbox:checked').each(function () {
+//     //     arr.push($(this).val());
+
+//     // });
+//     var rowCount = $(".add-table-items tr ").length;
+//     agent = {
+//         "agent":$("#agent").val(),
+//         "gtotal":$("#Gtotal").html()
+//     }
+//     data.push(agent)
+
+
+//     for (var i = 1; i < rowCount; i++) {
+//         var obj = {
+//             // 'agent':$("#agent").val(),
+//             'package_id': $("#item" + i ).val(),
+//             'qty': $("#qty" + i).val(),
+//             'tour_date':$("#tourdate" + i).val()
+            
+            
+//         }
+//         data.push(obj)
+//     }
+//     dt = { 'data': data },
+//         dt['data'] = JSON.stringify(dt['data']),
+        
+//         $.ajax({
+//             url: "/official/generateinvoice/",
+//             type: "POST",
+//             data: dt,
+//             success: function (response) {
+//                 window.location='/official/invticket/'+ response.invid.invId
+//             }
+//         })
+
+
+
+    // $("#addquestion").submit(function () {
+    //     // var data = $("#addquestion").serializeArray();
+    //     var question = $("#question").val()
+    //     var devicetype = $('#image_type').val()
+    //     var description = $('#comment').val()
+    //     var img = $('#images')[0].files;
+    //     $.ajax({
+    //         url: "/official/savedata",
+    //         type: 'POST',
+    //         data: {
+    //             "question":question,
+    //             "qsttype":devicetype,
+    //             "description":description,
+    //             "imgages":img,
+    //         },
+    //         mimeType:'multipart/form-data',
+    //         success: function (responce) {
+    //             alert("successss")
+    //             window.location.reload()
+    //             // console.log(responce)
+    //             // console.log(responce.type)
+    //             // var editButton = '<a href="/' + responce.no + '" class="btn btn-sm bg-success-light me-2" >\
+    //             //                                         <i class="fas fa-pen"></i>\
+    //             //                                     </a> <a data-bs-toggle="modal" onclick="editdata({{responce.no}})" data-bs-target="#edit_items" class="btn btn-sm bg-danger-light">\
+    //             //                                         <i class="fas fa-trash"></i>\
+    //             //                                     </a>'
+    //             // $('#qtable').append('<tr id="tr"><td>' + '' + '</td><td>' + responce.type + '</td><td>' + responce.mark + '</td><td>' + editButton + '</td></tr>')
+    //             // $('#question').val("")
+    //             // $('#options').val("")
+    //             // $('#mark').val("")
+
+
+    //             // myTable.row.add( [responce.no,responce.type,responce.mark,editButton] ).draw()
+
+
+    //         }
+
+    //     })
+    //     console.log(data)
+    //     return false;
+    // })
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script>
@@ -124,18 +299,18 @@
     //     });
     // })
 
-    function addcard(){
-        alert()
-        $("#appendjobcard").append('<div class="col-6 p-5 border card">\
-                <div class="row">\
-                    <div class="mb-3">\
-                        <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>\
-                    </div>\
-                    <input type="file" class="form-file-input form-control">\
-                </div>\
-            </div>')         
-        return false;
-    }
+    //function addcard(){
+      //  alert()
+        //$("#appendjobcard").append('<div class="col-6 p-5 border card">\
+          //      <div class="row">\
+            //        <div class="mb-3">\
+              //          <textarea class="form-control"rows="4" cols="50" id="comment"></textarea>\
+                //    </div>\
+                  //  <input type="file" class="form-file-input form-control">\
+                //</div>\
+            //</div>')         
+        //return false;
+   // }
 
 </script>
 
