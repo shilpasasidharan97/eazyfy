@@ -29,17 +29,7 @@ def customerlogin(request):
     return render(request,"user/login.html")
 
 # Create your views here.
-def UserRegistration(request):
-    # if request.method == 'POST':
-    #     number = request.POST['number']
-    #     password = request.POST['password']
-    #     user = authenticate(phone_number=number, password=password)
-    #     if user is not None:
-    #         login(request, user)
-    #         if user.is_superuser == True:
-    #             return redirect('user:about')
-    #         else:
-    #             pass
+def UserRegistration(request):       
     print("GEEETTTT")
     if request.method == 'POST':
         print('POOOOSSSTTTTT')
