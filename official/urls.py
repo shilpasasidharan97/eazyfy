@@ -13,6 +13,8 @@ urlpatterns = [
     path('franchisedetails/<int:id>',views.viewFranchiseDetails,name='franchisedetails'),
     path('pickupboylist/<int:id>',views.pickUpBoyList,name='pickupboylist'),
     path('deletefranchise/<int:id>',views.DeleteFranchise, name='deletefranchise'),
+    path('editfranchise/<int:id>',views.EditFranchise, name='editfranchise'),
+    path('getprofiledata/<int:id>',views.getprofiledata,name='getprofiledata'),
 
     path('brand',views.brand,name='brand'),
     path('model/<int:id>',views.Model,name='model'),

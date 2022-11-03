@@ -70,6 +70,47 @@ def franchise(request):
         return render(request,'official/franchise.html',context)
 
 
+
+
+
+def EditFranchise(request,id):
+    print(id)
+    franchise=request.user.franchise
+    print(franchise)
+    franchise = Franchise.objects.get(id=id)
+    # if request.method == "POST":
+    #     name = request.POST['name']
+    #     franchise_id = request.POST['franchise_id']
+    #     phone = request.POST['phone']
+    #     email = request.POST['email']
+    #     password = request.POST['password']
+    #     address = request.POST['address']
+    #     photo = request.FILES['photo']
+    #     Franchise.objects.filter(id=id).update(name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address, password=password)
+    #     return redirect('franchise:profile')
+        
+    # edit_profile=franchise.objects.get(id=id)
+    context = {
+        "is_editprofile": True,
+        # "edit_profile":edit_profile,
+        "franchise":franchise
+        }
+    return redirect('/official/franchise',context)
+
+@csrf_exempt
+def getprofiledata(request,id):
+
+    details = Franchise.objects.get(id=id)
+    data = {
+        "name": details.name,
+        "email": details.email,
+        # "phone": details.phone,
+        "address": details.address,
+        "photo": details.photo.url,
+    }
+    return JsonResponse({"value": data})
+
+
 def viewFranchiseDetails(request,id):
     franchise_details = Franchise.objects.get(id=id)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
