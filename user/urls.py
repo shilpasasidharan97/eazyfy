@@ -5,8 +5,11 @@ app_name = 'user'
 
 urlpatterns = [
     path('',views.index,name='index'),
+
     path('about',views.about,name='about'),
     path('contact',views.contact,name='contact'),
+    path('account',views.account,name='account'),
+    path('privacy-policy',views.privacyAndPolicy,name='privacy'),
     path('terms-and-conditions',views.termsAndConditions,name='terms-and-conditions'),
 
     path('registration',views.UserRegistration,name='registration'),
@@ -17,16 +20,19 @@ urlpatterns = [
     path('resendotp/<token>',views.resendOtp,name="resendotp"),
     path('login',views.customerlogin,name="login"),
 
+
+    path('test',views.test,name="test"),
+
     
 
     path('sell',views.sell,name='sell'),
-    path('account',views.account,name='account'),
-    path('privacy',views.privacy,name='privacy'),
     path('shops',views.shops,name='shops'),
     path('question',views.question,name='question'),
     path('spec',views.spec,name='spec'),
-    path('buy',views.buy,name='buy'),
-    path('repair',views.repair,name='repair'),
+
+    path('buy_phone',views.buyPhone,name='buyphone'),
+
+    path('repair_phone',views.repairPhone,name='repair_phone'),
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
 

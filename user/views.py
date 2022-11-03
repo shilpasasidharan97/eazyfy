@@ -187,8 +187,8 @@ def sell(request):
 def account(request):
     return render(request,"user/account.html")
 
-def privacy(request):
-    return render(request,"user/privacy.html")
+def privacyAndPolicy(request):
+    return render(request,"user/privacy-policy.html")
 
 def shops(request):
     return render(request,"user/shops.html")    
@@ -202,10 +202,10 @@ def my(request):
 def spec(request):
     return render(request,"user/spec-product.html")  
 
-def buy(request):
+def buyPhone(request):
     return render(request,"user/buyphone.html")  
 
-def repair(request):
+def repairPhone(request):
     return render(request,"user/repairphone.html")  
 def payment(request):
 
@@ -216,7 +216,12 @@ def registration(request):
 
     return render(request,"web/registration.html")
 
-    return render(request,"user/payment.html")     
+    return render(request,"user/payment.html")    
+
+
 def comingsoon(request):
     return render(request,"user/comingsoon.html")      
+
+def test(request):
+    return render(request,"user/test.html")  
 

@@ -2006,6 +2006,7 @@ label {
     width: 61px;
     min-width: 15px;
   }
+
   .whysell{
     box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
     width: 395px;
@@ -3384,8 +3385,8 @@ table .product-thumbnail img {
 
 .deal h2 {
   color: #ff3551;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 500;
+  font-size: 21px;
   line-height: 1.1;
   margin-bottom: 5px;
 }
@@ -10619,7 +10620,7 @@ span.fi-rs-apps {
 }
 
 .flwidth {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .card-shadow {
@@ -10669,4 +10670,36 @@ input[type="tel"] {
   content: '';
   display: inline-block;
   border-top: 1px solid black;
+}
+
+
+
+/* vivek 3/11/22 */
+
+.search-onload{
+  width: 100% !important;
+  position: relative;
+  min-width: 330px;  
+
+@media screen and (max-width: 640px) {
+  .re-head{
+    font-size: 15px;
+  }
+  .re-subhead{
+    font-size: 13px;
+  }
+  .re_pair{
+    text-align: center;
+  }
+  h3.section-title {
+    font-size: 20px;
+}
+.why_us{
+  font-size: 15px;
+}
+.why_us_desc{
+  font-size: 12px;
+  line-height: .2rem;
+}
+}
 }
