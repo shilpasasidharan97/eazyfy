@@ -17,13 +17,13 @@
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="row">
-                            <div class="col-lg-5">
+                            <div class="col-lg-5" hidden>
                                 <div class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
                                     <div class="padding_eight_all bg-white">
                                         <div class="heading_s1">
                                             <h3 class="mb-30">Login</h3>
                                         </div>
-                                        <form method="POST">
+                                        <form method="POST" id="regform">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <input type="text" required="" name="number" placeholder="phone number">
@@ -54,22 +54,31 @@
                                         <form method="POST">
                                             {% csrf_token %}
                                             <div class="form-group">
+                                                <input type="text" class="input" required="" name="name" placeholder="Enter Your name">
+                                            </div>
+                                            <div class="form-group">
                                                 <input type="text" class="input" required="" name="email" placeholder="Email">
                                             </div>
                                             
                                             <div class="form-group">
-                                                <input required="" type="number" name="Phone_number" placeholder="Phone_number" class="input">
+                                                <input required="" type="text" name="Phone_number" placeholder="Phone_number" class="input" id="phone">
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="password" placeholder="Password" class="input">
+                                                <span id="phone_exists"></span>
                                             </div>
                                             <div class="form-group">
-                                                <input required="" type="password" name="cpassword" placeholder="Confirm password" class="input">
+                                                <input required="" type="password" name="password" placeholder="Password" class="input" id="password">
+                                            </div>
+                                            <div class="form-group">
+                                                <input required="" type="password" name="cpassword" placeholder="Confirm password" class="input" id="cpassword">
+                                            </div>
+                                            <div class="form-group">
+                                                <span id="message"></span>                                            
                                             </div>
                                             <div class="login_footer form-group">
                                                 <div class="chek-form">
                                                     <div class="custome-checkbox">
-                                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox12" value="">
+                                                        <input class="form-check-input" type="checkbox" name="checkbox" id="exampleCheckbox12" value="" itemid="checked">
                                                         <label class="form-check-label" for="exampleCheckbox12"><span>I agree to terms &amp; Policy.</span></label>
                                                     </div>
                                                 </div>
@@ -77,8 +86,8 @@
                                             </div>
                                             
 
-                                            <div class="form-group" id="reg_submit">
-                                                <button type="submit" href="" class="btn btn-fill-out btn-block hover-up" >Submit &amp; Register</button>
+                                            <div class="form-group">
+                                                <button type="submit" href="" id="buttondisabled" class="btn btn-fill-out btn-block hover-up disabled" >Submit &amp; Register</button>
                                             </div>
                                         </form>
                                         
@@ -98,13 +107,42 @@
     crossorigin="anonymous"></script>
 
 <script>
-    $(document).ready(function(){
-        $('#otp').hide()
+    $('#cpassword').change(function(){
+        var cpsw=$('#cpassword').val()
+        var psw = $('#password').val()
+        if ( psw != cpsw){
+            $('#message').html('Please check your password')
+            $("#buttondisabled").addClass("disabled");
+        }
+        else{
+            $('#message').hide()
+            $("#buttondisabled").removeClass("disabled");
+        }
+    
     })
-    $('#reg_submit').click(function(){
-        $('#otp').show()
-        $('#reg_submit').hide()
+
+    $('#phone').change(function(){
+        var phone_number = $('#phone').val()
+        $.ajax({
+            url: '/checkphonenumber',
+            type:'POST',
+            data:{
+                "phone":phone_number,
+            },
+            success:function(responce) {   
+                if (responce.status == 1){
+                    $('#phone_exists').html(responce.msg)
+                }
+            }
+        })
     })
+
+
+
+
+
 </script>
+
+
 
  {% endblock %}
