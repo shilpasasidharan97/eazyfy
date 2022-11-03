@@ -251,10 +251,10 @@
                                     </ul>
                                 </li>
                                 <li class="position-static">
-                                    <a href="{% url 'user:buy' %}">Buy phones</i></a>
+                                    <a href="{% url 'user:buyphone' %}">Buy phones</i></a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:repair' %}">Repair Phone </i></a>
+                                    <a href="{% url 'user:repair_phone' %}">Repair Phone </i></a>
                                 <li>
                                     <a href="{% url 'user:comingsoon' %}">Sell gadgets </i></a>      
                                 </li>            
@@ -263,11 +263,11 @@
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="about">About Us</a></li>
-                                        <li><a href="contact">Contact</a></li>
-                                        <li><a href="">My Account</a></li>
+                                        <li><a href="{% url 'user:about' %}">About Us</a></li>
+                                        <li><a href="{% url 'user:contact' %}">Contact</a></li>
+                                        <li><a href="{% url 'user:account' %}">My Account</a></li>
                                         <li><a href="{% url 'user:registration' %}">login/register</a></li>
-                                        <li><a href="privacy">Privacy Policy</a></li>
+                                        <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
                                     </ul>
@@ -346,6 +346,7 @@
 </header>
 
 
+<!-- mobile menu -->
 
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
@@ -409,7 +410,29 @@
                         </li>
                     </ul>
                 </nav>
-        
+
+                <!-- mobile menu end -->
+            </div>
+
+            <div class="mobile-header-info-wrap mobile-header-border">
+                <div class="single-mobile-header-info mt-30">
+                    <a href="page-contact.html"> Our location </a>
+                </div>
+                <div class="single-mobile-header-info">
+                    <a href="page-login-register.html">Log In / Sign Up </a>
+                </div>
+                <div class="single-mobile-header-info">
+                    <a href="#">(+01) - 2345 - 6789 </a>
+                </div>
+            </div>
+            <div class="mobile-social-icon">
+                <h5 class="mb-15 text-grey-4">Follow Us</h5>
+                <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-facebook.svg' %}" alt=""></a>
+                <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-twitter.svg ' %}" alt=""></a>
+                <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-instagram.svg ' %}" alt=""></a>
+                <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-pinterest.svg ' %}" alt=""></a>
+                <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-youtube.svg ' %}" alt=""></a>
+
             </div>
        
         
