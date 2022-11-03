@@ -15,6 +15,7 @@ urlpatterns = [
     path('deletefranchise/<int:id>',views.DeleteFranchise, name='deletefranchise'),
     path('editfranchise/<int:id>',views.EditFranchise, name='editfranchise'),
     path('getprofiledata/<int:id>',views.getprofiledata,name='getprofiledata'),
+    path('editform/<int:id>',views.editform,name='editform'),
 
     path('brand',views.brand,name='brand'),
     path('model/<int:id>',views.Model,name='model'),
@@ -23,6 +24,15 @@ urlpatterns = [
     path('questions',views.questions,name='questions'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
     path('savedata/', views.savedata, name="savedata"),
+
+    #trial
+    path('questionsave', views.questsave, name="questionsave"),
+    path('suquestionAdding', views.subquestionFirst, name="suquestionAdding"),
+    path('suquestionAddingPage/<str:id>', views.subquestionPage, name="suquestionAddingPage"),
+    path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
+
+
+
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
     path('userdetails',views.userDetails,name='userdetails'),

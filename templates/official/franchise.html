@@ -63,6 +63,105 @@
                     </div>
                 </div>
             </div>
+
+
+
+            <!-- EDIT MODAL -->
+<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Franchise</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+               
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" >Franchise ID <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="fid" placeholder="franchise id.."
+                                        required name="franchise" value="">
+                                    <div class="invalid-feedback">
+
+                                        Please enter a Franchise Id.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="validationCustom04">Franchise Name <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="name" placeholder="franchise id.."
+                                        required name="franchise" value="">
+                                    <div class="invalid-feedback">
+
+                                        Please enter a Franchise Id.
+                                    </div>
+                                </div>
+                            </div>
+                         
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="Email">Email <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="femail" placeholder="Your valid email.."
+                                        required name="femail">
+                                    <div class="invalid-feedback">
+                                        Please enter a Email.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-6">
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" >Phone
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="fphone" placeholder="" required
+                                        name="name">
+                                    <div class="invalid-feedback">
+                                        Please enter franchise Phone Number ..
+                                    </div>
+                                </div>
+                            </div>
+                           
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="address">Address
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <textarea class="form-control" id="faddress" rows="10"
+                                        placeholder="What would you like to see?" required name="address"></textarea>
+                                    <div class="invalid-feedback">
+                                        Please enter Address ..
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row mt-5 text-end">
+                                <div class="col-lg-8 ms-auto">
+                                    <button  onclick="EditFranchise({{franchise_list.id}})" class="btn btn-primary" id="edit">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+            
             {% endfor %}
 
 
@@ -199,12 +298,13 @@
                 </form>
             </div>
             <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
         </div>
     </div>
 </div>
+
+
+
 
 
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -232,100 +332,7 @@
 </script>
 
 
-<div class="modal fade bd-example-modal-lg1" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Edit Franchise</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="needs-validation" novalidate action="" method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    <div class="row">
-                        <div class="col-xl-6">
-                            <div class="mb-3 row">
-                                <label class="col-lg-4 col-form-label" for="validationCustom04">Franchise ID <span
-                                        class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="name" placeholder="franchise id.."
-                                        required name="franchise" value="">
-                                    <div class="invalid-feedback">
 
-                                        Please enter a Franchise Id.
-                                    </div>
-                                </div>
-                            </div>
-                         
-                            <div class="mb-3 row">
-                                <label class="col-lg-4 col-form-label" for="Email">Email <span
-                                        class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="email" placeholder="Your valid email.."
-                                        required name="email">
-                                    <div class="invalid-feedback">
-                                        Please enter a Email.
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-6">
-                            <div class="mb-3 row">
-                                <label class="col-lg-4 col-form-label" for="fname">Franchise Name
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="phone" placeholder="" required
-                                        name="name">
-                                    <div class="invalid-feedback">
-                                        Please enter franchise name ..
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3 row">
-                                <label class="col-lg-4 col-form-label" for="franchisephoto">Franchise Photo
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <input type="file" class="form-control" id="photo" placeholder="" required
-                                        name="photo">
-                                    <div class="invalid-feedback">
-                                        Upload Photo ..
-                                    </div>
-                                </div>
-                            </div>
-                           
-                            <div class="mb-3 row">
-                                <label class="col-lg-4 col-form-label" for="address">Address
-                                    <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-lg-6">
-                                    <textarea class="form-control" id="address" rows="10"
-                                        placeholder="What would you like to see?" required name="address"></textarea>
-                                    <div class="invalid-feedback">
-                                        Please enter Address ..
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mb-3 row mt-5 text-end">
-                                <div class="col-lg-8 ms-auto">
-                                    <button type="submit" class="btn btn-primary">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <!-- <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button> -->
-            </div>
-        </div>
-    </div>
-</div>
 
 
 </script>
@@ -342,18 +349,39 @@
             type: 'GET',
 
             success: function (responce) {
-
+                $('#fid').val(responce.value.fid)
                 $('#name').val(responce.value.name)
-                $('#email').val(responce.value.email)
-                // $('#phone').val(responce.value.phone)
-                $('#address').val(responce.value.address)
-                $('#photo').attr("src", responce.value.photo)
-
-
-
+                $('#femail').val(responce.value.email)
+                $('#fphone').val(responce.value.phone)
+                $('#faddress').val(responce.value.address)
+                // $('#fphoto').attr("src", responce.value.photo)
             }
 
         })
+        
     }
+
+    function  EditFranchise(id){
+            alert()
+            $.ajax({
+                url: "/official/editform/"+id,
+                
+                type: 'POST',
+                data :{
+                    'fid':$('#fid').val(),
+                    'fname':$('#name').val(),
+                    'femail':$('#femail').val(),
+                    'fphone':$('#fphone').val(),
+                    'faddress':$('#faddress').val(),
+                    // 'fphoto':$('#fphoto').val(),
+                },
+                success: function (responce) {
+                    window.location.reload()
+                }
+
+
+            })
+        }
     </script>
+
     {% endblock %}

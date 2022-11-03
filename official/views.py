@@ -70,45 +70,46 @@ def franchise(request):
         return render(request,'official/franchise.html',context)
 
 
-
-
-
 def EditFranchise(request,id):
     print(id)
     franchise=request.user.franchise
     print(franchise)
     franchise = Franchise.objects.get(id=id)
-    # if request.method == "POST":
-    #     name = request.POST['name']
-    #     franchise_id = request.POST['franchise_id']
-    #     phone = request.POST['phone']
-    #     email = request.POST['email']
-    #     password = request.POST['password']
-    #     address = request.POST['address']
-    #     photo = request.FILES['photo']
-    #     Franchise.objects.filter(id=id).update(name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address, password=password)
-    #     return redirect('franchise:profile')
-        
-    # edit_profile=franchise.objects.get(id=id)
     context = {
         "is_editprofile": True,
-        # "edit_profile":edit_profile,
         "franchise":franchise
         }
     return redirect('/official/franchise',context)
 
+
 @csrf_exempt
 def getprofiledata(request,id):
-
     details = Franchise.objects.get(id=id)
     data = {
+        "fid":details.franchise_id,
         "name": details.name,
         "email": details.email,
-        # "phone": details.phone,
+        "phone": details.phone,
         "address": details.address,
-        "photo": details.photo.url,
+        # "photo": details.photo.url,
     }
     return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def editform(request,id):
+    fid = request.POST['fid']
+    name = request.POST['fname']
+    email = request.POST['femail']
+    phone = request.POST['fphone']
+    address = request.POST['faddress']
+    # photo = request.FILES['fphoto']
+    Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
+    get_user_model().objects.filter(franchise=id).update(phone_number=phone)
+    data ={
+        "ss":"csac",
+    }
+    return JsonResponse(data)
 
 
 def viewFranchiseDetails(request,id):
@@ -225,6 +226,71 @@ def savedata(request):
     return JsonResponse(data)
 
     return render(request,'official/questions.html')
+
+############ trial
+
+@csrf_exempt
+def questsave(request):
+    question = request.POST['qst']
+    qst_type = "Objective"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    countt = qst_count + 1
+    data = {
+        "qstno":countt,
+    }
+    return JsonResponse(data)
+
+
+@csrf_exempt
+def subquestionFirst(request):
+    print("#"*20)
+    question = request.POST['qst']
+    qst_type = "image_type"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    # qst_count = Questions.objects.filter(device_type=device_type).count()
+    qest_pk = new_question.id
+    # countt = qst_count + 1
+    data = {
+        # "qstno":qst_count,
+        "qest_pk":qest_pk,
+    }
+    return JsonResponse(data)
+
+
+def subquestionPage(request,id):
+    question = Questions.objects.get(id=id)
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    context = {
+        "question":question,
+        "qst_count":qst_count,
+    }
+    return render(request,'official/sub-question.html',context)
+
+
+@csrf_exempt
+def suquestionAddingData(request):
+    print("#"*20)
+    print(request.POST)
+
+    question = request.POST['disc']
+    qstpk = request.POST['qstpk']
+    img = request.POST.get('imgk')
+    # qstion = Questions.objects.get(id=qstpk)
+
+    print(qstpk,"&"*10)
+    # new_sub_qst = QuestionOption(question=qstion,image_upload=img,image_description=question)
+    # new_sub_qst.save()
+    # print(new_sub_qst)
+    data = {
+        "msg":"msg",
+    }
+    return JsonResponse(data)
 
 
 def questionAdding(request):
