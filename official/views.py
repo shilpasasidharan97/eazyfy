@@ -46,6 +46,7 @@ def home(request):
     return render(request,'official/home.html')
 
 
+# franchise listing
 @login_required(login_url='/official/loginpage')
 def franchise(request):
     if request.method == 'POST':
@@ -70,6 +71,7 @@ def franchise(request):
         return render(request,'official/franchise.html',context)
 
 
+# edit franchise
 def EditFranchise(request,id):
     print(id)
     franchise=request.user.franchise
