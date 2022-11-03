@@ -20,6 +20,9 @@ urlpatterns = [
     path('resendotp/<token>',views.resendOtp,name="resendotp"),
     path('login',views.customerlogin,name="login"),
 
+
+    path('test',views.test,name="test"),
+
     
 
     path('sell',views.sell,name='sell'),

@@ -207,7 +207,10 @@
 
                             </div>
                             <div class="header-action-icon-2">
-                                <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
+                                <a href="{% url 'user:login' %}">
+                                    <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
+                                </a>
+                               
 
                             </div>
                         </div>
@@ -344,6 +347,7 @@
 
 
 <!-- mobile menu -->
+
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
@@ -368,38 +372,45 @@
               
                 <nav>
                     <ul class="mobile-menu">
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a
-                                href="{% url 'user:index' %}">Home</a>
+                        <li class="menu-item-has-children"><span class="menu-expand"></span>Home</a>
+                          
+                        </li>
                             
                         </li>
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a href="sell">Sell
-                                phone</a>
-                            
+                        <li class="menu-item-has-children"><span class="menu-expand"></span>Sell Phone</a>
+                          
                         </li>
+                        
+                        <li class="menu-item-has-children"><a href=""><span class="menu-expand"></span>Buy Phone</a>
+                          
+                        </li>
+
+                        <li class="menu-item-has-children"><span class="menu-expand"></span>Repair Phone </a>
+                          
+                        </li>
+
                         <li class="menu-item-has-children"><span class="menu-expand"></span>Sell gadgets</a>
                           
                         </li>
-                        <li class="menu-item-has-children"><span class="menu-expand"></span>Buy phones</a>
-                            
+
+                        <li class="menu-item-has-children"><span class="menu-expand"></span>Find New Gadget</a>
+                          
                         </li>
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a>Find new gadgets</a>
-                            
-                        </li>
-                        <li class="menu-item-has-children"><span class="menu-expand"></span><a>Eazyfy store</a>
-                            
-                        </li>
+
+
                         <li class="menu-item-has-children"><span class="menu-expand"></span><a>More</a>
                             <ul class="dropdown">
                                 <li><a href="about">About us</a></li>
                                 <li><a href="contact">Conact</a></li>
                                 <li><a href="">My account</a></li>
-                                <li><a href="{% url 'user:registration' %}">Login/register</a></li>
+                                <li><a href="{% url 'user:login' %}">Login/register</a></li>
                                 <li><a href="privacy">Privacy policy</a></li>
                                 <li><a href="terms">Terms and services</a></li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
+
                 <!-- mobile menu end -->
             </div>
 
@@ -421,7 +432,10 @@
                 <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-instagram.svg ' %}" alt=""></a>
                 <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-pinterest.svg ' %}" alt=""></a>
                 <a href="#"><img src="{% static 'user/imgs/theme/icons/icon-youtube.svg ' %}" alt=""></a>
+
             </div>
+       
+        
         </div>
     </div>
 </div>
