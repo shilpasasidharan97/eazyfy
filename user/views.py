@@ -216,7 +216,12 @@ def registration(request):
 
     return render(request,"web/registration.html")
 
-    return render(request,"user/payment.html")     
+    return render(request,"user/payment.html")    
+
+
 def comingsoon(request):
     return render(request,"user/comingsoon.html")      
+
+def test(request):
+    return render(request,"user/test.html")  
 
