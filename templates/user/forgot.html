@@ -3,7 +3,7 @@
 <html class="no-js" lang="en">
 
 <head>
-    {% load static %}
+ 
     <meta charset="utf-8">
     <title>Eazyfy</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -38,48 +38,22 @@
                 <div class="row">
                     <div class="col-lg-10 m-auto">
                         <div class="row">
-                            <div class="col-lg-6">
-                                <div
-                                    class="login_wrap widget-taber-content p-30 background-white border-radius-10 mb-md-5 mb-lg-0 mb-sm-5">
-                                    <div class="padding_eight_all bg-white">
-                                        <div class="heading_s1">
-                                            <h3 class="mb-30">Login</h3>
-                                        </div>
-                                        <form method="POST">
-                                            {% csrf_token %}
-                                            <div class="form-group">
-                                                <input type="text" required="" name="number" placeholder="phone number">
-                                            </div>
-                                            <div class="form-group">
-                                                <input required="" type="password" name="password"
-                                                    placeholder="Password">
-                                            </div>
-                                            <div class="login_footer form-group">
-                                                <a class="text-muted" href="{% url 'user:forgot' %}">Forgot password?</a>
-                                            </div>
-                                            <div class="form-group">
-                                                <button type="submit" class="btn btn-fill-out btn-block hover-up"
-                                                    name="login">Log in</button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+                            <div class="heading_s1">
+                                <h3 class="mb-30">Forgot Pasword</h3>
                             </div>
-
-                            <div class="col-lg-6 ">
-                                <div class="text-center border-radius-10 mb-md-5 mb-lg-0 mb-sm-5 signup">
-                                    <div class="p-30 heading_s1 pt-75">
-                                        <h3>Welcome!</h3>
-                                    </div>
-                                    <div>Dont have an accout</div>
-                                    <div>
-                                        <a href="{% url 'user:registration' %}" class="btn btn-outline-">Sign Up</a>
-                                    </div>
+                            <form action="" method="POST">
+                                {% csrf_token %}
+                                <div class="form-group">
+                                    <input required="" type="email" name="email"
+                                        placeholder="email">
                                 </div>
-
-
-
-
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-fill-out btn-block hover-up"
+                                        name="login">Submit</button>
+                                </div>
+                              </form>
+                            <div>
+                              
                             </div>
 
                         </div>
