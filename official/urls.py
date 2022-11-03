@@ -26,6 +26,8 @@ urlpatterns = [
     path('questionsave', views.questsave, name="questionsave"),
     path('suquestionAdding', views.subquestionFirst, name="suquestionAdding"),
     path('suquestionAddingPage/<str:id>', views.subquestionPage, name="suquestionAddingPage"),
+    path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
+
 
 
 

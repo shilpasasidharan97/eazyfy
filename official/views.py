@@ -221,7 +221,6 @@ def subquestionFirst(request):
 
 
 def subquestionPage(request,id):
-    print("&"*20)
     question = Questions.objects.get(id=id)
     device_type = DeviceType.objects.get(device_type="Mobile")
     qst_count = Questions.objects.filter(device_type=device_type).count()
@@ -230,6 +229,26 @@ def subquestionPage(request,id):
         "qst_count":qst_count,
     }
     return render(request,'official/sub-question.html',context)
+
+
+@csrf_exempt
+def suquestionAddingData(request):
+    print("#"*20)
+    print(request.POST)
+
+    question = request.POST['disc']
+    qstpk = request.POST['qstpk']
+    img = request.POST.get('imgk')
+    # qstion = Questions.objects.get(id=qstpk)
+
+    print(qstpk,"&"*10)
+    # new_sub_qst = QuestionOption(question=qstion,image_upload=img,image_description=question)
+    # new_sub_qst.save()
+    # print(new_sub_qst)
+    data = {
+        "msg":"msg",
+    }
+    return JsonResponse(data)
 
 
 def questionAdding(request):

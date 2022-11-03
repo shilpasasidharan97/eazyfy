@@ -34,14 +34,9 @@ def customerlogin(request):
     return render(request,"user/login.html")
 
 # Create your views here.
-<<<<<<< HEAD
-def UserRegistration(request):       
-    print("GEEETTTT")
-=======
 
 # customer registration
 def UserRegistration(request):
->>>>>>> a7be427f3b6985969bb2506289556d5c07f63de2
     if request.method == 'POST':
         print('POOOOSSSTTTTT')
         name = request.POST['name']
