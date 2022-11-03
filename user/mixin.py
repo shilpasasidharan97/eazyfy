@@ -4,7 +4,8 @@ import random
 
 
 
-
+sid = 'ACb80999fdb3adb236ada4ee3700403ea2'
+auth_token = 'd6e44610a9aacd675c3854f53158a0e9'
 
 class MessageHandler:
     phone_number = None

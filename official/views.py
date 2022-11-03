@@ -102,13 +102,30 @@ def getprofiledata(request,id):
 
     details = Franchise.objects.get(id=id)
     data = {
+        "fid":details.franchise_id,
         "name": details.name,
         "email": details.email,
-        # "phone": details.phone,
+        "phone": details.phone,
         "address": details.address,
-        "photo": details.photo.url,
+        # "photo": details.photo.url,
     }
     return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def editform(request,id):
+    fid = request.POST['fid']
+    name = request.POST['fname']
+    email = request.POST['femail']
+    phone = request.POST['fphone']
+    address = request.POST['faddress']
+    # photo = request.FILES['fphoto']
+    Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
+    get_user_model().objects.filter(franchise=id).update(phone_number=phone)
+    data ={
+        "ss":"csac",
+    }
+    return JsonResponse(data)
 
 
 def viewFranchiseDetails(request,id):
