@@ -104,7 +104,7 @@ def getprofiledata(request,id):
     data = {
         "name": details.name,
         "email": details.email,
-        # "phone": details.phone,
+        #"phone": details.phone,
         "address": details.address,
         "photo": details.photo.url,
     }
