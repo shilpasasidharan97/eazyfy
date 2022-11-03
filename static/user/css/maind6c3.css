@@ -10619,7 +10619,7 @@ span.fi-rs-apps {
 }
 
 .flwidth {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .card-shadow {
@@ -10669,4 +10669,26 @@ input[type="tel"] {
   content: '';
   display: inline-block;
   border-top: 1px solid black;
+}
+@media screen and (max-width: 640px) {
+  .re-head{
+    font-size: 15px;
+  }
+  .re-subhead{
+    font-size: 13px;
+  }
+  .re_pair{
+    text-align: center;
+  }
+  h3.section-title {
+    font-size: 20px;
+}
+.why_us{
+  font-size: 15px;
+}
+.why_us_desc{
+  font-size: 12px;
+  line-height: .2rem;
+}
+}
 }

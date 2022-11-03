@@ -248,10 +248,10 @@
                                     </ul>
                                 </li>
                                 <li class="position-static">
-                                    <a href="{% url 'user:buy' %}">Buy phones</i></a>
+                                    <a href="{% url 'user:buyphone' %}">Buy phones</i></a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:repair' %}">Repair Phone </i></a>
+                                    <a href="{% url 'user:repair_phone' %}">Repair Phone </i></a>
                                 <li>
                                     <a href="{% url 'user:comingsoon' %}">Sell gadgets </i></a>      
                                 </li>            
@@ -260,11 +260,11 @@
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="about">About Us</a></li>
-                                        <li><a href="contact">Contact</a></li>
-                                        <li><a href="">My Account</a></li>
+                                        <li><a href="{% url 'user:about' %}">About Us</a></li>
+                                        <li><a href="{% url 'user:contact' %}">Contact</a></li>
+                                        <li><a href="{% url 'user:account' %}">My Account</a></li>
                                         <li><a href="{% url 'user:registration' %}">login/register</a></li>
-                                        <li><a href="privacy">Privacy Policy</a></li>
+                                        <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
                                     </ul>
@@ -341,6 +341,9 @@
         </div>
     </div>
 </header>
+
+
+<!-- mobile menu -->
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
         <div class="mobile-header-top">
@@ -399,6 +402,7 @@
                 </nav>
                 <!-- mobile menu end -->
             </div>
+
             <div class="mobile-header-info-wrap mobile-header-border">
                 <div class="single-mobile-header-info mt-30">
                     <a href="page-contact.html"> Our location </a>
