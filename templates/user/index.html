@@ -2,10 +2,6 @@
 {% load static %}
 {% block content %}
 
-
-
-
-
 <section class="home-slider position-relative ">
     <div class="container-fluid">
         <div class="row">
@@ -24,7 +20,10 @@
                                             Shop Now </a>
                                     </div> -->
                                     <div class="slider-img">
-                                        <img src="{% static 'user/imgs/slider/b1.jpg' %}" alt="">
+                                        <a href="">
+                                            <img src="{% static 'user/imgs/slider/b1.jpg' %}" alt="">
+                                        </a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -60,35 +59,42 @@
 
 <section class="featured section-padding position-relative" >
     <div class="container">
+
         <div class="row">
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item " >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3  col-lg-2 service-category" >
+                <a href="{% url 'user:sell' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
 
-                    <a href="sell">
+                   
                         <h4 class="bg-1 servicetext">Sell Phone</h4>
                     </a>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:buy' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
+                </a>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:repair' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Repair Phone</h4>
+                </a>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">
                     <h4 class="bg-1 servicetext">Sell imac</h4>
                 </div>
             </div>
-            <div class=" col-sm-3 col-md-3 col-lg-2 grid-item " >
+            <div class=" col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category  " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
 
@@ -97,25 +103,25 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Repair Phone</h4>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">
                     <h4 class="bg-1 servicetext">Sell imac</h4>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item " >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category  " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
 
@@ -124,7 +130,7 @@
                     </a>
                 </div>
             </div>
-            <div class="col-sm-3 col-md-3 col-lg-2 grid-item" >
+            <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
@@ -132,49 +138,49 @@
             </div>
           
             </div>
-
+            
         </div>
     </div>
 </section>
+
+{% comment %}
 <!-- ------------------------- -->
 <section class="featured section-padding">
     <div class="container">
         <div class="row">
             <h3 class="section-title mb-20">How<span>Eazify</span> Works</h3>
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="wow fadeIn animated hover-up animated works">
                     <img src="{% static 'user/imgs/theme/icons/feature-2.png' %}" alt="">
                     <h4 class="bg-3">Online order</h4>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="works wow fadeIn animated hover-up animated">
                     <img src="{% static 'user/imgs/theme/icons/feature-5.png' %}" alt="">
                     <h4 class="bg-5">Happy Sell</h4>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="works wow fadeIn animated hover-up animated">
                     <img src="{% static 'user/imgs/theme/icons/feature-1.png' %}" alt="">
                     <h4 class="bg-1">Sheduled Pickup</h4>
                 </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="works wow fadeIn animated hover-up animated">
                     <img src="{% static 'user/imgs/theme/icons/feature-3.png' %}" alt="">
                     <h4 class="bg-2">Best money value</h4>
                 </div>
             </div>
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="works wow fadeIn animated hover-up animated">
                     <img src="{% static 'user/imgs/theme/icons/feature-4.png' %}" alt="">
                     <h4 class="bg-4">Fast money</h4>
                 </div>
             </div>
-
-            <div class="col-lg-2 col-md-4 mb-md-3 mb-lg-0">
-                <div class="banner-features wow fadeIn animated hover-up animated">
+            <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
+                <div class="works wow fadeIn animated hover-up animated">
                     <img src="{% static 'user/imgs/theme/icons/feature-6.png' %}" alt="">
                     <h4 class="bg-6">24/7 Support</h4>
                 </div>
@@ -182,14 +188,15 @@
         </div>
     </div>
 </section>
-
+{% endcomment %}
 
 <!-- repair service section -->
 <section class="banner-2 section-padding pb-0">
     <div class="container">
         <div class="banner-img banner-big wow fadeIn animated f-none">
-            <img src="assets/imgs/banner/sp1.jpg" alt="">
-            <img src="{% static 'user/imgs/banner/b5.jpg' %}" alt="">
+            <a href="">
+                <img src="{% static 'user/imgs/banner/b5.jpg' %}" alt="">
+            </a>
             <!-- <div class="banner-text ">
                 <h4 class="mb-1 mt-40 text-brand">Repair Services</h4>
                 <h4 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h4>
@@ -199,28 +206,29 @@
     </div>
 </section>
 
-<!-- offer card -->
+<!-- exchange card -->
 <section class="banners mb-15" style="margin-top: 29px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
-                    <img src="{% static 'user/imgs/banner/bnre1.jpg' %}" alt="">
-
-                    
+                    <a href="">
+                        <img src="{% static 'user/imgs/banner/bnre1.jpg' %}" alt="">
+                    </a>
                 </div>
             </div>
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
-                    <img src="{% static 'user/imgs/banner/bnre2.jpg' %}" alt="">
-
-                    
+                    <a href="">
+                        <img src="{% static 'user/imgs/banner/bnre2.jpg' %}" alt="">
+                    </a>
                 </div>
             </div>
             <div class="col-lg-4 d-md-none d-lg-flex">
                 <div class="banner-img wow fadeIn animated  mb-sm-0">
-                    <img src="{% static 'user/imgs/banner/bnre3.jpg' %}" alt="">
-                    
+                    <a href="">
+                        <img src="{% static 'user/imgs/banner/bnre3.jpg' %}" alt="">
+                    </a>
                 </div>
             </div>
         </div>
@@ -291,7 +299,7 @@
 
 
 
-<!-- new arrivals -->
+<!-- Most selling Model-->
 <section class="section-padding">
     <div class="container wow fadeIn animated">
         <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
@@ -303,18 +311,16 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
 
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="hot">Hot</span>
-                        </div>
+                       
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 238.85 </span>
@@ -327,17 +333,15 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="new">New</span>
-                        </div>
+                       
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 173.85 </span>
@@ -350,17 +354,15 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="sale">Sale</span>
-                        </div>
+                    
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 215.85 </span>
@@ -373,17 +375,15 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="hot">.33%</span>
-                        </div>
+                   
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 83.8 </span>
@@ -396,17 +396,15 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="hot">-25%</span>
-                        </div>
+            
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 1238.85 </span>
@@ -419,17 +417,15 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
                         
-                        <div class="product-badges product-badges-position product-badges-mrg">
-                            <span class="new">New</span>
-                        </div>
+                       
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 123 </span>
@@ -442,14 +438,14 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
                         
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
 
                         <!-- <div class="product-price">
                             <span>₹ 238.85 </span>
@@ -464,95 +460,202 @@
 </section>
 
 
-
-<!-- blogs -->
-<!-- <section class="section-padding">
-        <div class="container pt-25 pb-20">
-            <div class="row">
-                <div class="col-lg-6">
-                    <h3 class="section-title mb-20"><span>From</span> blog</h3>
-                    <div class="post-list mb-4 mb-lg-0">
-                        <article class="wow fadeIn animated">
-                            <div class="d-md-flex d-block">
-                                <div class="post-thumb d-flex mr-15">
-                                    <a class="color-white" href="blog-post-fullwidth.html">
-                                        <img src="assets/imgs/blog/mob 11.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <div class="entry-meta mb-10 mt-10">
-                                        <a class="entry-meta meta-2" href="blog-category-fullwidth.html"><span
-                                                class="post-in font-x-small">Fashion</span></a>
-                                    </div>
-                                    <h4 class="post-title mb-25 text-limit-2-row">
-                                        <a href="blog-post-fullwidth.html">Qualcomm is developing a Nintendo
-                                            Switch-like console, report says</a>
-                                    </h4>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">14 April 2022</span>
-                                            <span class="hit-count has-dot">12M Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                        <article class="wow fadeIn animated">
-                            <div class="d-md-flex d-block">
-                                <div class="post-thumb d-flex mr-15">
-                                    <a class="color-white" href="blog-post-fullwidth.html">
-                                        <img src="assets/imgs/blog/mob 12.jpg" alt="">
-                                    </a>
-                                </div>
-                                <div class="post-content">
-                                    <div class="entry-meta mb-10 mt-10">
-                                        <a class="entry-meta meta-2" href="blog-category-fullwidth.html"><span
-                                                class="post-in font-x-small">Healthy</span></a>
-                                    </div>
-                                    <h4 class="post-title mb-25 text-limit-2-row">
-                                        <a href="blog-post-fullwidth.html">Not even the coronavirus can derail 5G's
-                                            global momentum</a>
-                                    </h4>
-                                    <div class="entry-meta meta-1 font-xs color-grey mt-10 pb-10">
-                                        <div>
-                                            <span class="post-on">14 April 2022</span>
-                                            <span class="hit-count has-dot">12M Views</span>
-                                        </div>
-                                        <a href="blog-post-right.html">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
+<section class="banners mb-20">
+    <div class="container">
+        <div class="row">
+            <h3 class="section-title mb-20"><span>Hot</span> Deals</h3>
+            <div class="col-lg-4 col-md-6">
+                <div class="card3">
+                    <a href="">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="{% static 'user/imgs/deal/11.jpg' %}" alt="">
+                        </div>
+                    </a>
                 </div>
-                <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="banner-img banner-1 wow fadeIn animated">
-                                <img src="assets/imgs/blog/mob15.jpg" alt="">
-                                <div class="banner-text">
-                                    <span>Accessories</span>
-                                    <h4>Save 17% on <br>Autumn Hat</h4>
-                                    <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card3">
+                    <a href="">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="{% static 'user/imgs/deal/12.jpg' %}" alt="">
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card3">
+                    <a href="">
+                        <div class="banner-img wow fadeIn animated">
+                            <img src="{% static 'user/imgs/deal/13.jpg' %}" alt="">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section class="banners mb-20">
+    <div class="featured section-padding">
+        <div class="container">
+            <div class="row">
+                <h3 class="section-title mb-20">Why <span>sell</span> on Eazyfy </h3>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class=" row ">
+            <div class="card col-lg-4 whysell m-3" style="border: none;">
+
+                    <img class="card-img-top" style="width: 35%; margin-left: 33%;"
+                        src="{% static 'user/imgs/icon/SAFE.png' %}" alt="Card image cap">
+                    <div class="card-body">
+                        <h4 class="text-center">safe & secure</h4>
+                        <p class="card-text text-center">Select your device & we’ll help you unlock the best selling
+                            price based on the present conditions of your gadget & the current market price.</p>
+
+   
+
+
+                </div>
+            </div>
+            <div class="card col-lg-4 whysell m-3" style="border: none;">
+                <img class="card-img-top" style="width: 35%; margin-left: 33%;"
+                    src="{% static 'user/imgs/icon/INSTANT.png' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="text-center">Instant payment</h4>
+                    <p class="card-text text-center">On accepting the price offered for your device, we’ll arrange a
+                        free pick up.</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+            <div class="card col-lg-4 whysell m-3" style="border: none;">
+                <img class="card-img-top" style="width: 35%; margin-left: 33%;"
+                    src="{% static 'user/imgs/icon/BEST.png' %}" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="text-center">Best price</h4>
+                    <p class="card-text text-center">Instant Cash will be handed over to you at time of pickup or
+                        through payment mode of your choice.</p>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- WHY US -->
+    <section class="banners mb-20 wusbanner mt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3 class="section-title mb-20 col-sm-12 col-12"><span>Why</span> Us</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 col-6 why-us ">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/best-price.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4 style="">Best Prices</h4>
+                                    <span class="">Objective AI-based pricing</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div class="banner-img mb-15 wow fadeIn animated">
-                                <img src="assets/imgs/blog/mob13.jpg" alt="">
-                                <div class="banner-text">
-                                    <span>Big Offer</span>
-                                    <h4>Save 20% on <br>Women's socks</h4>
-                                    <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6 why-us">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/instant-pay.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Instant Payment</h4>
+                                    <span> Instant Money Transfer in your preferred mode at time of
+                                        pick up or store drop off</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
-                            <div class="banner-img banner-2 wow fadeIn animated">
-                                <img src="assets/imgs/blog/mob13.jpg" alt="">
-                                <div class="banner-text">
-                                    <span>Smart Offer</span>
-                                    <h4>Save 20% on <br>Eardrop</h4>
-                                    <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6 why-us">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/Simple-&-Convenient.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4 style="">Simple & Convenient </h4>
+                                    <span class=""> Check price, schedule pickup & get paid</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-4 col-md-6 col-6 why-us">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/door-1.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>
+                                        Free Doorstep Pickup
+                                    </h4>
+                                    <span class="">No fees for pickup across 1500 cities across India</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6 why-us">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/data.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Factory Grade Data Wipe</h4>
+                                    <span>100% Safe and Data Security Guaranteed</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-6 why-us">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/icon/invoice.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Valid Purchase Invoi </h4>
+                                    <span>Genuine Bill of Sale</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -560,7 +663,7 @@
                 </div>
             </div>
         </div>
-    </section> -->
+    </section>
 
 
 <!-- test contet -->

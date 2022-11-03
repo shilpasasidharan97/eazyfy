@@ -1,117 +1,16 @@
-﻿{% extends 'user/partials/base.html' %}
+{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
 
-<style>
-    .banner-texts{
-        padding: 20px 0px;
-    }
-    .layout.center-justified,
-    .layout.center-center {
-        justify-content: center;
-    }
-
-
-    .layout.center,
-    .layout.center-center {
-        align-items: center;
-        border-radius: 10px;
-        padding: 0px 6px;
-    }
-
-    .layout.vertical {
-        flex-direction: column;
-    }
-
-    .list-search,
-    .list-search .list-container {
-        max-width: 510px;
-    }
-
-    .list-search {
-        position: relative;
-    }
-
-
-    .layout.horizontal {
-        flex-direction: row;
-    }
-
-    .list-search .drill-search {
-        min-width: 330px;
-        border: 1px solid rgba(112, 112, 112, 0.12);
-    }
-
-    .flwidth {
-        width: 100%;
-    }
-
-    .card-shadow {
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 11%);
-        background-color: #FFFFFF;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    a,
-    button,
-    select,
-    textarea,
-    input[type="text"],
-    input[type="number"],
-    input[type="search"],
-    input[type="tel"] {
-        border: 0;
-        outline: 0;
-        -webkit-appearance: none;
-    }
-
-
-    .card {
-        background-color: #FFFFFF;
-    }
-
-    .font16-14 {
-        font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-        line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-    }
-
-    .mar-r10 {
-        margin-right: 10px;
-    }
-
-    .search-input {
-        font-family: Montserrat, sans-serif;
-    }
-
-    .jss87::after,
-    .jss87::before {
-        width: 2rem;
-        margin: 5px 1rem;
-        content: '';
-        display: inline-block;
-        border-top: 1px solid black;
-    }
-</style>
-
 <main class="main">
-
     <div class="featured section-padding">
         <div class="container">
             <div class="row">
 
                 <div class="col-lg-8">
                     <h3 class="section-title mb-20">Sell Your Old Mobile Phone </h3>
-                    <div class="page-header breadcrumb-wrap">
-                        <div class="breadcrumb">
-                            <a href="index.html" rel="nofollow">Home</a>
-                            <span> sell your phone</span>
-                        </div>
-                    </div>
-                </div>
 
+                </div>
                 <div class="col-lg-4 text-end">
                     <div class="flwidth layout vertical list-search center-center">
                         <a class="flwidth">
@@ -128,13 +27,10 @@
                     </div>
                 </div>
             </div>
-
-            <div class="row">
-                
-            </div>
         </div>
     </div>
 
+    <!-- BRAND -->
     <section class="featured section-padding">
         <div class="container">
             <div class="row">
@@ -144,13 +40,13 @@
             </div>
 
             <div class="row">
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
-                                        <a href="shop-product-right.html">
+                                        <a href="shops">
                                             <img class="default-img" src="{% static 'user/imgs/banner/apple.jpg' %}"
                                                 alt="">
                                             <img class="hover-img" src="{% static 'user/imgs/banner/apple.jpg' %}"
@@ -162,7 +58,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -182,7 +78,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -199,7 +95,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -216,7 +112,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -233,7 +129,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -250,7 +146,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
 
@@ -270,7 +166,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -290,7 +186,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
 
@@ -309,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -327,7 +223,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -345,7 +241,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -363,7 +259,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -382,7 +278,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -403,7 +299,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
                             <div class="product-cart-wrap small hover-up">
@@ -423,7 +319,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-2" style="padding: 2%;">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
 
@@ -446,39 +342,43 @@
         </div>
     </section>
 
+    <!-- HOT DEALS -->
     <section class="banners mb-20">
         <div class="container">
             <div class="row">
                 <h3 class="section-title mb-20"><span>Hot</span> Deals</h3>
                 <div class="col-lg-4 col-md-6">
-                    <a href="">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/banner/buy.png' %}" alt="">
-                            <div class="banner-text">
-                                <!-- <span>Smart Offer</span>
-                                    <h4>Save 20% on <br>Woman Bag</h4> -->
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                    <div class="card3">
+                        <a href="">
+                            <div class="banner-img wow fadeIn animated">
+                                <img src="{% static 'user/imgs/deal/11.jpg' %}" alt="">
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <a href="">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/banner/buy.png' %}" alt="">
-                            <div class="banner-text">
-                                <!-- <span>Sale off</span>
-                                    <h4>Great Summer <br>Collection</h4> -->
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                    <div class="card3">
+                        <a href="">
+                            <div class="banner-img wow fadeIn animated">
+                                <img src="{% static 'user/imgs/deal/12.jpg' %}" alt="">
                             </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
 
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="card3">
+                        <a href="">
+                            <div class="banner-img wow fadeIn animated">
+                                <img src="{% static 'user/imgs/deal/13.jpg' %}" alt="">
+                            </div>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-
+<!-- Why Us -->
     <section class="banners mb-20 wusbanner mt-60">
         <div class="container">
             <div class="row">
@@ -487,11 +387,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us ">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/best-price.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
@@ -504,15 +404,15 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag7.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/instant-pay.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 >Instant Payment</h4>
+                                    <h4>Instant Payment</h4>
                                     <span> Instant Money Transfer in your preferred mode at time of
                                         pick up or store drop off</span>
                                     <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
@@ -522,11 +422,11 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag8.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/Simple-&-Convenient.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
@@ -540,11 +440,11 @@
                 </div>
 
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag2.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/door-1.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
@@ -559,11 +459,11 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag9.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/data.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
@@ -576,15 +476,15 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
-                                <img src="{% static 'user/fonts/uicons/tag11.svg' %}" alt="">
+                                <img src="{% static 'user/imgs/icon/invoice.png' %}" alt="">
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 >Valid Purchase Invoi </h4>
+                                    <h4>Valid Purchase Invoi </h4>
                                     <span>Genuine Bill of Sale</span>
                                     <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
@@ -596,6 +496,8 @@
         </div>
     </section>
 
+
+    <!-- MOST SELLING BRAND -->
     <section class="popular-categories section-padding mt-15">
         <div class="container wow fadeIn animated">
             <h3 class="section-title mb-20"><span>Most </span>selling brand</h3>
@@ -661,6 +563,7 @@
         </div>
     </section>
 
+    <!-- MOST SELLING MODELS -->
     <section class="section-padding">
         <div class="container wow fadeIn animated">
             <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
@@ -878,15 +781,7 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-   
-
+    <!-- FSQS -->
     <section>
         <div class="container p-3">
             <div class="row">
@@ -961,7 +856,6 @@
             </div>
         </div>
     </section>
+</main>
 
-
-    <br><br>
-    {% endblock %}
+{% endblock %}

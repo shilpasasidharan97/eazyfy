@@ -1,3 +1,4 @@
+
 (function ($) {
     "use strict";
     // Page loading
@@ -89,22 +90,22 @@
                 {
                     breakpoint: 1025,
                     settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 1,
+                        slidesToShow: 6,
+                        slidesToScroll: 2,
                     }
                 },
                 {
                     breakpoint: 768,
                     settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 1,
+                        slidesToShow: 5,
+                        slidesToScroll: 2,
                     }
                 },
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
                     }
                 }
             ],

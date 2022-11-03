@@ -1,207 +1,693 @@
-﻿
-{% extends 'user/partials/base.html' %}
+﻿{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
 
 
+<main class="main">
+    <div class="featured section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3 class="section-title mb-20">Repair Your Mobile Phone </h3>
+                </div>
+                <div class="col-lg-4 text-end">
+                    <div class="flwidth layout vertical list-search center-center">
+                        <a class="flwidth">
+                            <label for="list-search-input"
+                                class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
+                                <span id="search-icon" class="search-icon layout center-center">
+                                    <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
+                                </span>
+                                <input type="search" id="pd_list_search_input" autocomplete="off" placeholder="Search your Mobile Phone to sell"
+                                    class="font16-14 flwidth card mar-r10 search-input">
+                            </label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <section class="featured section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center-mob font16-12 font-medium pad-b16 jss87"> Select Your brand</div>
+                </div>
+            </div>
 
+            <div class="row">
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/apple.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/apple.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/banner/honor.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/banner/honor.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/hp.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/hp.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/nok.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/nok.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/one.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/one.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/sam.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/sam.jpg' %}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
 
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/oppo.jpg' %} "
+                                                alt="">
 
-    <main class="main">
-        <div class="featured section-padding">
-            <div class="container">
-                <div class="row">
-                    <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
-                    <div class="page-header breadcrumb-wrap">
-                        <div class="container">
-                            <div class="breadcrumb">
-                                <a href="index.html" rel="nofollow">Home</a>
-                                <span> repair phone</span>
-                                <!-- <span></span> Technology -->
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/oppo.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/banner/real.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/banner/real.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/moto.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/moto.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/vivo1.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/vivo1.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/nothing.jpg' %} "
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/nothing.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/lenovo.jpg' %} "
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/lenovo.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/google.jpg' %}"
+                                                alt="">
+
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/google.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/banner/poco.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/banner/poco.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="shop-product-right.html">
+                                                <img class="default-img" src="{% static 'user/imgs/banner/iqoo.jpg' %}"
+                                                    alt="">
+                                                <img class="hover-img" src="{% static 'user/imgs/banner/iqoo.jpg' %}"
+                                                    alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-3" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html">
+                                            <img class="default-img" src="{% static 'user/imgs/banner/infinix.jpg' %}"
+                                                alt="">
+                                            <img class="hover-img" src="{% static 'user/imgs/banner/infinix.jpg' %}"
+                                                alt="">
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-
-        <section class="popular-categories section-padding mt-15">
-            <div class="container wow fadeIn animated">
-                <h3 class="section-title mb-20"><span>Select</span> your phone brand</h3>
-                <div class="carausel-6-columns-cover position-relative">
-                    <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
-                    <div class="carausel-6-columns" id="carausel-6-columns">
-                        <div class="card-1" >
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shops"><img src="{% static 'user/imgs/theme/icons/screen-2.png' %}" alt="">
-                                    SCREEN
-                                </a>
-                               
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">T-Shirt</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/battery-2.png' %}" alt="">
-                                    BATTERY
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/MICRO2.png' %}" alt="">
-                                    MIC
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/frd-cam.png' %}" alt="">
-                                    FRONT CAMERA
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/SP2.png' %}" alt="">
-                                   SPEAKER
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/CV3.png' %}" alt="">
-                                    BACK PANEL
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a style=" font-size: 11px;" href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/SEN3.png' %}" alt="">
-                                    PROXIMITY SENSOR
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/AU2.png' %}" alt="">
-                                    AUX JACK
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/BACK-CAM.png' %}" alt="">
-                                    BACK CAMERA
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/C1.png' %}" alt="">
-                                    CHARGING JACK
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                        <div class="card-1">
-                            <figure class=" img-hover-scale overflow-hidden" style="margin-left: 30px;">
-                                <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/theme/icons/rec2.png' %}" alt="">
-                                    RECIEVER
-                                </a>
-                            </figure>
-                            <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section> 
-       
-
-        <section class="banners mb-20 wusbanner">
-
-            <div class="container">
-                <div class="row">
+    <!-- Why US -->
+    <section class="banners mb-20 wusbanner mt-60">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
                     <h3 class="section-title mb-20 col-sm-12 col-12"><span>Why</span> Us</h3>
-    
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/Premium.png' %}" alt="">
-                            <div class="banner-text">
-        
-                                <h4 style="margin-left: 47px;">Premium Repair</h4>
-                                <span class="subhd">Top quality certified parts</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/Premium.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4 style="">Premium Repair</h4>
+                                    <span class="">Top quality certified parts</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/INSTANT-REPAIR.png' %}" alt="">
-                            <div class="banner-text">
-                                <h4 style="margin-left: 47px;">
-                                    Instant Mobile Repair</h4>
-                                <span class="subhd text-center"> Mobile Repair on the Spot in Cashify Store or at Home/Office</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/INSTANT-REPAIR.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Instant Mobile Repair</h4>
+                                    <span> 
+                                        Mobile Repair on the Spot
+                                    </span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/SSS.png' %}" alt="">
-                            <div class="banner-text">
-                                <h4 style="margin-left: 47px;">Physical Protection Warranty </h4>
-                                <span class="subhd">Free 1 Month Screen Replacement even if it breaks for all Screen Repair</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/PHY1.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4 style="">Physical Protection Warranty </h4>
+                                    <span class=""> Free 1 Month Screen Replacement</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/6-MONTH.png' %}" alt="">
-                            <div class="banner-text">
-                                <h4 style="margin-left: 47px;">
-                                    Free Doorstep Pickup
-                                </h4>
-                                <span class="subhd">Hassle free 6 month warranty on parts replaced</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/6-MONTH.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>
+                                        6 Months Warranty
+                                    </h4>
+                                    <span class="">Hassle free 6 month warranty</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/11.png' %}" alt="">
-                            <div class="banner-text">
-                                <h4 style="margin-left: 47px;">Factory Grade Data Wipe</h4>
-                                <span class="subhd">Trained & Qualified Professionals</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/11.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Skilled Technicians</h4>
+                                    <span>Trained & Qualified Professionals</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-6">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/theme/icons/PHY1.png' %}" alt="">
-                            <div class="banner-text">
-                                <h4 style="margin-left: 47px;">Guaranteed Safety </h4>
-                                <span class="subhd">Total Device & Data Security</span>
-                                <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                </div>
+
+                <div class="col-lg-4 col-6 col-md-6">
+                    <div class="banner-img wow fadeIn animated">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <img src="{% static 'user/imgs/theme/icons/SSS.png' %}" alt="">
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="banner-texts">
+                                    <h4>Guaranteed Safety </h4>
+                                    <span>Total Device & Data Security</span>
+                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
 
-    {% endblock %}
+    <style>
+        .card4{
+            margin: 10px 10px;
+        }
+    </style>
+
+
+    <section class="featured popular-categories section-padding mt-15">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-40"><span>Services</span> Available</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/screen-2.png' %}" alt="" class="service-image">
+                                        <span>SCREEN</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/battery-2.png' %}" alt="" class="service-image">
+                                        <span>BATTERY</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/MICRO2.png' %}" alt="" class="service-image"> 
+                                        <span>MIC</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/frd-cam.png' %}"  alt="" class="service-image">
+                                        <span>CAMERA</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/SP2.png' %}" alt="" class="service-image"> 
+                                        <span>SPEAKER</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/CV3.png' %}" alt="" class="service-image">
+                                        <span> BACK PANEL</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/SEN3.png' %}" alt="" class="service-image">
+                                        <span>SENSOR</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/AU2.png' %}" alt="" class="service-image"> 
+                                        <span>AUX JACK</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/BACK-CAM.png' %}" alt="" class="service-image">
+                                        <span>CAMERA</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/C1.png' %}" alt="" class="service-image">
+                                        <span>CHARGING </span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2 card4">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <a href="shop-product-right.html">
+                                        <img src="{% static 'user/imgs/theme/icons/rec2.png' %}" alt="" class="service-image">
+                                        <span>RECIEVER</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<!-- FAQS -->
+    <section>
+        <div class="container p-3">
+            <div class="row">
+                <div class="accordion col-sm-12 col-12" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <h3 class="section-title mb-20 "><span>FAQ</span>s</h3>
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <strong>What are the services offered by Eazyfy ?</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Currently, we provide repair services for smartphone screens, battery, charging
+                                    jack, microphone, speakers, receiver, back panel, proximity sensor and audio jack.
+                                    .</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <strong> How to find out the repair charges ?</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>The charges may vary based on the parts repaired, device brand, model etc.
+                                    Please enter your device details and the required service to find out the
+                                    price.</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <strong> Do I get any warranty for repaied</strong>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <strong>Yes, we offer a warranty of 6 months for all our screen repair services & 3
+                                    months for other services. Please note: We don’t cover any kind of physical/water
+                                    damage to the parts provided. If there is any mishandling/tampering of the parts
+                                    that are observed by our expert technicians it will not be covered under
+                                    warranty.</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="banner-2 section-padding pb-0">
+        <div class="container">
+            <div class="banner-img banner-big wow fadeIn animated f-none">
+                <img src="assets/imgs/banner/sp1.jpg" alt="">
+                <img src="{% static 'user/imgs/banner/playstore.jpg' %}" alt="">
+                <div class="banner-text " style="margin-left: 49%;">
+                    <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active"
+                            src="{% static 'user/imgs/theme/app-store.jpg' %}" alt=""></a>
+                    <a href="#" class="hover-up"><img src="{% static 'user/imgs/theme/google-play.jpg' %}" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <br><br>
+</main>
+
+
+{% endblock %}

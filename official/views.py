@@ -3,7 +3,9 @@ from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from django.http import JsonResponse
 from .models import *
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 
@@ -16,7 +18,7 @@ def loginPage(request):
         phone = request.POST['phone']
         password = request.POST['password']
 
-        user = authenticate(phone_number=phone, password=password)
+        user = authenticate(request,phone_number=phone, password=password)
         if user is not None:
             login(request, user)
             if user.is_superuser == True:
@@ -25,6 +27,8 @@ def loginPage(request):
                 return redirect('franchise:index')
             elif user.is_pickupboy == True:
                 return redirect('pickupboy:index')
+            # elif user.is_customer == True:
+            #     return redirect('user:about')
             # elif user.Student !=None:
             #     return redirect('student:home')
         else:
@@ -42,6 +46,7 @@ def home(request):
     return render(request,'official/home.html')
 
 
+# franchise listing
 @login_required(login_url='/official/loginpage')
 def franchise(request):
     if request.method == 'POST':
@@ -64,6 +69,49 @@ def franchise(request):
             "franchise_list" : franchise_list
         }
         return render(request,'official/franchise.html',context)
+
+
+# edit franchise
+def EditFranchise(request,id):
+    print(id)
+    franchise=request.user.franchise
+    print(franchise)
+    franchise = Franchise.objects.get(id=id)
+    context = {
+        "is_editprofile": True,
+        "franchise":franchise
+        }
+    return redirect('/official/franchise',context)
+
+
+@csrf_exempt
+def getprofiledata(request,id):
+    details = Franchise.objects.get(id=id)
+    data = {
+        "fid":details.franchise_id,
+        "name": details.name,
+        "email": details.email,
+        "phone": details.phone,
+        "address": details.address,
+        # "photo": details.photo.url,
+    }
+    return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def editform(request,id):
+    fid = request.POST['fid']
+    name = request.POST['fname']
+    email = request.POST['femail']
+    phone = request.POST['fphone']
+    address = request.POST['faddress']
+    # photo = request.FILES['fphoto']
+    Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
+    get_user_model().objects.filter(franchise=id).update(phone_number=phone)
+    data ={
+        "ss":"csac",
+    }
+    return JsonResponse(data)
 
 
 def viewFranchiseDetails(request,id):
@@ -134,6 +182,117 @@ def modelSpecification(request,id):
         "models_spec":models_spec,
     }
     return render(request,'official/specification.html', context)
+
+
+
+def questions(request):
+
+    device_type = DeviceType.objects.all()
+    context = {
+        "device_type":device_type
+    }
+    return render(request,'official/questions.html', context)
+
+
+@csrf_exempt
+def savedata(request):
+    question = request.POST['addquestion']
+    qst_type = request.POST['radio']
+    image_description = request.POST['description']
+    imagess = request.FILES.get("images", "Photo Not Uploded")
+
+    print(question,"@"*5)
+    print(qst_type,"#"*5)
+    print(image_description,"$"*5)
+    print(imagess,"%"*5)
+
+
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    
+    if qst_type == 'image_type' :
+        # pass
+        new_option = QuestionOption(image_upload=imagess,image_description=image_description, question=new_question)
+        new_option.save()
+        data = {
+            "gg":0
+        }
+        return JsonResponse(data)
+    else:
+        pass
+        # device_type = DeviceType.objects.get(device_type="Mobile")
+        # new_question = Questions(questions=question, question_type=type,device_type=device_type)
+        # new_question.save()
+        # print(new_question,'shifa'*20
+    return JsonResponse(data)
+
+    return render(request,'official/questions.html')
+
+############ trial
+
+@csrf_exempt
+def questsave(request):
+    question = request.POST['qst']
+    qst_type = "Objective"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    countt = qst_count + 1
+    data = {
+        "qstno":countt,
+    }
+    return JsonResponse(data)
+
+
+@csrf_exempt
+def subquestionFirst(request):
+    print("#"*20)
+    question = request.POST['qst']
+    qst_type = "image_type"
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question.save()
+    # qst_count = Questions.objects.filter(device_type=device_type).count()
+    qest_pk = new_question.id
+    # countt = qst_count + 1
+    data = {
+        # "qstno":qst_count,
+        "qest_pk":qest_pk,
+    }
+    return JsonResponse(data)
+
+
+def subquestionPage(request,id):
+    question = Questions.objects.get(id=id)
+    device_type = DeviceType.objects.get(device_type="Mobile")
+    qst_count = Questions.objects.filter(device_type=device_type).count()
+    context = {
+        "question":question,
+        "qst_count":qst_count,
+    }
+    return render(request,'official/sub-question.html',context)
+
+
+@csrf_exempt
+def suquestionAddingData(request):
+    print("#"*20)
+    print(request.POST)
+
+    question = request.POST['disc']
+    qstpk = request.POST['qstpk']
+    img = request.POST.get('imgk')
+    # qstion = Questions.objects.get(id=qstpk)
+
+    print(qstpk,"&"*10)
+    # new_sub_qst = QuestionOption(question=qstion,image_upload=img,image_description=question)
+    # new_sub_qst.save()
+    # print(new_sub_qst)
+    data = {
+        "msg":"msg",
+    }
+    return JsonResponse(data)
 
 
 def questionAdding(request):
