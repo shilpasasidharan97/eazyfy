@@ -3,7 +3,104 @@
 {% load static %}
 
 
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Specification</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class=" avtive"><a href="{% url 'official:brand' %}"> Brand / </a></li>
+            {% comment %} <li class=" avtive"><a href="{% url 'official:model' %}"> Model / </a></li> {% endcomment %}
+            <li class=""><a href="javascript:void(0)">Add verification Questions</a></li>
+        </ol>
+    </div>
+</div>
 
+<div class="row">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Vertical Form</h4>
+        </div>
+        <div class="card-body">
+            <div class="basic-form">
+                <!--  -->
+                    <div class="mb-3 row">
+                        <label class="col-sm-3 col-form-label">Question <span id="qno"></span></label>
+                        <div class="col-sm-9">
+                            <input type="Text" class="form-control" id="question" placeholder="Add Questions"
+                                name="addquestion">
+                        </div>
+                    </div>
+
+                    <div class="mb-3 row" hidden>
+                        <label class="col-sm-3 col-form-label">Device Type</label>
+                        <select name="" id="devicetype">
+                            {% for type in device_type %}
+                            <option value="{{type.device_type}}">{{type.device_type}}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="mb-3 row">                   
+                        <div class="form-group">
+                            <button class="btn btn-primary" onclick="QuestionAdding()">Upload and Next</button>
+                            <button class="btn btn-success" onclick="subQuestionAdding()" >Add sub question</button>
+                            <button class="btn btn-danger">finish</button>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+                
+
+                    
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    
+
+<script>
+
+function QuestionAdding(){
+    var question = $("#question").val()
+    $.ajax({
+        url : "/official/questionsave",
+        type : "POST",
+        data : {
+            "qst":question,
+        },
+        success : function(responce) {
+            $("#qno").html(responce.qstno)
+            $("#question").val("")
+
+            
+        }
+    })
+}
+
+
+function subQuestionAdding() {
+    var question = $("#question").val()
+    $.ajax({
+        url : "/official/suquestionAdding",
+        type : "POST",
+        data : {
+            "qst":question,
+        },
+        success : function(responce) {
+            // alert(response.qest_pk)
+            window.location.href ='/official/suquestionAddingPage/'+responce.qest_pk
+
+        }
+    })
+
+}
+    
+</script>
 
 
 {% endblock %}

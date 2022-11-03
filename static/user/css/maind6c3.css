@@ -133,6 +133,11 @@ video {
   vertical-align: baseline;
 
 }
+ /* .modal.modal-dialog.sizemodal{
+  height: 650px;
+  width: 654px;
+  margin-left: -69px;
+} */
 
 thead {
   font-weight: 600;
@@ -1997,6 +2002,15 @@ label {
   padding: 15px;
 }
 @media screen and (max-width: 640px) {
+  .footer-design{
+    width: 61px;
+    min-width: 15px;
+  }
+
+  .whysell{
+    box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
+    width: 395px;
+  }
   .hero-slider-1.style-3 .slider-1-height-3 {
     height: 109px !important;
   }
@@ -2004,7 +2018,6 @@ label {
     height: 90px !important;
     text-align: center;
   }
-
   .works{
     height: 0px !important;
     display: inline-block;
@@ -2015,12 +2028,19 @@ label {
   }
   .service-category{
     margin: 10px 0 10px 0;
+    flex: 0 0 auto;
   }
+  .why-us{
+    text-align: center;
+  }
+  .wusbanner {
+    padding: 10px !important;
+}
 }
 
 .service-category{
   margin: 10px 0 10px 0;
-  width: 14.2% !important;
+ 
   flex: 0 0 auto;
 }
 
@@ -3365,8 +3385,8 @@ table .product-thumbnail img {
 
 .deal h2 {
   color: #ff3551;
-  font-weight: 600;
-  font-size: 26px;
+  font-weight: 500;
+  font-size: 21px;
   line-height: 1.1;
   margin-bottom: 5px;
 }
@@ -5970,8 +5990,8 @@ h6.post-title {
 }
 
 .header-action-2 .header-action-icon-2:hover>a {
-  color: #088178;
-  fill: #088178;
+  color: #8d669b;
+  fill: #8d669b;
 }
 
 .header-action-2 .header-action-icon-2:hover .cart-dropdown-wrap {
@@ -8018,7 +8038,7 @@ span.fi-rs-apps {
 }
 
 .footer-list li a:hover {
-  color: #088178;
+  color: #5f009a;
 }
 
 .footer-bottom {
@@ -10127,9 +10147,9 @@ span.fi-rs-apps {
     width: 37px;
   }
 
-  .card-1 figure img {
+  /* .card-1 figure img {
     margin-left: 42px;
-  }
+  } */
 
   .post-list .post-thumb {
     max-width: unset;
@@ -10600,7 +10620,7 @@ span.fi-rs-apps {
 }
 
 .flwidth {
-  width: 100%;
+  /* width: 100%; */
 }
 
 .card-shadow {
@@ -10650,4 +10670,36 @@ input[type="tel"] {
   content: '';
   display: inline-block;
   border-top: 1px solid black;
+}
+
+
+
+/* vivek 3/11/22 */
+
+.search-onload{
+  width: 100% !important;
+  position: relative;
+  min-width: 330px;  
+
+@media screen and (max-width: 640px) {
+  .re-head{
+    font-size: 15px;
+  }
+  .re-subhead{
+    font-size: 13px;
+  }
+  .re_pair{
+    text-align: center;
+  }
+  h3.section-title {
+    font-size: 20px;
+}
+.why_us{
+  font-size: 15px;
+}
+.why_us_desc{
+  font-size: 12px;
+  line-height: .2rem;
+}
+}
 }

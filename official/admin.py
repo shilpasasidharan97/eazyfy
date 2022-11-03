@@ -3,7 +3,7 @@ from . models import *
 
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('franchise', 'pickup_boy')
+    list_display = ('franchise', 'pickup_boy', 'customer')
     search_fields = ('franchise', 'pickup_boy')
 
 
@@ -49,7 +49,30 @@ class ModelSpecificationsAdmin(admin.ModelAdmin):
 admin.site.register(ModelSpecifications, ModelSpecificationsAdmin)
 
 
+admin.site.register(DeviceType)
+
+class QuestionsAdmin(admin.ModelAdmin):
+    list_display = ('questions','question_type' )
+    search_fields = ('questions',)
 
 
 
+admin.site.register(Questions, QuestionsAdmin)
 
+
+class DedectionAdmin(admin.ModelAdmin):
+    list_display = ('spec','dedection_amount' )
+    search_fields = ('spec','dedection_amount')
+
+
+admin.site.register(Dedection, DedectionAdmin)
+
+
+admin.site.register(QuestionOption)
+
+
+class CutomerRegistrationAdmin(admin.ModelAdmin):
+    list_display = ('name','email','phone_number' )
+
+
+admin.site.register(CutomerRegistration, CutomerRegistrationAdmin)

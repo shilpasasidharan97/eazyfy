@@ -1,7 +1,10 @@
+from email.policy import default
+from random import choices
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 from phone_field import PhoneField
+import uuid
 
 # Create your models here.
 
@@ -36,7 +39,7 @@ class Franchise(models.Model):
     franchise_id = models.CharField(max_length=20, null=True)
     name = models.CharField(max_length=40, null=True)
     email = models.EmailField(null=True)
-    phone = PhoneField(null=True)
+    phone = models.CharField(max_length=15,null=True,blank=True)
     photo = models.FileField(upload_to='franchise', null=True, blank=True)
     address = models.CharField(max_length=500, null=True)
     password = models.CharField(max_length=20)
@@ -59,13 +62,32 @@ class PickUpBoy(models.Model):
     def __str__(self):
         return str(self.name)
 
+
+class CutomerRegistration(models.Model):
+    name = models.CharField(max_length=50, null=True, blank=True)
+    email = models.EmailField(max_length=500,null=True)
+    phone_number = PhoneField(null=True)
+    password = models.CharField(max_length=20,null=True)
+
+
+    def __str__(self):
+        return str(self.name)
+    
+    class Meta:
+        verbose_name_plural = ("Customer")
+
+
+
 class User(AbstractUser):
     username = None
-    phone_number = PhoneField(unique=True)
+    email = models.EmailField(max_length=150, null=True, blank=True)
+    phone_number = models.CharField(max_length=15,unique=True)
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
     pickup_boy = models.ForeignKey(PickUpBoy, on_delete=models.CASCADE, null=True, blank=True)
+    customer = models.ForeignKey(CutomerRegistration, on_delete=models.CASCADE, null=True, blank=True)
     is_franchise= models.BooleanField(default=False)
     is_pickupboy=models.BooleanField(default=False)
+    is_customer = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
@@ -75,6 +97,12 @@ class User(AbstractUser):
     objects = UserManager()
     def __str__(self):
         return str(self.phone_number)
+
+class CutomerProfile(models.Model):
+    user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
+    auth_token = models.CharField(max_length=100 ,blank = True, null = True)
+    test_id = models.CharField(max_length=100 ,default = uuid.uuid4)
+    forget_password_token = models.CharField(max_length=100, blank=True,null=True)
 
 
 
@@ -111,3 +139,26 @@ class ModelSpecifications(models.Model):
 
     class Meta:
         verbose_name_plural = ("Model Specifications")
+
+
+
+class DeviceType(models.Model):
+    device_choices =  (('Mobile', 'Mobile'), ('TV', 'TV'),('Laptop','Laptop'))
+    device_type = models.CharField(max_length = 10,choices = device_choices)
+
+class Questions(models.Model):
+    question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
+    device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
+    questions = models.CharField(max_length = 500,null = True)
+    question_type = models.CharField(max_length = 15,choices = question_type)
+
+
+class QuestionOption(models.Model):
+    question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
+    image_upload = models.FileField(upload_to = 'Question  Image',null = True)
+    image_description = models.CharField(max_length = 500,null = True)
+
+class Dedection(models.Model):
+    questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
+    spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
+    dedection_amount = models.IntegerField(null = True, blank = True)

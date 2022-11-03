@@ -1,0 +1,21 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="" id="otp">
+        <div class="form-group">
+            <input required="" type="password" name="otp" placeholder="Enter Your OTP">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-fill-out btn-block hover-up" name="OTP">Confirm</button>
+            <a href="{% url 'user:resendotp' token %}" class="btn btn-sm text-white">Resent</a>
+        </div>
+    </div>
+</form>
+
+
+{% endblock %}

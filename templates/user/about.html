@@ -2,199 +2,7 @@
 {% load static %}
 {% block content %}
 
-<style>
-    #cards .card1 {
-        border-radius: 20px;
-        min-height: 100%;
-    }
-
-    #cards .heading-border {
-        position: absolute;
-        width: 100%;
-        top: 60%;
-    }
-
-    #cards .card1 .user-picture img {
-        position: absolute;
-        top: -40%;
-        right: 3%;
-        background: #f8f9fa !important;
-        padding: 10px;
-    }
-
-    #cards .card1 .user-content .user-name {
-        margin-right: 150px;
-    }
-
-
-    .accent-bg {
-        color: #fff;
-        background-color: #dbcae8;
-    }
-
-    .mar-t40 {
-        margin-top: 40px;
-    }
-
-    .layout.center,
-    .layout.center-center {
-        align-items: center;
-    }
-
-    .layout.vertical {
-        flex-direction: column;
-    }
-
-    .frame-size {
-        width: 100%;
-        margin: 0 auto;
-        max-width: 1420px;
-        padding-left: 5vw;
-        padding-right: 5vw;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    .pad-t40 {
-        padding-top: 40px;
-    }
-
-    .layout.justified {
-        justify-content: space-between;
-    }
-
-    .layout.wrap {
-        flex-wrap: wrap;
-    }
-
-    .layout.horizontal {
-        flex-direction: row;
-    }
-
-    .flwidth {
-        width: 100%;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    .pad0 {
-        padding: 0;
-    }
-
-    .mar-b40 {
-        margin-bottom: 40px;
-    }
-
-    .layout.center-center {
-        justify-content: center;
-    }
-
-    .layout.center,
-    .layout.center-center {
-        align-items: center;
-    }
-
-    .layout.horizontal {
-        flex-direction: row;
-    }
-
-    .jss97 {
-        width: 25%;
-        padding: 16px;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    .mar-b20 {
-        margin-bottom: 20px;
-    }
-
-    .pad16 {
-        padding: 16px;
-    }
-
-    .layout.center-justified,
-    .layout.center-center {
-        justify-content: center;
-    }
-
-    .layout.center,
-    .layout.center-center {
-        align-items: center;
-    }
-
-    .layout.horizontal {
-        flex-direction: row;
-    }
-
-    .jss98 {
-        width: 120px;
-        height: 120px;
-        min-width: 120px;
-    }
-
-    .img-resp {
-        display: block;
-        max-width: 100%;
-        max-height: 100%;
-        vertical-align: middle;
-    }
-
-    .layout.vertical {
-        flex-direction: column;
-    }
-
-    .jss103 {
-        margin-left: 8px;
-    }
-
-    .flwidth {
-        width: 100%;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    .font18-16 {
-        font-size: calc(1rem + (18 - 16) * ((100vw - 320px) / (1920 - 320)));
-        line-height: 1.43;
-    }
-
-    .font-semi-bold {
-        font-weight: 600;
-    }
-
-    .font16-14 {
-        font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
-        line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
-    }
-
-    .font-semi-bold {
-        font-weight: 600;
-    }
-
-    @media (max-width: 959.95px) {
-        .layout.vertical-mob {
-            flex-direction: column;
-            width: 142px;
-        }
-    }
-
-    @media (max-width: 959.95px) {
-
-        .layout.horizontal-mob,
-        .layout.vertical-mob {
-            display: flex;
-        }
-    }
-</style>
+<link rel="stylesheet" href="{% static 'user/css/more.css' %}">
 
 <main class="main single-page">
     <div class="page-header breadcrumb-wrap">
@@ -227,6 +35,7 @@
     </section>
 
 
+    <!-- team button -->
     <section id="team" class="pt-25 wow fadeIn animated">
         <div class="container">
             <div class="row mb-50 align-items-center">
@@ -241,69 +50,12 @@
                         Members</a>
                 </div>
             </div>
-            <!-- <div class="position-relative">
-                <div class="row wow fadeIn animated">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-card border-radius-10 overflow-hidden text-center">
-                            <img src="assets/imgs/page/avatar-1.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                            <h4 class="fw-500 mb-0">Patric Adams</h4>
-                            <p class="fw-400 text-brand mb-10">CEO & Co-Founder</p>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-card border-radius-10 overflow-hidden text-center">
-                            <img src="assets/imgs/page/avatar-2.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                            <h4 class="fw-500 mb-0">Dilan Specter</h4>
-                            <p class="fw-400 text-brand mb-10">Head Engineer</p>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-card border-radius-10 overflow-hidden text-center">
-                            <img src="assets/imgs/page/avatar-3.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                            <h4 class="fw-500 mb-0">Tomas Baker</h4>
-                            <p class="fw-400 text-brand mb-10">Senior Planner</p>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="blog-card border-radius-10 overflow-hidden text-center">
-                            <img src="assets/imgs/page/avatar-4.jpg" alt="" class="border-radius-10 mb-30 hover-up">
-                            <h4 class="fw-500 mb-0">Norton Mendos</h4>
-                            <p class="fw-400 text-brand mb-10">Project Manager</p>
-                            <div class="mobile-social-icon wow fadeIn animated mb-sm-5 mb-md-0 animated">
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-facebook.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-twitter.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-instagram.svg" alt=""></a>
-                                <a href="#"><img src="assets/imgs/theme/icons/icon-pinterest.svg" alt=""></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </section>
 
 
 
-
+    <!-- why us -->
     <section class="mt-400 pb-50">
         <div class="accent-bg mar-t40">
             <div class="layout vertical center card-header frame-size pad-t40">
@@ -383,10 +135,7 @@
     </section>
 
 
-
-
-
-
+    <!-- Locations -->
     <section id="work" class="mt-400 pb-50">
         <div class="container">
             <div class="row mb-50">
@@ -401,26 +150,25 @@
             <div class="row">
                 <div class="col-md-4 text-center mb-md-0 mb-4">
                     <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
-                        src="assets/imgs/page/company-1.jpg" alt="">
+                        src="{% static 'user/imgs/page/company-1.jpg' %}" alt="">
                     <h4 class="mt-30 mb-15 wow fadeIn animated">New York, USA</h4>
                     <p class="text-grey-3 wow fadeIn animated">27 Division St, New York<br>NY 10002, USA</p>
                 </div>
                 <div class="col-md-4 text-center mb-md-0 mb-4">
                     <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
-                        src="assets/imgs/page/company-2.jpg" alt="">
+                        src="{% static 'user/imgs/page/company-2.jpg' %}" alt="">
                     <h4 class="mt-30 mb-15 wow fadeIn animated">Paris, France</h4>
                     <p class="text-grey-3 wow fadeIn animated">22 Rue des Carmes<br> 75005 Paris</p>
                 </div>
                 <div class="col-md-4 text-center">
                     <img class="btn-shadow-brand hover-up border-radius-10 bg-brand-muted wow fadeIn animated"
-                        src="assets/imgs/page/company-3.jpg" alt="">
+                        src="{% static 'user/imgs/page/company-3.jpg' %}" alt="">
                     <h4 class="mt-30 mb-15 wow fadeIn animated">Jakarta, Indonesia</h4>
                     <p class="text-grey-3 wow fadeIn animated">2476 Raya Yogyakarta,<br>89090 Indonesia</p>
                 </div>
             </div>
         </div>
     </section>
-
 
 
     <!-- team -->
@@ -436,12 +184,9 @@
                 </div>
             </div>
 
-
-
             <div class="row align-items-center mt-5">
                 <section id="cards">
                     <div class="container py-2">
-                        <!-- cards -->
                         <div class="row">
                             <div class="col-lg-4 col-md-6 mb-4" style="margin-top: 60px;">
                                 <div class="card shadow-sm border-0 card1">
@@ -570,51 +315,10 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /cards -->
                 </section>
-                <!-- /Ui cards -->
-            </div>
-
-            <div class="row mt-30">
-                <div class="col-12 text-center">
-                    <p class="wow fadeIn animated">
-                        <a class="btn btn-brand text-white btn-shadow-brand hover-up btn-lg">View More</a>
-                    </p>
-                </div>
             </div>
         </div>
     </section>
-
-    <!-- <section class="section-padding">
-        <div class="container pb-25">
-            <h3 class="section-title mb-20 wow fadeIn animated text-center"><span>Featured</span> Clients</h3>
-            <div class="carausel-6-columns-cover position-relative wow fadeIn animated">
-                <div class="carausel-6-columns text-center" id="carausel-6-columns-3">
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-1.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-2.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-4.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-5.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-6.png" alt="">
-                    </div>
-                    <div class="brand-logo">
-                        <img class="img-grey-hover" src="assets/imgs/banner/brand-3.png" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
 </main>
 
 {% endblock %}

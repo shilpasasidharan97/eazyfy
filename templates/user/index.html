@@ -2,6 +2,94 @@
 {% load static %}
 {% block content %}
 
+
+<div class="body-overlay-1"></div>
+<div class="modal fade custom-modal show" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
+    <div class="modal-dialog">
+    <div class="modal-content">              
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
+            <div class="modal-body">
+                <div class="deal" style="background-image: url('assets/imgs/banner/menu-banner-7.png')">
+                    <div class="deal-top text-center">
+                        <h2 class="text-brand">Choose Your Location to sell Your Mobile Phone</h2>
+                       
+                    </div>
+                    <div class="deal-content">
+                        <form>
+                            <div class="flwidth layout vertical search-onload text-center d-none d-md-block">
+
+                                <a href="" class="flwidth">
+
+                                    <label for="list-search-input" class="mr-auto layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
+                                        <span id="search-icon" class="search-icon layout center-center">
+                                            <img alt="product_search" class="" src="/static/user/imgs/ProductSearch.svg">
+                                        </span>
+                                        <input type="text" class="form-control bg-white font-small" placeholder="search something..">
+                                    </label>
+
+                                </a>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="deal-bottom">
+                        <div class="row">
+                            <div class="col-4 col-sm-4 col-xs-4  col-lg-2">
+                                 <div class="text-center">
+                                <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
+                               
+                                    <h4 class="bg-1 servicetext">Calicut</h4>
+                                </div>
+                                
+                            </div>
+                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
+                                <div class="text-center">
+                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
+                                   
+                                        <h4 class="bg-1 servicetext">Banglore</h4>
+                                    </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
+                                <div class="text-center">
+                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
+                                   
+                                        <h4 class="bg-1 servicetext">Calicut</h4>
+                                    </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
+                                <div class="text-center">
+                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
+                                   
+                                        <h4 class="bg-1 servicetext">Banglore</h4>
+                                    </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
+                                <div class="text-center">
+                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
+                                   
+                                        <h4 class="bg-1 servicetext">Calicut</h4>
+                                    </div>
+                            </div>
+                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
+                                <div class="text-center">
+                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
+                                   
+                                        <h4 class="bg-1 servicetext">Banglore</h4>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>        
+    </div>
+    </div>
+</div>
+
+
+
+
+
+
 <section class="home-slider position-relative ">
     <div class="container-fluid">
         <div class="row">
@@ -62,26 +150,32 @@
 
         <div class="row">
             <div class="col-sm-3 col-3 col-xs-3 col-md-3  col-lg-2 service-category" >
+                <a href="{% url 'user:sell' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
 
-                    <a href="sell">
+                   
                         <h4 class="bg-1 servicetext">Sell Phone</h4>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:buyphone' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
+                </a>
                 </div>
             </div>
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
+                <a href="{% url 'user:repair_phone' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Repair Phone</h4>
+                </a>
                 </div>
             </div>
+
             <div class="col-sm-3 col-3 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
                     <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">
@@ -194,7 +288,7 @@
             <!-- <div class="banner-text ">
                 <h4 class="mb-1 mt-40 text-brand">Repair Services</h4>
                 <h4 class="fw-600 mb-20">We're an Apple <br>Authorised Service Provider</h4>
-                <a href="shop-grid-right.html" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a>
+                <a href="#" class="btn">Learn More <i class="fi-rs-arrow-right"></i></a>
             </div> -->
         </div>
     </div>
@@ -242,49 +336,49 @@
                     <figure class=" img-hover-scale overflow-hidden">
                         <a href="shops"><img src="{% static 'user/imgs/banner/apple.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">T-Shirt</a></h5> -->
+                    <!-- <h5><a href="#">T-Shirt</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
+                        <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Bags</a></h5> -->
+                    <!-- <h5><a href="#">Bags</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Sandan</a></h5> -->
+                    <!-- <h5><a href="#">Sandan</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Scarf Cap</a></h5> -->
+                    <!-- <h5><a href="#">Scarf Cap</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Shoes</a></h5> -->
+                    <!-- <h5><a href="#">Shoes</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Pillowcase</a></h5> -->
+                    <!-- <h5><a href="#">Pillowcase</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Jumpsuits</a></h5> -->
+                    <!-- <h5><a href="#">Jumpsuits</a></h5> -->
                 </div>
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shop-grid-right.html"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
+                        <a href="#"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
                     </figure>
-                    <!-- <h5><a href="shop-grid-right.html">Hats</a></h5> -->
+                    <!-- <h5><a href="#">Hats</a></h5> -->
                 </div>
             </div>
         </div>
@@ -550,7 +644,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us ">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -560,14 +654,14 @@
                                 <div class="banner-texts">
                                     <h4 style="">Best Prices</h4>
                                     <span class="">Objective AI-based pricing</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -578,14 +672,14 @@
                                     <h4>Instant Payment</h4>
                                     <span> Instant Money Transfer in your preferred mode at time of
                                         pick up or store drop off</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -595,7 +689,7 @@
                                 <div class="banner-texts">
                                     <h4 style="">Simple & Convenient </h4>
                                     <span class=""> Check price, schedule pickup & get paid</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
@@ -603,7 +697,7 @@
                 </div>
 
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -615,14 +709,14 @@
                                         Free Doorstep Pickup
                                     </h4>
                                     <span class="">No fees for pickup across 1500 cities across India</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -632,14 +726,14 @@
                                 <div class="banner-texts">
                                     <h4>Factory Grade Data Wipe</h4>
                                     <span>100% Safe and Data Security Guaranteed</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6">
+                <div class="col-lg-4 col-md-6 col-6 why-us">
                     <div class="banner-img wow fadeIn animated">
                         <div class="row">
                             <div class="col-lg-3">
@@ -649,7 +743,7 @@
                                 <div class="banner-texts">
                                     <h4>Valid Purchase Invoi </h4>
                                     <span>Genuine Bill of Sale</span>
-                                    <!-- <a href="shop-grid-right.html">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
+                                    <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
                         </div>
