@@ -23,13 +23,13 @@ urlpatterns = [
 
     path('questions',views.questions,name='questions'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
-    path('savedata/', views.savedata, name="savedata"),
+    # path('savedata/', views.savedata, name="savedata"),
 
     #trial
     path('questionsave', views.questsave, name="questionsave"),
     path('suquestionAdding', views.subquestionFirst, name="suquestionAdding"),
     path('suquestionAddingPage/<str:id>', views.subquestionPage, name="suquestionAddingPage"),
-    path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
+    # path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
 
 
 

@@ -146,17 +146,36 @@ class DeviceType(models.Model):
     device_choices =  (('Mobile', 'Mobile'), ('TV', 'TV'),('Laptop','Laptop'))
     device_type = models.CharField(max_length = 10,choices = device_choices)
 
+    class Meta:
+        verbose_name_plural = ("Device Type")
+
+    def __str__(self):
+        return str(self.device_type)
+
+
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
     device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
     questions = models.CharField(max_length = 500,null = True)
     question_type = models.CharField(max_length = 15,choices = question_type)
 
+    class Meta:
+        verbose_name_plural = ("Questions")
+
+    def __str__(self):
+        return str(self.questions)
+
 
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
     image_upload = models.FileField(upload_to = 'Question  Image',null = True)
     image_description = models.CharField(max_length = 500,null = True)
+
+    class Meta:
+        verbose_name_plural = ("Sub questions")
+
+    def __str__(self):
+        return str(self.image_description)
 
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
