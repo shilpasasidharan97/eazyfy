@@ -322,4 +322,3 @@ def profile(request):
 def logout_view(request):
     logout(request)
     return redirect('/official/loginpage')
-
