@@ -97,9 +97,9 @@
                         <a class="dropdown-item" href="">
                             <i class="far fa-eye me-2"></i>View
                         </a>
-                        <a class="dropdown-item" href="javascript:void(0);" onclick="deleteBrand()">
+                        <button class="dropdown-item" onclick="deleteBrand({{brand.id}})">
                             <i class="far fa-trash-alt me-2"></i>Delete
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -212,7 +212,7 @@
 <!-- delete Brand -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-    function deleteBrand() {
+    function deleteBrand(id) {
         Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -228,6 +228,7 @@
                     'Your file has been deleted.',
                     'success'
                 )
+                window.location.href = "/official/deletebrand/" + id
             }
         })
     }

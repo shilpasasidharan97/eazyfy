@@ -175,6 +175,12 @@ def editBrand(request,id):
     return redirect('official:brand')
 
 
+def DeleteBrand(request,id):
+    print("#"*20)
+    Brand.objects.get(id=id).delete()
+    return redirect('/official/brand')
+
+
 def Model(request,id):
     brand = Brand.objects.get(id=id)
     models = BrandModel.objects.filter(brand=brand)

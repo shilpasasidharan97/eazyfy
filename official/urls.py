@@ -20,6 +20,8 @@ urlpatterns = [
     path('brand',views.brand,name='brand'),
     path('editbrand/<int:id>',views.editBrand, name='editbrand'),
     path('getbranddata/<int:id>',views.getbranddata, name='getbranddata'),
+    path('deletebrand/<int:id>',views.DeleteBrand, name='deletebrand'),
+
     path('model/<int:id>',views.Model,name='model'),
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
 
