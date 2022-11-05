@@ -57,7 +57,7 @@ def franchise(request):
         email = request.POST['email']
         password = request.POST['password']
         address = request.POST['address']
-        photo = request.FILES['photo']
+        photo = request.FILES.get('photo',"not found")
         franchise = Franchise(name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address, password=password)
         franchise.save()
 
