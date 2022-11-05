@@ -9642,6 +9642,9 @@ span.fi-rs-apps {
   font-size: 10px;
     line-height: 14px;
 }
+.view{
+  display: none;
+}
   .header-action .header-action-icon {
     margin-right: 15px;
   }
