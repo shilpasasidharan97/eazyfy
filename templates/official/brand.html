@@ -2,6 +2,55 @@
 {% block content %}
 {% load static %}
 
+<style>
+    /*  */
+    .profile-img-wrap.edit-img {
+        border-radius: 50%;
+        margin: 0 auto 30px;
+        position: relative;
+    }
+
+    .profile-img-wrap {
+        height: 120px;
+        position: absolute;
+        width: 120px;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    .profile-img-wrap .fileupload {
+        background: rgba(33, 33, 33, 0.5);
+        border: none;
+        padding: 3px 10px;
+        border-radius: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .profile-img-wrap .fileupload .btn-text {
+        color: #ffffff;
+    }
+
+    .profile-img-wrap .fileupload .upload {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        font-size: 20px;
+        opacity: 0;
+        margin: 0;
+        padding: 5px;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+    }
+</style>
 
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
@@ -35,16 +84,17 @@
     <div class="col-xl-3 col-sm-6 col-sm-4 col-md-4 col-lg-4">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
-                <a href="view-invoice.html" class="invoice-grid-link">IN093439#@016</a>
+                <a href="" class="invoice-grid-link">IN093439#@016</a>
                 <div class="dropdown dropdown-action">
                     <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-ellipsis-vertical"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-end">
-                        <a class="dropdown-item" href="edit-invoice.html">
+                        <a class="dropdown-item" href="" onclick="DataGets({{brand.id}})" data-bs-toggle="modal"
+                            data-bs-target="#EditModal{{brand.id}}">
                             <i class="far fa-edit me-2"></i>Edit
                         </a>
-                        <a class="dropdown-item" href="view-invoice.html">
+                        <a class="dropdown-item" href="">
                             <i class="far fa-eye me-2"></i>View
                         </a>
                         <a class="dropdown-item" href="javascript:void(0);" onclick="deleteBrand()">
@@ -55,21 +105,68 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    <img class="card-img-bottom img-fluid" src="{{brand.image.url}}"
-                        alt="Card image cap">
+                    <img class="card-img-bottom img-fluid" src="{{brand.image.url}}" alt="Card image cap">
                 </p>
             </div>
 
 
             <div class="card-footer">
                 <div class="project-media text-center">
-                    <a type="button" href="{% url 'official:model' brand.id %}" class="btn btn-outline-info">Add Model</a>
+                    <a type="button" href="{% url 'official:model' brand.id %}" class="btn btn-outline-info">Add
+                        Model</a>
                 </div>
             </div>
         </div>
     </div>
-    {% endfor %}
 
+
+    <!-- edit modal -->
+    <div class="modal fade" id="EditModal{{brand.id}}">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Edit Brand</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form action="{% url 'official:editbrand' brand.id %}" method="POST" enctype="multipart/form-data" >
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <div class="profile-img-wrap edit-img">
+                                        <img class="inline-block" src=""
+                                            id="bimage{{brand.id}}" alt="user">
+                                        <div class="fileupload btn">
+                                            <span class="btn-text">edit</span>
+                                            <!-- {{empform.emp_profile}} -->
+                                            <input class="upload" name="bphoto{{brand.id}}" type="file"  >
+                                            <!-- <input class="" name="brandpk" value="" type="text" id="bpk{{brand.id}}" > -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Brand Name</label>
+                                    <input type="text" class="form-control" placeholder="1234 Main St" name="bname{{brand.id}}"
+                                        id="bname{{brand.id}}">
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="submit"  class="btn btn-primary">Save
+                                    changes</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
 
 
@@ -93,15 +190,16 @@
                             </div>
                             <div class="mb-3 col-md-12">
                                 <div class="form-file">
-                                <input type="file" class="form-file-input form-control" name="photo">
+                                    <input type="file" class="form-file-input form-control" name="photo">
+                                </div>
+                                <span class="input-group-text">Upload</span>
                             </div>
-                            <span class="input-group-text">Upload</span>
-                        </div>
 
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-danger light"
+                                    data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                            </div>
                     </form>
                 </div>
             </div>
@@ -109,6 +207,7 @@
         </div>
     </div>
 </div>
+
 
 <!-- delete Brand -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -132,6 +231,81 @@
             }
         })
     }
+
+    // edit modal
+
 </script>
+
+<!-- edit modal -->
+<script>
+    function DataGets(id) {
+        alert(id)
+        $.ajax({
+            url: "/official/getbranddata/" + id,
+            type: 'GET',
+
+            success: function (responce) {
+                $('#bname'+id).val(responce.value.name)
+                $('#bimage'+id).attr("src", responce.value.photo)
+                // $('#bpk'+id).val(responce.value.id)
+
+            }
+
+        })
+
+    }
+
+    // function EditBrand(id) {
+    //     $.ajax({
+    //         url: "/official/editbrand/" + id,
+    //         type: 'POST',
+    //         data: {
+    //             'bname': $('#bname').val(),
+    //             'bphoto':$('#bimage').val(),
+    //         },
+    //         success: function (responce) {
+    //             window.location.reload()
+    //         }
+    //     })
+    // }
+    
+
+
+    // $(document).ready(function () {
+    //     $("#RegisterationForm").submit(function (e) {
+    //         // var data = $("#categorysave").serializeArray();
+    //         var formData = new FormData(e.target);
+    //         e.preventDefault();
+    //         console.log(formData)
+    //         $.ajax({
+    //             url: "/registration",
+    //             type: "POST",
+    //             data: formData,
+    //             contentType: false,
+    //             contentType: false,
+    //             cache: false,
+    //             success: function (responce) {
+    //                 Swal.fire({
+    //                     position: 'top-center',
+    //                     icon: 'success',
+    //                     title: 'Your Registration Has Been Completed',
+    //                     showConfirmButton: false,
+    //                     timer: 3000
+    //                   })
+    //                   setInterval('location.reload()', 3000);   
+                 
+    //             }
+                
+    //         });
+
+    //     });
+    //     return false;
+
+    // });
+
+
+
+</script>
+
 
 {% endblock %}

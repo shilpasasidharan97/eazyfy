@@ -181,3 +181,4 @@ class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
     dedection_amount = models.IntegerField(null = True, blank = True)
+

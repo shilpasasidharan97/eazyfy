@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 def base(request):
     return render(request,'official/partials/base.html')
 
-
+# login
 def loginPage(request):
     if request.method == 'POST':
         phone = request.POST['phone']
@@ -37,6 +37,7 @@ def loginPage(request):
     return render(request,'official/login.html')
 
 
+# FORGOT PASSWORD
 def forgotPassword(request):
     return render(request,'official/forgot_password.html')
 
@@ -107,7 +108,7 @@ def editform(request,id):
     address = request.POST['faddress']
     # photo = request.FILES['fphoto']
     Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
-    get_user_model().objects.filter(franchise=id).update(phone_number=phone)
+    get_user_model().objects.filter(franchise__id=id).update(phone_number=phone,email=email)
     data ={
         "ss":"csac",
     }
@@ -146,6 +147,32 @@ def brand(request):
         "brands":brands,
     }
     return render(request,'official/brand.html', context)
+
+
+# edit brand
+@csrf_exempt
+def getbranddata(request,id):
+    print(id)
+    details = Brand.objects.get(id=id)
+    data = {
+        "name": details.name,
+        "photo": details.image.url,
+        "id":details.id,
+    }
+    return JsonResponse({"value": data})
+
+# @csrf_exempt
+def editBrand(request,id):
+    newId = str(id)
+    brand_name = request.POST['bname'+newId]
+    brand_photo = request.FILES.get("bphoto"+newId,"notfount")
+    # print(brand_photo,"$"*10)
+    Brand.objects.filter(id=id).update(name=brand_name)
+    if brand_photo != "notfount":
+        brsnd=Brand.objects.get(id=id)
+        brsnd.image=brand_photo
+        brsnd.save()
+    return redirect('official:brand')
 
 
 def Model(request,id):
@@ -267,9 +294,6 @@ def suquestionAddingData(request):
         "msg":"msg",
     }
     return JsonResponse(data)
-
-
-
 
 
 def userRequestList(request):
