@@ -246,14 +246,16 @@
                                     <a href="{% url 'user:sell' %}">Sell phones <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li style="font-weight: bold;">Our top Brands</li>
-                                        <li><a href="{% url 'user:shops' %}">Apple</a></li>
-                                        <li><a href="{% url 'user:shops' %}">Samsung</a></li>
-                                        <li><a href="{% url 'user:shops' %}">Xiaomi</a></li>
-                                        <li><a href="{% url 'user:shops' %}">One plus</a></li>
-                                        <li><a href="{% url 'user:shops' %}">Nokia</a></li>
-                                        <li><a href="{% url 'user:shops' %}">Poco</a></li>
-                                        <li><a href="{% url 'user:shops' %}">vivo</a></li>
-                                        <li><a href="{% url 'user:sell' %}">more</a></li>
+
+
+                                                                
+                                        {% for brand in brand %}
+                                        <li><a href="{% url 'user:shops' brand.id %}">{{ brand.name }}</a></li>
+
+                                        {% endfor %}
+
+                                       
+                                        
                                     </ul>
                                 </li>
                                 <li class="position-static">

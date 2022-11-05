@@ -9,4 +9,8 @@ urlpatterns = [
     path('add-pickupboy',views.add_pickupboy,name="add-pickupboy"),
     path('order',views.order,name="order"),
 
+    path('deletepickupboy/<int:id>',views.Deletepickupboy, name='deletepickupboy'),
+    path('editform/<int:id>',views.editform,name='editform'),
+    path('getprofiledata/<int:id>',views.getprofiledata,name='getprofiledata'),
+
 ]

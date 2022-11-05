@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 def base(request):
     return render(request,'official/partials/base.html')
 
-
+# login
 def loginPage(request):
     if request.method == 'POST':
         phone = request.POST['phone']
@@ -37,6 +37,7 @@ def loginPage(request):
     return render(request,'official/login.html')
 
 
+# FORGOT PASSWORD
 def forgotPassword(request):
     return render(request,'official/forgot_password.html')
 
@@ -56,7 +57,7 @@ def franchise(request):
         email = request.POST['email']
         password = request.POST['password']
         address = request.POST['address']
-        photo = request.FILES['photo']
+        photo = request.FILES.get('photo',"not found")
         franchise = Franchise(name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address, password=password)
         franchise.save()
 
@@ -107,7 +108,7 @@ def editform(request,id):
     address = request.POST['faddress']
     # photo = request.FILES['fphoto']
     Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
-    get_user_model().objects.filter(franchise=id).update(phone_number=phone)
+    get_user_model().objects.filter(franchise__id=id).update(phone_number=phone,email=email)
     data ={
         "ss":"csac",
     }
@@ -148,6 +149,38 @@ def brand(request):
     return render(request,'official/brand.html', context)
 
 
+# edit brand
+@csrf_exempt
+def getbranddata(request,id):
+    print(id)
+    details = Brand.objects.get(id=id)
+    data = {
+        "name": details.name,
+        "photo": details.image.url,
+        "id":details.id,
+    }
+    return JsonResponse({"value": data})
+
+# @csrf_exempt
+def editBrand(request,id):
+    newId = str(id)
+    brand_name = request.POST['bname'+newId]
+    brand_photo = request.FILES.get("bphoto"+newId,"notfount")
+    # print(brand_photo,"$"*10)
+    Brand.objects.filter(id=id).update(name=brand_name)
+    if brand_photo != "notfount":
+        brsnd=Brand.objects.get(id=id)
+        brsnd.image=brand_photo
+        brsnd.save()
+    return redirect('official:brand')
+
+
+def DeleteBrand(request,id):
+    print("#"*20)
+    Brand.objects.get(id=id).delete()
+    return redirect('/official/brand')
+
+
 def Model(request,id):
     brand = Brand.objects.get(id=id)
     models = BrandModel.objects.filter(brand=brand)
@@ -184,52 +217,24 @@ def modelSpecification(request,id):
     return render(request,'official/specification.html', context)
 
 
-
+# ALL QUESTION
 def questions(request):
-
     device_type = DeviceType.objects.all()
     context = {
-        "device_type":device_type
+        "device_type":device_type,
     }
     return render(request,'official/questions.html', context)
 
 
-@csrf_exempt
-def savedata(request):
-    question = request.POST['addquestion']
-    qst_type = request.POST['radio']
-    image_description = request.POST['description']
-    imagess = request.FILES.get("images", "Photo Not Uploded")
+# QUESTION ADDING
+def questionAdding(request):
+    qst = Questions.objects.all().count() 
+    qstcount = qst + 1 
+    context = {
+        "qstcount":qstcount,
+    }
+    return render(request,'official/questions_adding.html',context)
 
-    print(question,"@"*5)
-    print(qst_type,"#"*5)
-    print(image_description,"$"*5)
-    print(imagess,"%"*5)
-
-
-    device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
-    new_question.save()
-    
-    if qst_type == 'image_type' :
-        # pass
-        new_option = QuestionOption(image_upload=imagess,image_description=image_description, question=new_question)
-        new_option.save()
-        data = {
-            "gg":0
-        }
-        return JsonResponse(data)
-    else:
-        pass
-        # device_type = DeviceType.objects.get(device_type="Mobile")
-        # new_question = Questions(questions=question, question_type=type,device_type=device_type)
-        # new_question.save()
-        # print(new_question,'shifa'*20
-    return JsonResponse(data)
-
-    return render(request,'official/questions.html')
-
-############ trial
 
 @csrf_exempt
 def questsave(request):
@@ -268,9 +273,17 @@ def subquestionPage(request,id):
     question = Questions.objects.get(id=id)
     device_type = DeviceType.objects.get(device_type="Mobile")
     qst_count = Questions.objects.filter(device_type=device_type).count()
+    sub_qst = QuestionOption.objects.filter(question=question)
+    if request.method == "POST" or request.FILES:
+        discription = request.POST['discription']
+        image = request.FILES['images']
+        new_sub_qst = QuestionOption(question=question,image_upload=image,image_description=discription)
+        new_sub_qst.save()
+        return redirect('/official/suquestionAddingPage/'+str(question.id))
     context = {
         "question":question,
         "qst_count":qst_count,
+        "sub_qst":sub_qst,
     }
     return render(request,'official/sub-question.html',context)
 
@@ -283,20 +296,10 @@ def suquestionAddingData(request):
     question = request.POST['disc']
     qstpk = request.POST['qstpk']
     img = request.POST.get('imgk')
-    # qstion = Questions.objects.get(id=qstpk)
-
-    print(qstpk,"&"*10)
-    # new_sub_qst = QuestionOption(question=qstion,image_upload=img,image_description=question)
-    # new_sub_qst.save()
-    # print(new_sub_qst)
     data = {
         "msg":"msg",
     }
     return JsonResponse(data)
-
-
-def questionAdding(request):
-    return render(request,'official/questions_adding.html')
 
 
 def userRequestList(request):
