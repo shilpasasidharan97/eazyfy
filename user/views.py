@@ -217,6 +217,7 @@ def spec(request,id):
     }
     return render(request,"user/spec-product.html",context)  
 
+
 def buyPhone(request):
     return render(request,"user/buyphone.html")  
 
