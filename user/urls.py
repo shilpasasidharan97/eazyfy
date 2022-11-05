@@ -5,7 +5,6 @@ app_name = 'user'
 
 urlpatterns = [
     path('',views.index,name='index'),
-
     path('about',views.about,name='about'),
     path('contact',views.contact,name='contact'),
     path('account',views.account,name='account'),
@@ -24,7 +23,7 @@ urlpatterns = [
 
   
 
-    
+
 
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
@@ -39,5 +38,7 @@ urlpatterns = [
 
 
     path('my',views.my,name='my')
+
+    
     
 ]

@@ -181,10 +181,8 @@ def termsAndConditions(request):
     return render(request,"user/terms-and-conditions.html")
 
 
-
 def sell(request):
     brand = Brand.objects.all()
-
     context = {
         "brand" : brand
     }
