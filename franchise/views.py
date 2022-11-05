@@ -1,9 +1,10 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from official.models import *
-
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(request):
@@ -13,6 +14,7 @@ def index(request):
 @login_required(login_url='/official/loginpage')
 def add_pickupboy(request):
     franchise = request.user.franchise
+    print(franchise,"#"*20)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise)
     if request.method == 'POST':
         
@@ -37,10 +39,54 @@ def add_pickupboy(request):
         context={
             "pickup_boy_list" : pickup_boy_list
         }
-    context = {
-        "pickup_boys":pickup_boys
-    }
     return render(request,"franchise/add-pickupboy.html", context)
+
+
+
+# edit franchise
+
+@csrf_exempt
+def getprofiledata(request,id):
+    details = PickUpBoy.objects.get(id=id)
+    data = {
+        "pid":details.pickup_id,
+        "name": details.name,
+        "email": details.email,
+        "phone": details.phone,
+        "place": details.place,
+        "address": details.address,
+        # "photo": details.photo.url,
+    }
+    return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def editform(request,id):
+    pid = request.POST['pid']
+    pname = request.POST['pname']
+    pemail = request.POST['pemail']
+    pickupboyphone = request.POST['pickupboyphone']
+    pickupboyplace = request.POST['pickupboyplace']
+    paddress = request.POST['paddress']
+
+    # photo = request.FILES['fphoto']
+    PickUpBoy.objects.filter(id=id).update(pickup_id=pid, name=pname, email=pemail, phone=pickupboyphone,place=pickupboyplace, address=paddress)
+    get_user_model().objects.filter(pickup_boy=id).update(phone_number=pickupboyphone)
+    data ={
+        "ss":"csac",
+    }
+    return JsonResponse(data)
+
+
+def Deletepickupboy(request,id):
+    print("#"*20)
+    PickUpBoy.objects.get(id=id).delete()
+    return redirect('/franchise/add-pickupboy')
+
+
+
+
+
 
 def profile(request):
     return render(request,"franchise/profile.html")

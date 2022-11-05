@@ -53,7 +53,7 @@ class PickUpBoy(models.Model):
     pickup_id = models.CharField(max_length=20, null=True)
     name = models.CharField(max_length=40, null=True)
     email = models.EmailField(null=True)
-    phone = PhoneField(null=True)
+    phone = models.CharField(max_length=15, null=True)
     photo = models.FileField(upload_to='franchise', null=True, blank=True)
     place = models.CharField(max_length=40, null=True)
     address = models.CharField(max_length=500, null=True)
@@ -146,11 +146,24 @@ class DeviceType(models.Model):
     device_choices =  (('Mobile', 'Mobile'), ('TV', 'TV'),('Laptop','Laptop'))
     device_type = models.CharField(max_length = 10,choices = device_choices)
 
+    class Meta:
+        verbose_name_plural = ("Device Type")
+
+    def __str__(self):
+        return str(self.device_type)
+
+
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
     device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
     questions = models.CharField(max_length = 500,null = True)
     question_type = models.CharField(max_length = 15,choices = question_type)
+
+    class Meta:
+        verbose_name_plural = ("Questions")
+
+    def __str__(self):
+        return str(self.questions)
 
 
 class QuestionOption(models.Model):
@@ -158,7 +171,14 @@ class QuestionOption(models.Model):
     image_upload = models.FileField(upload_to = 'Question  Image',null = True)
     image_description = models.CharField(max_length = 500,null = True)
 
+    class Meta:
+        verbose_name_plural = ("Sub questions")
+
+    def __str__(self):
+        return str(self.image_description)
+
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
     dedection_amount = models.IntegerField(null = True, blank = True)
+

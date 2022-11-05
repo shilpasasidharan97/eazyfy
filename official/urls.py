@@ -18,18 +18,22 @@ urlpatterns = [
     path('editform/<int:id>',views.editform,name='editform'),
 
     path('brand',views.brand,name='brand'),
+    path('editbrand/<int:id>',views.editBrand, name='editbrand'),
+    path('getbranddata/<int:id>',views.getbranddata, name='getbranddata'),
+    path('deletebrand/<int:id>',views.DeleteBrand, name='deletebrand'),
+
     path('model/<int:id>',views.Model,name='model'),
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
 
     path('questions',views.questions,name='questions'),
     path('questionsadding',views.questionAdding,name='questionsadding'),
-    path('savedata/', views.savedata, name="savedata"),
+    # path('savedata/', views.savedata, name="savedata"),
 
     #trial
     path('questionsave', views.questsave, name="questionsave"),
     path('suquestionAdding', views.subquestionFirst, name="suquestionAdding"),
     path('suquestionAddingPage/<str:id>', views.subquestionPage, name="suquestionAddingPage"),
-    path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
+    # path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
 
 
 

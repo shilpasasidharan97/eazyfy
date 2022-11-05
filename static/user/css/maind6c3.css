@@ -10732,3 +10732,11 @@ input[type="tel"] {
 
 }
 }
+
+
+
+/* vivek 4/11/22 */
+
+.otp{
+  text-align: end;
+}
