@@ -11,10 +11,12 @@
             <div class="modal-body" style="height: 300px;">
 
                 <div class="row">
+{% for spec in spec %}
+
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="detail-gallery">
                       
-                            <img class="default-img " src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                            <img class="default-img " src="{{ spec.Brand_model.image.url }}"
                             alt="">
                             
                         </div>
@@ -25,28 +27,28 @@
 
                     <div class="col-md-6 col-sm-12 col-xs-12">
                         <div class="detail-info">
-                            <h3 class="title-detail mt-30">Iphone 11</h3>
+                            <h3 class="title-detail mt-30">{{ spec.Brand_model.name }}</h3>
                             <div class="product-detail-rating">
                                 <div class="pro-details-brand">
-                                    <span> Veriant: <a href="#">16GB</a></span>
+                                    <span> Veriant: <a href="#">{{ spec.internal_storage }} GB</a></span>
                                 </div>
                                
                             </div>
                             <div class="clearfix product-price-cover">
                                 <div class="product-price primary-color float-left">
-                                    <ins><span class="text-brand">120.00</span></ins>
+                                    <ins><span class="text-brand">{{ spec.price }}</span></ins>
                                     <ins><span class="old-price font-md ml-15">200.00</span></ins>
                                     <span class="save-price  font-md color3 ml-15">25% Off</span>
                                 </div>
                             </div>
                             <div class="bt-1 border-color-1 mt-15 mb-15"></div>
                             <div class="short-desc mb-30">
-                                <button type="submit" class="button button-add-to-cart close"  aria-label="Close">Confirm</button>
+                                <a href="" type="submit" class="button button-add-to-cart close"  aria-label="Close">Confirm</a>
                             </div>
                         </div>
                         <!-- Detail Info -->
                     </div>
-
+{% endfor %}
                 </div>
             </div>
         </div>
@@ -59,6 +61,8 @@
 
 
         <div class="row">
+
+
             <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
             <div class="page-header breadcrumb-wrap">
                 <div class="container">
@@ -72,6 +76,9 @@
 
     </div>
 </div>
+
+
+
 <section class="mb-50">
     <div class="container shade-box">
         <div class="row flex-row-reverse">
@@ -79,13 +86,13 @@
                 <div class="product-detail accordion-detail">
                     <div class="row mb-30 mt-50">
 
-                        
+                    {% for spec in spec %}    
                         <div class="col-sm-4 col-md-4 col-4">
                             <div class="">
                                 <div class="product-img-action-wrap text-center">
                                     <div class="product-img product-img-zoom ">
                                         <a href="shop-product-right.html">
-                                            <img class="default-img " src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                            <img class="default-img " src="{{ spec.Brand_model.image.url }}"
                                                 alt="">
                                    </a>
                                     </div>
@@ -93,8 +100,9 @@
 
                             </div>
                         </div>
+
                         <div class="col-sm-8 col-md-8 col-8">
-                            <h2 class="title-detail">Iphone 11</h2>
+                            <h2 class="title-detail">{{ spec.Brand_model.name }}</h2>
                             <div class="product-detail-rating">
                                 <div class="pro-details-brand">
                                     <h5 style="color: violet;"> 30220+ <a href=""> already sold on easyfy</a></h5>
@@ -111,11 +119,8 @@
                                     
                                     <div class="list-filter size-filter font-small row">
                                         <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
-                                                class="btn btn-secondary">16GB</a></div>
-                                        <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
-                                                class="btn">32GB</a></div>
-                                        <div class="col-4"><a data-bs-toggle="modal" data-bs-target="#quickViewModal"
-                                                class="btn">64GB</a></div>
+                                                class="btn btn-secondary">{{ spec.RAM }}GB</a></div>
+                                       
                                     </div>
                                 </div> <br>
                                 <div class="attr-detail attr-color mb-15">
@@ -129,7 +134,7 @@
                             </div>
                         </div>
 
-                        <!-- Detail Info -->
+                      {% endfor %}
 
                     </div>
 

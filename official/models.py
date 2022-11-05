@@ -53,7 +53,7 @@ class PickUpBoy(models.Model):
     pickup_id = models.CharField(max_length=20, null=True)
     name = models.CharField(max_length=40, null=True)
     email = models.EmailField(null=True)
-    phone = PhoneField(null=True)
+    phone = models.CharField(max_length=15, null=True)
     photo = models.FileField(upload_to='franchise', null=True, blank=True)
     place = models.CharField(max_length=40, null=True)
     address = models.CharField(max_length=500, null=True)
