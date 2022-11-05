@@ -14,6 +14,7 @@ def index(request):
 @login_required(login_url='/official/loginpage')
 def add_pickupboy(request):
     franchise = request.user.franchise
+    print(franchise,"#"*20)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise)
     if request.method == 'POST':
         
