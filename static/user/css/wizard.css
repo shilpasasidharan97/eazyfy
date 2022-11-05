@@ -98,4 +98,10 @@
   background-color: #ddc8e7;;
   }
 
- 
+  @media screen and (max-width: 640px) {
+    .card-like{
+    font-size: 11px;
+    padding :21px;
+   
+  }
+  }
