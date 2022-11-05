@@ -6,32 +6,25 @@
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4> Specification</h4>
+            <h4> Question Adding</h4>
         </div>
-    </div>
-    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
-            <li class=" avtive"><a href="{% url 'official:brand' %}"> Brand / </a></li>
-            {% comment %} <li class=" avtive"><a href="{% url 'official:model' %}"> Model / </a></li> {% endcomment %}
-            <li class=""><a href="javascript:void(0)">Add verification Questions</a></li>
-        </ol>
     </div>
 </div>
 
 <div class="row">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Vertical Form</h4>
+            <h4 class="card-title">Add Your Main Question</h4>
         </div>
         <div class="card-body">
             <div class="basic-form">
                 <!--  -->
                     <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Question <span id="qno"></span></label>
+                        <label class="col-sm-3 col-form-label">Question <span id="qno"> {{qstcount}}</span></label>
                         <div class="col-sm-9">
                             <input type="Text" class="form-control" id="question" placeholder="Add Questions"
                                 name="addquestion">
+                                <span id="message"></span>
                         </div>
                     </div>
 
@@ -46,9 +39,9 @@
 
                     <div class="mb-3 row">                   
                         <div class="form-group">
-                            <button class="btn btn-primary" onclick="QuestionAdding()">Upload and Next</button>
-                            <button class="btn btn-success" onclick="subQuestionAdding()" >Add sub question</button>
-                            <button class="btn btn-danger">finish</button>
+                            <button class="btn btn-primary disabled" id="buttondisabled" onclick="QuestionAdding()">Upload and Next</button>
+                            <button class="btn btn-success disabled" id="buttondisabled2" onclick="subQuestionAdding()" >Add sub question</button>
+                            <!-- <button class="btn btn-danger disabled">finish</button> -->
                         </div>
                     </div>
             </div>
@@ -64,6 +57,22 @@
     
 
 <script>
+
+$('#question').keyup(function(){
+        var question=$('#question').val()
+        if ( question == ''){
+            $('#message').html('Please Add Your Question First')
+            $("#buttondisabled").addClass("disabled");
+            $("#buttondisabled2").addClass("disabled")
+        }
+        else{
+            $('#message').hide()
+            $("#buttondisabled").removeClass("disabled");
+            $("#buttondisabled2").removeClass("disabled");
+        }
+    
+    })
+
 
 function QuestionAdding(){
     var question = $("#question").val()

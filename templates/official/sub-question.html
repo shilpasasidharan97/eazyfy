@@ -9,35 +9,56 @@
 
 <h1 id="subno"></h1>
 <div class="row">
-    <div class="card">
-        <div class="card-header">
-            <h4 class="card-title">Vertical Form</h4>
-        </div>
-        <div class="card-body">
-            <div class="basic-form">
-                <!--  -->
-                    <div class="mb-3 row  ">
-                        <div class="col-6 p-5 border qcard card">
-                            <div class="row">
-                                <div class="mb-3">
-                                    <input class="form-control"  id="disc" >
-                                    <input type="text" value="{{question.id}}" id="qst_pk" hidden>
+    
+    <div class="col-lg-9">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="card-title">Subquestion Adding</h4>
+            </div>
+            <div class="card-body">
+                <div class="basic-form">
+                    <!--  -->
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="mb-3 row  ">
+                            <div class="col-6 p-5 border qcard card">
+                                <div class="row">
+                                    <div class="mb-3">
+                                        <input class="form-control" type="text"  id="disc" name="discription" >
+                                    </div>
+                                    <input type="file" class="" name="images" id="images">
                                 </div>
-                                <input type="file" class="" name="images" id="images">
+                            </div> 
+                        </div>
+                        <div class="mb-3 row">                   
+                            <div class="form-group">
+                                <!-- <button class="btn btn-primary" onclick="QuestionImageAdding()">Upload and Next</button> -->
+                                <button class="btn btn-success" >Add sub question</button>
+                                <a href="{% url 'official:questionsadding' %}" class="btn btn-danger disabled" id="buttondisabled">finish</a>
                             </div>
                         </div>
-                        
-                    </div>
-
-
-                    <div class="mb-3 row">                   
-                        <div class="form-group">
-                            <button class="btn btn-primary" onclick="QuestionImageAdding()">Upload and Next</button>
-                            <!-- <button class="btn btn-success" onclick="" >Add sub question</button> -->
-                            <button class="btn btn-danger">finish</button>
-                        </div>
-                    </div>
+                    </form>
+                </div>
             </div>
+        </div>
+    </div>
+
+    
+
+
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-header">
+                <h6 class="card-title">SubQuestions</h6>
+            </div>
+            {% for i in sub_qst %}
+            <div class="card-body">
+                <div class="col-4 col-lg-4 col-md-4">
+                    <img class="card-img-top" src="{{i.image_upload.url}}" alt="Card image cap">
+                </div>
+                <span class="">{{i.image_description}}</span>
+            </div>
+            {% endfor %}
         </div>
     </div>
 </div>
@@ -49,37 +70,27 @@
    
 
 <script>
-
-function QuestionImageAdding(){
-    var discription = $("#disc").val()
-    var qstpk = $("#qst_pk").val()
-    var img = $('#images').prop("files")[0]
-    // alert(img)
-    // console.log(img)
-    // alert(discription)
-    // preventDefault()
-    $.ajax({
-        url : "/official/suquestionAddingdata",
-        type : "POST",
-        data : {
-            "disc":discription,
-            "qstpk":qstpk,
-            "imgk":img,
-        },
-        processData: false,
-        contentType: false,
-        cache: false,
-        success : function(responce) {
-            alert(responce.msg)
-            // $("#qno").html(responce.qstno)
-            // $("#question").val("")
-
-            
+$(document).ready(function(){
+    var question=$('#disc').val()
+    if ( question == ''){
+            $("#buttondisabled").removeClass("disabled");
+    }
+    else{
+            $("#buttondisabled").addClass("disabled");
         }
-    })
-}
 
+    $('#disc').keyup(function(){
+        var question=$('#disc').val()
+        if ( question == ''){
+            $("#buttondisabled").removeClass("disabled");
+        }
+        else{
+            $("#buttondisabled").addClass("disabled");
+        }
     
+    })
+})
+
 
 </script>
 

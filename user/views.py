@@ -49,7 +49,7 @@ def UserRegistration(request):
             customer = CutomerRegistration(email = email, phone_number = phone, password = password, name=name)
             customer.save()
             User = get_user_model()
-            customers = User.objects.create_user(phone_number=phone, password=password,customer=customer, is_customer=True)
+            customers = User.objects.create_user(email=email,phone_number=phone, password=password,customer=customer, is_customer=True)
 
             profile = CutomerProfile.objects.create(user =customers,auth_token = secret)
             return redirect(f"/otp-page/{profile.test_id}")
@@ -142,14 +142,15 @@ def resetPassword(request,token):
             print(new_password)
             user_id = request.POST.get('user_id')
             if user_id is  None:
-                messages.success(request, 'No user id found.')
+                messages.warning(request, 'No user id found.')
+
                 return redirect(f'/change-password/{token}/')
             user_obj = User.objects.get(id = user_id)
             user_obj.set_password(new_password)
             user_obj.save()
 
-            messages.success(request, 'Password Reset Successfully.')
-            return redirect('/login')
+            messages.success(request, 'An email sent')
+            return redirect(f'/change-password/{token}/')
     except Exception as e:
         print(e)
     return render(request,"user/reset_password.html",context)
@@ -180,9 +181,13 @@ def termsAndConditions(request):
     return render(request,"user/terms-and-conditions.html")
 
 
-
 def sell(request):
-    return render(request,"user/sellphone.html")
+    brand = Brand.objects.all()
+    context = {
+        "brand" : brand
+    }
+    
+    return render(request,"user/sellphone.html",context)
 
 def account(request):
     return render(request,"user/account.html")
@@ -190,8 +195,12 @@ def account(request):
 def privacyAndPolicy(request):
     return render(request,"user/privacy-policy.html")
 
-def shops(request):
-    return render(request,"user/shops.html")    
+def shops(request,id):
+    model = BrandModel.objects.filter(brand__id=id)
+    context = {
+        "model" : model
+    }
+    return render(request,"user/shops.html",context)    
     
 def question(request):
     return render(request,"user/question.html")  
@@ -199,8 +208,15 @@ def question(request):
 def my(request):
     return render(request,"user/my.html")  
 
-def spec(request):
-    return render(request,"user/spec-product.html")  
+def spec(request,id):
+    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    specification = BrandModel.objects.get(id=id)
+    print(specification)
+    context = {
+        "specification" : specification
+    }
+    return render(request,"user/spec-product.html",context)  
+
 
 def buyPhone(request):
     return render(request,"user/buyphone.html")  
@@ -222,6 +238,5 @@ def registration(request):
 def comingsoon(request):
     return render(request,"user/comingsoon.html")      
 
-def test(request):
-    return render(request,"user/test.html")  
+
 

@@ -51,13 +51,19 @@ admin.site.register(ModelSpecifications, ModelSpecificationsAdmin)
 
 admin.site.register(DeviceType)
 
+
 class QuestionsAdmin(admin.ModelAdmin):
-    list_display = ('questions','question_type' )
+    list_display = ('id', 'questions','question_type' )
     search_fields = ('questions',)
 
-
-
 admin.site.register(Questions, QuestionsAdmin)
+
+
+class QuestionOptionAdmin(admin.ModelAdmin):
+    list_display = ('question_id', 'question', 'image_description', 'image_upload' )
+    search_fields = ('questions',)
+
+admin.site.register(QuestionOption, QuestionOptionAdmin)
 
 
 class DedectionAdmin(admin.ModelAdmin):
@@ -66,9 +72,6 @@ class DedectionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Dedection, DedectionAdmin)
-
-
-admin.site.register(QuestionOption)
 
 
 class CutomerRegistrationAdmin(admin.ModelAdmin):
