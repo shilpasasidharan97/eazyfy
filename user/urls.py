@@ -28,7 +28,10 @@ urlpatterns = [
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
     path('question',views.question,name='question'),
+
+
     path('spec/<str:id>',views.spec,name='spec'),
+    path('getspecdata/<int:id>',views.getspecdata,name='getspecdata'),
 
     path('buy_phone',views.buyPhone,name='buyphone'),
 
