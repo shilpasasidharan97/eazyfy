@@ -218,6 +218,18 @@ def spec(request,id):
     return render(request,"user/spec-product.html",context)  
 
 
+def getspecdata(request,id):
+    spec_data = ModelSpecifications.objects.get(id=id)
+    data = {
+        'name':spec_data.Brand_model.name,
+        'modelimage':spec_data.Brand_model.image.url,
+        'ram':spec_data.RAM,
+        'price':spec_data.price,
+    }
+    return JsonResponse(data)
+
+
+
 def buyPhone(request):
     return render(request,"user/buyphone.html")  
 
