@@ -209,11 +209,14 @@ def my(request):
     return render(request,"user/my.html")  
 
 def spec(request,id):
-    spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    specification = BrandModel.objects.get(id=id)
+    print(specification)
     context = {
-        "spec" : spec
+        "specification" : specification
     }
     return render(request,"user/spec-product.html",context)  
+
 
 def buyPhone(request):
     return render(request,"user/buyphone.html")  
