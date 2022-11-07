@@ -169,7 +169,10 @@ def resendOtp(request , token):
 
 
 def index(request):
-    return render(request,"user/index.html") 
+    context = {
+        "is_index" : True
+    }
+    return render(request,"user/index.html",context) 
 
 def about(request):
     return render(request,"user/about.html")
@@ -184,6 +187,7 @@ def termsAndConditions(request):
 def sell(request):
     brand = Brand.objects.all()
     context = {
+        "is_sellphone":True,
         "brand" : brand
     }
     
@@ -231,10 +235,16 @@ def getspecdata(request,id):
 
 
 def buyPhone(request):
-    return render(request,"user/buyphone.html")  
+    context = {
+        "is_buyphone":True
+    }
+    return render(request,"user/buyphone.html",context)  
 
 def repairPhone(request):
-    return render(request,"user/repairphone.html")  
+    context = {
+        "is_repair":True
+    }
+    return render(request,"user/repairphone.html",context)  
 def payment(request):
 
     return render(request,"user/payment.html")      
@@ -248,7 +258,13 @@ def registration(request):
 
 
 def comingsoon(request):
-    return render(request,"user/comingsoon.html")      
+    context = {
+        "is_gadget":True,
+        "is_newgadget":True
+    }
+    return render(request,"user/comingsoon.html",context)      
+
+
 
 
 
