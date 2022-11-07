@@ -7,8 +7,25 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
+
+def header(request):
+    franchise = request.user.franchise
+    email = franchise.email
+    print(email)
+    context = {
+        "franchise":franchise,
+    }
+    return render(request,"franchise/header.html", context)
+
+
+
 def index(request):
-    return render(request,"franchise/index.html")
+    franchise = request.user.franchise
+    print(franchise)
+    context = {
+        "franchise":franchise,
+    }
+    return render(request,"franchise/index.html", context)
 
 
 @login_required(login_url='/official/loginpage')
