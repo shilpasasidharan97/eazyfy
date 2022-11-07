@@ -179,7 +179,8 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}" alt="logo"></a>
+                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}"
+                            alt="logo"></a>
                 </div>
                 <div class="header-right text-brand">
                     <div class="">
@@ -208,12 +209,19 @@
                             </div>
                             <div class="header-action-icon-2">
 
-                                
-                                <a href="{% url 'user:login' %}">
-                                    <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
-                                </a>
-                               
+                                {% if user_object != '' %}
+                                <a class="mini-cart-icon" href="shop-cart.html">
+                                    <i class="fa fa-user" style="color: #640097;"></i>
 
+                                </a>
+                                {% else %}
+
+                                <a href="{% url 'user:login' %}">
+                                    <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>user</button>
+                                </a>
+
+                                </a>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -231,54 +239,74 @@
                 </div>
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#" class="d-lg-none">
-                        <input type="search" id="pd_list_search_input" autocomplete="off"
-                        placeholder="Search.."
-                        class="font16-14 flwidth card mar-r10 search-input">
+                        <input type="search" id="pd_list_search_input" autocomplete="off" placeholder="Search.."
+                            class="font16-14 flwidth card mar-r10 search-input">
                     </form>
                 </div>
                 <div class="header-nav d-none d-lg-flex">
-                   
+
                     <div class="main-menu main-menu-padding-1 main-menu-lh-2 d-none d-lg-block">
                         <nav>
                             <ul>
-                                <li><a href="{% url 'user:index' %}" {% if is_index %} class="active" {% endif %}>Home </a>
+                                <li><a href="{% url 'user:index' %}" {% if is_index %} class="active" {% endif %}>Home
+                                    </a>
 
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:sell' %}" class="{% if is_sellphone %} active {% endif %}">Sell phones <i class="fi-rs-angle-down"></i></a>
+                                    <a href="{% url 'user:sell' %}"
+                                        class="{% if is_sellphone %} active {% endif %}">Sell phones <i
+                                            class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li style="font-weight: bold;">Our top Brands</li>
 
 
-                                                                
+
                                         {% for brand in brand %}
                                         <li><a href="{% url 'user:shops' brand.id %}">{{ brand.name }}</a></li>
 
                                         {% endfor %}
 
-                                       
-                                        
+
+
                                     </ul>
                                 </li>
                                 <li class="position-static">
-                                    <a href="{% url 'user:buyphone' %}" class="{% if is_buyphone %} active {% endif %}" >Buy phones</i></a>
+                                    <a href="{% url 'user:buyphone' %}"
+                                        class="{% if is_buyphone %} active {% endif %}">Buy phones</i></a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:repair_phone' %}" class="{% if is_repair %} active {% endif %}" >Repair Phone </i></a>
+                                    <a href="{% url 'user:repair_phone' %}"
+                                        class="{% if is_repair %} active {% endif %}">Repair Phone </i></a>
                                 <li>
-                                    <a href="{% url 'user:comingsoon' %}" class="{% if is_gadget %} active {% endif %}" >Sell gadgets </i></a>      
-                                </li>            
+                                    <a href="{% url 'user:comingsoon' %}"
+                                        class="{% if is_gadget %} active {% endif %}">Sell gadgets </i></a>
+                                </li>
                                 <li>
-                                    <a href="{% url 'user:comingsoon' %}" class="{% if is_newgadget %} active {% endif %}" >Find new gadgets</a>                  
+                                    <a href="{% url 'user:comingsoon' %}"
+                                        class="{% if is_newgadget %} active {% endif %}">Find new gadgets</a>
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'user:about' %}">About Us</a></li>
                                         <li><a href="{% url 'user:contact' %}">Contact</a></li>
                                         <li><a href="{% url 'user:account' %}">My Account</a></li>
+
+
+                                        {% if user_object != '' %}
+
+                                        {% else %}
                                         <li><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        {% endif %}
+
                                         <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
+
+                                        {% if user_object != '' %}
+                                        <li><a href="{% url 'user:registration' %}">Logout</a></li>
+                                        {% else %}
+                                        
+                                        {% endif %}
+
 
                                     </ul>
                                 </li>
@@ -289,11 +317,11 @@
                 <!-- <div class="hotline d-none d-lg-block">
                         <p><i class="fi-rs-headset"></i><span>Hotline</span> 1900 - 888 </p>
                     </div> -->
-               
+
                 <div class="header-action-right d-block d-lg-none">
-                    
+
                     <div class="header-action-2">
-                       
+
                         <div class="header-action-icon-2 d-block d-lg-none">
                             <div class="burger-icon burger-icon-white">
                                 <span class="burger-icon-top"></span>
@@ -332,32 +360,38 @@
                 </form>
             </div> -->
             <div class="mobile-menu-wrap mobile-header-border">
-              
+
                 <nav>
                     <ul class="mobile-menu">
-                        <li class="menu-item-has-children"> <a href="{% url 'user:index' %}" ><span class="menu-expand"></span>Home</a>
-                          
-                        </li>
-                            
-                        </li>
-                        <li class="menu-item-has-children"> <a href="{% url 'user:sell' %}" ><span class="menu-expand"></span>Sell Phone</a>
-                          
-                        </li>
-                        
-                        <li class="menu-item-has-children"><a href=""> <a href="{% url 'user:buyphone' %}" ><span class="menu-expand"></span>Buy Phone</a>
-                          
+                        <li class="menu-item-has-children"> <a href="{% url 'user:index' %}"><span
+                                    class="menu-expand"></span>Home</a>
+
                         </li>
 
-                        <li class="menu-item-has-children"> <a href="{% url 'user:repair_phone' %}" ><span class="menu-expand"></span>Repair Phone </a>
-                          
+                        </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:sell' %}"><span
+                                    class="menu-expand"></span>Sell Phone</a>
+
                         </li>
 
-                        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}" ><span class="menu-expand"></span>Sell gadgets</a>
-                          
+                        <li class="menu-item-has-children"><a href=""> <a href="{% url 'user:buyphone' %}"><span
+                                        class="menu-expand"></span>Buy Phone</a>
+
                         </li>
 
-                        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}" ><span class="menu-expand"></span>Find New Gadget</a>
-                          
+                        <li class="menu-item-has-children"> <a href="{% url 'user:repair_phone' %}"><span
+                                    class="menu-expand"></span>Repair Phone </a>
+
+                        </li>
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
+                                    class="menu-expand"></span>Sell gadgets</a>
+
+                        </li>
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
+                                    class="menu-expand"></span>Find New Gadget</a>
+
                         </li>
 
 
@@ -378,15 +412,15 @@
             </div>
 
             <div class="mobile-header-info-wrap mobile-header-border">
-                
+
                 <div class="single-mobile-header-info">
                     <a href="{% url 'user:login' %}">Log In / Sign Up </a>
                 </div>
-               
+
             </div>
-           
-       
-        
+
+
+
         </div>
     </div>
 </div>

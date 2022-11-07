@@ -19,6 +19,22 @@
 </style>
 
 
+<script>
+
+  function UpdateCost() {
+    var sum = 0;
+    var gn, elem;
+    var gn, elem;
+    for (i = 0; i < 5; i++) {
+      gn = 'game' + i;
+      elem = document.getElementById(gn);
+      if (elem.checked == true) { sum += Number(elem.value); }
+    }
+    document.getElementById('totalcost').value = sum.toFixed(2);
+  }
+
+</script>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-3">
@@ -29,10 +45,17 @@
               <div class="col-xs-12">
 
                 <h3>Tell us few things about your device</h3>
+
+                <div class="pricebtn">
+
+                  <div class="btn btn-outline" id="price" style="color: #5f009a;"></div>
+                  <!-- <p>Total:<span id="price"></span></p> -->
+                </div>
                 <hr>
               </div>
             </div>
           </div>
+
 
           <div class="wizard-body">
             <div class="step initial active">
@@ -45,7 +68,8 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox  box mb-3 checkbox-info box">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_1" name="match_1">
+                            <input data-price="1000" checked class="form-check-input" type="radio" id="match_1"
+                              name="match_1">
                             <label class="form-check-label" for="customCheckBox2">YES</label>
                           </div>
 
@@ -55,7 +79,7 @@
                       <div class="col-lg-4 col-sm-4 clearfix">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_1" name="match_1">
+                            <input name="match_1" data-price="50" type="radio" class="form-check-input" id="match_1" name="match_1">
                             <label class="form-check-label" for="customCheckBox2">NO</label>
                           </div>
                         </div>
@@ -75,7 +99,7 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox box mb-3 checkbox-info">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
+                            <input data-price="5" type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
                             <label class="form-check-label" for="customCheckBox2">YES</label>
                           </div>
                         </div>
@@ -83,7 +107,7 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
+                            <input data-price="50" type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
                             <label class="form-check-label" for="customCheckBox2">NO</label>
                           </div>
                         </div>
@@ -101,7 +125,7 @@
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-check custom-checkbox box mb-3 checkbox-info">
                             <div class="question-button pt-2 px-3">
-                              <input type="radio" class="form-check-input" type="radio" id="match_2" name="match_2">
+                              <input data-price="5" class="form-check-input" type="radio" id="third" name="third">
                               <label class="form-check-label" for="customCheckBox2">YES</label>
                             </div>
                           </div>
@@ -109,8 +133,8 @@
                         <div class="col-lg-4 col-sm-4">
                           <div class="form-check custom-checkbox box mb-3 checkbox-success">
                             <div class="question-button pt-2 px-3">
-                              <input type="radio" class="form-check-input" type="radio" id="match_2" name="match_2">
-                              <label class="form-check-label" for="customCheckBox2">NO</label>
+                              <input data-price="20"  class="form-check-input" type="radio" id="third" name="third">
+                              <label  class="form-check-label" for="customCheckBox2">NO</label>
                             </div>
                           </div>
                         </div>
@@ -130,7 +154,7 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox box mb-3 checkbox-info">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_3" name="match_3">
+                            <input data-price="5" type="radio" class="form-check-input" id="match_3" name="fourth">
                             <label class="form-check-label" for="customCheckBox2">YES</label>
                           </div>
                         </div>
@@ -138,7 +162,7 @@
                       <div class="col-lg-4 col-sm-4 ">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_3" name="match_3">
+                            <input data-price="20" type="radio" class="form-check-input"  id="match_3" name="fourth">
                             <label class="form-check-label" for="customCheckBox2">NO</label>
                           </div>
                         </div>
@@ -157,7 +181,7 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox box mb-3 checkbox-info">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_5" name="match_5">
+                            <input data-price="5" type="radio" class="form-check-input"  id="match_5" name="fifth">
                             <label class="form-check-label" for="customCheckBox2">YES</label>
                           </div>
                         </div>
@@ -165,7 +189,7 @@
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success">
                           <div class="question-button pt-2 px-3">
-                            <input type="radio" class="form-check-input" type="radio" id="match_5" name="match_5">
+                            <input data-price="100" type="radio" class="form-check-input"  id="match_5" name="fifth">
                             <label class="form-check-label" for="customCheckBox2">NO</label>
                           </div>
                         </div>
@@ -535,7 +559,7 @@
                   </div><!-- end of quiz_card_area -->
                 </div><!-- end of col3  -->
 
-<!-- end of col3  -->
+                <!-- end of col3  -->
                 <div class="col-sm-3 col-lg-3 col-6">
 
                   <div class="quiz_card_area">
@@ -613,11 +637,11 @@
             <div class="step row">
               <div class="form-check col-lg-4 box">
                 <div style="margin: 9px">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                  <h5> Below 3 months</h5>
-                </label>
-              </div>
+                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <label class="form-check-label" for="flexRadioDefault1">
+                    <h5> Below 3 months</h5>
+                  </label>
+                </div>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
                 <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
@@ -638,7 +662,7 @@
                 </label>
               </div><br><br><br><br><br><br><br><br>
               <div class="product-action-1 ">
-                <a href="{% url 'user:login' %}" class="btn btn-irv col-xs-6 pull-right text-center mrgin" >
+                <a href="{% url 'user:login' %}" class="btn btn-irv col-xs-6 pull-right text-center mrgin">
 
                   CONTINUE
                 </a>
@@ -782,6 +806,20 @@
 </div>
 
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  function calcPrice() {
+    var price = 0;
+    $("input[type=radio][data-price]:checked").each(function (i, el) {
+      price += +$(el).data("price");
+    });
+    $("#price").text(price);
+  }
+
+  $("input[type=radio]").on("change", calcPrice);
+  calcPrice();
+</script>
 
 
 
