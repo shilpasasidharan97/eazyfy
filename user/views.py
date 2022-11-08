@@ -20,7 +20,7 @@ def customerlogin(request):
         if user is not None:
             login(request, user)
             if user.is_customer == True:
-                return redirect('user:about')
+                return redirect('user:index')
             else:
                 return redirect('user:login')
         else:
