@@ -184,15 +184,15 @@
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">RAM</label>
-                                <input type="text" class="form-control" value="6GB">
+                                <input type="text" class="form-control" id="miram{{spec.id}}" value="6GB">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Internal Storage</label>
-                                <input type="number" class="form-control" value="64gb">
+                                <input type="number" class="form-control" id="mistore{{spec.id}}" value="64gb">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Price</label>
-                                <input type="integer" class="form-control" value="15000">
+                                <input type="integer" class="form-control" id="miprice{{spec.id}}" value="15000">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary text-end align-items-end">Change</button>
@@ -227,5 +227,19 @@
             }
         })
     }
+
+    // function Dataget(id){
+    //     // alert()
+    //     $.ajax({
+    //         url: '/official/getmodeldata/'+id,
+    //         type: 'GET',
+    //         success:function(responce){
+    //             // $('#mid'+id).val(responce.fkid)
+    //             $('#mimage'+id).attr("src",responce.mphoto)
+    //             $('#mname'+id).val(responce.mname)
+    //         }
+    //     })
+    // }
+
 </script>
 {% endblock %}

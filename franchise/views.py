@@ -117,7 +117,7 @@ def profile(request):
         address = request.POST['address']
         photo = request.FILES['fphoto']
 
-        Franchise.objects.filter(id=franchise.id).update(name=name, phone=phone, email=email, address=address)
+        Franchise.objects.filter(id=franchise.id).update(name=name, phone=phone, email=email,address=address)
         photo_fr = Franchise.objects.get(id=franchise.id)
         photo_fr.photo=photo
         photo_fr.save()
