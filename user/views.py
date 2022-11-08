@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.contrib import messages
 from .helpers import send_forget_password_mail
-
+from django.contrib.auth import logout
 
 
 def customerlogin(request):
@@ -265,6 +265,8 @@ def comingsoon(request):
     return render(request,"user/comingsoon.html",context)      
 
 
-
+def user_logout(request):
+    logout(request)
+    return redirect('/login')
 
 
