@@ -1,9 +1,15 @@
 from django.shortcuts import render,redirect
 from official.models import *
+from eazyfy.decorators import auth_pickupboy
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+
 
 # Create your views here.
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def base(request):
     return render(request,"pickup-boy/partials/base.html")
 
@@ -28,45 +34,80 @@ def profile(request):
          
         return redirect('pickupboy:profile')
 
+
+# PROFILE
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
+def profile(request):
     context = {
         "pickupboy":pickupboy,
     }
 
     return render(request,"pickup-boy/profile.html",context)
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def index(request):
     context ={
         "is_index":True
     }
     return render(request,"pickup-boy/index.html",context)
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def complete_selfy(request):
     return render(request,"pickup-boy/complete-selfy.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def total_order(request):
     context = {
         "is_order":True
     }
     return render(request,"pickup-boy/total-order.html",context)
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def product_details(request):
     return render(request,"pickup-boy/product-details.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def verification_questions(request):
     return render(request,"pickup-boy/verification-questions.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def complete(request):
     return render(request,"pickup-boy/complete.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def customer_selfy(request):
     return render(request,"pickup-boy/customer-selfy.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def fail(request):
     return render(request,"pickup-boy/fail.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def requote(request):
     return render(request,"pickup-boy/requote.html")
 
+
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def requote_selfy(request):
     return render(request,"pickup-boy/requote-selfy.html")
 
