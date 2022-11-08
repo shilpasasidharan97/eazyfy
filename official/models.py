@@ -122,6 +122,9 @@ class BrandModel(models.Model):
     image = models.FileField(upload_to='Brand Model', null=True)
     name = models.CharField(max_length=100, null=True)
 
+    def get_ram(self):
+        return ModelSpecifications.objects.filter(Brand_model=self)
+
     class Meta:
         verbose_name_plural = ("Brand Model")
 
@@ -139,6 +142,8 @@ class ModelSpecifications(models.Model):
 
     class Meta:
         verbose_name_plural = ("Model Specifications")
+
+    
 
 
 

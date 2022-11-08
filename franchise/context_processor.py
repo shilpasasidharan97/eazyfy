@@ -1,15 +1,15 @@
 from official.models import *
 
-
 def main_context(request):
     if request.session.exists(request.session.session_key):
-        pickupBoy = request.user.pickup_boy
-        if User.objects.filter(pickup_boy=pickupBoy).exists():
-            pickupBoy = request.user.pickup_boy
-            # pickUpBoy = PickUpBoy.objects.get(id=request.user.pickup_boy.id)
+        franchise = request.user.franchise
+        if User.objects.filter(franchise=franchise).exists():
+            franchise = request.user.franchise
+            # franchise_photo = franchise.photo
+            print(franchise, "%"*30)
             return {
                 "domain": request.META["HTTP_HOST"],
-                "pickUpBoy":pickupBoy
+                "franchise":franchise,
             }
         else:
             return {
@@ -19,3 +19,5 @@ def main_context(request):
         return {
             "domain": request.META["HTTP_HOST"],
         }
+
+
