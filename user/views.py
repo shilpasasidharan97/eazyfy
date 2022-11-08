@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import JsonResponse
 from django.contrib import messages
 from .helpers import send_forget_password_mail
-
+from django.contrib.auth import logout
 
 
 def customerlogin(request):
@@ -169,7 +169,10 @@ def resendOtp(request , token):
 
 
 def index(request):
-    return render(request,"user/index.html") 
+    context = {
+        "is_index" : True
+    }
+    return render(request,"user/index.html",context) 
 
 def about(request):
     return render(request,"user/about.html")
@@ -184,6 +187,7 @@ def termsAndConditions(request):
 def sell(request):
     brand = Brand.objects.all()
     context = {
+        "is_sellphone":True,
         "brand" : brand
     }
     
@@ -209,17 +213,38 @@ def my(request):
     return render(request,"user/my.html")  
 
 def spec(request,id):
-    spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    specification = BrandModel.objects.get(id=id)
+    print(specification)
     context = {
-        "spec" : spec
+        "specification" : specification
     }
     return render(request,"user/spec-product.html",context)  
 
+
+def getspecdata(request,id):
+    spec_data = ModelSpecifications.objects.get(id=id)
+    data = {
+        'name':spec_data.Brand_model.name,
+        'modelimage':spec_data.Brand_model.image.url,
+        'ram':spec_data.RAM,
+        'price':spec_data.price,
+    }
+    return JsonResponse(data)
+
+
+
 def buyPhone(request):
-    return render(request,"user/buyphone.html")  
+    context = {
+        "is_buyphone":True
+    }
+    return render(request,"user/buyphone.html",context)  
 
 def repairPhone(request):
-    return render(request,"user/repairphone.html")  
+    context = {
+        "is_repair":True
+    }
+    return render(request,"user/repairphone.html",context)  
 def payment(request):
 
     return render(request,"user/payment.html")      
@@ -233,7 +258,15 @@ def registration(request):
 
 
 def comingsoon(request):
-    return render(request,"user/comingsoon.html")      
+    context = {
+        "is_gadget":True,
+        "is_newgadget":True
+    }
+    return render(request,"user/comingsoon.html",context)      
 
+
+def user_logout(request):
+    logout(request)
+    return redirect('/login')
 
 

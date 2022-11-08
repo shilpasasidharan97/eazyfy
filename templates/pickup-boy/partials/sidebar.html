@@ -13,12 +13,12 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
 
-            <li><a href="{% url 'pickupboy:index' %}" class="ai-icon" aria-expanded="false">
+            <li><a href="{% url 'pickupboy:index' %}" class="ai-icon {% if is_index %}active{% endif %}" aria-expanded="false">
                 <i class="flaticon-381-home-2"></i>
                 <span class="nav-text">Dashboard</span>
             </a>
         </li>
-        <li><a href="{% url 'pickupboy:total-order' %}" class="ai-icon" aria-expanded="false">
+        <li><a href="{% url 'pickupboy:total-order' %}" class="ai-icon {% if is_order %}active{% endif %}" aria-expanded="false">
             <i class="flaticon-381-menu-2"></i>
             <span class="nav-text">Orders</span>
         </a>

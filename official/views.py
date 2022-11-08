@@ -44,7 +44,10 @@ def forgotPassword(request):
 
 @login_required(login_url='/official/loginpage')
 def home(request):
-    return render(request,'official/home.html')
+    context = {
+        "is_index":True
+    }
+    return render(request,'official/home.html',context)
 
 
 # franchise listing
@@ -67,7 +70,8 @@ def franchise(request):
     else:
         franchise_list = Franchise.objects.all().order_by('name')
         context={
-            "franchise_list" : franchise_list
+            "is_franchise":True,
+            "franchise_list" : franchise_list 
         }
         return render(request,'official/franchise.html',context)
 
@@ -144,6 +148,7 @@ def brand(request):
         new_brand = Brand(name=name, image=photo)
         new_brand.save()
     context = {
+        "is_product":True,
         "brands":brands,
     }
     return render(request,'official/brand.html', context)
@@ -221,6 +226,7 @@ def modelSpecification(request,id):
 def questions(request):
     device_type = DeviceType.objects.all()
     context = {
+        "is_questions":True,
         "device_type":device_type,
     }
     return render(request,'official/questions.html', context)
@@ -303,7 +309,11 @@ def suquestionAddingData(request):
 
 
 def userRequestList(request):
-    return render(request,'official/user_request.html')
+    context = {
+        "is_request":True
+
+    }
+    return render(request,'official/user_request.html',context)
 
 
 def userDetails(request):
@@ -311,11 +321,17 @@ def userDetails(request):
 
 
 def transactionHistory(request):
-    return render(request,'official/transaction_history.html')
+    context = {
+        "is_transaction":True
+    }
+    return render(request,'official/transaction_history.html',context)
 
 
 def wallet(request):
-    return render(request,'official/wallet.html')
+    context = {
+        "is_wallet":True
+    }
+    return render(request,'official/wallet.html',context)
 
 
 def profile(request):

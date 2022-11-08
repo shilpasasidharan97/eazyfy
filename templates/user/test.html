@@ -1,14 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    
 
-    
+<body>
+
+
+
+      
+      <p>Group 1:</p><ol>
+      <label><li><input type="radio" name="group1" checked>Item 1 (free)</li></label>
+      <label><li><input type="radio" name="group1" data-price="1">Item 2 ($1)</li></label>
+      <label><li><input type="radio" name="group1" data-price="2">Item 3 ($2)</li></label>
+      <label><li><input type="radio" name="group1" data-price="3">Item 4 ($3)</li></label>
+      </ol>
+      
+      <p>Group 2:</p><ol>
+      <label><li><input type="radio" name="group2" data-price="67.89" checked>Another item 1 ($67.89)</li></label>
+      <label><li><input type="radio" name="group2" data-price="0.00">Another item 2 (free)</li></label>
+      <label><li><input type="radio" name="group2" data-price="5.00">Another item 3 ($5)</li></label>
+      <label><li><input type="radio" name="group2" data-price="12.34">Another item 4 ($12.34)</li></label>
+      </ol>
+      
+      <p>Total: $<span id="price"></span></p>
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script>
+        function calcPrice() {
+        var price = 0;
+        $("input[type=radio][data-price]:checked").each(function(i, el) {
+          price += +$(el).data("price");
+        });
+        $("#price").text(price);
+      }
+      
+      $("input[type=radio]").on("change", calcPrice);
+      calcPrice();
+</script>
+
 </body>
+
 </html>

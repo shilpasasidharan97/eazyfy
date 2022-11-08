@@ -1968,6 +1968,15 @@ label {
 
 
 /* vivek */
+
+.pricebtn{
+  position: absolute;
+  right: 515px;
+  top: 210px;
+  color: red;
+}
+
+
 .service-image{
   padding: 0px 14px 14px 14px;
 }

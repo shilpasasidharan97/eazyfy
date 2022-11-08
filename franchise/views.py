@@ -8,11 +8,15 @@ from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
 def index(request):
-    return render(request,"franchise/index.html")
+    context = {
+        "is_index":True
+    }
+    return render(request,"franchise/index.html",context)
 
 
 @login_required(login_url='/official/loginpage')
 def add_pickupboy(request):
+
     franchise = request.user.franchise
     print(franchise,"#"*20)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise)
@@ -37,6 +41,7 @@ def add_pickupboy(request):
     else:
         pickup_boy_list = PickUpBoy.objects.all().order_by('name')
         context={
+            "is_addpickupboy":True,
             "pickup_boy_list" : pickup_boy_list
         }
     return render(request,"franchise/add-pickupboy.html", context)
@@ -92,4 +97,7 @@ def profile(request):
     return render(request,"franchise/profile.html")
 
 def order(request):
-    return render(request,"franchise/order.html")
+    context = {
+        "is_order":True
+    }
+    return render(request,"franchise/order.html",context)

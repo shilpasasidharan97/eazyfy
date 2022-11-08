@@ -12,14 +12,19 @@ def profile(request):
     return render(request,"pickup-boy/profile.html")
 
 def index(request):
-    print(request.user.pickup_boy.name)
-    return render(request,"pickup-boy/index.html")
+    context ={
+        "is_index":True
+    }
+    return render(request,"pickup-boy/index.html",context)
 
 def complete_selfy(request):
     return render(request,"pickup-boy/complete-selfy.html")
 
 def total_order(request):
-    return render(request,"pickup-boy/total-order.html")
+    context = {
+        "is_order":True
+    }
+    return render(request,"pickup-boy/total-order.html",context)
 
 def product_details(request):
     return render(request,"pickup-boy/product-details.html")
