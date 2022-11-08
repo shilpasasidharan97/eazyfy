@@ -42,7 +42,7 @@
                                     <li>
                                         <div class="timeline-panel">
                                             <div class="media me-2">
-                                                <img alt="image" width="50" src="{% static 'official/images/avatar/1.jpg' %}">
+                                                <img alt="image" width="50" src="{{pickUpBoy.photo.url}}">
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -75,7 +75,7 @@
                                     <li>
                                         <div class="timeline-panel">
                                             <div class="media me-2">
-                                                <img alt="image" width="50" src="{% static 'official/images/avatar/1.jpg' %}">
+                                                <img alt="image" width="50" src="{{pickUpBoy.photo.url}}">
                                             </div>
                                             <div class="media-body">
                                                 <h6 class="mb-1">Dr sultads Send you Photo</h6>
@@ -116,9 +116,9 @@
                     <li class="nav-item dropdown header-profile">
 
                         <a class="nav-link" href="" role="button" data-bs-toggle="dropdown">
-                            <img src="{% static 'official/images/profile/pic1.jpg' %}" width="20" alt="" />
+                            <img src="{{pickUpBoy.photo.url}}" width="20" alt="" />
                             <div class="header-info">
-                                <span>Johndoe</span>
+                                <span>{{pickUpBoy.name}}</span>
                                 <small>Pickup Boy</small>
                             </div>
                         </a>

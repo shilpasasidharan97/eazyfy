@@ -73,6 +73,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 "user.context_processors.main_context",
+                "pickupboy.context_processors.main_context",
             ],
         },
     },
