@@ -23,6 +23,8 @@ urlpatterns = [
     path('deletebrand/<int:id>',views.DeleteBrand, name='deletebrand'),
 
     path('model/<int:id>',views.Model,name='model'),
+    path('getmodeldata/<int:id>',views.getModelData, name='getmodeldata'),
+    path('editmodel/<int:id>',views.editModel, name='editmodel'),
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
 
     path('questions',views.questions,name='questions'),
