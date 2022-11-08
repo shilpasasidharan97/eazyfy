@@ -18,7 +18,7 @@ def header(request):
     return render(request,"franchise/header.html", context)
 
 
-
+@login_required(login_url='/official/loginpage')
 def index(request):
     franchise = request.user.franchise
     print(franchise)
@@ -100,10 +100,6 @@ def Deletepickupboy(request,id):
     print("#"*20)
     PickUpBoy.objects.get(id=id).delete()
     return redirect('/franchise/add-pickupboy')
-
-
-
-
 
 
 def profile(request):
