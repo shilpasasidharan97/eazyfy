@@ -14,31 +14,25 @@ from django.contrib.auth import logout
 
 def customerlogin(request):
     if request.method == 'POST':
-        # print('post'*20)
         number = request.POST['number']
         password = request.POST['password']
-        print(number,"#"*20)
-        print(password,"$"*20)
         user = authenticate(request,phone_number=number, password=password)
-        print(user)
         if user is not None:
-            print('firstif'*20)
             login(request, user)
             if user.is_customer == True:
-               
                 return redirect('user:about')
             else:
                 return redirect('user:login')
         else:
-            print('eroor')
-    return render(request,"user/login.html")
+            return redirect('user:login')
+    else :
+        return render(request,"user/login.html")
 
 # Create your views here.
 
 # customer registration
 def UserRegistration(request):
     if request.method == 'POST':
-        print('POOOOSSSTTTTT')
         name = request.POST['name']
         email = request.POST['email']
         password = request.POST['password']
@@ -65,7 +59,6 @@ def UserRegistration(request):
 # PHONE NUMBER VALIDATION
 @csrf_exempt
 def checkPhoneNumber(request):
-    print('$'*20)
     phone = request.POST['phone']
     if User.objects.filter(phone_number=phone).exists():
         data = {
@@ -88,42 +81,33 @@ def otp_fun(request,id):
     otp = totp.now()
     if request.method == 'POST':
         enter_otp=request.POST['otp']
-        print("enter otp",enter_otp)
         verification = totp.verify(enter_otp)
 
         if verification == True:
             return redirect("user:index")
         else :
-            print("failed")
+            pass
     message_handler=MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
     return render(request,"user/otp_generation.html",{'token':profile.test_id})
 
 
 # forgot password
 def forgot(request):
-    print('enter')
     try:
         if request.method == 'POST':
             email = request.POST['email']
-            print('first if')
             if not User.objects.filter(email=email).first():
-                print('second if')
                 messages.success(request, 'Not user found with this email.')
-                print('not a user')
                 return redirect('/forgot')
             else:
-                print('else')
                 pass
             user_obj = User.objects.get(email = email)
-            print(user_obj)
             token = str(uuid.uuid4())
-            print(token)
             profile_obj= CutomerProfile.objects.get(user = user_obj)
             profile_obj.forget_password_token = token
             profile_obj.save()
             send_forget_password_mail(user_obj.email , token)
             messages.success(request, 'An email is sent.')
-            print(messages,'send mail')
             return redirect('/forgot')
     except Exception as e:
         print(e)
@@ -139,7 +123,6 @@ def resetPassword(request,token):
         
         if request.method == 'POST':
             new_password = request.POST['password']
-            print(new_password)
             user_id = request.POST.get('user_id')
             if user_id is  None:
                 messages.warning(request, 'No user id found.')
@@ -160,7 +143,6 @@ def resetPassword(request,token):
 def resendOtp(request , token):
     user = CutomerProfile.objects.filter(test_id = token).last()
     user_secret_key = pyotp.random_base32()
-    print("user_secret_key",user_secret_key)
     user.auth_token = user_secret_key
     user.save()
     return redirect(f'/otp-page/{user.test_id}')
@@ -169,6 +151,8 @@ def resendOtp(request , token):
 
 
 def index(request):
+    user_logout = request.user
+    # print(user_logout)
     context = {
         "is_index" : True
     }
@@ -215,7 +199,6 @@ def my(request):
 def spec(request,id):
     # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
     specification = BrandModel.objects.get(id=id)
-    print(specification)
     context = {
         "specification" : specification
     }
@@ -252,9 +235,7 @@ def payment(request):
 
 def registration(request):
 
-    return render(request,"web/registration.html")
-
-    return render(request,"user/payment.html")    
+    return render(request,"web/registration.html")   
 
 
 def comingsoon(request):
@@ -265,8 +246,9 @@ def comingsoon(request):
     return render(request,"user/comingsoon.html",context)      
 
 
-def user_logout(request):
+def userLogout(request):
+    user_logout = request.user
     logout(request)
-    return redirect('/login')
+    return redirect('user:index')
 
 
