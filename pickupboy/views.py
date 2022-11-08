@@ -1,15 +1,38 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from official.models import *
+from django.contrib.auth import get_user_model
 
 # Create your views here.
 
 def base(request):
     return render(request,"pickup-boy/partials/base.html")
 
-
-
 def profile(request):
-    return render(request,"pickup-boy/profile.html")
+    pickupboy = request.user.pickup_boy
+    print(pickupboy)
+
+    if request.method == 'POST':
+        print('post')
+        name = request.POST['pname']
+        phone = request.POST['pphone']
+        email = request.POST['pemail']
+        address = request.POST['paddress']
+        photo = request.FILES['pphoto']
+
+        PickUpBoy.objects.filter(id=pickupboy.id).update(name=name, phone=phone, email=email,address=address)
+        photo_pb = PickUpBoy.objects.get(id=pickupboy.id)
+        photo_pb.photo=photo
+        photo_pb.save()
+        print("qwerty")
+        get_user_model().objects.filter(pickup_boy=pickupboy.id).update(phone_number=phone, email=email)
+         
+        return redirect('pickupboy:profile')
+
+    context = {
+        "pickupboy":pickupboy,
+    }
+
+    return render(request,"pickup-boy/profile.html",context)
 
 def index(request):
     context ={
@@ -48,22 +71,16 @@ def requote_selfy(request):
     return render(request,"pickup-boy/requote-selfy.html")
 
 
-# edit
+# edit pickupboy
 
-# @csrf_exempt
-# def editboy(request,id):
-#     pickup_id = request.POST['pid']
-#     name = request.POST['pname']
-#     email = request.POST['pemail']
-#     phone = request.POST['pphone']
-#     franchise = request.POST['pfranchise']
-#     address = request.POST['paddress']
-#     address = request.POST['paddress']
-#     photo = request.FILES['pphone']
-#     place = request.POST['plocation']
-#     PickUpBoy.objects.filter(id=id).update(pickup_id=pickup_id, name=name, email=email, phone=phone, address=address,franchise=franchise,photo=photo,place=place)
-#     # get_user_model().objects.filter(franchise__id=id).update(phone_number=phone,email=email)
-#     data ={
-#         "ss":"csac",
-#     }
-#     return JsonResponse(data)
+# def profile(request):
+   
+
+        # PickUpBoy.objects.filter(id=pickupboy.id).update(name=name, phone=phone, email=email, address=address)
+        # photo_fr = PickUpBoy.objects.get(id=pickupboy.id)
+        # photo_fr.photo=photo
+        # photo_fr.save()
+        # print("qwerty")
+        # get_user_model().objects.filter(pickupboy=pickupboy.id).update(phone_number=phone, email=email)
+        # print("55"*20)
+        # return redirect('pickupboy:profile')
