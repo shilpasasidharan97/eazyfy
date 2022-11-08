@@ -203,6 +203,32 @@ def Model(request,id):
     return render(request,'official/model.html', context)
 
 
+def getModelData(request,id):
+    getmodel = BrandModel.objects.get(id=id)
+    # print(getmodel)
+    data = {
+        # "fkid":getmodel.brand.id,
+        "mphoto":getmodel.image.url,
+        "mname":getmodel.name
+    }
+    return JsonResponse(data)
+
+
+def editModel(request,id):
+    print(id)
+    new_id = str(id)
+    model_name = request.POST['mname'+new_id]
+    model_photo = request.FILES.get('mphoto'+new_id, "not found" )
+    BrandModel.objects.filter(id=id).update( name=model_name, brand=id)
+    if model_photo != 'not found':
+        model = BrandModel.objects.get(id=id)
+        model.image=model_photo
+        model.save()
+    else:
+        pass
+    return redirect('/official/model/'+new_id)
+
+
 def modelSpecification(request,id):
     brand = BrandModel.objects.get(brand=id)
     models_spec = ModelSpecifications.objects.filter(Brand_model=brand)

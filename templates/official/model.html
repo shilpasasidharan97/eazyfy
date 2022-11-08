@@ -3,6 +3,58 @@
 {% load static %}
 
 
+<style>
+    /*  */
+    .profile-img-wrap.edit-img {
+        border-radius: 50%;
+        margin: 0 auto 30px;
+        position: relative;
+    }
+
+    .profile-img-wrap {
+        height: 120px;
+        position: absolute;
+        width: 120px;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    .profile-img-wrap .fileupload {
+        background: rgba(33, 33, 33, 0.5);
+        border: none;
+        padding: 3px 10px;
+        border-radius: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .profile-img-wrap .fileupload .btn-text {
+        color: #ffffff;
+    }
+
+    .profile-img-wrap .fileupload .upload {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        font-size: 20px;
+        opacity: 0;
+        margin: 0;
+        padding: 5px;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+    }
+</style>
+
+
+
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
@@ -59,22 +111,70 @@
                 <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain
                     inventory stock</p>
                 <ul class="list-group list-group-flush">
+                    
                     <li class="list-group-item">
                         <span class="mb-0 title">Ram</span> :
-                        <span class="text-black ms-2">6gb</span>
+                        {% for ram in model.get_ram %}
+                            <span class="text-black ms-2">{{ram.RAM}}gb , </span>
+                        {% endfor %}
                     </li>
                     <li class="list-group-item">
                         <span class="mb-0 title">Internal Storage</span> :
-                        <span class="text-black ms-2">128gb</span>
+                        {% for int in model.get_ram %}
+                        <span class="text-black ms-2">{{int.internal_storage}}gb </span>
+                        {% endfor %}
                     </li>
                 </ul>
             </div>
             <div class="card-footer text-center">
                 <a href="{% url 'official:modelspecification' model.id %}" class="btn btn-primary btn-xs" >Spec Adding</a>
+                <a href="" class="btn btn-primary btn-xs" data-bs-toggle="modal" data-bs-target="#editModel{{model.id}}" onclick="Dataget({{model.id}})">Edit</a>
                 <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="deleteModel()">Delete</a>
             </div>
         </div>
     </div>
+
+    <!-- edit modal -->
+    <div class="modal fade" id="editModel{{model.id}}">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> EDit Model</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form action="{% url 'official:editmodel' model.id %}" method="POST" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <div class="profile-img-wrap edit-img">
+                                        <img class="inline-block" src=""
+                                            id="mimage{{model.id}}" alt="user">
+                                        <div class="fileupload btn">
+                                            <span class="btn-text">edit</span>
+                                            <!-- {{empform.emp_profile}} -->
+                                            <input class="upload" name="mphoto{{model.id}}" id="mphoto{{model.id}}" type="file"  >
+                                            <!-- <input class="" name="mid" value="" type="text" id="mid{{model.id}}" > -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="mname{{model.id}}" id="mname{{model.id}}">
+                                </div>
+                            <button type="submit" class="btn btn-primary text-center">SUbmit</button>
+                        </form>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+    </div>
+
     {% endfor %}
 
 </div>
@@ -166,6 +266,21 @@
             }
         })
     }
+
+    function Dataget(id){
+        alert()
+        $.ajax({
+            url: '/official/getmodeldata/'+id,
+            type: 'GET',
+            success:function(responce){
+                // $('#mid'+id).val(responce.fkid)
+                $('#mimage'+id).attr("src",responce.mphoto)
+                $('#mname'+id).val(responce.mname)
+            }
+        })
+    }
+
 </script>
+
 
 {% endblock %}
