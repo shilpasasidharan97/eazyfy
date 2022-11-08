@@ -7,11 +7,27 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 # Create your views here.
 
-def index(request):
+
+def header(request):
+    franchise = request.user.franchise
+    email = franchise.email
+    print(email)
     context = {
+        "franchise":franchise,
+    }
+    return render(request,"franchise/header.html", context)
+
+
+@login_required(login_url='/official/loginpage')
+def index(request):
+    franchise = request.user.franchise
+    print(franchise)
+    context = {
+        "franchise":franchise,
         "is_index":True
     }
     return render(request,"franchise/index.html",context)
+
 
 
 @login_required(login_url='/official/loginpage')
@@ -37,7 +53,7 @@ def add_pickupboy(request):
 
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,pickup_boy=pickup_boy, is_pickupboy=True)
-        return render(request,'franchise/add-pickupboy.html')
+        return redirect('franchise:add-pickupboy')
     else:
         pickup_boy_list = PickUpBoy.objects.all().order_by('name')
         context={
@@ -54,6 +70,7 @@ def add_pickupboy(request):
 def getprofiledata(request,id):
     details = PickUpBoy.objects.get(id=id)
     data = {
+        "id":details.id,
         "pid":details.pickup_id,
         "name": details.name,
         "email": details.email,
@@ -76,7 +93,7 @@ def editform(request,id):
 
     # photo = request.FILES['fphoto']
     PickUpBoy.objects.filter(id=id).update(pickup_id=pid, name=pname, email=pemail, phone=pickupboyphone,place=pickupboyplace, address=paddress)
-    get_user_model().objects.filter(pickup_boy=id).update(phone_number=pickupboyphone)
+    get_user_model().objects.filter(pickup_boy=id).update(phone_number=pickupboyphone, email=pemail)
     data ={
         "ss":"csac",
     }
@@ -89,12 +106,30 @@ def Deletepickupboy(request,id):
     return redirect('/franchise/add-pickupboy')
 
 
-
-
-
-
 def profile(request):
-    return render(request,"franchise/profile.html")
+    franchise = request.user.franchise
+    print(franchise)
+    if request.method == 'POST':
+        print('post')
+        name = request.POST['name']
+        phone = request.POST['phone']
+        email = request.POST['email']
+        address = request.POST['address']
+        photo = request.FILES['fphoto']
+
+        Franchise.objects.filter(id=franchise.id).update(name=name, phone=phone, email=email, address=address)
+        photo_fr = Franchise.objects.get(id=franchise.id)
+        photo_fr.photo=photo
+        photo_fr.save()
+        print("qwerty")
+        get_user_model().objects.filter(franchise=franchise.id).update(phone_number=phone, email=email)
+        print("55"*20)
+        return redirect('franchise:profile')
+
+    context = {
+        "franchise":franchise,
+    }
+    return render(request,"franchise/profile.html",context)
 
 def order(request):
     context = {

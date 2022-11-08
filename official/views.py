@@ -244,10 +244,10 @@ def questionAdding(request):
 
 @csrf_exempt
 def questsave(request):
-    question = request.POST['qst']
+    question_data = request.POST['question']
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
+    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type)
     new_question.save()
     qst_count = Questions.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
