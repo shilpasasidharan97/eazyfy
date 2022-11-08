@@ -5,8 +5,6 @@ def main_context(request):
         franchise = request.user.franchise
         if User.objects.filter(franchise=franchise).exists():
             franchise = request.user.franchise
-            # franchise_photo = franchise.photo
-            print(franchise, "%"*30)
             return {
                 "domain": request.META["HTTP_HOST"],
                 "franchise":franchise,

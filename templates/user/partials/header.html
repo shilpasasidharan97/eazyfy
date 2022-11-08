@@ -209,19 +209,18 @@
                             </div>
                             <div class="header-action-icon-2">
 
-                                {% if user_object != '' %}
+                                {% if status == 1 %}
                                 <a class="mini-cart-icon" href="shop-cart.html">
                                     <i class="fa fa-user" style="color: #640097;"></i>
 
                                 </a>
                                 {% else %}
-
                                 <a href="{% url 'user:login' %}">
                                     <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>user</button>
                                 </a>
+                                {% endif %}
 
                                 </a>
-                                {% endif %}
                             </div>
                         </div>
                     </div>
@@ -292,20 +291,18 @@
                                         <li><a href="{% url 'user:account' %}">My Account</a></li>
 
 
-                                        {% if user_object != '' %}
-
+                                        {% if status == 1%}
+                                            <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% else %}
-                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
+                                            <li ><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% endif %}
 
                                         <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
-                                        {% if user_object != '' %}
-                                        <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
-                                        {% else %}
                                         
-                                        {% endif %}
+                                        <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
+                                       
 
 
                                     </ul>
