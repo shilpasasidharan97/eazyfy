@@ -213,15 +213,6 @@ def getModelData(request,id):
     }
     return JsonResponse(data)
 
-def getModelspec(request,id):
-    getModelspec = ModelSpecifications.objects.get(id=id)
-    # print(getModelspec)
-    data = {
-        "miram":getModelspec.RAM,
-        "mistore":getModelspec.internal_storage,
-        "miprice":getModelspec.price
-    }
-    return JsonResponse(data)
 
 
 def editModel(request,id):
@@ -238,6 +229,39 @@ def editModel(request,id):
         pass
     return redirect('/official/model/'+new_id)
 
+
+# shifa edit spec
+
+def getModelspec(request,id):
+    getModelspec = ModelSpecifications.objects.get(id=id)
+    # print(getModelspec)
+    data = {
+        "miram":getModelspec.RAM,
+        "mistore":getModelspec.internal_storage,
+        "miprice":getModelspec.price,
+        "id":getModelspec.id,
+    }
+    return JsonResponse(data)
+
+
+@csrf_exempt
+def editSpec(request,id):
+    miram = request.POST['miram']
+    mistore = request.POST['mistore']
+    miprice = request.POST['miprice']
+    ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
+    data ={
+        "ss":"csac",
+    }
+    return JsonResponse(data)
+
+def Deletespec(request,id):
+    print('worked')
+    ModelSpecifications.objects.get(id=id).delete()
+    data = {
+        "deleted":"deleted"
+    }
+    return JsonResponse(data)
 
 def modelSpecification(request,id):
     brand = BrandModel.objects.get(brand=id)
