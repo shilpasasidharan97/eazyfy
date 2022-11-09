@@ -79,3 +79,32 @@ class CutomerRegistrationAdmin(admin.ModelAdmin):
 
 
 admin.site.register(CutomerRegistration, CutomerRegistrationAdmin)
+
+
+
+class FranchiseWalletAdmin(admin.ModelAdmin):
+    list_display = ('franchise','wallet_amount','date')
+    search_fields = ('franchise','wallet_amount','date')
+
+
+admin.site.register(FranchiseWallet, FranchiseWalletAdmin)
+
+
+
+class AdminWalletAdmin(admin.ModelAdmin):
+    list_display = ('franchise','amount','date')
+    search_fields = ('franchise','amount','date')
+
+
+admin.site.register(AdminWallet, AdminWalletAdmin)
+
+ 
+
+
+
+class AdminSendRecordAdmin(admin.ModelAdmin):
+    list_display = ('franchise','amount','date')
+    search_fields = ('franchise','amount','date')
+
+
+admin.site.register(AdminSendRecord, AdminSendRecordAdmin)

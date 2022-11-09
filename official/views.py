@@ -6,6 +6,9 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
+import datetime
+
 
 # Create your views here.
 
@@ -66,6 +69,8 @@ def franchise(request):
 
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
+        wallet = FranchiseWallet(franchise=franchise)
+        wallet.save()
         return redirect('official:franchise')
     
     franchise_list = Franchise.objects.all().order_by('name')
@@ -348,17 +353,57 @@ def userDetails(request):
 
 
 def transactionHistory(request):
+    transactions = AdminSendRecord.objects.all()
     context = {
-        "is_transaction":True
+        "is_transaction":True,
+        "transactions":transactions
     }
     return render(request,'official/transaction_history.html',context)
 
 
+# WALLET HISTORY
 def wallet(request):
     context = {
         "is_wallet":True
     }
     return render(request,'official/wallet.html',context)
+
+
+# WALLET_FRANCHISE_LIST AND STATUS
+def franchiseWallet(request):
+    # all_franchise = Franchise.objects.all().order_by('name')
+    all_franchise = FranchiseWallet.objects.all()
+    context = {
+        "is_wallet":True,
+        "franchise":all_franchise,
+    }
+    return render(request, 'official/wallet_franchise.html',context)
+
+
+def viewPayment(request,id):
+    details = FranchiseWallet.objects.get(id=id)
+    print(details)
+    data = {
+        "id":details.franchise.id,       
+        "franchise_id":details.franchise.franchise_id,
+        "name": details.franchise.name,
+
+    }
+    return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def savePayment(request,id):
+    now = datetime.datetime.now()
+    amount = request.POST['amount']
+    print(amount)
+    print(id)
+    franchise_obj = Franchise.objects.get(id=id)
+    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(wallet_amount=amount,date=now)
+    record = AdminSendRecord(franchise=franchise_obj,amount=amount,date=now)
+    print(record)
+    record.save()
+    return redirect('official:franchisewallet')
 
 
 def profile(request):

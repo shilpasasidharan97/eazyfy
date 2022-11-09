@@ -187,3 +187,18 @@ class Dedection(models.Model):
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
     dedection_amount = models.IntegerField(null = True, blank = True)
 
+class FranchiseWallet(models.Model):
+    franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
+    wallet_amount = models.FloatField(null = True, blank = True)  
+    date = models.DateTimeField(auto_now_add=True)
+
+
+class AdminWallet(models.Model):
+    franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
+    amount = models.FloatField(null = True, blank = True)  
+    date = models.DateTimeField(auto_now_add=True)
+
+class AdminSendRecord(models.Model):
+    franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
+    amount = models.FloatField(null = True, blank = True)  
+    date = models.DateField()

@@ -1,0 +1,184 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Wallet - Franchise List</h4>
+        </div>
+    </div>
+    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="{% url 'official:home' %}">Dashboard / </a></li>
+            <li class=""><a href="javascript:void(0)"></a></li>
+        </ol>
+    </div>
+</div>
+
+<div class="row mt-5">
+  
+
+{% for franchise in franchise %}
+
+    <div class="card">
+        <div class="project-info">
+            <div class="col-xl-3 my-2 col-lg-3 col-sm-6">
+                <p class="text-primary mb-1">FRANCHISEID : id {{ franchise.franchise.franchise_id }}</p>
+                <div class="d-flex align-items-center">
+                    <div class="project-media">
+                        <img src="{{ franchise.franchise.photo.url }}" alt="">
+                    </div>
+                    <div class="ms-2">
+                        <h5 class="mb-0 pt-1 font-w50 text-black"> {{ franchise.franchise.name }}</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                Account Balance : ₹<br>
+                Paid Amount : ₹{{franchise.wallet_amount}}
+            </div>
+            <div class="col-lg-3">
+                last_updated date: <br>
+                {{franchise.date}}
+            </div>
+            <div class="col-xl-3 my-2 col-lg-3 col-sm-6 text-end">
+                <div class="d-flex align-items-end">
+                    <div class="project-media text-end">
+                        <a type="button" href="" class="btn btn-outline-info" data-bs-toggle="modal"
+                            data-bs-target="#wallet"  onclick="DataGets({{franchise.id}})">Payment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+{% endfor %}
+    <nav class="mt-5">
+        <ul class="pagination pagination-gutter pagination-primary no-bg">
+            <li class="page-item page-indicator">
+                <a class="page-link" href="javascript:void(0)">
+                    <i class="la la-angle-left"></i></a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="javascript:void(0)">1</a>
+            </li>
+            <li class="page-item "><a class="page-link" href="javascript:void(0)">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+            <li class="page-item page-indicator">
+                <a class="page-link" href="javascript:void(0)">
+                    <i class="la la-angle-right"></i></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+
+<!-- wallet add -->
+<div class="modal fade" id="wallet" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add Payment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="franchiseid">Franchise ID <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="franchiseid" name="franchise_id" readonly>
+                                    <div class="invalid-feedback">
+                                        Please enter a Franchise Id.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="fr_name">Franchise Name
+                                    <span class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="fr_name" required name="fr_name">
+                                    <div class="invalid-feedback">
+                                        Please enter a password.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3 row">
+                                <label class="col-lg-4 col-form-label" for="amount">Amount <span
+                                        class="text-danger">*</span>
+                                </label>
+                                <div class="col-lg-6">
+                                    <input type="text" class="form-control" id="amount" required name="amount">
+                                    <div class="invalid-feedback">
+                                        Please enter a Email.
+                                    </div>
+                                    <input type="text" id="id" hidden>
+                                </div>
+                            </div>
+                            <div class="mb-3 row mt-5 text-end">
+                                <div class="col-lg-8 ms-auto">
+                                    <button type="submit" class="btn btn-primary" onclick="SavePayment()">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script>
+    function DataGets(id) {
+        $.ajax({
+            url: "/official/viewpayment/" + id,
+            type: 'GET',
+
+            success: function (responce) {
+                $('#id').val(responce.value.id)
+                $('#franchiseid').val(responce.value.franchise_id)
+                $('#fr_name').val(responce.value.name)
+
+            }
+
+        })
+
+    }
+
+    function SavePayment() {
+        var id =  $('#id').val();
+        alert(id)
+        $.ajax({
+            url: "/official/savepayment/" + id,
+            type: 'POST',
+            data: {
+                'fid': $('#franchiseid').val(),
+                'fname': $('#fr_name').val(),
+                'amount': $('#amount').val(),
+                // 'fphoto':$('#fphoto').val(),
+            },
+            success: function (responce) {
+                window.location.reload()
+            }
+        })
+    }
+
+    </script>
+
+{% endblock %}
