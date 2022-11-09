@@ -213,6 +213,16 @@ def getModelData(request,id):
     }
     return JsonResponse(data)
 
+def getModelspec(request,id):
+    getModelspec = ModelSpecifications.objects.get(id=id)
+    # print(getModelspec)
+    data = {
+        "miram":getModelspec.RAM,
+        "mistore":getModelspec.internal_storage,
+        "miprice":getModelspec.price
+    }
+    return JsonResponse(data)
+
 
 def editModel(request,id):
     print(id)

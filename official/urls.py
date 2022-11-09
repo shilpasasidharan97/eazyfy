@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('model/<int:id>',views.Model,name='model'),
     path('getmodeldata/<int:id>',views.getModelData, name='getmodeldata'),
+    path('getModelspec/<int:id>',views.getModelspec, name='getModelspec'),
     path('editmodel/<int:id>',views.editModel, name='editmodel'),
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
 

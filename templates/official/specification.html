@@ -91,7 +91,7 @@
                     <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                         <div class="d-flex project-status align-items-center">
                             <a href="" class="btn btn-outline-primary" data-bs-toggle="modal"
-                            data-bs-target="#editSpec">Edit</a>
+                            data-bs-target="#editSpec"  onclick="Dataget({{spec.id}})">Edit</a>
                             <button type="button" class="btn btn-outline-danger" onclick="deleteSpec()">Delete</button>
                         </div>
                     </div>
@@ -134,7 +134,7 @@
             </div>
             <div class="modal-body">
                 <div class="basic-form">
-                    <form action="" method="POST" enctype="multipart/form-data">
+                    <form  method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="row">
                             <div class="mb-3 col-md-6">
@@ -179,20 +179,20 @@
             </div>
             <div class="modal-body">
                 <div class="basic-form">
-                    <form>
+                    <form  method="POST" enctype="multipart/form-data">
 
                         <div class="row">
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">RAM</label>
-                                <input type="text" class="form-control" id="miram{{spec.id}}" value="6GB">
+                                <input type="text" class="form-control" id="miram" name="miram" value="">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Internal Storage</label>
-                                <input type="number" class="form-control" id="mistore{{spec.id}}" value="64gb">
+                                <input type="number" class="form-control" id="mistore" name="mistore" value="">
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label">Price</label>
-                                <input type="integer" class="form-control" id="miprice{{spec.id}}" value="15000">
+                                <input type="integer" class="form-control" id="miprice" name="miprice" value="">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary text-end align-items-end">Change</button>
@@ -204,8 +204,8 @@
     </div>
 </div>
 
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="{%static 'official/vendor/jquery-smartwizard/dist/js/jquery.smartWizard.js' %}"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function deleteSpec() {
@@ -228,18 +228,22 @@
         })
     }
 
-    // function Dataget(id){
-    //     // alert()
-    //     $.ajax({
-    //         url: '/official/getmodeldata/'+id,
-    //         type: 'GET',
-    //         success:function(responce){
-    //             // $('#mid'+id).val(responce.fkid)
-    //             $('#mimage'+id).attr("src",responce.mphoto)
-    //             $('#mname'+id).val(responce.mname)
-    //         }
-    //     })
-    // }
+
+    
+  
+    function Dataget(id){
+         alert()
+        $.ajax({
+            url: '/official/getModelspec/'+id,
+            type: 'GET',
+            success:function(responce){
+                $('#miram').val(responce.miram)
+                $('#mistore').val(responce.mistore)
+                $('#miprice').val(responce.miprice)
+            }
+        })
+    }
 
 </script>
+
 {% endblock %}
