@@ -251,10 +251,14 @@ def modelSpecification(request,id):
 
 # ALL QUESTION
 def questions(request):
+    question =  Questions.objects.all()
+    subQuestion = QuestionOption.objects.all()
     device_type = DeviceType.objects.all()
     context = {
         "is_questions":True,
         "device_type":device_type,
+        "question" : question,
+        "subQuestion" : subQuestion
     }
     return render(request,'official/questions.html', context)
 
