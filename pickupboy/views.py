@@ -1,22 +1,22 @@
 from django.shortcuts import render,redirect
 from official.models import *
-from eazyfy.decorators import auth_pickupboy
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth import get_user_model
+from django.contrib.auth.decorators import login_required
+from eazyfy.decorators import auth_pickupboy
 
 
 # Create your views here.
 
 
-@auth_pickupboy
-@login_required(login_url='/official/loginpage')
 def base(request):
     return render(request,"pickup-boy/partials/base.html")
 
+
+# PROFILE AND PROFILE EDITING
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
 def profile(request):
     pickupboy = request.user.pickup_boy
-    print(pickupboy)
-
     if request.method == 'POST':
         print('post')
         name = request.POST['pname']
@@ -31,21 +31,14 @@ def profile(request):
         photo_pb.save()
         print("qwerty")
         get_user_model().objects.filter(pickup_boy=pickupboy.id).update(phone_number=phone, email=email)
-         
         return redirect('pickupboy:profile')
-
-
-# PROFILE
-@auth_pickupboy
-@login_required(login_url='/official/loginpage')
-def profile(request):
     context = {
         "pickupboy":pickupboy,
     }
-
     return render(request,"pickup-boy/profile.html",context)
 
 
+# DASHBOARD
 @auth_pickupboy
 @login_required(login_url='/official/loginpage')
 def index(request):
@@ -111,17 +104,3 @@ def requote(request):
 def requote_selfy(request):
     return render(request,"pickup-boy/requote-selfy.html")
 
-
-# edit pickupboy
-
-# def profile(request):
-   
-
-        # PickUpBoy.objects.filter(id=pickupboy.id).update(name=name, phone=phone, email=email, address=address)
-        # photo_fr = PickUpBoy.objects.get(id=pickupboy.id)
-        # photo_fr.photo=photo
-        # photo_fr.save()
-        # print("qwerty")
-        # get_user_model().objects.filter(pickupboy=pickupboy.id).update(phone_number=phone, email=email)
-        # print("55"*20)
-        # return redirect('pickupboy:profile')
