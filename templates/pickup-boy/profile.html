@@ -111,60 +111,67 @@
                                     
                                 </div>
                             </div>
+
+
+
+
+                            <!-- #################### EDIT #################### -->
                             <div id="profile-settings" class="tab-pane fade">
                                 <div class="pt-3">
                                     <div class="settings-form">
                                         <h4 class="text-primary">Account Edit</h4>
-                                        <form>
+                                        <form method="POST" enctype="multipart/form-data">
+                                            {% csrf_token %}
+                                            <div class="row">
+                                                <div class="mb-3 col-md-12">
+                                                    <div class="profile-img-wrap edit-img">
+                                                        <img class="inline-block" src="{{pickUpBoy.photo.url}}" alt="user">
+                                                        <div class="fileupload btn">
+                                                            <span class="btn-text">edit</span>
+                                                            <input class="upload" type="file"  name="pphoto" value="{{pickUpBoy.photo.url}}" >
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">Name</label>
-                                                    <input type="name" placeholder="name" id="pname" class="form-control">
+                                                    <input type="name" placeholder="name" value="{{pickUpBoy.name}}" name="pname" class="form-control">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">id</label>
-                                                    <input type="id" placeholder="id" id="pid" class="form-control">
+                                                    <input type="id" placeholder="id" name="pid" value="{{pickUpBoy.pickup_id}}" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="mb-3">
                                                 <label class="form-label">Address</label>
-                                                <input type="text" placeholder="1234 Main St" id="paddress" class="form-control">
+                                                <input type="text" placeholder="1234 Main St" name="paddress" value="{{pickUpBoy.address}}" class="form-control">
                                             </div>
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">Email</label>
-                                                    <input type="email" placeholder="Email" id="pemail" class="form-control">
+                                                    <input type="email" placeholder="Email" name="pemail" value="{{pickUpBoy.email}}" class="form-control">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">phone</label>
-                                                    <input type="phone" placeholder="phone" id="pphone" class="form-control">
+                                                    <input type="phone" placeholder="phone" name="pphone" value="{{pickUpBoy.phone}}" class="form-control">
                                                 </div>
                                                 
                                             </div>
                                             <div class="row">
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">Location</label>
-                                                    <input type="text" id="plocation" class="form-control">
+                                                    <input type="text" name="plocation" value="{{pickUpBoy.place}}" class="form-control">
                                                 </div>
                                                 <div class="mb-3 col-md-6">
                                                     <label class="form-label">franchise</label>
-                                                    <input type="text" id="pfranchise" class="form-control">
+                                                    <input type="text" name="pfranchise" value="{{pickUpBoy.franchise}}" class="form-control">
                                                 </div>
                                                 
                                                 <div class="mb-3 row">
-                                                    <label class="col-lg-4 col-form-label" for="Fphoto">pickup-boy Photo
-                                                        <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-6">
-                                                        <input type="file" class="form-control" id="pphoto" placeholder="" required
-                                                            name="photo">
-                                                        <div class="invalid-feedback">
-                                                            Upload Photo ..
-                                                        </div>
-                                                    </div>
                                                     <div class="mb-3 col-md-6">
                                                         <label class="form-label">Password</label>
-                                                        <input type="password" placeholder="Password" id="ppassword" class="form-control">
+                                                        <input type="password" placeholder="Password" name="ppassword" value="{{pickUpBoy.password}}" class="form-control">
                                                     </div>
                                                 </div>
                                             </div>

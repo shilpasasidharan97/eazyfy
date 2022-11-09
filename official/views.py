@@ -67,13 +67,14 @@ def franchise(request):
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
         return redirect('official:franchise')
-    else:
-        franchise_list = Franchise.objects.all().order_by('name')
-        context={
-            "is_franchise":True,
-            "franchise_list" : franchise_list 
-        }
-        return render(request,'official/franchise.html',context)
+    
+    franchise_list = Franchise.objects.all().order_by('name')
+    context={
+        "is_franchise":True,
+        "franchise_list" : franchise_list 
+    }
+    return render(request,'official/franchise.html',context)
+    
 
 
 # edit franchise
@@ -201,6 +202,32 @@ def Model(request,id):
         "brand":brand
     }
     return render(request,'official/model.html', context)
+
+
+def getModelData(request,id):
+    getmodel = BrandModel.objects.get(id=id)
+    # print(getmodel)
+    data = {
+        # "fkid":getmodel.brand.id,
+        "mphoto":getmodel.image.url,
+        "mname":getmodel.name
+    }
+    return JsonResponse(data)
+
+
+def editModel(request,id):
+    print(id)
+    new_id = str(id)
+    model_name = request.POST['mname'+new_id]
+    model_photo = request.FILES.get('mphoto'+new_id, "not found" )
+    BrandModel.objects.filter(id=id).update( name=model_name, brand=id)
+    if model_photo != 'not found':
+        model = BrandModel.objects.get(id=id)
+        model.image=model_photo
+        model.save()
+    else:
+        pass
+    return redirect('/official/model/'+new_id)
 
 
 def modelSpecification(request,id):

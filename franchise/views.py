@@ -5,23 +5,28 @@ from django.contrib.auth.decorators import login_required
 from official.models import *
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
+from eazyfy.decorators import auth_franchise
+from django.contrib.auth.decorators import login_required
+
+
 # Create your views here.
 
 
+@login_required(login_url='/official/loginpage')
+@auth_franchise
 def header(request):
     franchise = request.user.franchise
-    email = franchise.email
-    print(email)
     context = {
         "franchise":franchise,
     }
     return render(request,"franchise/header.html", context)
 
 
+# DASHBOARD
+@auth_franchise
 @login_required(login_url='/official/loginpage')
 def index(request):
     franchise = request.user.franchise
-    print(franchise)
     context = {
         "franchise":franchise,
         "is_index":True
@@ -29,15 +34,13 @@ def index(request):
     return render(request,"franchise/index.html",context)
 
 
-
+# PICK-UP BOY ADDING
+@auth_franchise
 @login_required(login_url='/official/loginpage')
 def add_pickupboy(request):
-
     franchise = request.user.franchise
-    print(franchise,"#"*20)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise)
     if request.method == 'POST':
-        
         name = request.POST['name']
         pickup_boy_id = request.POST['pickup_boy_id']
         phone = request.POST['phone']
@@ -63,9 +66,7 @@ def add_pickupboy(request):
     return render(request,"franchise/add-pickupboy.html", context)
 
 
-
-# edit franchise
-
+# EDITDATA OF PICKUPBOY
 @csrf_exempt
 def getprofiledata(request,id):
     details = PickUpBoy.objects.get(id=id)
@@ -82,6 +83,7 @@ def getprofiledata(request,id):
     return JsonResponse({"value": data})
 
 
+# PICKUPBOY EDITING
 @csrf_exempt
 def editform(request,id):
     pid = request.POST['pid']
@@ -100,37 +102,39 @@ def editform(request,id):
     return JsonResponse(data)
 
 
+# DELETE PICKUPBOY
 def Deletepickupboy(request,id):
-    print("#"*20)
     PickUpBoy.objects.get(id=id).delete()
     return redirect('/franchise/add-pickupboy')
 
 
+# PROFILE AND PROFILE EDITING
+@auth_franchise
+@login_required(login_url='/official/loginpage')
 def profile(request):
     franchise = request.user.franchise
-    print(franchise)
     if request.method == 'POST':
-        print('post')
         name = request.POST['name']
         phone = request.POST['phone']
         email = request.POST['email']
         address = request.POST['address']
         photo = request.FILES['fphoto']
 
-        Franchise.objects.filter(id=franchise.id).update(name=name, phone=phone, email=email, address=address)
+        Franchise.objects.filter(id=franchise.id).update(name=name, phone=phone, email=email,address=address)
         photo_fr = Franchise.objects.get(id=franchise.id)
         photo_fr.photo=photo
         photo_fr.save()
-        print("qwerty")
         get_user_model().objects.filter(franchise=franchise.id).update(phone_number=phone, email=email)
-        print("55"*20)
         return redirect('franchise:profile')
-
     context = {
         "franchise":franchise,
     }
     return render(request,"franchise/profile.html",context)
 
+
+# ORDER LIST
+@auth_franchise
+@login_required(login_url='/official/loginpage')
 def order(request):
     context = {
         "is_order":True
