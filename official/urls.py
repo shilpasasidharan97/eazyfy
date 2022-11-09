@@ -50,6 +50,9 @@ urlpatterns = [
     path('userdetails',views.userDetails,name='userdetails'),
 
     path('wallet',views.wallet,name='wallet'),
+    path('viewpayment/<int:id>',views.viewPayment, name='viewpayment'),
+    path('savepayment/<int:id>',views.savePayment,name='savepayment'),
+    path('franchisewallet',views.franchiseWallet, name='franchisewallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
 
 
