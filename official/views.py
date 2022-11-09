@@ -67,13 +67,14 @@ def franchise(request):
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
         return redirect('official:franchise')
-    else:
-        franchise_list = Franchise.objects.all().order_by('name')
-        context={
-            "is_franchise":True,
-            "franchise_list" : franchise_list 
-        }
-        return render(request,'official/franchise.html',context)
+    
+    franchise_list = Franchise.objects.all().order_by('name')
+    context={
+        "is_franchise":True,
+        "franchise_list" : franchise_list 
+    }
+    return render(request,'official/franchise.html',context)
+    
 
 
 # edit franchise
@@ -250,10 +251,14 @@ def modelSpecification(request,id):
 
 # ALL QUESTION
 def questions(request):
+    question =  Questions.objects.all()
+    subQuestion = QuestionOption.objects.all()
     device_type = DeviceType.objects.all()
     context = {
         "is_questions":True,
         "device_type":device_type,
+        "question" : question,
+        "subQuestion" : subQuestion
     }
     return render(request,'official/questions.html', context)
 
