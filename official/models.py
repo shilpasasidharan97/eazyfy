@@ -189,13 +189,14 @@ class Dedection(models.Model):
 
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
-    wallet_amount = models.FloatField(null = True, blank = True)  
+    wallet_amount = models.FloatField(null = True, blank = True, default=0)  
+    last_paid_amount = models.FloatField(null = True, blank = True, default=0)
     date = models.DateTimeField(auto_now_add=True)
 
 
 class AdminWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
-    amount = models.FloatField(null = True, blank = True)  
+    amount = models.FloatField(null = True, blank = True, default=0)  
     date = models.DateTimeField(auto_now_add=True)
 
 class AdminSendRecord(models.Model):

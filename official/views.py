@@ -433,15 +433,22 @@ def viewPayment(request,id):
 @csrf_exempt
 def savePayment(request,id):
     now = datetime.datetime.now()
-    amount = request.POST['amount']
-    print(amount)
-    print(id)
+    paid_amount = request.POST['amount']
+    # balance_amount = float(paid_amount) + float(franchise_balance)
+    # print(balance_amount)
     franchise_obj = Franchise.objects.get(id=id)
-    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(wallet_amount=amount,date=now)
-    record = AdminSendRecord(franchise=franchise_obj,amount=amount,date=now)
+    franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
+    franchise_balance = franchisewallet.wallet_amount
+    balance_amount = float(paid_amount)+float(franchise_balance)
+    print(balance_amount)
+    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
+    record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
     print(record)
     record.save()
-    return redirect('official:franchisewallet')
+    data = {
+        "sss":"sss"
+    }
+    return JsonResponse(data)
 
 
 def profile(request):
