@@ -24,7 +24,7 @@ urlpatterns = [
   
 
 
-
+    path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
     path('question',views.question,name='question'),

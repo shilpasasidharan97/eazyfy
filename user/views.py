@@ -245,6 +245,9 @@ def comingsoon(request):
     }
     return render(request,"user/comingsoon.html",context)      
 
+def sellPhone(request):
+    return render(request,"user/sell-phone.html")
+
 
 def userLogout(request):
     user_logout = request.user
