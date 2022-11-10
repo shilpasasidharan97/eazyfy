@@ -22,9 +22,15 @@ urlpatterns = [
     path('getbranddata/<int:id>',views.getbranddata, name='getbranddata'),
     path('deletebrand/<int:id>',views.DeleteBrand, name='deletebrand'),
 
+
+    path('editSpec/<int:id>',views.editSpec, name='editSpec'),
+    path('Deletespec/<int:id>',views.Deletespec, name='Deletespec'),
+
     path('model/<int:id>',views.Model,name='model'),
     path('getmodeldata/<int:id>',views.getModelData, name='getmodeldata'),
+    path('getModelspec/<int:id>',views.getModelspec, name='getModelspec'),
     path('editmodel/<int:id>',views.editModel, name='editmodel'),
+    
     path('modelspecification/<int:id>',views.modelSpecification,name='modelspecification'),
 
     path('questions',views.questions,name='questions'),
@@ -44,6 +50,9 @@ urlpatterns = [
     path('userdetails',views.userDetails,name='userdetails'),
 
     path('wallet',views.wallet,name='wallet'),
+    path('viewpayment/<int:id>',views.viewPayment, name='viewpayment'),
+    path('savepayment/<int:id>',views.savePayment,name='savepayment'),
+    path('franchisewallet',views.franchiseWallet, name='franchisewallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
 
 
