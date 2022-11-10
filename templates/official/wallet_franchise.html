@@ -20,34 +20,34 @@
 <div class="row mt-5">
   
 
-{% for franchise in franchise %}
+{% for franchises in franchise %}
 
     <div class="card">
         <div class="project-info">
             <div class="col-xl-3 my-2 col-lg-3 col-sm-6">
-                <p class="text-primary mb-1">FRANCHISEID : id {{ franchise.franchise.franchise_id }}</p>
+                <p class="text-primary mb-1">FRANCHISEID : id {{ franchises.franchise.franchise_id }}</p>
                 <div class="d-flex align-items-center">
                     <div class="project-media">
-                        <img src="{{ franchise.franchise.photo.url }}" alt="">
+                        <img src="{{ franchises.franchise.photo.url }}" alt="">
                     </div>
                     <div class="ms-2">
-                        <h5 class="mb-0 pt-1 font-w50 text-black"> {{ franchise.franchise.name }}</h5>
+                        <h5 class="mb-0 pt-1 font-w50 text-black"> {{ franchises.franchise.name }}</h5>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3">
-                Account Balance : ₹<br>
-                Paid Amount : ₹{{franchise.wallet_amount}}
+                Account Balance : ₹{{franchises.wallet_amount}}<br>
+                Paid Amount : ₹{{franchises.last_paid_amount}}
             </div>
             <div class="col-lg-3">
                 last_updated date: <br>
-                {{franchise.date}}
+                {{franchises.date}}
             </div>
             <div class="col-xl-3 my-2 col-lg-3 col-sm-6 text-end">
                 <div class="d-flex align-items-end">
                     <div class="project-media text-end">
                         <a type="button" href="" class="btn btn-outline-info" data-bs-toggle="modal"
-                            data-bs-target="#wallet"  onclick="DataGets({{franchise.id}})">Payment</a>
+                            data-bs-target="#wallet"  onclick="DataGets({{franchises.id}})">Payment</a>
                     </div>
                 </div>
             </div>
