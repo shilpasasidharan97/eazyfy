@@ -10,8 +10,10 @@ from django.http import JsonResponse
 from django.contrib import messages
 from .helpers import send_forget_password_mail
 from django.contrib.auth import logout
+from eazyfy.decorators import auth_customer
 
 
+# CUSTOMER LOGIN
 def customerlogin(request):
     if request.method == 'POST':
         number = request.POST['number']
@@ -20,7 +22,7 @@ def customerlogin(request):
         if user is not None:
             login(request, user)
             if user.is_customer == True:
-                return redirect('user:about')
+                return redirect('user:index')
             else:
                 return redirect('user:login')
         else:
@@ -28,9 +30,8 @@ def customerlogin(request):
     else :
         return render(request,"user/login.html")
 
-# Create your views here.
 
-# customer registration
+# CUSTOMER REGISTRATION
 def UserRegistration(request):
     if request.method == 'POST':
         name = request.POST['name']
@@ -148,41 +149,51 @@ def resendOtp(request , token):
     return redirect(f'/otp-page/{user.test_id}')
 
 
-
-
+# DASHBOARD
 def index(request):
     user_logout = request.user
-    # print(user_logout)
     context = {
         "is_index" : True
     }
     return render(request,"user/index.html",context) 
 
+
+# ABOUT
 def about(request):
     return render(request,"user/about.html")
 
+
+# CONTACT
 def contact(request):
     return render(request,"user/contact.html")
 
+
+# TERMS AND CONDITIONS
 def termsAndConditions(request):
     return render(request,"user/terms-and-conditions.html")
 
 
+# SELL YOUR PHONE
 def sell(request):
     brand = Brand.objects.all()
     context = {
         "is_sellphone":True,
         "brand" : brand
     }
-    
     return render(request,"user/sellphone.html",context)
 
+
+# ACCOUNTS
 def account(request):
     return render(request,"user/account.html")
 
+
+# PRIVACY AND POLICY
 def privacyAndPolicy(request):
     return render(request,"user/privacy-policy.html")
 
+
+# BRAND MODELS
 def shops(request,id):
     model = BrandModel.objects.filter(brand__id=id)
     context = {
@@ -190,12 +201,13 @@ def shops(request,id):
     }
     return render(request,"user/shops.html",context)    
     
+
+# QUESTIONS
 def question(request):
     return render(request,"user/question.html")  
 
-def my(request):
-    return render(request,"user/my.html")  
 
+# MODEL SPECIFICATIONS
 def spec(request,id):
     # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
     specification = BrandModel.objects.get(id=id)
@@ -216,28 +228,29 @@ def getspecdata(request,id):
     return JsonResponse(data)
 
 
-
+# BUY PHONE
 def buyPhone(request):
     context = {
         "is_buyphone":True
     }
     return render(request,"user/buyphone.html",context)  
 
+
+# REPAIR PHONE
 def repairPhone(request):
     context = {
         "is_repair":True
     }
     return render(request,"user/repairphone.html",context)  
+
+
+# PAYMENT
+# 
 def payment(request):
-
     return render(request,"user/payment.html")      
+ 
 
-
-def registration(request):
-
-    return render(request,"web/registration.html")   
-
-
+# COMING SOON
 def comingsoon(request):
     context = {
         "is_gadget":True,
@@ -246,6 +259,7 @@ def comingsoon(request):
     return render(request,"user/comingsoon.html",context)      
 
 
+# USER LOGOUT
 def userLogout(request):
     user_logout = request.user
     logout(request)

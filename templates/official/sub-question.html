@@ -2,61 +2,115 @@
 {% block content %}
 {% load static %}
 
+<style>
+    .list-product{
+        height: 44px;
+        width: 54px;
+    }
+</style>
 
+<div class="col-xl-12">
+    <div class="card">
 
-<span>{{qst_count}}.</span>
-<p>{{question.questions}}</p>
+        <div class="basic-list-group">
+            <div class="list-group">
+                <a href="javascript:void()"
+                    class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-3">{{qst_count}}.{{question.questions}}</h5><small></small>
+                    </div>
+
+                </a>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 <h1 id="subno"></h1>
 <div class="row">
-    
+
+
     <div class="col-lg-9">
-        <div class="card">
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="mb-1">
+                    <h5>Upload sub questions</h5>
+                </label>
+                <input class="form-control mb-3 input-primary" placeholder="question?" type="text" id="disc" name="discription">
+
+
+                <div class="input-group mb-3 ">
+                    <div class="form-file">
+                        <input type="file" class="form-file-input form-control" name="images" id="images">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <!-- <button class="btn btn-primary" onclick="QuestionImageAdding()">Upload and Next</button> -->
+                        <button class="btn btn-success">Add sub question</button>
+                        <a href="{% url 'official:questionsadding' %}" class="btn btn-danger disabled"
+                            id="buttondisabled">finish</a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+
+        <!-- <div class="card">
             <div class="card-header">
                 <h4 class="card-title">Subquestion Adding</h4>
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                    <!--  -->
+                 
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3 row  ">
                             <div class="col-6 p-5 border qcard card">
                                 <div class="row">
                                     <div class="mb-3">
-                                        <input class="form-control" type="text"  id="disc" name="discription" >
+                                        <input class="form-control" type="text" id="disc" name="discription">
                                     </div>
                                     <input type="file" class="" name="images" id="images">
                                 </div>
-                            </div> 
+                            </div>
                         </div>
-                        <div class="mb-3 row">                   
+                        <div class="mb-3 row">
                             <div class="form-group">
-                                <!-- <button class="btn btn-primary" onclick="QuestionImageAdding()">Upload and Next</button> -->
-                                <button class="btn btn-success" >Add sub question</button>
-                                <a href="{% url 'official:questionsadding' %}" class="btn btn-danger disabled" id="buttondisabled">finish</a>
+                               
+                                <button class="btn btn-success">Add sub question</button>
+                                <a href="{% url 'official:questionsadding' %}" class="btn btn-danger disabled"
+                                    id="buttondisabled">finish</a>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 
-    
+
 
 
     <div class="col-lg-3">
+
         <div class="card">
             <div class="card-header">
                 <h6 class="card-title">SubQuestions</h6>
             </div>
             {% for i in sub_qst %}
-            <div class="card-body">
+            <div class="card-body row">
                 <div class="col-4 col-lg-4 col-md-4">
-                    <img class="card-img-top" src="{{i.image_upload.url}}" alt="Card image cap">
+                    <img class="card-img-top list-product" src="{{i.image_upload.url}}" alt="Card image cap">
                 </div>
-                <span class="">{{i.image_description}}</span>
+
+                <div class="col-8 col-lg-8 col-md-8">
+                    <span class="">{{i.image_description}}</span>
+                </div>
+                
             </div>
             {% endfor %}
         </div>
@@ -66,30 +120,31 @@
 
 
 
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-   
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
 
 <script>
-$(document).ready(function(){
-    var question=$('#disc').val()
-    if ( question == ''){
+    $(document).ready(function () {
+        var question = $('#disc').val()
+        if (question == '') {
             $("#buttondisabled").removeClass("disabled");
-    }
-    else{
+        }
+        else {
             $("#buttondisabled").addClass("disabled");
         }
 
-    $('#disc').keyup(function(){
-        var question=$('#disc').val()
-        if ( question == ''){
-            $("#buttondisabled").removeClass("disabled");
-        }
-        else{
-            $("#buttondisabled").addClass("disabled");
-        }
-    
+        $('#disc').keyup(function () {
+            var question = $('#disc').val()
+            if (question == '') {
+                $("#buttondisabled").removeClass("disabled");
+            }
+            else {
+                $("#buttondisabled").addClass("disabled");
+            }
+
+        })
     })
-})
 
 
 </script>

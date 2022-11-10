@@ -6,6 +6,9 @@ from django.contrib.auth import logout
 from django.http import JsonResponse
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
+from django.utils import timezone
+import datetime
+
 
 # Create your views here.
 
@@ -66,14 +69,17 @@ def franchise(request):
 
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
+        wallet = FranchiseWallet(franchise=franchise)
+        wallet.save()
         return redirect('official:franchise')
-    else:
-        franchise_list = Franchise.objects.all().order_by('name')
-        context={
-            "is_franchise":True,
-            "franchise_list" : franchise_list 
-        }
-        return render(request,'official/franchise.html',context)
+    
+    franchise_list = Franchise.objects.all().order_by('name')
+    context={
+        "is_franchise":True,
+        "franchise_list" : franchise_list 
+    }
+    return render(request,'official/franchise.html',context)
+    
 
 
 # edit franchise
@@ -284,10 +290,14 @@ def modelSpecification(request,id):
 
 # ALL QUESTION
 def questions(request):
+    question =  Questions.objects.all()
+    subQuestion = QuestionOption.objects.all()
     device_type = DeviceType.objects.all()
     context = {
         "is_questions":True,
         "device_type":device_type,
+        "question" : question,
+        "subQuestion" : subQuestion
     }
     return render(request,'official/questions.html', context)
 
@@ -381,17 +391,64 @@ def userDetails(request):
 
 
 def transactionHistory(request):
+    transactions = AdminSendRecord.objects.all()
     context = {
-        "is_transaction":True
+        "is_transaction":True,
+        "transactions":transactions
     }
     return render(request,'official/transaction_history.html',context)
 
 
+# WALLET HISTORY
 def wallet(request):
     context = {
         "is_wallet":True
     }
     return render(request,'official/wallet.html',context)
+
+
+# WALLET_FRANCHISE_LIST AND STATUS
+def franchiseWallet(request):
+    # all_franchise = Franchise.objects.all().order_by('name')
+    all_franchise = FranchiseWallet.objects.all()
+    context = {
+        "is_wallet":True,
+        "franchise":all_franchise,
+    }
+    return render(request, 'official/wallet_franchise.html',context)
+
+
+def viewPayment(request,id):
+    details = FranchiseWallet.objects.get(id=id)
+    print(details)
+    data = {
+        "id":details.franchise.id,       
+        "franchise_id":details.franchise.franchise_id,
+        "name": details.franchise.name,
+
+    }
+    return JsonResponse({"value": data})
+
+
+@csrf_exempt
+def savePayment(request,id):
+    now = datetime.datetime.now()
+    paid_amount = request.POST['amount']
+    # balance_amount = float(paid_amount) + float(franchise_balance)
+    # print(balance_amount)
+    franchise_obj = Franchise.objects.get(id=id)
+    franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
+    franchise_balance = franchisewallet.wallet_amount
+    balance_amount = float(paid_amount)+float(franchise_balance)
+    print(balance_amount)
+    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
+    record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
+    print(record)
+    record.save()
+    data = {
+        "sss":"sss"
+    }
+    return JsonResponse(data)
 
 
 def profile(request):
