@@ -38,13 +38,15 @@ def UserRegistration(request):
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
+        country_code = request.POST['countryCode']
         phone = request.POST['Phone_number']
+        phonenumber_with_countrycode = country_code + phone
         secret = pyotp.random_base32()
         if password == cpassword :
-            customer = CutomerRegistration(email = email, phone_number = phone, password = password, name=name)
+            customer = CutomerRegistration(email = email, phone_number = phonenumber_with_countrycode, password = password, name=name)
             customer.save()
             User = get_user_model()
-            customers = User.objects.create_user(email=email,phone_number=phone, password=password,customer=customer, is_customer=True)
+            customers = User.objects.create_user(email=email,phone_number=phonenumber_with_countrycode, password=password,customer=customer, is_customer=True)
 
             profile = CutomerProfile.objects.create(user =customers,auth_token = secret)
             return redirect(f"/otp-page/{profile.test_id}")
@@ -258,6 +260,9 @@ def comingsoon(request):
     }
     return render(request,"user/comingsoon.html",context)      
 
+
+def handler404(request, exception):
+    return render(request, "user/404.html", status=404)
 
 # USER LOGOUT
 def userLogout(request):
