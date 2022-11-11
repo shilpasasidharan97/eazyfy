@@ -202,7 +202,7 @@
                             </div>
                         </form>
                     </div>
-                    <!-- <div class="header-action-right">
+                    <div class="header-action-right">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
 
@@ -210,8 +210,9 @@
                             <div class="header-action-icon-2">
 
                                 {% if status == 1 %}
-                                <a class="mini-cart-icon">
+                                <a class="mini-cart-icon" href="shop-cart.html">
                                     <i class="fa fa-user" style="color: #640097;"></i>
+
                                 </a>
                                 {% else %}
                                 <a href="{% url 'user:login' %}">
@@ -222,7 +223,7 @@
                                 </a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -387,20 +388,27 @@
 
                         <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
                                     class="menu-expand"></span>Find New Gadget</a>
-
                         </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:about' %}"><span
+                            class="menu-expand"></span>About us</a>
+                </li>
+                <li class="menu-item-has-children"> <a href="{% url 'user:contact' %}"><span
+                    class="menu-expand"></span>Conact</a>
+        </li>
+        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
+            class="menu-expand"></span>My account</a>
+</li>                          
+<li class="menu-item-has-children"> <a href="{% url 'user:registration' %}"><span
+    class="menu-expand"></span>Login/register</a>
+</li>
+<li class="menu-item-has-children"> <a href="{% url 'user:privacy' %}"><span
+    class="menu-expand"></span>Privacy policy</a>
+</li>
+<li class="menu-item-has-children"> <a href="{% url 'user:terms-and-conditions' %}"><span
+    class="menu-expand"></span>Terms and services</a>
+</li>
 
-
-                        <li class="menu-item-has-children"> <span class="menu-expand"></span><a>More</a>
-                            <ul class="dropdown">
-                                <li><a href="about">About us</a></li>
-                                <li><a href="contact">Conact</a></li>
-                                <li><a href="">My account</a></li>
-                                <li><a href="{% url 'user:login' %}">Login/register</a></li>
-                                <li><a href="privacy">Privacy policy</a></li>
-                                <li><a href="terms">Terms and services</a></li>
-                            </ul>
-                        </li>
+                        
                     </ul>
                 </nav>
 
@@ -409,7 +417,7 @@
 
             <div class="mobile-header-info-wrap mobile-header-border">
 
-                <div class="single-mobile-header-info">
+                <div class="single-mobile-header-info btn">
                     <a href="{% url 'user:login' %}">Log In / Sign Up </a>
                 </div>
 
