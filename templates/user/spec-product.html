@@ -43,14 +43,10 @@
                             </div>
                             
                             <div class="bt-1 border-color-1 mt-15 mb-15"></div>
-                            <!-- <div class="short-desc mb-30">
-                                <a href="{% url 'user:question' %}" type="submit" class="button button-add-to-cart close"
-                                    aria-label="Close">Confirm</a>
-                            </div> -->
-
+                            
                             <div class="attr-detail attr-color mb-15">
                                 <h6>
-                                    <a href="{% url 'user:question' %}"  class="btn btn-sm btn-default">
+                                    <a href="{% url 'user:question' id %}"  class="btn btn-sm btn-default">
                                         Get exact value
                                         <i class="fi-rs-arrow-right"></i>
                                     </a>
@@ -93,6 +89,8 @@
         <div class="row flex-row-reverse">
             <div>
                 <div class="product-detail accordion-detail">
+
+
                     <div class="row mb-30 mt-50">
                         <div class="col-sm-4 col-md-4 col-4">
                             <div class="">
@@ -129,6 +127,11 @@
                                         </div>
 
                                     </div>
+
+
+
+
+                                    
                                     {% endfor %}
                                 </div>
                                 <br>
@@ -144,6 +147,8 @@
                             </div>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>

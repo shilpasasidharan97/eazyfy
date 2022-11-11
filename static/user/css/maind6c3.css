@@ -570,7 +570,7 @@ h4 {
 body {
   color: #000000;
   font-family: Sans-Serif;
-  padding: 0px !important;
+  /* padding: 20px !important; */
   background-color: white;
 }
 
