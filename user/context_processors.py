@@ -13,6 +13,7 @@ def main_context(request):
         }
     else :
         return {
+            "brand":brand,
             "domain": request.META["HTTP_HOST"],
             "status":0,
         }
