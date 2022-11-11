@@ -3743,7 +3743,7 @@ table .product-thumbnail img {
 .product-cart-wrap .product-img-action-wrap {
   position: relative;
   background-color: #fff;
-  padding: 10px 12px;
+  padding: 1px 3px;
   overflow: hidden;
   max-height: 320px;
 }
