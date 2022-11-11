@@ -401,8 +401,10 @@ def transactionHistory(request):
 
 # WALLET HISTORY
 def wallet(request):
+    payment_to_franchise = AdminSendRecord.objects.all()
     context = {
-        "is_wallet":True
+        "is_wallet":True,
+        "payment_to_franchise":payment_to_franchise
     }
     return render(request,'official/wallet.html',context)
 
