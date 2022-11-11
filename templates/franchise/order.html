@@ -6,7 +6,6 @@
     <div class="d-flex align-items-center flex-wrap me-auto">
         <h3 class="dashboard_bar">Total Orders</h3>
     </div>
-
 </div>
 <div class="modal fade" id="addProjectSidebar">
     <div class="modal-dialog" role="document">
@@ -42,30 +41,32 @@
     <div class="card-action card-tabs  me-auto">
         <ul class="nav nav-tabs style-2">
             <li class="nav-item">
-                <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">Total Orders<span class="badge badge-pill shadow-primary badge-primary">154</span></a>
+                <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">Total
+                    Orders<span class="badge badge-pill shadow-primary badge-primary">154</span></a>
             </li>
             <li class="nav-item">
-                <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">Requests<span class="badge badge-pill badge-info shadow-info">2</span></a>
+                <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">Requests<span
+                        class="badge badge-pill badge-info shadow-info">2</span></a>
             </li>
             <li class="nav-item">
-                <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Completed<span class="badge badge-pill badge-warning shadow-warning">4</span></a>
+                <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Completed<span
+                        class="badge badge-pill badge-warning shadow-warning">4</span></a>
             </li>
             <li class="nav-item">
-                <a href="#navpills-4" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Order Queues<span class="badge badge-pill badge-danger shadow-danger"><i class="fa fa-shopping-cart"></i></span></a>
+                <a href="#navpills-4" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Order Queues<span
+                        class="badge badge-pill badge-danger shadow-danger"><i
+                            class="fa fa-shopping-cart"></i></span></a>
             </li>
         </ul>
     </div>
 
 </div>
-<div class="tab-content project-list-group" id="myTabContent">	
+<div class="tab-content project-list-group" id="myTabContent">
     <div class="tab-pane fade active show" id="navpills-1">
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 col-lg-3 col-sm-6 col-12">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
-                    <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
-                    <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
-
                     <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -76,281 +77,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div> -->
+                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 text-center mt-4">
+                    <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                        </div>
-                       
-                    </div>
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Person in charge</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
-                        </div>
-                    </div> -->
+                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 d-sm-block d-lg-none mt-4">
+                    <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-
+                <div class="col-xl-3 col-lg-3 col-sm-6 col-12 text-center mt-4">
+                    <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                        data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
-                    </div>
+                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 text-center d-sm-block d-lg-block d-none mt-4">
+                    <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-                    <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
-                    <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                        </div>
-                       
-                    </div>
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Person in charge</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-                    <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
-                    <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                        </div>
-                       
-                    </div>
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Person in charge</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-                    <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
-                    <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                        </div>
-                        
-                    </div>
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Person in charge</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-                    <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
-                    <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                        </div>
-                        
-                    </div>
-                    <!-- <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic2.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Person in charge</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">Yoast Esec</h5>
-                        </div>
-                    </div> -->
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
-                    </div>
-                </div>
-            </div>
-        </div>
-{% comment %}
+        {% comment %}
         <nav class="mt-5">
             <ul class="pagination pagination-gutter pagination-primary no-bg">
                 <li class="page-item page-indicator">
@@ -372,11 +114,11 @@
 
     </div>
 
-<!-- ####################NAVPILL ##########################--> 
+    <!-- ####################NAVPILL ##########################-->
     <div class="tab-pane fade" id="navpills-2">
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -391,7 +133,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -402,12 +144,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                       
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -419,22 +162,23 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -449,7 +193,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -460,12 +204,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                        
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -477,29 +222,30 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-<!-- ####################NAVPILL END ##########################-->
+    <!-- ####################NAVPILL END ##########################-->
 
 
-<!-- ####################NAVPILL ##########################-->
+    <!-- ####################NAVPILL ##########################-->
     <div class="tab-pane fade" id="navpills-3">
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -514,7 +260,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -525,12 +271,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                      
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -542,15 +289,16 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
@@ -558,7 +306,7 @@
 
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -573,7 +321,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -584,12 +332,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                        
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -601,22 +350,23 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -631,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -642,12 +392,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                       
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -659,22 +410,23 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
+                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"
+                            data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -689,7 +441,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -700,12 +452,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                      
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -717,22 +470,23 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
+                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"
+                            data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -747,7 +501,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -758,12 +512,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                        
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -775,28 +530,29 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
+                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- ####################NAVPILL END ##########################-->
+    <!-- ####################NAVPILL END ##########################-->
 
 
-<!-- ####################NAVPILL ##########################-->
+    <!-- ####################NAVPILL ##########################-->
     <div class="tab-pane fade" id="navpills-4">
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
                     <p class="text-primary mb-1">ORDERID : 000441425</p>
                     <!-- <h5 class="title font-w600 mb-2"><a href="../post_details/index.html" class="text-black">Redesign Kripton Mobile App</a></h5>
                     <div class="text-dark"><i class="far fa-calendar me-3" aria-hidden="true"></i>Created on Sep 8th, 2020</div> -->
@@ -811,7 +567,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
                             <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
@@ -822,12 +578,13 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
+                            <a type="button" href="{% url 'pickupboy:product-details' %}"
+                                class="btn btn-outline-info">View</a>
                         </div>
-                       
+
                     </div>
                     <!-- <div class="d-flex align-items-center">
                         <div class="project-media">
@@ -839,7 +596,7 @@
                         </div>
                     </div> -->
                 </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="ms-2">
                         <div class="d-flex align-items-center">
                             <div class="project-media">
@@ -852,16 +609,16 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
                     <div class="d-flex project-status align-items-center">
                         <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                       
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
-<!-- ####################NAVPILL END ##########################-->
+    <!-- ####################NAVPILL END ##########################-->
 </div>
 
 <!-- modal -->
@@ -875,24 +632,25 @@
                 </button>
             </div>
             <div class="modal-body">
-<div>
-            </div>
-            <div class="text-center">
-                <div class="basic-dropdown">
-                    <div class="dropdown">
-                        <button type="button" class="btn btn-secondary  dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                            Select pickup Boy
-                        </button>
-                        <div class="dropdown-menu" style="">
-                            <a class="dropdown-item" href="#">pickup Boy1</a>
-                            <a class="dropdown-item" href="#">pickup Boy2</a>
-                            <a class="dropdown-item" href="#">pickup Boy3</a>
+                <div>
+                </div>
+                <div class="text-center">
+                    <div class="basic-dropdown">
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-secondary  dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Select pickup Boy
+                            </button>
+                            <div class="dropdown-menu" style="">
+                                <a class="dropdown-item" href="#">pickup Boy1</a>
+                                <a class="dropdown-item" href="#">pickup Boy2</a>
+                                <a class="dropdown-item" href="#">pickup Boy3</a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <!-- <div class="btn-group mb-1">
+                    <!-- <div class="btn-group mb-1">
                     <button type="button" class="btn btn-secondary ">Select Pick-Up Boy</button>
                     <button type="button" class="btn btn-secondary dropdown-toggle show" data-bs-toggle="dropdown">
                     </button>
@@ -903,8 +661,8 @@
                         
                     </div>
                 </div> -->
-            </div>
-               
+                </div>
+
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-danger light" data-bs-dismiss="modal">Close</button>
