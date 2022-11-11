@@ -292,17 +292,17 @@
 
 
                                         {% if status == 1%}
-                                            <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% else %}
-                                            <li ><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% endif %}
 
                                         <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
-                                        
+
                                         <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
-                                       
+
 
 
                                     </ul>
@@ -388,27 +388,35 @@
 
                         <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
                                     class="menu-expand"></span>Find New Gadget</a>
-                        </li>
-                        <li class="menu-item-has-children"> <a href="{% url 'user:about' %}"><span
-                            class="menu-expand"></span>About us</a>
-                </li>
-                <li class="menu-item-has-children"> <a href="{% url 'user:contact' %}"><span
-                    class="menu-expand"></span>Conact</a>
-        </li>
-        <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
-            class="menu-expand"></span>My account</a>
-</li>                          
-<li class="menu-item-has-children"> <a href="{% url 'user:registration' %}"><span
-    class="menu-expand"></span>Login/register</a>
-</li>
-<li class="menu-item-has-children"> <a href="{% url 'user:privacy' %}"><span
-    class="menu-expand"></span>Privacy policy</a>
-</li>
-<li class="menu-item-has-children"> <a href="{% url 'user:terms-and-conditions' %}"><span
-    class="menu-expand"></span>Terms and services</a>
-</li>
+            
 
-                        
+
+                        </li>
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:about' %}"><span
+                                    class="menu-expand"></span>About us</a>
+
+                        </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:contact' %}"><span
+                                    class="menu-expand"></span>contact</a>
+
+                        </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:login' %}"><span
+                                    class="menu-expand"></span>login & Register</a>
+
+                        </li>
+
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:privacy' %}"><span
+                            class="menu-expand"></span>privacy Policy</a>
+
+                </li>
+
+                <li class="menu-item-has-children"> <a href="{% url 'user:terms-and-conditions' %}"><span
+                    class="menu-expand"></span>terms</a>
+
+        </li>
+
                     </ul>
                 </nav>
 

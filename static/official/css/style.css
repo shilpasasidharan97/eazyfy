@@ -25395,7 +25395,7 @@ table.dataTable.display tbody td {
     font-size: 17px;
     border: 0; }
     .card-tabs .nav-tabs.style-2 .nav-item .nav-link .badge {
-      margin-left: 5px;
+      margin-left: 3px !important;
       color: #fff; }
     .card-tabs .nav-tabs.style-2 .nav-item .nav-link.active {
       color: #000; }
