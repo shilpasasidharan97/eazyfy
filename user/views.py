@@ -151,9 +151,11 @@ def resendOtp(request , token):
 
 # DASHBOARD
 def index(request):
-    user_logout = request.user
+    user = request.user
+    print(user)
     context = {
-        "is_index" : True
+        "is_index" : True,
+        "user":user
     }
     return render(request,"user/index.html",context) 
 
