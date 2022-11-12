@@ -174,6 +174,15 @@
 
 
 <header class="header-area header-style-1 header-height-2">
+    
+    <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
+        <div class="container">
+           
+        </div>
+    </div>
+
+
+
 
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
         <div class="container">
@@ -202,27 +211,34 @@
                             </div>
                         </form>
                     </div>
-                    <!-- <div class="header-action-right">
+                    <div class="header-action-right">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-
+                                <div class="location">
+                                    <i class="fa fa-location px-2"></i>
+                
+                                    <h5 style="color: #621299;">America</h5>
+                                </div>
                             </div>
                             <div class="header-action-icon-2">
 
                                 {% if status == 1 %}
-                                <a class="mini-cart-icon">
-                                    <i class="fa fa-user" style="color: #640097;"></i>
-                                </a>
+                                <div class="username p-2">
+                                    <i class="fa fa-user px-2"></i>
+
+                                    <h5 style="color: #621299;">{{ user.customer.name }}</h5>
+                                </div>
                                 {% else %}
                                 <a href="{% url 'user:login' %}">
-                                    <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>user</button>
+                                    <button class="btn  btn-login "><i
+                                            class="fi-rs-shopping-bag mr-5"></i>Login</button>
                                 </a>
                                 {% endif %}
 
                                 </a>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -291,17 +307,17 @@
 
 
                                         {% if status == 1%}
-                                            <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% else %}
-                                            <li ><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% endif %}
 
                                         <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
-                                        
+
                                         <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
-                                       
+
 
 
                                     </ul>
@@ -337,9 +353,16 @@
 
 <div class="mobile-header-active mobile-header-wrapper-style">
     <div class="mobile-header-wrapper-inner">
-        <div class="mobile-header-top">
+        <div class="mobile-header-top" style="background-color: #e4d9e9;">
             <div class="mobile-header-logo">
-                <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a>
+
+                <div class="location">
+                    <i class="fa fa-location px-2"></i>
+
+                    <h5 style="color: #621299;">America</h5>
+                </div>
+                
+                <!-- <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a> -->
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
                 <button class="close-style search-close">
@@ -349,13 +372,27 @@
             </div>
         </div>
         <div class="mobile-header-content-area">
-            <!-- <div class="mobile-search search-style-3 mobile-header-border">
-                <form action="#">
-                    <input type="text" placeholder="Search for items…">
-                    <button type="submit"><i class="fi-rs-search"></i></button>
-                </form>
-            </div> -->
+
+
+      
+
+
             <div class="mobile-menu-wrap mobile-header-border">
+                
+
+                <div>
+                    {% if status == 1 %}
+                    <div class="username p-2">
+                        <i class="fa fa-user px-2"></i>
+
+                        <h5 style="color: #621299;">{{ user.customer.name|upper }}</h5>
+                    </div>
+                    {% else %}
+                    <a href="{% url 'user:login' %}">
+                        <button class="btn  btn-login "><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
+                    </a>
+                    {% endif %}
+                </div>
 
                 <nav>
                     <ul class="mobile-menu">
@@ -388,19 +425,34 @@
                         <li class="menu-item-has-children"> <a href="{% url 'user:comingsoon' %}"><span
                                     class="menu-expand"></span>Find New Gadget</a>
 
+
+
+                        </li>
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:about' %}"><span
+                                    class="menu-expand"></span>About us</a>
+
+                        </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:contact' %}"><span
+                                    class="menu-expand"></span>contact</a>
+
+                        </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:login' %}"><span
+                                    class="menu-expand"></span>login & Register</a>
+
                         </li>
 
 
-                        <li class="menu-item-has-children"> <span class="menu-expand"></span><a>More</a>
-                            <ul class="dropdown">
-                                <li><a href="about">About us</a></li>
-                                <li><a href="contact">Conact</a></li>
-                                <li><a href="">My account</a></li>
-                                <li><a href="{% url 'user:login' %}">Login/register</a></li>
-                                <li><a href="privacy">Privacy policy</a></li>
-                                <li><a href="terms">Terms and services</a></li>
-                            </ul>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:privacy' %}"><span
+                                    class="menu-expand"></span>privacy Policy</a>
+
                         </li>
+
+                        <li class="menu-item-has-children"> <a href="{% url 'user:terms-and-conditions' %}"><span
+                                    class="menu-expand"></span>terms</a>
+
+                        </li>
+
                     </ul>
                 </nav>
 
@@ -409,7 +461,7 @@
 
             <div class="mobile-header-info-wrap mobile-header-border">
 
-                <div class="single-mobile-header-info">
+                <div class="single-mobile-header-info btn">
                     <a href="{% url 'user:login' %}">Log In / Sign Up </a>
                 </div>
 

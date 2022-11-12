@@ -52,7 +52,7 @@
 {% for question in question %}
 
                             <tr>
-                                <td>.</td>
+                                <td>{{forloop.counter}}</td>
                                 <td>{{ question.question_type}}</td>
                                 <td>{{ question.questions }}</td>
                                 <td>Edinburgh</td>

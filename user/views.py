@@ -38,13 +38,15 @@ def UserRegistration(request):
         email = request.POST['email']
         password = request.POST['password']
         cpassword = request.POST['cpassword']
+        country_code = request.POST['countryCode']
         phone = request.POST['Phone_number']
+        phonenumber_with_countrycode = country_code + phone
         secret = pyotp.random_base32()
         if password == cpassword :
-            customer = CutomerRegistration(email = email, phone_number = phone, password = password, name=name)
+            customer = CutomerRegistration(email = email, phone_number = phonenumber_with_countrycode, password = password, name=name)
             customer.save()
             User = get_user_model()
-            customers = User.objects.create_user(email=email,phone_number=phone, password=password,customer=customer, is_customer=True)
+            customers = User.objects.create_user(email=email,phone_number=phonenumber_with_countrycode, password=password,customer=customer, is_customer=True)
 
             profile = CutomerProfile.objects.create(user =customers,auth_token = secret)
             return redirect(f"/otp-page/{profile.test_id}")
@@ -151,9 +153,11 @@ def resendOtp(request , token):
 
 # DASHBOARD
 def index(request):
-    user_logout = request.user
+    user = request.user
+    print(user)
     context = {
-        "is_index" : True
+        "is_index" : True,
+        "user":user
     }
     return render(request,"user/index.html",context) 
 
@@ -203,8 +207,12 @@ def shops(request,id):
     
 
 # QUESTIONS
-def question(request):
-    return render(request,"user/question.html")  
+def question(request,id):
+    questions = Questions.objects.get(id=id)
+    context = {
+        "questions":questions
+    }
+    return render(request,"user/question.html",context)  
 
 
 # MODEL SPECIFICATIONS
@@ -212,7 +220,8 @@ def spec(request,id):
     # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
     specification = BrandModel.objects.get(id=id)
     context = {
-        "specification" : specification
+        "specification" : specification,
+        "id":id
     }
     return render(request,"user/spec-product.html",context)  
 
@@ -258,6 +267,12 @@ def comingsoon(request):
     }
     return render(request,"user/comingsoon.html",context)      
 
+def sellPhone(request):
+    return render(request,"user/sell-phone.html")
+
+
+def handler404(request, exception):
+    return render(request, "user/404.html", status=404)
 
 # USER LOGOUT
 def userLogout(request):

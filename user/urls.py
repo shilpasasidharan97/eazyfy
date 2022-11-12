@@ -24,10 +24,10 @@ urlpatterns = [
   
 
 
-
+    path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
-    path('question',views.question,name='question'),
+    path('question/<int:id>',views.question,name='question'),
 
 
     path('spec/<str:id>',views.spec,name='spec'),
@@ -39,10 +39,5 @@ urlpatterns = [
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
     path('user-logout',views.userLogout,name='user-logout')
-
-
- 
-
-    
-    
+     
 ]

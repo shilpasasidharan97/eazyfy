@@ -270,7 +270,9 @@ def Deletespec(request,id):
     return JsonResponse(data)
 
 def modelSpecification(request,id):
-    brand = BrandModel.objects.get(brand=id)
+    print(id)
+    brand = BrandModel.objects.get(brand__id=id)
+    print(brand)
     models_spec = ModelSpecifications.objects.filter(Brand_model=brand)
     if request.method == 'POST':
         brand = brand
@@ -401,8 +403,10 @@ def transactionHistory(request):
 
 # WALLET HISTORY
 def wallet(request):
+    payment_to_franchise = AdminSendRecord.objects.all()
     context = {
-        "is_wallet":True
+        "is_wallet":True,
+        "payment_to_franchise":payment_to_franchise
     }
     return render(request,'official/wallet.html',context)
 

@@ -1,9 +1,12 @@
-﻿{% extends 'user/partials/base.html' %}
+{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
 
 
-<div class="body-overlay-1"></div>
+<!-- <div class="body-overlay-1"></div> -->
+
+{% comment %}
+
 <div class="modal fade custom-modal show" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
     <div class="modal-dialog">
     <div class="modal-content">              
@@ -84,7 +87,7 @@
     </div>
     </div>
 </div>
-
+{% endcomment %}
 <div class="container d-lg-none">
     <div class="slider-1-height-3 slider-animated-1">
        
@@ -335,7 +338,8 @@
 <!-- featured brand -->
 <section class="popular-categories section-padding mt-15">
     <div class="container wow fadeIn animated">
-        <h3 class="section-title mb-20"><span>Select</span> your phone brand</h3>
+        <h3 class="section-title mb-20"><span>Select</span> your phone brand</h3> 
+        
         <div class="carausel-6-columns-cover position-relative">
             <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
             <div class="carausel-6-columns" id="carausel-6-columns">
@@ -555,44 +559,8 @@
 </section>
 
 
-<section class="banners mb-20">
-    <div class="container">
-        <div class="row">
-            <h3 class="section-title mb-20"><span>Hot</span> Deals</h3>
-            <div class="col-lg-4 col-md-6">
-                <div class="card3">
-                    <a href="">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/deal/11.jpg' %}" alt="">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card3">
-                    <a href="">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/deal/12.jpg' %}" alt="">
-                        </div>
-                    </a>
-                </div>
+<section class="section-padding">
 
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="card3">
-                    <a href="">
-                        <div class="banner-img wow fadeIn animated">
-                            <img src="{% static 'user/imgs/deal/13.jpg' %}" alt="">
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="banners mb-20">
     <div class="featured section-padding">
         <div class="container">
             <div class="row">
@@ -602,8 +570,9 @@
         </div>
     </div>
     <div class="container">
+
         <div class=" row ">
-            <div class="card col-lg-4 whysell m-3" style="border: none;">
+            <div class="card col-lg-4 whysell m-3 mx-auto" style="border: none;">
                 <img class="card-img-top" style="width: 35%; margin-left: 33%;"
                     src="{% static 'user/imgs/icon/SAFE.png' %}" alt="Card image cap">
                 <div class="card-body">
@@ -613,28 +582,40 @@
                 </div>
             </div>
             &nbsp;
-            <div class="card col-lg-4 whysell m-3" style="border: none;">
+            <div class="card col-lg-4 whysell m-3 mx-auto" style="border: none;">
+
                 <img class="card-img-top" style="width: 35%; margin-left: 33%;"
                     src="{% static 'user/imgs/icon/INSTANT.png' %}" alt="Card image cap">
                 <div class="card-body">
                     <h4 class="text-center">Instant payment</h4>
-                    <p class="card-text text-center">On accepting the price offered for your device, we’ll arrange a free pick up.</p>
+                    <p class="card-text text-center">On accepting the price offered for your device, we’ll arrange a
+                        free pick up.</p>
                     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
             </div>
+
             &nbsp;
-            <div class="card col-lg-4 whysell m-3" style="border: none;">
+            <div class="card col-lg-4 whysell m-3 mx-auto" style="border: none;">
+
                 <img class="card-img-top" style="width: 35%; margin-left: 33%;"
                     src="{% static 'user/imgs/icon/BEST.png' %}" alt="Card image cap">
                 <div class="card-body">
-                    <h4 class="text-center">Best Price</h4>
-                    <p class="card-text text-center">Instant Cash will be handed over to you at time of pickup or through payment mode of your choice.</p>
+                    <h4 class="text-center">Best price</h4>
+                    <p class="card-text text-center">Instant Cash will be handed over to you at time of pickup or
+                        through payment mode of your choice.</p>
                     <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                 </div>
             </div>
         </div>
+   
+
     </div>
+       
+
 </section>
+
+
+
 
 
     <!-- WHY US -->
