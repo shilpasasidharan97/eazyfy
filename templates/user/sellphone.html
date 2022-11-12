@@ -19,9 +19,12 @@
                                 <span id="search-icon" class="search-icon layout center-center">
                                     <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
                                 </span>
-                                <input type="search" id="pd_list_search_input" autocomplete="off"
-                                    placeholder="Search your Mobile Phone to sell"
-                                    class="font16-14 flwidth card mar-r10 search-input">
+                                <form action="" method="GET">
+                                    {% csrf_token %}
+                                    <input name="search" type="search" placeholder="search your brand"
+                                        class="font16-14 flwidth card mar-r10 search-input">
+                                </form>
+
                             </label>
                         </a>
                     </div>
@@ -29,6 +32,7 @@
             </div>
         </div>
     </div>
+
 
     <!-- BRAND -->
     <section class="featured section-padding">
@@ -41,7 +45,7 @@
 
             <div class="row">
 
-{% for brand in brand %}
+                {% for brand in brand %}
                 <div class="col-lg-2 col-4" style="padding: 2%;">
                     <div class="card2">
                         <div class="card-body">
@@ -49,10 +53,8 @@
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="{% url 'user:shops' brand.id %}">
-                                            <img class="default-img" src="{{ brand.image.url }}"
-                                                alt="">
-                                            <img class="hover-img" src="{{ brand.image.url }}"
-                                                alt="">
+                                            <img class="default-img" src="{{ brand.image.url }}" alt="">
+                                            <img class="hover-img" src="{{ brand.image.url }}" alt="">
                                         </a>
                                     </div>
                                 </div>
@@ -60,7 +62,7 @@
                         </div>
                     </div>
                 </div>
-{% endfor %}
+                {% endfor %}
 
 
             </div>
@@ -105,7 +107,7 @@
     </section>
 
 
-<!-- Why Us -->
+    <!-- Why Us -->
     <section class="banners mb-20 wusbanner mt-60">
         <div class="container">
             <div class="row">
@@ -239,8 +241,7 @@
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Bags</a></h5> -->
                     </div>
@@ -252,36 +253,31 @@
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"><img src="{% static 'user/imgs/banner/nok.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Scarf Cap</a></h5> -->
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"><img src="{% static 'user/imgs/banner/one.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Shoes</a></h5> -->
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"><img src="{% static 'user/imgs/banner/sam.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Pillowcase</a></h5> -->
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"><img src="{% static 'user/imgs/banner/oppo.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Jumpsuits</a></h5> -->
                     </div>
                     <div class="card-1">
                         <figure class=" img-hover-scale overflow-hidden">
-                            <a href="#"><img src="{% static 'user/imgs/banner/real.jpg' %}"
-                                    alt=""></a>
+                            <a href="#"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
                         </figure>
                         <!-- <h5><a href="#">Hats</a></h5> -->
                     </div>
@@ -295,327 +291,399 @@
         <div class="container wow fadeIn animated animated animated" style="visibility: visible;">
             <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
             <div class="carausel-6-columns-cover position-relative">
-                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"><span class="slider-btn slider-prev slick-arrow" style=""><i class="fi-rs-angle-left"></i></span>
-                <span class="slider-btn slider-next slick-arrow" style=""><i class="fi-rs-angle-right"></i></span></div>
-                <div class="carausel-6-columns carausel-arrow-center slick-initialized slick-slider" id="carausel-6-columns-2">
-                    
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows"><span
+                        class="slider-btn slider-prev slick-arrow" style=""><i class="fi-rs-angle-left"></i></span>
+                    <span class="slider-btn slider-next slick-arrow" style=""><i class="fi-rs-angle-right"></i></span>
+                </div>
+                <div class="carausel-6-columns carausel-arrow-center slick-initialized slick-slider"
+                    id="carausel-6-columns-2">
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                    
+
                     <!--End product-cart-wrap-2-->
-                <div class="slick-list draggable"><div class="slick-track" style="opacity: 1; width: 3008px; transform: translate3d(-376px, 0px, 0px);"><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="-2" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
-                            </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                    <div class="slick-list draggable">
+                        <div class="slick-track"
+                            style="opacity: 1; width: 3008px; transform: translate3d(-376px, 0px, 0px);">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="-2" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 123 </span>
                                 <span class="old-price">₹ 156</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="-1" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="-1" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
                                 <span class="old-price">₹ 245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-current slick-active" tabindex="0" style="width: 188px;" data-slick-index="0" aria-hidden="false">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="0">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-    
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="0">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-current slick-active"
+                                tabindex="0" style="width: 188px;" data-slick-index="0" aria-hidden="false">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="0">
+                                            <img class="default-img selling-phone"
+                                                src="/static/user/imgs/shop/mob%202.jpg" alt="">
+
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="0">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
                                 <span class="old-price">₹ 245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-active" tabindex="0" style="width: 188px;" data-slick-index="1" aria-hidden="false">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="0">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="0">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-active" tabindex="0"
+                                style="width: 188px;" data-slick-index="1" aria-hidden="false">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="0">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="0">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 173.85 </span>
                                 <span class="old-price">₹ 185.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide" tabindex="-1" style="width: 188px;" data-slick-index="2" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                        
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide" tabindex="-1"
+                                style="width: 188px;" data-slick-index="2" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 215.85 </span>
                                 <span class="old-price">₹ 235.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide" tabindex="-1" style="width: 188px;" data-slick-index="3" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                       
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide" tabindex="-1"
+                                style="width: 188px;" data-slick-index="3" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 83.8 </span>
                                 <span class="old-price">₹ 125.2</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide" tabindex="-1" style="width: 188px;" data-slick-index="4" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide" tabindex="-1"
+                                style="width: 188px;" data-slick-index="4" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone"
+                                                src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 1238.85 </span>
                                 <span class="old-price">₹ 1245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide" tabindex="-1" style="width: 188px;" data-slick-index="5" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide" tabindex="-1"
+                                style="width: 188px;" data-slick-index="5" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 123 </span>
                                 <span class="old-price">₹ 156</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide" tabindex="-1" style="width: 188px;" data-slick-index="6" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide" tabindex="-1"
+                                style="width: 188px;" data-slick-index="6" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
                                 <span class="old-price">₹ 245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="7" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-    
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="7" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone"
+                                                src="/static/user/imgs/shop/mob%202.jpg" alt="">
+
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
                                 <span class="old-price">₹ 245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="8" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="8" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 173.85 </span>
                                 <span class="old-price">₹ 185.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="9" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                        
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="9" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 215.85 </span>
                                 <span class="old-price">₹ 235.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="10" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                       
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="10" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob3.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob3.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 83.8 </span>
                                 <span class="old-price">₹ 125.2</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="11" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="11" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone"
+                                                src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob%202.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 1238.85 </span>
                                 <span class="old-price">₹ 1245.8</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="12" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                           
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="12" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 123 </span>
                                 <span class="old-price">₹ 156</span>
                             </div> -->
-                        </div>
-                    </div><div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1" style="width: 188px;" data-slick-index="13" id="" aria-hidden="true">
-                        <div class="product-img-action-wrap">
-                            <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html" tabindex="-1">
-                                    <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                    <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
-                                </a>
+                                </div>
                             </div>
-                            
-                        </div>
-                        <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus note c2</a></h6>
-    
-                            <!-- <div class="product-price">
+                            <div class="product-cart-wrap small hover-up slick-slide slick-cloned" tabindex="-1"
+                                style="width: 188px;" data-slick-index="13" id="" aria-hidden="true">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="shop-product-right.html" tabindex="-1">
+                                            <img class="default-img selling-phone" src="/static/user/imgs/shop/mob.jpg"
+                                                alt="">
+                                            <img class="hover-img" src="/static/user/imgs/shop/mob.jpg" alt="">
+                                        </a>
+                                    </div>
+
+                                </div>
+                                <div class="product-content-wrap">
+                                    <h6 class="product-name"><a href="shop-product-right.html" tabindex="-1">One plus
+                                            note c2</a></h6>
+
+                                    <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
                                 <span class="old-price">₹ 245.8</span>
                             </div> -->
+                                </div>
+                            </div>
                         </div>
-                    </div></div></div></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

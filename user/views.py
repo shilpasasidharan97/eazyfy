@@ -180,9 +180,14 @@ def termsAndConditions(request):
 # SELL YOUR PHONE
 def sell(request):
     brand = Brand.objects.all()
+    # search_term = ''
+    # if 'search' in request.GET:
+    #     search_term = request.GET['search']
+    #     jobs = Brand.objects.all().filter(name__icontains=search_term)
     context = {
         "is_sellphone":True,
-        "brand" : brand
+        "brand" : brand,
+        # "jobs": jobs
     }
     return render(request,"user/sellphone.html",context)
 
