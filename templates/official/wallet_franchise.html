@@ -163,7 +163,6 @@
 
     function SavePayment() {
         var id =  $('#id').val();
-        alert(id)
         $.ajax({
             url: "/official/savepayment/" + id,
             type: 'POST',

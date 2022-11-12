@@ -1,4 +1,4 @@
-﻿{% extends 'user/partials/base.html' %}
+{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
 
@@ -56,7 +56,7 @@
 
                                         </a>
                                     </div>
-                                    <h6>{{ model.name }}</h6>
+                                    <h6>{{ model.name|upper }}</h6>
                                 </div>
                             </div>
                         </div>
@@ -83,8 +83,8 @@
             </div>
         </div>
 
-        <div class=" row ">
-            <div class="card col-lg-4 whysell m-3 mx-auto" style="border: none;">
+        <div class="row ">
+            <div class="card col-lg-4  whysell mx-auto m-3">
 
 
                     <img class="card-img-top" style="width: 35%; margin-left: 33%;"
@@ -134,7 +134,6 @@
 
 
 
-  
  
 
     <section class="popular-categories section-padding mt-15">
