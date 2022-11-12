@@ -2,6 +2,7 @@
 {% load static %}
 {% block content %}
 
+
 <main class="main">
     <div class="featured section-padding">
         <div class="container">
@@ -13,20 +14,29 @@
                 </div>
                 <div class="col-lg-4 text-end">
                     <div class="flwidth layout vertical list-search center-center">
+
+
                         <a class="flwidth">
                             <label for="list-search-input"
                                 class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
                                 <span id="search-icon" class="search-icon layout center-center">
                                     <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
                                 </span>
+
                                 <form action="" method="GET">
                                     {% csrf_token %}
                                     <input name="search" type="search" placeholder="search your brand"
                                         class="font16-14 flwidth card mar-r10 search-input">
                                 </form>
 
+
                             </label>
                         </a>
+
+                    
+
+
+
                     </div>
                 </div>
             </div>
@@ -763,5 +773,23 @@
         </div>
     </section>
 </main>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+      var opt = ["Natação", "Futebol", "Vôlei", "Basquete"];
+      $("#search").autocomplete({
+          source: opt
+      });
+  });
+  
+  $(function () {
+      $("#search").focus();
+  });
+  
+</script>
 
 {% endblock %}
