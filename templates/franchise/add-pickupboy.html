@@ -3,88 +3,17 @@
 {% load static %}
 
 
-<!--Add Modal -->
-<div class="modal fade bd-example-modal-lg show" id="exampleModalCenter">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-
-                <button type="button" class="btn-close" data-bs-dismiss="modal">
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="card">
-                    <div class="card-header">
-                        <h4 class="card-title">Add Pickup Boy</h4>
-                    </div>
-                    <div class="card-body">
-                        <div class="basic-form">
-                            <form method="POST" action="" enctype="multipart/form-data">
-                                {% csrf_token %}
-                                <div class="row">
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Pickup Boy Name</label>
-                                        <input type="text" name="name" class="form-control"
-                                            placeholder="Pickup Boy Name">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Email</label>
-                                        <input type="email" name="email" class="form-control" placeholder="Email">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Phone number</label>
-                                        <input type="password" name="phone" class="form-control"
-                                            placeholder="Phone number">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Password</label>
-                                        <input type="text" name="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Pickup Boy ID</label>
-                                        <input type="text" name="pickup_boy_id" class="form-control"
-                                            placeholder="Pickup Boy ID">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Photo</label>
-                                        <input type="file" name="photo" class="form-control" placeholder="Photo">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Place</label>
-                                        <input type="text" name="place" class="form-control" placeholder="Place">
-                                    </div>
-                                    <div class="mb-3 col-md-6">
-                                        <label class="form-label">Address</label>
-                                        <input type="text" name="address" class="form-control" placeholder="Address">
-                                    </div>
-                                   
-
-                                </div>
-
-                                <button type="submit" class="btn btn-primary">Add</button>
-
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
 
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- Modal End -->
-
-<div class="card">
-    <div class="card-header d-sm-flex d-block">
+<div class="card mt-5">
+    <div class="card-header">
         <div class="me-auto mb-sm-0 mb-3">
-            <h4 class="card-title mb-2">PIck-up Boys</h4>
+            <h4 class="card-title ">PIck-up Boys</h4>
             <span></span>
         </div>
-        <a href="javascript:void(0);" class="btn btn-primary mb-2" data-bs-toggle="modal"
-            data-bs-target="#exampleModalCenter">+ Pick-up Boy</a>
+        <a href="javascript:void(0);" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+            + Pick-up Boy
+        </a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -121,7 +50,7 @@
 
                         <tr role="row" class="odd">
                             <td class="sorting_1">
-                                <h6>1.</h6>
+                                <h6>{{forloop.counter}}</h6>
                             </td>
                             <td>
                                 <div class="media style-1">
@@ -170,7 +99,8 @@
                                     </a>
 
 
-                                    <a class="ms-2 btn btn-xs px-2 light btn-danger" onclick="deletepickupboy({{pickup_boy_list.id}})">
+                                    <a class="ms-2 btn btn-xs px-2 light btn-danger"
+                                        onclick="deletepickupboy({{pickup_boy_list.id}})">
                                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path d="M3 6H5H21" stroke="#fff" stroke-width="2" stroke-linecap="round"
@@ -195,129 +125,188 @@
 </div>
 
 
+<!--Add Modal -->
+<div class="modal fade bd-example-modal-lg show" id="exampleModalCenter">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
 
-<!-- edit modal -->
-<div class="modal fade bd-example-modal-lg1" id="bd-example-modal-lg1" tabindex="-1"
-role="dialog" aria-hidden="true">
-<div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title">Edit Franchise</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal">
-            </button>
-        </div>
-        <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
 
-            <div class="row">
-                <div class="col-xl-6">
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label">Pickupboy ID <span
-                                class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control" id="pid"
-                                placeholder="Pickupboy id.." required name="PIckupboy"
-                                value="">
-                            <div class="invalid-feedback">
-
-                                Please enter a Pickupboy Id.
-                            </div>
-                        </div>
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Add Pickup Boy</h4>
                     </div>
+                    <div class="card-body">
+                        <div class="basic-form">
+                            <form method="POST" action="" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <div class="row">
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Pickup Boy Name</label>
+                                        <input type="text" name="name" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Email</label>
+                                        <input type="email" name="email" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Phone number</label>
+                                        <input type="text" name="phone" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Password</label>
+                                        <input type="text" name="password" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Pickup Boy ID</label>
+                                        <input type="text" name="pickup_boy_id" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Photo</label>
+                                        <input type="file" name="photo" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Place</label>
+                                        <input type="text" name="place" class="form-control">
+                                    </div>
+                                    <div class="mb-3 col-md-6">
+                                        <label class="form-label">Address</label>
+                                        <input type="text" name="address" class="form-control">
+                                    </div>
+                                </div>
 
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label"
-                            for="validationCustom04">Pickupboy Name <span
-                                class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control" id="pname"
-                                placeholder="pickupboy name" required name="Pickupboy"
-                                value="">
-                            <div class="invalid-feedback">
+                                <button type="submit" class="btn btn-primary">Add</button>
 
-                                Please enter a name.
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label" for="Email">Email<span
-                                class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control" id="pemail"
-                                placeholder="Your valid email.." required name="pemail">
-                            <div class="invalid-feedback">
-                                Please enter a Email.
-                            </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6">
 
 
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label">Phone
-                            <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <input type="text" class="form-control" id="pickupboyphone"
-                                placeholder="" required name="name">
-                            <div class="invalid-feedback">
-                                Please enter franchise Phone Number ..
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- edit modal -->
+<div class="modal fade bd-example-modal-lg1" id="bd-example-modal-lg1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Edit Franchise</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-xl-6">
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label">Pickupboy ID <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="pid" placeholder="Pickupboy id.." required
+                                    name="PIckupboy" value="">
+                                <div class="invalid-feedback">
+
+                                    Please enter a Pickupboy Id.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label" for="validationCustom04">Pickupboy Name <span
+                                    class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="pname" placeholder="pickupboy name" required
+                                    name="Pickupboy" value="">
+                                <div class="invalid-feedback">
+
+                                    Please enter a name.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label" for="Email">Email<span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="pemail" placeholder="Your valid email.."
+                                    required name="pemail">
+                                <div class="invalid-feedback">
+                                    Please enter a Email.
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div class="col-xl-6">
 
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label" for="address">Place
-                            <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <textarea class="form-control" id="pickupboyplace" rows="10"
-                                placeholder="What would you like to see?" required
-                                name="address"></textarea>
-                            <div class="invalid-feedback">
-                                Please enter place ..
+
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label">Phone
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <input type="text" class="form-control" id="pickupboyphone" placeholder="" required
+                                    name="name">
+                                <div class="invalid-feedback">
+                                    Please enter franchise Phone Number ..
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label class="col-lg-4 col-form-label" for="address">Address
-                            <span class="text-danger">*</span>
-                        </label>
-                        <div class="col-lg-6">
-                            <textarea class="form-control" id="paddress" rows="10"
-                                placeholder="What would you like to see?" required
-                                name="address"></textarea>
-                            <div class="invalid-feedback">
-                                Please enter Address ..
+
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label" for="address">Place
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <textarea class="form-control" id="pickupboyplace" rows="10"
+                                    placeholder="What would you like to see?" required name="address"></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter place ..
+                                </div>
                             </div>
-                            <input type="text" id="pkid" >
                         </div>
-                    </div>
-                    <div class="mb-3 row mt-5 text-end">
-                        <div class="col-lg-8 ms-auto">
-                            <button onclick="EditPickupboy()"
-                                class="btn btn-primary" id="edit">Submit</button>
+                        <div class="mb-3 row">
+                            <label class="col-lg-4 col-form-label" for="address">Address
+                                <span class="text-danger">*</span>
+                            </label>
+                            <div class="col-lg-6">
+                                <textarea class="form-control" id="paddress" rows="10"
+                                    placeholder="What would you like to see?" required name="address"></textarea>
+                                <div class="invalid-feedback">
+                                    Please enter Address ..
+                                </div>
+                                <input type="text" id="pkid" hidden>
+                            </div>
+                        </div>
+                        <div class="mb-3 row mt-5 text-end">
+                            <div class="col-lg-8 ms-auto">
+                                <button onclick="EditPickupboy()" class="btn btn-primary" id="edit">Submit</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
+        </div>
     </div>
 </div>
-</div>
 
 
-
-
-
-
+<!-- SCRIPT -->
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+    // DELETE FRANCHISE
     function deletepickupboy(id) {
         Swal.fire({
             title: 'Are you sure?',
@@ -338,14 +327,8 @@ role="dialog" aria-hidden="true">
             }
         })
     }
-</script>
 
-
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script>
+    // GETDATA
     function DataGets(id) {
         $.ajax({
             url: "/franchise/getprofiledata/" + id,
@@ -367,8 +350,9 @@ role="dialog" aria-hidden="true">
 
     }
 
+    // EDIT PICKUPBOY
     function EditPickupboy() {
-        var id =  $('#pkid').val();
+        var id = $('#pkid').val();
         alert(id)
         $.ajax({
             url: "/franchise/editform/" + id,
@@ -391,5 +375,6 @@ role="dialog" aria-hidden="true">
         })
     }
 </script>
+
 
 {% endblock %}

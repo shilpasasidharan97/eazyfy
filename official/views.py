@@ -270,7 +270,9 @@ def Deletespec(request,id):
     return JsonResponse(data)
 
 def modelSpecification(request,id):
-    brand = BrandModel.objects.get(brand=id)
+    print(id)
+    brand = BrandModel.objects.get(brand__id=id)
+    print(brand)
     models_spec = ModelSpecifications.objects.filter(Brand_model=brand)
     if request.method == 'POST':
         brand = brand

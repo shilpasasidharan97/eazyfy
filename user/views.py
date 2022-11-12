@@ -153,9 +153,11 @@ def resendOtp(request , token):
 
 # DASHBOARD
 def index(request):
-    user_logout = request.user
+    user = request.user
+    print(user)
     context = {
-        "is_index" : True
+        "is_index" : True,
+        "user":user
     }
     return render(request,"user/index.html",context) 
 
@@ -205,8 +207,12 @@ def shops(request,id):
     
 
 # QUESTIONS
-def question(request):
-    return render(request,"user/question.html")  
+def question(request,id):
+    questions = Questions.objects.get(id=id)
+    context = {
+        "questions":questions
+    }
+    return render(request,"user/question.html",context)  
 
 
 # MODEL SPECIFICATIONS
@@ -214,7 +220,8 @@ def spec(request,id):
     # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
     specification = BrandModel.objects.get(id=id)
     context = {
-        "specification" : specification
+        "specification" : specification,
+        "id":id
     }
     return render(request,"user/spec-product.html",context)  
 
@@ -259,6 +266,9 @@ def comingsoon(request):
         "is_newgadget":True
     }
     return render(request,"user/comingsoon.html",context)      
+
+def sellPhone(request):
+    return render(request,"user/sell-phone.html")
 
 
 def handler404(request, exception):
