@@ -39,10 +39,5 @@ urlpatterns = [
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
     path('user-logout',views.userLogout,name='user-logout')
-
-
- 
-
-    
-    
+     
 ]
