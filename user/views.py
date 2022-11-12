@@ -16,9 +16,11 @@ from eazyfy.decorators import auth_customer
 # CUSTOMER LOGIN
 def customerlogin(request):
     if request.method == 'POST':
+        countryCode = request.POST['countryCode']
         number = request.POST['number']
+        login_countryCode = countryCode + number
         password = request.POST['password']
-        user = authenticate(request,phone_number=number, password=password)
+        user = authenticate(request,phone_number=login_countryCode, password=password)
         if user is not None:
             login(request, user)
             if user.is_customer == True:
@@ -179,6 +181,7 @@ def termsAndConditions(request):
 
 # SELL YOUR PHONE
 def sell(request):
+
     brand = Brand.objects.all()
     # search_term = ''
     # if 'search' in request.GET:

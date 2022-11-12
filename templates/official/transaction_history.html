@@ -3,10 +3,12 @@
 {% load static %}
 
 
+<link rel="stylesheet" href="{% static 'official/vendor/datatables/css/jquery.dataTables.min.css' %}" >
+
 <div class="col-12">
     <div class="card">
         <div class="card-header">
-            <h4 class="card-title">Basic Datatable</h4>
+            <h4 class="card-title">Transaction</h4>
         </div>
         <div class="card-body">
             <div class="table-responsive">
@@ -17,7 +19,10 @@
                             <tr role="row">
                                 <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                     aria-sort="ascending" aria-label="Name: activate to sort column descending"
-                                    style="width: 136.391px;">Name</th>
+                                    style="width: 136.391px;">Sl/no</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Name: activate to sort column descending"
+                                    style="width: 136.391px;">Franchise</th>
                                 <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                     aria-label="Position: activate to sort column ascending" style="width: 208.766px;">
                                     Amount</th>
@@ -31,6 +36,7 @@
 
                             {% for transaction in transactions %}
                             <tr class="odd" role="row">
+                                <td>{{ forloop.counter }}</td>
                                 <td>{{ transaction.franchise.name }}</td>
                                 <td>{{ transaction.amount}}</td>
                                 <td>{{ transaction.date}}</td>
@@ -43,5 +49,6 @@
             </div>
         </div>
     </div>
+</div>
 
     {% endblock %}

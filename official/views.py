@@ -128,9 +128,12 @@ def editform(request,id):
 def viewFranchiseDetails(request,id):
     franchise_details = Franchise.objects.get(id=id)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
+    wallet = FranchiseWallet.objects.get(franchise=franchise_details)
     context ={
         "franchise_details":franchise_details,
         "pickup_boys":pickup_boys,
+        "wallet":wallet,
+        "count" : pickup_boys.count()
     }
     return render(request,'official/view_franchise.html',context)
 
