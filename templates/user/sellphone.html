@@ -3,7 +3,6 @@
 {% block content %}
 
 
-
 <main class="main">
     <div class="featured section-padding">
         <div class="container">
@@ -23,7 +22,7 @@
                                 <span id="search-icon" class="search-icon layout center-center">
                                     <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
                                 </span>
-                                <input type="search" id="pd_list_search_input" autocomplete="off"
+                                <input type="search" id="search" autocomplete="off"
                                     placeholder="Search your Mobile Phone to sell"
                                     class="font16-14 flwidth card mar-r10 search-input">
 
@@ -707,5 +706,23 @@
         </div>
     </section>
 </main>
+
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+<script>
+    $(function () {
+      var opt = ["Natação", "Futebol", "Vôlei", "Basquete"];
+      $("#search").autocomplete({
+          source: opt
+      });
+  });
+  
+  $(function () {
+      $("#search").focus();
+  });
+  
+</script>
 
 {% endblock %}
