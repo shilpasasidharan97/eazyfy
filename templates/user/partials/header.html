@@ -171,88 +171,9 @@
 
     /* end franchise dropdown */
 </style>
-{% comment %}
-<div class="modal fade custom-modal show" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
-    <div class="modal-dialog">
-    <div class="modal-content">              
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>       
-            <div class="modal-body">
-                <div class="deal" style="background-image: url('assets/imgs/banner/menu-banner-7.png')">
-                    <div class="deal-top text-center">
-                        <h2 class="text-brand">Choose Your Location to sell Your Mobile Phone</h2>
-                       
-                    </div>
-                    <div class="deal-content">
-                        <form>
-                            <div class="flwidth layout vertical search-onload text-center d-none d-md-block">
 
-                                <a href="" class="flwidth">
 
-                                    <label for="list-search-input" class="mr-auto layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
-                                        <span id="search-icon" class="search-icon layout center-center">
-                                            <img alt="product_search" class="" src="/static/user/imgs/ProductSearch.svg">
-                                        </span>
-                                        <input type="text" class="form-control bg-white font-small" placeholder="search something..">
-                                    </label>
 
-                                </a>
-
-                            </div>
-                        </form>
-                    </div>
-                    <div class="deal-bottom">
-                        <div class="row">
-                            <div class="col-4 col-sm-4 col-xs-4  col-lg-2">
-                                 <div class="text-center">
-                                <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-                               
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-                                
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-                                   
-                                        <h4 class="bg-1 servicetext">Banglore</h4>
-                                    </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-                                   
-                                        <h4 class="bg-1 servicetext">Calicut</h4>
-                                    </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-                                   
-                                        <h4 class="bg-1 servicetext">Banglore</h4>
-                                    </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="">
-                                   
-                                        <h4 class="bg-1 servicetext">Calicut</h4>
-                                    </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="">
-                                   
-                                        <h4 class="bg-1 servicetext">Banglore</h4>
-                                    </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>        
-    </div>
-    </div>
-</div>
-{% endcomment %}
 <header class="header-area header-style-1 header-height-2">
     
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
@@ -294,7 +215,7 @@
                                 <div class="location" data-toggle="modal" data-target="#onloadModal">
                                     <i class="fa fa-location px-2"></i>
                 
-                                    <h5 style="color: #621299;">America</h5>
+                                  <button style="color: #621299;background-color: #fff;"  data-bs-toggle="modal" data-bs-target="#onloadModal">America</button> 
                                 </div>
 
                             </div>
@@ -437,7 +358,7 @@
                 <div class="location">
                     <i class="fa fa-location px-2"></i>
 
-                    <h5 style="color: #621299;">America</h5>
+                    <h5 style="color: #621299;" data-bs-toggle="modal" data-bs-target="#onloadModal">America</h5>
                 </div>
                 
                 <!-- <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a> -->
@@ -527,23 +448,23 @@
                         </li>
 
                         <li class="menu-item-has-children"> <a href="{% url 'user:terms-and-conditions' %}"><span
-                                    class="menu-expand"></span>terms</a>
+                                    class="menu-expand"></span>terms of service</a>
 
                         </li>
+                        <li class="menu-item-has-children"> <a href="{% url 'user:user-logout' %}"><span
+                            class="menu-expand"></span>Logout </a>
+
+                </li>
 
                     </ul>
-                </nav>
+
+ 
+ </nav>
 
                 <!-- mobile menu end -->
             </div>
 
-            <div class="mobile-header-info-wrap mobile-header-border">
-
-                <div class="single-mobile-header-info btn">
-                    <a href="{% url 'user:login' %}">Log In / Sign Up </a>
-                </div>
-
-            </div>
+           
 
 
 
