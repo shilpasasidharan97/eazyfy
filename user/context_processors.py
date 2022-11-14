@@ -16,4 +16,25 @@ def main_context(request):
             "brand":brand,
             "domain": request.META["HTTP_HOST"],
             "status":0,
+
         }
+
+
+# def IndexSearch(request):
+#     indexSearch = BrandModel.objects.filter(brand__id=id)
+#     data = []
+#     for pos in indexSearch:
+#         item = {
+#             "pk":pos.pk,
+#             "modelName":pos.name
+#         }
+#         data.append(item)
+
+#         return{
+#             "domain": request.META["HTTP_HOST"],
+#             "indexSearch" : indexSearch
+#         }
+
+        
+
+    

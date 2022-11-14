@@ -1,3 +1,8 @@
+
+
+
+{% comment %}
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
@@ -111,14 +116,19 @@
   </div>
 </div>
 
+
 <script>
   let $ = document
   let liContainer = $.querySelector(".autocom-box")
   let inputElem = $.querySelector("input")
   let searchInput = $.querySelector(".search-input")
-
+  const data = '{{data}}'
+  console.log(data[0])
+  
   let suggestions = [
-    `<a href = "https://gm.gedexo.com/employee/" >aswandh</a>`,
+  {% for i in brand %}
+  `<a href = "{% url 'user:shops' i.id %}"> {{i.name}} </a>`,
+  {% endfor %}
     
   ];
 
@@ -164,3 +174,5 @@
     })
   }
 </script>
+{% endcomment %}
+
