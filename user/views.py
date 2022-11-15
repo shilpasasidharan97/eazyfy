@@ -209,6 +209,8 @@ def privacyAndPolicy(request):
 def shops(request,id):
     model = BrandModel.objects.filter(brand__id=id)
     searchModel = BrandModel.objects.filter(brand__id=id)
+    # checkModel = BrandModel.objects.filter()
+    # print(request.user.name,"now")
     data = []
     for pos in searchModel:
         item = {
