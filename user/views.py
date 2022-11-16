@@ -208,7 +208,20 @@ def privacyAndPolicy(request):
 # BRAND MODELS
 def shops(request,id):
     model = BrandModel.objects.filter(brand__id=id)
+    searchModel = BrandModel.objects.filter(brand__id=id)
+    # checkModel = BrandModel.objects.filter()
+    # print(request.user.name,"now")
+    data = []
+    for pos in searchModel:
+        item = {
+            "pk":pos.pk,
+            "modelName":pos.name
+        }
+        data.append(item)
+
     context = {
+        "data":data,
+        'searchModel':searchModel,
         "model" : model
     }
     return render(request,"user/shops.html",context)    
@@ -276,7 +289,37 @@ def comingsoon(request):
     return render(request,"user/comingsoon.html",context)      
 
 def sellPhone(request):
-    return render(request,"user/sell-phone.html")
+    brand = Brand.objects.all()
+    data = []
+    for pos in brand:
+        item = {
+            "pk":pos.pk,
+            "brandName":pos.name
+        }
+        data.append(item)
+
+    context = {
+        "data":data,
+        'brand':brand
+    }
+
+    return render(request,"user/sell-phone.html",context)
+
+# def test(request):
+#     brand = Brand.objects.all()
+#     data = []
+#     for pos in brand:
+#         item = {
+#             "pk":pos.pk,
+#             "brandName":pos.name
+#         }
+#         data.append(item)
+
+#     context = {
+#         "data":data,
+#         'brand':brand
+#     }
+#     return render(request,"user/test.html",context)
 
 
 def handler404(request, exception):

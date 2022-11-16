@@ -8,6 +8,7 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import datetime
+from django.contrib import messages
 
 
 # Create your views here.
@@ -47,8 +48,12 @@ def forgotPassword(request):
 
 @login_required(login_url='/official/loginpage')
 def home(request):
+    franchise_count = Franchise.objects.all()
+    pickupboy_count = PickUpBoy.objects.all()
     context = {
-        "is_index":True
+        "is_index":True,
+        "franchise_count":franchise_count.count(),
+        "pickupboy_count":pickupboy_count.count()
     }
     return render(request,'official/home.html',context)
 
@@ -70,6 +75,7 @@ def franchise(request):
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
         wallet = FranchiseWallet(franchise=franchise)
+        messages.success(request, 'Franchise added successfully')
         wallet.save()
         return redirect('official:franchise')
     
@@ -119,6 +125,7 @@ def editform(request,id):
     # photo = request.FILES['fphoto']
     Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
     get_user_model().objects.filter(franchise__id=id).update(phone_number=phone,email=email)
+    messages.success(request, 'Franchise details edited')
     data ={
         "ss":"csac",
     }
@@ -155,6 +162,7 @@ def brand(request):
         name = request.POST['name']
         photo = request.FILES['photo']
         new_brand = Brand(name=name, image=photo)
+        messages.success(request, 'Brand added successfull ..please complete the spec adding procedure')
         new_brand.save()
     context = {
         "is_product":True,
@@ -298,12 +306,25 @@ def modelSpecification(request,id):
 def questions(request):
     question =  Questions.objects.all()
     subQuestion = QuestionOption.objects.all()
+    image_type = QuestionOption.objects.filter(question__question_type='image_type')
+    object_type = Questions.objects.filter(question_type='Objective')
     device_type = DeviceType.objects.all()
+
+
     context = {
         "is_questions":True,
         "device_type":device_type,
         "question" : question,
-        "subQuestion" : subQuestion
+        "objective_count":question.count(),
+        "subQuestion_count":subQuestion.count(),
+        "subQuestion" : subQuestion,
+
+
+
+        "image_type":image_type,
+        "image_type_count":image_type.count(),
+        "object_type":object_type,
+        "object_type_count":object_type.count(),
     }
     return render(request,'official/questions.html', context)
 
@@ -451,10 +472,12 @@ def savePayment(request,id):
     print(balance_amount)
     franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
     record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
+    messages.success(request, 'success')
     print(record)
     record.save()
     data = {
-        "sss":"sss"
+        "sss":"sss",
+        
     }
     return JsonResponse(data)
 

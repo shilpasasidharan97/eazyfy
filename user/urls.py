@@ -22,7 +22,7 @@ urlpatterns = [
 
 
   
-
+    
 
     path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
@@ -38,6 +38,8 @@ urlpatterns = [
     path('repair_phone',views.repairPhone,name='repair_phone'),
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
-    path('user-logout',views.userLogout,name='user-logout')
+    path('user-logout',views.userLogout,name='user-logout'),
+
+    # path('test',views.test,name='test'),
      
 ]
