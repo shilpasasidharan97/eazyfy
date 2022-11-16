@@ -538,9 +538,7 @@
             endTrigger = $('.mobile-menu-close'),
             container = $('.mobile-header-active'),
             wrapper4 = $('body');
-        
-        wrapper4.prepend('<div class="body-overlay-1"></div>');
-        
+
         navbarTrigger.on('click', function(e) {
             e.preventDefault();
             container.addClass('sidebar-visible');

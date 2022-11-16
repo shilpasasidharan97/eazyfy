@@ -297,6 +297,7 @@ def modelSpecification(request,id):
         new_model.save()
     context = {
         "models_spec":models_spec,
+     
     }
     return render(request,'official/specification.html', context)
 
