@@ -46,7 +46,7 @@
                             
                             <div class="attr-detail attr-color mb-15">
                                 <h6>
-                                    <a href="{% url 'user:question' id %}"  class="btn btn-sm btn-default">
+                                    <a href="{% url 'user:question'%}"  class="btn btn-sm btn-default">
                                         Get exact value
                                         <i class="fi-rs-arrow-right"></i>
                                     </a>
@@ -71,13 +71,7 @@
     <div class="container">
         <div class="row">
             <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
-            <div class="page-header breadcrumb-wrap">
-                <div class="container">
-                    <div class="breadcrumb">
-
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 </div>
@@ -209,8 +203,8 @@
     </div>
 </section>
 
-<!-- most selling mod4el -->
-<section class="section-padding">
+<!-- Most selling Model-->
+<section class="section-padding section-new-padding">
     <div class="container wow fadeIn animated">
         <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
         <div class="carausel-6-columns-cover position-relative">
@@ -220,128 +214,147 @@
                 <div class="product-cart-wrap small hover-up">
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
 
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
+                        
+                       
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
-                    </div>
-                </div>
-                <!--End product-cart-wrap-2-->
-                <div class="product-cart-wrap small hover-up">
-                    <div class="product-img-action-wrap">
-                        <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
-                            </a>
-                        </div>
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
 
-                    </div>
-                    <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <!-- <div class="product-price">
+                            <span>₹ 238.85 </span>
+                            <span class="old-price">₹ 245.8</span>
+                        </div> -->
                     </div>
                 </div>
                 <!--End product-cart-wrap-2-->
                 <div class="product-cart-wrap small hover-up">
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="product-content-wrap">
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 173.85 </span>
+                            <span class="old-price">₹ 185.8</span>
+                        </div> -->
+                    </div>
+                </div>
+                <!--End product-cart-wrap-2-->
+                <div class="product-cart-wrap small hover-up">
+                    <div class="product-img-action-wrap">
+                        <div class="product-img product-img-zoom">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                             </a>
                         </div>
+                        
+                    
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 215.85 </span>
+                            <span class="old-price">₹ 235.8</span>
+                        </div> -->
                     </div>
                 </div>
                 <!--End product-cart-wrap-2-->
                 <div class="product-cart-wrap small hover-up">
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
-                            <a href="shop-product-right.html">
-                                <img class="default-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        
+                   
+                    </div>
+                    <div class="product-content-wrap">
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 83.8 </span>
+                            <span class="old-price">₹ 125.2</span>
+                        </div> -->
+                    </div>
+                </div>
+                <!--End product-cart-wrap-2-->
+                <div class="product-cart-wrap small hover-up">
+                    <div class="product-img-action-wrap">
+                        <div class="product-img product-img-zoom">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
+                        
+            
                     </div>
                     <div class="product-content-wrap">
-                        <h6><a href="shop-product-right.html">One plus note c2</a></h6>
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 1238.85 </span>
+                            <span class="old-price">₹ 1245.8</span>
+                        </div> -->
+                    </div>
+                </div>
+                <!--End product-cart-wrap-2-->
+                <div class="product-cart-wrap small hover-up">
+                    <div class="product-img-action-wrap">
+                        <div class="product-img product-img-zoom">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        
+                       
+                    </div>
+                    <div class="product-content-wrap">
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 123 </span>
+                            <span class="old-price">₹ 156</span>
+                        </div> -->
+                    </div>
+                </div>
+                <!--End product-cart-wrap-2-->
+                <div class="product-cart-wrap small hover-up">
+                    <div class="product-img-action-wrap">
+                        <div class="product-img product-img-zoom">
+                            <a href="#">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                            </a>
+                        </div>
+                        
+                    </div>
+                    <div class="product-content-wrap">
+                        <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        <!-- <div class="product-price">
+                            <span>₹ 238.85 </span>
+                            <span class="old-price">₹ 245.8</span>
+                        </div> -->
                     </div>
                 </div>
                 <!--End product-cart-wrap-2-->

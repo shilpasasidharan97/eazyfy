@@ -1989,7 +1989,7 @@ label {
 
 
 .service-image{
-  padding: 0px 14px 14px 14px;
+  padding: 32px;
 }
 .title-detail{
   font-size: 20px !important;
@@ -1999,6 +1999,7 @@ label {
   box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
   width: 345px;
 }
+
 .offer-img{
   border-radius: 10px;
 }
@@ -2037,16 +2038,38 @@ label {
 
   .whysell{
     box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
+    margin-bottom: 10px !important;
+  }
+  .model-img{
+    height: 67px !important;
+  }
   
+  .exchange-card{
+    margin-top: 0px !important;
+  }
+  .product-name-responsive{
+    font-size: 10px !important;
+  }
+  .service-image{
+    padding: 16px;
+  }
+  .whyusfont{
+    font-size: 12px !important;
+  }
+  .secure{
+    font-size: 12px !important;
+    line-height: 18px !important;
   }
   .fonts{
     line-height: 10px !important;
+    font-size: 12px;
   }
   .grid-style{
     padding-bottom: 0px !important;
   }
   .repair-style{
     padding-top: 0px !important;
+    margin-bottom: 10px;
   }
   .mobile-img{
     border-radius: 10px;
@@ -9681,7 +9704,7 @@ span.fi-rs-apps {
 }
 .fonts{
   font-size: 10px;
-    line-height: 14px;
+  line-height: 14px;
 }
 .view{
   display: none;
@@ -10749,9 +10772,6 @@ input[type="tel"] {
 }
 
 
-
-/* vivek 3/11/22 */
-
 .search-onload{
   width: 100% !important;
   position: relative;
@@ -10781,22 +10801,27 @@ input[type="tel"] {
 }
 }
 
-
-
-/* vivek 4/11/22 */
-
 .otp{
   text-align: end;
 }
 
-/* vivek 17/11/22 */
-
 .offer2{
   border-radius: 10px;
+  margin-bottom: 10px;
+}
+.exchange-card{
+  margin-top: 29px;
 }
 .section-new-padding{
   padding-top: 10px !important;
 }
-.secure{
-  font-size: 11px !important;
+.fonts{
+  /* font-size: 14px; */
+  line-height: 14px;
+}
+.combany-details{
+  text-align: center !important;
+}
+.Support{
+  text-align: center !important;
 }

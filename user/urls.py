@@ -27,7 +27,7 @@ urlpatterns = [
     path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
-    path('question/<int:id>',views.question,name='question'),
+    path('question/',views.question,name='question'),
 
 
     path('spec/<str:id>',views.spec,name='spec'),

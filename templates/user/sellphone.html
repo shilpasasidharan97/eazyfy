@@ -3,6 +3,9 @@
 {% block content %}
 
 <style>
+    .hotdeal{
+        border-radius: 10px;
+    }
     .input-search input {
         height: 55px;
         width: 100%;
@@ -153,7 +156,7 @@
                     <div class="card3">
                         <a href="">
                             <div class="banner-img wow fadeIn animated">
-                                <img src="{% static 'user/imgs/deal/11.jpg' %}" alt="">
+                                <img class="hotdeal" src="{% static 'user/imgs/deal/11.jpg' %}" alt="">
                             </div>
                         </a>
                     </div>
@@ -162,7 +165,7 @@
                     <div class="card3">
                         <a href="">
                             <div class="banner-img wow fadeIn animated">
-                                <img src="{% static 'user/imgs/deal/12.jpg' %}" alt="">
+                                <img class="hotdeal" src="{% static 'user/imgs/deal/12.jpg' %}" alt="">
                             </div>
                         </a>
                     </div>
@@ -172,7 +175,7 @@
                     <div class="card3">
                         <a href="">
                             <div class="banner-img wow fadeIn animated">
-                                <img src="{% static 'user/imgs/deal/13.jpg' %}" alt="">
+                                <img class="hotdeal" src="{% static 'user/imgs/deal/13.jpg' %}" alt="">
                             </div>
                         </a>
                     </div>
@@ -199,7 +202,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 >Best Prices</h4>
+                                    <h4 class="whyusfont">Best Prices</h4>
                                     <span class="fonts">Objective AI-based pricing</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
@@ -216,9 +219,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4>Instant Payment</h4>
-                                    <span class="fonts"> Instant Money Transfer in your preferred mode at time of
-                                        pick up or store drop off</span>
+                                    <h4 class="whyusfont">Instant Payment</h4>
+                                    <span class="fonts"> Instant Money Transfer in your preferred mode at </span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -234,7 +236,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 style="">Simple & Convenient </h4>
+                                    <h4 class="whyusfont" style="">Simple & Convenient </h4>
                                     <span class="fonts"> Check price, schedule pickup & get paid</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
@@ -252,7 +254,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4>
+                                    <h4 class="whyusfont">
                                         Free Doorstep Pickup
                                     </h4>
                                     <span class="fonts">No fees for pickup across 1500 cities across India</span>
@@ -271,7 +273,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4>Factory Grade Data Wipe</h4>
+                                    <h4 class="whyusfont">Factory Grade Data Wipe</h4>
                                     <span class="fonts">100% Safe and Data Security Guaranteed</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
@@ -288,7 +290,7 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4>Valid Purchase Invoice </h4>
+                                    <h4 class="whyusfont">Valid Purchase Invoice </h4>
                                     <span class="fonts">Genuine Bill of Sale</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
@@ -362,7 +364,7 @@
     </section>
 
     <!-- MOST SELLING MODELS -->
-    <section class="section-padding">
+    <section class="section-padding section-new-padding">
         <div class="container wow fadeIn animated">
             <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
             <div class="carausel-6-columns-cover position-relative">
@@ -372,7 +374,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
     
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
@@ -382,7 +384,7 @@
                            
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
@@ -394,7 +396,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 </a>
@@ -403,7 +405,7 @@
                            
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 173.85 </span>
@@ -415,7 +417,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                 </a>
@@ -424,7 +426,7 @@
                         
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 215.85 </span>
@@ -436,7 +438,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                                 </a>
@@ -445,7 +447,7 @@
                        
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 83.8 </span>
@@ -457,7 +459,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                                 </a>
@@ -466,7 +468,7 @@
                 
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 1238.85 </span>
@@ -478,7 +480,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 </a>
@@ -487,7 +489,7 @@
                            
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 123 </span>
@@ -499,7 +501,7 @@
                     <div class="product-cart-wrap small hover-up">
                         <div class="product-img-action-wrap">
                             <div class="product-img product-img-zoom">
-                                <a href="shop-product-right.html">
+                                <a href="#">
                                     <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                     <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                                 </a>
@@ -507,7 +509,7 @@
                             
                         </div>
                         <div class="product-content-wrap">
-                            <h6 class="product-name"><a href="shop-product-right.html">One plus note c2</a></h6>
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
     
                             <!-- <div class="product-price">
                                 <span>₹ 238.85 </span>
@@ -520,6 +522,7 @@
             </div>
         </div>
     </section>
+    
     <!-- FAQS -->
 
     <section>
@@ -577,6 +580,7 @@
         </div>
     </div>
     </section>
+
     <section class="banner-2  pb-0">
         <div class="container">
             <div class="banner-img banner-big wow fadeIn animated f-none">

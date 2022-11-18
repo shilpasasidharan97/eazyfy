@@ -228,12 +228,12 @@ def shops(request,id):
     
 
 # QUESTIONS
-def question(request,id):
-    questions = Questions.objects.get(id=id)
-    context = {
-        "questions":questions
-    }
-    return render(request,"user/question.html",context)  
+def question(request):
+    # questions = Questions.objects.get(id=id)
+    # context = {
+    #     "questions":questions
+    # }
+    return render(request,"user/question.html")  
 
 
 # MODEL SPECIFICATIONS
