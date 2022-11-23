@@ -38,7 +38,9 @@ urlpatterns = [
     path('repair_phone',views.repairPhone,name='repair_phone'),
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
+    path('findnewgadget',views.findnewgadget,name='findnewgadget'),
     path('user-logout',views.userLogout,name='user-logout'),
+
 
     # path('test',views.test,name='test'),
      

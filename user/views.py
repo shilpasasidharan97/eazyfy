@@ -284,9 +284,15 @@ def payment(request):
 def comingsoon(request):
     context = {
         "is_gadget":True,
-        "is_newgadget":True
+
     }
-    return render(request,"user/comingsoon.html",context)      
+    return render(request,"user/comingsoon.html",context)
+
+def findnewgadget(request):
+    context = {
+        "is_newgadget":True,
+    }
+    return render(request,"user/findnewgadget.html",context)   
 
 def sellPhone(request):
     brand = Brand.objects.all()

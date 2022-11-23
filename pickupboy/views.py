@@ -104,3 +104,8 @@ def requote(request):
 def requote_selfy(request):
     return render(request,"pickup-boy/requote-selfy.html")
 
+@auth_pickupboy
+@login_required(login_url='/official/loginpage')
+def checkout(request):
+    return render(request,"pickup-boy/checkout.html")
+
