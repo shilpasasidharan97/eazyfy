@@ -1,241 +1,199 @@
 
-
-
-{% comment %}
-
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
+[data-icon]:after {
+  font-family: "entypo";
+  content: attr(data-icon);
+  speak: none;
+}
+input[type="search"] {
+  width: 196px;
+  height: 36px;
+  padding: 0;
+  line-height: 32px;
+  background: #56e2c9;
+  color: #fff;
+  border: 0;
+  font: bold 14px/20px "Arial", sans-serif;
+  text-indent: 12px;
+  outline: none;
+  -webkit-appearance: textfield;
+}
+input[type="search"]::-webkit-input-placeholder {
+  color: transparent;
+}
+input[type="search"]::-moz-input-placeholder {
+  color: transparent;
+}
+input[type="search"]:-ms-input-placeholder {
+  color: transparent;
+}
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  color: white;
+  text-align: left;
+  cursor: pointer;
+}
+input[type="search"]::-webkit-search-cancel-button:before, input[type="search"]::-webkit-search-results-button:before, input[type="search"]::-webkit-search-results-decoration:before {
+  position: absolute;
+  content: 'x';
+  font-style: normal;
+}
+input[type="search"]:invalid {
+  border: 0 !important;
+}
+input[type="search"]:invalid::-webkit-search-cancel-button:before, input[type="search"]:invalid::-webkit-search-results-button:before, input[type="search"]:invalid::-webkit-search-results-decoration:before {
+  font-family: "entypo";
+  content: attr(data-icon);
+}
+input[type="search"] + label {
+  position: absolute;
+  margin: 8px 0 0 -30px;
+  cursor: pointer;
+}
+input[type="search"] + label:before {
+  position: absolute;
+  content: 'Choisir';
+  left: -152px;
+  width: 180px;
+  color: #fff;
+  font: bold 14px/20px "Arial", sans-serif;
+  text-align: left;
+}
+input[type="search"] + label:after {
+  margin-left: 7px;
+  color: #fff;
+  content: '\25BE';
+}
 
-  body {
-    background: #644bff;
-    padding: 0 20px;
-  }
+input[type="search"]:focus::-webkit-input-placeholder {
+  font-weight: normal;
+  color: #fff;
+}
+input[type="search"]:focus::-moz-input-placeholder {
+  font-weight: normal;
+  color: #fff;
+}
+input[type="search"]:focus:-ms-input-placeholder {
+  font-weight: normal;
+  color: #fff;
+}
+input[type="search"]:focus:invalid + label:before {
+  display: none;
+}
+input[type="search"]:focus:invalid + label:after {
+  margin-left: 4px;
+  content: attr(data-icon);
+}
+input[type="search"]:valid + label {
+  display: none;
+}
 
-  ::selection {
-    color: #fff;
-    background: #664AFF;
-  }
+.ui-autocomplete {
+  width: 190px;
+  max-height: 180px;
+  padding: 0;
+  margin: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background: #2ec5aa;
+  color: #fff;
+  border-width: 4px 4px 4px 0;
+  border-style: solid;
+  border-color: #2ec5aa;
+}
+.ui-autocomplete ul {
+  list-style: none;
+}
+.ui-autocomplete li {
+  height: 36px;
+  margin: 0;
+  font: bold 14px/36px Arial, Helvetica, sans-serif;
+  white-space: nowrap;
+}
+.ui-autocomplete li:hover {
+  -moz-transition: background 0.3s ease-in;
+  -o-transition: background 0.3s ease-in;
+  -webkit-transition: background 0.3s ease-in;
+  transition: background 0.3s ease-in;
+  background: #3ed1b7;
+}
 
-  .wrapper {
-    max-width: 450px;
-    margin: 150px auto;
-  }
+.ui-autocomplete li a {
+  display: block;
+  padding: 0 12px;
+  cursor: pointer;
+}
 
-  .wrapper .search-input {
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-  }
-
-  .search-input input {
-    height: 55px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 60px 0 20px;
-    font-size: 18px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .search-input.active input {
-    border-radius: 5px 5px 0 0;
-  }
-
-  .search-input .autocom-box {
-    padding: 0;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 280px;
-    overflow-y: auto;
-  }
-
-  .search-input.active .autocom-box {
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .autocom-box li {
-    list-style: none;
-    padding: 8px 12px;
-    display: none;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-  }
-
-  .search-input.active .autocom-box li {
-    display: block;
-  }
-
-  .autocom-box li:hover {
-    background: #efefef;
-  }
-
-  .search-input .icon {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    line-height: 55px;
-    font-size: 20px;
-    color: #644bff;
-    cursor: pointer;
-  }
 </style>
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
-<div class="wrapper">
-  <div class="search-input">
-    <a href="" target="_blank" hidden></a>
-    <input type="text" placeholder="Type to search...">
-
-      <div class="autocom-box">
-    
-        <!-- here list are inserted from javascript -->
-      </div>
-
-
-
-    <div class="icon"><i class="fas fa-search"></i></div>
-  </div>
-</div>
-
-
+<center>
+  <form>
+    <input type="search" id="brand-filter" placeholder="Rechercher..." name="brands" data-list="brands-list" autocomplete="off" required />
+    <label for="brand-filter" data-icon="&#128269;"></label>
+    <datalist id="brands-list">
+      <select>
+      <option value="Adidas" />
+      <option value="Alexander McQueen" />
+      <option value="Armani" />
+      <option value="Balenciaga" />
+      <option value="Burberry" />
+      <option value="Calvin Klein" />
+      <option value="Comme Des Garcons" />
+      <option value="Diesel" />
+      <option value="DKNY" />
+      <option value="Dolce & Gabbana" />
+      <option value="Dries Van Noten" />
+      <option value="Etro" />
+      <option value="Fred Perry" />
+      <option value="Hugo Boss" />
+      <option value="Helmet Lang" />
+      <option value="Jil Sander" />
+      <option value="Louis Vuitton" />
+      <option value="Marc Jacobs" />
+      <option value="Margaret Howell" />
+      <option value="Marni" />
+      <option value="Missoni" />
+      <option value="Moncler" />
+      <option value="Nike" />
+      <option value="Paul Smith" />
+      <option value="Prada" />
+      <option value="Puma" />
+      <option value="Raf Simons" />
+      <option value="Rag & Bone" />
+      <option value="Rick Owens" />
+      <option value="Sacai" />
+      <option value="Stone Island" />
+      <option value="Yohji Yamamoto" />
+      </select>
+    </datalist>
+  </form>
+</center>
 <script>
-  let $ = document
-  let liContainer = $.querySelector(".autocom-box")
-  let inputElem = $.querySelector("input")
-  let searchInput = $.querySelector(".search-input")
-  const data = '{{data}}'
-  console.log(data[0])
-  
-  let suggestions = [
-  {% for i in brand %}
-  `<a href = "{% url 'user:shops' i.id %}"> {{i.name}} </a>`,
-  {% endfor %}
-    
-  ];
+ // This demo uses jQuery UI Autocomplete
+// https://jqueryui.com/autocomplete
 
-  inputElem.addEventListener("keyup", function () {
-    let inputValue = inputElem.value
-    if (inputValue) {
-      searchInput.classList.add("active")
-      let filteredWord = suggestions.filter(function (word) {
-        return word.toLowerCase().includes(inputValue.toLowerCase())
-        // return word.toLowerCase().startsWith(inputValue.toLowerCase())
-      })
+// Cannot style datalist elements yet, so get
+// each option value and pass to jQuery UI Autocomplete
+$('input[data-list]').each(function () {
+  var availableTags = $('#' + $(this).attr("data-list")).find('option').map(function () {
+    return this.value;
+  }).get();
 
-      suggestionWordsGenerator(filteredWord)
-
-    } else {
-      searchInput.classList.remove("active")
+  $(this).autocomplete({
+    source: availableTags
+  }).on('focus', function () {
+    $(this).autocomplete('search', ' ');
+  }).on('search', function () {
+    if ($(this).val() === '') {
+      $(this).autocomplete('search', ' ');
     }
-
-  })
-
-  let customListItem
-
-  function suggestionWordsGenerator(wordArray) {
-    let suggestionWord = wordArray.map(function (word) {
-      return "<li>" + word + "</li>"
-    }).join("")
-
-    if (suggestionWord) {
-      liContainer.innerHTML = suggestionWord
-    } else {
-      liContainer.innerHTML = "<li>" + inputElem.value + "</li>"
-    }
-    Select()
-  }
-
-  function Select() {
-    let allListItems = liContainer.querySelectorAll("li")
-    allListItems.forEach(function (wordItem) {
-      wordItem.addEventListener("click", function (e) {
-        inputElem.value = e.target.textContent
-        searchInput.classList.remove("active")
-      })
-    })
-  }
+  });
+});
 </script>
-{% endcomment %}
-
-<!-- IMEI CHECKING -->
-
-<script>
-  // javascript program to check whether the
-  // given EMEI number is valid or not.
-
-  // Function for finding and returning
-  // sum of digits of a number
-  function sumDig(n)
-  {
-      let a = 0;
-      while (n > 0)
-      {
-          a = a + n % 10;
-          n = parseInt(n / 10, 10);
-      }
-      return a;
-  }
-
-  function isValidIMEI(n)
-  {
-
-      // Converting the number into
-      // String for finding length
-      let s = n.toString();
-      let len = s.length;
-
-      if (len != 15)
-          return false;
-
-      let sum = 0;
-      for(let i = len; i >= 1; i--)
-      {
-        let d = (n % 10);
-
-        // Doubling every alternate digit
-        if (i % 2 == 0)
-            d = 2 * d;
-
-        // Finding sum of the digits
-        sum += sumDig(d);
-        n = parseInt(n / 10, 10);
-      }
-
-      return (sum % 10 == 0);
-  }
-
-
-  // 15 digits cannot be stored
-  // in 'int' data type
-  let n = 490154203237518;
-
-  if (isValidIMEI(n))
-      document.write("Valid IMEI Code");
-  else
-      document.write("Invalid IMEI Code");
-
-// This code is contributed by vaibhavrabadiya117.
-</script>
-
-
-
-<!-- <input type="date" name="" id=""> -->

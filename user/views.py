@@ -228,17 +228,20 @@ def shops(request,id):
     
 
 # QUESTIONS
-def question(request):
+def question(request,id):
     # questions = Questions.objects.get(id=id)
-    # context = {
-    #     "questions":questions
-    # }
-    return render(request,"user/question.html")  
+    spec = ModelSpecifications.objects.get(id=id)
+    questions = Questions.objects.filter(model_question=spec.Brand_model)
+    print(questions)
+    context = {
+        "questions":questions
+    }
+    return render(request,"user/question.html",context)  
 
 
 # MODEL SPECIFICATIONS
 def spec(request,id):
-    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    
     specification = BrandModel.objects.get(id=id)
     context = {
         "specification" : specification,
