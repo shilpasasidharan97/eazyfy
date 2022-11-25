@@ -333,8 +333,10 @@ def questions(request):
 def questionAdding(request):
     qst = Questions.objects.all().count() 
     qstcount = qst + 1 
+    models = BrandModel.objects.all()
     context = {
         "qstcount":qstcount,
+        "models":models
     }
     return render(request,'official/questions_adding.html',context)
 
@@ -342,10 +344,19 @@ def questionAdding(request):
 @csrf_exempt
 def questsave(request):
     question_data = request.POST['question']
+    dedection_yes = request.POST['yes']
+    dedection_no = request.POST['no']
+    model = request.POST['model']
+    print("333333333333" ,model)
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
     new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type)
     new_question.save()
+    model = BrandModel.objects.get(id=model)
+    dedection = Dedection(dedection_amount_yes=dedection_yes,dedection_amount_no=dedection_no,questions=new_question,model=model)
+
+    dedection.save()
+    
     qst_count = Questions.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
     data = {

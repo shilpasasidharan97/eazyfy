@@ -237,18 +237,6 @@
     } */
 </style>
 
-                                    <label for="list-search-input" class="mr-auto layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
-                                        <span id="search-icon" class="search-icon layout center-center">
-                                            <img alt="product_search" class="" src="/static/user/imgs/ProductSearch.svg">
-                                        </span>
-                                        <div class="input-search">
-                                            <input name="search" type="search" placeholder="search your brand"
-                                                class="font16-14 flwidth card mar-r10 search-input live-search">
-                                            <div class="autocom-box">
-        
-                                            </div>
-                                        </div>
-                                    </label>
 
 
 
@@ -322,7 +310,7 @@
     </div>
 
     <div class="header-bottom header-bottom-bg-color sticky-bar">
-        <div class="container">
+        <div class="container pt-5">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
                     <a href="{% url 'user:index' %}">
@@ -373,7 +361,7 @@
                                         class="{% if is_gadget %} active {% endif %}">Sell gadgets </i></a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:comingsoon' %}"
+                                    <a href="{% url 'user:findnewgadget' %}"
                                         class="{% if is_newgadget %} active {% endif %}">Find new gadgets</a>
                                 </li>
                                 <li><a href="#">More <i class="fi-rs-angle-down"></i></a>

@@ -59,17 +59,17 @@
 
           <div class="wizard-body">
             <div class="step initial active">
+              {% for questions in questions %}
               <div class="row">
                 <div class="col-sm-12">
                   <div class="slide">
-                    <h5 class="questionhead">1. Are you able to make and receive calls? </h5>
-                    <span style="color: grey;">Check your device for cellular network connectivity issues.</span>
+                    <h5 class="questionhead">1. {{ questions.questions }} </h5>
+
                     <div class="row">
                       <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox  box mb-3 checkbox-info box">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-200" checked class="form-check-input" type="radio" id="match_1"
-                              name="match_1">
+                        <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
+                          <div class="question-button pt-2 px-3 ">
+                            <input data-price="-200" class="form-check-input" type="radio" id="match_1" name="match_1">
                             <label class="form-check-label" for="customCheckBox2">YES</label>
                           </div>
 
@@ -79,7 +79,8 @@
                       <div class="col-lg-4 col-sm-4 clearfix">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
                           <div class="question-button pt-2 px-3">
-                            <input name="match_1" data-price="-50" type="radio" class="form-check-input" id="match_1" name="match_1">
+                            <input name="match_1" data-price="-50" type="radio" class="form-check-input" id="match_1"
+                              name="match_1">
                             <label class="form-check-label" for="customCheckBox2">NO</label>
                           </div>
                         </div>
@@ -89,116 +90,15 @@
                   </div>
                 </div>
               </div>
-              <br>
-              <div class="row">
-                <div class="col-sm-12">
-                  <div class="slide">
-                    <h5 class="questionhead">2. Is your device's touch screen working properly?</h5>
-                    <span style="color: grey;">Check the touch screen functionality of your phone.</span>
-                    <div class="row">
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-info">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-5" type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
-                            <label class="form-check-label" for="customCheckBox2">YES</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-success">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-50" type="radio" class="form-check-input" type="radio" id="match_4" name="match_4">
-                            <label class="form-check-label" for="customCheckBox2">NO</label>
-                          </div>
-                        </div>
-                      </div>
 
-                    </div>
-                    <br>
+              {% endfor %}
 
-                    <div class="slide">
-                      <h5 class="questionhead"> 3. Is your phone's screen original? </h5>
-                      <span style="color: grey;">Pick "Yes" if screen was never changed or was changed by Authorized
-                        Service Center. Pick "No" if screen was changed at local shop.
-                      </span>
-                      <div class="row">
-                        <div class="col-lg-4 col-sm-4">
-                          <div class="form-check custom-checkbox box mb-3 checkbox-info">
-                            <div class="question-button pt-2 px-3">
-                              <input data-price="-5" class="form-check-input" type="radio" id="third" name="third">
-                              <label class="form-check-label" for="customCheckBox2">YES</label>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-4 col-sm-4">
-                          <div class="form-check custom-checkbox box mb-3 checkbox-success">
-                            <div class="question-button pt-2 px-3">
-                              <input data-price="-20"  class="form-check-input" type="radio" id="third" name="third">
-                              <label  class="form-check-label" for="customCheckBox2">NO</label>
-                            </div>
-                          </div>
-                        </div>
 
-                      </div>
-                    </div>
-                    <br>
-                  </div>
-                </div>
 
-                <div class="col-sm-12">
-                  <div class="slide">
-                    <h5 class="questionhead">4. Is your device under brand warranty?</h5>
-                    <span style="color: grey;">You can get a better price for your device if it's under brand's warranty
-                      with a valid bill.</span>
-                    <div class="row">
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-info">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-5" type="radio" class="form-check-input" id="match_3" name="fourth">
-                            <label class="form-check-label" for="customCheckBox2">YES</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-4 ">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-success">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-20" type="radio" class="form-check-input"  id="match_3" name="fourth">
-                            <label class="form-check-label" for="customCheckBox2">NO</label>
-                          </div>
-                        </div>
-                      </div>
 
-                    </div>
-                  </div>
-                  <br>
-                </div>
 
-                <div class="col-sm-12">
-                  <div class="slide">
-                    <h5 class="questionhead"> 5. Do you have valid bill with same IMEI? </h5>
-                    <span style="color: grey;">Make sure your bill has device IMEI mentioned on it.</span>
-                    <div class="row">
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-info">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-5" type="radio" class="form-check-input"  id="match_5" name="fifth">
-                            <label class="form-check-label" for="customCheckBox2">YES</label>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-success">
-                          <div class="question-button pt-2 px-3">
-                            <input data-price="-100" type="radio" class="form-check-input"  id="match_5" name="fifth">
-                            <label class="form-check-label" for="customCheckBox2">NO</label>
-                          </div>
-                        </div>
-                      </div>
 
-                    </div>
-                  </div>
-                </div>
-              </div>
+
               <br>
             </div>
 

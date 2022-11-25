@@ -67,8 +67,8 @@ admin.site.register(QuestionOption, QuestionOptionAdmin)
 
 
 class DedectionAdmin(admin.ModelAdmin):
-    list_display = ('spec','dedection_amount' )
-    search_fields = ('spec','dedection_amount')
+    list_display = ('questions','model','spec','dedection_amount_yes','dedection_amount_no' )
+    search_fields = ('questions','model','spec','dedection_amount_yes','dedection_amount_no')
 
 
 admin.site.register(Dedection, DedectionAdmin)

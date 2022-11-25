@@ -2,187 +2,6 @@
 {% block content %}
 {% load static %}
 
-<div class="card">
-    <div class="card-header">
-        <h4 class="card-title">Complete</h4>
-    </div>
-    <div class="card-body">
-        <div id="smartwizard" class="form-wizard order-create sw sw-theme-default sw-justified">
-            <ul class="nav nav-wizard" style="display: none;">
-                <li><a class="nav-link inactive active" href="#wizard_Service"> 
-                    <span>1</span> 
-                </a></li>
-                <li><a class="nav-link inactive done" href="#wizard_Time">
-                    <span>2</span>
-                </a></li>
-                <li><a class="nav-link inactive" href="#wizard_Details">
-                    <span>3</span>
-                </a></li>
-                <li><a class="nav-link inactive" href="#wizard_Payment">
-                    <span>4</span>
-                </a></li>
-            </ul>
-            <div class="tab-content" style="height: 473px;">
-                <div id="wizard_Service" class="tab-pane" role="tabpanel" style="display: block;">
-                    <div class="row">
-                        <div class="col-lg-6 mb-2">
-                            <div class="form-group">
-                                <label class="text-label">Brand</label>
-                                <input type="text" name="firstName" class="form-control" placeholder="Brand" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-2">
-                            <div class="form-group">
-                                <label class="text-label">Mobile Model</label>
-                                <input type="text" name="lastName" class="form-control" placeholder="Mobile Model" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-2">
-                            <div class="form-group">
-                                <label class="text-label">IMEI Number</label>
-                                <input type="text" name="lastName" class="form-control" placeholder="IMEI Number" required="">
-                            </div>
-                        </div>
-                        <div class="col-lg-6 mb-2">
-                            <div class="form-group">
-                                <label class="text-label">Example data</label>
-                                <input type="text" name="lastName" class="form-control" placeholder="Example data" required="">
-                            </div>
-                        </div>
-                       
-                        <div class="col-lg-12 mb-3">
-                            <div class="form-group">
-                                <label class="text-label">Where are you from*</label>
-                                <input type="text" name="place" class="form-control" placeholder="Example data" required="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="wizard_Time" class="tab-pane" role="tabpanel" style="display: none;">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Product Live Photo</h4>
-                                </div>
-                    
-                                <div class="card-body">
-                                    <span> Upload front of the Product</span>
-                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
-                    
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <video id="video" width="320" height="240" autoplay></video>
-                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="dataurl-container">
-                                                <canvas id="canvas" width="320" height="240"></canvas>
-                                                <form action="" method="post">
-                                                    {% csrf_token %}
-                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
-                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
-                                                </form>
-                    
-                                            </div>
-                    
-                                        </div>
-                    
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div> 
-
-
-                    </div>
-                </div>
-                <div id="wizard_Details" class="tab-pane" role="tabpanel" style="display: none;">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Product Live Photo</h4>
-                                </div>
-                    
-                                <div class="card-body">
-                                    <span> Upload One side of the Product</span>
-                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
-                    
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <video id="video" width="320" height="240" autoplay></video>
-                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="dataurl-container">
-                                                <canvas id="canvas" width="320" height="240"></canvas>
-                                                <form action="" method="post">
-                                                    {% csrf_token %}
-                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
-                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
-                                                </form>
-                    
-                                            </div>
-                    
-                                        </div>
-                    
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div> 
-
-
-                    </div>
-                </div>
-                <div id="wizard_Payment" class="tab-pane" role="tabpanel" style="display: none;">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="card">
-                                <div class="card-header">
-                                    <h4 class="card-title">Product Live Photo</h4>
-                                </div>
-                    
-                                <div class="card-body">
-                                    <span> Upload Another side of the Product</span>
-                                    <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
-                    
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <video id="video" width="320" height="240" autoplay></video>
-                                            <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div id="dataurl-container">
-                                                <canvas id="canvas" width="320" height="240"></canvas>
-                                                <form action="" method="post">
-                                                    {% csrf_token %}
-                                                    <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
-                                                    <button type="submit" class="btn  btn-outline-info submit">submit</button>
-                                                </form>
-                    
-                                            </div>
-                    
-                                        </div>
-                    
-                                    </div>
-                    
-                                </div>
-                            </div>
-                        </div> 
-
-
-                    </div>
-                </div>
-            </div><div class="toolbar toolbar-bottom" role="toolbar" style="text-align: right;"><button class="btn btn-primary sw-btn-prev disabled" type="button">Previous</button><button class="btn btn-primary sw-btn-next" type="button">Next</button></div>
-        </div>
-    </div>
-</div>
-
-
-<!-- ######################################################script ######################################## -->
-
 
 <style type="text/css">
     .startcam {
@@ -255,7 +74,401 @@
         box-sizing: border-box;
     }
 </style>
-<!-- ######################################################script ######################################## -->
+
+<div >
+    <div class="row">
+      <div class="col-xs-12 col-md-12 col-md-offset-2 col-lg-12 col-lg-offset-3">
+        <div class="wizard card-like">
+          <form action="#">
+            <div class="wizard-header">
+              <div class="row">
+                <div class="col-xs-12">
+                  <div class="pricebtn">
+  
+                    <div class="btn btn-outline" id="price" style="color: #5f009a;"></div>
+                    <!-- <p>Total:<span id="price"></span></p> -->
+                  </div>
+                  <h3 class="font-w600 mb-0 me-auto mb-2 text-black"> </h3>
+                  <hr>
+                </div>
+              </div>
+            </div>
+  
+  
+            <div class="wizard-body">
+              <div class="step initial active">
+               
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                            
+                            <div class="card-header">
+                                <h4 class="card-title">Selfy with Customer</h4>
+                            </div>
+                            <div class="card-body">
+                              
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+             
+
+                <br>
+              </div>
+
+              <div class="step">
+
+
+
+                <div class="row">
+                    <div class="col-lg-6 mb-2">
+                        <div class="form-group">
+                            <label class="text-label">Brand</label>
+                            <input type="text" name="firstName" class="form-control" placeholder="Brand" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-2">
+                        <div class="form-group">
+                            <label class="text-label">Mobile Model</label>
+                            <input type="text" name="lastName" class="form-control" placeholder="Mobile Model" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-2">
+                        <div class="form-group">
+                            <label class="text-label">IMEI Number</label>
+                            <input type="text" name="lastName" class="form-control" placeholder="IMEI Number" required="">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-2">
+                        <div class="form-group">
+                            <label class="text-label">Example data</label>
+                            <input type="text" name="lastName" class="form-control" placeholder="Example data" required="">
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-12 mb-3">
+                        <div class="form-group">
+                            <label class="text-label">Where are you from*</label>
+                            <input type="text" name="place" class="form-control" placeholder="Example data" required="">
+                        </div>
+                    </div>
+                </div>
+
+
+              </div>
+  
+              <div class="step">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                            
+                
+                            <div class="card-body">
+                                <span> 1. front side of the phone</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+             
+              </div>
+  
+              <div class="step">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                           
+                
+                            <div class="card-body">
+                                <span> 2. Backside  side of the phoner</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+             
+              </div>
+              <div class="step">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                           
+                
+                            <div class="card-body">
+                                <span> 3. Top side of the phone</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+             
+              </div>
+  
+              <div class="step row">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                           
+                
+                            <div class="card-body">
+                                <span> 4. Bottom side of the phone</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+              </div>
+
+              <div class="step row">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                          
+                
+                            <div class="card-body">
+                                <span> 5. Right side of the phone</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+              </div>
+              <div class="step row">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card mt-5">
+                           
+                
+                            <div class="card-body">
+                                <span> 6. Left side of the phone</span>
+                                <button id="start-camera" class="btn btn-outline-danger startcam">Start Camera</button>
+                
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <video id="video" width="320" height="240" autoplay></video>
+                                        <button id="click-photo" class="btn btn-outline-primary click">Click Me</button>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div id="dataurl-container">
+                                            <canvas id="canvas" width="320" height="240"></canvas>
+                                            <form action="" method="post">
+                                                {% csrf_token %}
+                                                <textarea id="dataurl" name="imgurl" style="display: none;"></textarea>
+                                                <button type="submit" class="btn  btn-outline-info submit">submit</button>
+                                            </form>
+                
+                                        </div>
+                
+                                    </div>
+                                    <div class="text-center">
+                <a href="{% url 'pickupboy:checkout' %}" type="button" class="btn btn-outline-success btn-sm"> Checkout</a>
+            </div>
+                                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                
+                  
+                </div>
+              </div>
+            </div>
+            <div class="wizard-footer">
+              <div class="row">
+                <!-- <div class="col-xs-6 pull-left block-center">
+                  <button id="wizard-prev" style="display:none" type="button" class="btn btn-irv btn-irv-default">
+                    Previous
+                  </button>
+                </div> -->
+  
+                <!-- <div class="col-xs-6 pull-right block-center">
+                  <button id="wizard-subm" style="display:none" type="button" class="btn btn-irv">
+                    Submit
+                  </button> 
+                </div> -->
+              </div>
+              <div class="col-xs-6 pull-right text-center">
+                <button id="wizard-next" type="button" class="btn btn-irv">
+                  CONTINUE
+                </button>
+              </div><br><br>
+            </div>
+          </form>
+  
+  
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+<!-- 
+  <div class="text-center">
+    <button type="button" class="btn btn-secondary mb-2">Select</button>
+</div> -->
+
+<!-- submit modal -->
+
+<div class="modal fade" id="exampleModalCenter" aria-hidden="true" >
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">please select the Decisions</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row">
+                    <div class="col-lg-4"><a href="{% url 'pickupboy:complete' %}" class="btn light btn-primary">Complete</a></div>
+                    <div class="col-lg-4"><a href="{% url 'pickupboy:requote' %}"  class="btn light btn-secondary">Requote</a></div>
+                    <div class="col-lg-4"><a href="{% url 'pickupboy:fail' %}" class="btn light btn-success">Fail</a></div>
+                </div>
+            </div>
+          
+        </div>
+    </div>
+</div>
+
 
 <script>
 

@@ -229,7 +229,10 @@ def shops(request,id):
 
 # QUESTIONS
 def question(request,id):
-    questions = Questions.objects.get(id=id)
+    # questions = Questions.objects.get(id=id)
+    spec = ModelSpecifications.objects.get(id=id)
+    questions = Questions.objects.filter(model_question=spec.Brand_model)
+    print(questions)
     context = {
         "questions":questions
     }
@@ -238,7 +241,7 @@ def question(request,id):
 
 # MODEL SPECIFICATIONS
 def spec(request,id):
-    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    
     specification = BrandModel.objects.get(id=id)
     context = {
         "specification" : specification,
@@ -284,9 +287,15 @@ def payment(request):
 def comingsoon(request):
     context = {
         "is_gadget":True,
-        "is_newgadget":True
+
     }
-    return render(request,"user/comingsoon.html",context)      
+    return render(request,"user/comingsoon.html",context)
+
+def findnewgadget(request):
+    context = {
+        "is_newgadget":True,
+    }
+    return render(request,"user/findnewgadget.html",context)   
 
 def sellPhone(request):
     brand = Brand.objects.all()

@@ -15,4 +15,6 @@ urlpatterns = [
     path('editform/<int:id>',views.editform,name='editform'),
     path('getprofiledata/<int:id>',views.getprofiledata,name='getprofiledata'),
 
+    path('transactions',views.transactions,name='transactions'),
+
 ]
