@@ -350,9 +350,10 @@ def questsave(request):
     print("333333333333" ,model)
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type)
-    new_question.save()
     model = BrandModel.objects.get(id=model)
+    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type,model_question=model)
+    new_question.save()
+    
     dedection = Dedection(dedection_amount_yes=dedection_yes,dedection_amount_no=dedection_no,questions=new_question,model=model)
 
     dedection.save()

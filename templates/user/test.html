@@ -1,199 +1,79 @@
 
 <style>
-@import url(http://weloveiconfonts.com/api/?family=entypo);
-
-[data-icon]:after {
-  font-family: "entypo";
-  content: attr(data-icon);
-  speak: none;
-}
-input[type="search"] {
-  width: 196px;
-  height: 36px;
-  padding: 0;
-  line-height: 32px;
-  background: #56e2c9;
-  color: #fff;
-  border: 0;
-  font: bold 14px/20px "Arial", sans-serif;
-  text-indent: 12px;
-  outline: none;
-  -webkit-appearance: textfield;
-}
-input[type="search"]::-webkit-input-placeholder {
-  color: transparent;
-}
-input[type="search"]::-moz-input-placeholder {
-  color: transparent;
-}
-input[type="search"]:-ms-input-placeholder {
-  color: transparent;
-}
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-results-button, input[type="search"]::-webkit-search-results-decoration {
-  -webkit-appearance: none;
-  width: 32px;
-  height: 32px;
-  line-height: 30px;
-  color: white;
-  text-align: left;
-  cursor: pointer;
-}
-input[type="search"]::-webkit-search-cancel-button:before, input[type="search"]::-webkit-search-results-button:before, input[type="search"]::-webkit-search-results-decoration:before {
-  position: absolute;
-  content: 'x';
-  font-style: normal;
-}
-input[type="search"]:invalid {
-  border: 0 !important;
-}
-input[type="search"]:invalid::-webkit-search-cancel-button:before, input[type="search"]:invalid::-webkit-search-results-button:before, input[type="search"]:invalid::-webkit-search-results-decoration:before {
-  font-family: "entypo";
-  content: attr(data-icon);
-}
-input[type="search"] + label {
-  position: absolute;
-  margin: 8px 0 0 -30px;
-  cursor: pointer;
-}
-input[type="search"] + label:before {
-  position: absolute;
-  content: 'Choisir';
-  left: -152px;
-  width: 180px;
-  color: #fff;
-  font: bold 14px/20px "Arial", sans-serif;
-  text-align: left;
-}
-input[type="search"] + label:after {
-  margin-left: 7px;
-  color: #fff;
-  content: '\25BE';
+  #green {
+    display: none;
+    padding: 10px;
+    background-color: #6f6;
 }
 
-input[type="search"]:focus::-webkit-input-placeholder {
-  font-weight: normal;
-  color: #fff;
-}
-input[type="search"]:focus::-moz-input-placeholder {
-  font-weight: normal;
-  color: #fff;
-}
-input[type="search"]:focus:-ms-input-placeholder {
-  font-weight: normal;
-  color: #fff;
-}
-input[type="search"]:focus:invalid + label:before {
-  display: none;
-}
-input[type="search"]:focus:invalid + label:after {
-  margin-left: 4px;
-  content: attr(data-icon);
-}
-input[type="search"]:valid + label {
-  display: none;
-}
-
-.ui-autocomplete {
-  width: 190px;
-  max-height: 180px;
-  padding: 0;
-  margin: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  background: #2ec5aa;
-  color: #fff;
-  border-width: 4px 4px 4px 0;
-  border-style: solid;
-  border-color: #2ec5aa;
-}
-.ui-autocomplete ul {
-  list-style: none;
-}
-.ui-autocomplete li {
-  height: 36px;
-  margin: 0;
-  font: bold 14px/36px Arial, Helvetica, sans-serif;
-  white-space: nowrap;
-}
-.ui-autocomplete li:hover {
-  -moz-transition: background 0.3s ease-in;
-  -o-transition: background 0.3s ease-in;
-  -webkit-transition: background 0.3s ease-in;
-  transition: background 0.3s ease-in;
-  background: #3ed1b7;
-}
-
-.ui-autocomplete li a {
-  display: block;
-  padding: 0 12px;
-  cursor: pointer;
-}
-
+#red {
+    display: none;
+    padding: 10px;
+    background-color: #f44;
+} 
 </style>
 
 
 
-<center>
-  <form>
-    <input type="search" id="brand-filter" placeholder="Rechercher..." name="brands" data-list="brands-list" autocomplete="off" required />
-    <label for="brand-filter" data-icon="&#128269;"></label>
-    <datalist id="brands-list">
-      <select>
-      <option value="Adidas" />
-      <option value="Alexander McQueen" />
-      <option value="Armani" />
-      <option value="Balenciaga" />
-      <option value="Burberry" />
-      <option value="Calvin Klein" />
-      <option value="Comme Des Garcons" />
-      <option value="Diesel" />
-      <option value="DKNY" />
-      <option value="Dolce & Gabbana" />
-      <option value="Dries Van Noten" />
-      <option value="Etro" />
-      <option value="Fred Perry" />
-      <option value="Hugo Boss" />
-      <option value="Helmet Lang" />
-      <option value="Jil Sander" />
-      <option value="Louis Vuitton" />
-      <option value="Marc Jacobs" />
-      <option value="Margaret Howell" />
-      <option value="Marni" />
-      <option value="Missoni" />
-      <option value="Moncler" />
-      <option value="Nike" />
-      <option value="Paul Smith" />
-      <option value="Prada" />
-      <option value="Puma" />
-      <option value="Raf Simons" />
-      <option value="Rag & Bone" />
-      <option value="Rick Owens" />
-      <option value="Sacai" />
-      <option value="Stone Island" />
-      <option value="Yohji Yamamoto" />
-      </select>
-    </datalist>
-  </form>
-</center>
+
+<!-- <div class="radio">
+  <label>
+    <input type="radio" name="action" value="green"/>
+    Option one show gree Div
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="action" value="red"/>
+    Option two Show Red Div
+  </label>
+</div> -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="slide">
+      <h5 class="questionhead">hjkj</h5>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
+            <div class="question-button pt-2 px-3 ">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="green" data-price="-200" class="form-check-input" >yes
+              </label>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 clearfix">
+          <div class="form-check custom-checkbox box mb-3 checkbox-success box">
+            <div class="question-button pt-2 px-3">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<div id="green" class="show-hide">I am the green div.</div>
+<div id="red" class="show-hide">I am the red div.</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
- // This demo uses jQuery UI Autocomplete
-// https://jqueryui.com/autocomplete
-
-// Cannot style datalist elements yet, so get
-// each option value and pass to jQuery UI Autocomplete
-$('input[data-list]').each(function () {
-  var availableTags = $('#' + $(this).attr("data-list")).find('option').map(function () {
-    return this.value;
-  }).get();
-
-  $(this).autocomplete({
-    source: availableTags
-  }).on('focus', function () {
-    $(this).autocomplete('search', ' ');
-  }).on('search', function () {
-    if ($(this).val() === '') {
-      $(this).autocomplete('search', ' ');
-    }
-  });
+  $(document).ready(function(){ 
+    $("input[name=action]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
 });
 </script>
