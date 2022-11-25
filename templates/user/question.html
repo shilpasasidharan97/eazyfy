@@ -16,6 +16,14 @@
     margin: 20px 0px 3px 0px;
     height: 42px;
   }
+  #green{
+    display: none;
+
+  }
+  #red{
+    display: none;
+
+  }
 </style>
 
 
@@ -65,32 +73,46 @@
                   <div class="slide">
                     <h5 class="questionhead">1. {{ questions.questions }} </h5>
 
+
                     <div class="row">
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
                           <div class="question-button pt-2 px-3 ">
-                            <input data-price="-200" class="form-check-input" type="radio" id="match_1" name="match_1">
-                            <label class="form-check-label" for="customCheckBox2">YES</label>
+                            
+                            <label class="form-check-label" for="customCheckBox2">
+                              <input type="radio" name="action{{questions.id}}" value="green" data-price="-200" class="form-check-input" >yes
+                            </label>
                           </div>
-
-
+              
+              
                         </div>
                       </div>
                       <div class="col-lg-4 col-sm-4 clearfix">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
                           <div class="question-button pt-2 px-3">
-                            <input name="match_1" data-price="-50" type="radio" class="form-check-input" id="match_1"
-                              name="match_1">
-                            <label class="form-check-label" for="customCheckBox2">NO</label>
+                            
+                            <label class="form-check-label" for="customCheckBox2">
+                              <input type="radio" name="action{{questions.id}}" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
                           </div>
                         </div>
                       </div>
-
+              
                     </div>
+
+
                   </div>
                 </div>
               </div>
-
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+     $(document).ready(function(){ 
+    $("input[name=action{{questions.id}}]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
+});
+</script>
               {% endfor %}
 
 
@@ -620,8 +642,15 @@
         <div class="p-3">
           <h4 class="mb-15 text-brand">Device Evaluation</h4>
           <ul style="list-style-type:circle">
-            <li>Able to Make and Receive Calls</li>
-            <li>Mobile Under Warranty</li>
+
+              <div id="green" class="show-hide"> yes</div>
+              <div id="red" class="show-hide">No</div>
+
+            <!-- <li id="green" class="show-hide"></li>
+            <li id="green" class="show-hide"></li> -->
+
+
+
           </ul>
         </div>
 
@@ -706,6 +735,13 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+
+
+
+// answer show
+
+// price calculation
+
   function calcPrice() {
     var price = 10000;
     $("input[type=radio][data-price]:checked").each(function (i, el) {
