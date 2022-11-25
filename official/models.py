@@ -210,3 +210,12 @@ class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True)  
     date = models.DateField()
+
+class BannerImage(models.Model):
+    banner = models.FileField(upload_to='gallery/', null=True, blank=True)
+
+class Offer(models.Model):
+    offer = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
+class Card(models.Model):
+    card = models.FileField(upload_to='gallery/', null=True ,blank=True)
