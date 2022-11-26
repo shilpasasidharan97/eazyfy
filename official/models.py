@@ -210,3 +210,10 @@ class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True)  
     date = models.DateField()
+
+
+class OrderPayment(models.Model):
+    name = models.CharField(max_length=100)
+    amound = models.CharField(max_length=100)
+    paiment_id = models.CharField(max_length=100)
+    paid = models.BooleanField(default=False)
