@@ -1,4 +1,4 @@
-{% extends 'user/partials/base.html' %}
+﻿{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
 
@@ -11,7 +11,10 @@
     </div>
 </div>
 
+
+
 <!-- modal location -->
+
 <div class="modal fade custom-modal show px-2" id="onloadModal" tabindex="-1" aria-labelledby="onloadModalLabel" aria-modal="true" role="dialog" style="padding-right: 15px; display: block;">
     <div class="modal-dialog">
     <div class="modal-content">              
@@ -101,6 +104,7 @@
             <div class="col-lg-12">
                 <div class="position-relative">
                     <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
+                        {% comment %}
                         <div class="single-hero-slider single-animation-wrap">
                             <div class="container">
                                 <div class="slider-1-height-3 slider-animated-1">
@@ -121,6 +125,7 @@
                                 </div>
                             </div>
                         </div>
+                       
                         <div class="single-hero-slider single-animation-wrap">
                             <div class="container">
                                 <div class="slider-1-height-3 slider-animated-1">
@@ -138,6 +143,30 @@
                                 </div>
                             </div>
                         </div>
+                        {% endcomment %}
+
+                        {% for i in banner %}
+                        <div class="single-hero-slider single-animation-wrap">
+                            <div class="container">
+                                <div class="slider-1-height-3 slider-animated-1">
+                                    <!-- <div class="hero-slider-content-2">
+                                        <h4 class="animated">Tech Promotions</h4>
+                                        <h3 class="animated fw-900">Tech Trending</h3>
+                                        <h4 class="animated fw-900 text-brand">Great Collection</h4>
+                                        
+                                        <a class="animated btn btn-brush btn-brush-3" href="shop-product-right.html">
+                                            Sell phone </a>
+                                    </div> -->
+                                    <div class="slider-img">
+                                        <img src="{{ i.banner.url }}" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% endfor %}
+
+
                     </div>
                     <div class="slider-arrow hero-slider-1-arrow style-3"></div>
                 </div>
@@ -281,7 +310,7 @@
         </div>
     </div>
 </section>
-{% endcomment %}
+
 
 <!-- repair service section -->
 <section class="banner-2 section-padding repair-section pb-0  repair-style">
@@ -298,19 +327,23 @@
         </div>
     </div>
 </section>
+{% endcomment %}
 
 <!-- exchange card -->
 <section class="banners mb-15 exchange-card">
     <div class="container">
         <div class="row">
+            {% for j in offer %}
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
                     <a href="">
-                        <img class="offer2" src="{% static 'user/imgs/banner/bnre1.jpg' %}" alt="">
+                        <img class="offer2" src="{{j.offer.url }}" alt="">
                     </a>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6">
+            {% endfor %}
+
+            <!-- <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
                     <a href="">
                         <img class="offer2" src="{% static 'user/imgs/banner/bnre2.jpg' %}" alt="">
@@ -323,7 +356,7 @@
                         <img class="offer2" src="{% static 'user/imgs/banner/bnre3.jpg' %}" alt="">
                     </a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -338,12 +371,15 @@
         <div class="carausel-6-columns-cover position-relative">
             <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
             <div class="carausel-6-columns" id="carausel-6-columns">
+                {% for k in card %}
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shops"><img src="{% static 'user/imgs/banner/apple.jpg' %}" alt=""></a>
+                        <a href="shops"><img src="{{k.card.url}}" alt=""></a>
                     </figure>
                     <!-- <h5><a href="#">T-Shirt</a></h5> -->
                 </div>
+                {% endfor %}
+                {% comment %}
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
                         <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
@@ -386,6 +422,7 @@
                     </figure>
                     <!-- <h5><a href="#">Hats</a></h5> -->
                 </div>
+                {% endcomment %}
             </div>
         </div>
     </div>

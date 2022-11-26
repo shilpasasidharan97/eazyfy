@@ -541,7 +541,6 @@
 
 
 
-<!-- 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 
@@ -554,8 +553,8 @@
     console.log(data[0])
 
     let suggestions = [
-        {% for i in indexSearch %}
-    `<a href = "{% url 'user:spec' i.id %}"> {{i.name}} </a>`,
+        {% for i in brand %}
+    `<a href = "{% url 'user:shops' i.id %}"> {{i.name}} </a>`,
         {% endfor %}
     
   ];
@@ -601,4 +600,4 @@
             })
         })
     }
-</script> -->
+</script> 
