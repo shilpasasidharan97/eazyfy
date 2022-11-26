@@ -571,6 +571,7 @@ body {
   color: #000000;
   font-family: Sans-Serif;
   /* padding: 20px !important; */
+  padding-top: 20px !important;
   background-color: white;
 }
 
@@ -879,7 +880,7 @@ h6 {
 }
 
 p {
-  font-size: 1rem;
+  font-size: 14px;
   font-weight: 400;
   line-height: 24px;
   margin-bottom: 5px;
@@ -888,6 +889,7 @@ p {
 
 p:last-child {
   margin-bottom: 0;
+  text-align: justify;
 }
 
 a,
@@ -1987,7 +1989,7 @@ label {
 
 
 .service-image{
-  padding: 0px 14px 14px 14px;
+  padding: 32px;
 }
 .title-detail{
   font-size: 20px !important;
@@ -1996,6 +1998,10 @@ label {
 .whysell{
   box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
   width: 345px;
+}
+
+.offer-img{
+  border-radius: 10px;
 }
 
 .card3 {
@@ -2025,9 +2031,48 @@ label {
     min-width: 15px;
   }
 
+  .offer-img{
+    height: 173px;
+    border-radius: 10px;
+  }
+
   .whysell{
     box-shadow: 2px 1px 23px rgb(0 0 0 / 8%);
-    width: 289px;
+    margin-bottom: 10px !important;
+  }
+  .model-img{
+    height: 67px !important;
+  }
+  
+  .exchange-card{
+    margin-top: 0px !important;
+  }
+  .product-name-responsive{
+    font-size: 10px !important;
+  }
+  .service-image{
+    padding: 16px;
+  }
+  .whyusfont{
+    font-size: 12px !important;
+  }
+  .secure{
+    font-size: 12px !important;
+    line-height: 18px !important;
+  }
+  .fonts{
+    line-height: 10px !important;
+    font-size: 12px;
+  }
+  .grid-style{
+    padding-bottom: 0px !important;
+  }
+  .repair-style{
+    padding-top: 0px !important;
+    margin-bottom: 10px;
+  }
+  .mobile-img{
+    border-radius: 10px;
   }
   .playstore{
     display: none;
@@ -9659,7 +9704,7 @@ span.fi-rs-apps {
 }
 .fonts{
   font-size: 10px;
-    line-height: 14px;
+  line-height: 14px;
 }
 .view{
   display: none;
@@ -9668,7 +9713,7 @@ span.fi-rs-apps {
     margin-right: 15px;
   }
   h4{
-    font-size: 13px
+    font-size: 14px
   }
 
   .header-action .header-action-icon.header-action-mrg-none {
@@ -10256,12 +10301,16 @@ span.fi-rs-apps {
 
   .banner-left-icon,
   .banner-img {
-    margin-bottom: 15px;
+    margin-bottom: 0px;
   }
 
   .popular-categories .slider-btn.slider-prev {
     right: 50px !important;
     left: unset !important;
+  }
+
+  .last-grid{
+    margin-bottom: 0px;
   }
 
   .mb-sm-0 {
@@ -10723,9 +10772,6 @@ input[type="tel"] {
 }
 
 
-
-/* vivek 3/11/22 */
-
 .search-onload{
   width: 100% !important;
   position: relative;
@@ -10755,10 +10801,27 @@ input[type="tel"] {
 }
 }
 
-
-
-/* vivek 4/11/22 */
-
 .otp{
   text-align: end;
+}
+
+.offer2{
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.exchange-card{
+  margin-top: 29px;
+}
+.section-new-padding{
+  padding-top: 10px !important;
+}
+.fonts{
+  /* font-size: 14px; */
+  line-height: 14px;
+}
+.combany-details{
+  text-align: center !important;
+}
+.Support{
+  text-align: center !important;
 }

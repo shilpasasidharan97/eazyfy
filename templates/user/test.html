@@ -1,166 +1,79 @@
+
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-  }
-
-  body {
-    background: #644bff;
-    padding: 0 20px;
-  }
-
-  ::selection {
-    color: #fff;
-    background: #664AFF;
-  }
-
-  .wrapper {
-    max-width: 450px;
-    margin: 150px auto;
-  }
-
-  .wrapper .search-input {
-    background: #fff;
-    width: 100%;
-    border-radius: 5px;
-    position: relative;
-    box-shadow: 0px 1px 5px 3px rgba(0, 0, 0, 0.12);
-  }
-
-  .search-input input {
-    height: 55px;
-    width: 100%;
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    padding: 0 60px 0 20px;
-    font-size: 18px;
-    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .search-input.active input {
-    border-radius: 5px 5px 0 0;
-  }
-
-  .search-input .autocom-box {
-    padding: 0;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 280px;
-    overflow-y: auto;
-  }
-
-  .search-input.active .autocom-box {
-    padding: 10px 8px;
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .autocom-box li {
-    list-style: none;
-    padding: 8px 12px;
+  #green {
     display: none;
-    width: 100%;
-    cursor: default;
-    border-radius: 3px;
-  }
+    padding: 10px;
+    background-color: #6f6;
+}
 
-  .search-input.active .autocom-box li {
-    display: block;
-  }
-
-  .autocom-box li:hover {
-    background: #efefef;
-  }
-
-  .search-input .icon {
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    height: 55px;
-    width: 55px;
-    text-align: center;
-    line-height: 55px;
-    font-size: 20px;
-    color: #644bff;
-    cursor: pointer;
-  }
+#red {
+    display: none;
+    padding: 10px;
+    background-color: #f44;
+} 
 </style>
 
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
-<div class="wrapper">
-  <div class="search-input">
-    <a href="" target="_blank" hidden></a>
-    <input type="text" placeholder="Type to search...">
-
-      <div class="autocom-box">
-    
-        <!-- here list are inserted from javascript -->
-      </div>
-
-
-
-    <div class="icon"><i class="fas fa-search"></i></div>
-  </div>
+<!-- <div class="radio">
+  <label>
+    <input type="radio" name="action" value="green"/>
+    Option one show gree Div
+  </label>
 </div>
+<div class="radio">
+  <label>
+    <input type="radio" name="action" value="red"/>
+    Option two Show Red Div
+  </label>
+</div> -->
 
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="slide">
+      <h5 class="questionhead">hjkj</h5>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
+            <div class="question-button pt-2 px-3 ">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="green" data-price="-200" class="form-check-input" >yes
+              </label>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 clearfix">
+          <div class="form-check custom-checkbox box mb-3 checkbox-success box">
+            <div class="question-button pt-2 px-3">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<div id="green" class="show-hide">I am the green div.</div>
+<div id="red" class="show-hide">I am the red div.</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-  let $ = document
-  let liContainer = $.querySelector(".autocom-box")
-  let inputElem = $.querySelector("input")
-  let searchInput = $.querySelector(".search-input")
-
-  let suggestions = [
-    `<a href = "https://gm.gedexo.com/employee/" >aswandh</a>`,
-    
-  ];
-
-  inputElem.addEventListener("keyup", function () {
-    let inputValue = inputElem.value
-    if (inputValue) {
-      searchInput.classList.add("active")
-      let filteredWord = suggestions.filter(function (word) {
-        return word.toLowerCase().includes(inputValue.toLowerCase())
-        // return word.toLowerCase().startsWith(inputValue.toLowerCase())
-      })
-
-      suggestionWordsGenerator(filteredWord)
-
-    } else {
-      searchInput.classList.remove("active")
-    }
-
-  })
-
-  let customListItem
-
-  function suggestionWordsGenerator(wordArray) {
-    let suggestionWord = wordArray.map(function (word) {
-      return "<li>" + word + "</li>"
-    }).join("")
-
-    if (suggestionWord) {
-      liContainer.innerHTML = suggestionWord
-    } else {
-      liContainer.innerHTML = "<li>" + inputElem.value + "</li>"
-    }
-    Select()
-  }
-
-  function Select() {
-    let allListItems = liContainer.querySelectorAll("li")
-    allListItems.forEach(function (wordItem) {
-      wordItem.addEventListener("click", function (e) {
-        inputElem.value = e.target.textContent
-        searchInput.classList.remove("active")
-      })
-    })
-  }
+  $(document).ready(function(){ 
+    $("input[name=action]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
+});
 </script>

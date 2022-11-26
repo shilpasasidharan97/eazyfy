@@ -21,61 +21,6 @@
     </div>
 </div>
 
-<div class="row mt-3">
-    <div class="col-12">
-        <div class="card">
-            <div class="card-header">
-                <h4 class="card-title">List of newly added question</h4>
-
-               
-
-
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <table id="example" class="display" style="min-width: 845px">
-                        <thead>
-                            <tr>
-                                <th>Q.No.</th>
-                                <th>Question Type</th>
-                                <th>Question</th>
-                                <th>Sub Questions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-
-{% for question in question %}
-
-                            <tr>
-                                <td>{{forloop.counter}}</td>
-                                <td>{{ question.question_type}}</td>
-                                <td>{{ question.questions }}</td>
-                                
-                                <td>Edinburgh</td>
-
-                                {% comment %}
-                                <!-- {% if question.question_type =image_type %}
-                                <td>Edinburgh</td>
-                                {% else %}
-
-                                <td> objective type</td>
-                                {% endif %}
-                                 -->
-                               {% endcomment %}
-                            </tr>
-
-{% endfor %}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function deleteFRanchise(id) {
@@ -104,6 +49,306 @@
 <script src="{% static 'official/vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
     
 <script src="{% static 'official/js/plugins-init/datatables.init.js' %}"></script>
+
+
+
+<div class="container-fluid">
+    <div class="project-nav">
+        <div class="card-action card-tabs  me-auto">
+            <ul class="nav nav-tabs style-2">
+                <!-- <li class="nav-item">
+                    <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">Total Questions <span class="badge badge-pill shadow-primary badge-primary">154</span></a>
+                </li> -->
+                <li class="nav-item">
+                    <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">
+                        Objective Type<span class="badge badge-pill badge-info shadow-info">
+                            {{ object_type_count }}
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">
+                        Image type <span class="badge badge-pill badge-warning shadow-warning">{{image_type_count}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    
+    
+    <div class="tab-content project-list-group" id="myTabContent">
+        <!-- <div class="tab-pane fade active show" id="navpills-1">
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">#P-000441425</p>
+                        <h5 class="title font-w600 mb-2">
+                            <a href="" class="text-black">JOHN JOE</a></h5>
+                        <div class="text-dark">
+                            <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                            Created on Sep 8th, 2020
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="/static/official/images/users/pic1.jpg" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <span>Phone</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Phone Number</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>email</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex project-status align-items-center">
+                            <a href="/official/userdetails" type="button" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">#P-000441425</p>
+                        <h5 class="title font-w600 mb-2">
+                            <a href="" class="text-black">JOHN JOE</a></h5>
+                        <div class="text-dark">
+                            <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                            Created on Sep 8th, 2020
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="/static/official/images/users/pic1.jpg" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <span>Phone</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Phone Number</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>email</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex project-status align-items-center">
+                            <a href="" type="button" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">#P-000441425</p>
+                        <h5 class="title font-w600 mb-2">
+                            <a href="" class="text-black">JOHN JOE</a></h5>
+                        <div class="text-dark">
+                            <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                            Created on Sep 8th, 2020
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="/static/official/images/users/pic1.jpg" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <span>Phone</span>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>Phone Number</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <span>email</span>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex project-status align-items-center">
+                            <a href="" type="button" class="btn btn-outline-primary">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <nav class="mt-5">
+                <ul class="pagination pagination-gutter pagination-primary no-bg">
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-left"></i></a>
+                    </li>
+                    <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
+                    <li class="page-item page-indicator">
+                        <a class="page-link" href="javascript:void(0)">
+                            <i class="la la-angle-right"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+     -->
+        <div class="tab-pane fade" id="navpills-2">
+
+            {% for objective in object_type %}
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-2 my-2 col-lg-12 col-12 col-sm-12">
+                        <p class="text-primary mb-1">Q.NO.</p>
+                        <h5 class="title font-w600 mb-2">
+                            <a href="" class="text-black">{{forloop.counter}}</a></h5>
+                        <!-- <div class="text-dark">
+                            <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                            Created on Sep 8th, 2020
+                        </div> -->
+                    </div>
+                    
+                    <div class="col-xl-8 my-2 col-lg-12 col-12 col-sm-12">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <p class="text-primary mb-1">QUESTION</p>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">{{ objective.questions }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-12 col-12 col-sm-12">
+                        <p class="text-primary mb-1">ACTION</p>
+                        <div class="d-flex project-status align-items-center">
+                           
+                            <div class="d-flex action-button">
+
+                                <a onclick="" href="javascript:void(0);" class="btn btn-info btn-xs light px-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg1">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 3C17.2626 2.73735 17.5744 2.52901 17.9176 2.38687C18.2608 2.24473 18.6286 2.17157 19 2.17157C19.3714 2.17157 19.7392 2.24473 20.0824 2.38687C20.4256 2.52901 20.7374 2.73735 21 3C21.2626 3.26264 21.471 3.57444 21.6131 3.9176C21.7553 4.26077 21.8284 4.62856 21.8284 5C21.8284 5.37143 21.7553 5.73923 21.6131 6.08239C21.471 6.42555 21.2626 6.73735 21 7L7.5 20.5L2 22L3.5 16.5L17 3Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+
+
+                                <a class="ms-2 btn btn-xs px-2 light btn-danger" onclick="">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 6H5H21" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+{% endfor %}
+        </div>
+    
+        <div class="tab-pane fade" id="navpills-3">
+
+            {% for imagetype in image_type %}
+            <div class="card">
+                <div class="project-info">
+                    <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
+                        <p class="text-primary mb-1">#P-000441425</p>
+                        <h5 class="title font-w600 mb-2">
+                            <a href="" class="text-black">{{forloop.counter}}</a></h5>
+                        <!-- <div class="text-dark">
+                            <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                            Created on Sep 8th, 2020
+                        </div> -->
+                    </div>
+                    <div class="col-xl-5 my-2 col-lg-6 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="ms-2">
+                                <p class="text-primary mb-1">Question</p>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">{{ imagetype.question.questions }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                        <div class="d-flex align-items-center">
+                            <div class="project-media">
+                                <img src="{{ imagetype.image_upload.url }}" alt="">
+                            </div>
+                            <div class="ms-2">
+                                <p class="text-primary mb-1">SUB QUESTION</p>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">{{ imagetype.image_description }}</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-2 my-2 col-lg-12 col-12 col-sm-12">
+                        <p class="text-primary mb-1">ACTION</p>
+                        <div class="d-flex project-status align-items-center">
+                           
+                            <div class="d-flex action-button">
+
+                                <a onclick="" href="javascript:void(0);" class="btn btn-info btn-xs light px-2" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg1">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 3C17.2626 2.73735 17.5744 2.52901 17.9176 2.38687C18.2608 2.24473 18.6286 2.17157 19 2.17157C19.3714 2.17157 19.7392 2.24473 20.0824 2.38687C20.4256 2.52901 20.7374 2.73735 21 3C21.2626 3.26264 21.471 3.57444 21.6131 3.9176C21.7553 4.26077 21.8284 4.62856 21.8284 5C21.8284 5.37143 21.7553 5.73923 21.6131 6.08239C21.471 6.42555 21.2626 6.73735 21 7L7.5 20.5L2 22L3.5 16.5L17 3Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+                                </a>
+
+
+                                <a class="ms-2 btn btn-xs px-2 light btn-danger" onclick="">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M3 6H5H21" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                        <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    </svg>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endfor %}
+
+        </div>
+    </div>
+                </div>
 
 
 {% endblock %}
