@@ -5,12 +5,12 @@ def main_context(request):
     brand = Brand.objects.all()
     # indexSearch = BrandModel.objects.filter(brand__id=id)
     # data = []
-    for pos in brand:
-        item = {
-            # "pk":pos.pk,
-            # "modelName":pos.name
-        }
-        data.append(item)
+    # for pos in indexSearch:
+    #     item = {
+    #         "pk":pos.pk,
+    #         "modelName":pos.name
+    #     }
+    #     data.append(item)
 
     if request.session.exists(request.session.session_key):   
         user_object = request.user
