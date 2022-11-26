@@ -111,4 +111,3 @@ admin.site.register(AdminSendRecord, AdminSendRecordAdmin)
 
 admin.site.register(BannerImage)
 admin.site.register(Offer)
-admin.site.register(Card)
