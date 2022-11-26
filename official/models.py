@@ -211,9 +211,20 @@ class AdminSendRecord(models.Model):
     amount = models.FloatField(null = True, blank = True)  
     date = models.DateField()
 
+<<<<<<< HEAD
 
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)
     amound = models.CharField(max_length=100)
     paiment_id = models.CharField(max_length=100)
     paid = models.BooleanField(default=False)
+=======
+class BannerImage(models.Model):
+    banner = models.FileField(upload_to='gallery/', null=True, blank=True)
+
+class Offer(models.Model):
+    offer = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
+class Card(models.Model):
+    card = models.FileField(upload_to='gallery/', null=True ,blank=True)
+>>>>>>> 4cfa993f3b8c871ece6937437134c80d534e61f4
