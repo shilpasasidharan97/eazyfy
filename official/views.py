@@ -87,7 +87,6 @@ def franchise(request):
     return render(request,'official/franchise.html',context)
     
 
-
 # edit franchise
 def EditFranchise(request,id):
     print(id)
@@ -231,7 +230,6 @@ def getModelData(request,id):
     return JsonResponse(data)
 
 
-
 def editModel(request,id):
     print(id)
     new_id = str(id)
@@ -247,39 +245,7 @@ def editModel(request,id):
     return redirect('/official/model/'+new_id)
 
 
-# shifa edit spec
-
-def getModelspec(request,id):
-    getModelspec = ModelSpecifications.objects.get(id=id)
-    # print(getModelspec)
-    data = {
-        "miram":getModelspec.RAM,
-        "mistore":getModelspec.internal_storage,
-        "miprice":getModelspec.price,
-        "id":getModelspec.id,
-    }
-    return JsonResponse(data)
-
-
-@csrf_exempt
-def editSpec(request,id):
-    miram = request.POST['miram']
-    mistore = request.POST['mistore']
-    miprice = request.POST['miprice']
-    ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
-    data ={
-        "ss":"csac",
-    }
-    return JsonResponse(data)
-
-def Deletespec(request,id):
-    print('worked')
-    ModelSpecifications.objects.get(id=id).delete()
-    data = {
-        "deleted":"deleted"
-    }
-    return JsonResponse(data)
-
+# modelspecification adding
 def modelSpecification(request,id):
     print(id)
     brand = BrandModel.objects.get(brand__id=id)
@@ -302,6 +268,39 @@ def modelSpecification(request,id):
     return render(request,'official/specification.html', context)
 
 
+# shifa edit spec
+# def getModelspec(request,id):
+#     getModelspec = ModelSpecifications.objects.get(id=id)
+#     # print(getModelspec)
+#     data = {
+#         "miram":getModelspec.RAM,
+#         "mistore":getModelspec.internal_storage,
+#         "miprice":getModelspec.price,
+#         "id":getModelspec.id,
+#     }
+#     return JsonResponse(data)
+
+
+# @csrf_exempt
+# def editSpec(request,id):
+#     miram = request.POST['miram']
+#     mistore = request.POST['mistore']
+#     miprice = request.POST['miprice']
+#     ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
+#     data ={
+#         "ss":"csac",
+#     }
+#     return JsonResponse(data)
+
+# def Deletespec(request,id):
+#     print('worked')
+#     ModelSpecifications.objects.get(id=id).delete()
+#     data = {
+#         "deleted":"deleted"
+#     }
+#     return JsonResponse(data)
+
+
 # ALL QUESTION
 def questions(request):
     question =  Questions.objects.all()
@@ -309,8 +308,6 @@ def questions(request):
     image_type = QuestionOption.objects.filter(question__question_type='image_type')
     object_type = Questions.objects.filter(question_type='Objective')
     device_type = DeviceType.objects.all()
-
-
     context = {
         "is_questions":True,
         "device_type":device_type,
@@ -318,8 +315,6 @@ def questions(request):
         "objective_count":question.count(),
         "subQuestion_count":subQuestion.count(),
         "subQuestion" : subQuestion,
-
-
 
         "image_type":image_type,
         "image_type_count":image_type.count(),
@@ -331,9 +326,10 @@ def questions(request):
 
 # QUESTION ADDING
 def questionAdding(request):
+    models = BrandModel.objects.all()
     qst = Questions.objects.all().count() 
     qstcount = qst + 1 
-    models = BrandModel.objects.all()
+    
     context = {
         "qstcount":qstcount,
         "models":models
@@ -341,23 +337,16 @@ def questionAdding(request):
     return render(request,'official/questions_adding.html',context)
 
 
+
+
+
 @csrf_exempt
 def questsave(request):
-    question_data = request.POST['question']
-    dedection_yes = request.POST['yes']
-    dedection_no = request.POST['no']
-    model = request.POST['model']
-    print("333333333333" ,model)
+    question = request.POST['qst']
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    model = BrandModel.objects.get(id=model)
-    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type,model_question=model)
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
     new_question.save()
-    
-    dedection = Dedection(dedection_amount_yes=dedection_yes,dedection_amount_no=dedection_no,questions=new_question,model=model)
-
-    dedection.save()
-    
     qst_count = Questions.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
     data = {
@@ -415,6 +404,29 @@ def suquestionAddingData(request):
         "msg":"msg",
     }
     return JsonResponse(data)
+
+
+# deduction Amount setting
+def deductionSettings(request):
+    all_barnd = BrandModel.objects.all()
+    context = {
+        "models":all_barnd,
+    }
+    return render(request, 'official/deduction.html',context)
+
+
+def questionForDeduction(request):
+    all_questions = QuestionOption.objects.all()
+    questions = all_questions.question.
+    print(all_questions,'1234'*20)
+    context = {
+        "all_questions":all_questions,
+    }
+    return render(request,'official/questionfor_deduction.html', context)
+
+
+
+
 
 
 def userRequestList(request):

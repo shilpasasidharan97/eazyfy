@@ -1,0 +1,56 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Select questions</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Selected Model</label>
+                <div class="col-sm-9">
+                    <p>:: dsfdg</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="basic-form">
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Select Question</label>
+                    <div class="col-sm-9">
+                        <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
+                        <select class="me-sm-2 default-select form-control wide" id="model" tabindex="null">
+                            <option selected="">Choose...</option>
+
+                            {% for ques in all_questions %}
+                            <option value="">{{ ques.question.questions }}</option>
+                            {% endfor %}
+                        </select>
+                        <span id="message"></span>
+                    </div>
+                    <div class="col-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
