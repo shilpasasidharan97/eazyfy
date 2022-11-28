@@ -16,9 +16,11 @@ from eazyfy.decorators import auth_customer
 # CUSTOMER LOGIN
 def customerlogin(request):
     if request.method == 'POST':
+        countryCode = request.POST['countryCode']
         number = request.POST['number']
+        login_countryCode = countryCode + number
         password = request.POST['password']
-        user = authenticate(request,phone_number=number, password=password)
+        user = authenticate(request,phone_number=login_countryCode, password=password)
         if user is not None:
             login(request, user)
             if user.is_customer == True:
@@ -153,12 +155,20 @@ def resendOtp(request , token):
 
 # DASHBOARD
 def index(request):
+    banner = BannerImage.objects.all()
+    offer = Offer.objects.all()
+    card = Card.objects.all()
     user = request.user
     print(user)
     context = {
         "is_index" : True,
-        "user":user
+        "user":user,
+        "banner":banner,
+        "offer":offer,
+        "card":card
+
     }
+
     return render(request,"user/index.html",context) 
 
 
@@ -179,10 +189,16 @@ def termsAndConditions(request):
 
 # SELL YOUR PHONE
 def sell(request):
+
     brand = Brand.objects.all()
+    # search_term = ''
+    # if 'search' in request.GET:
+    #     search_term = request.GET['search']
+    #     jobs = Brand.objects.all().filter(name__icontains=search_term)
     context = {
         "is_sellphone":True,
-        "brand" : brand
+        "brand" : brand,
+        # "jobs": jobs
     }
     return render(request,"user/sellphone.html",context)
 
@@ -200,7 +216,20 @@ def privacyAndPolicy(request):
 # BRAND MODELS
 def shops(request,id):
     model = BrandModel.objects.filter(brand__id=id)
+    searchModel = BrandModel.objects.filter(brand__id=id)
+    # checkModel = BrandModel.objects.filter()
+    # print(request.user.name,"now")
+    data = []
+    for pos in searchModel:
+        item = {
+            "pk":pos.pk,
+            "modelName":pos.name
+        }
+        data.append(item)
+
     context = {
+        "data":data,
+        'searchModel':searchModel,
         "model" : model
     }
     return render(request,"user/shops.html",context)    
@@ -208,7 +237,10 @@ def shops(request,id):
 
 # QUESTIONS
 def question(request,id):
-    questions = Questions.objects.get(id=id)
+    # questions = Questions.objects.get(id=id)
+    spec = ModelSpecifications.objects.get(id=id)
+    questions = Questions.objects.filter(model_question=spec.Brand_model)
+    print(questions)
     context = {
         "questions":questions
     }
@@ -217,7 +249,7 @@ def question(request,id):
 
 # MODEL SPECIFICATIONS
 def spec(request,id):
-    # spec = ModelSpecifications.objects.filter(Brand_model__id=id)
+    
     specification = BrandModel.objects.get(id=id)
     context = {
         "specification" : specification,
@@ -263,12 +295,48 @@ def payment(request):
 def comingsoon(request):
     context = {
         "is_gadget":True,
-        "is_newgadget":True
+
     }
-    return render(request,"user/comingsoon.html",context)      
+    return render(request,"user/comingsoon.html",context)
+
+def findnewgadget(request):
+    context = {
+        "is_newgadget":True,
+    }
+    return render(request,"user/findnewgadget.html",context)   
 
 def sellPhone(request):
-    return render(request,"user/sell-phone.html")
+    brand = Brand.objects.all()
+    data = []
+    for pos in brand:
+        item = {
+            "pk":pos.pk,
+            "brandName":pos.name
+        }
+        data.append(item)
+
+    context = {
+        "data":data,
+        'brand':brand
+    }
+
+    return render(request,"user/sell-phone.html",context)
+
+# def test(request):
+#     brand = Brand.objects.all()
+#     data = []
+#     for pos in brand:
+#         item = {
+#             "pk":pos.pk,
+#             "brandName":pos.name
+#         }
+#         data.append(item)
+
+#     context = {
+#         "data":data,
+#         'brand':brand
+#     }
+#     return render(request,"user/test.html",context)
 
 
 def handler404(request, exception):

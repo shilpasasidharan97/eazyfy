@@ -1,7 +1,6 @@
-{% extends 'official/partials/base.html' %}
+{% extends 'franchise/partials/base.html' %}
 {% block content %}
 {% load static %}
-
 
 <link rel="stylesheet" href="{% static 'official/vendor/datatables/css/jquery.dataTables.min.css' %}" >
 
@@ -22,7 +21,7 @@
                                     style="width: 136.391px;">Sl/no</th>
                                 <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                     aria-sort="ascending" aria-label="Name: activate to sort column descending"
-                                    style="width: 136.391px;">Franchise</th>
+                                    style="width: 136.391px;">Credit/Debit</th>
                                 <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                                     aria-label="Position: activate to sort column ascending" style="width: 208.766px;">
                                     Amount</th>
@@ -34,15 +33,17 @@
                         <tbody>
 
 
-                            {% for transaction in transactions %}
+                            {% for transaction in payment_from_admin %}
                             <tr class="odd" role="row">
                                 <td>{{ forloop.counter }}</td>
-                                <td>{{ transaction.franchise.name }}</td>
+                                <td><span class="badge light badge-success">Credit</span></td>
                                 <td>{{ transaction.amount}}</td>
                                 <td>{{ transaction.date}}</td>
 
                             </tr>
                             {% endfor %}
+
+
                         </tbody>
                     </table>
                 </div>
@@ -51,4 +52,4 @@
     </div>
 </div>
 
-    {% endblock %}
+{% endblock %}

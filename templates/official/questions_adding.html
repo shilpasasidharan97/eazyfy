@@ -19,31 +19,78 @@
         <div class="card-body">
             <div class="basic-form">
                 <!--  -->
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Question <span id="qno"> {{qstcount}}</span></label>
-                        <div class="col-sm-9">
-                            <input type="Text" class="form-control" id="question" placeholder="Add Questions"
-                                name="addquestion">
-                                <span id="message"></span>
-                        </div>
-                    </div>
 
-                    <div class="mb-3 row" hidden>
-                        <label class="col-sm-3 col-form-label">Device Type</label>
-                        <select name="" id="devicetype">
-                            {% for type in device_type %}
-                            <option value="{{type.device_type}}">{{type.device_type}}</option>
+
+
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Select Model</label>
+                    <div class="col-sm-9">
+                        <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
+                            <select class="me-sm-2 default-select form-control wide" id="model"
+                                tabindex="null">
+                                <option selected="">Choose...</option>
+
+                                {% for model in models %}
+                                <option value="{{ model.id }}">{{ model }}</option>
                             {% endfor %}
-                        </select>
+                            </select>
+                        <span id="message"></span>
                     </div>
+                </div>
 
-                    <div class="mb-3 row">                   
-                        <div class="form-group">
-                            <button class="btn btn-primary disabled" id="buttondisabled" onclick="QuestionAdding()">Upload and Next</button>
-                            <button class="btn btn-success disabled" id="buttondisabled2" onclick="subQuestionAdding()" >Add sub question</button>
-                            <!-- <button class="btn btn-danger disabled">finish</button> -->
-                        </div>
+
+
+
+
+
+
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Question <span id="qno"> {{qstcount}}</span></label>
+                    <div class="col-sm-9">
+                        <input type="Text" class="form-control" id="question" placeholder="Add Questions"
+                            name="addquestion">
+
+
+                        <span id="message"></span>
                     </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">yes </label>
+                    <div class="col-sm-9">
+                        <input type="Text" class="form-control" id="yes" placeholder="dedection amount of yes" name="">
+
+
+                        <span id="message"></span>
+                    </div>
+                </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">No </label>
+                    <div class="col-sm-9">
+                        <input type="Text" class="form-control" id="no" placeholder="dedection amount of no" name="">
+
+
+                        <span id="message"></span>
+                    </div>
+                </div>
+
+                <div class="mb-3 row" hidden>
+                    <label class="col-sm-3 col-form-label">Device Type</label>
+                    <select name="" id="devicetype">
+                        {% for type in device_type %}
+                        <option value="{{type.device_type}}">{{type.device_type}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="mb-3 row">
+                    <div class="form-group">
+                        <button class="btn btn-primary disabled" id="buttondisabled" onclick="QuestionAdding()">Upload
+                            and Next</button>
+                        <button class="btn btn-success disabled" id="buttondisabled2" onclick="subQuestionAdding()">Add
+                            sub question</button>
+                        <!-- <button class="btn btn-danger disabled">finish</button> -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -54,61 +101,73 @@
 {% endblock %}
 
 {% block js %}
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
 
 <script>
 
-$('#question').keyup(function(){
-        var question=$('#question').val()
-        if ( question == ''){
+    $('#question').keyup(function () {
+        var question = $('#question').val()
+        if (question == '') {
             $('#message').html('Please Add Your Question First')
             $("#buttondisabled").addClass("disabled");
             $("#buttondisabled2").addClass("disabled")
         }
-        else{
+        else {
             $('#message').hide()
             $("#buttondisabled").removeClass("disabled");
             $("#buttondisabled2").removeClass("disabled");
         }
-    
+
     })
 
 
-function QuestionAdding(){
-    var question = $("#question").val()
-    $.ajax({
-        url : "/official/questionsave",
-        type : "POST",
-        data : {
-            "question":question,
-        },
-        success : function(responce) {
-            $("#qno").html(responce.qstno)
-            $("#question").val("")
+    function QuestionAdding() {
+        var question = $("#question").val()
+        var yes = $("#yes").val()
+        var no = $("#no").val()
+        var model = $("#model").val()
+        $.ajax({
+            url: "/official/questionsave",
+            type: "POST",
+            data: {
+                "question": question,
+                "yes": yes,
+                "no": no,
+                "model":model
+            },
+            success: function (responce) {
+                $("#qno").html(responce.qstno)
+                $("#question").val("")
+                $("#yes").val("")
+                $("#no").val("")
+                $("#model").val("")
+                window.location.reload();
 
-            
-        }
-    })
-}
 
 
-function subQuestionAdding() {
-    var question = $("#question").val()
-    $.ajax({
-        url : "/official/suquestionAdding",
-        type : "POST",
-        data : {
-            "qst":question,
-        },
-        success : function(responce) {
-            // alert(response.qest_pk)
-            window.location.href ='/official/suquestionAddingPage/'+responce.qest_pk
+            }
+        })
+    }
 
-        }
-    })
 
-}
-    
+    function subQuestionAdding() {
+        var question = $("#question").val()
+        $.ajax({
+            url: "/official/suquestionAdding",
+            type: "POST",
+            data: {
+                "qst": question,
+            },
+            success: function (responce) {
+                // alert(response.qest_pk)
+                window.location.href = '/official/suquestionAddingPage/' + responce.qest_pk
+
+            }
+        })
+
+    }
+
 </script>
 {% endblock %}

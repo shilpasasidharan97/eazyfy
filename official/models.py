@@ -161,8 +161,10 @@ class DeviceType(models.Model):
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
     device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
+    model_question = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True,blank = True)
     questions = models.CharField(max_length = 500,null = True)
     question_type = models.CharField(max_length = 15,choices = question_type)
+
 
     class Meta:
         verbose_name_plural = ("Questions")
@@ -185,7 +187,12 @@ class QuestionOption(models.Model):
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
-    dedection_amount = models.IntegerField(null = True, blank = True)
+
+
+    model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
+    # dedection_amount = models.IntegerField(null = True, blank = True)
+    dedection_amount_yes = models.IntegerField(null = True, blank = True)
+    dedection_amount_no = models.IntegerField(null = True, blank = True)
 
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -203,3 +210,12 @@ class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True)  
     date = models.DateField()
+
+class BannerImage(models.Model):
+    banner = models.FileField(upload_to='gallery/', null=True, blank=True)
+
+class Offer(models.Model):
+    offer = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
+class Card(models.Model):
+    card = models.FileField(upload_to='gallery/', null=True ,blank=True)

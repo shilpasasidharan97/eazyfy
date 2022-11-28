@@ -1,35 +1,79 @@
 
-
-<div class="row">
-  <div class="shifa">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fugiat vero atque totam quidem 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fugiat vero atque totam quidem </p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione fugiat vero atque totam quidem </p>
- 
-  </div>
-  <div class="shifa">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad omnis quae expedita ipsum nobis praesentium velit animi minus amet perspiciatis laboriosam similique debitis iste ratione nemo ea at corporis aliquam.</div>
-</div>
-
-
-
 <style>
-
-
-.row {
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
+  #green {
+    display: none;
+    padding: 10px;
+    background-color: #6f6;
 }
 
-.shifa {
-    -webkit-flex: 1;
-    -ms-flex: 1;
-    flex: 1; /* Means flex: 1 1 0 */
-    
-    padding: 1em;
-    margin: 0.25em;
-    background: lightgray;
-}
-
+#red {
+    display: none;
+    padding: 10px;
+    background-color: #f44;
+} 
 </style>
 
+
+
+
+<!-- <div class="radio">
+  <label>
+    <input type="radio" name="action" value="green"/>
+    Option one show gree Div
+  </label>
+</div>
+<div class="radio">
+  <label>
+    <input type="radio" name="action" value="red"/>
+    Option two Show Red Div
+  </label>
+</div> -->
+
+
+<div class="row">
+  <div class="col-sm-12">
+    <div class="slide">
+      <h5 class="questionhead">hjkj</h5>
+
+      <div class="row">
+        <div class="col-lg-4 col-sm-4">
+          <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
+            <div class="question-button pt-2 px-3 ">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="green" data-price="-200" class="form-check-input" >yes
+              </label>
+            </div>
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 col-sm-4 clearfix">
+          <div class="form-check custom-checkbox box mb-3 checkbox-success box">
+            <div class="question-button pt-2 px-3">
+              
+              <label class="form-check-label" for="customCheckBox2">
+                <input type="radio" name="action" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+<div id="green" class="show-hide">I am the green div.</div>
+<div id="red" class="show-hide">I am the red div.</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){ 
+    $("input[name=action]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
+});
+</script>

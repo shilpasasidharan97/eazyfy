@@ -8,6 +8,7 @@ from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import datetime
+from django.contrib import messages
 
 
 # Create your views here.
@@ -47,8 +48,12 @@ def forgotPassword(request):
 
 @login_required(login_url='/official/loginpage')
 def home(request):
+    franchise_count = Franchise.objects.all()
+    pickupboy_count = PickUpBoy.objects.all()
     context = {
-        "is_index":True
+        "is_index":True,
+        "franchise_count":franchise_count.count(),
+        "pickupboy_count":pickupboy_count.count()
     }
     return render(request,'official/home.html',context)
 
@@ -70,6 +75,7 @@ def franchise(request):
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password,franchise=franchise, is_franchise=True)
         wallet = FranchiseWallet(franchise=franchise)
+        messages.success(request, 'Franchise added successfully')
         wallet.save()
         return redirect('official:franchise')
     
@@ -119,6 +125,7 @@ def editform(request,id):
     # photo = request.FILES['fphoto']
     Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
     get_user_model().objects.filter(franchise__id=id).update(phone_number=phone,email=email)
+    messages.success(request, 'Franchise details edited')
     data ={
         "ss":"csac",
     }
@@ -128,9 +135,12 @@ def editform(request,id):
 def viewFranchiseDetails(request,id):
     franchise_details = Franchise.objects.get(id=id)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
+    wallet = FranchiseWallet.objects.get(franchise=franchise_details)
     context ={
         "franchise_details":franchise_details,
         "pickup_boys":pickup_boys,
+        "wallet":wallet,
+        "count" : pickup_boys.count()
     }
     return render(request,'official/view_franchise.html',context)
 
@@ -152,6 +162,7 @@ def brand(request):
         name = request.POST['name']
         photo = request.FILES['photo']
         new_brand = Brand(name=name, image=photo)
+        messages.success(request, 'Brand added successfull ..please complete the spec adding procedure')
         new_brand.save()
     context = {
         "is_product":True,
@@ -286,6 +297,7 @@ def modelSpecification(request,id):
         new_model.save()
     context = {
         "models_spec":models_spec,
+     
     }
     return render(request,'official/specification.html', context)
 
@@ -294,12 +306,25 @@ def modelSpecification(request,id):
 def questions(request):
     question =  Questions.objects.all()
     subQuestion = QuestionOption.objects.all()
+    image_type = QuestionOption.objects.filter(question__question_type='image_type')
+    object_type = Questions.objects.filter(question_type='Objective')
     device_type = DeviceType.objects.all()
+
+
     context = {
         "is_questions":True,
         "device_type":device_type,
         "question" : question,
-        "subQuestion" : subQuestion
+        "objective_count":question.count(),
+        "subQuestion_count":subQuestion.count(),
+        "subQuestion" : subQuestion,
+
+
+
+        "image_type":image_type,
+        "image_type_count":image_type.count(),
+        "object_type":object_type,
+        "object_type_count":object_type.count(),
     }
     return render(request,'official/questions.html', context)
 
@@ -308,8 +333,10 @@ def questions(request):
 def questionAdding(request):
     qst = Questions.objects.all().count() 
     qstcount = qst + 1 
+    models = BrandModel.objects.all()
     context = {
         "qstcount":qstcount,
+        "models":models
     }
     return render(request,'official/questions_adding.html',context)
 
@@ -317,10 +344,20 @@ def questionAdding(request):
 @csrf_exempt
 def questsave(request):
     question_data = request.POST['question']
+    dedection_yes = request.POST['yes']
+    dedection_no = request.POST['no']
+    model = request.POST['model']
+    print("333333333333" ,model)
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type)
+    model = BrandModel.objects.get(id=model)
+    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type,model_question=model)
     new_question.save()
+    
+    dedection = Dedection(dedection_amount_yes=dedection_yes,dedection_amount_no=dedection_no,questions=new_question,model=model)
+
+    dedection.save()
+    
     qst_count = Questions.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
     data = {
@@ -447,10 +484,12 @@ def savePayment(request,id):
     print(balance_amount)
     franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
     record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
+    messages.success(request, 'success')
     print(record)
     record.save()
     data = {
-        "sss":"sss"
+        "sss":"sss",
+        
     }
     return JsonResponse(data)
 

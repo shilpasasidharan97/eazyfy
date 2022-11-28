@@ -26,10 +26,14 @@ def header(request):
 @auth_franchise
 @login_required(login_url='/official/loginpage')
 def index(request):
+    # payment_from_franchise = FranchiseWallet.objects.all()
     franchise = request.user.franchise
+    payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by('date')
+    print(payment_from_admin)
     context = {
         "franchise":franchise,
-        "is_index":True
+        "is_index":True,
+        "payment_from_admin":payment_from_admin
     }
     return render(request,"franchise/index.html",context)
 
@@ -58,7 +62,8 @@ def add_pickupboy(request):
         User.objects.create_user(phone_number=phone, password=password,pickup_boy=pickup_boy, is_pickupboy=True)
         return redirect('franchise:add-pickupboy')
     else:
-        pickup_boy_list = PickUpBoy.objects.all().order_by('name')
+        pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by('name')
+        print(pickup_boy_list)
         context={
             "is_addpickupboy":True,
             "pickup_boy_list" : pickup_boy_list
@@ -140,3 +145,14 @@ def order(request):
         "is_order":True
     }
     return render(request,"franchise/order.html",context)
+
+
+@auth_franchise
+@login_required(login_url='/official/loginpage')
+def transactions(request):
+    franchise = request.user.franchise
+    payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by('date')
+    context = {
+        "payment_from_admin":payment_from_admin
+    }
+    return render(request,"franchise/transactions.html",context)
