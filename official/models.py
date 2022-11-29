@@ -31,10 +31,6 @@ class UserManager(BaseUserManager):
         return user
 
 
-
-
-
-
 class Franchise(models.Model):
     franchise_id = models.CharField(max_length=20, null=True)
     name = models.CharField(max_length=40, null=True)
@@ -77,7 +73,6 @@ class CutomerRegistration(models.Model):
         verbose_name_plural = ("Customer")
 
 
-
 class User(AbstractUser):
     username = None
     email = models.EmailField(max_length=150, null=True, blank=True)
@@ -91,19 +86,18 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
 
-
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = []
     objects = UserManager()
     def __str__(self):
         return str(self.phone_number)
 
+
 class CutomerProfile(models.Model):
     user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
     auth_token = models.CharField(max_length=100 ,blank = True, null = True)
     test_id = models.CharField(max_length=100 ,default = uuid.uuid4)
     forget_password_token = models.CharField(max_length=100, blank=True,null=True)
-
 
 
 class Brand(models.Model):
@@ -143,9 +137,6 @@ class ModelSpecifications(models.Model):
     class Meta:
         verbose_name_plural = ("Model Specifications")
 
-    
-
-
 
 class DeviceType(models.Model):
     device_choices =  (('Mobile', 'Mobile'), ('TV', 'TV'),('Laptop','Laptop'))
@@ -165,7 +156,6 @@ class Questions(models.Model):
     questions = models.CharField(max_length = 500,null = True)
     question_type = models.CharField(max_length = 15,choices = question_type)
 
-
     class Meta:
         verbose_name_plural = ("Questions")
 
@@ -184,15 +174,34 @@ class QuestionOption(models.Model):
     def __str__(self):
         return str(self.image_description)
 
+
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
-
-
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
     # dedection_amount = models.IntegerField(null = True, blank = True)
     dedection_amount_yes = models.IntegerField(null = True, blank = True)
     dedection_amount_no = models.IntegerField(null = True, blank = True)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -212,14 +221,24 @@ class AdminSendRecord(models.Model):
     date = models.DateField()
 
 
+
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)
     amound = models.CharField(max_length=100)
     paiment_id = models.CharField(max_length=100)
     paid = models.BooleanField(default=False)
 
+
 class BannerImage(models.Model):
     banner = models.FileField(upload_to='gallery/', null=True, blank=True)
 
+
 class Offer(models.Model):
     offer = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
+
+
+class Card(models.Model):
+    card = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
+
