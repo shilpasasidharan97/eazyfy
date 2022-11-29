@@ -157,7 +157,7 @@ def resendOtp(request , token):
 def index(request):
     banner = BannerImage.objects.all()
     offer = Offer.objects.all()
-    card = Card.objects.all()
+    brand = Brand.objects.all()
     user = request.user
     print(user)
     context = {
@@ -165,7 +165,7 @@ def index(request):
         "user":user,
         "banner":banner,
         "offer":offer,
-        "card":card
+        "brand":brand
 
     }
 

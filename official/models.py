@@ -221,12 +221,21 @@ class AdminSendRecord(models.Model):
     date = models.DateField()
 
 
+
+class OrderPayment(models.Model):
+    name = models.CharField(max_length=100)
+    amound = models.CharField(max_length=100)
+    paiment_id = models.CharField(max_length=100)
+    paid = models.BooleanField(default=False)
+
+
 class BannerImage(models.Model):
     banner = models.FileField(upload_to='gallery/', null=True, blank=True)
 
 
 class Offer(models.Model):
     offer = models.FileField(upload_to='gallery/', null=True ,blank=True)
+
 
 
 class Card(models.Model):
