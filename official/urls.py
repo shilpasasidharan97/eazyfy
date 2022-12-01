@@ -56,6 +56,8 @@ urlpatterns = [
     path('franchisewallet',views.franchiseWallet, name='franchisewallet'),
     path('transactionhistory',views.transactionHistory,name='transactionhistory'),
 
+    path('test',views.test,name='test'),
+
 
     path('profile',views.profile,name='profile'),
     path('logout_view',views.logout_view,name='logout_view'),

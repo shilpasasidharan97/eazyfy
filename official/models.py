@@ -222,6 +222,7 @@ class AdminSendRecord(models.Model):
 
 
 
+
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)
     amound = models.CharField(max_length=100)
