@@ -501,3 +501,38 @@ def profile(request):
 def logout_view(request):
     logout(request)
     return redirect('/official/loginpage')
+
+
+def settings(request):
+    offerImage = Offer.objects.all()
+    bannerImage = BannerImage.objects.all()
+    print(bannerImage)
+    if request.method == 'POST':
+        banner = request.FILES.get('banner')
+        bannerObject = BannerImage(banner=banner)
+        print(bannerObject)
+        bannerObject.save()
+    context = {
+        "bannerImage":bannerImage,
+        "offerImage":offerImage
+    }
+    
+    return render(request,'official/settings.html',context)
+
+def DeleteBanner(request,id):
+    print("#"*20)
+    BannerImage.objects.get(id=id).delete()
+    return redirect('/official/settings')
+
+
+def offers(request):
+    if request.method == 'POST':
+        offer = request.FILES.get('offers')
+        phoneOffer = Offer(offer=offer)
+        phoneOffer.save()
+    return redirect('/official/settings')
+    
+def DeleteOffer(request,id):
+    print("#"*20)
+    Offer.objects.get(id=id).delete()
+    return redirect('/official/settings')    
