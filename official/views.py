@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import datetime
 from django.contrib import messages
-
+from user.helpers import payment_mail
 
 # Create your views here.
 
@@ -417,14 +417,21 @@ def deductionSettings(request):
 
 def questionForDeduction(request):
     all_questions = QuestionOption.objects.all()
+
     print(all_questions,'1234'*20)
+=======
+    questions = Questions.objects.all()
+    print(all_questions)
+>>>>>>> f69d3553ca3940b21e30cfeba0df4bd719b848d9
     context = {
         "all_questions":all_questions,
+        "questions":questions,
     }
     return render(request,'official/questionfor_deduction.html', context)
 
 
-
+def test(request):
+    return render(request,'official/test.html')
 
 
 
@@ -492,10 +499,10 @@ def savePayment(request,id):
     franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
     franchise_balance = franchisewallet.wallet_amount
     balance_amount = float(paid_amount)+float(franchise_balance)
-    print(balance_amount)
     franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
     record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
     messages.success(request, 'success')
+    payment_mail(franchisewallet.id)
     print(record)
     record.save()
     data = {
