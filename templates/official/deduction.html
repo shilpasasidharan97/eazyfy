@@ -21,17 +21,17 @@
                     <div class="col-sm-9">
                         <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
                             <select class="me-sm-2 default-select form-control wide" id="model"
-                                tabindex="null">
+                                tabindex="null" onchange="ChangeQuantity()">
                                 <option selected="">Choose...</option>
 
                                 {% for model in models %}
-                                <option value="{{ model.id }}">{{ model }}</option>
+                                <option value="{{ model.id }}" >{{ model }}</option>
                             {% endfor %}
                             </select>
                         <span id="message"></span>
                     </div>
                     <div class="col-12">
-                        <a href="{% url 'official:questionfordeduction' %}" class="btn btn-primary btn-sm text-end">Apply</a>
+                        <a href="" class="btn btn-primary btn-sm text-end" id="modellink">Apply</a>
                     </div>
                 </div>
             </div>
@@ -40,4 +40,17 @@
 </div>
 
 
+<script>
+    function ChangeQuantity(){
+        var model = $("#model").val()
+        alert(model)
+        $("#modellink").attr('href',"/official/questionfordeduction/"+model);  
+
+        }
+
+</script>
+
+
 {% endblock %}
+
+

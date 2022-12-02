@@ -18,7 +18,8 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-form-label">Selected Model</label>
                 <div class="col-sm-9">
-                    <p>:: dsfdg</p>
+                    <p >:: {{brandmodel.name}}</p>
+                    <input type="int" id="bid" value="{{brandmodel.id}}" hidden>
                 </div>
             </div>
         </div>
@@ -32,14 +33,14 @@
         <div class="card-body">
             <div class="basic-form">
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Question type</label>
+                    <label class="col-sm-3 col-form-label">Question </label>
                     <div class="col-sm-9">
                         <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
-                        <select class="me-sm-2 default-select form-control wide"tabindex="null"
-                            onchange="Question()" id="colorselector">
-                                <option value="objective">objective</option>
-                                <option value="imageType">image Type</option>
-                        </select>
+                            <select class="me-sm-2 default-select form-control wide" tabindex="null" id="questid" onchange="QuestionId()">
+                                {% for ques in questions %}
+                                <option value="{{ ques.id }}" >{{ ques.questions }}</option>
+                                {% endfor %}
+                            </select>
                         <span id="message"></span>
                     </div>
                     <div class="col-12">
@@ -52,25 +53,21 @@
 
 
 
-<div class="row colors objective" id="objective">
+<div class="row colors objective" id="objective" hidden>
     <div class="card">
         <div class="card-body">
             <div class="basic-form">
                 <div class="mb-3 row">
-                
-<label class="col-sm-3 col-form-label">Questions</label>
 
-<div class="col-sm-9">
-    <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
-    <select class="me-sm-2 default-select form-control wide"tabindex="null">
-        {% for ques in questions %}
-        <option value="{{ ques.id }}">{{ ques.questions }}</option>
-        {% endfor %}
-    </select>
-</div>
+                    <label class="col-sm-3 col-form-label">Questions</label>
 
-               
-</div>
+                    <div class="col-sm-9">
+                        <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
+                        
+                    </div>
+
+
+                </div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Yes</label>
                     <div class="col-sm-9">
@@ -94,13 +91,15 @@
             </div>
         </div>
     </div>
+</div>
 
-<div class="row colors imageType" id="imageType">
+
+<div class="row colors imageType" id="imageType" hidden>
     <div class="card">
         <div class="card-body">
             <div class="basic-form">
                 <div class="mb-3 row">
-                
+
                 </div>
 
                 <div class="mb-3 row">
@@ -129,21 +128,38 @@
 </div>
 
 
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 
-
-
-
-<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 <script>
+    function QuestionId(){
+    var questionid = $("#questid").val()
+    var bid = $('#bid').val()
+    // alert(questionid)
+    $.ajax({
+        url : "/official/questionid",
+        type : "GET",
+        data : {
+            "qstid":questionid,
+            "bid":bid,
+        },
+        success : function(responce) {
+            len = responce
+            // alert(len.length)
+            for (i=0;i<len;i++){
+                // alert(responce.)
+            }
+            // if (responce.type == 'Objective'){
+            //     $('#objective').removeAttr('hidden')
+            // }
+            // else if (responce.type == 'image_type') {
+            //     $('#imageType').removeAttr('hidden')
+            // }
+    
 
-
-$(function() {
-    $('#colorselector').change(function(){
-      $('.colors').hide();
-      $('#' + $(this).val()).show();
-    });
-  });
-
+            
+        }
+    })
+}
 </script>
 
 
@@ -151,26 +167,5 @@ $(function() {
 
 
 
-<!-- 
-<script>
-    $(document).ready(function () {
-        $(".questionType").change(function () {
-            $(this).find("option:selected").each(function () {
-                if ($(this).attr("value") == "red") {
-                    $(".box").not(".red").hide();
-                    $(".red").show();
-                }
-                else if ($(this).attr("value") == "green") {
-                    $(".box").not(".green").hide();
-                    $(".green").show();
-                }
-
-                else {
-                    $(".box").hide();
-                }
-            });
-        }).change();
-    });
-</script> -->
 
 {% endblock %}

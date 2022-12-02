@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
@@ -415,19 +416,58 @@ def deductionSettings(request):
     return render(request, 'official/deduction.html',context)
 
 
-def questionForDeduction(request):
+def questionForDeduction(request,id):
     all_questions = QuestionOption.objects.all()
-
+    brandmodel = BrandModel.objects.get(id=id)
     print(all_questions,'1234'*20)
-=======
+
     questions = Questions.objects.all()
     print(all_questions)
->>>>>>> f69d3553ca3940b21e30cfeba0df4bd719b848d9
     context = {
         "all_questions":all_questions,
         "questions":questions,
+        "brandmodel":brandmodel,
     }
     return render(request,'official/questionfor_deduction.html', context)
+
+
+def questionId(request):
+    quset =request.GET['qstid']
+    bid = request.GET['bid']
+
+    question = Questions.objects.get(id=quset)
+    question_type = question.question_type
+    if question_type == 'image_type':
+        question_option = QuestionOption.objects.filter(question__question_type='image_type')
+        # print(question_option,'@'*20)
+        data = []
+        for i in question_option:
+            data1 = {
+                'image_description':i.image_description,
+                'image':i.image_upload.url,
+            }
+            data.append(data1)
+            print(data)
+        return JsonResponse(data,safe=False)
+    else:
+        data = {
+            'type':question.question_type,
+        }
+        return JsonResponse(data)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 def test(request):

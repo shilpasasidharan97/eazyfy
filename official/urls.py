@@ -44,7 +44,8 @@ urlpatterns = [
     # path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
 
     path('deductionsettings', views.deductionSettings, name="deductionsettings"),
-    path('questionfordeduction', views.questionForDeduction, name="questionfordeduction"),
+    path('questionfordeduction/<str:id>', views.questionForDeduction, name="questionfordeduction"),
+    path('questionid',views.questionId,name='questionid'),
 
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
