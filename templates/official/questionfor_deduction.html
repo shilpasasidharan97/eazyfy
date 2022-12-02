@@ -32,17 +32,13 @@
         <div class="card-body">
             <div class="basic-form">
                 <div class="mb-3 row">
-                    <label class="col-sm-3 col-form-label">Select Question</label>
+                    <label class="col-sm-3 col-form-label">Question type</label>
                     <div class="col-sm-9">
                         <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
-                        <select class="me-sm-2 default-select form-control wide" id="model" tabindex="null" onchange="Question()">
-                            <option selected="">Choose...</option>
-
-                            {% for ques in questions %}
-                            <option value="{{ ques.id }}">{{ ques.questions }}</option>
-                            {% endfor %}
-                            <option value="red">example Question</option>
-                            <option value="green">Example image question</option>
+                        <select class="me-sm-2 default-select form-control wide"tabindex="null"
+                            onchange="Question()" id="colorselector">
+                                <option value="objective">objective</option>
+                                <option value="imageType">image Type</option>
                         </select>
                         <span id="message"></span>
                     </div>
@@ -56,10 +52,25 @@
 
 
 
-<div class="row red box">
+<div class="row colors objective" id="objective">
     <div class="card">
         <div class="card-body">
             <div class="basic-form">
+                <div class="mb-3 row">
+                
+<label class="col-sm-3 col-form-label">Questions</label>
+
+<div class="col-sm-9">
+    <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
+    <select class="me-sm-2 default-select form-control wide"tabindex="null">
+        {% for ques in questions %}
+        <option value="{{ ques.id }}">{{ ques.questions }}</option>
+        {% endfor %}
+    </select>
+</div>
+
+               
+</div>
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Yes</label>
                     <div class="col-sm-9">
@@ -83,13 +94,15 @@
             </div>
         </div>
     </div>
-</div>
 
-
-<div class="row green box">
+<div class="row colors imageType" id="imageType">
     <div class="card">
         <div class="card-body">
             <div class="basic-form">
+                <div class="mb-3 row">
+                
+                </div>
+
                 <div class="mb-3 row">
                     <label class="col-sm-3 col-form-label">Select Question</label>
                     <div class="col-sm-9">
@@ -117,26 +130,47 @@
 
 
 
+
+
+
 <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
 <script>
-    $(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            if($(this).attr("value")=="red"){
-                $(".box").not(".red").hide();
-                $(".red").show();
-            }
-            else if($(this).attr("value")=="green"){
-                $(".box").not(".green").hide();
-                $(".green").show();
-            }
-            
-            else{
-                $(".box").hide();
-            }
-        });
-    }).change();
-});
-  </script>
+
+
+$(function() {
+    $('#colorselector').change(function(){
+      $('.colors').hide();
+      $('#' + $(this).val()).show();
+    });
+  });
+
+</script>
+
+
+
+
+
+
+<!-- 
+<script>
+    $(document).ready(function () {
+        $(".questionType").change(function () {
+            $(this).find("option:selected").each(function () {
+                if ($(this).attr("value") == "red") {
+                    $(".box").not(".red").hide();
+                    $(".red").show();
+                }
+                else if ($(this).attr("value") == "green") {
+                    $(".box").not(".green").hide();
+                    $(".green").show();
+                }
+
+                else {
+                    $(".box").hide();
+                }
+            });
+        }).change();
+    });
+</script> -->
 
 {% endblock %}

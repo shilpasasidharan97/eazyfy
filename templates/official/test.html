@@ -3,45 +3,37 @@
 {% load static %}
 
 
-<div>
-    <select>
-      <option>Choose Color</option>
-      <option value="red">Red</option>
-      <option value="green">Green</option>
-      <option value="blue">Blue</option>
-    </select>
+<div class="button dropdown"> 
+  <select id="colorselector">
+     <option value="red">Red</option>
+     <option value="yellow">Yellow</option>
+     <option value="blue">Blue</option>
+  </select>
+</div>
+
+<div class="output">
+  <div id="red" class="colors red">  “Good artists copy, great artists steal” Pablo Picasso</div>
+  <div id="yellow" class="colors yellow"> “Art is the lie that enables us to realize the truth” Pablo Picasso</div>
+  <div id="blue" class="colors blue"> 
+       <select name="" id="">
+                    <option value="a">hi</option>
+                    <option value="b">morning</option>
+                  </select>
   </div>
-  <div class="red box">You have selected <strong>red option</strong> so i am here</div>
-  <div class="green box">You have selected <strong>green option</strong> so i am here</div>
-  <div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
+</div>
+<script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+<script>
 
 
-  <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
-  <script>
-    $(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            if($(this).attr("value")=="red"){
-                $(".box").not(".red").hide();
-                $(".red").show();
-            }
-            else if($(this).attr("value")=="green"){
-                $(".box").not(".green").hide();
-                $(".green").show();
-            }
-            else if($(this).attr("value")=="blue"){
-                $(".box").not(".blue").hide();
-                $(".blue").show();
-            }
-            else{
-                $(".box").hide();
-            }
-        });
-    }).change();
-});
+$(function() {
+    $('#colorselector').change(function(){
+      $('.colors').hide();
+      $('#' + $(this).val()).show();
+    });
+  });
 
+</script>
 
-  </script>
 
 {% endblock %}
 
