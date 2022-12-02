@@ -29,11 +29,19 @@ def index(request):
     # payment_from_franchise = FranchiseWallet.objects.all()
     franchise = request.user.franchise
     payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by('date')
-    print(payment_from_admin)
+    pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by('name')
+    count = pickup_boy_list.count()
+    
+    total_amount = 0
+    for i in payment_from_admin:
+        total_amount += i.amount
+
     context = {
         "franchise":franchise,
         "is_index":True,
-        "payment_from_admin":payment_from_admin
+        "payment_from_admin":payment_from_admin,
+        "total_amount":total_amount,
+        "count":count
     }
     return render(request,"franchise/index.html",context)
 
@@ -66,7 +74,7 @@ def add_pickupboy(request):
         print(pickup_boy_list)
         context={
             "is_addpickupboy":True,
-            "pickup_boy_list" : pickup_boy_list
+            "pickup_boy_list" : pickup_boy_list,
         }
     return render(request,"franchise/add-pickupboy.html", context)
 
