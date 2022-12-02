@@ -417,7 +417,6 @@ def deductionSettings(request):
 
 def questionForDeduction(request):
     all_questions = QuestionOption.objects.all()
-    questions = all_questions.question.
     print(all_questions,'1234'*20)
     context = {
         "all_questions":all_questions,
