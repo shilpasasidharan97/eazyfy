@@ -271,8 +271,10 @@ def getspecdata(request,id):
 
 # BUY PHONE
 def buyPhone(request):
+    brand = Brand.objects.all()
     context = {
-        "is_buyphone":True
+        "is_buyphone":True,
+        "brand":brand
     }
     return render(request,"user/buyphone.html",context)  
 
