@@ -194,8 +194,6 @@ class SubDedection(models.Model):
     dedection_amount = models.IntegerField(null = True, blank = True)
 
 
-
-
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     wallet_amount = models.FloatField(null = True, blank = True, default=0)  
