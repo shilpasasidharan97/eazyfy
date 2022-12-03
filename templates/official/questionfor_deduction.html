@@ -1,0 +1,193 @@
+{% extends 'official/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+
+<div class="row page-titles mx-0">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4> Select questions</h4>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="mb-3 row">
+                <label class="col-sm-3 col-form-label">Selected Model</label>
+                <div class="col-sm-9">
+                    <p>:: {{brandmodel.name}}</p>
+                    <input type="int" id="bid" value="{{brandmodel.id}}" hidden>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div class="row">
+    <div class="card">
+        <div class="card-body">
+            <div class="basic-form">
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Question </label>
+                    <div class="col-sm-9">
+                        <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
+                        <select class="me-sm-2 default-select form-control wide" tabindex="null" id="questid"
+                            onchange="QuestionId()">
+                            <option>---- Select Option ------</option>
+                            {% for ques in questions %}
+                            <option value="{{ ques.id }}">{{ ques.questions }}</option>
+                            {% endfor %}
+                        </select>
+                        <span id="message"></span>
+                        <input type="text" id="anstype" hidden>
+                    </div>
+                    <div class="col-12">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="row colors objective" >
+    <div class="card">
+        <div class="card-body">
+            <div class="basic-form">
+                
+
+            </div>
+            <button type="button" class="btn btn-success">Upload</button>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="row colors imageType" >
+    <div class="card">
+        <div class="card-body">
+            <div class="basic-form" id="imageType">
+                <!-- <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Select Question</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control input-default " placeholder="input-default">
+                    </div>
+                </div> -->
+
+                
+            </div>
+            <button type="button" class="btn btn-success" onclick="QuestionSaving()">Upload</button>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+
+<script>
+    function QuestionId() {
+        var questionid = $("#questid").val()
+        var bid = $('#bid').val()
+        $.ajax({
+            url: "/official/questionid",
+            type: "GET",
+            data: {
+                "qstid": questionid,
+                "bid": bid,
+            },
+            success: function (responce) {
+                var qust_type = responce[0].type
+                if (qust_type == 'image_type'){
+                    $('#anstype').val('image_type')
+                    for (var i = 1; i < responce.length; i++) {
+                        var image_type = '<div class="mb-3 rowcount row">' +
+                            '<label class="col-sm-9 col-form-label" >'+ responce[i].image_description +'</label>' +
+                            '<input type="text" value="'+ responce[i].image_description_id +'" id="sub_pid'+ i +'" hidden>'+
+                            '<div class="col-sm-3">'+
+                            '<input type="text" class="form-control input-default" id="sub_ans'+ i +'">'+
+                            '</div>'+
+                            '</div>';
+                        $("#imageType").append(image_type);
+                    }
+                }
+                else{
+                    $('#anstype').val('Objective')
+                    var object_type = '<div class="mb-3  row">'+
+                        '<label class="col-sm-3 col-form-label">Yes</label>' +
+                        '<div class="col-sm-9">'+
+                        '<input type="text" class="form-control input-default " id="yes" placeholder="">'+
+                        '</div>'+
+                        '<div class="col-12">'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="mb-3 row">'+
+                        '<label class="col-sm-3 col-form-label">No</label>'+
+                        '<div class="col-sm-9">'+
+                        '<input type="text" class="form-control input-default" id="no" placeholder="">'+
+                        '</div>'+
+                        '<div class="col-12">'+
+                        '</div>'+
+                        '</div>';
+                    $("#imageType").append(object_type);
+                }   
+
+            }
+        })
+    }
+
+
+    function QuestionSaving(){
+        data = []
+        var rowcount = $('#imageType .rowcount').length;
+        questions_data = {
+            'modelid':$('#bid').val(),
+            'question':$('#questid').val(),
+            'type_question':$('#anstype').val(),
+        }
+        data.push(questions_data)
+        var question_types = $('#anstype').val()
+        if (question_types == 'image_type'){
+            for (var i=1; i <= rowcount; i++){
+                var obj = {
+                    "sub_pid":$('#sub_pid'+i).val(),
+                    "sub_ans":$('#sub_ans'+i).val(),
+                }
+                data.push(obj)
+            }
+        }
+        else{
+            var obj = {
+                "yes":$('#yes').val(),
+                "no":$('#no').val()
+            }
+            data.push(obj)
+        }
+        dt = {'data':data,},
+            dt['data'] = JSON.stringify(dt['data'])
+            $.ajax({
+                url:'/official/questionsaving',
+                type:"POST",
+                data:dt,
+                success:function(responce){
+                    window.location.reload()
+                }
+            })
+    }
+
+
+</script>
+
+
+
+
+
+
+
+{% endblock %}
