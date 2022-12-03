@@ -51,13 +51,9 @@
           <div class="wizard-header">
             <div class="row">
               <div class="col-xs-12">
-
                 <h3 class="section-title mb-20">Tell us few things about your device</h3>
-
                 <div class="pricebtn">
-
                   <div class="btn btn-outline" id="price" style="color: #5f009a;"></div>
-                  <!-- <p>Total:<span id="price"></span></p> -->
                 </div>
                 <hr>
               </div>
@@ -71,490 +67,82 @@
               <div class="row">
                 <div class="col-sm-12">
                   <div class="slide">
-                    <h5 class="questionhead">1. {{ questions.questions }} </h5>
-
-
+                    <h5 class="questionhead">{{forloop.counter}}. {{ questions.questions }} </h5>
                     <div class="row">
+                      {% if questions.questions.question_type == "Objective" %}
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
-                          <div class="question-button pt-2 px-3 ">
-                            
+                          <div class="question-button pt-2 px-3 ">                           
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" name="action{{questions.id}}" value="green" data-price="-200" class="form-check-input" >yes
+                              <input type="radio" name="" value="green" data-price="-200" class="form-check-input" >yes
                             </label>
-                          </div>
-              
-              
+                          </div>        
                         </div>
                       </div>
                       <div class="col-lg-4 col-sm-4 clearfix">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
-                          <div class="question-button pt-2 px-3">
-                            
+                          <div class="question-button pt-2 px-3">                          
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" name="action{{questions.id}}" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
+                              <input type="radio" name="" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
                           </div>
                         </div>
                       </div>
-              
+                      {% elif questions.questions.question_type == "image_type" %}
+                        {% for sub in questions.get_subqust %}
+                        <div class="col-sm-2 col-lg-3 col-6">
+                          <div class="quiz_card_area">
+                            <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                            <div class="single_quiz_card">
+                              <div class="quiz_card_content">
+                                <div class="quiz_card_icon">
+                                  <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
+                                </div><!-- end of quiz_card_media -->
+
+                                <div class="quiz_card_title">
+                                  <h3><i class="fa fa-check" aria-hidden="true"></i> {{sub.qst_option.image_description}}</h3>
+                                </div><!-- end of quiz_card_title -->
+                              </div><!-- end of quiz_card_content -->
+                            </div><!-- end of single_quiz_card -->
+                          </div><!-- end of quiz_card_area -->
+                        </div>
+                        {% endfor %}
+                    {% endif %}
                     </div>
-
-
                   </div>
                 </div>
               </div>
-              <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script>
-     $(document).ready(function(){ 
-    $("input[name=action{{questions.id}}]").change(function() {
-        var test = $(this).val();
-        $(".show-hide").hide();
-        $("#"+test).show();
-    }); 
-});
-</script>
               {% endfor %}
-
-
-
-
-
-
-
               <br>
             </div>
 
+            {% for img in image_questions %}
             <div class="step">
-              <h4>Select screen/body defects that are applicable!</h4>
+              <h4>{{img.questions}}</h4>
               <br>
               <div class="row">
-                <div class="col-sm-2 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
+                {% for sub in img.get_subqust %}
+                  <div class="col-sm-2 col-lg-3 col-6">
+                    <div class="quiz_card_area">
+                      <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                      <div class="single_quiz_card">
+                        <div class="quiz_card_content">
+                          <div class="quiz_card_icon">
+                            <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
+                          </div><!-- end of quiz_card_media -->
 
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Broken/scratch on device screen</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-
-
-                <div class="col-sm-2 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Dead spot/visible lines on screen</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-
-
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq3.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Scratch/Dent on device body</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-
-
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq4.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Device panel missing/broken</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-
-
+                          <div class="quiz_card_title">
+                            <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
+                          </div>
+                          <!-- end of quiz_card_title -->
+                        </div><!-- end of quiz_card_content -->
+                      </div><!-- end of single_quiz_card -->
+                    </div><!-- end of quiz_card_area -->
+                  </div><!-- end of col3  -->
+                {% endfor %}
               </div>
             </div>
+            {% endfor %}
 
-            <div class="step">
-              <h4>Front Camera not working</h4>
-              <br>
-              <div class="row">
-                <div class="col-sm-3 col-lg-3  col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q11.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Dead spot/visible lines on screen</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q12.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Back Camera not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q13.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Volume Button not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q14.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Finger Touch not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q15.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>WiFi not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q16.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Battery Faulty</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q17.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Speaker Faulty</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q18.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Power Button not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q19.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Charging Port not working
-                          </h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q20.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Face Sensor not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div>
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q21.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Silent Button not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/35.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Audio Receiver not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q22.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Camera Glass Broken</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q23.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Vibrator is not working </h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/2-2-2.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Bluetooth not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/38.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Microphone not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/3-3-3.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Proximity Sensor not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-
-                <!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q29.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Audio Jack not working</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-              </div>
-            </div>
-            <div class="step">
-              <h4>Do you have the following</h4>
-              <br>
-              <div class="row">
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/107.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Original Charger of Device</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <div class="col-sm-3 col-lg-3 col-6">
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/108.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i>Box with same IMEI</h3>
-                        </div><!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
-                <!-- <div class="col-sm-3 col-lg-3"col-6>
-                  <div class="quiz_card_area">
-                    <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                    <div class="single_quiz_card">
-                      <div class="quiz_card_content">
-                        <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/BROKEN.png' %}" alt="">
-                        </div>
-
-                        <div class="quiz_card_title">
-                          <h3><i class="fa fa-check" aria-hidden="true"></i> Dead spot/visible lines on screen</h3>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              </div>
-            </div>
 
             <div class="step row">
               <div class="form-check col-lg-4 box">
@@ -593,19 +181,6 @@
             </div>
           </div>
           <div class="wizard-footer">
-            <div class="row">
-              <!-- <div class="col-xs-6 pull-left block-center">
-                <button id="wizard-prev" style="display:none" type="button" class="btn btn-irv btn-irv-default">
-                  Previous
-                </button>
-              </div> -->
-
-              <!-- <div class="col-xs-6 pull-right block-center">
-                <button id="wizard-subm" style="display:none" type="button" class="btn btn-irv">
-                  Submit
-                </button> 
-              </div> -->
-            </div>
             <div class="col-xs-6 pull-right text-center">
               <button id="wizard-next" type="button" class="btn btn-irv">
                 CONTINUE
@@ -754,7 +329,16 @@
   calcPrice();
 </script>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script>
+     $(document).ready(function(){ 
+    $("input[name=action{{questions.id}}]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
+});
+</script>
 
 
 {% endblock %}

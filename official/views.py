@@ -456,11 +456,13 @@ def questionSaving(request):
     qst_obj = Questions.objects.get(id=question)
     model_obj = BrandModel.objects.get(id=model_pk)
     if type_question == 'image_type':
+        new_deduction = Dedection(questions=qst_obj,model=model_obj)
+        new_deduction.save()
         for i in data[1:]:
             sub_pid = int(i['sub_pid'])
             sub_ans = i['sub_ans']
             sub_obj = QuestionOption.objects.get(id=sub_pid)
-            new_suboption = SubDedection(questions=qst_obj, qst_option=sub_obj,model=model_obj,dedection_amount=sub_ans)
+            new_suboption = SubDedection(questions=qst_obj,deduction=new_deduction, qst_option=sub_obj,model=model_obj,dedection_amount=sub_ans)
             new_suboption.save()
     else:
         yes_value = data[1]['yes']
