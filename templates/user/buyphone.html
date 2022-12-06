@@ -15,20 +15,35 @@
                     <h3 class="section-title mb-20">Buy Phone </h3>
                 </div>
 
-
                 <div class="col-lg-4 text-end">
                     <div class="flwidth layout vertical list-search center-center">
+
+
                         <a class="flwidth">
                             <label for="list-search-input"
                                 class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
                                 <span id="search-icon" class="search-icon layout center-center">
                                     <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
                                 </span>
-                                <input type="search" id="pd_list_search_input" autocomplete="off"
-                                    placeholder="Search your Mobile Phone to sell"
-                                    class="font16-14 flwidth card mar-r10 search-input">
+
+
+                                <div class="input-search">
+                                    <input name="search" type="search" placeholder="search your brand"
+                                        class="font16-14 flwidth card mar-r10 search-input live-search">
+                                    <div class="autocom-box">
+
+                                    </div>
+                                </div>
+
+
+
                             </label>
                         </a>
+
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -790,6 +805,62 @@
    
 </main>
 
+<script>
+    let $ = document
+    let liContainer = $.querySelector(".autocom-box")
+    let inputElem = $.querySelector(".live-search")
+    let searchInput = $.querySelector(".input-search")
+    const data = '{{data}}'
+    console.log(data[0])
 
+    let suggestions = [
+        {% for i in brand %}
+    `<a href = "{% url 'user:comingsoon'%}">  </a>`,
+        {% endfor %}
+    
+  ];
+
+    inputElem.addEventListener("keyup", function () {
+        let inputValue = inputElem.value
+        if (inputValue) {
+            searchInput.classList.add("active")
+            let filteredWord = suggestions.filter(function (word) {
+                return word.toLowerCase().includes(inputValue.toLowerCase())
+                // return word.toLowerCase().startsWith(inputValue.toLowerCase())
+            })
+
+            suggestionWordsGenerator(filteredWord)
+
+        } else {
+            searchInput.classList.remove("active")
+        }
+
+    })
+
+    let customListItem
+
+    function suggestionWordsGenerator(wordArray) {
+        let suggestionWord = wordArray.map(function (word) {
+            return "<li>" + word + "</li>"
+        }).join("")
+
+        if (suggestionWord) {
+            liContainer.innerHTML = suggestionWord
+        } else {
+            liContainer.innerHTML = "<li>" + inputElem.value + "</li>"
+        }
+        Select()
+    }
+
+    function Select() {
+        let allListItems = liContainer.querySelectorAll("li")
+        allListItems.forEach(function (wordItem) {
+            wordItem.addEventListener("click", function (e) {
+                inputElem.value = e.target.textContent
+                searchInput.classList.remove("active")
+            })
+        })
+    }
+</script>
 
 {% endblock %}

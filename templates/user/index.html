@@ -145,7 +145,7 @@
                         </div>
                         {% endcomment %}
 
-                        {% for i in banner %}
+                        {% for slide in banner %}
                         <div class="single-hero-slider single-animation-wrap">
                             <div class="container">
                                 <div class="slider-1-height-3 slider-animated-1">
@@ -158,7 +158,7 @@
                                             Sell phone </a>
                                     </div> -->
                                     <div class="slider-img">
-                                        <img src="{{ i.banner.url }}" alt="">
+                                        <img src="{{ slide.banner.url }}" alt="">
                                     </div>
                                 </div>
                             </div>
@@ -333,11 +333,12 @@
 <section class="banners mb-15 exchange-card">
     <div class="container">
         <div class="row">
-            {% for j in offer %}
+
+            {% for offers in offer %}
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
                     <a href="">
-                        <img class="offer2" src="{{j.offer.url }}" alt="">
+                        <img class="offer2" src="{{offers.offer.url }}" alt="">
                     </a>
                 </div>
             </div>
@@ -371,58 +372,17 @@
         <div class="carausel-6-columns-cover position-relative">
             <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
             <div class="carausel-6-columns" id="carausel-6-columns">
-                {% for k in card %}
+                {% for brands in brand %}
                 <div class="card-1">
                     <figure class=" img-hover-scale overflow-hidden">
-                        <a href="shops"><img src="{{k.card.url}}" alt=""></a>
+                        <a href="{% url 'user:shops' brands.id %}">
+                            <img src="{{brands.image.url}}" alt="">
+                        </a>
                     </figure>
                     <!-- <h5><a href="#">T-Shirt</a></h5> -->
                 </div>
                 {% endfor %}
-                {% comment %}
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Bags</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Sandan</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Scarf Cap</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Shoes</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Pillowcase</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Jumpsuits</a></h5> -->
-                </div>
-                <div class="card-1">
-                    <figure class=" img-hover-scale overflow-hidden">
-                        <a href="#"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
-                    </figure>
-                    <!-- <h5><a href="#">Hats</a></h5> -->
-                </div>
-                {% endcomment %}
+               
             </div>
         </div>
     </div>

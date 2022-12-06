@@ -1,3 +1,4 @@
+import json
 from django.shortcuts import render, redirect
 from django.contrib.auth import get_user_model
 from django.contrib.auth import authenticate, login
@@ -9,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import datetime
 from django.contrib import messages
-
+from user.helpers import payment_mail
 
 # Create your views here.
 
@@ -87,12 +88,9 @@ def franchise(request):
     return render(request,'official/franchise.html',context)
     
 
-
 # edit franchise
 def EditFranchise(request,id):
-    print(id)
     franchise=request.user.franchise
-    print(franchise)
     franchise = Franchise.objects.get(id=id)
     context = {
         "is_editprofile": True,
@@ -146,7 +144,6 @@ def viewFranchiseDetails(request,id):
 
 
 def DeleteFranchise(request,id):
-    print("#"*20)
     Franchise.objects.get(id=id).delete()
     return redirect('/official/franchise')
 
@@ -174,7 +171,6 @@ def brand(request):
 # edit brand
 @csrf_exempt
 def getbranddata(request,id):
-    print(id)
     details = Brand.objects.get(id=id)
     data = {
         "name": details.name,
@@ -188,7 +184,6 @@ def editBrand(request,id):
     newId = str(id)
     brand_name = request.POST['bname'+newId]
     brand_photo = request.FILES.get("bphoto"+newId,"notfount")
-    # print(brand_photo,"$"*10)
     Brand.objects.filter(id=id).update(name=brand_name)
     if brand_photo != "notfount":
         brsnd=Brand.objects.get(id=id)
@@ -198,7 +193,6 @@ def editBrand(request,id):
 
 
 def DeleteBrand(request,id):
-    print("#"*20)
     Brand.objects.get(id=id).delete()
     return redirect('/official/brand')
 
@@ -222,7 +216,6 @@ def Model(request,id):
 
 def getModelData(request,id):
     getmodel = BrandModel.objects.get(id=id)
-    # print(getmodel)
     data = {
         # "fkid":getmodel.brand.id,
         "mphoto":getmodel.image.url,
@@ -231,9 +224,7 @@ def getModelData(request,id):
     return JsonResponse(data)
 
 
-
 def editModel(request,id):
-    print(id)
     new_id = str(id)
     model_name = request.POST['mname'+new_id]
     model_photo = request.FILES.get('mphoto'+new_id, "not found" )
@@ -247,43 +238,9 @@ def editModel(request,id):
     return redirect('/official/model/'+new_id)
 
 
-# shifa edit spec
-
-def getModelspec(request,id):
-    getModelspec = ModelSpecifications.objects.get(id=id)
-    # print(getModelspec)
-    data = {
-        "miram":getModelspec.RAM,
-        "mistore":getModelspec.internal_storage,
-        "miprice":getModelspec.price,
-        "id":getModelspec.id,
-    }
-    return JsonResponse(data)
-
-
-@csrf_exempt
-def editSpec(request,id):
-    miram = request.POST['miram']
-    mistore = request.POST['mistore']
-    miprice = request.POST['miprice']
-    ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
-    data ={
-        "ss":"csac",
-    }
-    return JsonResponse(data)
-
-def Deletespec(request,id):
-    print('worked')
-    ModelSpecifications.objects.get(id=id).delete()
-    data = {
-        "deleted":"deleted"
-    }
-    return JsonResponse(data)
-
+# modelspecification adding
 def modelSpecification(request,id):
-    print(id)
     brand = BrandModel.objects.get(brand__id=id)
-    print(brand)
     models_spec = ModelSpecifications.objects.filter(Brand_model=brand)
     if request.method == 'POST':
         brand = brand
@@ -302,6 +259,39 @@ def modelSpecification(request,id):
     return render(request,'official/specification.html', context)
 
 
+# shifa edit spec
+# def getModelspec(request,id):
+#     getModelspec = ModelSpecifications.objects.get(id=id)
+#     # print(getModelspec)
+#     data = {
+#         "miram":getModelspec.RAM,
+#         "mistore":getModelspec.internal_storage,
+#         "miprice":getModelspec.price,
+#         "id":getModelspec.id,
+#     }
+#     return JsonResponse(data)
+
+
+# @csrf_exempt
+# def editSpec(request,id):
+#     miram = request.POST['miram']
+#     mistore = request.POST['mistore']
+#     miprice = request.POST['miprice']
+#     ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
+#     data ={
+#         "ss":"csac",
+#     }
+#     return JsonResponse(data)
+
+# def Deletespec(request,id):
+#     print('worked')
+#     ModelSpecifications.objects.get(id=id).delete()
+#     data = {
+#         "deleted":"deleted"
+#     }
+#     return JsonResponse(data)
+
+
 # ALL QUESTION
 def questions(request):
     question =  Questions.objects.all()
@@ -309,8 +299,6 @@ def questions(request):
     image_type = QuestionOption.objects.filter(question__question_type='image_type')
     object_type = Questions.objects.filter(question_type='Objective')
     device_type = DeviceType.objects.all()
-
-
     context = {
         "is_questions":True,
         "device_type":device_type,
@@ -318,8 +306,6 @@ def questions(request):
         "objective_count":question.count(),
         "subQuestion_count":subQuestion.count(),
         "subQuestion" : subQuestion,
-
-
 
         "image_type":image_type,
         "image_type_count":image_type.count(),
@@ -331,9 +317,10 @@ def questions(request):
 
 # QUESTION ADDING
 def questionAdding(request):
+    models = BrandModel.objects.all()
     qst = Questions.objects.all().count() 
     qstcount = qst + 1 
-    models = BrandModel.objects.all()
+    
     context = {
         "qstcount":qstcount,
         "models":models
@@ -341,23 +328,16 @@ def questionAdding(request):
     return render(request,'official/questions_adding.html',context)
 
 
+
+
+
 @csrf_exempt
 def questsave(request):
-    question_data = request.POST['question']
-    dedection_yes = request.POST['yes']
-    dedection_no = request.POST['no']
-    model = request.POST['model']
-    print("333333333333" ,model)
+    question = request.POST['qst']
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    model = BrandModel.objects.get(id=model)
-    new_question = Questions(questions=question_data, question_type=qst_type,device_type=device_type,model_question=model)
+    new_question = Questions(questions=question, question_type=qst_type,device_type=device_type)
     new_question.save()
-    
-    dedection = Dedection(dedection_amount_yes=dedection_yes,dedection_amount_no=dedection_no,questions=new_question,model=model)
-
-    dedection.save()
-    
     qst_count = Questions.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
     data = {
@@ -368,7 +348,6 @@ def questsave(request):
 
 @csrf_exempt
 def subquestionFirst(request):
-    print("#"*20)
     question = request.POST['qst']
     qst_type = "image_type"
     device_type = DeviceType.objects.get(device_type="Mobile")
@@ -405,9 +384,6 @@ def subquestionPage(request,id):
 
 @csrf_exempt
 def suquestionAddingData(request):
-    print("#"*20)
-    print(request.POST)
-
     question = request.POST['disc']
     qstpk = request.POST['qstpk']
     img = request.POST.get('imgk')
@@ -415,6 +391,104 @@ def suquestionAddingData(request):
         "msg":"msg",
     }
     return JsonResponse(data)
+
+
+# deduction Amount setting
+def deductionSettings(request):
+    all_barnd = BrandModel.objects.all()
+    context = {
+        "models":all_barnd,
+    }
+    return render(request, 'official/deduction.html',context)
+
+
+def questionForDeduction(request,id):
+    all_questions = QuestionOption.objects.all()
+    brandmodel = BrandModel.objects.get(id=id)
+
+    questions = Questions.objects.all()
+    context = {
+        "all_questions":all_questions,
+        "questions":questions,
+        "brandmodel":brandmodel,
+    }
+    return render(request,'official/questionfor_deduction.html', context)
+
+
+def questionId(request):
+    quset =request.GET['qstid']
+    bid = request.GET['bid']
+    question = Questions.objects.get(id=quset)
+    question_type = question.question_type
+    data = []
+    if question_type == 'image_type':
+        qust_type = {
+            "type":"image_type",
+        }
+        data.append(qust_type)
+        question_option = QuestionOption.objects.filter(question__question_type='image_type',question=question)
+        # print(question_option,'@'*20)
+        
+        for i in question_option:
+            data1 = {
+                'image_description':i.image_description,
+                "image_description_id":i.id,
+                'image':i.image_upload.url,
+            }
+            data.append(data1)
+            # print(data)
+        return JsonResponse(data,safe=False)
+    else:
+        qust_type = {
+            "type":"Objective",
+        }
+        data.append(qust_type)
+        return JsonResponse(data,safe=False)
+
+@csrf_exempt
+def questionSaving(request):
+    data = json.loads(request.POST['data'])
+    qst_details = data[0]
+    model_pk = qst_details.get('modelid')
+    question = qst_details.get('question')
+    type_question = qst_details.get('type_question')
+
+    qst_obj = Questions.objects.get(id=question)
+    model_obj = BrandModel.objects.get(id=model_pk)
+    if type_question == 'image_type':
+        new_deduction = Dedection(questions=qst_obj,model=model_obj)
+        new_deduction.save()
+        for i in data[1:]:
+            sub_pid = int(i['sub_pid'])
+            sub_ans = i['sub_ans']
+            sub_obj = QuestionOption.objects.get(id=sub_pid)
+            new_suboption = SubDedection(questions=qst_obj,deduction=new_deduction, qst_option=sub_obj,model=model_obj,dedection_amount=sub_ans)
+            new_suboption.save()
+    else:
+        yes_value = data[1]['yes']
+        no_value = data[1]['no']
+        new_option = Dedection(questions=qst_obj,model=model_obj,dedection_amount_yes=yes_value,dedection_amount_no=no_value)
+        new_option.save()
+
+    return JsonResponse({'sss':'sss'})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def test(request):
+    return render(request,'official/test.html')
+
 
 
 def userRequestList(request):
@@ -461,7 +535,6 @@ def franchiseWallet(request):
 
 def viewPayment(request,id):
     details = FranchiseWallet.objects.get(id=id)
-    print(details)
     data = {
         "id":details.franchise.id,       
         "franchise_id":details.franchise.franchise_id,
@@ -481,11 +554,10 @@ def savePayment(request,id):
     franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
     franchise_balance = franchisewallet.wallet_amount
     balance_amount = float(paid_amount)+float(franchise_balance)
-    print(balance_amount)
     franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
     record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
     messages.success(request, 'success')
-    print(record)
+    payment_mail(franchisewallet.id)
     record.save()
     data = {
         "sss":"sss",
@@ -501,3 +573,38 @@ def profile(request):
 def logout_view(request):
     logout(request)
     return redirect('/official/loginpage')
+
+
+def settings(request):
+    offerImage = Offer.objects.all()
+    bannerImage = BannerImage.objects.all()
+    print(bannerImage)
+    if request.method == 'POST':
+        banner = request.FILES.get('banner')
+        bannerObject = BannerImage(banner=banner)
+        print(bannerObject)
+        bannerObject.save()
+    context = {
+        "bannerImage":bannerImage,
+        "offerImage":offerImage
+    }
+    
+    return render(request,'official/settings.html',context)
+
+def DeleteBanner(request,id):
+    print("#"*20)
+    BannerImage.objects.get(id=id).delete()
+    return redirect('/official/settings')
+
+
+def offers(request):
+    if request.method == 'POST':
+        offer = request.FILES.get('offers')
+        phoneOffer = Offer(offer=offer)
+        phoneOffer.save()
+    return redirect('/official/settings')
+    
+def DeleteOffer(request,id):
+    print("#"*20)
+    Offer.objects.get(id=id).delete()
+    return redirect('/official/settings')    
