@@ -3,6 +3,7 @@ from official.models import *
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from eazyfy.decorators import auth_pickupboy
+import razorpay
 
 
 # Create your views here.
@@ -104,8 +105,16 @@ def requote(request):
 def requote_selfy(request):
     return render(request,"pickup-boy/requote-selfy.html")
 
-@auth_pickupboy
-@login_required(login_url='/official/loginpage')
+# @auth_pickupboy
+# @login_required(login_url='/official/loginpage')
 def checkout(request):
+    if request.method == "POST":
+        name = request.POST.get('name')
+        amount = int(request.POST.get('amount')) * 100
+        client = razorpay.Client(auth = ("rzp_test_bKtMj90QOs6Af2", "vNLvdBnrIGSHG2C4BiWoDGvd"))
+        payment = client.order.create({'amount':amount, 'currency':'INR', 'payment_capture':'1'})
+        print(payment)
+        coffe = OrderPayment(name=name, amound=amount, paiment_id=payment['id'])
+        return render(request,'pickup-boy/checkout.html', {'payment':payment})
     return render(request,"pickup-boy/checkout.html")
 
