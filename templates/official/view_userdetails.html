@@ -2,6 +2,7 @@
 {% block content %}
 {% load static %}
 
+<br><br>
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
@@ -257,8 +258,12 @@
                                             <li>Question 1</li>
                                             <li>Question 2</li>
                                         </ul>
-                                        
-                                        
+                                        <br>
+                                        <form method="POST" action="">
+                                            {% csrf_token %}
+                                            <button class="btn btn-outline btn btn-success mx-2" type="submit" name="action" value="accept">Accept</button>
+                                            <button class="btn btn-outline btn btn-danger mx-2" type="submit" name="action" value="reject">Reject</button>
+                                            </form>
                                         
                                         
                                         </div>
