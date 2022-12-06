@@ -82,7 +82,8 @@ def franchise(request):
     franchise_list = Franchise.objects.all().order_by('name')
     context={
         "is_franchise":True,
-        "franchise_list" : franchise_list 
+        "franchise_list" : franchise_list ,
+        
     }
     return render(request,'official/franchise.html',context)
     

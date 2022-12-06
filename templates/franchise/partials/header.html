@@ -115,7 +115,11 @@
                     
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                            {% if franchise_obj.photo %}
                             <img src="{{franchise.photo.url}}" width="20" alt="" />
+                            {% else %}
+                            <img alt="image" width="50" src="{% static 'user/imgs/icon/user.jpg' %}">
+                            {% endif %}
                             <div class="header-info">
                                 <span>{{franchise|upper}}</span>
                                 <small>Franchise</small>

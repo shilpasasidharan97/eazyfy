@@ -61,7 +61,11 @@
                         <p class="text-primary mb-1">FRANCHISEID : {{ franchise_list.franchise_id }}</p>
                         <div class="d-flex align-items-center">
                             <div class="project-media">
+                                {% if franchise_list.photo %}
                                 <img src="{{ franchise_list.photo.url }}" alt="">
+                                {% else %}
+                                <img alt="image" width="50" src="../../../static/user/imgs/icon/user.jpg">
+                                {% endif %}
                             </div>
                             <div class="ms-2">
                                 <h5 class="mb-0 pt-1 font-w50 text-black">{{ franchise_list.name }}</h5>
@@ -185,11 +189,13 @@
                                 </div>
                             </div>
                             <div class="mb-3 row">
+                                
                                 <label class="col-lg-4 col-form-label" for="Fphoto">Franchise Photo
                                     <span class="text-danger">*</span>
                                 </label>
+                               
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control" id="Fphoto"  required
+                                    <input type="file" class="form-control" id="Fphoto"  
                                         name="photo">
                                     <div class="invalid-feedback">
                                         Upload Photo ..
