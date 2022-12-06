@@ -239,10 +239,13 @@ def shops(request,id):
 def question(request,id):
     # questions = Questions.objects.get(id=id)
     spec = ModelSpecifications.objects.get(id=id)
-    questions = Questions.objects.filter(model_question=spec.Brand_model)
-    print(questions)
+    # questions = Questions.objects.filter(model_question=spec.Brand_model)
+    objective_questions = Dedection.objects.filter(model=spec.Brand_model,questions__question_type="Objective")
+    # image_questions = SubDedection.objects.select_related('questions').filter(model=spec.Brand_model).values('questions').distinct()
+    image_questions = Dedection.objects.filter(model=spec.Brand_model,questions__question_type="image_type")
     context = {
-        "questions":questions
+        "questions":objective_questions,
+        "image_questions":image_questions,
     }
     return render(request,"user/question.html",context)  
 
