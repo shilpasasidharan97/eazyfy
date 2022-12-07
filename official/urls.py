@@ -44,7 +44,9 @@ urlpatterns = [
     # path('suquestionAddingdata', views.suquestionAddingData, name="suquestionAddingdata"),
 
     path('deductionsettings', views.deductionSettings, name="deductionsettings"),
-    path('questionfordeduction', views.questionForDeduction, name="questionfordeduction"),
+    path('questionfordeduction/<str:id>', views.questionForDeduction, name="questionfordeduction"),
+    path('questionid',views.questionId,name='questionid'),
+    path('questionsaving',views.questionSaving,name='questionsaving'),
 
 
     path('userrequestlist',views.userRequestList,name='userrequestlist'),
@@ -61,5 +63,8 @@ urlpatterns = [
 
     path('profile',views.profile,name='profile'),
     path('logout_view',views.logout_view,name='logout_view'),
-     
+    path('settings',views.settings,name='settings'),
+    path('offers',views.offers,name='offers'),
+    path('DeleteBanner/<int:id>',views.DeleteBanner, name='DeleteBanner'), 
+     path('DeleteOffer/<int:id>',views.DeleteOffer, name='DeleteOffer'), 
 ]

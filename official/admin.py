@@ -67,8 +67,8 @@ admin.site.register(QuestionOption, QuestionOptionAdmin)
 
 
 class DedectionAdmin(admin.ModelAdmin):
-    list_display = ('questions','model','spec','dedection_amount_yes','dedection_amount_no' )
-    search_fields = ('questions','model','spec','dedection_amount_yes','dedection_amount_no')
+    list_display = ('questions','model','dedection_amount_yes','dedection_amount_no' )
+    search_fields = ('questions','model','dedection_amount_yes','dedection_amount_no')
 
 
 admin.site.register(Dedection, DedectionAdmin)
@@ -99,15 +99,19 @@ class AdminWalletAdmin(admin.ModelAdmin):
 admin.site.register(AdminWallet, AdminWalletAdmin)
 
  
-
-
-
 class AdminSendRecordAdmin(admin.ModelAdmin):
     list_display = ('franchise','amount','date')
     search_fields = ('franchise','amount','date')
 
-
 admin.site.register(AdminSendRecord, AdminSendRecordAdmin)
+
+
+class SubDedectionAdmin(admin.ModelAdmin):
+    list_display = ('questions','model','dedection_amount')
+    search_fields = ('questions','model','dedection_amount')
+
+
+admin.site.register(SubDedection, SubDedectionAdmin)
 
 admin.site.register(BannerImage)
 admin.site.register(Offer)

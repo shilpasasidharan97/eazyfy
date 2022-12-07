@@ -21,9 +21,6 @@ urlpatterns = [
     path('login',views.customerlogin,name="login"),
 
 
-  
-    
-
     path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),

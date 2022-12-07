@@ -177,30 +177,21 @@ class QuestionOption(models.Model):
 
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
-    spec = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE,null = True, blank = True)
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
     # dedection_amount = models.IntegerField(null = True, blank = True)
     dedection_amount_yes = models.IntegerField(null = True, blank = True)
     dedection_amount_no = models.IntegerField(null = True, blank = True)
 
+    def get_subqust(self):
+        return SubDedection.objects.filter(deduction=self) 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+class SubDedection(models.Model):
+    questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
+    qst_option = models.ForeignKey(QuestionOption, on_delete = models.CASCADE,null = True, blank = True)
+    deduction = models.ForeignKey(Dedection, on_delete=models.CASCADE,null=True)
+    model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
+    dedection_amount = models.IntegerField(null = True, blank = True)
 
 
 class FranchiseWallet(models.Model):
