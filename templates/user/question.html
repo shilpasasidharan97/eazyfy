@@ -3,8 +3,6 @@
 {% block content %}
 
 <style>
-  .question-button {}
-
   .box {
     /* width: 200px; */
     border: 1px solid;
@@ -75,7 +73,7 @@
                         <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
                           <div class="question-button pt-2 px-3 ">                           
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}" value="green" data-price="-200" class="form-check-input" >yes
+                              <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}" value="green" data-price="{{ questions.dedection_amount_yes }}" class="form-check-input" >yes
                             </label>
                           </div>        
                         </div>
@@ -84,7 +82,7 @@
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
                           <div class="question-button pt-2 px-3">                          
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}" value="red" data-price="-50" class="form-check-input">NO</label>
+                              <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}" value="red" data-price="{{ questions.dedection_amount_no }}" class="form-check-input">NO</label>
                           </div>
                         </div>
                       </div>
@@ -147,7 +145,6 @@
              
             </div>
             {% endfor %}
-
 
             <div class="step row">
               <div class="form-check col-lg-4 box">

@@ -31,6 +31,7 @@ urlpatterns = [
     path('getspecdata/<int:id>',views.getspecdata,name='getspecdata'),
 
     path('buy_phone',views.buyPhone,name='buyphone'),
+    path('order-confirm',views.orderConfirm,name='order-confirm'),
 
     path('repair_phone',views.repairPhone,name='repair_phone'),
     path('payment',views.payment,name='payment'),

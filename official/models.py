@@ -148,6 +148,7 @@ class DeviceType(models.Model):
     def __str__(self):
         return str(self.device_type)
 
+#QUESTION ADDING
 
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
@@ -162,6 +163,7 @@ class Questions(models.Model):
     def __str__(self):
         return str(self.questions)
 
+# IMAGE TYPE QUESTIONS
 
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
@@ -175,6 +177,8 @@ class QuestionOption(models.Model):
         return str(self.image_description)
 
 
+# OBJECTIVE TYPE DEDECTION
+
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
@@ -185,6 +189,7 @@ class Dedection(models.Model):
     def get_subqust(self):
         return SubDedection.objects.filter(deduction=self) 
 
+# IMAGE TYPE DEDECTION
 
 class SubDedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
@@ -194,17 +199,23 @@ class SubDedection(models.Model):
     dedection_amount = models.IntegerField(null = True, blank = True)
 
 
+
+# FRANCHISE WALLET
+
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     wallet_amount = models.FloatField(null = True, blank = True, default=0)  
     last_paid_amount = models.FloatField(null = True, blank = True, default=0)
     date = models.DateTimeField(auto_now_add=True)
 
+# ADMIN WALLET
 
 class AdminWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True, default=0)  
     date = models.DateTimeField(auto_now_add=True)
+
+
 
 class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -212,7 +223,7 @@ class AdminSendRecord(models.Model):
     date = models.DateField()
 
 
-
+# PICKUP BOY PAYMENT
 
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)

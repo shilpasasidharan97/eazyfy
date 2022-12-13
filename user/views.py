@@ -250,6 +250,11 @@ def question(request,id):
     return render(request,"user/question.html",context)  
 
 
+#ORDER CONFIRM 
+
+def orderConfirm(request):
+    return render(request,"user/order-confirm.html")
+
 # MODEL SPECIFICATIONS
 def spec(request,id):
     
