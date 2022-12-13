@@ -126,7 +126,7 @@ class BrandModel(models.Model):
         return str(self.name)
 
 
-class ModelSpecifications(models.Model):
+class ModelSpecifications(models.Model):    
     Brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
     color = models.CharField(max_length=30, null=True)
