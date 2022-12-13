@@ -155,7 +155,7 @@ def resendOtp(request , token):
 
 # DASHBOARD
 def index(request):
-    banner = BannerImage.objects.all()
+    # banner = BannerImage.objects.all()
     offer = Offer.objects.all()
     brand = Brand.objects.all()
     user = request.user
@@ -163,7 +163,7 @@ def index(request):
     context = {
         "is_index" : True,
         "user":user,
-        "banner":banner,
+        # "banner":banner,
         "offer":offer,
         "brand":brand
 
