@@ -148,6 +148,20 @@ class DeviceType(models.Model):
     def __str__(self):
         return str(self.device_type)
 
+
+# class Enquiry(models.Model):
+#     device = models.ForeignKey(ModelSpecifications
+#     status = models.CharField(max_length=180, choices=())
+
+#     def get_questions(self):
+#         return EnquiryQuestion.objects.filter(parent=self)
+
+
+# class EnquiryQuestion()
+#     parent = fk(Enquiry)
+#     question = models.CharField(max_length=180)
+
+
 #QUESTION ADDING
 
 class Questions(models.Model):
@@ -197,6 +211,13 @@ class SubDedection(models.Model):
     deduction = models.ForeignKey(Dedection, on_delete=models.CASCADE,null=True)
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
     dedection_amount = models.IntegerField(null = True, blank = True)
+
+
+# class QuetionAnswer(models.Model):
+#     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
+#     user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
+#     objective_qustion = models.BooleanField(null=True,blank=True)
+
 
 
 

@@ -329,9 +329,6 @@ def questionAdding(request):
     return render(request,'official/questions_adding.html',context)
 
 
-
-
-
 @csrf_exempt
 def questsave(request):
     question = request.POST['qst']

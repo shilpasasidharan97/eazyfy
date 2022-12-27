@@ -242,12 +242,17 @@ def question(request,id):
     # questions = Questions.objects.filter(model_question=spec.Brand_model)
     objective_questions = Dedection.objects.filter(model=spec.Brand_model,questions__question_type="Objective")
     # image_questions = SubDedection.objects.select_related('questions').filter(model=spec.Brand_model).values('questions').distinct()
-    image_questions = Dedection.objects.filter(model=spec.Brand_model,questions__question_type="image_type")
+    # image_questions = Dedection.objects.filter(model=spec.Brand_model,questions__question_type="image_type")
+    
     context = {
         "questions":objective_questions,
-        "image_questions":image_questions,
+        # "image_questions":image_questions,
     }
     return render(request,"user/question.html",context)  
+
+def imagetype(request):
+    return render(request,"user/imagetype.html")
+
 
 
 #ORDER CONFIRM 

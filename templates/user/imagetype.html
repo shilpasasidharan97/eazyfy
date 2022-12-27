@@ -51,35 +51,35 @@
         <hr>
       </div>
     </div>
-    {% for questions in questions %}
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="slide rowcount" >
-          <h5 class="questionhead" >{{forloop.counter}}. {{ questions.questions }} </h5>
-          <input type="text" id="qst{{forloop.counter}}" hidden value="{{ questions.questions.id }}">
-          <div class="row">
-            {% if questions.questions.question_type == "Objective" %}
-            <div class="col-lg-4 col-sm-4">
-              <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
-                <div class="question-button pt-2 px-3 ">                           
-                  <label class="form-check-label" for="customCheckBox2">
-                    <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}" value="green" data-price="{{ questions.dedection_amount_yes }}" class="form-check-input" >yes
-                  </label>
-                </div>        
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-4 clearfix">
-              <div class="form-check custom-checkbox box mb-3 checkbox-success box">
-                <div class="question-button pt-2 px-3">                          
-                  <label class="form-check-label" for="customCheckBox2">
-                    <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}" value="red" data-price="{{ questions.dedection_amount_no }}" class="form-check-input">NO</label>
-                </div>
-              </div>
-            </div>
-            {% endif %}
-          </div>
-        </div>
+    {% for img in image_questions %}
+    <div class="step">
+      <h4> {{img.questions}}</h4>
+      <input type="text" id="question{{forloop.counter}}" value="{{img.questions}}">
+      <br>
+      <h2>{{forloop.counter}}</h2>
+      <div class="row">
+        {% for sub in img.get_subqust %}
+          <div class="col-sm-2 col-lg-3 col-6" id="multiple">
+            <div class="quiz_card_area">
+              <input class="quiz_checkbox" type="checkbox" id="inputid{{forloop.counter}}" value="2" />
+              <div class="single_quiz_card">
+                <div class="quiz_card_content">
+                  <div class="quiz_card_icon">
+                    <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
+                  </div><!-- end of quiz_card_media -->
+
+                  <div class="quiz_card_title imgrowcount">
+                    <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
+                  </div>
+                  <h2>{{forloop.counter}}</h2>
+                  <!-- end of quiz_card_title -->
+                </div><!-- end of quiz_card_content -->
+              </div><!-- end of single_quiz_card -->
+            </div><!-- end of quiz_card_area -->
+          </div><!-- end of col3  -->
+        {% endfor %}
       </div>
+     
     </div>
     {% endfor %}
 
@@ -93,6 +93,13 @@
     </div>
     </div>
   </div>
+
+
+
+
+
+
+
 
 
 
@@ -166,44 +173,9 @@
   </div>
 </div>
 
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
-<!-- <script>
-  function UserAnswer(){
-    data = []
-  
-    var rowcount = $('#objectivetype .rowcount').length
-    yes_no = []
-    for (i=1; i<=rowcount; i++){
-      var radio = $('input[name=answer'+ i +']');
-      for (var j=0; 1<radio.length; j++){
-        if (radio[j].checked){
-          var checked_answer = $(radio[j]).val()
-          break
-        }
-      }
-      var yesno_obj = {
-        "qst":$('#qst'+i).val(),
-        "yesno":checked_answer,
-      }
-      alert(JSON.stringify(yesno_obj,null,4))
-      yes_no.push(yesno_obj)
-    }
-
-    // multiple = []
-    // var imgrowcount = $('#multiple .imgrowcount').length
-    // alert(imgrowcount)
-    // for (var k=0; )
-    
-
-    
-
-  }
-</script> -->
-
-
 <!-- 
 <script>
   function calcPrice() {
@@ -217,8 +189,8 @@
   $("input[type=radio]").on("change", calcPrice);
   calcPrice();
 </script> -->
-<!-- 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <!-- <script>
      $(document).ready(function(){ 
     $("input[name=action{{questions.id}}]").change(function() {

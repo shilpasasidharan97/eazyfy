@@ -34,6 +34,9 @@ urlpatterns = [
     path('order-confirm',views.orderConfirm,name='order-confirm'),
 
     path('repair_phone',views.repairPhone,name='repair_phone'),
+
+    path('imagetype',views.imagetype,name='imagetype'),
+
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
     path('findnewgadget',views.findnewgadget,name='findnewgadget'),
