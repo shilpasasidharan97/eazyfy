@@ -20,8 +20,11 @@
     <meta property="og:image" content="../zenix.dexignzone.com/django/social-image.png" />
     <meta name="format-detection" content="telephone=no">
     <title>EAZYFY Admin</title>
-
+    
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'official/images/eazyfyfav.png' %}">
     <!-- ----- StyleSheet ----- -->
+
+    <link rel="stylesheet" href="{% static 'official/vendor/datatables/css/jquery.dataTables.min.css' %}" >
     <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon.png">
     <link rel="stylesheet" href="{% static 'official/vendor/chartist/css/chartist.min.css' %}">
     <link rel="stylesheet" href="{% static 'official/vendor/owl-carousel/owl.carousel.css' %}">
@@ -699,6 +702,8 @@
     <script src="{% static 'official/js/deznav-init.js' %}"></script>
     <script src="{% static 'official/js/demo.js' %}"></script>
     <script src="{% static 'official/js/styleSwitcher.js' %}"></script>
+
+    
     <script src="{% static 'official/vendor/datatables/js/jquery.dataTables.min.js' %}"></script>
     <script src="{% static 'official/js/plugins-init/datatables.init.js' %}"></script>
     {% block js %}

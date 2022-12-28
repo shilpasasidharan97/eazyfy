@@ -21,13 +21,10 @@ urlpatterns = [
     path('login',views.customerlogin,name="login"),
 
 
-  
-
-
-
+    path('sell-phone',views.sellPhone,name='sell-phone'),
     path('sell',views.sell,name='sell'),
     path('shops/<str:id>',views.shops,name='shops'),
-    path('question',views.question,name='question'),
+    path('question/<str:id>',views.question,name='question'),
 
 
     path('spec/<str:id>',views.spec,name='spec'),
@@ -38,10 +35,10 @@ urlpatterns = [
     path('repair_phone',views.repairPhone,name='repair_phone'),
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
+    path('findnewgadget',views.findnewgadget,name='findnewgadget'),
+    path('user-logout',views.userLogout,name='user-logout'),
 
 
-    path('my',views.my,name='my')
-
-    
-    
+    # path('test',views.test,name='test'),
+     
 ]

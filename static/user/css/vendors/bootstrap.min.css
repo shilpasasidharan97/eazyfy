@@ -5046,7 +5046,7 @@ fieldset:disabled .btn {
     z-index: 3;
     border-color: #fcf6ff;
     outline: 0;
-    box-shadow: 0 0 0 .25rem #dcbbf5
+    /* box-shadow: 0 0 0 .25rem #dcbbf5 */
 }
 
 .accordion-header {

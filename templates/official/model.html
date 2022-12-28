@@ -3,46 +3,80 @@
 {% load static %}
 
 
+<style>
+    /*  */
+    .profile-img-wrap.edit-img {
+        border-radius: 50%;
+        margin: 0 auto 30px;
+        position: relative;
+    }
+
+    .profile-img-wrap {
+        height: 120px;
+        position: absolute;
+        width: 120px;
+        background: #ffffff;
+        overflow: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+        vertical-align: middle;
+    }
+
+    .profile-img-wrap .fileupload {
+        background: rgba(33, 33, 33, 0.5);
+        border: none;
+        padding: 3px 10px;
+        border-radius: 0;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+    .profile-img-wrap .fileupload .btn-text {
+        color: #ffffff;
+    }
+
+    .profile-img-wrap .fileupload .upload {
+        cursor: pointer;
+        filter: alpha(opacity=0);
+        font-size: 20px;
+        opacity: 0;
+        margin: 0;
+        padding: 5px;
+        position: absolute;
+        top: -3px;
+        right: -3px;
+    }
+</style>
+
+
+
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4>Hi, welcome back!</h4>
-            <span>Button Group</span>
+            <h4>Modes</h4>
+            <span></span>
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-        <ol class="breadcrumb">
-            <li class=""><a href="{% url 'official:home' %}">Dashboard / </a></li>
-            <li class=""><a href="{% url 'official:brand' %}"> Brand / </a></li>
-            <li class="breadcrumb-item active"><a href="javascript:void(0)"> Model</a></li>
-        </ol>
-    </div>
-</div>
-
-<div class="row">
-    <div class="" style="margin-right: 10px;">
-        <a href="" class="btn btn-rounded btn-md" style="float: right;" data-bs-toggle="modal"
-        data-bs-target="#exampleModalCenter">
-            <span class="btn-icon-start text-info">
-                <i class="fa fa-plus" style="color: #5f009a;"></i>
-            </span>Add Model
-        </a>
-    </div>
-</div>
-
-<div class="row">
-    <!-- <div class="col-xl-12">
-        <div class="card">
-            <div class="card-body d-flex justify-content-between align-items-center">
-                <div>
-                    <h4>User Card View</h4>
-                    <span>Lorem ipsum sit amet</span>
-                </div>
-                <a href="javascript:void(0);" class="btn btn-info light">+ Add Card</a>
-            </div>
+        <div class="" style="margin-right: 10px;">
+            <a href="" class="btn btn-rounded btn-secondary" style="float: right;" data-bs-toggle="modal"
+                data-bs-target="#exampleModalCenter">
+                <span class="btn-icon-start text-info">
+                    <i class="fa fa-plus" style="color: #5f009a;"></i>
+                </span>Add Model
+            </a>
         </div>
-    </div> -->
-    
+    </div>
+</div>
+
+
+
+<div class="row">
     {% for model in models %}
     <div class="col-xl-3 col-xxl-4 col-sm-6">
         <div class="card user-card">
@@ -56,28 +90,80 @@
                         <span class="text-info">2022</span>
                     </div>
                 </div>
-                <p class="fs-12">Maintain inventory of supplies and order new stock as needed Maintain
-                    inventory stock</p>
+
                 <ul class="list-group list-group-flush">
+
                     <li class="list-group-item">
                         <span class="mb-0 title">Ram</span> :
-                        <span class="text-black ms-2">6gb</span>
+                        {% for ram in model.get_ram %}
+                        <span class="text-black ms-2">{{ram.RAM}}gb , </span>
+                        {% endfor %}
                     </li>
                     <li class="list-group-item">
                         <span class="mb-0 title">Internal Storage</span> :
-                        <span class="text-black ms-2">128gb</span>
+                        {% for int in model.get_ram %}
+                        <span class="text-black ms-2">{{int.internal_storage}}gb </span>
+                        {% endfor %}
                     </li>
                 </ul>
             </div>
             <div class="card-footer text-center">
-                <a href="{% url 'official:modelspecification' model.id %}" class="btn btn-primary btn-xs" >Spec Adding</a>
+                <a href="{% url 'official:modelspecification' model.brand.id %}" class="btn btn-primary btn-xs">Spec
+                    Adding</a>
+                <a href="" class="btn btn-primary btn-xs" data-bs-toggle="modal" data-bs-target="#editModel{{model.id}}"
+                    onclick="Dataget({{model.id}})">Edit</a>
                 <a href="javascript:void(0);" class="btn btn-danger btn-xs" onclick="deleteModel()">Delete</a>
             </div>
         </div>
     </div>
-    {% endfor %}
+
+    <!-- edit modal -->
+    <div class="modal fade" id="editModel{{model.id}}">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"> Edit Model</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal">
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="basic-form">
+                        <form action="{% url 'official:editmodel' model.id %}" method="POST"
+                            enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <div class="profile-img-wrap edit-img">
+                                        <img class="inline-block" src="" id="mimage{{model.id}}" alt="user">
+                                        <div class="fileupload btn">
+                                            <span class="btn-text">edit</span>
+                                            <!-- {{empform.emp_profile}} -->
+                                            <input class="upload" name="mphoto{{model.id}}" id="mphoto{{model.id}}"
+                                                type="file">
+                                            <!-- <input class="" name="mid" value="" type="text" id="mid{{model.id}}" > -->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Name</label>
+                                    <input type="text" class="form-control" name="mname{{model.id}}"
+                                        id="mname{{model.id}}">
+                                </div>
+                                <button type="submit" class="btn btn-primary text-center">SUbmit</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    
 
 </div>
+{% endfor %}
 <nav>
     <ul class="pagination pagination-gutter pagination-primary no-bg">
         <li class="page-item page-indicator">
@@ -128,13 +214,13 @@
                                 <input type="text" class="form-control" name="color">
                             </div>
                         </div> -->
-                        <div class="row">
-                            <div class="mb-3 col-md-12">
-                                <label class="form-label">Image</label>
-                                <input type="file" class="form-control" name="image">
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <label class="form-label">Image</label>
+                                    <input type="file" class="form-control" name="image">
+                                </div>
                             </div>
-                        </div>
-                        <button type="submit" class="btn btn-primary text-center">SUbmit</button>
+                            <button type="submit" class="btn btn-primary text-center">SUbmit</button>
                     </form>
                 </div>
             </div>
@@ -166,6 +252,21 @@
             }
         })
     }
+
+    function Dataget(id) {
+        // alert()
+        $.ajax({
+            url: '/official/getmodeldata/' + id,
+            type: 'GET',
+            success: function (responce) {
+                // $('#mid'+id).val(responce.fkid)
+                $('#mimage' + id).attr("src", responce.mphoto)
+                $('#mname' + id).val(responce.mname)
+            }
+        })
+    }
+
 </script>
+
 
 {% endblock %}
