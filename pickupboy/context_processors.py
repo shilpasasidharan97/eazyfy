@@ -9,5 +9,4 @@ def main_context(request):
             # pickUpBoy = PickUpBoy.objects.get(id=request.user.pickup_boy.id)
             return {"domain": request.META["HTTP_HOST"], "pickUpBoy": pickupBoy}
         return {"domain": request.META["HTTP_HOST"]}
-    else:
-        return {"domain": request.META["HTTP_HOST"]}
+    return {"domain": request.META["HTTP_HOST"]}

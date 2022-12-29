@@ -8,5 +8,4 @@ def main_context(request):
             franchise = request.user.franchise
             return {"domain": request.META["HTTP_HOST"], "franchise": franchise}
         return {"domain": request.META["HTTP_HOST"]}
-    else:
-        return {"domain": request.META["HTTP_HOST"]}
+    return {"domain": request.META["HTTP_HOST"]}
