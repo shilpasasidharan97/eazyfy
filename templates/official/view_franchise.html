@@ -2,16 +2,13 @@
 {% block content %}
 {% load static %}
 
-
-
-
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
             <h4>{{franchise_details.name|title}}</h4>
         </div>
     </div>
-    
+
 </div>
 
 <div class="container-fluid">
@@ -97,7 +94,7 @@
                 <div class="col-xl-12">
                     <div class="d-block d-sm-flex mb-4">
                         <h4 class="mb-0 text-black fs-20 me-auto">Franchise Details</h4>
-                      
+
                     </div>
                 </div>
 
@@ -191,7 +188,7 @@
                                 <div class="table-responsive">
                                     <table class="table shadow-hover card-table border-no tbl-btn short-one">
                                         <tbody>
-                                            {% for boys in pickup_boys|slice:":4"  %}
+                                            {% for boys in pickup_boys|slice:":4" %}
                                             <tr>
                                                 <td>
                                                     <span>
@@ -223,8 +220,8 @@
                             </div>
                         </div>
                         <div class="card-footer border-0 p-0 caret">
-                            <a href="{% url 'official:pickupboylist' franchise_details.id %}" class="btn-link mt-1"><i class="fa fa-caret-down"
-                                    aria-hidden="true"></i></a>
+                            <a href="{% url 'official:pickupboylist' franchise_details.id %}" class="btn-link mt-1"><i
+                                    class="fa fa-caret-down" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>

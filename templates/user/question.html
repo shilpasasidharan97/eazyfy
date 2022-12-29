@@ -16,14 +16,17 @@
     margin: 20px 0px 3px 0px;
     height: 42px;
   }
-  #green{
+
+  #green {
     display: none;
 
   }
-  #red{
+
+  #red {
     display: none;
 
   }
+
 </style>
 
 
@@ -66,48 +69,51 @@
               {% for questions in questions %}
               <div class="row">
                 <div class="col-sm-12">
-                  <div class="slide rowcount" >
-                    <h5 class="questionhead" >{{forloop.counter}}. {{ questions.questions }} </h5>
+                  <div class="slide rowcount">
+                    <h5 class="questionhead">{{forloop.counter}}. {{ questions.questions }} </h5>
                     <input type="text" id="qst{{forloop.counter}}" hidden value="{{ questions.questions.id }}">
                     <div class="row">
                       {% if questions.questions.question_type == "Objective" %}
                       <div class="col-lg-4 col-sm-4">
                         <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
-                          <div class="question-button pt-2 px-3 ">                           
+                          <div class="question-button pt-2 px-3 ">
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}" value="green" data-price="-200" class="form-check-input" >yes
+                              <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}"
+                                value="green" data-price="-200" class="form-check-input">yes
                             </label>
-                          </div>        
+                          </div>
                         </div>
                       </div>
                       <div class="col-lg-4 col-sm-4 clearfix">
                         <div class="form-check custom-checkbox box mb-3 checkbox-success box">
-                          <div class="question-button pt-2 px-3">                          
+                          <div class="question-button pt-2 px-3">
                             <label class="form-check-label" for="customCheckBox2">
-                              <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}" value="red" data-price="-50" class="form-check-input">NO</label>
+                              <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}"
+                                value="red" data-price="-50" class="form-check-input">NO</label>
                           </div>
                         </div>
                       </div>
                       {% elif questions.questions.question_type == "image_type" %}
-                        {% for sub in questions.get_subqust %}
-                        <div class="col-sm-2 col-lg-3 col-6">
-                          <div class="quiz_card_area">
-                            <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
-                            <div class="single_quiz_card">
-                              <div class="quiz_card_content">
-                                <div class="quiz_card_icon">
-                                  <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
-                                </div><!-- end of quiz_card_media -->
+                      {% for sub in questions.get_subqust %}
+                      <div class="col-sm-2 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
 
-                                <div class="quiz_card_title">
-                                  <h3><i class="fa fa-check" aria-hidden="true"></i> {{sub.qst_option.image_description}}</h3>
-                                </div><!-- end of quiz_card_title -->
-                              </div><!-- end of quiz_card_content -->
-                            </div><!-- end of single_quiz_card -->
-                          </div><!-- end of quiz_card_area -->
-                        </div>
-                        {% endfor %}
-                    {% endif %}
+                              <div class="quiz_card_title">
+                                <h3><i class="fa fa-check" aria-hidden="true"></i> {{sub.qst_option.image_description}}
+                                </h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div>
+                      {% endfor %}
+                      {% endif %}
                     </div>
                   </div>
                 </div>
@@ -124,27 +130,28 @@
               <h2>{{forloop.counter}}</h2>
               <div class="row">
                 {% for sub in img.get_subqust %}
-                  <div class="col-sm-2 col-lg-3 col-6" id="multiple">
-                    <div class="quiz_card_area">
-                      <input class="quiz_checkbox" type="checkbox" value="{{sub.id}}" id="checkinput{{forloop.counter}}"/>
-                      <div class="single_quiz_card">
-                        <div class="quiz_card_content">
-                          <div class="quiz_card_icon">
-                            <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
-                          </div><!-- end of quiz_card_media -->
+                <div class="col-sm-2 col-lg-3 col-6" id="multiple">
+                  <div class="quiz_card_area">
+                    <input class="quiz_checkbox" type="checkbox" value="{{sub.id}}"
+                      id="checkinput{{forloop.counter}}" />
+                    <div class="single_quiz_card">
+                      <div class="quiz_card_content">
+                        <div class="quiz_card_icon">
+                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
+                        </div><!-- end of quiz_card_media -->
 
-                          <div class="quiz_card_title imgrowcount">
-                            <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
-                          </div>
-                          <h2>{{forloop.counter}}</h2>
-                          <!-- end of quiz_card_title -->
-                        </div><!-- end of quiz_card_content -->
-                      </div><!-- end of single_quiz_card -->
-                    </div><!-- end of quiz_card_area -->
-                  </div><!-- end of col3  -->
+                        <div class="quiz_card_title imgrowcount">
+                          <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
+                        </div>
+                        <h2>{{forloop.counter}}</h2>
+                        <!-- end of quiz_card_title -->
+                      </div><!-- end of quiz_card_content -->
+                    </div><!-- end of single_quiz_card -->
+                  </div><!-- end of quiz_card_area -->
+                </div><!-- end of col3  -->
                 {% endfor %}
               </div>
-             
+
             </div>
             {% endfor %}
 
@@ -152,26 +159,30 @@
             <div class="step row">
               <div class="form-check col-lg-4 box">
                 <div style="margin: 9px">
-                  <input class="form-check-input" type="radio" value="3month" name="flexRadioDefault" id="flexRadioDefault1">
+                  <input class="form-check-input" type="radio" value="3month" name="flexRadioDefault"
+                    id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
                     <h5> Below 3 months</h5>
                   </label>
                 </div>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" value="6month" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="6month" name="flexRadioDefault"
+                  id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> 3 months to 6 months</h5>
                 </label>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" value="11month" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="11month" name="flexRadioDefault"
+                  id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> 6 months to 11 months</h5>
                 </label>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" value="12month" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="12month" name="flexRadioDefault"
+                  id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> above 11 months</h5>
                 </label>
@@ -212,23 +223,17 @@
               <h4>(1 GB/32 GB)</h4>
             </div>
           </div>
-
-
-
         </div>
         <hr>
         <div class="p-3">
           <h4 class="mb-15 text-brand">Device Evaluation</h4>
           <ul style="list-style-type:circle">
 
-              <div id="green" class="show-hide"> yes</div>
-              <div id="red" class="show-hide">No</div>
+            <div id="green" class="show-hide"> yes</div>
+            <div id="red" class="show-hide">No</div>
 
             <!-- <li id="green" class="show-hide"></li>
             <li id="green" class="show-hide"></li> -->
-
-
-
           </ul>
         </div>
 
@@ -236,9 +241,6 @@
     </div>
   </div>
 </div>
-
-
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
@@ -308,17 +310,11 @@
     </div>
   </div>
 </div>
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script>
+  // answer show
 
-
-
-// answer show
-
-// price calculation
+  // price calculation
 
   function calcPrice() {
     var price = 10000;
@@ -334,27 +330,24 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-     $(document).ready(function(){ 
-    $("input[name=action{{questions.id}}]").change(function() {
-        var test = $(this).val();
-        $(".show-hide").hide();
-        $("#"+test).show();
-    }); 
-});
+  $(document).ready(function () {
+    $("input[name=action{{questions.id}}]").change(function () {
+      var test = $(this).val();
+      $(".show-hide").hide();
+      $("#" + test).show();
+    });
+  });
 </script>
-
-
-
 <!-- user answer saving -->
 <script>
-  function UserAnswer(){
+  function UserAnswer() {
     data = []
     var rowcount = $('#objectivetype .rowcount').length
     yes_no = []
-    for (i=1; i<=rowcount; i++){
-      var radio = $('input[name=answer'+ i +']');
-      for (var j=0; 1<radio.length; j++){
-        if (radio[j].checked){
+    for (i = 1; i <= rowcount; i++) {
+      var radio = $('input[name=answer' + i + ']');
+      for (var j = 0; 1 < radio.length; j++) {
+        if (radio[j].checked) {
           var checked_answer = $(radio[j]).val()
           break
         }
@@ -363,8 +356,8 @@
         }
       }
       var yesno_obj = {
-        "qst":$('#qst'+i).val(),
-        "yesno":checked_answer,
+        "qst": $('#qst' + i).val(),
+        "yesno": checked_answer,
       }
       // alert(JSON.stringify(yesno_obj,null,4))
       yes_no.push(yesno_obj)
@@ -372,24 +365,24 @@
     data.push(yes_no)
     multiple = []
     var imgrowcount = $('#multiple .imgrowcount').length
-    for (k=1; k<=rowcount; k++) {
+    for (k = 1; k <= rowcount; k++) {
       // alert("")
-      var select = $("#checkinput"+k).is(":checked")
+      var select = $("#checkinput" + k).is(":checked")
       // alert($("#checkinput"+k).is(":checked"))
       // if (select)
       // var status = ""
       if (select == true) {
-        var subqpk = $("#checkinput"+k).val()
+        var subqpk = $("#checkinput" + k).val()
         var status = 1
       }
       else {
-        var subqpk = $("#checkinput"+k).val()
+        var subqpk = $("#checkinput" + k).val()
         var status = 0
       }
-      
+
       var subq_obj = {
-        "subqstid":subqpk,
-        "selectstatus":status,
+        "subqstid": subqpk,
+        "selectstatus": status,
       }
       multiple.push(subq_obj)
     }
@@ -397,25 +390,22 @@
     lastq = []
     var duration = $('input[name=flexRadioDefault]').val();
     var durationlist = {
-      "durationsta":duration,
+      "durationsta": duration,
     }
     lastq.push(durationlist)
     data.push(lastq)
     var answers = JSON.stringify(data)
     dt = { 'data': answers },
-    $.ajax({
-      url: "/saveanswer/",
-      type: "POST",
-      data: dt,
-      success: function (response) {
-        alert(response.msg)
-      }
-    })
+      $.ajax({
+        url: "/saveanswer/",
+        type: "POST",
+        data: dt,
+        success: function (response) {
+          alert(response.msg)
+        }
+      })
   }
   // alert(JSON.stringify(data,null,4))
-  
+
 </script>
-
-
-
 {% endblock %}

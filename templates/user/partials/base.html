@@ -12,15 +12,21 @@
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
     <link rel="shortcut icon" type="image/png" href="{% static 'user/imgs/theme/eazyfyfav.png' %}">
 
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
     <link rel="stylesheet" href="{% static 'user/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/more.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/wizard.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/checkbox.css' %}">
+
+    <script src="{% static 'user/js/vendor/modernizr-3.6.0.min.js' %}"></script>
+    <script src="{% static 'user/js/vendor/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'user/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
 </head>
 
 <body>
@@ -33,9 +39,7 @@
 
     {% include 'user/partials/footer.html' %}
 
-    <script src="{% static 'user/js/vendor/modernizr-3.6.0.min.js' %}"></script>
-    <script src="{% static 'user/js/vendor/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static 'user/js/vendor/jquery-migrate-3.3.0.min.js' %}"></script>
+
     <script src="{% static 'user/js/vendor/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'user/js/plugins/slick.js' %}"></script>
     <script src="{% static 'user/js/plugins/jquery.syotimer.min.js' %}"></script>

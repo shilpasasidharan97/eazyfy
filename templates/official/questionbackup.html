@@ -26,7 +26,7 @@
         </div>
         <div class="card-body">
             <div class="basic-form">
-                <form  id="addquestionForm" >
+                <form id="addquestionForm">
                     {% csrf_token %}
                     <div class="mb-3 row">
                         <label class="col-sm-3 col-form-label">Question</label>
@@ -50,7 +50,8 @@
                         <div class="form-group">
                             <ul>
                                 <li>
-                                    <input type="radio" name="radio" id="objective"  value="Objective" class="form-check-input">
+                                    <input type="radio" name="radio" id="objective" value="Objective"
+                                        class="form-check-input">
                                     Objective Type
                                 </li>
                                 <li>
@@ -58,7 +59,7 @@
                                         class="form-check-input">
                                     Image type
                                 </li>
-                                
+
                             </ul>
                         </div>
                     </div>
@@ -67,22 +68,22 @@
                         <div class="col-6 p-5 border qcard card">
                             <div class="row">
                                 <div class="mb-3">
-                                    <textarea class="form-control" rows="4" cols="50" id="comment" name="description"></textarea>
+                                    <textarea class="form-control" rows="4" cols="50" id="comment"
+                                        name="description"></textarea>
                                 </div>
                                 <input type="file" class="" name="images" id="images">
                             </div>
                         </div>
-                        
+
                     </div>
 
-                    
+
                     <div class="col-sm-10" id="upload">
                         <button type="submit" class="btn btn-primary">Upload</button>
                     </div>
                 </form>
                 <div class="col-6" id="addcardbtn">
-                    <button  onclick="addcard()"
-                        class="btn btn-rounded btn-info add-card-items"><span
+                    <button onclick="addcard()" class="btn btn-rounded btn-info add-card-items"><span
                             class="btn-icon-start text-info"><i class="fa fa-plus color-info"></i>
                         </span>Add
                     </button>
@@ -123,12 +124,12 @@
         $('#appendjobcard').hide()
         $('#upload').show()
         $('#addcardbtn').hide()
-        
+
     })
 
 
 // $(document).ready(function () {
-    
+
 //     $("#addquestionForm").submit(function (e) {
 //         alert("FORM SAVING")
 //         // alert()
@@ -146,9 +147,9 @@
 //             success: function (responce) {
 //                 alert()
 //                 // window.location.reload()
-                
+
 //             }
-            
+
 //         });
 
 //     });
@@ -169,11 +170,8 @@
 //       });
 //   }
 // }
-
-
-
 // $(document).ready(function () {
-    
+
 //     $("#addquestionForm").submit(function (e) {
 //         // alert("FORM SAVING")
 //         // alert()
@@ -183,8 +181,8 @@
 //         // // var boxcount = $(".qcard").length;
 //         // var question = $("#question").val()
 
-//         // alert(boxcount)       
-        
+//         // alert(boxcount)
+
 //         // $.ajax({
 //         //     url: "/official/savedata/",
 //         //     type: "POST",
@@ -195,18 +193,15 @@
 //         //     success: function (responce) {
 //         //         alert()
 //         //         // window.location.reload()
-                
+
 //         //     }
-            
+
 //         // });
 
 //     });
 //     return false;
 
 // });
-
-
-
 // data = []
 //     // var arr = [];
 //     // $('input.packagetitle:checkbox:checked').each(function () {
@@ -227,14 +222,14 @@
 //             'package_id': $("#item" + i ).val(),
 //             'qty': $("#qty" + i).val(),
 //             'tour_date':$("#tourdate" + i).val()
-            
-            
+
+
 //         }
 //         data.push(obj)
 //     }
 //     dt = { 'data': data },
 //         dt['data'] = JSON.stringify(dt['data']),
-        
+
 //         $.ajax({
 //             url: "/official/generateinvoice/",
 //             type: "POST",
@@ -243,9 +238,6 @@
 //                 window.location='/official/invticket/'+ response.invid.invId
 //             }
 //         })
-
-
-
     // $("#addquestion").submit(function () {
     //     // var data = $("#addquestion").serializeArray();
     //     var question = $("#question").val()

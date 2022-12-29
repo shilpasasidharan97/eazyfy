@@ -1,4 +1,4 @@
-(function($) {
+(function ($) {
     "use strict"
 
     //basic slider
@@ -14,7 +14,7 @@
     //basic slider ^
 
 
-    //keyboard slider 
+    //keyboard slider
     let keyboardslider = document.getElementById('keyboardslider');
     noUiSlider.create(keyboardslider, {
         start: 10,
@@ -53,19 +53,19 @@
     var dateSlider = document.getElementById('slider-date');
 
     noUiSlider.create(dateSlider, {
-    // Create two timestamps to define a range.
+        // Create two timestamps to define a range.
         range: {
             min: timestamp('2010'),
             max: timestamp('2016')
         },
 
-    // Steps of one week
+        // Steps of one week
         step: 7 * 24 * 60 * 60 * 1000,
 
-    // Two more timestamps indicate the handle starting positions.
+        // Two more timestamps indicate the handle starting positions.
         start: [timestamp('2011'), timestamp('2015')],
 
-    // No decimals
+        // No decimals
         format: wNumb({
             decimals: 0
         })
@@ -89,9 +89,6 @@
         "August", "September", "October",
         "November", "December"
     ];
-
-    
-    
     dateSlider.noUiSlider.on('update', function (values, handle) {
         dateValues[handle].innerHTML = formatDate(new Date(+values[handle]));
     });
@@ -186,7 +183,7 @@
         document.getElementById('lower-value'), // 0
         document.getElementById('upper-value')  // 1
     ];
-    
+
     // Display the slider value and how far the handle moved
     // from the left edge of the slider.
     nonLinearSlider.noUiSlider.on('update', function (values, handle, unencoded, isTap, positions) {
@@ -218,24 +215,24 @@
         // If the sliders aren't interlocked, don't
         // cross-update.
         if (!lockedState) return;
-    
+
         // Select whether to increase or decrease
         // the other slider value.
         var a = slider1 === slider ? 0 : 1;
-    
+
         // Invert a
         var b = a ? 0 : 1;
-    
+
         // Offset the slider value.
         value -= lockedValues[b] - lockedValues[a];
-    
+
         // Set the value
         slider.noUiSlider.set(value);
     }
 
     noUiSlider.create(slider1, {
         start: 60,
-    
+
         // Disable animation on value-setting,
         // so the sliders respond immediately.
         animate: false,
@@ -244,7 +241,7 @@
             max: 100
         }
     });
-    
+
     noUiSlider.create(slider2, {
         start: 80,
         animate: false,
@@ -253,11 +250,11 @@
             max: 100
         }
     });
-    
+
     slider1.noUiSlider.on('update', function (values, handle) {
         slider1Value.innerHTML = values[handle];
     });
-    
+
     slider2.noUiSlider.on('update', function (values, handle) {
         slider2Value.innerHTML = values[handle];
     });
@@ -268,14 +265,14 @@
             Number(slider2.noUiSlider.get())
         ];
     }
-    
+
     slider1.noUiSlider.on('change', setLockedValues);
     slider2.noUiSlider.on('change', setLockedValues);
-    
+
     slider1.noUiSlider.on('slide', function (values, handle) {
         crossUpdate(values[handle], slider2);
     });
-    
+
     slider2.noUiSlider.on('slide', function (values, handle) {
         crossUpdate(values[handle], slider1);
     });
@@ -290,7 +287,7 @@
             max: 100
         },
         start: [50],
-        pips: {mode: 'count', values: 5}
+        pips: { mode: 'count', values: 5 }
     });
 
     var pips = pipsSlider.querySelectorAll('.noUi-value');
@@ -337,7 +334,7 @@
     noUiSlider.create(keypressSlider, {
         start: [20, 80],
         connect: true,
-        tooltips: [true, wNumb({decimals: 1})],
+        tooltips: [true, wNumb({ decimals: 1 })],
         range: {
             'min': [0],
             '10%': [10, 10],
@@ -440,7 +437,7 @@
         document.getElementById('skip-value-lower'),
         document.getElementById('skip-value-upper')
     ];
-    
+
     skipSlider.noUiSlider.on('update', function (values, handle) {
         skipValues[handle].innerHTML = values[handle];
     });
@@ -620,7 +617,7 @@
         document.getElementById('slider-snap-value-lower'),
         document.getElementById('slider-snap-value-upper')
     ];
-    
+
     snapSlider.noUiSlider.on('update', function (values, handle) {
         snapValues[handle].innerHTML = values[handle];
     });
@@ -691,7 +688,7 @@
     });
 
     var marginMin = document.getElementById('slider-margin-value-min'),
-    marginMax = document.getElementById('slider-margin-value-max');
+        marginMax = document.getElementById('slider-margin-value-max');
     marginSlider.noUiSlider.on('update', function (values, handle) {
         if (handle) {
             marginMax.innerHTML = values[handle];
@@ -782,7 +779,7 @@
     var tooltipSlider = document.getElementById('slider-tooltips');
     noUiSlider.create(tooltipSlider, {
         start: [20, 80, 120],
-        tooltips: [false, wNumb({decimals: 1}), true],
+        tooltips: [false, wNumb({ decimals: 1 }), true],
         range: {
             'min': 0,
             'max': 200
@@ -889,7 +886,7 @@
     //slider behaviour unconstrained ^
 
 
-    //slider behaviour combined 
+    //slider behaviour combined
     var dragTapSlider = document.getElementById('combined');
     noUiSlider.create(dragTapSlider, {
         start: [40, 60],
@@ -905,10 +902,10 @@
 
     //slider range left to right
     var range_all_sliders = {
-        'min': [ 0 ],
-        '10%': [ 500, 500 ],
-        '50%': [ 4000, 1000 ],
-        'max': [ 10000 ]
+        'min': [0],
+        '10%': [500, 500],
+        '50%': [4000, 1000],
+        'max': [10000]
     };
     var pipsRange = document.getElementById('pips-range');
     noUiSlider.create(pipsRange, {
@@ -963,9 +960,6 @@
         }
     });
     //slider range vertical bottom to top ^
-
-
-    
 
 
     //pip position
@@ -1101,7 +1095,7 @@
     checkbox2.addEventListener('click', function () {
         toggle.call(this, origins[0]);
     });
-    
+
     checkbox3.addEventListener('click', function () {
         toggle.call(this, origins[1]);
     });
@@ -1145,10 +1139,4 @@
     button2.addEventListener('click', function () {
         updateSliderRange(10, 40);
     });
-    //updating a slider ^
-
-
-
-
-
-})(jQuery);
+    //updating a slider ^})(jQuery);

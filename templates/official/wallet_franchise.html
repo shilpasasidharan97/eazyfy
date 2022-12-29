@@ -1,9 +1,6 @@
 {% extends 'official/partials/base.html' %}
 {% block content %}
 {% load static %}
-
-
-
 {% if messages %}
 
 {% for message in messages %}
@@ -15,7 +12,11 @@
 {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
 
 <div class="alert alert-success alert-dismissible fade show">
-    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="me-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>	
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"
+        stroke-linecap="round" stroke-linejoin="round" class="me-2">
+        <polyline points="9 11 12 14 22 4"></polyline>
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+    </svg>
     <strong>{{ message }}!</strong> Payment Successfull
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
     </button>
@@ -41,9 +42,9 @@
 </div>
 
 <div class="row mt-5">
-  
 
-{% for franchises in franchise %}
+
+    {% for franchises in franchise %}
 
     <div class="card">
         <div class="project-info">
@@ -70,14 +71,14 @@
                 <div class="d-flex align-items-end">
                     <div class="project-media text-end">
                         <a type="button" href="" class="btn btn-outline-info" data-bs-toggle="modal"
-                            data-bs-target="#wallet"  onclick="DataGets({{franchises.id}})">Payment</a>
+                            data-bs-target="#wallet" onclick="DataGets({{franchises.id}})">Payment</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    
-{% endfor %}
+
+    {% endfor %}
     <nav class="mt-5">
         <ul class="pagination pagination-gutter pagination-primary no-bg">
             <li class="page-item page-indicator">
@@ -117,7 +118,8 @@
                                         class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="franchiseid" name="franchise_id" readonly>
+                                    <input type="text" class="form-control" id="franchiseid" name="franchise_id"
+                                        readonly>
                                     <div class="invalid-feedback">
                                         Please enter a Franchise Id.
                                     </div>
@@ -148,7 +150,8 @@
                             </div>
                             <div class="mb-3 row mt-5 text-end">
                                 <div class="col-lg-8 ms-auto">
-                                    <button type="submit" class="btn btn-primary" onclick="SavePayment()">Submit</button>
+                                    <button type="submit" class="btn btn-primary"
+                                        onclick="SavePayment()">Submit</button>
                                 </div>
                             </div>
                         </div>
@@ -160,11 +163,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
@@ -185,7 +183,7 @@
     }
 
     function SavePayment() {
-        var id =  $('#id').val();
+        var id = $('#id').val();
         $.ajax({
             url: "/official/savepayment/" + id,
             type: 'POST',
@@ -201,6 +199,6 @@
         })
     }
 
-    </script>
+</script>
 
 {% endblock %}

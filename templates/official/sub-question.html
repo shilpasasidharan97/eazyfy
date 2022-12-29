@@ -3,10 +3,11 @@
 {% load static %}
 
 <style>
-    .list-product{
+    .list-product {
         height: 44px;
         width: 54px;
     }
+
 </style>
 
 <div class="col-xl-12">
@@ -39,7 +40,8 @@
                 <label class="mb-1">
                     <h5>Upload sub questions</h5>
                 </label>
-                <input class="form-control mb-3 input-primary" placeholder="question?" type="text" id="disc" name="discription">
+                <input class="form-control mb-3 input-primary" placeholder="question?" type="text" id="disc"
+                    name="discription">
 
 
                 <div class="input-group mb-3 ">
@@ -65,7 +67,7 @@
             </div>
             <div class="card-body">
                 <div class="basic-form">
-                 
+
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
                         <div class="mb-3 row  ">
@@ -80,7 +82,7 @@
                         </div>
                         <div class="mb-3 row">
                             <div class="form-group">
-                               
+
                                 <button class="btn btn-success">Add sub question</button>
                                 <a href="{% url 'official:questionsadding' %}" class="btn btn-danger disabled"
                                     id="buttondisabled">finish</a>
@@ -91,9 +93,6 @@
             </div>
         </div> -->
     </div>
-
-
-
 
     <div class="col-lg-3">
 
@@ -110,15 +109,12 @@
                 <div class="col-8 col-lg-8 col-md-8">
                     <span class="">{{i.image_description}}</span>
                 </div>
-                
+
             </div>
             {% endfor %}
         </div>
     </div>
 </div>
-
-
-
 
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
     crossorigin="anonymous"></script>
@@ -148,8 +144,5 @@
 
 
 </script>
-
-
-
 
 {% endblock %}

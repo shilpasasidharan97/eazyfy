@@ -70,9 +70,6 @@ var demoPanel = '<div class="dz-demo-panel"><div class="bg-close"></div><a class
 
         setCookie('version', this.value);
     });
-
-
-
     //change the sidebar position controller
     sidebarPositionSelect.on('change', function () {
         this.value === "fixed" && body.attr('data-sidebar-style') === "modern" && body.attr('data-layout') === "vertical" ?
@@ -163,9 +160,6 @@ var demoPanel = '<div class="dz-demo-panel"><div class="bg-close"></div><a class
 
         setCookie('sidebarStyle', this.value);
     });
-
-
-
     jQuery("#nav_header_color_1").on('click', function () {
         jQuery(".nav-header .logo-abbr").attr("src", "static/images/logo.png");
         setCookie('logo_src', 'static/images/logo.png');
@@ -231,7 +225,4 @@ var demoPanel = '<div class="dz-demo-panel"><div class="bg-close"></div><a class
         body.attr('data-primary', this.value);
         setCookie('primary', this.value);
     });
-
-
-
 })(jQuery);
