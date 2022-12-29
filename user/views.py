@@ -300,6 +300,5 @@ def handler404(request, exception):
 
 # USER LOGOUT
 def userLogout(request):
-    request.user
     logout(request)
     return redirect("user:index")

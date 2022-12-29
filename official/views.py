@@ -336,8 +336,6 @@ def subquestionPage(request, id):
 
 @csrf_exempt
 def suquestionAddingData(request):
-    request.POST["disc"]
-    request.POST["qstpk"]
     request.POST.get("imgk")
     data = {"msg": "msg"}
     return JsonResponse(data)
@@ -361,7 +359,6 @@ def questionForDeduction(request, id):
 
 def questionId(request):
     quset = request.GET["qstid"]
-    request.GET["bid"]
     question = Questions.objects.get(id=quset)
     question_type = question.question_type
     data = []
