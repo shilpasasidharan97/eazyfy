@@ -29,17 +29,17 @@
 
 <script>
 
-  function UpdateCost() {
-    var sum = 0;
-    var gn, elem;
-    var gn, elem;
-    for (i = 0; i < 5; i++) {
-      gn = 'game' + i;
-      elem = document.getElementById(gn);
-      if (elem.checked == true) { sum += Number(elem.value); }
-    }
-    document.getElementById('totalcost').value = sum.toFixed(2);
-  }
+  // function UpdateCost() {
+  //   var sum = 0;
+  //   var gn, elem;
+  //   var gn, elem;
+  //   for (i = 0; i < 5; i++) {
+  //     gn = 'game' + i;
+  //     elem = document.getElementById(gn);
+  //     if (elem.checked == true) { sum += Number(elem.value); }
+  //   }
+  //   document.getElementById('totalcost').value = sum.toFixed(2);
+  // }
 
 </script>
 
@@ -126,7 +126,7 @@
                 {% for sub in img.get_subqust %}
                   <div class="col-sm-2 col-lg-3 col-6" id="multiple">
                     <div class="quiz_card_area">
-                      <input class="quiz_checkbox" type="checkbox" id="inputid{{forloop.counter}}" value="2" />
+                      <input class="quiz_checkbox" type="checkbox" value="{{sub.id}}" id="checkinput{{forloop.counter}}"/>
                       <div class="single_quiz_card">
                         <div class="quiz_card_content">
                           <div class="quiz_card_icon">
@@ -152,26 +152,26 @@
             <div class="step row">
               <div class="form-check col-lg-4 box">
                 <div style="margin: 9px">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                  <input class="form-check-input" type="radio" value="3month" name="flexRadioDefault" id="flexRadioDefault1">
                   <label class="form-check-label" for="flexRadioDefault1">
                     <h5> Below 3 months</h5>
                   </label>
                 </div>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="6month" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> 3 months to 6 months</h5>
                 </label>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="11month" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> 6 months to 11 months</h5>
                 </label>
               </div>&nbsp;
               <div class="form-check col-lg-4 box">
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <input class="form-check-input" type="radio" value="12month" name="flexRadioDefault" id="flexRadioDefault2" checked>
                 <label class="form-check-label" for="flexRadioDefault2">
                   <h5> above 11 months</h5>
                 </label>
@@ -358,23 +358,62 @@
           var checked_answer = $(radio[j]).val()
           break
         }
+        else {
+          break
+        }
       }
       var yesno_obj = {
         "qst":$('#qst'+i).val(),
         "yesno":checked_answer,
       }
-      alert(JSON.stringify(yesno_obj,null,4))
+      // alert(JSON.stringify(yesno_obj,null,4))
       yes_no.push(yesno_obj)
     }
+    data.push(yes_no)
     multiple = []
     var imgrowcount = $('#multiple .imgrowcount').length
-    alert(imgrowcount)
-    // for (var k=0; )
-    
-
-    
-
+    for (k=1; k<=rowcount; k++) {
+      // alert("")
+      var select = $("#checkinput"+k).is(":checked")
+      // alert($("#checkinput"+k).is(":checked"))
+      // if (select)
+      // var status = ""
+      if (select == true) {
+        var subqpk = $("#checkinput"+k).val()
+        var status = 1
+      }
+      else {
+        var subqpk = $("#checkinput"+k).val()
+        var status = 0
+      }
+      
+      var subq_obj = {
+        "subqstid":subqpk,
+        "selectstatus":status,
+      }
+      multiple.push(subq_obj)
+    }
+    data.push(multiple)
+    lastq = []
+    var duration = $('input[name=flexRadioDefault]').val();
+    var durationlist = {
+      "durationsta":duration,
+    }
+    lastq.push(durationlist)
+    data.push(lastq)
+    var answers = JSON.stringify(data)
+    dt = { 'data': answers },
+    $.ajax({
+      url: "/saveanswer/",
+      type: "POST",
+      data: dt,
+      success: function (response) {
+        alert(response.msg)
+      }
+    })
   }
+  // alert(JSON.stringify(data,null,4))
+  
 </script>
 
 

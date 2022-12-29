@@ -247,7 +247,15 @@ def question(request,id):
         "questions":objective_questions,
         "image_questions":image_questions,
     }
-    return render(request,"user/question.html",context)  
+    return render(request,"user/question.html",context)
+
+@csrf_exempt
+def save_answer(request):
+    data = json.loads(request.POST['data'])
+    yes_no_ans = data[0]
+    print(yes_no_ans)
+    print(len(yes_no_ans))
+    return JsonResponse({'msg':"Success"})
 
 
 # MODEL SPECIFICATIONS
