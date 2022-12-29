@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html  lang="en">
+<html lang="en">
+
 <head>
     {% load static %}
     <meta charset="utf-8">
@@ -7,58 +8,30 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:title" content="">
-    <meta property="og:type" content="">
-    <meta property="og:url" content="">
-    <meta property="og:image" content="">
-    <!-- Favicon -->
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
     <link rel="shortcut icon" type="image/png" href="{% static 'user/imgs/theme/eazyfyfav.png' %}">
-    <!-- Template CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'user/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/more.css' %}">
-    <link rel="stylesheet" href="{% static 'user/css/maind6c3.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/wizard.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/checkbox.css' %}">
-
-
 </head>
+
 <body>
 
-
-  
     {% include 'user/partials/header.html' %}
 
+    {% block content %}
 
-        {% block content %}
+    {% endblock %}
 
-
-        {% endblock %}
-
-
-        {% include 'user/partials/footer.html' %}
-
-
-        <!-- Preloader Start -->
-        <!-- <div id="preloader-active">
-            <div class="preloader d-flex align-items-center justify-content-center">
-                <div class="preloader-inner position-relative">
-                    <div class="text-center">
-                        <h5 class="mb-10">Now Loading</h5>
-                        <div class="loader">
-                            <div class="bar bar1"></div>
-                            <div class="bar bar2"></div>
-                            <div class="bar bar3"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        <!-- Vendor JS -->
-
-
-    
-
+    {% include 'user/partials/footer.html' %}
 
     <script src="{% static 'user/js/vendor/modernizr-3.6.0.min.js' %}"></script>
     <script src="{% static 'user/js/vendor/jquery-3.6.0.min.js' %}"></script>
@@ -80,18 +53,12 @@
     <script src="{% static 'user/js/plugins/jquery.vticker-min.js' %}"></script>
 
     <script src="{% static 'user/js/plugins/jquery.theia.sticky.js' %}"></script>
- 
+
     <script src="{% static 'user/js/plugins/jquery.elevatezoom.js' %}"></script>
     <!-- Template  JS -->
-    <script src="{% static 'user/js/maind6c3.js' %}"></script>
-    <script src="{% static 'user/js/shopd6c3.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+    <script src="{% static 'user/js/shop.js' %}"></script>
     <script src="{% static 'user/js/wizard.js' %}"></script>
-
-
-    
-
 </body>
 
 </html>
-
-

@@ -37,7 +37,7 @@ const setWizardHeight = activeStepHeight => {
   $(".wizard-body").height(activeStepHeight);
 };
 
-$(function() {
+$(function () {
   // Form step counter (little cirecles at the top of the form)
   const wizardSteps = $(".wizard-header .wizard-step");
   // Form steps (actual steps)
@@ -53,9 +53,9 @@ $(function() {
 
   checkButtons(activeStep, stepsCount);
   setWizardHeight(activeStepHeight);
-  
+
   // Resizing wizard body when the viewport changes
-  $(window).resize(function() {
+  $(window).resize(function () {
     setWizardHeight($(steps[activeStep]).height());
   });
 
@@ -66,7 +66,7 @@ $(function() {
     $(wizardSteps[activeStep]).removeClass("active");
 
     activeStep--;
-    
+
     // Sliding in previous Step
     $(steps[activeStep]).removeClass("off").addClass("active");
     $(wizardSteps[activeStep]).addClass("active");
@@ -84,7 +84,7 @@ $(function() {
 
     // Next step
     activeStep++;
-    
+
     // Sliding in next step
     $(steps[activeStep]).addClass("active");
     $(wizardSteps[activeStep]).addClass("active");
@@ -95,13 +95,10 @@ $(function() {
   });
 });
 
-$('.js-click-modal').click(function(){
+$('.js-click-modal').click(function () {
   $('.container').addClass('modal-open');
 });
 
-$('.js-close-modal').click(function(){
+$('.js-close-modal').click(function () {
   $('.container').removeClass('modal-open');
 });
-  
-
-  

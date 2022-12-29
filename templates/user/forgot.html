@@ -3,7 +3,7 @@
 <html class="no-js" lang="en">
 
 <head>
- 
+
     <meta charset="utf-8">
     <title>Eazyfy</title>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -16,7 +16,7 @@
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'user/imgs/theme/eazyfy.jpg' %}">
     <!-- Template CSS -->
-    <link rel="stylesheet" href="{% static 'user/css/maind6c3.css' %}">
+    <link rel="stylesheet" href="{% static 'user/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/wizard.css' %}">
     <link rel="stylesheet" href="{% static 'user/css/checkbox.css' %}">
 
@@ -29,12 +29,13 @@
             background-color: #620d9314;
             height: 319px;
         }
+
     </style>
 
     <main>
 
 
-        
+
 
         <section class="pt-50 pb-50">
             <div class="container">
@@ -42,65 +43,64 @@
                     <div class="col-lg-10 m-auto">
                         <div class="row">
                             <div class="col-lg-2"></div>
-        
+
                             <div class="col-lg-8">
                                 <div class="login_wrap widget-taber-content p-30 background-white border-radius-5">
                                     <div class="padding_eight_all bg-white">
                                         {% if messages %}
                                         <ul class="messages">
-                                
-                                
+
+
                                             {% for message in messages %}
                                             {% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
-                                <div>
-                                    <div class="alert alert-warning" style="color: red;">{{ message }}</div>
-                                </div>
-                                          
-                                
-                                
-                                
+                                            <div>
+                                                <div class="alert alert-warning" style="color: red;">{{ message }}</div>
+                                            </div>
+
+
+
+
                                             {% endif %}
-                                
-                                
+
+
                                             {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
-                                            <div  class="alert" style="color: green;">
+                                            <div class="alert" style="color: green;">
                                                 <div>{{ message }}
 
-                                                
+
                                                 </div>
                                             </div>
-                                            
-                                
+
+
                                             {% endif %}
                                             {% endfor %}
                                         </ul>
                                         {% endif %}
-                                
 
-                            <form action="" method="POST">
-                                {% csrf_token %}
-                                <div class="form-group">
-                                    <input required="" type="email" name="email"
-                                        placeholder="email">
+
+                                        <form action="" method="POST">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <input required="" type="email" name="email" placeholder="email">
+                                            </div>
+                                            <div class="form-group">
+                                                <button type="submit" class="btn btn-fill-out btn-block hover-up"
+                                                    name="login">Submit</button>
+                                            </div>
+                                        </form>
+
+
+
+
+
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-fill-out btn-block hover-up"
-                                        name="login">Submit</button>
-                                </div>
-                              </form>
-                          
-
-              
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
     </main>
 
@@ -128,8 +128,8 @@
     <script src="{% static 'user/js/plugins/jquery.theia.sticky.js' %}"></script>
     <script src="{% static 'user/js/plugins/jquery.elevatezoom.js' %}"></script>
     <!-- Template  JS -->
-    <script src="{% static 'user/js/maind6c3.js' %}"></script>
-    <script src="{% static 'user/js/shopd6c3.js' %}"></script>
+    <script src="{% static 'user/js/main.js' %}"></script>
+    <script src="{% static 'user/js/shop.js' %}"></script>
 
 
     <script src="{% static 'user/js/wizard.js' %}"></script>
