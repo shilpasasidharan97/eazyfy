@@ -32,5 +32,4 @@ urlpatterns = [
     path("comingsoon", views.comingsoon, name="comingsoon"),
     path("findnewgadget", views.findnewgadget, name="findnewgadget"),
     path("user-logout", views.userLogout, name="user-logout"),
-    # path('test',views.test,name='test'),
 ]

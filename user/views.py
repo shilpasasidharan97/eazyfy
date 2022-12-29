@@ -38,8 +38,7 @@ def customerlogin(request):
             if user.is_customer:
                 return redirect("user:index")
             return redirect("user:login")
-        else:
-            return redirect("user:login")
+        return redirect("user:login")
     else:
         return render(request, "user/login.html")
 
@@ -183,10 +182,6 @@ def termsAndConditions(request):
 def sell(request):
 
     brand = Brand.objects.all()
-    # search_term = ''
-    # if 'search' in request.GET:
-    #     search_term = request.GET['search']
-    #     jobs = Brand.objects.all().filter(name__icontains=search_term)
     context = {
         "is_sellphone": True,
         "brand": brand,
@@ -209,8 +204,6 @@ def privacyAndPolicy(request):
 def shops(request, id):
     model = BrandModel.objects.filter(brand__id=id)
     searchModel = BrandModel.objects.filter(brand__id=id)
-    # checkModel = BrandModel.objects.filter()
-    # print(request.user.name,"now")
     data = []
     for pos in searchModel:
         item = {"pk": pos.pk, "modelName": pos.name}
@@ -222,11 +215,8 @@ def shops(request, id):
 
 # QUESTIONS
 def question(request, id):
-    # questions = Questions.objects.get(id=id)
     spec = ModelSpecifications.objects.get(id=id)
-    # questions = Questions.objects.filter(model_question=spec.brand_model)
     objective_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="Objective")
-    # image_questions = SubDeduction.objects.select_related('questions').filter(model=spec.brand_model).values('questions').distinct()
     image_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="image_type")
     context = {"questions": objective_questions, "image_questions": image_questions}
     return render(request, "user/question.html", context)
@@ -268,8 +258,6 @@ def repairPhone(request):
     return render(request, "user/repairphone.html", context)
 
 
-# PAYMENT
-#
 def payment(request):
     return render(request, "user/payment.html")
 
@@ -297,16 +285,6 @@ def sellPhone(request):
     return render(request, "user/sell-phone.html", context)
 
 
-# def test(request):
-#     brand = Brand.objects.all()
-#     data = []
-#     for pos in brand:
-#         item = {
-#             "pk":pos.pk,
-#             "brandName":pos.name
-#         }
-#         data.append(item)
-
 #     context = {
 #         "data":data,
 #         'brand':brand
@@ -320,6 +298,5 @@ def handler404(request, exception):
 
 # USER LOGOUT
 def userLogout(request):
-    request.user
     logout(request)
     return redirect("user:index")

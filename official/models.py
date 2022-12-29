@@ -2,8 +2,6 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
-
-# from django.contrib.auth.models import User
 from django.db import models
 from phone_field import PhoneField
 
@@ -158,7 +156,6 @@ class QuestionOption(models.Model):
 class Deduction(models.Model):
     questions = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
     model = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
-    # deduction_amount = models.IntegerField(null = True, blank = True)
     deduction_amount_yes = models.IntegerField(null=True, blank=True)
     deduction_amount_no = models.IntegerField(null=True, blank=True)
 
