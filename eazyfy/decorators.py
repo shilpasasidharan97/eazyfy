@@ -6,9 +6,8 @@ def auth_franchise(func):
         franchise_ex = request.user.franchise
         if franchise_ex is not None:
             return func(request, *args, **kwargs)
-        else:
-            print("else")
-            return redirect("official:loginpage")
+        print("else")
+        return redirect("official:loginpage")
 
     return wrap
 
@@ -18,8 +17,7 @@ def auth_pickupboy(func):
         pickupboy_ex = request.user.pickup_boy
         if pickupboy_ex is not None:
             return func(request, *args, **kwargs)
-        else:
-            return redirect("official:loginpage")
+        return redirect("official:loginpage")
 
     return wrap
 
@@ -29,7 +27,6 @@ def auth_customer(func):
         customer_ex = request.user.customer
         if customer_ex is not None:
             return func(request, *args, **kwargs)
-        else:
-            return redirect("user:login")
+        return redirect("user:login")
 
     return wrap

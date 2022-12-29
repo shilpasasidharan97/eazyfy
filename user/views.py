@@ -37,10 +37,8 @@ def customerlogin(request):
             login(request, user)
             if user.is_customer:
                 return redirect("user:index")
-            else:
-                return redirect("user:login")
-        else:
             return redirect("user:login")
+        return redirect("user:login")
     else:
         return render(request, "user/login.html")
 
@@ -64,10 +62,9 @@ def UserRegistration(request):
 
             profile = CutomerProfile.objects.create(user=customers, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
-        else:
-            msg = "Password does not match"
-            context = {"msg": msg}
-            return render(request, "user/registration.html", context)
+        msg = "Password does not match"
+        context = {"msg": msg}
+        return render(request, "user/registration.html", context)
     return render(request, "user/registration.html")
 
 
@@ -78,9 +75,8 @@ def checkPhoneNumber(request):
     if User.objects.filter(phone_number=phone).exists():
         data = {"status": 1, "msg": "User Alreay Exists in the same phone number"}
         return JsonResponse(data)
-    else:
-        data = {"msg": '"user not exists', "status": 0}
-        return JsonResponse(data)
+    data = {"msg": '"user not exists', "status": 0}
+    return JsonResponse(data)
 
 
 # SEND OTP
@@ -94,8 +90,7 @@ def otp_fun(request, id):
 
         if verification:
             return redirect("user:index")
-        else:
-            pass
+        pass
     MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 
@@ -108,8 +103,7 @@ def forgot(request):
             if not User.objects.filter(email=email).first():
                 messages.success(request, "Not user found with this email.")
                 return redirect("/forgot")
-            else:
-                pass
+            pass
             user_obj = User.objects.get(email=email)
             token = str(uuid.uuid4())
             profile_obj = CutomerProfile.objects.get(user=user_obj)
@@ -188,10 +182,6 @@ def termsAndConditions(request):
 def sell(request):
 
     brand = Brand.objects.all()
-    # search_term = ''
-    # if 'search' in request.GET:
-    #     search_term = request.GET['search']
-    #     jobs = Brand.objects.all().filter(name__icontains=search_term)
     context = {
         "is_sellphone": True,
         "brand": brand,
@@ -214,8 +204,6 @@ def privacyAndPolicy(request):
 def shops(request, id):
     model = BrandModel.objects.filter(brand__id=id)
     searchModel = BrandModel.objects.filter(brand__id=id)
-    # checkModel = BrandModel.objects.filter()
-    # print(request.user.name,"now")
     data = []
     for pos in searchModel:
         item = {"pk": pos.pk, "modelName": pos.name}
@@ -227,11 +215,8 @@ def shops(request, id):
 
 # QUESTIONS
 def question(request, id):
-    # questions = Questions.objects.get(id=id)
     spec = ModelSpecifications.objects.get(id=id)
-    # questions = Questions.objects.filter(model_question=spec.brand_model)
     objective_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="Objective")
-    # image_questions = SubDeduction.objects.select_related('questions').filter(model=spec.brand_model).values('questions').distinct()
     image_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="image_type")
     context = {"questions": objective_questions, "image_questions": image_questions}
     return render(request, "user/question.html", context)
@@ -273,8 +258,6 @@ def repairPhone(request):
     return render(request, "user/repairphone.html", context)
 
 
-# PAYMENT
-#
 def payment(request):
     return render(request, "user/payment.html")
 
@@ -302,16 +285,6 @@ def sellPhone(request):
     return render(request, "user/sell-phone.html", context)
 
 
-# def test(request):
-#     brand = Brand.objects.all()
-#     data = []
-#     for pos in brand:
-#         item = {
-#             "pk":pos.pk,
-#             "brandName":pos.name
-#         }
-#         data.append(item)
-
 #     context = {
 #         "data":data,
 #         'brand':brand
@@ -325,6 +298,5 @@ def handler404(request, exception):
 
 # USER LOGOUT
 def userLogout(request):
-    request.user
     logout(request)
     return redirect("user:index")

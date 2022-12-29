@@ -23,7 +23,6 @@ def header(request):
 @auth_franchise
 @login_required(login_url="/official/loginpage")
 def index(request):
-    # payment_from_franchise = FranchiseWallet.objects.all()
     franchise = request.user.franchise
     payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by("date")
     pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
@@ -51,7 +50,6 @@ def add_pickupboy(request):
         place = request.POST["place"]
         address = request.POST["address"]
         photo = request.FILES["photo"]
-        # franchise = franchise
 
         pickup_boy = PickUpBoy(franchise=franchise, pickup_id=pickup_boy_id, name=name, email=email, phone=phone, photo=photo, place=place, address=address, password=password)
         pickup_boy.save()
@@ -59,10 +57,9 @@ def add_pickupboy(request):
         User = get_user_model()
         User.objects.create_user(phone_number=phone, password=password, pickup_boy=pickup_boy, is_pickupboy=True)
         return redirect("franchise:add-pickupboy")
-    else:
-        pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
-        print(pickup_boy_list)
-        context = {"is_addpickupboy": True, "pickup_boy_list": pickup_boy_list}
+    pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
+    print(pickup_boy_list)
+    context = {"is_addpickupboy": True, "pickup_boy_list": pickup_boy_list}
     return render(request, "franchise/add-pickupboy.html", context)
 
 
@@ -93,7 +90,6 @@ def editform(request, id):
     pickupboyplace = request.POST["pickupboyplace"]
     paddress = request.POST["paddress"]
 
-    # photo = request.FILES['fphoto']
     PickUpBoy.objects.filter(id=id).update(pickup_id=pid, name=pname, email=pemail, phone=pickupboyphone, place=pickupboyplace, address=paddress)
     get_user_model().objects.filter(pickup_boy=id).update(phone_number=pickupboyphone, email=pemail)
     data = {"ss": "csac"}

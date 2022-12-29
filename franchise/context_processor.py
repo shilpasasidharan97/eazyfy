@@ -7,7 +7,5 @@ def main_context(request):
         if User.objects.filter(franchise=franchise).exists():
             franchise = request.user.franchise
             return {"domain": request.META["HTTP_HOST"], "franchise": franchise}
-        else:
-            return {"domain": request.META["HTTP_HOST"]}
-    else:
         return {"domain": request.META["HTTP_HOST"]}
+    return {"domain": request.META["HTTP_HOST"]}
