@@ -16,8 +16,10 @@ from django.contrib.auth.decorators import login_required
 @auth_franchise
 def header(request):
     franchise = request.user.franchise
+    franchise_obj=Franchise.objects.get(name=franchise)
     context = {
         "franchise":franchise,
+        'franchise_obj':franchise_obj
     }
     return render(request,"franchise/header.html", context)
 
@@ -28,6 +30,7 @@ def header(request):
 def index(request):
     # payment_from_franchise = FranchiseWallet.objects.all()
     franchise = request.user.franchise
+    
     payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by('date')
     pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by('name')
     count = pickup_boy_list.count()

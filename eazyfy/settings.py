@@ -157,3 +157,5 @@ TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 
 
 AUTH_USER_MODEL='official.User'
+
+
