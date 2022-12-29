@@ -24,20 +24,20 @@
 
 <!-- <div>
     <img src="{{ banner.url }}" alt="">
-</div>
- -->
-{% comment %}
+</div> -->
 
+
+{% if bannerImage %} 
 {% for banner in bannerImage %}
 <div class="">
     <div class="project-info">
         <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
 
             <div class="d-flex align-items-center">
-                <div class="project-media " >
-                    {% if banner.banner %}
+                <div class="project-media ">
+                  
                     <img src="{{ banner.banner.url }}" alt="">
-                    {% endif %}
+                   
                 </div>
                 <div class="ms-2">
                     <h5 class="mb-0 pt-1 font-w50 text-black"></h5>
@@ -60,7 +60,7 @@
 </div>
 
 {% endfor %}
-{% endcomment %}
+{% endif %}
 
 </div>
 
@@ -78,7 +78,8 @@
         <button class="btn btn-outline-primary mx-2" type="submit">add</button>
     </div>
 </form>
-{% comment %}
+
+{% if offerImage %}
 {% for offer in offerImage %}
 
 
@@ -88,9 +89,9 @@
 
             <div class="d-flex align-items-center">
                 <div class="project-media">
-                    {% if offer.offer %}
+                    
                     <img src="{{ offer.offer.url }}" alt="">
-                    {% endif %}
+                   
                 </div>
                 <div class="ms-2">
                     <h5 class="mb-0 pt-1 font-w50 text-black"></h5>
@@ -113,13 +114,13 @@
 </div>
 
 {% endfor %}
-{% endcomment %}
+{% endif %}
 </div>
 
 
 
 
-{% comment %}
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
     function deleteBanner(id) {
@@ -167,7 +168,7 @@
         })
     }
 </script>
-{% endcomment %}
+
 {% endblock %}
 
 

@@ -8921,7 +8921,7 @@ a {
   left: auto; }
 
 .nav-header {
-  height: 7.5rem;
+  height: 4.5rem;
   width: 17.5rem;
   display: inline-block;
   text-align: left;
@@ -9272,7 +9272,7 @@ svg.pulse-svg {
   padding-top: 3.5rem; }
 
 [data-header-position="fixed"] .deznav {
-  margin-top: 38px; }
+  margin-top: 0px; }
 
 [data-sidebar-style="compact"][data-header-position="fixed"][data-container="boxed"][data-layout="vertical"] .header {
   width: 1199px; }

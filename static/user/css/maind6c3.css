@@ -648,6 +648,12 @@ a:hover {
   cursor: pointer;
   white-space: nowrap;
 }
+.result{
+  border: 1px solid #e3dada;
+  padding: 12px;
+  width: 170px;
+}
+
 
 .dd-menu li:hover {
   background-color: #f6f6f6;
