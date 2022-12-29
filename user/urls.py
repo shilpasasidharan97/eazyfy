@@ -34,13 +34,18 @@ urlpatterns = [
     path('getspecdata/<int:id>',views.getspecdata,name='getspecdata'),
 
     path('buy_phone',views.buyPhone,name='buyphone'),
+    path('order-confirm',views.orderConfirm,name='order-confirm'),
 
     path('repair_phone',views.repairPhone,name='repair_phone'),
+
+    path('imagetype',views.imagetype,name='imagetype'),
+
     path('payment',views.payment,name='payment'),
     path('comingsoon',views.comingsoon,name='comingsoon'),
     path('findnewgadget',views.findnewgadget,name='findnewgadget'),
     path('user-logout',views.userLogout,name='user-logout'),
-
+    path('objective_type',views.objective_type,name='objective_type'),
+    path('image_type',views.image_type,name='image_type'),
 
     # path('test',views.test,name='test'),
      

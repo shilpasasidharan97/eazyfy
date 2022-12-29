@@ -66,5 +66,6 @@ urlpatterns = [
     path('settings',views.settings,name='settings'),
     path('offers',views.offers,name='offers'),
     path('DeleteBanner/<int:id>',views.DeleteBanner, name='DeleteBanner'), 
-     path('DeleteOffer/<int:id>',views.DeleteOffer, name='DeleteOffer'), 
+    path('DeleteOffer/<int:id>',views.DeleteOffer, name='DeleteOffer'), 
+    path('invoice',views.invoice,name='invoice'),
 ]

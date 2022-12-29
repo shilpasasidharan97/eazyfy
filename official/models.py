@@ -126,7 +126,7 @@ class BrandModel(models.Model):
         return str(self.name)
 
 
-class ModelSpecifications(models.Model):
+class ModelSpecifications(models.Model):    
     Brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
     color = models.CharField(max_length=30, null=True)
@@ -149,6 +149,21 @@ class DeviceType(models.Model):
         return str(self.device_type)
 
 
+# class Enquiry(models.Model):
+#     device = models.ForeignKey(ModelSpecifications
+#     status = models.CharField(max_length=180, choices=())
+
+#     def get_questions(self):
+#         return EnquiryQuestion.objects.filter(parent=self)
+
+
+# class EnquiryQuestion()
+#     parent = fk(Enquiry)
+#     question = models.CharField(max_length=180)
+
+
+#QUESTION ADDING
+
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
     device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
@@ -162,6 +177,7 @@ class Questions(models.Model):
     def __str__(self):
         return str(self.questions)
 
+# IMAGE TYPE QUESTIONS
 
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
@@ -175,6 +191,8 @@ class QuestionOption(models.Model):
         return str(self.image_description)
 
 
+# OBJECTIVE TYPE DEDECTION
+
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
@@ -185,6 +203,7 @@ class Dedection(models.Model):
     def get_subqust(self):
         return SubDedection.objects.filter(deduction=self) 
 
+# IMAGE TYPE DEDECTION
 
 class SubDedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
@@ -194,6 +213,16 @@ class SubDedection(models.Model):
     dedection_amount = models.IntegerField(null = True, blank = True)
 
 
+# class QuetionAnswer(models.Model):
+#     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
+#     user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
+#     objective_qustion = models.BooleanField(null=True,blank=True)
+
+
+
+
+# FRANCHISE WALLET
+
 
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -201,11 +230,14 @@ class FranchiseWallet(models.Model):
     last_paid_amount = models.FloatField(null = True, blank = True, default=0)
     date = models.DateTimeField(auto_now_add=True)
 
+# ADMIN WALLET
 
 class AdminWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True, default=0)  
     date = models.DateTimeField(auto_now_add=True)
+
+
 
 class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -213,7 +245,7 @@ class AdminSendRecord(models.Model):
     date = models.DateField()
 
 
-
+# PICKUP BOY PAYMENT
 
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)

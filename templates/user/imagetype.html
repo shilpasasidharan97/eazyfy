@@ -1,0 +1,205 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .box {
+    /* width: 200px; */
+    border: 1px solid;
+    border-color: rgba(112, 112, 112, 0.12);
+    /* margin-right: 20px; */
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    /* padding: 3px; */
+    margin: 20px 0px 3px 0px;
+    height: 42px;
+  }
+  #green{
+    display: none;
+
+  }
+  #red{
+    display: none;
+
+  }
+</style>
+
+
+<!-- <script>
+
+  function UpdateCost() {
+    var sum = 0;
+    var gn, elem;
+    var gn, elem;
+    for (i = 0; i < 5; i++) {
+      gn = 'game' + i;
+      elem = document.getElementById(gn);
+      if (elem.checked == true) { sum += Number(elem.value); }
+    }
+    document.getElementById('totalcost').value = sum.toFixed(2);
+  }
+
+</script> -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="row">
+      <div class="col-xs-12">
+        <h3 class="section-title mb-20">Tell us few things about your device</h3>
+        <!-- <div class="pricebtn">
+          <div class="btn btn-outline" id="price" style="color: #5f009a;"></div>
+        </div> -->
+        <hr>
+      </div>
+    </div>
+    {% for img in image_questions %}
+    <div class="step">
+      <h4> {{img.questions}}</h4>
+      <input type="text" id="question{{forloop.counter}}" value="{{img.questions}}">
+      <br>
+      <h2>{{forloop.counter}}</h2>
+      <div class="row">
+        {% for sub in img.get_subqust %}
+          <div class="col-sm-2 col-lg-3 col-6" id="multiple">
+            <div class="quiz_card_area">
+              <input class="quiz_checkbox" type="checkbox" id="inputid{{forloop.counter}}" value="2" />
+              <div class="single_quiz_card">
+                <div class="quiz_card_content">
+                  <div class="quiz_card_icon">
+                    <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
+                  </div><!-- end of quiz_card_media -->
+
+                  <div class="quiz_card_title imgrowcount">
+                    <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
+                  </div>
+                  <h2>{{forloop.counter}}</h2>
+                  <!-- end of quiz_card_title -->
+                </div><!-- end of quiz_card_content -->
+              </div><!-- end of single_quiz_card -->
+            </div><!-- end of quiz_card_area -->
+          </div><!-- end of col3  -->
+        {% endfor %}
+      </div>
+     
+    </div>
+    {% endfor %}
+
+
+    <div class="product-action-1 ">
+      <a onclick="UserAnswer()" class="btn btn-irv col-xs-6 pull-right text-center mrgin">
+
+        FINSIH
+      </a>
+
+    </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class=" modal-content " style="width: 739px;">
+      <div class="container-fluid ps-md-0">
+        <div class="row g-0">
+          <div class="d-none d-md-flex col-md-4 col-lg-4 bg-image" style="background-color:#660095; height:639px ">
+            <h2 style="color: white; padding: 17px;">Login/Sign Up</h2>
+
+            <div class="col-lg-12">
+              <img style="margin-left: -179px;
+            margin-top: 361px;" src="{% static 'user/imgs/theme/login.png' %}">
+            </div>
+          </div>
+
+
+          <div class="col-lg-1"></div>
+          <div class="col-md-7 col-lg-6">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="login d-flex align-items-center py-5">
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-9 col-lg-12 mx-auto">
+                    <h1 class="login-heading mb-4">Welcome back!</h1>
+
+                    <!-- Sign In Form -->
+                    <form>
+                      <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">Enter your phone number</label>
+                      </div>
+                      <!-- <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                        <label for="floatingPassword">Password</label>
+                      </div> -->
+
+                      <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                        <label class="form-check-label" for="rememberPasswordCheck">
+                          I agree with <a href="terms"> <span style="color:#630f63;"> terms and conditions </a></span>
+                        </label>
+                      </div>
+
+                      <div class="d-grid">
+                        <a href="{% url 'user:payment' %}"><button class="btn  text-uppercase fw-bold " type="submit">
+                            Sign in </a></button>
+                        <!-- <div class="text-center">
+                          <a class="small" href="#">Forgot password?</a>
+                        </div> -->
+                      </div>
+
+                    </form>
+                    <!-- <h4>login to unlock the best price</h4> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<!-- 
+<script>
+  function calcPrice() {
+    var price = 10000;
+    $("input[type=radio][data-price]:checked").each(function (i, el) {
+      price += +$(el).data("price");
+    });
+    $("#price").text(price);
+  }
+
+  $("input[type=radio]").on("change", calcPrice);
+  calcPrice();
+</script> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<!-- <script>
+     $(document).ready(function(){ 
+    $("input[name=action{{questions.id}}]").change(function() {
+        var test = $(this).val();
+        $(".show-hide").hide();
+        $("#"+test).show();
+    }); 
+});
+</script> -->
+
+
+{% endblock %}

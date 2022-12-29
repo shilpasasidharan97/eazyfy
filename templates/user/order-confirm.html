@@ -1,0 +1,82 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<section class="pt-50 pb-50">
+<div class="container">
+    <div class="tab-content dashboard-content">
+        <div class="tab-pane fade active show" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="mb-0">My order</h5>
+                </div>
+                <div class="card-body">
+                
+<div class="row">
+    <div class="col-lg-3">
+        <img class="card-img-top" src="/static/user/imgs/shop/mob3.jpg" alt="Card image cap">
+    </div>
+    <div class="col-lg-9">
+<div class="pb-3">PRODUCT NAME</div>
+<div class="pb-3">EXACT VALUE</div>
+
+<div class="pb-3">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-3 mb-lg-0">
+                <div class="card-header">
+                    <h5 class="mb-0">PRODUCT CONDITION</h5>
+                </div>
+                <div class="card-body">
+
+                    <ul style="list-style-type:disc">
+
+                        <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. </li>
+                        <li>Quam maxime alias ad necessitatibus vero, ipsum laboriosam! </li>
+                        <li>Quibusdam alias architecto, delectus neque quasi error laudantium </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="pb-3">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-3 mb-lg-0">
+                <div class="card-header">
+                    <h5 class="mb-0">Billing Address</h5>
+                </div>
+                <div class="card-body">
+                    <address>3522 Interstate<br> 75 Business Spur,<br> Sault Ste.
+                        <br>Marie, MI 49783</address>
+                    <p>New York</p>
+                    <a href="#" class="btn-small">Edit</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+    </div>
+</div>
+<div class="text-center">
+    <button type="submit">Confirm</button>
+</div>
+
+                </div>
+            </div>
+        </div>
+     
+    </div>
+</div>
+
+
+</section>
+
+
+{% endblock %}
