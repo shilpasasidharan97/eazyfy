@@ -194,7 +194,6 @@ def Model(request, id):
     brand = Brand.objects.get(id=id)
     models = BrandModel.objects.filter(brand=brand)
     if request.method == "POST":
-        brand = brand
         name = request.POST["name"]
         image = request.FILES["image"]
 
@@ -233,7 +232,6 @@ def modelSpecification(request, id):
     brand = BrandModel.objects.get(brand__id=id)
     models_spec = ModelSpecifications.objects.filter(brand_model=brand)
     if request.method == "POST":
-        brand = brand
         ram = request.POST["ram"]
         internal_storage = request.POST["internal_storage"]
         year = request.POST["year"]
