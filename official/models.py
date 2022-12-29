@@ -28,12 +28,12 @@ class UserManager(BaseUserManager):
 
 
 class Franchise(models.Model):
-    franchise_id = models.CharField(max_length=20, null=True, blank=True)
-    name = models.CharField(max_length=40, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True)
-    phone = models.CharField(max_length=15, null=True, blank=True)
+    franchise_id = models.CharField(max_length=20, default="")
+    name = models.CharField(max_length=40, default="")
+    email = models.EmailField(null=True)
+    phone = models.CharField(max_length=15, default="", blank=True)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
-    address = models.CharField(max_length=500, null=True, blank=True)
+    address = models.CharField(max_length=500, default="")
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -42,13 +42,13 @@ class Franchise(models.Model):
 
 class PickUpBoy(models.Model):
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE)
-    pickup_id = models.CharField(max_length=20, null=True, blank=True)
-    name = models.CharField(max_length=40, null=True, blank=True)
-    email = models.EmailField(null=True, blank=True)
-    phone = models.CharField(max_length=15, null=True, blank=True)
+    pickup_id = models.CharField(max_length=20, default="")
+    name = models.CharField(max_length=40, default="")
+    email = models.EmailField(null=True)
+    phone = models.CharField(max_length=15, default="")
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
-    place = models.CharField(max_length=40, null=True, blank=True)
-    address = models.CharField(max_length=500, null=True, blank=True)
+    place = models.CharField(max_length=40, default="")
+    address = models.CharField(max_length=500, default="")
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -56,10 +56,10 @@ class PickUpBoy(models.Model):
 
 
 class CutomerRegistration(models.Model):
-    name = models.CharField(max_length=50, null=True, blank=True)
-    email = models.EmailField(max_length=500, null=True, blank=True)
+    name = models.CharField(max_length=50, default="", blank=True)
+    email = models.EmailField(max_length=500, null=True)
     phone_number = PhoneField(null=True)
-    password = models.CharField(max_length=20, null=True, blank=True)
+    password = models.CharField(max_length=20, default="")
 
     def __str__(self):
         return str(self.name)
@@ -70,17 +70,17 @@ class CutomerRegistration(models.Model):
 
 class CutomerProfile(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="profile")
-    auth_token = models.CharField(max_length=100, blank=True, null=True)
+    auth_token = models.CharField(max_length=100, blank=True, default="")
     test_id = models.CharField(max_length=100, default=uuid.uuid4)
-    forget_password_token = models.CharField(max_length=100, blank=True, null=True)
+    forget_password_token = models.CharField(max_length=100, blank=True, default="")
 
     def __str__(self):
         return str(self.user)
 
 
 class Brand(models.Model):
-    image = models.FileField(upload_to="Brand", null=True, blank=True)
-    name = models.CharField(max_length=100, null=True, blank=True)
+    image = models.FileField(upload_to="Brand", null=True)
+    name = models.CharField(max_length=100, default="")
 
     class Meta:
         verbose_name_plural = "Brand"
@@ -91,8 +91,8 @@ class Brand(models.Model):
 
 class BrandModel(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    image = models.FileField(upload_to="Brand Model", null=True, blank=True)
-    name = models.CharField(max_length=100, null=True, blank=True)
+    image = models.FileField(upload_to="Brand Model", null=True)
+    name = models.CharField(max_length=100, default="")
 
     def get_ram(self):
         return ModelSpecifications.objects.filter(brand_model=self)
@@ -104,10 +104,10 @@ class BrandModel(models.Model):
 class ModelSpecifications(models.Model):
     brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
-    color = models.CharField(max_length=30, null=True, blank=True)
-    internal_storage = models.CharField(max_length=30, null=True, blank=True)
-    year = models.IntegerField(null=True, blank=True)
-    price = models.FloatField(null=True, blank=True)
+    color = models.CharField(max_length=30, default="")
+    internal_storage = models.CharField(max_length=30, default="")
+    year = models.IntegerField(null=True)
+    price = models.FloatField(null=True)
 
     class Meta:
         verbose_name_plural = "Model Specifications"
@@ -131,7 +131,7 @@ class Questions(models.Model):
     question_type = (("image_type", "image_type"), ("Objective", "Objective"))
     device_type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, null=True, blank=True)
     model_question = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
-    questions = models.CharField(max_length=500, null=True, blank=True)
+    questions = models.CharField(max_length=500, default="")
     question_type = models.CharField(max_length=15, choices=question_type)
 
     class Meta:
@@ -143,8 +143,8 @@ class Questions(models.Model):
 
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
-    image_upload = models.FileField(upload_to="Question  Image", null=True, blank=True)
-    image_description = models.CharField(max_length=500, null=True, blank=True)
+    image_upload = models.FileField(upload_to="Question  Image", null=True)
+    image_description = models.CharField(max_length=500, default="")
 
     class Meta:
         verbose_name_plural = "Sub questions"
