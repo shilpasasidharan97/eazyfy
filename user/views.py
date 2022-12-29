@@ -354,3 +354,12 @@ def userLogout(request):
     return redirect('user:index')
 
 
+def objective_type(request):
+    return render(request,"user/objective_type.html")
+
+def image_type(request):
+    return render(request,"user/image_type.html")
+
+
+
+

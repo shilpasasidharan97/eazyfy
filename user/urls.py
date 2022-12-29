@@ -37,7 +37,8 @@ urlpatterns = [
     path('comingsoon',views.comingsoon,name='comingsoon'),
     path('findnewgadget',views.findnewgadget,name='findnewgadget'),
     path('user-logout',views.userLogout,name='user-logout'),
-
+    path('objective_type',views.objective_type,name='objective_type'),
+    path('image_type',views.image_type,name='image_type'),
 
     # path('test',views.test,name='test'),
      
