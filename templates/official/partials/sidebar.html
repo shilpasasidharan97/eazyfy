@@ -14,45 +14,57 @@
         <ul class="metismenu" id="menu">
             <li class="nav-label first">Main Menu</li>
             <li>
-                <a href="{% url 'official:home' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:home' %}" class="ai-icon {% if is_index %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-144-layout"></i>
                     <span class="nav-text">Dashboard</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:userrequestlist' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:userrequestlist' %}" class="ai-icon {% if is_request %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-381-user-9"></i>
                     <span class="nav-text">User Request</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:wallet' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:wallet' %}" class="ai-icon {% if is_wallet %} active {% endif %}" aria-expanded="false">
                     <i class="flaticon-381-id-card-2"></i>
                     <span class="nav-text">Wallet</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:franchise' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:franchise' %}" class="ai-icon {% if is_franchise %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-381-blueprint"></i>
                     <span class="nav-text">Franchise</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:brand' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:brand' %}" class="ai-icon {% if is_product %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-381-smartphone-3"></i>
                     <span class="nav-text">Product</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:questions' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:questions' %}" class="ai-icon {% if is_questions %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-381-pencil"></i>
                     <span class="nav-text">Questions</span>
                 </a>
             </li>
             <li>
-                <a href="{% url 'official:transactionhistory' %}" class="ai-icon" aria-expanded="false">
+                <a href="{% url 'official:deductionsettings' %}" class="ai-icon {% if is_questions %}active{% endif %}" aria-expanded="false">
+                    <i class="flaticon-381-pencil"></i>
+                    <span class="nav-text">Deduction</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'official:transactionhistory' %}" class="ai-icon {% if is_transaction %}active{% endif %}" aria-expanded="false">
                     <i class="flaticon-381-transfer"></i>
                     <span class="nav-text">Transaction History</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'official:settings' %}" class="ai-icon {% if settings %}active{% endif %}" aria-expanded="false">
+                    <i class="flaticon-381-transfer"></i>
+                    <span class="nav-text">settings</span>
                 </a>
             </li>
         </ul>

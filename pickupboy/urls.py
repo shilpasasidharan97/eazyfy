@@ -16,7 +16,9 @@ urlpatterns = [
     path('fail',views.fail,name="fail"),
     path('requote',views.requote,name="requote"),
     path('requote-selfy',views.requote_selfy,name="requote-selfy"),
-
+    path('checkout',views.checkout,name="checkout"),
+    
+    # path('editboy/<int:id>',views.editboy, name='editboy'),
     ]
 
 
