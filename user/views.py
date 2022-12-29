@@ -286,7 +286,6 @@ def sellPhone(request):
     return render(request, "user/sell-phone.html", context)
 
 
-
 #     context = {
 #         "data":data,
 #         'brand':brand

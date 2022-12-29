@@ -2,7 +2,6 @@ import uuid
 
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
-
 from django.db import models
 from phone_field import PhoneField
 
