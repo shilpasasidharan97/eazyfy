@@ -4,29 +4,50 @@
 
 
 <div class="row page-titles mx-0">
+    {% if messages %}
+
+{% for message in messages %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.WARNING %}
+
+<div>{{ message }}</div>
+
+{% endif %}
+{% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+
+<div class="alert alert-success alert-dismissible fade show">
+    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="me-2"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>	
+    <strong>Success!</strong> {{ message }} .
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="btn-close">
+    </button>
+</div>
+
+{% endif %}
+{% endfor %}
+{% endif %}
+
+
+
+
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
             <h4>Total Franchises</h4>
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{% url 'official:home' %}">Dashboard / </a></li>
-            <li class=""><a href="javascript:void(0)">Franchise</a></li>
-        </ol>
+        <div class="" style="margin-right: 10px;">
+            <a href="" class="btn btn-rounded btn-secondary" style="float: right;" data-bs-toggle="modal"
+                data-bs-target=".bd-example-modal-lg">
+                <span class="btn-icon-start text-info">
+                    <i class="fa fa-plus" style="color: #5f009a;"></i>
+                </span>Franchise
+            </a>
+        </div>
     </div>
 </div>
 
-<div class="row">
-    <div class="" style="margin-right: 10px;">
-        <a href="" class="btn btn-rounded btn-secondary" style="float: right;" data-bs-toggle="modal"
-            data-bs-target=".bd-example-modal-lg">
-            <span class="btn-icon-start text-info">
-                <i class="fa fa-plus" style="color: #5f009a;"></i>
-            </span>Franchise
-        </a>
-    </div>
-</div>
+
+
+
 
 <div class="row mt-5">
     <div class="tab-content project-list-group" id="">
@@ -119,7 +140,7 @@
                                 </label>
                                 <div class="col-lg-6">
                                     <input type="text" class="form-control" id="franchiseid"
-                                        placeholder="franchise id.." required name="franchise_id">
+                                         required name="franchise_id">
                                     <div class="invalid-feedback">
                                         Please enter a Franchise Id.
                                     </div>
@@ -131,7 +152,7 @@
                                 </label>
                                 <div class="col-lg-6">
                                     <input type="password" class="form-control" id="pasword"
-                                        placeholder="Choose a safe one.." required name="password">
+                                       required name="password">
                                     <div class="invalid-feedback">
                                         Please enter a password.
                                     </div>
@@ -142,7 +163,7 @@
                                         class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="Email" placeholder="Your valid email.."
+                                    <input type="text" class="form-control" id="Email" 
                                         required name="email">
                                     <div class="invalid-feedback">
                                         Please enter a Email.
@@ -156,7 +177,7 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="Pname" placeholder="" required
+                                    <input type="text" class="form-control" id="Pname" required
                                         name="name">
                                     <div class="invalid-feedback">
                                         Please enter franchise name ..
@@ -168,7 +189,7 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="file" class="form-control" id="Fphoto" placeholder="" required
+                                    <input type="file" class="form-control" id="Fphoto"  required
                                         name="photo">
                                     <div class="invalid-feedback">
                                         Upload Photo ..
@@ -180,7 +201,7 @@
                                     <span class="text-danger">*</span>
                                 </label>
                                 <div class="col-lg-6">
-                                    <input type="text" class="form-control" id="Pphone" placeholder="212-999-0000"
+                                    <input type="text" class="form-control" id="Pphone" 
                                         required name="phone">
                                     <div class="invalid-feedback">
                                         Please enter a phone number.
@@ -193,7 +214,7 @@
                                 </label>
                                 <div class="col-lg-6">
                                     <textarea class="form-control" id="Address" rows="10"
-                                        placeholder="What would you like to see?" required name="address"></textarea>
+                                      required name="address"></textarea>
                                     <div class="invalid-feedback">
                                         Please enter Address ..
                                     </div>
@@ -289,7 +310,7 @@
                             </label>
                             <div class="col-lg-6">
                                 <textarea class="form-control" id="faddress" rows="10"
-                                    placeholder="What would you like to see?" required
+                                    required
                                     name="address"></textarea>
                                 <div class="invalid-feedback">
                                     Please enter Address ..
@@ -383,7 +404,6 @@
                 // 'fphoto':$('#fphoto').val(),
             },
             success: function (responce) {
-                alert()
                 window.location.reload()
             }
         })

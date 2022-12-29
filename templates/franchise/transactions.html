@@ -1,0 +1,55 @@
+{% extends 'franchise/partials/base.html' %}
+{% block content %}
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'official/vendor/datatables/css/jquery.dataTables.min.css' %}" >
+
+<div class="col-12">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">Transaction</h4>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div id="example_wrapper" class="dataTables_wrapper no-footer">
+                    <table id="example" class="display dataTable no-footer" style="min-width: 845px" role="grid"
+                        aria-describedby="example_info">
+                        <thead>
+                            <tr role="row">
+                                <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Name: activate to sort column descending"
+                                    style="width: 136.391px;">Sl/no</th>
+                                <th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                    aria-sort="ascending" aria-label="Name: activate to sort column descending"
+                                    style="width: 136.391px;">Credit/Debit</th>
+                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                    aria-label="Position: activate to sort column ascending" style="width: 208.766px;">
+                                    Amount</th>
+                                <th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                                    aria-label="Office: activate to sort column ascending" style="width: 97.9844px;">
+                                    Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+
+                            {% for transaction in payment_from_admin %}
+                            <tr class="odd" role="row">
+                                <td>{{ forloop.counter }}</td>
+                                <td><span class="badge light badge-success">Credit</span></td>
+                                <td>{{ transaction.amount}}</td>
+                                <td>{{ transaction.date}}</td>
+
+                            </tr>
+                            {% endfor %}
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

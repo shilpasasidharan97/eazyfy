@@ -1,6 +1,7 @@
-﻿{% extends 'user/partials/base.html' %}
+{% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
+
 
 
 <main class="main">
@@ -28,7 +29,7 @@
         </div>
     </div>
 
-    <section class="featured section-padding">
+    <section class="featured">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -340,7 +341,7 @@
     </section>
 
     <!-- Why US -->
-    <section class="banners mb-20 wusbanner mt-60">
+    <section class="banners wusbanner">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -356,8 +357,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">Premium Repair</h4>
-                                    <span class="re-subhead" class="re-subhead">Top quality certified parts</span>
+                                    <h4 class="re-head whyusfont">Premium Repair</h4>
+                                    <span class="re-subhead fonts">Top quality certified parts</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -373,8 +374,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">Instant Mobile Repair</h4>
-                                    <span class="re-subhead"> 
+                                    <h4 class="re-head whyusfont">Instant Mobile Repair</h4>
+                                    <span class="re-subhead fonts"> 
                                         Mobile Repair on the Spot
                                     </span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
@@ -392,8 +393,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">Physical Protection Warranty </h4>
-                                    <span class="re-subhead"> Free 1 Month Screen Replacement</span>
+                                    <h4 class="re-head whyusfont">Physical Protection Warranty </h4>
+                                    <span class="re-subhead fonts"> Free 1 Month Screen Replacement</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -408,10 +409,10 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">
+                                    <h4 class="re-head whyusfont">
                                         6 Months Warranty
                                     </h4>
-                                    <span class="re-subhead" class="">Hassle free 6 month warranty</span>
+                                    <span class="re-subhead fonts" class="">Hassle free 6 month warranty</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -427,8 +428,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">Skilled Technicians</h4>
-                                    <span class="re-subhead">Trained & Qualified Professionals</span>
+                                    <h4 class="re-head whyusfont">Skilled Technicians</h4>
+                                    <span class="re-subhead fonts">Trained & Qualified Professionals</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -444,8 +445,8 @@
                             </div>
                             <div class="col-lg-9">
                                 <div class="banner-texts">
-                                    <h4 class="re-head">Guaranteed Safety </h4>
-                                    <span class="re-subhead">Total Device & Data Security</span>
+                                    <h4 class="re-head whyusfont">Guaranteed Safety </h4>
+                                    <span class="re-subhead fonts">Total Device & Data Security</span>
                                     <!-- <a href="#">Shop Now <i class="fi-rs-arrow-right"></i></a> -->
                                 </div>
                             </div>
@@ -464,7 +465,7 @@
     </style>
 
 
-    <section class="featured popular-categories section-padding mt-15">
+    <section class="featured popular-categories mt-10">
         <div class="container wow fadeIn animated">
             <h3 class="section-title mb-40"><span>Services</span> Available</h3>
             <div class="carausel-6-columns-cover position-relative">
@@ -477,7 +478,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/screen-2.png' %}" alt="" class="service-image">
-                                        <span>SCREEN</span>
+                                        <span class="servicetext">SCREEN</span>
                                     </a>
                                 </div>
                             </div>
@@ -489,7 +490,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/battery-2.png' %}" alt="" class="service-image">
-                                        <span>BATTERY</span>
+                                        <span class="servicetext">BATTERY</span>
                                     </a>
                                 </div>
                             </div>
@@ -501,7 +502,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/MICRO2.png' %}" alt="" class="service-image"> 
-                                        <span>MIC</span>
+                                        <span class="servicetext">MIC</span>
                                     </a>
                                 </div>
                             </div>
@@ -513,7 +514,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/frd-cam.png' %}"  alt="" class="service-image">
-                                        <span>CAMERA</span>
+                                        <span class="servicetext">CAMERA</span>
                                     </a>
                                 </div>
                             </div>
@@ -525,7 +526,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/SP2.png' %}" alt="" class="service-image"> 
-                                        <span>SPEAKER</span>
+                                        <span class="servicetext">SPEAKER</span>
                                     </a>
                                 </div>
                             </div>
@@ -537,7 +538,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/CV3.png' %}" alt="" class="service-image">
-                                        <span> BACK PANEL</span>
+                                        <span class="servicetext"> BACK PANEL</span>
                                     </a>
                                 </div>
                             </div>
@@ -549,7 +550,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/SEN3.png' %}" alt="" class="service-image">
-                                        <span>SENSOR</span>
+                                        <span class="servicetext">SENSOR</span>
                                     </a>
                                 </div>
                             </div>
@@ -561,7 +562,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/AU2.png' %}" alt="" class="service-image"> 
-                                        <span>AUX JACK</span>
+                                        <span class="servicetext">AUX JACK</span>
                                     </a>
                                 </div>
                             </div>
@@ -573,7 +574,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/BACK-CAM.png' %}" alt="" class="service-image">
-                                        <span>CAMERA</span>
+                                        <span class="servicetext">CAMERA</span>
                                     </a>
                                 </div>
                             </div>
@@ -585,7 +586,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/C1.png' %}" alt="" class="service-image">
-                                        <span>CHARGING </span>
+                                        <span class="servicetext">CHARGING </span>
                                     </a>
                                 </div>
                             </div>
@@ -597,7 +598,7 @@
                                 <div class="product-img-action-wrap">
                                     <a href="{% url 'user:comingsoon' %}">
                                         <img src="{% static 'user/imgs/theme/icons/rec2.png' %}" alt="" class="service-image">
-                                        <span>RECIEVER</span>
+                                        <span class="servicetext">RECIEVER</span>
                                     </a>
                                 </div>
                             </div>
@@ -610,80 +611,64 @@
 
 
 <!-- FAQS -->
-    <section>
-        <div class="container p-3">
-            <div class="row">
-                <div class="accordion col-sm-12 col-12" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingOne">
-                            <h3 class="section-title mb-20 "><span>FAQ</span>s</h3>
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                <strong>What are the services offered by Eazyfy ?</strong>
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>Currently, we provide repair services for smartphone screens, battery, charging
-                                    jack, microphone, speakers, receiver, back panel, proximity sensor and audio jack.
-                                    .</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                <strong> How to find out the repair charges ?</strong>
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>The charges may vary based on the parts repaired, device brand, model etc.
-                                    Please enter your device details and the required service to find out the
-                                    price.</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="headingThree">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                <strong> Do I get any warranty for repaied</strong>
-                            </button>
-                        </h2>
-                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-                            data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <strong>Yes, we offer a warranty of 6 months for all our screen repair services & 3
-                                    months for other services. Please note: We don’t cover any kind of physical/water
-                                    damage to the parts provided. If there is any mishandling/tampering of the parts
-                                    that are observed by our expert technicians it will not be covered under
-                                    warranty.</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<section>
+    <div class="container p-3">
+        <div class="row">
+    <div class="accordion col-sm-12 col-12" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <h3 class="section-title mb-20 "><span>FAQ</span>s</h3>
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+              <strong> How to delete your eazyfy account in ios?</strong>
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <p class="product-name">
+                    To delete your account please go through the following steps –
+
+                    Open the Cashify App and tap on the profile icon at the bottom right
+                    Select “My Account” then tap on “Delete My Account”
+                    Confirm the “Deletion Request” through OTP sent on your registered mobile number
+                    Account will be deleted successfully within 15 days
+                    In case of any pending order(s), please cancel them first to proceed.
+
+                </p>
+               
             </div>
+          </div>
         </div>
-    </section>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+             <strong>Will you accept dead phones too?</strong>
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p class="product-name">Yes,  we take broken and dead mobiles if you are selling mobile phone on Cashify. However, it might affect the overall quote of the phone.</p> 
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <strong>should i delete all the data before selling my phone?</strong>
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <p class="product-name">We recommend you delete all the personal data and also remove the SIM and memory card form your phone. But, just in case you haven’t, then it’s not a problem at all. Because before going ahead with any further procedure, we ensure that our technical expert has wiped out all the available data from the device..</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
 
 
-    <section class="banner-2 section-padding pb-0">
-        <div class="container">
-            <div class="banner-img banner-big wow fadeIn animated f-none">
-                <img src="assets/imgs/banner/sp1.jpg" alt="">
-                <img src="{% static 'user/imgs/banner/playstore.jpg' %}" alt="">
-                <div class="banner-text " style="margin-left: 49%;">
-                    <a href="#" class="hover-up mb-sm-4 mb-lg-0"><img class="active"
-                            src="{% static 'user/imgs/theme/app-store.jpg' %}" alt=""></a>
-                    <a href="#" class="hover-up"><img src="{% static 'user/imgs/theme/google-play.jpg' %}" alt=""></a>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 
     <br><br>
