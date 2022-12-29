@@ -38,8 +38,7 @@ def customerlogin(request):
             if user.is_customer:
                 return redirect("user:index")
             return redirect("user:login")
-        else:
-            return redirect("user:login")
+        return redirect("user:login")
     else:
         return render(request, "user/login.html")
 

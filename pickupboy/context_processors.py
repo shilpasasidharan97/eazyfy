@@ -8,5 +8,4 @@ def main_context(request):
             pickupBoy = request.user.pickup_boy
             return {"domain": request.META["HTTP_HOST"], "pickUpBoy": pickupBoy}
         return {"domain": request.META["HTTP_HOST"]}
-    else:
-        return {"domain": request.META["HTTP_HOST"]}
+    return {"domain": request.META["HTTP_HOST"]}
