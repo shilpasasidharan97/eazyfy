@@ -10,7 +10,6 @@ def main_context(request):
     return {"brand": brand, "domain": request.META["HTTP_HOST"], "status": 0}
 
 
-
 #         return{
 #             "domain": request.META["HTTP_HOST"],
 #             "indexSearch" : indexSearch

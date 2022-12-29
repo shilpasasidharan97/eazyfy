@@ -256,9 +256,6 @@ def modelSpecification(request, id):
 #     return JsonResponse(data)
 
 
-
-
-
 # ALL QUESTION
 def questions(request):
     question = Questions.objects.all()
