@@ -1,68 +1,33 @@
-{% extends 'user/partials/base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'user/partials/base.html' %} {% load static %} {% block content %}
 
 <style>
-  .question-button {}
-
   .box {
-    /* width: 200px; */
     border: 1px solid;
     border-color: rgba(112, 112, 112, 0.12);
-    /* margin-right: 20px; */
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     border-radius: 5px;
-    /* padding: 3px; */
-    margin: 20px 0px 3px 0px;
-    height: 42px;
+    padding: 0px 20px;
   }
 
   #green {
     display: none;
-
   }
 
   #red {
     display: none;
-
   }
 
 </style>
 
-
-<script>
-
-  // function UpdateCost() {
-  //   var sum = 0;
-  //   var gn, elem;
-  //   var gn, elem;
-  //   for (i = 0; i < 5; i++) {
-  //     gn = 'game' + i;
-  //     elem = document.getElementById(gn);
-  //     if (elem.checked == true) { sum += Number(elem.value); }
-  //   }
-  //   document.getElementById('totalcost').value = sum.toFixed(2);
-  // }
-
-</script>
-
-<div class="container-fluid">
+<div class="container">
   <div class="row">
+
     <div class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-3">
       <div class="wizard card-like">
         <form action="#">
           <div class="wizard-header">
-            <div class="row">
-              <div class="col-xs-12">
-                <h3 class="section-title mb-20">Tell us few things about your device</h3>
-                <div class="pricebtn">
-                  <div class="btn btn-outline" id="price" style="color: #5f009a;"></div>
-                </div>
-                <hr>
-              </div>
-            </div>
+            <h3 class="section-title mb-20">Tell us few things about your device</h3>
           </div>
-
 
           <div class="wizard-body">
             <div class="step initial active" id="objectivetype">
@@ -70,30 +35,37 @@
               <div class="row">
                 <div class="col-sm-12">
                   <div class="slide rowcount">
-                    <h5 class="questionhead">{{forloop.counter}}. {{ questions.questions }} </h5>
-                    <input type="text" id="qst{{forloop.counter}}" hidden value="{{ questions.questions.id }}">
-                    <div class="row">
+                    <h5 class="questionhead">{{forloop.counter}}. {{ questions.questions }}</h5>
+                    <input type="text" id="qst{{forloop.counter}}" hidden value="{{ questions.questions.id }}" />
+                    <div class="d-flex mt-3">
                       {% if questions.questions.question_type == "Objective" %}
-                      <div class="col-lg-4 col-sm-4">
-                        <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
-                          <div class="question-button pt-2 px-3 ">
-                            <label class="form-check-label" for="customCheckBox2">
+
+                      <div class="mb-2 me-2">
+                        <label class="form-check-label" for="yes{{forloop.counter}}">
+                          <div class="form-check custom-checkbox box checkbox-info box">
+                            <div class="question-button">
                               <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}"
-                                value="green" data-price="-200" class="form-check-input">yes
-                            </label>
+                                value="green" data-price="-200" />
+                              <p class="m-0">Yes</p>
+                            </div>
                           </div>
-                        </div>
+                        </label>
                       </div>
-                      <div class="col-lg-4 col-sm-4 clearfix">
-                        <div class="form-check custom-checkbox box mb-3 checkbox-success box">
-                          <div class="question-button pt-2 px-3">
-                            <label class="form-check-label" for="customCheckBox2">
+
+                      <div class="mb-2 me-2">
+                        <label class="form-check-label" for="no{{forloop.counter}}">
+                          <div class="form-check custom-checkbox box checkbox-success box">
+                            <div class="question-button">
                               <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}"
-                                value="red" data-price="-50" class="form-check-input">NO</label>
+                                value="red" data-price="-50" />
+                              <p class="m-0">No</p>
+                            </div>
                           </div>
-                        </div>
+                        </label>
                       </div>
+
                       {% elif questions.questions.question_type == "image_type" %}
+
                       {% for sub in questions.get_subqust %}
                       <div class="col-sm-2 col-lg-3 col-6">
                         <div class="quiz_card_area">
@@ -101,32 +73,35 @@
                           <div class="single_quiz_card">
                             <div class="quiz_card_content">
                               <div class="quiz_card_icon">
-                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
-                              </div><!-- end of quiz_card_media -->
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="" />
+                              </div>
 
                               <div class="quiz_card_title">
-                                <h3><i class="fa fa-check" aria-hidden="true"></i> {{sub.qst_option.image_description}}
+                                <h3>
+                                  <i class="fa fa-check" aria-hidden="true"></i>
+                                  {{sub.qst_option.image_description}}
                                 </h3>
-                              </div><!-- end of quiz_card_title -->
-                            </div><!-- end of quiz_card_content -->
-                          </div><!-- end of single_quiz_card -->
-                        </div><!-- end of quiz_card_area -->
+                              </div>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                       {% endfor %}
+
                       {% endif %}
                     </div>
                   </div>
                 </div>
               </div>
               {% endfor %}
-              <br>
+              <br />
             </div>
 
             {% for img in image_questions %}
             <div class="step">
-              <h4> {{img.questions}}</h4>
-              <input type="text" id="question{{forloop.counter}}" value="{{img.questions}}">
-              <br>
+              <h4>{{img.questions}}</h4>
+              <input type="text" id="question{{forloop.counter}}" value="{{img.questions}}" />
+              <br />
               <h2>{{forloop.counter}}</h2>
               <div class="row">
                 {% for sub in img.get_subqust %}
@@ -137,62 +112,61 @@
                     <div class="single_quiz_card">
                       <div class="quiz_card_content">
                         <div class="quiz_card_icon">
-                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
-                        </div><!-- end of quiz_card_media -->
+                          <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="" />
+                        </div>
 
                         <div class="quiz_card_title imgrowcount">
                           <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
                         </div>
                         <h2>{{forloop.counter}}</h2>
-                        <!-- end of quiz_card_title -->
-                      </div><!-- end of quiz_card_content -->
-                    </div><!-- end of single_quiz_card -->
-                  </div><!-- end of quiz_card_area -->
-                </div><!-- end of col3  -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 {% endfor %}
               </div>
-
             </div>
             {% endfor %}
 
-
             <div class="step row">
               <div class="form-check col-lg-4 box">
-                <div style="margin: 9px">
+                <div style="margin: 9px;">
                   <input class="form-check-input" type="radio" value="3month" name="flexRadioDefault"
-                    id="flexRadioDefault1">
+                    id="flexRadioDefault1" />
                   <label class="form-check-label" for="flexRadioDefault1">
-                    <h5> Below 3 months</h5>
+                    <h5>Below 3 months</h5>
                   </label>
                 </div>
-              </div>&nbsp;
+              </div>
+              &nbsp;
               <div class="form-check col-lg-4 box">
                 <input class="form-check-input" type="radio" value="6month" name="flexRadioDefault"
-                  id="flexRadioDefault2" checked>
+                  id="flexRadioDefault2" checked />
                 <label class="form-check-label" for="flexRadioDefault2">
-                  <h5> 3 months to 6 months</h5>
+                  <h5>3 months to 6 months</h5>
                 </label>
-              </div>&nbsp;
+              </div>
+              &nbsp;
               <div class="form-check col-lg-4 box">
                 <input class="form-check-input" type="radio" value="11month" name="flexRadioDefault"
-                  id="flexRadioDefault2" checked>
+                  id="flexRadioDefault2" checked />
                 <label class="form-check-label" for="flexRadioDefault2">
-                  <h5> 6 months to 11 months</h5>
+                  <h5>6 months to 11 months</h5>
                 </label>
-              </div>&nbsp;
+              </div>
+              &nbsp;
               <div class="form-check col-lg-4 box">
                 <input class="form-check-input" type="radio" value="12month" name="flexRadioDefault"
-                  id="flexRadioDefault2" checked>
+                  id="flexRadioDefault2" checked />
                 <label class="form-check-label" for="flexRadioDefault2">
-                  <h5> above 11 months</h5>
+                  <h5>above 11 months</h5>
                 </label>
-              </div><br><br><br><br><br><br><br><br>
-              <div class="product-action-1 ">
+              </div>
+
+              <div class="product-action-1">
                 <a onclick="UserAnswer()" class="btn btn-irv col-xs-6 pull-right text-center mrgin">
-
-                  FINSIH
+                  FINISH
                 </a>
-
               </div>
             </div>
           </div>
@@ -200,63 +174,58 @@
             <div class="col-xs-6 pull-right text-center">
               <button id="wizard-next" type="button" class="btn btn-irv">
                 CONTINUE
-            </div><br><br>
-          </div>
-
-        </form>
-
-
-      </div>
-    </div>
-    <div class="col-lg-4 d-sm-none d-lg-block">
-      <div class="wizard card-like" style="height: 572px">
-
-        <div class="row" style="width: 18rem; border: none;">
-          <div class="col-4 col-lg-4 col-md-4">
-            <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap">
-          </div>
-
-
-          <div class="col-8 col-lg-8 col-md-8">
-            <h3 class="text-center">Iphone 11</h3>
-            <div class="text-center pt-3 ">
-              <h4>(1 GB/32 GB)</h4>
+              </button>
             </div>
           </div>
-        </div>
-        <hr>
-        <div class="p-3">
-          <h4 class="mb-15 text-brand">Device Evaluation</h4>
-          <ul style="list-style-type:circle">
-
-            <div id="green" class="show-hide"> yes</div>
-            <div id="red" class="show-hide">No</div>
-
-            <!-- <li id="green" class="show-hide"></li>
-            <li id="green" class="show-hide"></li> -->
-          </ul>
-        </div>
-
+        </form>
       </div>
     </div>
+
+    <div class="col-lg-4 d-sm-none d-lg-block">
+
+      <div class="wizard card-like">
+        <div class="row">
+          <div class="col-4 col-lg-4 col-md-4">
+            <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap" />
+          </div>
+
+          <div class="col-8 col-lg-8 col-md-8">
+            <h5 class="">Iphone 11 (1 GB/32 GB)</h5>
+            <div class="pricebtn" id="price" style="color: #5f009a;"></div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div class="p-3">
+        <h4 class="mb-15 text-brand">Device Evaluation</h4>
+        <ul style="list-style-type: circle;">
+          <div id="green" class="show-hide">yes</div>
+          <div id="red" class="show-hide">No</div>
+        </ul>
+      </div>
+
+    </div>
+
   </div>
+
 </div>
+
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
   aria-hidden="true">
   <div class="modal-dialog" role="document">
-    <div class=" modal-content " style="width: 739px;">
+    <div class="modal-content" style="width: 739px;">
       <div class="container-fluid ps-md-0">
         <div class="row g-0">
-          <div class="d-none d-md-flex col-md-4 col-lg-4 bg-image" style="background-color:#660095; height:639px ">
+          <div class="d-none d-md-flex col-md-4 col-lg-4 bg-image" style="background-color: #660095; height: 639px;">
             <h2 style="color: white; padding: 17px;">Login/Sign Up</h2>
 
             <div class="col-lg-12">
-              <img style="margin-left: -179px;
-            margin-top: 361px;" src="{% static 'user/imgs/theme/login.png' %}">
+              <img style="margin-left: -179px; margin-top: 361px;" src="{% static 'user/imgs/theme/login.png' %}" />
             </div>
           </div>
-
 
           <div class="col-lg-1"></div>
           <div class="col-md-7 col-lg-6">
@@ -275,7 +244,7 @@
                     <!-- Sign In Form -->
                     <form>
                       <div class="form-floating mb-3">
-                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
                         <label for="floatingInput">Enter your phone number</label>
                       </div>
                       <!-- <div class="form-floating mb-3">
@@ -284,20 +253,15 @@
                       </div> -->
 
                       <div class="form-check mb-3">
-                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
+                        <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
                         <label class="form-check-label" for="rememberPasswordCheck">
-                          I agree with <a href="terms"> <span style="color:#630f63;"> terms and conditions </a></span>
+                          I agree with terms and conditions
                         </label>
                       </div>
 
                       <div class="d-grid">
-                        <a href="{% url 'user:payment' %}"><button class="btn  text-uppercase fw-bold " type="submit">
-                            Sign in </a></button>
-                        <!-- <div class="text-center">
-                          <a class="small" href="#">Forgot password?</a>
-                        </div> -->
+                        <a href="{% url 'user:payment' %}" class="btn text-uppercase fw-bold"> Sign in </a>
                       </div>
-
                     </form>
                     <!-- <h4>login to unlock the best price</h4> -->
                   </div>
@@ -310,7 +274,7 @@
     </div>
   </div>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
 <script>
   // answer show
 
@@ -341,71 +305,68 @@
 <!-- user answer saving -->
 <script>
   function UserAnswer() {
-    data = []
-    var rowcount = $('#objectivetype .rowcount').length
-    yes_no = []
+    data = [];
+    var rowcount = $("#objectivetype .rowcount").length;
+    yes_no = [];
     for (i = 1; i <= rowcount; i++) {
-      var radio = $('input[name=answer' + i + ']');
+      var radio = $("input[name=answer" + i + "]");
       for (var j = 0; 1 < radio.length; j++) {
         if (radio[j].checked) {
-          var checked_answer = $(radio[j]).val()
-          break
-        }
-        else {
-          break
+          var checked_answer = $(radio[j]).val();
+          break;
+        } else {
+          break;
         }
       }
       var yesno_obj = {
-        "qst": $('#qst' + i).val(),
-        "yesno": checked_answer,
-      }
+        qst: $("#qst" + i).val(),
+        yesno: checked_answer,
+      };
       // alert(JSON.stringify(yesno_obj,null,4))
-      yes_no.push(yesno_obj)
+      yes_no.push(yesno_obj);
     }
-    data.push(yes_no)
-    multiple = []
-    var imgrowcount = $('#multiple .imgrowcount').length
+    data.push(yes_no);
+    multiple = [];
+    var imgrowcount = $("#multiple .imgrowcount").length;
     for (k = 1; k <= rowcount; k++) {
       // alert("")
-      var select = $("#checkinput" + k).is(":checked")
+      var select = $("#checkinput" + k).is(":checked");
       // alert($("#checkinput"+k).is(":checked"))
       // if (select)
       // var status = ""
       if (select == true) {
-        var subqpk = $("#checkinput" + k).val()
-        var status = 1
-      }
-      else {
-        var subqpk = $("#checkinput" + k).val()
-        var status = 0
+        var subqpk = $("#checkinput" + k).val();
+        var status = 1;
+      } else {
+        var subqpk = $("#checkinput" + k).val();
+        var status = 0;
       }
 
       var subq_obj = {
-        "subqstid": subqpk,
-        "selectstatus": status,
-      }
-      multiple.push(subq_obj)
+        subqstid: subqpk,
+        selectstatus: status,
+      };
+      multiple.push(subq_obj);
     }
-    data.push(multiple)
-    lastq = []
-    var duration = $('input[name=flexRadioDefault]').val();
+    data.push(multiple);
+    lastq = [];
+    var duration = $("input[name=flexRadioDefault]").val();
     var durationlist = {
-      "durationsta": duration,
-    }
-    lastq.push(durationlist)
-    data.push(lastq)
-    var answers = JSON.stringify(data)
-    dt = { 'data': answers },
+      durationsta: duration,
+    };
+    lastq.push(durationlist);
+    data.push(lastq);
+    var answers = JSON.stringify(data);
+    (dt = { data: answers }),
       $.ajax({
         url: "/saveanswer/",
         type: "POST",
         data: dt,
         success: function (response) {
-          alert(response.msg)
-        }
-      })
+          alert(response.msg);
+        },
+      });
   }
-  // alert(JSON.stringify(data,null,4))
-
+    // alert(JSON.stringify(data,null,4))
 </script>
 {% endblock %}

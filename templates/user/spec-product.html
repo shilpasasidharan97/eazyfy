@@ -10,16 +10,14 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            <div class="modal-body" style="height: 300px;">
+            <div class="modal-body">
 
                 <div class="row">
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
                         <div class="detail-gallery">
-
                             <img class="default-img " src="{{ ram.brand_model.image.url}}" alt="">
                         </div>
                     </div>
-
 
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
                         <div class="detail-info">
@@ -105,22 +103,18 @@
                             </div>
                             <div class="detail-info">
                                 <div class="bt-1 border-color-1 mt-15 mb-15">
-                                    <div>
-                                        <h6>Choose a variant</h6>
-                                    </div>
+                                    <h6>Choose a variant</h6>
                                 </div>
+
                                 <div class="attr-detail attr-size d-flex">
                                     {% for ram in specification.get_ram %}
-                                    <div class="list-filter size-filter font-small row">
-                                        <div class="col-4">
-                                            <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}"
-                                                class="btn btn-secondary">{{ ram.RAM }}GB</a>
-                                        </div>
-
+                                    <div class="list-filter size-filter font-small me-2">
+                                        <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}"
+                                            class="btn btn-secondary">{{ ram.RAM }}GB</a>
                                     </div>
-
                                     {% endfor %}
                                 </div>
+
                                 <br>
                                 <div class="attr-detail attr-color mb-15">
                                     <h6>
