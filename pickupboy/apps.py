@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class PickupboyConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'pickupboy'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "pickupboy"

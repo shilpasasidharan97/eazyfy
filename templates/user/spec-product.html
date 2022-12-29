@@ -16,7 +16,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
                         <div class="detail-gallery">
 
-                            <img class="default-img " src="{{ ram.Brand_model.image.url}}" alt="">
+                            <img class="default-img " src="{{ ram.brand_model.image.url}}" alt="">
                         </div>
                     </div>
 
@@ -24,31 +24,31 @@
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
                         <div class="detail-info">
                             <div class="row">
-                            <h2 class="title-detail mt-15 " style="text-transform: uppercase;">
-                                {{ ram.Brand_model.name }}
-                            </h2>
-                        </div>
+                                <h2 class="title-detail mt-15 " style="text-transform: uppercase;">
+                                    {{ ram.brand_model.name }}
+                                </h2>
+                            </div>
                             <div class="product-detail-rating">
                                 <div class="pro-details-brand row">
-                                    <h4 class="text-brand"> Variant: 
+                                    <h4 class="text-brand"> Variant:
                                         <span class="text-brand"> {{ram.RAM}}</span>
                                     </h4>
-<div class="mt-10">
+                                    <div class="mt-10">
 
-    get upto
+                                        get upto
 
-    <h2 id="price"></h2>
-    
-</div>
+                                        <h2 id="price"></h2>
+
+                                    </div>
                                 </div>
 
                             </div>
-                            
+
                             <div class="bt-1 border-color-1 mt-15 mb-15"></div>
-                            
+
                             <div class="attr-detail attr-color mb-15">
                                 <h6>
-                                    <a href="{% url 'user:question' ram.id %}"  class="btn btn-sm btn-default">
+                                    <a href="{% url 'user:question' ram.id %}" class="btn btn-sm btn-default">
                                         Get exact value
                                         <i class="fi-rs-arrow-right"></i>
                                     </a>
@@ -73,7 +73,7 @@
     <div class="container">
         <div class="row">
             <h3 class="section-title mb-20">Sell <span>your</span> old phone </h3>
-            
+
         </div>
     </div>
 </div>
@@ -118,7 +118,7 @@
                                     {% for ram in specification.get_ram %}
                                     <div class="list-filter size-filter font-small row">
                                         <div class="col-4">
-                                            <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}" 
+                                            <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}"
                                                 class="btn btn-secondary">{{ ram.RAM }}GB</a>
                                         </div>
 
@@ -127,13 +127,13 @@
 
 
 
-                                    
+
                                     {% endfor %}
                                 </div>
                                 <br>
                                 <div class="attr-detail attr-color mb-15">
                                     <h6>
-                                        <button disabled  class="btn btn-sm btn-default">
+                                        <button disabled class="btn btn-sm btn-default">
                                             Get exact value
                                             <i class="fi-rs-arrow-right"></i>
                                         </button>
@@ -217,13 +217,14 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}"
+                                    alt="">
 
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-                       
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -239,12 +240,13 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-                       
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -260,12 +262,13 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-                    
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -281,12 +284,13 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-                   
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -302,12 +306,13 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-            
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -323,12 +328,13 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
-                        
-                       
+
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -344,11 +350,12 @@
                     <div class="product-img-action-wrap">
                         <div class="product-img product-img-zoom">
                             <a href="#">
-                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                    alt="">
                                 <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
                             </a>
                         </div>
-                        
+
                     </div>
                     <div class="product-content-wrap">
                         <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
@@ -368,13 +375,13 @@
 
 
 <script>
-    function Specdata(id){
+    function Specdata(id) {
         $.ajax({
             url: "/getspecdata/" + id,
             type: 'GET',
 
             success: function (responce) {
-                $('#specimg').attr("src",responce.modelimage)
+                $('#specimg').attr("src", responce.modelimage)
                 $('#specname').html(responce.name)
                 $('#ram').html(responce.ram)
                 $('#price').html(responce.price)

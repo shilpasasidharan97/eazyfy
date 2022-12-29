@@ -1,4 +1,4 @@
-from official.models import *
+from official.models import User
 
 
 def main_context(request):
@@ -7,15 +7,8 @@ def main_context(request):
         if User.objects.filter(pickup_boy=pickupBoy).exists():
             pickupBoy = request.user.pickup_boy
             # pickUpBoy = PickUpBoy.objects.get(id=request.user.pickup_boy.id)
-            return {
-                "domain": request.META["HTTP_HOST"],
-                "pickUpBoy":pickupBoy
-            }
+            return {"domain": request.META["HTTP_HOST"], "pickUpBoy": pickupBoy}
         else:
-            return {
-                "domain": request.META["HTTP_HOST"],
-            }
+            return {"domain": request.META["HTTP_HOST"]}
     else:
-        return {
-            "domain": request.META["HTTP_HOST"],
-        }
+        return {"domain": request.META["HTTP_HOST"]}

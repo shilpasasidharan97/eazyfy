@@ -23,12 +23,12 @@
 
 
 <div class="row">
-   
+
 </div>
 
 
 <div class="row mt-4">
-    
+
     <div class="tab-content project-list-group" id="myTabContent">
         <div class="tab-pane fade active show" id="navpills-1">
 
@@ -39,13 +39,13 @@
                     <div class="col-xl-3 my-2 col-lg-6 col-sm-12">
                         <div class="d-flex align-items-center">
                             <div class="project-media d-flex">
-                                <img src="{{spec.Brand_model.image.url}}" alt="">
+                                <img src="{{spec.brand_model.image.url}}" alt="">
 
                             </div>
                             <div class="ms-2">
                                 <h5 class="title font-w600 mb-2">
                                     <a href="../post_details/index.html"
-                                        class="text-black">{{spec.Brand_model.name}}</a>
+                                        class="text-black">{{spec.brand_model.name}}</a>
                                 </h5>
                             </div>
                         </div>
@@ -89,7 +89,8 @@
                         <div class="d-flex project-status align-items-center">
                             <a href="" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#editSpec"
                                 onclick="Dataget({{spec.id}})">Edit</a>
-                            <button type="button" class="btn btn-outline-danger" onclick="Deletespec({{spec.id}})">Delete</button>
+                            <button type="button" class="btn btn-outline-danger"
+                                onclick="Deletespec({{spec.id}})">Delete</button>
                         </div>
                     </div>
                 </div>
@@ -176,22 +177,23 @@
             </div>
             <div class="modal-body">
                 <div class="basic-form">
-                        <div class="row">
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">RAM</label>
-                                <input type="text" class="form-control" id="miram" name="miram" value="">
-                                <input type="number" hidden class="form-control" id="pk" >
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Internal Storage</label>
-                                <input type="number" class="form-control" id="mistore" name="mistore" value="">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Price</label>
-                                <input type="integer" class="form-control" id="miprice" name="miprice" value="">
-                            </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label">RAM</label>
+                            <input type="text" class="form-control" id="miram" name="miram" value="">
+                            <input type="number" hidden class="form-control" id="pk">
                         </div>
-                        <button type="submit" class="btn btn-primary text-end align-items-end" onclick="Editspec()">Change</button>
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label">Internal Storage</label>
+                            <input type="number" class="form-control" id="mistore" name="mistore" value="">
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <label class="form-label">Price</label>
+                            <input type="integer" class="form-control" id="miprice" name="miprice" value="">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary text-end align-items-end"
+                        onclick="Editspec()">Change</button>
                 </div>
             </div>
 
@@ -259,7 +261,7 @@
                 'miram': $('#miram').val(),
                 'mistore': $('#mistore').val(),
                 'miprice': $('#miprice').val(),
-                                
+
             },
             success: function (responce) {
                 window.location.reload()
