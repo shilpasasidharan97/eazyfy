@@ -34,7 +34,7 @@ class Franchise(models.Model):
     email = models.EmailField(null=True)
     phone = models.CharField(max_length=15, null=True, blank=True)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
-    address = models.CharField(max_length=500, null=True)
+    address = models.TextField(null=True)
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -49,7 +49,7 @@ class PickUpBoy(models.Model):
     phone = models.CharField(max_length=15, null=True)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
     place = models.CharField(max_length=40, null=True)
-    address = models.CharField(max_length=500, null=True)
+    address = models.TextField(null=True)
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -132,7 +132,7 @@ class Questions(models.Model):
     question_type = (("image_type", "image_type"), ("Objective", "Objective"))
     device_type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, null=True, blank=True)
     model_question = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
-    questions = models.CharField(max_length=500, null=True)
+    questions = models.TextField(null=True)
     question_type = models.CharField(max_length=15, choices=question_type)
 
     class Meta:
@@ -145,7 +145,7 @@ class Questions(models.Model):
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
     image_upload = models.FileField(upload_to="Question  Image", null=True)
-    image_description = models.CharField(max_length=500, null=True)
+    image_description = models.TextField(null=True)
 
     class Meta:
         verbose_name_plural = "Sub questions"
