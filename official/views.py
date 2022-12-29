@@ -126,7 +126,6 @@ def editform(request, id):
     email = request.POST["femail"]
     phone = request.POST["fphone"]
     address = request.POST["faddress"]
-    # photo = request.FILES['fphoto']
     Franchise.objects.filter(id=id).update(franchise_id=fid, name=name, email=email, phone=phone, address=address)
     get_user_model().objects.filter(franchise__id=id).update(phone_number=phone, email=email)
     messages.success(request, "Franchise details edited")
@@ -194,7 +193,6 @@ def Model(request, id):
     brand = Brand.objects.get(id=id)
     models = BrandModel.objects.filter(brand=brand)
     if request.method == "POST":
-        brand = brand
         name = request.POST["name"]
         image = request.FILES["image"]
 
@@ -233,7 +231,6 @@ def modelSpecification(request, id):
     brand = BrandModel.objects.get(brand__id=id)
     models_spec = ModelSpecifications.objects.filter(brand_model=brand)
     if request.method == "POST":
-        brand = brand
         ram = request.POST["ram"]
         internal_storage = request.POST["internal_storage"]
         year = request.POST["year"]
@@ -259,24 +256,7 @@ def modelSpecification(request, id):
 #     return JsonResponse(data)
 
 
-# @csrf_exempt
-# def editSpec(request,id):
-#     miram = request.POST['miram']
-#     mistore = request.POST['mistore']
-#     miprice = request.POST['miprice']
-#     ModelSpecifications.objects.filter(id=id).update( RAM=miram, internal_storage=mistore,price=miprice)
-#     data ={
-#         "ss":"csac",
-#     }
-#     return JsonResponse(data)
 
-# def Deletespec(request,id):
-#     print('worked')
-#     ModelSpecifications.objects.get(id=id).delete()
-#     data = {
-#         "deleted":"deleted"
-#     }
-#     return JsonResponse(data)
 
 
 # ALL QUESTION
@@ -331,9 +311,7 @@ def subquestionFirst(request):
     device_type = DeviceType.objects.get(device_type="Mobile")
     new_question = Questions(questions=question, question_type=qst_type, device_type=device_type)
     new_question.save()
-    # qst_count = Questions.objects.filter(device_type=device_type).count()
     qest_pk = new_question.id
-    # countt = qst_count + 1
     data = {
         # "qstno":qst_count,
         "qest_pk": qest_pk
@@ -391,7 +369,6 @@ def questionId(request):
         qust_type = {"type": "image_type"}
         data.append(qust_type)
         question_option = QuestionOption.objects.filter(question__question_type="image_type", question=question)
-        # print(question_option,'@'*20)
 
         for i in question_option:
             data1 = {"image_description": i.image_description, "image_description_id": i.id, "image": i.image_upload.url}
@@ -459,7 +436,6 @@ def wallet(request):
 
 # WALLET_FRANCHISE_LIST AND STATUS
 def franchiseWallet(request):
-    # all_franchise = Franchise.objects.all().order_by('name')
     all_franchise = FranchiseWallet.objects.all()
     context = {"is_wallet": True, "franchise": all_franchise}
     return render(request, "official/wallet_franchise.html", context)
@@ -475,8 +451,6 @@ def viewPayment(request, id):
 def savePayment(request, id):
     now = datetime.datetime.now()
     paid_amount = request.POST["amount"]
-    # balance_amount = float(paid_amount) + float(franchise_balance)
-    # print(balance_amount)
     franchise_obj = Franchise.objects.get(id=id)
     franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
     franchise_balance = franchisewallet.wallet_amount
