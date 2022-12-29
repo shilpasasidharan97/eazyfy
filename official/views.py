@@ -44,9 +44,9 @@ def loginPage(request):
             login(request, user)
             if user.is_superuser:
                 return redirect("official:home")
-            elif user.is_franchise:
+            if user.is_franchise:
                 return redirect("franchise:index")
-            elif user.is_pickupboy:
+            if user.is_pickupboy:
                 return redirect("pickupboy:index")
             # elif user.is_customer:
             #     return redirect('user:about')
@@ -398,10 +398,9 @@ def questionId(request):
             data.append(data1)
             # print(data)
         return JsonResponse(data, safe=False)
-    else:
-        qust_type = {"type": "Objective"}
-        data.append(qust_type)
-        return JsonResponse(data, safe=False)
+    qust_type = {"type": "Objective"}
+    data.append(qust_type)
+    return JsonResponse(data, safe=False)
 
 
 @csrf_exempt

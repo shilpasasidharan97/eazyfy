@@ -37,8 +37,7 @@ def customerlogin(request):
             login(request, user)
             if user.is_customer:
                 return redirect("user:index")
-            else:
-                return redirect("user:login")
+            return redirect("user:login")
         else:
             return redirect("user:login")
     else:
@@ -64,10 +63,9 @@ def UserRegistration(request):
 
             profile = CutomerProfile.objects.create(user=customers, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
-        else:
-            msg = "Password does not match"
-            context = {"msg": msg}
-            return render(request, "user/registration.html", context)
+        msg = "Password does not match"
+        context = {"msg": msg}
+        return render(request, "user/registration.html", context)
     return render(request, "user/registration.html")
 
 
@@ -78,9 +76,8 @@ def checkPhoneNumber(request):
     if User.objects.filter(phone_number=phone).exists():
         data = {"status": 1, "msg": "User Alreay Exists in the same phone number"}
         return JsonResponse(data)
-    else:
-        data = {"msg": '"user not exists', "status": 0}
-        return JsonResponse(data)
+    data = {"msg": '"user not exists', "status": 0}
+    return JsonResponse(data)
 
 
 # SEND OTP
@@ -94,8 +91,7 @@ def otp_fun(request, id):
 
         if verification:
             return redirect("user:index")
-        else:
-            pass
+        pass
     MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 
@@ -108,8 +104,7 @@ def forgot(request):
             if not User.objects.filter(email=email).first():
                 messages.success(request, "Not user found with this email.")
                 return redirect("/forgot")
-            else:
-                pass
+            pass
             user_obj = User.objects.get(email=email)
             token = str(uuid.uuid4())
             profile_obj = CutomerProfile.objects.get(user=user_obj)
