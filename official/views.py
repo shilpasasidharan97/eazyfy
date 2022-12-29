@@ -576,15 +576,15 @@ def logout_view(request):
 
 def settings(request):
     offerImage = Offer.objects.all()
-    # bannerImage = BannerImage.objects.all()
-    # print(bannerImage)
-    # if request.method == 'POST':
-    #     banner = request.FILES.get('banner')
-    #     bannerObject = BannerImage(banner=banner)
-    #     print(bannerObject)
-    #     bannerObject.save()
+    bannerImage = BannerImage.objects.all()
+    print(bannerImage)
+    if request.method == 'POST':
+        banner = request.FILES.get('banner')
+        bannerObject = BannerImage(banner=banner)
+        print(bannerObject)
+        bannerObject.save()
     context = {
-        # "bannerImage":bannerImage,
+        "bannerImage":bannerImage,
         "offerImage":offerImage
     }
     
@@ -592,7 +592,7 @@ def settings(request):
 
 def DeleteBanner(request,id):
     print("#"*20)
-    # BannerImage.objects.get(id=id).delete()
+    BannerImage.objects.get(id=id).delete()
     return redirect('/official/settings')
 
 
