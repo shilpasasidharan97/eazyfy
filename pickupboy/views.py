@@ -110,5 +110,5 @@ def checkout(request):
         payment = client.order.create({"amount": amount, "currency": "INR", "payment_capture": "1"})
         print(payment)
         coffe = OrderPayment(name=name, amound=amount, paiment_id=payment["id"])
-        return render(request, "pickup-boy/checkout.html", {"payment": payment})
+        return render(request, "pickup-boy/checkout.html", {"payment": payment, "coffe": coffe})
     return render(request, "pickup-boy/checkout.html")

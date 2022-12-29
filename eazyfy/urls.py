@@ -18,4 +18,5 @@ urlpatterns = (
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )
-handler404 = views.handler404
+
+# handler404 = views.handler404

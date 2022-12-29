@@ -487,7 +487,7 @@ def savePayment(request, id):
     messages.success(request, "success")
     payment_mail(franchisewallet.id)
     record.save()
-    data = {"sss": "sss"}
+    data = {"sss": "sss", "franchise_amount": franchise_amount}
     return JsonResponse(data)
 
 
