@@ -18,119 +18,89 @@ from .models import User
 from django.contrib import admin
 
 
-# Register your models here.
+@admin.register(User)
 class UserAdmin(admin.ModelAdmin):
     list_display = ("franchise", "pickup_boy", "customer")
     search_fields = ("franchise", "pickup_boy")
 
 
-admin.site.register(User, UserAdmin)
-
-
+@admin.register(Franchise)
 class FranchiseAdmin(admin.ModelAdmin):
     list_display = ("franchise_id", "name", "phone")
     search_fields = ("franchise_id", "name", "phone")
 
 
-admin.site.register(Franchise, FranchiseAdmin)
-
-
+@admin.register(PickUpBoy)
 class PickUpBoyAdmin(admin.ModelAdmin):
     list_display = ("name", "phone", "franchise")
     search_fields = ("name", "phone", "franchise")
 
 
-admin.site.register(PickUpBoy, PickUpBoyAdmin)
-
-
+@admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ("name", "image")
     search_fields = ("name", "image")
 
 
-admin.site.register(Brand, BrandAdmin)
-
-
+@admin.register(BrandModel)
 class BrandModelAdmin(admin.ModelAdmin):
     list_display = ("brand", "name", "image")
     search_fields = ("brand", "name", "image")
 
 
-admin.site.register(BrandModel, BrandModelAdmin)
-
-
+@admin.register(ModelSpecifications)
 class ModelSpecificationsAdmin(admin.ModelAdmin):
     list_display = ("brand_model", "RAM", "internal_storage", "color", "year")
     search_fields = ("brand_model", "RAM", "internal_storage", "color", "year")
 
 
-admin.site.register(ModelSpecifications, ModelSpecificationsAdmin)
-
-
-admin.site.register(DeviceType)
-
-
+@admin.register(Questions)
 class QuestionsAdmin(admin.ModelAdmin):
     list_display = ("id", "questions", "question_type")
     search_fields = ("questions",)
 
 
-admin.site.register(Questions, QuestionsAdmin)
-
-
+@admin.register(QuestionOption)
 class QuestionOptionAdmin(admin.ModelAdmin):
     list_display = ("question_id", "question", "image_description", "image_upload")
     search_fields = ("questions",)
 
 
-admin.site.register(QuestionOption, QuestionOptionAdmin)
-
-
+@admin.register(Deduction)
 class DeductionAdmin(admin.ModelAdmin):
     list_display = ("questions", "model", "deduction_amount_yes", "deduction_amount_no")
     search_fields = ("questions", "model", "deduction_amount_yes", "deduction_amount_no")
 
 
-admin.site.register(Deduction, DeductionAdmin)
-
-
+@admin.register(CutomerRegistration)
 class CutomerRegistrationAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone_number")
 
 
-admin.site.register(CutomerRegistration, CutomerRegistrationAdmin)
-
-
+@admin.register(FranchiseWallet)
 class FranchiseWalletAdmin(admin.ModelAdmin):
     list_display = ("franchise", "wallet_amount", "date")
     search_fields = ("franchise", "wallet_amount", "date")
 
 
-admin.site.register(FranchiseWallet, FranchiseWalletAdmin)
-
-
+@admin.register(AdminWallet)
 class AdminWalletAdmin(admin.ModelAdmin):
     list_display = ("franchise", "amount", "date")
     search_fields = ("franchise", "amount", "date")
 
 
-admin.site.register(AdminWallet, AdminWalletAdmin)
-
-
+@admin.register(AdminSendRecord)
 class AdminSendRecordAdmin(admin.ModelAdmin):
     list_display = ("franchise", "amount", "date")
     search_fields = ("franchise", "amount", "date")
 
 
-admin.site.register(AdminSendRecord, AdminSendRecordAdmin)
-
-
+@admin.register(SubDeduction)
 class SubDeductionAdmin(admin.ModelAdmin):
     list_display = ("questions", "model", "deduction_amount")
     search_fields = ("questions", "model", "deduction_amount")
 
 
-admin.site.register(SubDeduction, SubDeductionAdmin)
-
 admin.site.register(BannerImage)
 admin.site.register(Offer)
+admin.site.register(DeviceType)

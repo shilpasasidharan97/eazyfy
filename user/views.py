@@ -90,7 +90,6 @@ def otp_fun(request, id):
 
         if verification:
             return redirect("user:index")
-        pass
     MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 
@@ -103,7 +102,6 @@ def forgot(request):
             if not User.objects.filter(email=email).first():
                 messages.success(request, "Not user found with this email.")
                 return redirect("/forgot")
-            pass
             user_obj = User.objects.get(email=email)
             token = str(uuid.uuid4())
             profile_obj = CutomerProfile.objects.get(user=user_obj)
