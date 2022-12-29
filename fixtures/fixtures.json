@@ -366,7 +366,7 @@
         "model": "official.modelspecifications",
         "pk": 7,
         "fields": {
-            "Brand_model": 6,
+            "brand_model": 6,
             "RAM": "8",
             "color": "red",
             "internal_storage": "128",
@@ -378,7 +378,7 @@
         "model": "official.modelspecifications",
         "pk": 8,
         "fields": {
-            "Brand_model": 6,
+            "brand_model": 6,
             "RAM": "12",
             "color": "yellow",
             "internal_storage": "256",
@@ -390,7 +390,7 @@
         "model": "official.modelspecifications",
         "pk": 9,
         "fields": {
-            "Brand_model": 8,
+            "brand_model": 8,
             "RAM": "32",
             "color": "yellow",
             "internal_storage": "256",
@@ -402,7 +402,7 @@
         "model": "official.modelspecifications",
         "pk": 10,
         "fields": {
-            "Brand_model": 8,
+            "brand_model": 8,
             "RAM": "32",
             "color": "333",
             "internal_storage": "256",
@@ -545,129 +545,129 @@
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 20,
         "fields": {
             "questions": 93,
             "model": 6,
-            "dedection_amount_yes": 10,
-            "dedection_amount_no": 5
+            "deduction_amount_yes": 10,
+            "deduction_amount_no": 5
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 21,
         "fields": {
             "questions": 94,
             "model": 6,
-            "dedection_amount_yes": 3,
-            "dedection_amount_no": 9
+            "deduction_amount_yes": 3,
+            "deduction_amount_no": 9
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 22,
         "fields": {
             "questions": 95,
             "model": 6,
-            "dedection_amount_yes": 6,
-            "dedection_amount_no": 24
+            "deduction_amount_yes": 6,
+            "deduction_amount_no": 24
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 23,
         "fields": {
             "questions": 96,
             "model": 6,
-            "dedection_amount_yes": null,
-            "dedection_amount_no": null
+            "deduction_amount_yes": null,
+            "deduction_amount_no": null
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 24,
         "fields": {
             "questions": 93,
             "model": 6,
-            "dedection_amount_yes": 50,
-            "dedection_amount_no": 10
+            "deduction_amount_yes": 50,
+            "deduction_amount_no": 10
         }
     },
     {
-        "model": "official.dedection",
+        "model": "official.deduction",
         "pk": 25,
         "fields": {
             "questions": 96,
             "model": 6,
-            "dedection_amount_yes": null,
-            "dedection_amount_no": null
+            "deduction_amount_yes": null,
+            "deduction_amount_no": null
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 1,
         "fields": {
             "questions": 96,
             "qst_option": 19,
             "deduction": 23,
             "model": 6,
-            "dedection_amount": 10
+            "deduction_amount": 10
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 2,
         "fields": {
             "questions": 96,
             "qst_option": 20,
             "deduction": 23,
             "model": 6,
-            "dedection_amount": 15
+            "deduction_amount": 15
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 3,
         "fields": {
             "questions": 96,
             "qst_option": 21,
             "deduction": 23,
             "model": 6,
-            "dedection_amount": 12
+            "deduction_amount": 12
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 4,
         "fields": {
             "questions": 96,
             "qst_option": 19,
             "deduction": 25,
             "model": 6,
-            "dedection_amount": 20
+            "deduction_amount": 20
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 5,
         "fields": {
             "questions": 96,
             "qst_option": 20,
             "deduction": 25,
             "model": 6,
-            "dedection_amount": 10
+            "deduction_amount": 10
         }
     },
     {
-        "model": "official.subdedection",
+        "model": "official.subdeduction",
         "pk": 6,
         "fields": {
             "questions": 96,
             "qst_option": 21,
             "deduction": 25,
             "model": 6,
-            "dedection_amount": 5
+            "deduction_amount": 5
         }
     },
     {
