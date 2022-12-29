@@ -241,18 +241,17 @@
 
 
 <header class="header-area header-style-1 header-height-2">
-    
+
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
         <div class="container">
-           
+
         </div>
     </div>
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block">
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/log1.png' %}"
-                            alt="logo"></a>
+                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/log1.png' %}" alt="logo"></a>
                 </div>
                 <div class="header-right text-brand">
                     <div class="">
@@ -267,8 +266,7 @@
                                                 src="{% static 'user/imgs/ProductSearch.svg' %}">
                                         </span>
                                         <input type="search" id="pd_list_search_input" autocomplete="off"
-                                            placeholder="Search"
-                                            class="font16-14 flwidth card mar-r10 search-input">
+                                            placeholder="Search" class="font16-14 flwidth card mar-r10 search-input">
                                     </label>
                                 </a>
                             </div>
@@ -277,11 +275,12 @@
                     <div class="header-action-right">
                         <div class="header-action-2">
                             <div class="header-action-icon-2">
-                                
+
                                 <div class="location" data-toggle="modal" data-target="#onloadModal">
                                     <i class="fa fa-location px-2"></i>
-                
-                                  <button style="color: #621299;background-color: #fff;"  data-bs-toggle="modal" data-bs-target="#onloadModal">America</button> 
+
+                                    <button style="color: #621299;background-color: #fff;" data-bs-toggle="modal"
+                                        data-bs-target="#onloadModal">America</button>
                                 </div>
 
                             </div>
@@ -309,7 +308,7 @@
         </div>
     </div>
 
-    <div class="header-bottom header-bottom-bg-color sticky-bar" >
+    <div class="header-bottom header-bottom-bg-color sticky-bar">
         <div class="container pt-5">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
@@ -380,10 +379,10 @@
                                         <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
 
-{% if status == 1 %}
+                                        {% if status == 1 %}
                                         <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
 
-{% endif %}
+                                        {% endif %}
 
                                     </ul>
                                 </li>
@@ -426,7 +425,7 @@
 
                     <h5 style="color: #621299;" data-bs-toggle="modal" data-bs-target="#onloadModal">America</h5>
                 </div>
-                
+
                 <!-- <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY .png' %}" alt="logo"></a> -->
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
@@ -439,11 +438,11 @@
         <div class="mobile-header-content-area">
 
 
-      
+
 
 
             <div class="mobile-menu-wrap mobile-header-border">
-                
+
 
                 <div>
                     {% if status == 1 %}
@@ -518,19 +517,19 @@
 
                         </li>
                         <li class="menu-item-has-children"> <a href="{% url 'user:user-logout' %}"><span
-                            class="menu-expand"></span>Logout </a>
+                                    class="menu-expand"></span>Logout </a>
 
-                </li>
+                        </li>
 
                     </ul>
 
- 
- </nav>
+
+                </nav>
 
                 <!-- mobile menu end -->
             </div>
 
-           
+
 
 
 
