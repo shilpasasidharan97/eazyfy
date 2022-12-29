@@ -26,6 +26,9 @@ urlpatterns = [
     path('shops/<str:id>',views.shops,name='shops'),
     path('question/<str:id>',views.question,name='question'),
 
+    #ajax
+    path('saveanswer/',views.save_answer, name='save_answer'),
+
 
     path('spec/<str:id>',views.spec,name='spec'),
     path('getspecdata/<int:id>',views.getspecdata,name='getspecdata'),
