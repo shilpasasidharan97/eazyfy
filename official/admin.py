@@ -3,19 +3,49 @@ from .models import AdminWallet
 from .models import BannerImage
 from .models import Brand
 from .models import BrandModel
-from .models import CutomerRegistration
+from .models import CustomerProfile
+from .models import CustomerRegistration
 from .models import Deduction
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import ModelSpecifications
 from .models import Offer
+from .models import OrderPayment
 from .models import PickUpBoy
 from .models import QuestionOption
 from .models import Questions
 from .models import SubDeduction
+from .models import SubQstAnswer
 from .models import User
+from .models import UserQuestionAnswer
+from .models import UserQuestionAnswerOptions
 from django.contrib import admin
+
+
+@admin.register(CustomerProfile)
+class CustomerProfileAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(OrderPayment)
+class OrderPaymentAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(UserQuestionAnswer)
+class UserQuestionAnswerAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(UserQuestionAnswerOptions)
+class UserQuestionAnswerOptionsAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(SubQstAnswer)
+class SubQstAnswerAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(User)
@@ -72,8 +102,8 @@ class DeductionAdmin(admin.ModelAdmin):
     search_fields = ("questions", "model", "deduction_amount_yes", "deduction_amount_no")
 
 
-@admin.register(CutomerRegistration)
-class CutomerRegistrationAdmin(admin.ModelAdmin):
+@admin.register(CustomerRegistration)
+class CustomerRegistrationAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone_number")
 
 

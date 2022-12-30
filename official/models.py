@@ -55,7 +55,7 @@ class PickUpBoy(models.Model):
         return str(self.name)
 
 
-class CutomerRegistration(models.Model):
+class CustomerRegistration(models.Model):
     name = models.CharField(max_length=50, default="", blank=True)
     email = models.EmailField(max_length=500, null=True)
     phone_number = PhoneField(null=True)
@@ -68,7 +68,7 @@ class CutomerRegistration(models.Model):
         verbose_name_plural = "Customer"
 
 
-class CutomerProfile(models.Model):
+class CustomerProfile(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="profile")
     auth_token = models.CharField(max_length=100, blank=True, default="")
     test_id = models.CharField(max_length=100, default=uuid.uuid4)
@@ -130,7 +130,7 @@ class DeviceType(models.Model):
 class Questions(models.Model):
     question_type = (("image_type", "image_type"), ("Objective", "Objective"))
     device_type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, null=True, blank=True)
-    model_question = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
+    brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
     questions = models.CharField(max_length=500, default="")
     question_type = models.CharField(max_length=15, choices=question_type)
 
@@ -208,7 +208,7 @@ class AdminSendRecord(models.Model):
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)
     amound = models.CharField(max_length=100)
-    paiment_id = models.CharField(max_length=100)
+    payment_id = models.CharField(max_length=100)
     paid = models.BooleanField(default=False)
 
     def __str__(self):
@@ -227,13 +227,6 @@ class Offer(models.Model):
 
     def __str__(self):
         return str(self.offer)
-
-
-class Card(models.Model):
-    card = models.FileField(upload_to="gallery/", null=True, blank=True)
-
-    def __str__(self):
-        return str(self.card)
 
 
 class UserQuestionAnswer(models.Model):
@@ -271,7 +264,7 @@ class User(AbstractUser):
     phone_number = models.CharField(max_length=15, unique=True)
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
     pickup_boy = models.ForeignKey(PickUpBoy, on_delete=models.CASCADE, null=True, blank=True)
-    customer = models.ForeignKey(CutomerRegistration, on_delete=models.CASCADE, null=True, blank=True)
+    customer = models.ForeignKey(CustomerRegistration, on_delete=models.CASCADE, null=True, blank=True)
     is_franchise = models.BooleanField(default=False)
     is_pickupboy = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False)

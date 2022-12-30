@@ -4,8 +4,8 @@ import uuid
 from official.models import BannerImage
 from official.models import Brand
 from official.models import BrandModel
-from official.models import CutomerProfile
-from official.models import CutomerRegistration
+from official.models import CustomerProfile
+from official.models import CustomerRegistration
 from official.models import Deduction
 from official.models import ModelSpecifications
 from official.models import Offer
@@ -55,12 +55,12 @@ def UserRegistration(request):
         phonenumber_with_countrycode = country_code + phone
         secret = pyotp.random_base32()
         if password == cpassword:
-            customer = CutomerRegistration(email=email, phone_number=phonenumber_with_countrycode, password=password, name=name)
+            customer = CustomerRegistration(email=email, phone_number=phonenumber_with_countrycode, password=password, name=name)
             customer.save()
             User = get_user_model()
             customers = User.objects.create_user(email=email, phone_number=phonenumber_with_countrycode, password=password, customer=customer, is_customer=True)
 
-            profile = CutomerProfile.objects.create(user=customers, auth_token=secret)
+            profile = CustomerProfile.objects.create(user=customers, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
         msg = "Password does not match"
         context = {"msg": msg}
@@ -81,7 +81,7 @@ def checkPhoneNumber(request):
 
 # SEND OTP
 def otp_fun(request, id):
-    profile = CutomerProfile.objects.get(test_id=id)
+    profile = CustomerProfile.objects.get(test_id=id)
     totp = pyotp.TOTP(profile.auth_token, interval=300)
     otp = totp.now()
     if request.method == "POST":
@@ -104,7 +104,7 @@ def forgot(request):
                 return redirect("/forgot")
             user_obj = User.objects.get(email=email)
             token = str(uuid.uuid4())
-            profile_obj = CutomerProfile.objects.get(user=user_obj)
+            profile_obj = CustomerProfile.objects.get(user=user_obj)
             profile_obj.forget_password_token = token
             profile_obj.save()
             send_forget_password_mail(user_obj.email, token)
@@ -119,7 +119,7 @@ def forgot(request):
 def resetPassword(request, token):
     context = {}
     try:
-        profile_obj = CutomerProfile.objects.filter(forget_password_token=token).first()
+        profile_obj = CustomerProfile.objects.filter(forget_password_token=token).first()
         context = {"user_id": profile_obj.user.id}
 
         if request.method == "POST":
@@ -142,7 +142,7 @@ def resetPassword(request, token):
 
 # RESEND OTP
 def resendOtp(request, token):
-    user = CutomerProfile.objects.filter(test_id=token).last()
+    user = CustomerProfile.objects.filter(test_id=token).last()
     user_secret_key = pyotp.random_base32()
     user.auth_token = user_secret_key
     user.save()

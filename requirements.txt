@@ -12,3 +12,4 @@ sqlparse==0.4.3
 twilio==7.15.1
 urllib3==1.26.12
 razorpay
+django-admin-index

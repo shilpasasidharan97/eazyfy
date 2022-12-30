@@ -15,6 +15,8 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    "django_admin_index",
+    "ordered_model",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -123,6 +125,12 @@ TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
 
 
 AUTH_USER_MODEL = "official.User"
+
+ADMIN_INDEX_SHOW_REMAINING_APPS = True
+ADMIN_INDEX_SHOW_REMAINING_APPS_TO_SUPERUSERS = True
+ADMIN_INDEX_AUTO_CREATE_APP_GROUP = True
+ADMIN_INDEX_SHOW_MENU = True
+ADMIN_INDEX_HIDE_APP_INDEX_PAGES = True
 
 
 DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
