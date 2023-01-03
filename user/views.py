@@ -11,7 +11,7 @@ from official.models import Offer
 from official.models import Question
 from official.models import User
 from user.mixin import MessageHandler
-
+from django.contrib.auth.decorators import login_required
 import pyotp
 from .helpers import send_forget_password_mail
 from django.contrib import messages
@@ -23,7 +23,8 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
+from official.forms import SurveyForm
+from official.models import UserReply
 
 # CUSTOMER LOGIN
 def customerlogin(request):
@@ -192,11 +193,12 @@ def shops(request, id):
     return render(request, "user/shops.html", context)
 
 
-# QUESTIONS
+@login_required
 def question(request, id):
+    form = SurveyForm(request.POST or None)
     spec = ModelSpecifications.objects.get(id=id)
     questions = Question.objects.all()
-    context = {"spec": spec, "questions": questions}
+    context = {"spec": spec, "questions": questions, "form": form}
     return render(request, "user/question.html", context)
 
 

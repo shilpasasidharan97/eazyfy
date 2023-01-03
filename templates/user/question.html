@@ -33,8 +33,26 @@
 
             <div class="wizard-body">
 
-              {{questions}}
 
+              {% for q in questions %}
+              <section class="question">
+                <h6>{{forloop.counter}}. {{q.question}}</h6>
+                <span>{{q.subtext}}</span>
+
+                <div class="d-flex mt-3">
+                  {% for op in q.get_options %}
+                  <div class="radio-wrapper">
+                    <label class="form-check-label" for="{{op.pk}}">
+                      <input type="radio" id="{{op.pk}}" name="answer1" value="{{op.pk}}"
+                        data-identifier="{{op.identifier}}" data-question="{{q.pk}}" data-value="{{op.pk}}">
+                      <p class="ml-2">{{op.text}}</p>
+                    </label>
+                  </div>
+                  {% endfor %}
+
+                </div>
+              </section>
+              {% endfor %}
 
 
               {% comment %}{% include 'user/partials/wizard_form.html' %}{% endcomment %}
@@ -68,9 +86,8 @@
           <div class="row border-top">
             <div class="col-12 py-3">
               <h4 class="mb-15 text-brand mb-0">Device Evaluation</h4>
-              <ul style="list-style-type: circle;">
-                <div id="green" class="show-hide">yes</div>
-                <div id="red" class="show-hide">No</div>
+              <ul style="list-style-type: circle;" id="evaluation">
+
               </ul>
             </div>
           </div>
@@ -146,103 +163,24 @@
   </div>
 </section>
 
-
-
 {% endblock %}
 
 
 {% block js %}
 <script>
-  // answer show
-
-  // price calculation
-
-  function calcPrice() {
-    var price = 10000;
-    $("input[type=radio][data-price]:checked").each(function (i, el) {
-      price += +$(el).data("price");
-    });
-    $("#price").text(price);
-  }
-
-  $("input[type=radio]").on("change", calcPrice);
-  calcPrice();
-</script>
-
-<script>
   $(document).ready(function () {
-    $("input[name=action{{questions.id}}]").change(function () {
-      var test = $(this).val();
-      $(".show-hide").hide();
-      $("#" + test).show();
+    $('input[type=radio]').change(function () {
+      var identifier = $(this).data('identifier');
+      var question = $(this).data('question');
+      var value = $(this).data('value');
+      var li = '<li data-pk="' + value + '" data-question="' + question + '">' + identifier + '</li>';
+      var item = $('#evaluation li[data-question=' + question + ']');
+      if (item.length) {
+        item.replaceWith(li);
+      } else {
+        $('#evaluation').append(li);
+      }
     });
   });
-</script>
-<!-- user answer saving -->
-<script>
-  function UserAnswer() {
-    data = [];
-    var rowcount = $("#objectivetype .rowcount").length;
-    yes_no = [];
-    for (i = 1; i <= rowcount; i++) {
-      var radio = $("input[name=answer" + i + "]");
-      for (var j = 0; 1 < radio.length; j++) {
-        if (radio[j].checked) {
-          var checked_answer = $(radio[j]).val();
-          break;
-        } else {
-          break;
-        }
-      }
-      var yesno_obj = {
-        qst: $("#qst" + i).val(),
-        yesno: checked_answer,
-      };
-      // alert(JSON.stringify(yesno_obj,null,4))
-      yes_no.push(yesno_obj);
-    }
-    data.push(yes_no);
-    multiple = [];
-    var imgrowcount = $("#multiple .imgrowcount").length;
-    for (k = 1; k <= rowcount; k++) {
-      // alert("")
-      var select = $("#checkinput" + k).is(":checked");
-      // alert($("#checkinput"+k).is(":checked"))
-      // if (select)
-      // var status = ""
-      if (select == true) {
-        var subqpk = $("#checkinput" + k).val();
-        var status = 1;
-      } else {
-        var subqpk = $("#checkinput" + k).val();
-        var status = 0;
-      }
-
-      var subq_obj = {
-        subqstid: subqpk,
-        selectstatus: status,
-      };
-      multiple.push(subq_obj);
-    }
-    data.push(multiple);
-    lastq = [];
-    var duration = $("input[name=flexRadioDefault]").val();
-    var durationlist = {
-      durationsta: duration,
-    };
-    lastq.push(durationlist);
-    data.push(lastq);
-    var answers = JSON.stringify(data);
-    (dt = { data: answers }),
-      $.ajax({
-        url: "/saveanswer/",
-        type: "POST",
-        data: dt,
-        success: function (response) {
-          alert(response.msg);
-        },
-      });
-  }
-    // alert(JSON.stringify(data,null,4))
 </script>
 {% endblock %}
