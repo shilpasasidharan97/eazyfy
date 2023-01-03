@@ -186,6 +186,14 @@
         $('#evaluation').append(li);
       }
     });
+    // append the selected option to the evaluation list
+    $('input[type=radio]:checked').each(function () {
+      var identifier = $(this).data('identifier');
+      var question = $(this).data('question');
+      var value = $(this).data('value');
+      var li = '<li data-pk="' + value + '" data-question="' + question + '">' + identifier + '</li>';
+      $('#evaluation').append(li);
+    });
   });
 </script>
 {% endblock %}
