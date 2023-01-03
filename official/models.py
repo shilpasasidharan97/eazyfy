@@ -148,30 +148,6 @@ class DeviceType(models.Model):
         return str(self.device_type)
 
 
-class Questions(models.Model):
-    question_type = (("image", "Image"), ("Objective", "Objective"), ("text", "Text"))
-    questions = models.CharField(max_length=500, default="")
-    question_type = models.CharField(max_length=15, choices=question_type)
-
-    class Meta:
-        verbose_name_plural = "Questions"
-
-    def __str__(self):
-        return str(self.questions)
-
-
-class QuestionOption(models.Model):
-    question = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
-    image_upload = models.FileField(upload_to="Question  Image", null=True)
-    image_description = models.CharField(max_length=500, default="")
-
-    class Meta:
-        verbose_name_plural = "Question Options"
-
-    def __str__(self):
-        return str(self.image_description)
-
-
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
     wallet_amount = models.FloatField(null=True, blank=True, default=0)
@@ -222,6 +198,32 @@ class Offer(models.Model):
 
     def __str__(self):
         return str(self.offer)
+
+
+# survey models
+class Question(models.Model):
+    question_type = (("image", "Image"), ("Objective", "Objective"), ("text", "Text"))
+
+    question = models.CharField(max_length=500, default="")
+    question_type = models.CharField(max_length=15, choices=question_type)
+
+    class Meta:
+        verbose_name_plural = "Question"
+
+    def __str__(self):
+        return str(self.question)
+
+
+class QuestionOption(models.Model):
+    question = models.ForeignKey("Question", on_delete=models.CASCADE, null=True, blank=True)
+    image_upload = models.FileField(upload_to="Question Image", null=True)
+    image_description = models.CharField(max_length=500, default="")
+
+    class Meta:
+        verbose_name_plural = "Question Options"
+
+    def __str__(self):
+        return str(self.image_description)
 
 
 class UserQuestionAnswer(models.Model):

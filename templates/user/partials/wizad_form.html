@@ -1,0 +1,97 @@
+<div class="initial" id="objectivetype">
+
+    {% for questions in questions %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="slide rowcount">
+                <h5 class="questionhead">{{forloop.counter}}. {{ questions.questions }}</h5>
+                <input type="text" id="qst{{forloop.counter}}" hidden value="{{ questions.questions.id }}" />
+                <div class="d-flex mt-3">
+                    {% if questions.questions.question_type == "Objective" %}
+
+                    <div class="mb-2 me-2">
+                        <label class="form-check-label" for="yes{{forloop.counter}}">
+                            <div class="form-check custom-checkbox box checkbox-info box">
+                                <div class="question-button">
+                                    <input type="radio" id="yes{{forloop.counter}}" name="answer{{forloop.counter}}"
+                                        value="green" data-price="-200" />
+                                    <p class="m-0">Yes</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="mb-2 me-2">
+                        <label class="form-check-label" for="no{{forloop.counter}}">
+                            <div class="form-check custom-checkbox box checkbox-success box">
+                                <div class="question-button">
+                                    <input type="radio" id="no{{forloop.counter}}" name="answer{{forloop.counter}}"
+                                        value="red" data-price="-50" />
+                                    <p class="m-0">No</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    {% elif questions.questions.question_type == "image_type" %}
+
+                    {% for sub in questions.get_subqust %}
+                    <div class="col-sm-2 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                            <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                            <div class="single_quiz_card">
+                                <div class="quiz_card_content">
+                                    <div class="quiz_card_icon">
+                                        <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}"
+                                            alt="" />
+                                    </div>
+
+                                    <div class="quiz_card_title">
+                                        <h3>
+                                            <i class="fa fa-check" aria-hidden="true"></i>
+                                            {{sub.qst_option.image_description}}
+                                        </h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% for img in image_questions %}
+<div class="step">
+    <h4>{{img.questions}}</h4>
+    <input type="text" id="question{{forloop.counter}}" value="{{img.questions}}" />
+    <br />
+    <h2>{{forloop.counter}}</h2>
+    <div class="row">
+        {% for sub in img.get_subqust %}
+        <div class="col-sm-2 col-lg-3 col-6" id="multiple">
+            <div class="quiz_card_area">
+                <input class="quiz_checkbox" type="checkbox" value="{{sub.id}}" id="checkinput{{forloop.counter}}" />
+                <div class="single_quiz_card">
+                    <div class="quiz_card_content">
+                        <div class="quiz_card_icon">
+                            <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="" />
+                        </div>
+
+                        <div class="quiz_card_title imgrowcount">
+                            <h3><i class="fa fa-check" aria-hidden="true"></i>{{sub.qst_option.image_description}}</h3>
+                        </div>
+                        <h2>{{forloop.counter}}</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endfor %}

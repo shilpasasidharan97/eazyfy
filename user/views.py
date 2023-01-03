@@ -177,13 +177,8 @@ def termsAndConditions(request):
 
 # SELL YOUR PHONE
 def sell(request):
-
     brand = Brand.objects.all()
-    context = {
-        "is_sellphone": True,
-        "brand": brand,
-        # "jobs": jobs
-    }
+    context = {"is_sellphone": True, "brand": brand}
     return render(request, "user/sellphone.html", context)
 
 
@@ -213,16 +208,13 @@ def shops(request, id):
 # QUESTIONS
 def question(request, id):
     spec = ModelSpecifications.objects.get(id=id)
-    context = {}
+    context = {"spec": spec}
     return render(request, "user/question.html", context)
 
 
 @csrf_exempt
 def save_answer(request):
     data = json.loads(request.POST["data"])
-    yes_no_ans = data[0]
-    print(yes_no_ans)
-    print(len(yes_no_ans))
     return JsonResponse({"msg": "Success"})
 
 

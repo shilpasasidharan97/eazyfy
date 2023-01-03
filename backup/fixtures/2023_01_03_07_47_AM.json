@@ -463,42 +463,42 @@
         }
     },
     {
-        "model": "official.questions",
+        "model": "official.question",
         "pk": 93,
         "fields": {
-            "questions": "objective example question",
+            "question": "objective example question",
             "question_type": "Objective"
         }
     },
     {
-        "model": "official.questions",
+        "model": "official.question",
         "pk": 94,
         "fields": {
-            "questions": "objective example question 2",
+            "question": "objective example question 2",
             "question_type": "Objective"
         }
     },
     {
-        "model": "official.questions",
+        "model": "official.question",
         "pk": 95,
         "fields": {
-            "questions": "objective example question 3",
+            "question": "objective example question 3",
             "question_type": "Objective"
         }
     },
     {
-        "model": "official.questions",
+        "model": "official.question",
         "pk": 96,
         "fields": {
-            "questions": "image type 1",
+            "question": "image type 1",
             "question_type": "image_type"
         }
     },
     {
-        "model": "official.questions",
+        "model": "official.question",
         "pk": 97,
         "fields": {
-            "questions": "aaa",
+            "question": "aaa",
             "question_type": "image_type"
         }
     },
@@ -533,7 +533,7 @@
         "model": "official.questionoption",
         "pk": 22,
         "fields": {
-            "question": 97,
+            "question": 96,
             "image_upload": "Question  Image/data_ikWzYfL.png",
             "image_description": "nice"
         }
@@ -542,7 +542,7 @@
         "model": "official.questionoption",
         "pk": 23,
         "fields": {
-            "question": 97,
+            "question": 96,
             "image_upload": "Question  Image/Simple--Convenient.png",
             "image_description": "third"
         }
@@ -551,7 +551,7 @@
         "model": "official.questionoption",
         "pk": 24,
         "fields": {
-            "question": 97,
+            "question": 96,
             "image_upload": "Question  Image/invoice_tLBWel7.png",
             "image_description": "gtyrty"
         }
@@ -560,7 +560,7 @@
         "model": "official.questionoption",
         "pk": 25,
         "fields": {
-            "question": 97,
+            "question": 96,
             "image_upload": "Question  Image/SAFE.png",
             "image_description": "jhgjhgjdhs"
         }

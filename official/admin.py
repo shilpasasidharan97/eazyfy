@@ -13,7 +13,7 @@ from .models import Offer
 from .models import OrderPayment
 from .models import PickUpBoy
 from .models import QuestionOption
-from .models import Questions
+from .models import Question
 from .models import User
 from django.contrib import admin
 
@@ -64,16 +64,16 @@ class ModelSpecificationsAdmin(admin.ModelAdmin):
     search_fields = ("brand_model", "RAM", "internal_storage", "color", "year")
 
 
-@admin.register(Questions)
-class QuestionsAdmin(admin.ModelAdmin):
-    list_display = ("id", "questions", "question_type")
-    search_fields = ("questions",)
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ("id", "question", "question_type")
+    search_fields = ("question",)
 
 
 @admin.register(QuestionOption)
 class QuestionOptionAdmin(admin.ModelAdmin):
     list_display = ("question_id", "question", "image_description", "image_upload")
-    search_fields = ("questions",)
+    search_fields = ("question",)
 
 
 @admin.register(CustomerRegistration)

@@ -14,7 +14,7 @@ from .models import ModelSpecifications
 from .models import Offer
 from .models import PickUpBoy
 from .models import QuestionOption
-from .models import Questions
+from .models import Question
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -256,10 +256,10 @@ def modelSpecification(request, id):
 
 # ALL QUESTION
 def questions(request):
-    question = Questions.objects.all()
+    question = Question.objects.all()
     subQuestion = QuestionOption.objects.all()
     image = QuestionOption.objects.filter(question__question_type="image")
-    object_type = Questions.objects.filter(question_type="Objective")
+    object_type = Question.objects.filter(question_type="Objective")
     device_type = DeviceType.objects.all()
     context = {
         "is_questions": True,
@@ -279,7 +279,7 @@ def questions(request):
 # QUESTION ADDING
 def questionAdding(request):
     models = BrandModel.objects.all()
-    qst = Questions.objects.all().count()
+    qst = Question.objects.all().count()
     qstcount = qst + 1
 
     context = {"qstcount": qstcount, "models": models}
@@ -291,9 +291,9 @@ def questsave(request):
     question = request.POST["qst"]
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question, question_type=qst_type, device_type=device_type)
+    new_question = Question(question=question, question_type=qst_type, device_type=device_type)
     new_question.save()
-    qst_count = Questions.objects.filter(device_type=device_type).count()
+    qst_count = Question.objects.filter(device_type=device_type).count()
     countt = qst_count + 1
     data = {"qstno": countt}
     return JsonResponse(data)
@@ -304,7 +304,7 @@ def subquestionFirst(request):
     question = request.POST["qst"]
     qst_type = "image"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Questions(questions=question, question_type=qst_type, device_type=device_type)
+    new_question = Question(question=question, question_type=qst_type, device_type=device_type)
     new_question.save()
     qest_pk = new_question.id
     data = {
@@ -315,9 +315,9 @@ def subquestionFirst(request):
 
 
 def subquestionPage(request, id):
-    question = Questions.objects.get(id=id)
+    question = Question.objects.get(id=id)
     device_type = DeviceType.objects.get(device_type="Mobile")
-    qst_count = Questions.objects.filter().count()
+    qst_count = Question.objects.filter().count()
     sub_qst = QuestionOption.objects.filter(question=question)
     if request.method == "POST" or request.FILES:
         description = request.POST["description"]
@@ -325,7 +325,7 @@ def subquestionPage(request, id):
         new_sub_qst = QuestionOption(question=question, image_upload=image, image_description=description)
         new_sub_qst.save()
         return redirect("/official/suquestionAddingPage/" + str(question.id))
-    context = {"question": question, "qst_count": qst_count, "sub_qst": sub_qst}
+    context = {"question": question, "qst_count": qst_count, "sub_qst": sub_qst, "device_type": device_type}
     return render(request, "official/sub-question.html", context)
 
 
@@ -347,14 +347,14 @@ def questionForDeduction(request, id):
     all_questions = QuestionOption.objects.all()
     brandmodel = BrandModel.objects.get(id=id)
 
-    questions = Questions.objects.all()
+    questions = Question.objects.all()
     context = {"all_questions": all_questions, "questions": questions, "brandmodel": brandmodel}
     return render(request, "official/questionfor_deduction.html", context)
 
 
 def questionId(request):
     quset = request.GET["qstid"]
-    question = Questions.objects.get(id=quset)
+    question = Question.objects.get(id=quset)
     question_type = question.question_type
     data = []
     if question_type == "image":
@@ -380,9 +380,9 @@ def questionSaving(request):
     question = qst_details.get("question")
     qst_details.get("type_question")
 
-    qst_obj = Questions.objects.get(id=question)
+    qst_obj = Question.objects.get(id=question)
     model_obj = BrandModel.objects.get(id=model_pk)
-    return JsonResponse({"sss": "sss"})
+    return JsonResponse({"status": True})
 
 
 def test(request):

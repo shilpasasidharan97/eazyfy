@@ -1009,6 +1009,7 @@ h5.widget-title {
 input,
 select {
   width: 100%;
+  box-shadow: none;
   -webkit-box-shadow: none;
   font-size: 13px;
   color: #161c27
@@ -1201,6 +1202,7 @@ select {
 
 .form-group input,
 textarea {
+  box-shadow: none;
   -webkit-box-shadow: none;
   width: 100%
 }
@@ -1837,6 +1839,7 @@ label {
 .hero-slider-1.style-3 .hero-slider-content-2,
 .slider-arrow {
   top: 50%;
+  transform: translateY(-50%);
   -webkit-transform: translateY(-50%);
   z-index: 2;
   position: absolute
@@ -3207,7 +3210,8 @@ table .product-thumbnail img {
 
 .deal .btn i,
 .footer-list li {
-  -webkit-transition-duration: .3s
+  -webkit-transition-duration: .3s;
+  transition-duration: .3s
 }
 
 .banner-img.style-2 {
@@ -5000,14 +5004,16 @@ span.has-dot::before {
   background-repeat: no-repeat;
   -webkit-transition: .4s;
   -moz-transition: .4s;
-  -ms-transition: .4s
+  -ms-transition: .4s;
+  transition: .4s
 }
 
 .img-hover-slide {
   background-repeat: no-repeat;
   -webkit-transition: .4s;
   -moz-transition: .4s;
-  -ms-transition: .4s
+  -ms-transition: .4s;
+  transition: .4s;
 }
 
 .top-right-icon {
@@ -5613,6 +5619,7 @@ span.has-dot::before {
   transition: .3s;
   -moz-appearance: none;
   -webkit-appearance: none;
+  appearance: none;
   position: relative
 }
 
@@ -5818,7 +5825,8 @@ span.has-dot::before {
 
 .body-overlay-1,
 .burger-icon {
-  -webkit-transition: .25s cubic-bezier(.645, .045, .355, 1)
+  -webkit-transition: .25s cubic-bezier(.645, .045, .355, 1);
+  transition: .25s cubic-bezier(.645, .045, .355, 1);
 }
 
 .close-style-wrap .close-style>i.icon-bottom {
@@ -7015,7 +7023,7 @@ span.fi-rs-apps {
 }
 
 .newsletter {
-  background-color: #8d689c
+  background-color: #640097
 }
 
 .newsletter .icon-email {
@@ -9450,7 +9458,8 @@ select,
 textarea {
   border: 0;
   outline: 0;
-  -webkit-appearance: none
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .font16-14 {
