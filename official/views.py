@@ -7,7 +7,6 @@ from .models import AdminSendRecord
 from .models import BannerImage
 from .models import Brand
 from .models import BrandModel
-from .models import Deduction
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
@@ -16,7 +15,6 @@ from .models import Offer
 from .models import PickUpBoy
 from .models import QuestionOption
 from .models import Questions
-from .models import SubDeduction
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -260,7 +258,7 @@ def modelSpecification(request, id):
 def questions(request):
     question = Questions.objects.all()
     subQuestion = QuestionOption.objects.all()
-    image_type = QuestionOption.objects.filter(question__question_type="image_type")
+    image = QuestionOption.objects.filter(question__question_type="image")
     object_type = Questions.objects.filter(question_type="Objective")
     device_type = DeviceType.objects.all()
     context = {
@@ -270,8 +268,8 @@ def questions(request):
         "objective_count": question.count(),
         "subQuestion_count": subQuestion.count(),
         "subQuestion": subQuestion,
-        "image_type": image_type,
-        "image_type_count": image_type.count(),
+        "image": image,
+        "image_count": image.count(),
         "object_type": object_type,
         "object_type_count": object_type.count(),
     }
@@ -304,7 +302,7 @@ def questsave(request):
 @csrf_exempt
 def subquestionFirst(request):
     question = request.POST["qst"]
-    qst_type = "image_type"
+    qst_type = "image"
     device_type = DeviceType.objects.get(device_type="Mobile")
     new_question = Questions(questions=question, question_type=qst_type, device_type=device_type)
     new_question.save()
@@ -319,12 +317,12 @@ def subquestionFirst(request):
 def subquestionPage(request, id):
     question = Questions.objects.get(id=id)
     device_type = DeviceType.objects.get(device_type="Mobile")
-    qst_count = Questions.objects.filter(device_type=device_type).count()
+    qst_count = Questions.objects.filter().count()
     sub_qst = QuestionOption.objects.filter(question=question)
     if request.method == "POST" or request.FILES:
-        discription = request.POST["discription"]
+        description = request.POST["description"]
         image = request.FILES["images"]
-        new_sub_qst = QuestionOption(question=question, image_upload=image, image_description=discription)
+        new_sub_qst = QuestionOption(question=question, image_upload=image, image_description=description)
         new_sub_qst.save()
         return redirect("/official/suquestionAddingPage/" + str(question.id))
     context = {"question": question, "qst_count": qst_count, "sub_qst": sub_qst}
@@ -359,10 +357,10 @@ def questionId(request):
     question = Questions.objects.get(id=quset)
     question_type = question.question_type
     data = []
-    if question_type == "image_type":
-        qust_type = {"type": "image_type"}
+    if question_type == "image":
+        qust_type = {"type": "image"}
         data.append(qust_type)
-        question_option = QuestionOption.objects.filter(question__question_type="image_type", question=question)
+        question_option = QuestionOption.objects.filter(question__question_type="image", question=question)
 
         for i in question_option:
             data1 = {"image_description": i.image_description, "image_description_id": i.id, "image": i.image_upload.url}
@@ -380,25 +378,10 @@ def questionSaving(request):
     qst_details = data[0]
     model_pk = qst_details.get("modelid")
     question = qst_details.get("question")
-    type_question = qst_details.get("type_question")
+    qst_details.get("type_question")
 
     qst_obj = Questions.objects.get(id=question)
     model_obj = BrandModel.objects.get(id=model_pk)
-    if type_question == "image_type":
-        new_deduction = Deduction(questions=qst_obj, model=model_obj)
-        new_deduction.save()
-        for i in data[1:]:
-            sub_pid = int(i["sub_pid"])
-            sub_ans = i["sub_ans"]
-            sub_obj = QuestionOption.objects.get(id=sub_pid)
-            new_suboption = SubDeduction(questions=qst_obj, deduction=new_deduction, qst_option=sub_obj, model=model_obj, deduction_amount=sub_ans)
-            new_suboption.save()
-    else:
-        yes_value = data[1]["yes"]
-        no_value = data[1]["no"]
-        new_option = Deduction(questions=qst_obj, model=model_obj, deduction_amount_yes=yes_value, deduction_amount_no=no_value)
-        new_option.save()
-
     return JsonResponse({"sss": "sss"})
 
 

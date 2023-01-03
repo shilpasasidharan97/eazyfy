@@ -6,7 +6,6 @@ from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
 from official.models import CustomerRegistration
-from official.models import Deduction
 from official.models import ModelSpecifications
 from official.models import Offer
 from official.models import User
@@ -214,9 +213,7 @@ def shops(request, id):
 # QUESTIONS
 def question(request, id):
     spec = ModelSpecifications.objects.get(id=id)
-    objective_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="Objective")
-    image_questions = Deduction.objects.filter(model=spec.brand_model, questions__question_type="image_type")
-    context = {"questions": objective_questions, "image_questions": image_questions}
+    context = {}
     return render(request, "user/question.html", context)
 
 
@@ -231,7 +228,6 @@ def save_answer(request):
 
 # MODEL SPECIFICATIONS
 def spec(request, id):
-
     specification = BrandModel.objects.get(id=id)
     context = {"specification": specification, "id": id}
     return render(request, "user/spec-product.html", context)
@@ -279,22 +275,13 @@ def sellPhone(request):
         data.append(item)
 
     context = {"data": data, "brand": brand}
-
     return render(request, "user/sell-phone.html", context)
-
-
-#     context = {
-#         "data":data,
-#         'brand':brand
-#     }
-#     return render(request,"user/test.html",context)
 
 
 def handler404(request, exception):
     return render(request, "user/404.html", status=404)
 
 
-# USER LOGOUT
 def userLogout(request):
     logout(request)
     return redirect("user:index")

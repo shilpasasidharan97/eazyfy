@@ -101,17 +101,17 @@
             },
             success: function (responce) {
                 var qust_type = responce[0].type
-                if (qust_type == 'image_type') {
-                    $('#anstype').val('image_type')
+                if (qust_type == 'image') {
+                    $('#anstype').val('image')
                     for (var i = 1; i < responce.length; i++) {
-                        var image_type = '<div class="mb-3 rowcount row">' +
+                        var image = '<div class="mb-3 rowcount row">' +
                             '<label class="col-sm-9 col-form-label" >' + responce[i].image_description + '</label>' +
                             '<input type="text" value="' + responce[i].image_description_id + '" id="sub_pid' + i + '" hidden>' +
                             '<div class="col-sm-3">' +
                             '<input type="text" class="form-control input-default" id="sub_ans' + i + '">' +
                             '</div>' +
                             '</div>';
-                        $("#imageType").append(image_type);
+                        $("#imageType").append(image);
                     }
                 }
                 else {
@@ -150,7 +150,7 @@
         }
         data.push(questions_data)
         var question_types = $('#anstype').val()
-        if (question_types == 'image_type') {
+        if (question_types == 'image') {
             for (var i = 1; i <= rowcount; i++) {
                 var obj = {
                     "sub_pid": $('#sub_pid' + i).val(),

@@ -27,6 +27,27 @@ class UserManager(BaseUserManager):
         return user
 
 
+class User(AbstractUser):
+    username = None
+    email = models.EmailField(max_length=150, null=True, blank=True)
+    phone_number = models.CharField(max_length=15, unique=True)
+    franchise = models.ForeignKey("Franchise", on_delete=models.CASCADE, null=True, blank=True)
+    pickup_boy = models.ForeignKey("PickUpBoy", on_delete=models.CASCADE, null=True, blank=True)
+    customer = models.ForeignKey("CustomerRegistration", on_delete=models.CASCADE, null=True, blank=True)
+    is_franchise = models.BooleanField(default=False)
+    is_pickupboy = models.BooleanField(default=False)
+    is_customer = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+
+    USERNAME_FIELD = "phone_number"
+    REQUIRED_FIELDS = []
+    objects = UserManager()
+
+    def __str__(self):
+        return str(self.phone_number)
+
+
 class Franchise(models.Model):
     franchise_id = models.CharField(max_length=20, default="")
     name = models.CharField(max_length=40, default="")
@@ -128,9 +149,7 @@ class DeviceType(models.Model):
 
 
 class Questions(models.Model):
-    question_type = (("image_type", "image_type"), ("Objective", "Objective"))
-    device_type = models.ForeignKey(DeviceType, on_delete=models.CASCADE, null=True, blank=True)
-    brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
+    question_type = (("image", "Image"), ("Objective", "Objective"), ("text", "Text"))
     questions = models.CharField(max_length=500, default="")
     question_type = models.CharField(max_length=15, choices=question_type)
 
@@ -147,34 +166,10 @@ class QuestionOption(models.Model):
     image_description = models.CharField(max_length=500, default="")
 
     class Meta:
-        verbose_name_plural = "Sub questions"
+        verbose_name_plural = "Question Options"
 
     def __str__(self):
         return str(self.image_description)
-
-
-class Deduction(models.Model):
-    questions = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
-    model = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
-    deduction_amount_yes = models.IntegerField(null=True, blank=True)
-    deduction_amount_no = models.IntegerField(null=True, blank=True)
-
-    def get_subqust(self):
-        return SubDeduction.objects.filter(deduction=self)
-
-    def __str__(self):
-        return str(self.questions)
-
-
-class SubDeduction(models.Model):
-    questions = models.ForeignKey(Questions, on_delete=models.CASCADE, null=True, blank=True)
-    qst_option = models.ForeignKey(QuestionOption, on_delete=models.CASCADE, null=True, blank=True)
-    deduction = models.ForeignKey(Deduction, on_delete=models.CASCADE, null=True)
-    model = models.ForeignKey(BrandModel, on_delete=models.CASCADE, null=True, blank=True)
-    deduction_amount = models.IntegerField(null=True, blank=True)
-
-    def __str__(self):
-        return str(self.questions)
 
 
 class FranchiseWallet(models.Model):
@@ -237,43 +232,3 @@ class UserQuestionAnswer(models.Model):
 
     def __str__(self):
         return str(self.user)
-
-
-class UserQuestionAnswerOptions(models.Model):
-    answer = models.ForeignKey(UserQuestionAnswer, on_delete=models.CASCADE)
-    question = models.ForeignKey(Deduction, on_delete=models.CASCADE)
-    answer = models.BooleanField(default=False)
-    is_subqst = models.BooleanField(default=False)
-
-    def __str__(self):
-        return str(self.answer)
-
-
-class SubQstAnswer(models.Model):
-    main_question = models.ForeignKey(UserQuestionAnswerOptions, on_delete=models.CASCADE)
-    question = models.ForeignKey(SubDeduction, on_delete=models.CASCADE)
-    answer = models.BooleanField(default=False)
-
-    def __str__(self):
-        return str(self.main_question)
-
-
-class User(AbstractUser):
-    username = None
-    email = models.EmailField(max_length=150, null=True, blank=True)
-    phone_number = models.CharField(max_length=15, unique=True)
-    franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
-    pickup_boy = models.ForeignKey(PickUpBoy, on_delete=models.CASCADE, null=True, blank=True)
-    customer = models.ForeignKey(CustomerRegistration, on_delete=models.CASCADE, null=True, blank=True)
-    is_franchise = models.BooleanField(default=False)
-    is_pickupboy = models.BooleanField(default=False)
-    is_customer = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    USERNAME_FIELD = "phone_number"
-    REQUIRED_FIELDS = []
-    objects = UserManager()
-
-    def __str__(self):
-        return str(self.phone_number)

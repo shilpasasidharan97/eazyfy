@@ -55,8 +55,7 @@
                                     Objective Type
                                 </li>
                                 <li>
-                                    <input type="radio" id="image_type" value="image_type" name="radio"
-                                        class="form-check-input">
+                                    <input type="radio" id="image" value="image" name="radio" class="form-check-input">
                                     Image type
                                 </li>
 
@@ -115,7 +114,7 @@
         $('#addcardbtn').hide()
 
     })
-    $('#image_type').click(function () {
+    $('#image').click(function () {
         $('#appendjobcard').show()
         $('#upload').show()
         $('#addcardbtn').show()
@@ -241,7 +240,7 @@
     // $("#addquestion").submit(function () {
     //     // var data = $("#addquestion").serializeArray();
     //     var question = $("#question").val()
-    //     var devicetype = $('#image_type').val()
+    //     var devicetype = $('#image').val()
     //     var description = $('#comment').val()
     //     var img = $('#images')[0].files;
     //     $.ajax({

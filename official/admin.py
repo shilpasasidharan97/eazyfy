@@ -5,7 +5,6 @@ from .models import Brand
 from .models import BrandModel
 from .models import CustomerProfile
 from .models import CustomerRegistration
-from .models import Deduction
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
@@ -15,11 +14,7 @@ from .models import OrderPayment
 from .models import PickUpBoy
 from .models import QuestionOption
 from .models import Questions
-from .models import SubDeduction
-from .models import SubQstAnswer
 from .models import User
-from .models import UserQuestionAnswer
-from .models import UserQuestionAnswerOptions
 from django.contrib import admin
 
 
@@ -30,21 +25,6 @@ class CustomerProfileAdmin(admin.ModelAdmin):
 
 @admin.register(OrderPayment)
 class OrderPaymentAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(UserQuestionAnswer)
-class UserQuestionAnswerAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(UserQuestionAnswerOptions)
-class UserQuestionAnswerOptionsAdmin(admin.ModelAdmin):
-    pass
-
-
-@admin.register(SubQstAnswer)
-class SubQstAnswerAdmin(admin.ModelAdmin):
     pass
 
 
@@ -96,12 +76,6 @@ class QuestionOptionAdmin(admin.ModelAdmin):
     search_fields = ("questions",)
 
 
-@admin.register(Deduction)
-class DeductionAdmin(admin.ModelAdmin):
-    list_display = ("questions", "model", "deduction_amount_yes", "deduction_amount_no")
-    search_fields = ("questions", "model", "deduction_amount_yes", "deduction_amount_no")
-
-
 @admin.register(CustomerRegistration)
 class CustomerRegistrationAdmin(admin.ModelAdmin):
     list_display = ("name", "email", "phone_number")
@@ -123,12 +97,6 @@ class AdminWalletAdmin(admin.ModelAdmin):
 class AdminSendRecordAdmin(admin.ModelAdmin):
     list_display = ("franchise", "amount", "date")
     search_fields = ("franchise", "amount", "date")
-
-
-@admin.register(SubDeduction)
-class SubDeductionAdmin(admin.ModelAdmin):
-    list_display = ("questions", "model", "deduction_amount")
-    search_fields = ("questions", "model", "deduction_amount")
 
 
 admin.site.register(BannerImage)
