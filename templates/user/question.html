@@ -43,7 +43,7 @@
                   {% for op in q.get_options %}
                   <div class="radio-wrapper">
                     <label class="form-check-label" for="{{op.pk}}">
-                      <input type="radio" id="{{op.pk}}" name="answer1" value="{{op.pk}}"
+                      <input type="radio" id="{{op.pk}}" name="{{q.pk}}" value="{{op.pk}}"
                         data-identifier="{{op.identifier}}" data-question="{{q.pk}}" data-value="{{op.pk}}">
                       <p class="ml-2">{{op.text}}</p>
                     </label>
@@ -79,7 +79,7 @@
             </div>
             <div class="col-8 col-lg-8 col-md-8">
               <h5 class="">Iphone 11 (1 GB/32 GB)</h5>
-              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price"></span></div>
+              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{spec}}</span></div>
             </div>
           </div>
 
