@@ -74,15 +74,14 @@
 
 <!-- spec dynamic -->
 <section class="mb-50">
-    <div class="container shade-box">
+    <div class="container">
         <div class="row flex-row-reverse">
-            <div>
-                <div class="product-detail accordion-detail">
+            <div class="col-12">
+                <div class="card card-body p-5">
+                    <div class="product-detail accordion-detail">
 
-
-                    <div class="row mb-30 mt-50">
-                        <div class="col-sm-4 col-md-4 col-4">
-                            <div class="">
+                        <div class="row">
+                            <div class="col-sm-4 col-md-6">
                                 <div class="product-img-action-wrap text-center">
                                     <div class="product-img product-img-zoom ">
                                         <a href="shop-product-right.html">
@@ -90,51 +89,49 @@
                                         </a>
                                     </div>
                                 </div>
-
                             </div>
-                        </div>
 
-                        <div class="col-sm-8 col-md-8 col-8">
-                            <h2 class="title-detail">{{ specification.name|upper }}</h2>
-                            <div class="product-detail-rating">
-                                <div class="pro-details-brand">
-                                    <h5 style="color: violet;"> 30220+ <a href=""> already sold on easyfy</a></h5>
-                                </div>
-                            </div>
-                            <div class="detail-info">
-                                <div class="bt-1 border-color-1 mt-15 mb-15">
-                                    <h6>Choose a variant</h6>
-                                </div>
-
-                                <div class="attr-detail attr-size d-flex">
-                                    {% for ram in specification.get_ram %}
-                                    <div class="list-filter size-filter font-small me-2">
-                                        <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}"
-                                            class="btn btn-secondary">{{ ram.RAM }}GB</a>
+                            <div class="col-sm-8 col-md-6">
+                                <h2 class="title-detail">{{ specification.name|upper }}</h2>
+                                <div class="product-detail-rating">
+                                    <div class="pro-details-brand">
+                                        <h5 style="color: violet;"> 30220+ <a href=""> already sold on easyfy</a></h5>
                                     </div>
-                                    {% endfor %}
                                 </div>
+                                <div class="detail-info">
 
-                                <br>
-                                <div class="attr-detail attr-color mb-15">
-                                    <h6>
-                                        <button disabled class="btn btn-sm btn-default">
-                                            Get exact value
-                                            <i class="fi-rs-arrow-right"></i>
-                                        </button>
-                                    </h6>
+                                    <div class="bt-1 border-color-1 mt-15 mb-15">
+                                        <h6>Choose a variant</h6>
+                                    </div>
+
+                                    <div class="attr-detail attr-size d-flex mb-15">
+                                        {% for ram in specification.get_ram %}
+                                        <div class="list-filter size-filter font-small me-2">
+                                            <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ ram.id }}"
+                                                class="btn btn-secondary">{{ ram.RAM }}GB</a>
+                                        </div>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="attr-detail attr-color">
+                                        <h6>
+                                            <button disabled class="btn btn-sm btn-default">
+                                                Get exact value
+                                                <i class="fi-rs-arrow-right"></i>
+                                            </button>
+                                        </h6>
+                                    </div>
+
+                                    <div class="bt-1 border-color-1 mt-30 mb-30"></div>
+
                                 </div>
-                                <div class="bt-1 border-color-1 mt-30 mb-30"></div>
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
         </div>
     </div>
-    <br><br>
 </section>
 
 
