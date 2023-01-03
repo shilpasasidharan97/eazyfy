@@ -9540,11 +9540,21 @@ section.question {
   margin-bottom: 20px;
 }
 
-.form-check-label {
+.radio-wrapper .form-check-label {
   display: flex;
   align-items: center;
   border: 1px solid #dee2e6;
-  padding: 8px 40px 8px 12px;
+  padding: 8px 12px 8px 12px;
   border-radius: 10px;
   justify-content: flex-start;
+}
+
+.radio-wrapper.MCQ .form-check-label {
+  position: relative;
+}
+
+.radio-wrapper.MCQ .form-check-label input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }

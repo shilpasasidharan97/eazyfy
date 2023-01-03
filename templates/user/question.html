@@ -41,16 +41,21 @@
 
               <section class="question">
                 <h6>{{forloop.counter}}. {{q.question}}</h6>
-                <span>{{q.subtext}}</span>
+                {% if q.subtext %}<span>{{q.subtext}}</span>{% endif %}
 
                 <div class="d-flex mt-3">
                   {% for op in q.get_options %}
-                  <div class="radio-wrapper">
+                  <div class="radio-wrapper {{q.question_type}}">
                     <label class="form-check-label" for="{{op.pk}}">
                       <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
                         value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
                         data-value="{{op.pk}}">
-                      <p class="ml-2">{{op.text}}</p>
+                      <div class="d-flex flex-column align-items-center">
+                        {% if op.image %}
+                        <img src="{{op.image.url}}" alt="">
+                        {% endif %}
+                        <p class="ml-2">{{op.text}}</p>
+                      </div>
                     </label>
                   </div>
                   {% endfor %}
@@ -58,9 +63,6 @@
                 </div>
               </section>
               {% endfor %}
-
-
-              {% comment %}{% include 'user/partials/wizard_form.html' %}{% endcomment %}
 
             </div>
 
