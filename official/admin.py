@@ -15,8 +15,8 @@ from .models import PickUpBoy
 from .models import Question
 from .models import QuestionOption
 from .models import User
-from .models import UserRequest
 from .models import UserReply
+from .models import UserRequest
 from django.contrib import admin
 
 

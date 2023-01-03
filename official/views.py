@@ -1,5 +1,4 @@
 import datetime
-import json
 
 from user.helpers import payment_mail
 

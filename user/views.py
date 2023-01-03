@@ -8,7 +8,8 @@ from official.models import CustomerProfile
 from official.models import CustomerRegistration
 from official.models import ModelSpecifications
 from official.models import Offer
-from official.models import User, Question, QuestionOption
+from official.models import Question
+from official.models import User
 from user.mixin import MessageHandler
 
 import pyotp
