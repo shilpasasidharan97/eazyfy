@@ -1,4 +1,4 @@
-{% extends 'user/partials/base.html' %} {% load static %} {% block content %}
+{% extends 'user/partials/base.html' %} {% load static tags %} {% block content %}
 
 <style>
   .box {
@@ -26,7 +26,10 @@
       <div class="col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-3">
         <div class="wizard card-like mb-3">
 
-          <form action="#">
+
+
+          <form action="" method="post">
+            {% csrf_token %}
             <div class="wizard-header">
               <h3 class="section-title mb-20">Tell us few things about your device</h3>
             </div>
@@ -35,6 +38,7 @@
 
 
               {% for q in questions %}
+
               <section class="question">
                 <h6>{{forloop.counter}}. {{q.question}}</h6>
                 <span>{{q.subtext}}</span>
@@ -43,8 +47,9 @@
                   {% for op in q.get_options %}
                   <div class="radio-wrapper">
                     <label class="form-check-label" for="{{op.pk}}">
-                      <input type="radio" id="{{op.pk}}" name="{{q.pk}}" value="{{op.pk}}"
-                        data-identifier="{{op.identifier}}" data-question="{{q.pk}}" data-value="{{op.pk}}">
+                      <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
+                        value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
+                        data-value="{{op.pk}}">
                       <p class="ml-2">{{op.text}}</p>
                     </label>
                   </div>
@@ -78,8 +83,8 @@
               <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap" />
             </div>
             <div class="col-8 col-lg-8 col-md-8">
-              <h5 class="">Iphone 11 (1 GB/32 GB)</h5>
-              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{spec}}</span></div>
+              <h5 class="">{{spec.brand_model.name}}</h5>
+              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{spec.price}}</span></div>
             </div>
           </div>
 

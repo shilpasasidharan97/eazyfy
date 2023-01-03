@@ -8,10 +8,10 @@ from official.models import CustomerProfile
 from official.models import CustomerRegistration
 from official.models import ModelSpecifications
 from official.models import Offer
-from official.models import Question
+from official.models import Question, UserReply, UserRequest, QuestionOption
 from official.models import User
 from user.mixin import MessageHandler
-from django.contrib.auth.decorators import login_required
+
 import pyotp
 from .helpers import send_forget_password_mail
 from django.contrib import messages
@@ -19,12 +19,12 @@ from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
 from django.contrib.auth import login
 from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from official.forms import SurveyForm
-from official.models import UserReply
+
 
 # CUSTOMER LOGIN
 def customerlogin(request):
@@ -195,10 +195,23 @@ def shops(request, id):
 
 @login_required
 def question(request, id):
-    form = SurveyForm(request.POST or None)
     spec = ModelSpecifications.objects.get(id=id)
     questions = Question.objects.all()
-    context = {"spec": spec, "questions": questions, "form": form}
+    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=spec, is_submitted=False)[0]
+    replies = UserReply.objects.filter(user_request=user_request)
+    if request.method == "POST":
+        data = dict(request.POST.items())
+        data.pop("csrfmiddlewaretoken")
+        for key, value in data.items():
+            question = Question.objects.get(id=key)
+            option = QuestionOption.objects.get(id=value)
+            if UserReply.objects.filter(user_request=user_request, question=question).exists():
+                answer = UserReply.objects.get(user_request=user_request, question=question)
+                answer.option = option
+            else:
+                answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
+            answer.save()
+    context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "user/question.html", context)
 
 
