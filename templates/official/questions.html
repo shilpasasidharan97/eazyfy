@@ -319,12 +319,14 @@
                     </div>
                     <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
                         <div class="d-flex align-items-center">
+                            {% if imagetype.image %}
                             <div class="project-media">
-                                <img src="{{ imagetype.image_upload.url }}" alt="">
+                                <img src="{{ imagetype.image.url }}" alt="">
                             </div>
+                            {% endif %}
                             <div class="ms-2">
                                 <p class="text-primary mb-1">SUB QUESTION</p>
-                                <h5 class="mb-0 pt-1 font-w50 text-black">{{ imagetype.image_description }}</h5>
+                                <h5 class="mb-0 pt-1 font-w50 text-black">{{ imagetype.text }}</h5>
                             </div>
                         </div>
                     </div>

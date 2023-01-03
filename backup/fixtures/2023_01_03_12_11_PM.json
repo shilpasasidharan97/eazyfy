@@ -463,109 +463,6 @@
         }
     },
     {
-        "model": "official.question",
-        "pk": 93,
-        "fields": {
-            "question": "objective example question",
-            "question_type": "Objective"
-        }
-    },
-    {
-        "model": "official.question",
-        "pk": 94,
-        "fields": {
-            "question": "objective example question 2",
-            "question_type": "Objective"
-        }
-    },
-    {
-        "model": "official.question",
-        "pk": 95,
-        "fields": {
-            "question": "objective example question 3",
-            "question_type": "Objective"
-        }
-    },
-    {
-        "model": "official.question",
-        "pk": 96,
-        "fields": {
-            "question": "image type 1",
-            "question_type": "image_type"
-        }
-    },
-    {
-        "model": "official.question",
-        "pk": 97,
-        "fields": {
-            "question": "aaa",
-            "question_type": "image_type"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 19,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/Screenshot_from_2022-11-09_10-16-24.png",
-            "image_description": "sub of image 1"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 20,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/bang.png",
-            "image_description": "dub 2"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 21,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/kochi.png",
-            "image_description": "sub 3"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 22,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/data_ikWzYfL.png",
-            "image_description": "nice"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 23,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/Simple--Convenient.png",
-            "image_description": "third"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 24,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/invoice_tLBWel7.png",
-            "image_description": "gtyrty"
-        }
-    },
-    {
-        "model": "official.questionoption",
-        "pk": 25,
-        "fields": {
-            "question": 96,
-            "image_upload": "Question  Image/SAFE.png",
-            "image_description": "jhgjhgjdhs"
-        }
-    },
-    {
         "model": "official.franchisewallet",
         "pk": 10,
         "fields": {
@@ -655,6 +552,198 @@
         "pk": 2,
         "fields": {
             "offer": "gallery/bnre2.jpg"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 26,
+        "fields": {
+            "question": 102,
+            "image": "",
+            "text": "Yes",
+            "identifier": "With Valid Bill"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 27,
+        "fields": {
+            "question": 102,
+            "image": "",
+            "text": "No",
+            "identifier": "Without Bill"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 28,
+        "fields": {
+            "question": 98,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Are you able to make and receive calls"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 29,
+        "fields": {
+            "question": 98,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Are you able to make and receive calls"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 30,
+        "fields": {
+            "question": 101,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Under Warranty"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 31,
+        "fields": {
+            "question": 101,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Under Warranty"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 32,
+        "fields": {
+            "question": 100,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Original Screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 33,
+        "fields": {
+            "question": 100,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Original Screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 34,
+        "fields": {
+            "question": 99,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Touch Working"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 35,
+        "fields": {
+            "question": 99,
+            "image": "",
+            "text": "No",
+            "identifier": "Touch Faulty"
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 98,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Are you able to make and receive calls?",
+            "subtext": "Check your device for cellular network connectivity issues."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 99,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your device's touch screen working properly?",
+            "subtext": "Check the touch screen functionality of your phone."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 100,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your phone's screen original?",
+            "subtext": "Pick \"Yes\" if screen was never changed or was changed by Authorized Service Center. Pick \"No\" if screen was changed at local shop."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 101,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your device under brand warranty?",
+            "subtext": "You can get a better price for your device if it's under brand's warranty with a valid bill."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 102,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Do you have valid bill with same IMEI?",
+            "subtext": "Make sure your bill has device IMEI mentioned on it."
+        }
+    },
+    {
+        "model": "official.userrequest",
+        "pk": 1,
+        "fields": {
+            "user": 16,
+            "phonemodel": 7,
+            "date": "2023-01-03T11:57:41.969Z",
+            "final_amount": 0.0
+        }
+    },
+    {
+        "model": "official.userrequest",
+        "pk": 2,
+        "fields": {
+            "user": 31,
+            "phonemodel": 8,
+            "date": "2023-01-03T12:10:50.138Z",
+            "final_amount": 0.0
+        }
+    },
+    {
+        "model": "official.userreply",
+        "pk": 1,
+        "fields": {
+            "question": 102,
+            "user_request": 1,
+            "option": 26
+        }
+    },
+    {
+        "model": "official.userreply",
+        "pk": 2,
+        "fields": {
+            "question": 99,
+            "user_request": 1,
+            "option": 35
+        }
+    },
+    {
+        "model": "official.userreply",
+        "pk": 3,
+        "fields": {
+            "question": 99,
+            "user_request": 2,
+            "option": 30
         }
     }
 ]

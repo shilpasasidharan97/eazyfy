@@ -201,32 +201,37 @@ class Offer(models.Model):
 
 
 # survey models
-class Question(models.Model):
-    question_type = (("image", "Image"), ("Objective", "Objective"), ("text", "Text"))
-
-    question = models.CharField(max_length=500, default="")
-    question_type = models.CharField(max_length=15, choices=question_type)
-
-    class Meta:
-        verbose_name_plural = "Question"
-
-    def __str__(self):
-        return str(self.question)
-
-
 class QuestionOption(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, null=True, blank=True)
-    image_upload = models.FileField(upload_to="Question Image", null=True)
-    image_description = models.CharField(max_length=500, default="")
+    image = models.FileField(upload_to="Question Image", blank=True, null=True)
+    text = models.CharField(max_length=500, default="")
+    identifier = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Able to Make and Receive Calls")
 
     class Meta:
         verbose_name_plural = "Question Options"
 
     def __str__(self):
-        return str(self.image_description)
+        return f"{self.question} - {self.text}"
 
 
-class UserQuestionAnswer(models.Model):
+class Question(models.Model):
+    question_type_choices = (("image", "Image"), ("Objective", "Objective"), ("MCQ", "MCQ"))
+
+    question_type = models.CharField(max_length=15, choices=question_type_choices)
+    question = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Are you able to make and receive calls?")
+    subtext = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Check your device for cellular network connectivity issues.")
+
+    class Meta:
+        verbose_name_plural = "Question"
+
+    def get_options(self):
+        return QuestionOption.objects.filter(question=self)
+
+    def __str__(self):
+        return str(self.question)
+
+
+class UserRequest(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     phonemodel = models.ForeignKey(ModelSpecifications, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
@@ -234,3 +239,12 @@ class UserQuestionAnswer(models.Model):
 
     def __str__(self):
         return str(self.user)
+
+
+class UserReply(models.Model):
+    question = models.ForeignKey("Question", on_delete=models.CASCADE)
+    user_request = models.ForeignKey("UserRequest", on_delete=models.CASCADE)
+    option = models.ForeignKey("QuestionOption", on_delete=models.CASCADE, null=True, blank=True)
+
+    def __str__(self):
+        return str(self.user_request)

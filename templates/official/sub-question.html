@@ -72,12 +72,14 @@
             </div>
             {% for i in sub_qst %}
             <div class="card-body row">
+                {% if imagetype.image %}
                 <div class="col-4 col-lg-4 col-md-4">
-                    <img class="card-img-top list-product" src="{{i.image_upload.url}}" alt="Card image cap">
+                    <img class="card-img-top list-product" src="{{i.image.url}}" alt="Card image cap">
                 </div>
+                {% endif %}
 
                 <div class="col-8 col-lg-8 col-md-8">
-                    <span class="">{{i.image_description}}</span>
+                    <span class="">{{i.text}}</span>
                 </div>
 
             </div>

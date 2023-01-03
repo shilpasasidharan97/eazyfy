@@ -13,8 +13,8 @@ from .models import FranchiseWallet
 from .models import ModelSpecifications
 from .models import Offer
 from .models import PickUpBoy
-from .models import QuestionOption
 from .models import Question
+from .models import QuestionOption
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -146,7 +146,8 @@ def DeleteFranchise(request, id):
 
 def pickUpBoyList(request, id):
     franchise_details = Franchise.objects.get(id=id)
-    return render(request, "official/pickupboy_list.html", {"franchise_details": franchise_details})
+    context = {"franchise_details": franchise_details}
+    return render(request, "official/pickupboy_list.html", context)
 
 
 def brand(request):
@@ -241,19 +242,6 @@ def modelSpecification(request, id):
     return render(request, "official/specification.html", context)
 
 
-# shifa edit spec
-# def getModelspec(request,id):
-#     getModelspec = ModelSpecifications.objects.get(id=id)
-#     # print(getModelspec)
-#     data = {
-#         "miram":getModelspec.RAM,
-#         "mistore":getModelspec.internal_storage,
-#         "miprice":getModelspec.price,
-#         "id":getModelspec.id,
-#     }
-#     return JsonResponse(data)
-
-
 # ALL QUESTION
 def questions(request):
     question = Question.objects.all()
@@ -291,9 +279,9 @@ def questsave(request):
     question = request.POST["qst"]
     qst_type = "Objective"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Question(question=question, question_type=qst_type, device_type=device_type)
+    new_question = Question(question=question, question_type=qst_type)
     new_question.save()
-    qst_count = Question.objects.filter(device_type=device_type).count()
+    qst_count = Question.objects.filter().count()
     countt = qst_count + 1
     data = {"qstno": countt}
     return JsonResponse(data)
@@ -304,7 +292,7 @@ def subquestionFirst(request):
     question = request.POST["qst"]
     qst_type = "image"
     device_type = DeviceType.objects.get(device_type="Mobile")
-    new_question = Question(question=question, question_type=qst_type, device_type=device_type)
+    new_question = Question(question=question, question_type=qst_type)
     new_question.save()
     qest_pk = new_question.id
     data = {
@@ -322,7 +310,7 @@ def subquestionPage(request, id):
     if request.method == "POST" or request.FILES:
         description = request.POST["description"]
         image = request.FILES["images"]
-        new_sub_qst = QuestionOption(question=question, image_upload=image, image_description=description)
+        new_sub_qst = QuestionOption(question=question, image=image, text=description)
         new_sub_qst.save()
         return redirect("/official/suquestionAddingPage/" + str(question.id))
     context = {"question": question, "qst_count": qst_count, "sub_qst": sub_qst, "device_type": device_type}
@@ -363,26 +351,12 @@ def questionId(request):
         question_option = QuestionOption.objects.filter(question__question_type="image", question=question)
 
         for i in question_option:
-            data1 = {"image_description": i.image_description, "image_description_id": i.id, "image": i.image_upload.url}
+            data1 = {"text": i.text, "text_id": i.id, "image": i.image.url}
             data.append(data1)
-            # print(data)
         return JsonResponse(data, safe=False)
     qust_type = {"type": "Objective"}
     data.append(qust_type)
     return JsonResponse(data, safe=False)
-
-
-@csrf_exempt
-def questionSaving(request):
-    data = json.loads(request.POST["data"])
-    qst_details = data[0]
-    model_pk = qst_details.get("modelid")
-    question = qst_details.get("question")
-    qst_details.get("type_question")
-
-    qst_obj = Question.objects.get(id=question)
-    model_obj = BrandModel.objects.get(id=model_pk)
-    return JsonResponse({"status": True})
 
 
 def test(request):
@@ -453,11 +427,9 @@ def logout_view(request):
 def settings(request):
     offerImage = Offer.objects.all()
     bannerImage = BannerImage.objects.all()
-    print(bannerImage)
     if request.method == "POST":
         banner = request.FILES.get("banner")
         bannerObject = BannerImage(banner=banner)
-        print(bannerObject)
         bannerObject.save()
     context = {"bannerImage": bannerImage, "offerImage": offerImage}
 
@@ -465,7 +437,6 @@ def settings(request):
 
 
 def DeleteBanner(request, id):
-    print("#" * 20)
     BannerImage.objects.get(id=id).delete()
     return redirect("/official/settings")
 
@@ -479,6 +450,5 @@ def offers(request):
 
 
 def DeleteOffer(request, id):
-    print("#" * 20)
     Offer.objects.get(id=id).delete()
     return redirect("/official/settings")

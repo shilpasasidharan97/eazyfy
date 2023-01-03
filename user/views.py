@@ -8,7 +8,7 @@ from official.models import CustomerProfile
 from official.models import CustomerRegistration
 from official.models import ModelSpecifications
 from official.models import Offer
-from official.models import User
+from official.models import User, Question, QuestionOption
 from user.mixin import MessageHandler
 
 import pyotp
@@ -58,7 +58,6 @@ def UserRegistration(request):
             customer.save()
             User = get_user_model()
             customers = User.objects.create_user(email=email, phone_number=phonenumber_with_countrycode, password=password, customer=customer, is_customer=True)
-
             profile = CustomerProfile.objects.create(user=customers, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
         msg = "Password does not match"
@@ -86,7 +85,6 @@ def otp_fun(request, id):
     if request.method == "POST":
         enter_otp = request.POST["otp"]
         verification = totp.verify(enter_otp)
-
         if verification:
             return redirect("user:index")
     MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
@@ -95,47 +93,38 @@ def otp_fun(request, id):
 
 # forgot password
 def forgot(request):
-    try:
-        if request.method == "POST":
-            email = request.POST["email"]
-            if not User.objects.filter(email=email).first():
-                messages.success(request, "Not user found with this email.")
-                return redirect("/forgot")
-            user_obj = User.objects.get(email=email)
-            token = str(uuid.uuid4())
-            profile_obj = CustomerProfile.objects.get(user=user_obj)
-            profile_obj.forget_password_token = token
-            profile_obj.save()
-            send_forget_password_mail(user_obj.email, token)
-            messages.success(request, "An email is sent.")
+    if request.method == "POST":
+        email = request.POST["email"]
+        if not User.objects.filter(email=email).first():
+            messages.success(request, "Not user found with this email.")
             return redirect("/forgot")
-    except Exception as e:
-        print(e)
+        user_obj = User.objects.get(email=email)
+        token = str(uuid.uuid4())
+        profile_obj = CustomerProfile.objects.get(user=user_obj)
+        profile_obj.forget_password_token = token
+        profile_obj.save()
+        send_forget_password_mail(user_obj.email, token)
+        messages.success(request, "An email is sent.")
+        return redirect("/forgot")
     return render(request, "user/forgot.html")
 
 
 # RESET PASSWORD
 def resetPassword(request, token):
-    context = {}
-    try:
-        profile_obj = CustomerProfile.objects.filter(forget_password_token=token).first()
-        context = {"user_id": profile_obj.user.id}
+    profile_obj = CustomerProfile.objects.filter(forget_password_token=token).first()
+    context = {"user_id": profile_obj.user.id}
+    if request.method == "POST":
+        new_password = request.POST["password"]
+        user_id = request.POST.get("user_id")
+        if user_id is None:
+            messages.warning(request, "No user id found.")
 
-        if request.method == "POST":
-            new_password = request.POST["password"]
-            user_id = request.POST.get("user_id")
-            if user_id is None:
-                messages.warning(request, "No user id found.")
-
-                return redirect(f"/change-password/{token}/")
-            user_obj = User.objects.get(id=user_id)
-            user_obj.set_password(new_password)
-            user_obj.save()
-
-            messages.success(request, "An email sent")
             return redirect(f"/change-password/{token}/")
-    except Exception as e:
-        print(e)
+        user_obj = User.objects.get(id=user_id)
+        user_obj.set_password(new_password)
+        user_obj.save()
+        messages.success(request, "An email sent")
+        return redirect(f"/change-password/{token}/")
     return render(request, "user/reset_password.html", context)
 
 
@@ -154,9 +143,7 @@ def index(request):
     offer = Offer.objects.all()
     brand = Brand.objects.all()
     user = request.user
-    print(user)
     context = {"is_index": True, "user": user, "banner": banner, "offer": offer, "brand": brand}
-
     return render(request, "user/index.html", context)
 
 
@@ -200,7 +187,6 @@ def shops(request, id):
     for pos in searchModel:
         item = {"pk": pos.pk, "modelName": pos.name}
         data.append(item)
-
     context = {"data": data, "searchModel": searchModel, "model": model}
     return render(request, "user/shops.html", context)
 
@@ -208,13 +194,14 @@ def shops(request, id):
 # QUESTIONS
 def question(request, id):
     spec = ModelSpecifications.objects.get(id=id)
-    context = {"spec": spec}
+    questions = Question.objects.all()
+    context = {"spec": spec, "questions": questions}
     return render(request, "user/question.html", context)
 
 
 @csrf_exempt
 def save_answer(request):
-    data = json.loads(request.POST["data"])
+    json.loads(request.POST["data"])
     return JsonResponse({"msg": "Success"})
 
 
@@ -265,7 +252,6 @@ def sellPhone(request):
     for pos in brand:
         item = {"pk": pos.pk, "brandName": pos.name}
         data.append(item)
-
     context = {"data": data, "brand": brand}
     return render(request, "user/sell-phone.html", context)
 

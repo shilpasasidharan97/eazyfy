@@ -19,7 +19,6 @@ def base(request):
 def profile(request):
     pickupboy = request.user.pickup_boy
     if request.method == "POST":
-        print("post")
         name = request.POST["pname"]
         phone = request.POST["pphone"]
         email = request.POST["pemail"]
@@ -30,7 +29,6 @@ def profile(request):
         photo_pb = PickUpBoy.objects.get(id=pickupboy.id)
         photo_pb.photo = photo
         photo_pb.save()
-        print("qwerty")
         get_user_model().objects.filter(pickup_boy=pickupboy.id).update(phone_number=phone, email=email)
         return redirect("pickupboy:profile")
     context = {"pickupboy": pickupboy}
@@ -106,7 +104,6 @@ def checkout(request):
         amount = int(request.POST.get("amount")) * 100
         client = razorpay.Client(auth=("rzp_test_bKtMj90QOs6Af2", "vNLvdBnrIGSHG2C4BiWoDGvd"))
         payment = client.order.create({"amount": amount, "currency": "INR", "payment_capture": "1"})
-        print(payment)
         coffe = OrderPayment(name=name, amound=amount, payment_id=payment["id"])
         return render(request, "pickup-boy/checkout.html", {"payment": payment, "coffe": coffe})
     return render(request, "pickup-boy/checkout.html")

@@ -31,7 +31,6 @@ urlpatterns = [
     path("deductionsettings/", views.deductionSettings, name="deductionsettings"),
     path("questionfordeduction/<str:id>/", views.questionForDeduction, name="questionfordeduction"),
     path("questionid/", views.questionId, name="questionid"),
-    path("questionsaving/", views.questionSaving, name="questionsaving"),
     path("userrequestlist/", views.userRequestList, name="userrequestlist"),
     path("userdetails/", views.userDetails, name="userdetails"),
     path("wallet/", views.wallet, name="wallet"),

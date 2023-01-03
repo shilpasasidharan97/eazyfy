@@ -1,5 +1,5 @@
-from django import forms
 from .models import QuestionOption
+from django import forms
 
 
 class SurveyForm(forms.ModelForm):

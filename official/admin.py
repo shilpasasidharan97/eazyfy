@@ -12,9 +12,11 @@ from .models import ModelSpecifications
 from .models import Offer
 from .models import OrderPayment
 from .models import PickUpBoy
-from .models import QuestionOption
 from .models import Question
+from .models import QuestionOption
 from .models import User
+from .models import UserRequest
+from .models import UserReply
 from django.contrib import admin
 
 
@@ -64,16 +66,16 @@ class ModelSpecificationsAdmin(admin.ModelAdmin):
     search_fields = ("brand_model", "RAM", "internal_storage", "color", "year")
 
 
+class QuestionOptionInline(admin.TabularInline):
+    model = QuestionOption
+    extra = 0
+
+
 @admin.register(Question)
 class QuestionAdmin(admin.ModelAdmin):
-    list_display = ("id", "question", "question_type")
+    list_display = ("question", "question_type")
     search_fields = ("question",)
-
-
-@admin.register(QuestionOption)
-class QuestionOptionAdmin(admin.ModelAdmin):
-    list_display = ("question_id", "question", "image_description", "image_upload")
-    search_fields = ("question",)
+    inlines = [QuestionOptionInline]
 
 
 @admin.register(CustomerRegistration)
@@ -99,6 +101,13 @@ class AdminSendRecordAdmin(admin.ModelAdmin):
     search_fields = ("franchise", "amount", "date")
 
 
+@admin.register(UserReply)
+class UserReplyAdmin(admin.ModelAdmin):
+    list_display = ("question", "user_request", "option")
+    list_filter = ("user_request",)
+
+
 admin.site.register(BannerImage)
 admin.site.register(Offer)
 admin.site.register(DeviceType)
+admin.site.register(UserRequest)

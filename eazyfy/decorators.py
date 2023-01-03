@@ -6,7 +6,6 @@ def auth_franchise(func):
         franchise_ex = request.user.franchise
         if franchise_ex is not None:
             return func(request, *args, **kwargs)
-        print("else")
         return redirect("official:loginpage")
 
     return wrap

@@ -58,7 +58,6 @@ def add_pickupboy(request):
         User.objects.create_user(phone_number=phone, password=password, pickup_boy=pickup_boy, is_pickupboy=True)
         return redirect("franchise:add-pickupboy")
     pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
-    print(pickup_boy_list)
     context = {"is_addpickupboy": True, "pickup_boy_list": pickup_boy_list}
     return render(request, "franchise/add-pickupboy.html", context)
 
