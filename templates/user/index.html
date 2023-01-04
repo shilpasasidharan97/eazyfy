@@ -2,14 +2,145 @@
 {% load static %}
 {% block content %}
 
-<div class="container d-lg-none">
+<style>
+    *,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --unhover-border-color: rgba(0, 0, 0, 0.5);
+  --unhover-text-color: rgba(255, 255, 255, 0.5);
+  --unhover-background-color: rgba(0, 0, 0, 0.5);
+
+  --hover-border-color: rgba(0, 0, 0, 0.8);
+  --hover-text-color: rgba(255, 255, 255, 0.8);
+  --hover-background-color: rgba(0, 0, 0, 0.8);
+
+  --transition-delay: 0.5s;
+}
+
+.carousel {
+  position: relative;
+  width: 100vw;
+  height: 32vh;
+}
+
+.slider-button {
+  font-size: 1rem;
+  padding: 5px 1rem;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  /* border: 2px solid var(--unhover-border-color); */
+  color: var(--unhover-text-color);
+  z-index: 10;
+  cursor: pointer;
+}
+
+.slider-button-prev {
+  left: 2rem;
+}
+
+.slider-button-next {
+  right: 2rem;
+}
+
+.slider-button:hover,
+.slider-button:focus {
+  /* background-color: var(--hover-background-color);
+  border: 2px solid var(--hover-border-color); */
+  color: var(--hover-text-color);
+}
+
+ul.slides {
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+}
+
+li.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity var(--transition-delay);
+  transition-delay: var(--transition-delay);
+}
+
+.slide > img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+li.slide[data-active-slide] {
+  opacity: 1;
+}
+
+.slides-circles {
+  display: flex;
+  position: absolute;
+  bottom: 0rem;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+
+.slides-circles > div {
+    height: 8px;
+    width: 8px;
+    margin: 10px;
+    border: 1px solid white;
+    border-radius: 50%;
+    transition: background-color var(--transition-delay);
+    transition-delay: var(--transition-delay);
+}
+
+.slides-circles > div[data-active-slide] {
+  background-color: white;
+}
+
+</style>
+
+<section class="carousel d-lg-none ">
+    <button class="slider-button slider-button-prev" data-slide-direction="prev">&#8592</button>
+    <button class="slider-button slider-button-next" data-slide-direction="next">&#8594</button>
+    <ul class="slides">
+      <li class="slide" data-active-slide>
+        <img src="{% static 'user/imgs/slider/bnrs3.jpg' %}" />
+      </li>
+      <li class="slide">
+        <img src="{% static 'user/imgs/slider/bnrs4 (1).jpg' %}" alt="Nature Image #2" />
+      </li>
+      <!-- <li class="slide">
+        <img src="https://img.freepik.com/free-photo/beautiful-shot-grassy-hills-covered-trees-near-mountains-dolomites-italy_181624-24400.jpg?w=900&t=st=1670093563~exp=1670094163~hmac=53dd76fac233cfc81416be6e48979f21ca375c70470fba4b50eea93c9e27cee9" alt="Nature Image #3" />
+      </li> -->
+    </ul>
+    <div class="slides-circles">
+      <div data-active-slide></div>
+      <div></div>
+      <!-- <div></div> -->
+    </div>
+  </section>
+
+
+<!-- <div class="container d-lg-none">
     <div class="slider-1-height-3 slider-animated-1">
        
         <div class="slider-img">
-            <img class="mobile-img" src="{% static 'user/imgs/slider/b11.jpg' %}" alt="">
+            <img class="mobile-img" src="{% static 'user/imgs/slider/bnrs3.jpg' %}" alt="">
         </div>
     </div>
-</div>
+</div> -->
 
 
 
@@ -104,7 +235,7 @@
             <div class="col-lg-12">
                 <div class="position-relative">
                     <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
-                        {% comment %}
+                       
                         <div class="single-hero-slider single-animation-wrap">
                             <div class="container">
                                 <div class="slider-1-height-3 slider-animated-1">
@@ -118,7 +249,7 @@
                                     </div> -->
                                     <div class="slider-img">
                                         <a href="">
-                                            <img src="{% static 'user/imgs/slider/b1.jpg' %}" alt="">
+                                            <img src="{% static 'user/imgs/slider/bnrs1.jpg' %}" alt="">
                                         </a>
                                         
                                     </div>
@@ -138,13 +269,13 @@
                                             Sell phone </a>
                                     </div> -->
                                     <div class="slider-img">
-                                        <img src="{% static 'user/imgs/slider/b2.jpg' %}" alt="">
+                                        <img src="{% static 'user/imgs/slider/bnrs2.jpg' %}" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        {% endcomment %}
-
+                        
+                     {% comment %}
                         {% for slide in banner %}
                         <div class="single-hero-slider single-animation-wrap">
                             <div class="container">
@@ -165,6 +296,7 @@
                         </div>
 
                         {% endfor %}
+                        {% endcomment %}
 
 
                     </div>
@@ -186,7 +318,7 @@
             <div class="col-sm-3 col-4 col-xs-3 col-md-3  col-lg-2 service-category" >
                 <a href="{% url 'user:sell' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell Phone-3.png' %}" alt="" class="service-icon">
 
                    
                         <h4 class="bg-1 servicetext">Sell Phone</h4>
@@ -196,7 +328,7 @@
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <a href="{% url 'user:buyphone' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Buy Phone-4.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Buy phone</h4>
                 </a>
                 </div>
@@ -204,7 +336,7 @@
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <a href="{% url 'user:repair_phone' %}">
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Repair Phone-3.png' %}" alt="" class="service-icon">
                     <h4 class="bg-2 servicetext">Repair Phone</h4>
                 </a>
                 </div>
@@ -212,43 +344,43 @@
 
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell imac-3.png' %}" alt="" class="service-icon">
                     <h4 class="bg-1 servicetext">Sell imac</h4>
                 </div>
             </div>
             <div class=" col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category  " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell Laptop-3.png' %}" alt="" class="service-icon">
 
                     <a href="sell">
-                        <h4 class="bg-1 servicetext">Sell Phone</h4>
+                        <h4 class="bg-1 servicetext">Sell Laptop</h4>
                     </a>
                 </div>
             </div>
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category " >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/buy-mob.png' %}" alt="" class="service-icon">
-                    <h4 class="bg-2 servicetext">Buy phone</h4>
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell Camera-3.png' %}" alt="" class="service-icon">
+                    <h4 class="bg-2 servicetext">Sell Camera</h4>
                 </div>
             </div>
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category last-grid" >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/repair-mob.png' %}" alt="" class="service-icon">
-                    <h4 class="bg-2 servicetext">Repair Phone</h4>
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell Tablet-3.png' %}" alt="" class="service-icon">
+                    <h4 class="bg-2 servicetext">Sell Tablet</h4>
                 </div>
             </div>
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category last-grid" >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px">
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/i-mac.png' %}" alt="" class="service-icon">
-                    <h4 class="bg-1 servicetext">Sell imac</h4>
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell SmartWatch-3.png' %}" alt="" class="service-icon">
+                    <h4 class="bg-1 servicetext">Sell Smart Watch</h4>
                 </div>
             </div>
             <div class="col-sm-3 col-4 col-xs-3 col-md-3 col-lg-2 service-category  last-grid" >
                 <div class="banner-features wow fadeIn animated hover-up " style="height: 128px" >
-                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/sell--mob-1.png' %}" alt="" class="service-icon">
+                    <img style="margin-top: 14px" src="{% static 'user/imgs/theme/icons/Sell Earbuds-4.png' %}" alt="" class="service-icon">
 
                     <a href="sell">
-                        <h4 class="bg-1 servicetext">Sell Phone</h4>
+                        <h4 class="bg-1 servicetext">Sell Earbuds</h4>
                     </a>
                 </div>
             </div>
@@ -270,7 +402,7 @@
 <section class="featured section-padding">
     <div class="container">
         <div class="row">
-            <h3 class="section-title mb-20">How<span>Eazify</span> Works</h3>
+            <h3 class="section-title mb-20">How<span>Flypik</span> Works</h3>
             <div class="col-lg-2 col-md-4 col-4  mb-md-3 mb-lg-0">
                 <div class="wow fadeIn animated hover-up animated works">
                     <img src="{% static 'user/imgs/theme/icons/feature-2.png' %}" alt="">
@@ -310,9 +442,10 @@
         </div>
     </div>
 </section>
-
+{% endcomment %}
 
 <!-- repair service section -->
+{% comment %}
 <section class="banner-2 section-padding repair-section pb-0  repair-style">
     <div class="container">
         <div class="banner-img banner-big wow fadeIn animated f-none">
@@ -329,11 +462,12 @@
 </section>
 {% endcomment %}
 
+
 <!-- exchange card -->
-<section class="banners mb-15 exchange-card">
+<section class="banners mb-15 exchange-card nomobileview ">
     <div class="container">
         <div class="row">
-
+            {% comment %}
             {% for offers in offer %}
             <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
@@ -343,8 +477,8 @@
                 </div>
             </div>
             {% endfor %}
-
-            <!-- <div class="col-lg-4 col-md-6">
+            {% endcomment %}
+            <div class="col-lg-4 col-md-6">
                 <div class="banner-img wow fadeIn animated">
                     <a href="">
                         <img class="offer2" src="{% static 'user/imgs/banner/bnre2.jpg' %}" alt="">
@@ -357,7 +491,14 @@
                         <img class="offer2" src="{% static 'user/imgs/banner/bnre3.jpg' %}" alt="">
                     </a>
                 </div>
-            </div> -->
+            </div>
+            <div class="col-lg-4 d-md-none d-lg-flex">
+                <div class="banner-img wow fadeIn animated  mb-sm-0">
+                    <a href="">
+                        <img class="offer2" src="{% static 'user/imgs/banner/bnre1.jpg' %}" alt="">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -556,7 +697,7 @@
     <div class="featured">
         <div class="container">
             <div class="row">
-                <h3 class="section-title mb-20">Why <span>sell</span> on Eazyfy </h3>
+                <h3 class="section-title mb-20">Why <span>sell</span> on Flypik </h3>
 
 
             </div>
@@ -735,7 +876,7 @@
           <h2 class="accordion-header" id="headingOne">
             <h3 class="section-title mb-20 "><span>FAQ</span>s</h3>
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-              <strong> How to delete your eazyfy account in ios?</strong>
+              <strong> How to delete your Flypik account in ios?</strong>
             </button>
           </h2>
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
@@ -743,7 +884,7 @@
                 <p class="product-name">
                     To delete your account please go through the following steps –
 
-                    Open the Cashify App and tap on the profile icon at the bottom right
+                    Open the Flypik App and tap on the profile icon at the bottom right
                     Select “My Account” then tap on “Delete My Account”
                     Confirm the “Deletion Request” through OTP sent on your registered mobile number
                     Account will be deleted successfully within 15 days
@@ -762,7 +903,7 @@
           </h2>
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
-              <p class="product-name">Yes,  we take broken and dead mobiles if you are selling mobile phone on Cashify. However, it might affect the overall quote of the phone.</p> 
+              <p class="product-name">Yes,  we take broken and dead mobiles if you are selling mobile phone on Flypik. However, it might affect the overall quote of the phone.</p> 
             </div>
           </div>
         </div>
@@ -785,5 +926,38 @@
 
 
 <br><br>
+
+<script>
+    const buttons = document.querySelectorAll("[data-slide-direction]");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const offset = button.dataset.slideDirection === "next" ? 1 : -1;
+    changeSlide(offset);
+  });
+});
+
+const changeSlide = (offset) => {
+  const slides = document.querySelector(".slides");
+  const activeSlide = slides.querySelector("[data-active-slide]");
+  let newIndex = [...slides.children].indexOf(activeSlide) + offset;
+  newIndex =
+    newIndex < 0
+      ? slides.children.length - 1
+      : newIndex === slides.children.length
+      ? 0
+      : newIndex;
+  slides.children[newIndex].dataset.activeSlide = true;
+  delete activeSlide.dataset.activeSlide;
+
+  const circles = document.querySelector(".slides-circles");
+  const activeCircle = circles.querySelector("[data-active-slide]");
+  circles.children[newIndex].dataset.activeSlide = true;
+  delete activeCircle.dataset.activeSlide;
+};
+
+setInterval(changeSlide.bind(null, 1), 10000);
+
+</script>
 
 {% endblock %}

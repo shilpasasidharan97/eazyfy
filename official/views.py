@@ -10,7 +10,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
 import datetime
 from django.contrib import messages
-from user.helpers import payment_mail
+# from user.helpers import payment_mail
 
 # Create your views here.
 
@@ -329,9 +329,6 @@ def questionAdding(request):
     return render(request,'official/questions_adding.html',context)
 
 
-
-
-
 @csrf_exempt
 def questsave(request):
     question = request.POST['qst']
@@ -487,6 +484,7 @@ def questionSaving(request):
 
 
 
+
 def test(request):
     return render(request,'official/test.html')
 
@@ -558,7 +556,7 @@ def savePayment(request,id):
     franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount,date=now, wallet_amount=balance_amount)
     record = AdminSendRecord(franchise=franchise_obj,amount=paid_amount,date=now)
     messages.success(request, 'success')
-    payment_mail(franchisewallet.id)
+    # payment_mail(franchisewallet.id)
     record.save()
     data = {
         "sss":"sss",
@@ -609,3 +607,8 @@ def DeleteOffer(request,id):
     print("#"*20)
     Offer.objects.get(id=id).delete()
     return redirect('/official/settings')    
+
+
+
+def invoice(request):
+    return render(request,'official/invoice.html')

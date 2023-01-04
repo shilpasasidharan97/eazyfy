@@ -1,5 +1,5 @@
-from email.policy import default
-from random import choices
+# from email.policy import default
+# from random import choices
 from django.db import models
 from django.contrib.auth.models import User
 from django.contrib.auth.models import AbstractUser, BaseUserManager
@@ -126,7 +126,7 @@ class BrandModel(models.Model):
         return str(self.name)
 
 
-class ModelSpecifications(models.Model):
+class ModelSpecifications(models.Model):    
     Brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
     color = models.CharField(max_length=30, null=True)
@@ -149,6 +149,21 @@ class DeviceType(models.Model):
         return str(self.device_type)
 
 
+# class Enquiry(models.Model):
+#     device = models.ForeignKey(ModelSpecifications
+#     status = models.CharField(max_length=180, choices=())
+
+#     def get_questions(self):
+#         return EnquiryQuestion.objects.filter(parent=self)
+
+
+# class EnquiryQuestion()
+#     parent = fk(Enquiry)
+#     question = models.CharField(max_length=180)
+
+
+#QUESTION ADDING
+
 class Questions(models.Model):
     question_type = (('image_type', 'image_type'), ('Objective', 'Objective'))
     device_type = models.ForeignKey(DeviceType,on_delete = models.CASCADE,null = True,blank = True)
@@ -162,6 +177,7 @@ class Questions(models.Model):
     def __str__(self):
         return str(self.questions)
 
+# IMAGE TYPE QUESTIONS
 
 class QuestionOption(models.Model):
     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
@@ -175,6 +191,8 @@ class QuestionOption(models.Model):
         return str(self.image_description)
 
 
+# OBJECTIVE TYPE DEDECTION
+
 class Dedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
     model = models.ForeignKey(BrandModel,on_delete = models.CASCADE,null = True, blank = True)
@@ -185,6 +203,7 @@ class Dedection(models.Model):
     def get_subqust(self):
         return SubDedection.objects.filter(deduction=self) 
 
+# IMAGE TYPE DEDECTION
 
 class SubDedection(models.Model):
     questions = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True, blank = True)
@@ -194,17 +213,31 @@ class SubDedection(models.Model):
     dedection_amount = models.IntegerField(null = True, blank = True)
 
 
+# class QuetionAnswer(models.Model):
+#     question = models.ForeignKey(Questions,on_delete = models.CASCADE,null = True,blank = True)
+#     user = models.ForeignKey(User , on_delete = models.CASCADE,related_name = 'profile')
+#     objective_qustion = models.BooleanField(null=True,blank=True)
+
+
+
+
+# FRANCHISE WALLET
+
+
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     wallet_amount = models.FloatField(null = True, blank = True, default=0)  
     last_paid_amount = models.FloatField(null = True, blank = True, default=0)
     date = models.DateTimeField(auto_now_add=True)
 
+# ADMIN WALLET
 
 class AdminWallet(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
     amount = models.FloatField(null = True, blank = True, default=0)  
     date = models.DateTimeField(auto_now_add=True)
+
+
 
 class AdminSendRecord(models.Model):
     franchise = models.ForeignKey(Franchise,on_delete = models.CASCADE,null = True, blank = True)
@@ -212,7 +245,7 @@ class AdminSendRecord(models.Model):
     date = models.DateField()
 
 
-
+# PICKUP BOY PAYMENT
 
 class OrderPayment(models.Model):
     name = models.CharField(max_length=100)
@@ -234,3 +267,31 @@ class Card(models.Model):
     card = models.FileField(upload_to='gallery/', null=True ,blank=True)
 
 
+class UserQuestionAnswer(models.Model):
+    user = models.ForeignKey(User, on_delete = models.CASCADE)
+    phonemodel = models.ForeignKey(ModelSpecifications,on_delete = models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
+    final_amount = models.FloatField(default=0)
+
+    def __str__(self):
+        return str(self.user)
+
+
+class UserQuestionAnswerOptions(models.Model):
+    answer = models.ForeignKey(UserQuestionAnswer, on_delete = models.CASCADE)
+    question = models.ForeignKey(Dedection, on_delete = models.CASCADE)
+    answer = models.BooleanField(default=False)
+    is_subqst = models.BooleanField(default=False)
+
+
+    def __str__(self):
+        return str(self.answer)
+
+
+class SubQstAnswer(models.Model):
+    main_question = models.ForeignKey(UserQuestionAnswerOptions, on_delete = models.CASCADE)
+    question = models.ForeignKey(SubDedection, on_delete = models.CASCADE)
+    answer = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.main_question) 

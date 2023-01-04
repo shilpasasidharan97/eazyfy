@@ -571,7 +571,7 @@ body {
   color: #000000;
   font-family: Sans-Serif;
   /* padding: 20px !important; */
-  padding-top: 20px !important;
+  /* padding-top: 20px !important; */
   background-color: white;
 }
 
@@ -648,6 +648,12 @@ a:hover {
   cursor: pointer;
   white-space: nowrap;
 }
+.result{
+  border: 1px solid #e3dada;
+  padding: 12px;
+  width: 170px;
+}
+
 
 .dd-menu li:hover {
   background-color: #f6f6f6;
@@ -2111,7 +2117,7 @@ label {
 }
 
 .hero-slider-1.style-3 .slider-img {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   z-index: 1;
@@ -5767,7 +5773,7 @@ h6.post-title {
 }
 
 .logo.logo-width-1 a img {
-  width: 64px;
+  width: 129px;
   min-width: 36px;
 
 }
@@ -8304,7 +8310,7 @@ span.fi-rs-apps {
 }
 
 .pt-5 {
-  padding-top: 5px !important;
+  padding-top: 0px !important;
 }
 
 .pt-10 {
@@ -9696,8 +9702,10 @@ span.fi-rs-apps {
   margin-top: -21px;
 }
   .logo.logo-width-1 a img {
-    width: 36px;
+    width: 98px;
     min-width: 15px;
+    margin-top: 17px;
+    margin-left: -19px;
   }
   h3.section-title {
     font-size: 16px;

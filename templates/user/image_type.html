@@ -1,0 +1,457 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+/* $image-bg: gray;
+$image-border: white;
+$image-border-current: aqua; */
+
+.image {
+    opacity: 0.8;
+    width: 200px;
+    height: 160px;
+    background-position: center center;
+    background-color: image-bg;
+    display: inline-block;
+    margin: 10px;
+
+   /* &:hover {
+      opacity: 1;
+    } */
+}
+
+
+
+</style>
+ 
+<section class="frame-size ">
+    <div class="row">
+    <div  class="flwidth flheight horizontal justified  col-lg-7 shadow card">
+        <div id="calcDrawerLeft" class="jss133 mar-t20 radius-6 p-3">
+            <div class="center-justified  vertical center start-justified-mob flheight">
+                <h2 class="font22-18 font-medium tc-primary mar-b20 text-center">Tell us a few things about your
+                    device!</h2>
+                <!-- <div class=" horizontal center-center"><span
+                        class="font14 text-center underline cursor font-medium mar-b20">See what this means?</span>
+                </div> -->
+                <div class="step">
+                    <h4>Select screen/body defects that are applicable!</h4>
+                    <br>
+                    <div class="row">
+                      <div class="col-sm-2 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq1.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Broken/scratch on device screen</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+      
+      
+                      <div class="col-sm-2 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq2.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Dead spot/visible lines on screen</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+      
+      
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq3.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Scratch/Dent on device body</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+      
+      
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/qq4.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Device panel missing/broken</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+      
+      
+                    </div>
+                  </div>
+      
+                  <div class="step">
+                    <h4>Front Camera not working</h4>
+                    <br>
+                    <div class="row">
+                      <div class="col-sm-3 col-lg-3  col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q11.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Dead spot/visible lines on screen</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q12.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Back Camera not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q13.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Volume Button not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q14.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Finger Touch not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q15.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>WiFi not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q16.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Battery Faulty</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q17.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Speaker Faulty</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q18.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Power Button not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q19.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Charging Port not working
+                                </h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q20.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Face Sensor not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div>
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q21.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Silent Button not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/35.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Audio Receiver not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q22.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Camera Glass Broken</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q23.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Vibrator is not working </h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/2-2-2.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3> Bluetooth not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/38.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Microphone not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/3-3-3.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Proximity Sensor not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+      
+                      <!-- end of col3  -->
+                      <div class="col-sm-3 col-lg-3 col-6">
+      
+                        <div class="quiz_card_area">
+                          <input class="quiz_checkbox" type="checkbox" id="2" value="2" />
+                          <div class="single_quiz_card">
+                            <div class="quiz_card_content">
+                              <div class="quiz_card_icon">
+                                <img style="max-width: 70%;" src="{% static 'user/imgs/blog/q29.png' %}" alt="">
+                              </div><!-- end of quiz_card_media -->
+      
+                              <div class="quiz_card_title">
+                                <h3>Audio Jack not working</h3>
+                              </div><!-- end of quiz_card_title -->
+                            </div><!-- end of quiz_card_content -->
+                          </div><!-- end of single_quiz_card -->
+                        </div><!-- end of quiz_card_area -->
+                      </div><!-- end of col3  -->
+                    </div>
+                  </div>
+               
+                <div class="mar-t20">
+                    <div class="jss161"><button
+                            class="MuiButtonBase-root MuiButton-root MuiButton-contained flwidth MuiButton-containedPrimary"
+                            tabindex="0" type="button" style="min-height: 42px;"><span class="MuiButton-label"><span
+                                    class="font-semi-bold font16-14"
+                                    style="text-transform: none;">Continue</span><span
+                                    class="MuiButton-endIcon MuiButton-iconSizeMedium">
+                                    <div><i><img alt="" class="img-resp"
+                                                src="/static/common/svgs/arrow-right.svg"></i></div>
+                                </span></span><span class="MuiTouchRipple-root"></span></button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="jss135 web-view mar-t20 card mx-2 shadow radius-6 col-lg-4 d-sm-none d-lg-block">
+            <div class=" vertical flwidth">
+                <div class=" horizontal center pad16">
+                    <div class=" horizontal center-center jss136"><img alt="cashify" class="img-resp"
+                            src="https://s3n.cashify.in/cashify/product/img/xxhdpi/csh-6vukhanm-ci0i.png"></div>
+                    <span class="font16-14 font-medium pad-l20">Apple iPhone 5s (1 GB/32 GB)</span>
+                </div>
+                <hr class="border-light mar-b20 flwidth">
+                <div class="pad-lr16">
+                    <div class="font16 font-medium mar-t20 mar-b20">Device Evaluation</div>
+                    <div class="mar-t20 jss137"></div>
+                </div>
+            </div>
+        </div>
+  
+</div>
+</section>
+
+<br><br>
+
+
+
+
+
+
+
+{% endblock %}

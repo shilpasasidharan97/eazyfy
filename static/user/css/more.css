@@ -177,4 +177,7 @@
     .terms{
         font-size: 17px !important;
     }
+    .nomobileview{
+        display: none;
+    }
 }
