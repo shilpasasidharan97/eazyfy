@@ -1,9 +1,6 @@
 {% extends 'official/partials/base.html' %}
 {% block content %}
 {% load static %}
-
-
-
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
@@ -20,97 +17,84 @@
         <div class="card-body">
             <div class="basic-form">
                 <!--  -->
-                    <div class="mb-3 row">
-                        <label class="col-sm-3 col-form-label">Question <span id="qno"> {{qstcount}}</span></label>
-                        <div class="col-sm-9">
-                            <input type="Text" class="form-control" id="question" placeholder="Add Questions"
-                                name="addquestion">
-                                <span id="message"></span>
-                        </div>
+                <div class="mb-3 row">
+                    <label class="col-sm-3 col-form-label">Question <span id="qno"> {{qstcount}}</span></label>
+                    <div class="col-sm-9">
+                        <input type="Text" class="form-control" id="question" placeholder="Add Questions"
+                            name="addquestion">
+                        <span id="message"></span>
                     </div>
+                </div>
 
-                    <div class="mb-3 row" hidden>
-                        <label class="col-sm-3 col-form-label">Device Type</label>
-                        <select name="" id="devicetype">
-                            {% for type in device_type %}
-                            <option value="{{type.device_type}}">{{type.device_type}}</option>
-                            {% endfor %}
-                        </select>
-                    </div>
+                <div class="mb-3 row" hidden>
+                    <label class="col-sm-3 col-form-label">Device Type</label>
+                    <select name="" id="devicetype">
+                        {% for type in device_type %}
+                        <option value="{{type.device_type}}">{{type.device_type}}</option>
+                        {% endfor %}
+                    </select>
+                </div>
 
-                    <div class="mb-3 row">                   
-                        <div class="form-group">
-                            <button class="btn btn-primary disabled" id="buttondisabled" onclick="QuestionAdding()">Upload and Next</button>
-                            <button class="btn btn-success disabled" id="buttondisabled2" onclick="subQuestionAdding()" >Add sub question</button>
-                            <!-- <button class="btn btn-danger disabled">finish</button> -->
-                        </div>
+                <div class="mb-3 row">
+                    <div class="form-group">
+                        <button class="btn btn-primary disabled" id="buttondisabled" onclick="QuestionAdding()">Upload
+                            and Next</button>
+                        <button class="btn btn-success disabled" id="buttondisabled2" onclick="subQuestionAdding()">Add
+                            sub question</button>
+                        <!-- <button class="btn btn-danger disabled">finish</button> -->
                     </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-                
-
-                    
-
-<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    
-
 <script>
 
-$('#question').keyup(function(){
-        var question=$('#question').val()
-        if ( question == ''){
+    $('#question').keyup(function () {
+        var question = $('#question').val()
+        if (question == '') {
             $('#message').html('Please Add Your Question First')
             $("#buttondisabled").addClass("disabled");
             $("#buttondisabled2").addClass("disabled")
         }
-        else{
+        else {
             $('#message').hide()
             $("#buttondisabled").removeClass("disabled");
             $("#buttondisabled2").removeClass("disabled");
         }
-    
     })
 
-
-function QuestionAdding(){
-    var question = $("#question").val()
-    $.ajax({
-        url : "/official/questionsave",
-        type : "POST",
-        data : {
-            "qst":question,
-        },
-        success : function(responce) {
-            $("#qno").html(responce.qstno)
-            $("#question").val("")
-
-            
-        }
-    })
-}
+    function QuestionAdding() {
+        var question = $("#question").val()
+        $.ajax({
+            url: "/official/questionsave",
+            type: "POST",
+            data: {
+                "qst": question,
+            },
+            success: function (responce) {
+                $("#qno").html(responce.qstno)
+                $("#question").val("")
+            }
+        })
+    }
 
 
-function subQuestionAdding() {
-    var question = $("#question").val()
-    $.ajax({
-        url : "/official/suquestionAdding",
-        type : "POST",
-        data : {
-            "qst":question,
-        },
-        success : function(responce) {
-            // alert(response.qest_pk)
-            window.location.href ='/official/suquestionAddingPage/'+responce.qest_pk
-
-        }
-    })
-
-}
-    
+    function subQuestionAdding() {
+        var question = $("#question").val()
+        $.ajax({
+            url: "/official/suquestionAdding",
+            type: "POST",
+            data: {
+                "qst": question,
+            },
+            success: function (responce) {
+                // alert(response.qest_pk)
+                window.location.href = '/official/suquestionAddingPage/' + responce.qest_pk
+            }
+        })
+    }
 </script>
-
 
 {% endblock %}

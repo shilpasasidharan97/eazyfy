@@ -10,11 +10,11 @@
         </div>
     </div>
     <div class="col-sm-6 p-md-0 justify-content-sm-endd-flex">
-                <a href="{% url 'official:franchisewallet' %}" class="btn btn-rounded btn-secondary" style="float: right;">
-                    <span class="btn-icon-start text-info">
-                        <i class="fa fa-plus" style="color: #5f009a;"></i>
-                    </span> Wallet
-                </a>
+        <a href="{% url 'official:franchisewallet' %}" class="btn btn-rounded btn-secondary" style="float: right;">
+            <span class="btn-icon-start text-info">
+                <i class="fa fa-plus" style="color: #5f009a;"></i>
+            </span> Wallet
+        </a>
     </div>
 </div>
 
@@ -27,7 +27,7 @@
                 <p class="mb-1 text-white fs-14">Main Balance</p>
                 <div class="d-flex justify-content-between mt-3">
                     <h2 class="num-text text-white mb-5 font-w600">₹ 673,412.66</h2>
-                   
+
                 </div>
                 <div class="d-flex">
                     <div class="me-4 text-white">
@@ -56,8 +56,8 @@
                     <div class="card-header border-0 pb-0">
                         <h4 class="mb-0 fs-20 text-black">Payment to Franchise</h4>
                         <div class="dropdown custom-dropdown mb-0 tbl-orders-style">
-                            
-                            
+
+
                         </div>
                     </div>
                     <div class="card-body p-3 pb-0 sell-order">
@@ -72,13 +72,13 @@
                                 <thead>
                                     <tr>
                                         <th></th>
-                                        
+
                                         <th class="text-right">Date</th>
                                         <th class="text-center">Amount</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-{% for payment in payment_to_franchise|slice:":4" %}
+                                    {% for payment in payment_to_franchise|slice:":4" %}
 
                                     <tr>
                                         <td>
@@ -92,21 +92,20 @@
                                                 </svg>
                                             </span>
                                         </td>
-                                        
+
                                         <td>{{payment.date}}</td>
                                         <td class="text-right">{{payment.amount}}</td>
                                     </tr>
 
-{% endfor %}
+                                    {% endfor %}
 
-                                 
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="card-footer border-0 p-0 caret">
-                        <a href="" class="btn-link"><i class="fa fa-caret-down"
-                                aria-hidden="true"></i></a>
+                        <a href="" class="btn-link"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
@@ -117,7 +116,7 @@
                     <div class="card-header border-0 pb-0">
                         <h4 class="mb-0 text-black fs-20">Payment From Franchise</h4>
                         <div class="dropdown custom-dropdown mb-0 tbl-orders-style">
-                            
+
                         </div>
                     </div>
                     <div class="card-body p-3 pb-0">
@@ -141,10 +140,9 @@
                                     <tr>
                                         <td>
                                             <span>
-                                                <svg width="50" height="50" viewBox="0 0 63 63"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="63" height="63" rx="14"
-                                                        fill="#625794" />
+                                                <svg width="50" height="50" viewBox="0 0 63 63" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="63" height="63" rx="14" fill="#625794" />
                                                     <path
                                                         d="M37.2692 38.9908L37.2692 38.9908L32.3961 43.8874C32.3934 43.8902 32.3909 43.8927 32.3885 43.895M37.2692 38.9908L32.0389 43.5375L32.3918 43.8917C32.3825 43.9009 32.3749 43.9078 32.3716 43.9107L32.3705 43.9117C32.373 43.9095 32.3796 43.9036 32.3877 43.8957C32.388 43.8955 32.3883 43.8952 32.3885 43.895M37.2692 38.9908C37.8291 38.4281 37.827 37.5179 37.2643 36.9578C36.7016 36.3978 35.7914 36.3999 35.2314 36.9626L35.2313 36.9627L32.8127 39.393M37.2692 38.9908L32.8127 39.393M32.3885 43.895C31.8292 44.4509 30.9226 44.4526 30.3615 43.8946C30.3603 43.8934 30.3591 43.8922 30.3578 43.8909L30.3563 43.8894L30.3442 43.8773L25.4813 38.9908L25.8357 38.6381L25.4813 38.9908C24.9215 38.4282 24.9234 37.518 25.4862 36.9578C26.049 36.3978 26.9591 36.4 27.5191 36.9627L27.5192 36.9627L29.9377 39.393L29.9377 20.75C29.9377 19.9561 30.5813 19.3125 31.3752 19.3125C32.1692 19.3125 32.8127 19.9561 32.8127 20.75L32.8127 39.393M32.3885 43.895C32.39 43.8935 32.3914 43.8921 32.3928 43.8907L32.8127 39.393M30.3577 43.8908C30.3573 43.8903 30.3568 43.8899 30.3564 43.8894L30.3577 43.8908Z"
                                                         fill="white" stroke="white" />
@@ -158,10 +156,9 @@
                                     <tr>
                                         <td>
                                             <span>
-                                                <svg width="50" height="50" viewBox="0 0 63 63"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                    <rect width="63" height="63" rx="14"
-                                                        fill="#625794" />
+                                                <svg width="50" height="50" viewBox="0 0 63 63" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <rect width="63" height="63" rx="14" fill="#625794" />
                                                     <path
                                                         d="M37.2692 38.9908L37.2692 38.9908L32.3961 43.8874C32.3934 43.8902 32.3909 43.8927 32.3885 43.895M37.2692 38.9908L32.0389 43.5375L32.3918 43.8917C32.3825 43.9009 32.3749 43.9078 32.3716 43.9107L32.3705 43.9117C32.373 43.9095 32.3796 43.9036 32.3877 43.8957C32.388 43.8955 32.3883 43.8952 32.3885 43.895M37.2692 38.9908C37.8291 38.4281 37.827 37.5179 37.2643 36.9578C36.7016 36.3978 35.7914 36.3999 35.2314 36.9626L35.2313 36.9627L32.8127 39.393M37.2692 38.9908L32.8127 39.393M32.3885 43.895C31.8292 44.4509 30.9226 44.4526 30.3615 43.8946C30.3603 43.8934 30.3591 43.8922 30.3578 43.8909L30.3563 43.8894L30.3442 43.8773L25.4813 38.9908L25.8357 38.6381L25.4813 38.9908C24.9215 38.4282 24.9234 37.518 25.4862 36.9578C26.049 36.3978 26.9591 36.4 27.5191 36.9627L27.5192 36.9627L29.9377 39.393L29.9377 20.75C29.9377 19.9561 30.5813 19.3125 31.3752 19.3125C32.1692 19.3125 32.8127 19.9561 32.8127 20.75L32.8127 39.393M32.3885 43.895C32.39 43.8935 32.3914 43.8921 32.3928 43.8907L32.8127 39.393M30.3577 43.8908C30.3573 43.8903 30.3568 43.8899 30.3564 43.8894L30.3577 43.8908Z"
                                                         fill="white" stroke="white" />
@@ -172,21 +169,17 @@
                                         <td>12/10/2022</td>
                                         <td class="text-right">₹ 134,12</td>
                                     </tr>
-                                   
+
                                 </tbody>
                             </table>
                         </div>
                     </div>
                     <div class="card-footer border-0 p-0 caret">
-                        <a href="" class="btn-link"><i class="fa fa-caret-down"
-                                aria-hidden="true"></i></a>
+                        <a href="" class="btn-link"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
-
 {% endblock %}

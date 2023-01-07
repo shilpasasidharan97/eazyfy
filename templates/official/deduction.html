@@ -1,9 +1,6 @@
 {% extends 'official/partials/base.html' %}
 {% block content %}
 {% load static %}
-
-
-
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
@@ -20,14 +17,14 @@
                     <label class="col-sm-3 col-form-label">Select Model</label>
                     <div class="col-sm-9">
                         <!-- <div class="dropdown bootstrap-select me-sm-2 default-select form-control wide"> -->
-                            <select class="me-sm-2 default-select form-control wide" id="model"
-                                tabindex="null" onchange="ChangeQuantity()">
-                                <option selected="">Choose...</option>
+                        <select class="me-sm-2 default-select form-control wide" id="model" tabindex="null"
+                            onchange="ChangeQuantity()">
+                            <option selected="">Choose...</option>
 
-                                {% for model in models %}
-                                <option value="{{ model.id }}" >{{ model }}</option>
+                            {% for model in models %}
+                            <option value="{{ model.id }}">{{ model }}</option>
                             {% endfor %}
-                            </select>
+                        </select>
                         <span id="message"></span>
                     </div>
                     <div class="col-12">
@@ -41,16 +38,14 @@
 
 
 <script>
-    function ChangeQuantity(){
+    function ChangeQuantity() {
         var model = $("#model").val()
         alert(model)
-        $("#modellink").attr('href',"/official/questionfordeduction/"+model);  
+        $("#modellink").attr('href', "/official/questionfordeduction/" + model);
 
-        }
+    }
 
 </script>
 
 
 {% endblock %}
-
-

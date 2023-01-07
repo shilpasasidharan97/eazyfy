@@ -134,9 +134,6 @@
                     click: zoomToFeature
                 });
             }
-
-
-
             map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
 
 
@@ -266,7 +263,7 @@
                 attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
             }).addTo(leaflet);
 
-            
+
 
             // Define Marker Layer
             var markerLayer = L.layerGroup().addTo(leaflet);
@@ -357,7 +354,7 @@
         multiMarkColors();
         MultiMark();
         interactiveMap();
-        
+
     });
 
 })(jQuery);

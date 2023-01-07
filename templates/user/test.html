@@ -1,4 +1,4 @@
-<!-- 
+<!--
 <style>
   #green {
     display: none;
@@ -10,7 +10,7 @@
     display: none;
     padding: 10px;
     background-color: #f44;
-} 
+}
 </style> -->
 
 <!-- <div class="radio">
@@ -26,7 +26,7 @@
   </label>
 </div> -->
 
-<!-- 
+<!--
 <div class="row">
   <div class="col-sm-12">
     <div class="slide">
@@ -36,7 +36,7 @@
         <div class="col-lg-4 col-sm-4">
           <div class="form-check custom-checkbox  box mb-3 checkbox-info box ">
             <div class="question-button pt-2 px-3 ">
-              
+
               <label class="form-check-label" for="customCheckBox2">
                 <input type="radio" name="action" value="green" data-price="-200" class="form-check-input" >yes
               </label>
@@ -48,7 +48,7 @@
         <div class="col-lg-4 col-sm-4 clearfix">
           <div class="form-check custom-checkbox box mb-3 checkbox-success box">
             <div class="question-button pt-2 px-3">
-              
+
               <label class="form-check-label" for="customCheckBox2">
                 <input type="radio" name="action" value="red" data-price="-50" type="radio" class="form-check-input">NO</label>
             </div>
@@ -58,7 +58,7 @@
       </div>
     </div>
   </div>
-</div> 
+</div>
 
 
 <div id="green" class="show-hide">I am the green div.</div>
@@ -66,12 +66,12 @@
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script>
-  $(document).ready(function(){ 
+  $(document).ready(function(){
     $("input[name=action]").change(function() {
         var test = $(this).val();
         $(".show-hide").hide();
         $("#"+test).show();
-    }); 
+    });
 });
 </script> -->
 
@@ -90,9 +90,6 @@
 </head>
 
 <body>
-
-
-
   <style>
     .box {
       padding: 20px;
@@ -112,6 +109,7 @@
     .blue {
       background: #0000ff;
     }
+
   </style>
   <div>
     <select>
@@ -126,82 +124,61 @@
   <div class="blue box">You have selected <strong>blue option</strong> so i am here</div>
 
   <script>
-    $(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            if($(this).attr("value")=="red"){
-                $(".box").not(".red").hide();
-                $(".red").show();
-            }
-            else if($(this).attr("value")=="green"){
-                $(".box").not(".green").hide();
-                $(".green").show();
-            }
-            else if($(this).attr("value")=="blue"){
-                $(".box").not(".blue").hide();
-                $(".blue").show();
-            }
-            else{
-                $(".box").hide();
-            }
+    $(document).ready(function () {
+      $("select").change(function () {
+        $(this).find("option:selected").each(function () {
+          if ($(this).attr("value") == "red") {
+            $(".box").not(".red").hide();
+            $(".red").show();
+          }
+          else if ($(this).attr("value") == "green") {
+            $(".box").not(".green").hide();
+            $(".green").show();
+          }
+          else if ($(this).attr("value") == "blue") {
+            $(".box").not(".blue").hide();
+            $(".blue").show();
+          }
+          else {
+            $(".box").hide();
+          }
         });
-    }).change();
-});
+      }).change();
+    });
   </script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="form-group">
   <ul>
-      <li>Type:</li>
-      <li>
-          <input type="radio" checked="true" name="radio" id="mcq" value="mcq"
-              class="form-check-input">
-          MCQ
-      </li>
-      <li>
-          <input type="radio" id="desc" name="radio" value="description"
-              class="form-check-input">
-          DESCRIPTION
-      </li>
-      <input type="number" class="form-control" id="exam_id" value="{{ exam.id }}"
-          name="exam_id" hidden>
+    <li>Type:</li>
+    <li>
+      <input type="radio" checked="true" name="radio" id="mcq" value="mcq" class="form-check-input">
+      MCQ
+    </li>
+    <li>
+      <input type="radio" id="desc" name="radio" value="description" class="form-check-input">
+      DESCRIPTION
+    </li>
+    <input type="number" class="form-control" id="exam_id" value="{{ exam.id }}" name="exam_id" hidden>
   </ul>
 </div>
-
-
-
 <script>
 
 
-$('#desc').click(function () {
-  $('.mcq').hide()
-  $('#editoptions').val("")
-})
-$('#mcq').click(function () {
-  $('.mcq').show()
-  
-})
-$('#desc1').click(function () {
-  $('.mcq1').hide()
-})
-$('#mcq1').click(function () {
-  $('.mcq1').show()
-})
+  $('#desc').click(function () {
+    $('.mcq').hide()
+    $('#editoptions').val("")
+  })
+  $('#mcq').click(function () {
+    $('.mcq').show()
+
+  })
+  $('#desc1').click(function () {
+    $('.mcq1').hide()
+  })
+  $('#mcq1').click(function () {
+    $('.mcq1').show()
+  })
 
 </script>

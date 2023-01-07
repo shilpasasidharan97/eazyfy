@@ -1,117 +1,113 @@
+from .models import AdminSendRecord
+from .models import AdminWallet
+from .models import BannerImage
+from .models import Brand
+from .models import BrandModel
+from .models import CustomerProfile
+from .models import CustomerRegistration
+from .models import DeviceType
+from .models import Franchise
+from .models import FranchiseWallet
+from .models import ModelSpecifications
+from .models import Offer
+from .models import OrderPayment
+from .models import PickUpBoy
+from .models import Question
+from .models import QuestionOption
+from .models import User
+from .models import UserReply
+from .models import UserRequest
 from django.contrib import admin
-from . models import *
 
-# Register your models here.
+
+@admin.register(CustomerProfile)
+class CustomerProfileAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(OrderPayment)
+class OrderPaymentAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('franchise', 'pickup_boy', 'customer')
-    search_fields = ('franchise', 'pickup_boy')
+    list_display = ("franchise", "pickup_boy", "customer")
+    search_fields = ("franchise", "pickup_boy")
 
 
-admin.site.register(User, UserAdmin)
-
+@admin.register(Franchise)
 class FranchiseAdmin(admin.ModelAdmin):
-    list_display = ('franchise_id', 'name','phone' )
-    search_fields = ('franchise_id', 'name','phone')
+    list_display = ("franchise_id", "name", "phone")
+    search_fields = ("franchise_id", "name", "phone")
 
 
-admin.site.register(Franchise, FranchiseAdmin)
-
-
+@admin.register(PickUpBoy)
 class PickUpBoyAdmin(admin.ModelAdmin):
-    list_display = ('name','phone', 'franchise' )
-    search_fields = ('name','phone', 'franchise')
+    list_display = ("name", "phone", "franchise")
+    search_fields = ("name", "phone", "franchise")
 
 
-admin.site.register(PickUpBoy, PickUpBoyAdmin)
-
-
+@admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
-    list_display = ('name','image' )
-    search_fields = ('name','image')
+    list_display = ("name", "image")
+    search_fields = ("name", "image")
 
 
-admin.site.register(Brand, BrandAdmin)
-
-
+@admin.register(BrandModel)
 class BrandModelAdmin(admin.ModelAdmin):
-    list_display = ('brand','name','image' )
-    search_fields = ('brand','name','image')
+    list_display = ("brand", "name", "image")
+    search_fields = ("brand", "name", "image")
 
 
-admin.site.register(BrandModel, BrandModelAdmin)
-
-
+@admin.register(ModelSpecifications)
 class ModelSpecificationsAdmin(admin.ModelAdmin):
-    list_display = ('Brand_model','RAM', 'internal_storage', 'color', 'year' )
-    search_fields = ('Brand_model','RAM', 'internal_storage', 'color', 'year')
+    list_display = ("brand_model", "RAM", "internal_storage", "color", "year")
+    search_fields = ("brand_model", "RAM", "internal_storage", "color", "year")
 
 
-admin.site.register(ModelSpecifications, ModelSpecificationsAdmin)
+class QuestionOptionInline(admin.TabularInline):
+    model = QuestionOption
+    extra = 0
 
 
-admin.site.register(DeviceType)
+@admin.register(Question)
+class QuestionAdmin(admin.ModelAdmin):
+    list_display = ("question", "question_type")
+    search_fields = ("question",)
+    inlines = [QuestionOptionInline]
 
 
-class QuestionsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'questions','question_type' )
-    search_fields = ('questions',)
-
-admin.site.register(Questions, QuestionsAdmin)
+@admin.register(CustomerRegistration)
+class CustomerRegistrationAdmin(admin.ModelAdmin):
+    list_display = ("name", "email", "phone_number")
 
 
-class QuestionOptionAdmin(admin.ModelAdmin):
-    list_display = ('question_id', 'question', 'image_description', 'image_upload' )
-    search_fields = ('questions',)
-
-admin.site.register(QuestionOption, QuestionOptionAdmin)
-
-
-class DedectionAdmin(admin.ModelAdmin):
-    list_display = ('questions','model','dedection_amount_yes','dedection_amount_no' )
-    search_fields = ('questions','model','dedection_amount_yes','dedection_amount_no')
-
-
-admin.site.register(Dedection, DedectionAdmin)
-
-
-class CutomerRegistrationAdmin(admin.ModelAdmin):
-    list_display = ('name','email','phone_number' )
-
-
-admin.site.register(CutomerRegistration, CutomerRegistrationAdmin)
-
-
-
+@admin.register(FranchiseWallet)
 class FranchiseWalletAdmin(admin.ModelAdmin):
-    list_display = ('franchise','wallet_amount','date')
-    search_fields = ('franchise','wallet_amount','date')
+    list_display = ("franchise", "wallet_amount", "date")
+    search_fields = ("franchise", "wallet_amount", "date")
 
 
-admin.site.register(FranchiseWallet, FranchiseWalletAdmin)
-
-
-
+@admin.register(AdminWallet)
 class AdminWalletAdmin(admin.ModelAdmin):
-    list_display = ('franchise','amount','date')
-    search_fields = ('franchise','amount','date')
+    list_display = ("franchise", "amount", "date")
+    search_fields = ("franchise", "amount", "date")
 
 
-admin.site.register(AdminWallet, AdminWalletAdmin)
-
- 
+@admin.register(AdminSendRecord)
 class AdminSendRecordAdmin(admin.ModelAdmin):
-    list_display = ('franchise','amount','date')
-    search_fields = ('franchise','amount','date')
-
-admin.site.register(AdminSendRecord, AdminSendRecordAdmin)
+    list_display = ("franchise", "amount", "date")
+    search_fields = ("franchise", "amount", "date")
 
 
-class SubDedectionAdmin(admin.ModelAdmin):
-    list_display = ('questions','model','dedection_amount')
-    search_fields = ('questions','model','dedection_amount')
+@admin.register(UserReply)
+class UserReplyAdmin(admin.ModelAdmin):
+    list_display = ("question", "user_request", "option")
+    list_filter = ("user_request",)
 
-
-admin.site.register(SubDedection, SubDedectionAdmin)
 
 admin.site.register(BannerImage)
 admin.site.register(Offer)
+admin.site.register(DeviceType)
+admin.site.register(UserRequest)

@@ -58,21 +58,16 @@
                     </div> -->
 
 
-<!-- our payment form -->
+                    <!-- our payment form -->
 
                     <form class="text-center" method="post">
                         {% csrf_token %}
-                        <input type="text" name="name" class="form-control" placeholder="name" value=""
-                            required="">
+                        <input type="text" name="name" class="form-control" placeholder="name" value="" required="">
 
-                            <input type="text" name="amount" class="form-control" placeholder="Amount" value=""
-                            required="">
+                        <input type="text" name="amount" class="form-control" placeholder="Amount" value="" required="">
 
                         <button class="btn btn-success mt-5 " type="submit"> Confirm </button>
                     </form>
-
-
-
                     <!-- Razor pay code -->
                     {% if payment %}
                     <button id="rzp-button1" class="btn btn-secondary mt-5">Ckeckout</button>
@@ -119,8 +114,8 @@
                         }
                     </script>
 
-{% endif %}
-                    <!-- 
+                    {% endif %}
+                    <!--
                     <div class="col-lg-8 order-lg-1">
                         <h4 class="mb-3">Billing address</h4>
                         <form class="needs-validation" novalidate="">
@@ -275,7 +270,7 @@
                         </form>
 
 
-                        
+
                     </div> -->
                 </div>
             </div>
