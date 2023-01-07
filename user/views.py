@@ -213,8 +213,13 @@ def question(request, id):
             else:
                 answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
             answer.save()
+            return redirect('user:callormessage')
     context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "user/question.html", context)
+
+
+def callormessage(request):
+    return render(request, 'user/callmessage.html')
 
 
 @csrf_exempt

@@ -22,6 +22,7 @@ urlpatterns = [
     path("sell/", views.sell, name="sell"),
     path("shops/<str:id>/", views.shops, name="shops"),
     path("question/<str:id>/", views.question, name="question"),
+    path("call-or-message", views.callormessage, name='callormessage'),
     # ajax
     path("saveanswer/", views.save_answer, name="save_answer"),
     path("spec/<str:id>/", views.spec, name="spec"),
