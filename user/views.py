@@ -1,7 +1,7 @@
 import json
 import uuid
 
-from official.models import BannerImage
+from official.models import BannerImage, Franchise
 from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
@@ -141,11 +141,13 @@ def resendOtp(request, token):
 
 # DASHBOARD
 def index(request):
-    # banner = BannerImage.objects.all()
+    banner = BannerImage.objects.all()
+    franchise = Franchise.objects.all()
+    print(franchise)
     offer = Offer.objects.all()
     brand = Brand.objects.all()
     user = request.user
-    context = {"is_index": True, "user": user, "banner": banner, "offer": offer, "brand": brand}
+    context = {"is_index": True, "user": user, "banner": banner, "offer": offer, "brand": brand, "franchise":franchise,}
     return render(request, "user/index.html", context)
 
 

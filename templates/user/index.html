@@ -13,6 +13,7 @@
                     <div class="deal-content">
                         <form>
                             <div class="flwidth layout vertical search-onload text-center d-none d-md-block">
+
                                 <a href="" class="flwidth">
                                     <label for="list-search-input"
                                         class="mr-auto layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
@@ -29,48 +30,15 @@
                     </div>
                     <div class="deal-bottom">
                         <div class="row">
+                            {% for franch in franchise %}
                             <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
                                 <div class="text-center">
                                     <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="" />
 
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
+                                    <h4 class="bg-1 servicetext">{{franch.name|capfirst}}</h4>
                                 </div>
                             </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="" />
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="" />
-
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="" />
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/kochi.png' %}" alt="" />
-
-                                    <h4 class="bg-1 servicetext">Calicut</h4>
-                                </div>
-                            </div>
-                            <div class="col-4 col-sm-4 col-xs-4 col-lg-2">
-                                <div class="text-center">
-                                    <img src="{% static 'user/imgs/franchise/bang.png' %}" alt="" />
-
-                                    <h4 class="bg-1 servicetext">Banglore</h4>
-                                </div>
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

@@ -185,7 +185,7 @@
     function SavePayment() {
         var id = $('#id').val();
         $.ajax({
-            url: "/official/savepayment/" + id,
+            url: "official/savepayment" + id,
             type: 'POST',
             data: {
                 'fid': $('#franchiseid').val(),

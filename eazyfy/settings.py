@@ -7,7 +7,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 
-DEBUG = config("DEBUG", cast=bool, default=False)
+# DEBUG = config("DEBUG", cast=bool, default=False)
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -65,9 +66,9 @@ WSGI_APPLICATION = "eazyfy.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    "default": {"ENGINE": config("DB_ENGINE"), "NAME": config("DB_NAME"), "USER": config("DB_USER"), "PASSWORD": config("DB_PASSWORD"), "HOST": config("DB_HOST"), "PORT": "5432"}
-}
+# DATABASES = {
+#     "default": {"ENGINE": config("DB_ENGINE"), "NAME": config("DB_NAME"), "USER": config("DB_USER"), "PASSWORD": config("DB_PASSWORD"), "HOST": config("DB_HOST"), "PORT": "5432"}
+# }
 
 
 # Password validation
