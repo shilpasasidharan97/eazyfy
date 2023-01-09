@@ -35,8 +35,10 @@
                             <li class="nav-item"><a href="#profile-settings" data-bs-toggle="tab"
                                     class="nav-link">Payment Details</a>
                             </li>
-                            <li class="nav-item"><a href="#Qna" data-bs-toggle="tab"
-                                    class="nav-link">QNA</a>
+                            <li class="nav-item"><a href="#Qna" data-bs-toggle="tab" class="nav-link">QNA</a>
+                            </li>
+                            <li class="nav-item"><a href="#franchise" data-bs-toggle="tab" class="nav-link">Assign
+                                    Franchise</a>
                             </li>
                         </ul>
                         <div class="tab-content">
@@ -138,8 +140,9 @@
                                                         </p>
                                                         <div class="d-flex align-items-end flex-wrap mt-4 text-end">
                                                             <div class="shopping-cart  mb-2 me-3 text-end">
-                                                                <a class="btn btn-primary" href="javascript:void();" data-bs-toggle="modal"
-                                                                data-bs-target="#exampleModalCenter"><i
+                                                                <a class="btn btn-primary" href="javascript:void();"
+                                                                    data-bs-toggle="modal"
+                                                                    data-bs-target="#exampleModalCenter"><i
                                                                         class="fa fa-shopping-basket me-2"></i>
                                                                     Exact Price
                                                                 </a>
@@ -253,7 +256,7 @@
                                 <div class="pt-3">
                                     <div class="settings-form">
                                         <h4 class="text-primary">Qna </h4>
-                                        
+
                                         <ul>
                                             <li>Question 1</li>
                                             <li>Question 2</li>
@@ -261,24 +264,48 @@
                                         <br>
                                         <form method="POST" action="">
                                             {% csrf_token %}
-                                            <button class="btn btn-outline btn btn-success mx-2" type="submit" name="action" value="accept">Accept</button>
-                                            <button class="btn btn-outline btn btn-danger mx-2" type="submit" name="action" value="reject">Reject</button>
-                                            </form>
-                                        
-                                        
-                                        </div>
+                                            <button class="btn btn-outline btn btn-success mx-2" type="submit"
+                                                name="action" value="accept">Accept</button>
+                                            <button class="btn btn-outline btn btn-danger mx-2" type="submit"
+                                                name="action" value="reject">Reject</button>
+                                        </form>
+
+
                                     </div>
                                 </div>
                             </div>
 
+                            <div id="franchise" class="tab-pane fade">
+                                <div class="pt-3">
+                                    <div class="settings-form">
+                                        <form method="POST" action="">
+                                            {% csrf_token %}
+                                            <label for="">Select Franchise</label>
+                                            <select name="" id="" class="form-control">
+                                                <option value=""> ----- Select Franchise ----- </option>
+                                                <option value=""> Calicut </option>
+                                                <option value=""> Malappuram</option>
+                                            </select>
+                                            <button class="btn btn-outline btn btn-success mx-2 mt-4" type="submit"
+                                                name="action" value="accept">Submit</button>
 
-                            
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
+
+
+
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 
@@ -293,7 +320,9 @@
             </div>
             <div class="modal-body text-center">
                 <h5 class="modal-title">The Exact Price is :</h5>
-                <h4><span>₹ 150000</span></h4>
+                <h4>
+                    <input type="text" class="form-control" placeholder="enter exact price">
+                </h4>
             </div>
         </div>
     </div>
