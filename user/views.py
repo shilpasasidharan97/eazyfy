@@ -213,9 +213,8 @@ def question(request, id):
             else:
                 answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
             answer.save()
-        context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request, "msg":1,}
-        return render(request, "user/question.html", context)
-    context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request, "msg":0,}
+            return redirect('user:callormessage')
+    context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "user/question.html", context)
 
 
