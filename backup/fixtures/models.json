@@ -1,0 +1,312 @@
+[
+    {
+        "pk": 89,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-38mm.jpg",
+            "name": "Watch Edition 38mm (1st gen)",
+            "slug": "watch-edition-38mm-1st-gen"
+        }
+    },
+    {
+        "pk": 90,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-42mm.jpg",
+            "name": "Watch 42mm (1st gen)",
+            "slug": "watch-42mm-1st-gen"
+        }
+    },
+    {
+        "pk": 91,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-38mm.jpg",
+            "name": "Watch 38mm (1st gen)",
+            "slug": "watch-38mm-1st-gen"
+        }
+    },
+    {
+        "pk": 92,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-sport-42mm2.jpg",
+            "name": "Watch Sport 42mm (1st gen)",
+            "slug": "watch-sport-42mm-1st-gen"
+        }
+    },
+    {
+        "pk": 93,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-sport-38mm.jpg",
+            "name": "Watch Sport 38mm (1st gen)",
+            "slug": "watch-sport-38mm-1st-gen"
+        }
+    },
+    {
+        "pk": 94,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air-2-new.jpg",
+            "name": "iPad Air 2",
+            "slug": "ipad-air-2"
+        }
+    },
+    {
+        "pk": 95,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-3-new.jpg",
+            "name": "iPad mini 3",
+            "slug": "ipad-mini-3"
+        }
+    },
+    {
+        "pk": 96,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6-plus2.jpg",
+            "name": "iPhone 6 Plus",
+            "slug": "iphone-6-plus"
+        }
+    },
+    {
+        "pk": 97,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6-4.jpg",
+            "name": "iPhone 6",
+            "slug": "iphone-6"
+        }
+    },
+    {
+        "pk": 98,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air.jpg",
+            "name": "iPad Air",
+            "slug": "ipad-air"
+        }
+    },
+    {
+        "pk": 99,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini2.jpg",
+            "name": "iPad mini 2",
+            "slug": "ipad-mini-2"
+        }
+    },
+    {
+        "pk": 100,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5s-ofic.jpg",
+            "name": "iPhone 5s",
+            "slug": "iphone-5s"
+        }
+    },
+    {
+        "pk": 101,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5c-new2.jpg",
+            "name": "iPhone 5c",
+            "slug": "iphone-5c"
+        }
+    },
+    {
+        "pk": 102,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi",
+            "slug": "ipad-mini-wi-fi"
+        }
+    },
+    {
+        "pk": 103,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi + Cellular",
+            "slug": "ipad-mini-wi-fi-cellular"
+        }
+    },
+    {
+        "pk": 104,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi",
+            "slug": "ipad-4-wi-fi"
+        }
+    },
+    {
+        "pk": 105,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi + Cellular",
+            "slug": "ipad-4-wi-fi-cellular"
+        }
+    },
+    {
+        "pk": 106,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5-ofic.jpg",
+            "name": "iPhone 5",
+            "slug": "iphone-5"
+        }
+    },
+    {
+        "pk": 107,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi + Cellular",
+            "slug": "ipad-3-wi-fi-cellular"
+        }
+    },
+    {
+        "pk": 108,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi",
+            "slug": "ipad-3-wi-fi"
+        }
+    },
+    {
+        "pk": 109,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-4s-new.jpg",
+            "name": "iPhone 4s",
+            "slug": "iphone-4s"
+        }
+    },
+    {
+        "pk": 110,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi + 3G",
+            "slug": "ipad-2-wi-fi-3g"
+        }
+    },
+    {
+        "pk": 111,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi",
+            "slug": "ipad-2-wi-fi"
+        }
+    },
+    {
+        "pk": 112,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 CDMA",
+            "slug": "ipad-2-cdma"
+        }
+    },
+    {
+        "pk": 113,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-4-ofic-final.jpg",
+            "name": "iPhone 4",
+            "slug": "iphone-4"
+        }
+    },
+    {
+        "pk": 114,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone4-cdma.jpg",
+            "name": "iPhone 4 CDMA",
+            "slug": "iphone-4-cdma"
+        }
+    },
+    {
+        "pk": 115,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi + 3G",
+            "slug": "ipad-wi-fi-3g"
+        }
+    },
+    {
+        "pk": 116,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi",
+            "slug": "ipad-wi-fi"
+        }
+    },
+    {
+        "pk": 117,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-3gs-ofic.jpg",
+            "name": "iPhone 3GS",
+            "slug": "iphone-3gs"
+        }
+    },
+    {
+        "pk": 118,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone3g.jpg",
+            "name": "iPhone 3G",
+            "slug": "iphone-3g"
+        }
+    },
+    {
+        "pk": 119,
+        "model": "official.brandmodel",
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone.gif",
+            "name": "iPhone",
+            "slug": "iphone"
+        }
+    }
+]

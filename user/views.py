@@ -6,7 +6,7 @@ from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
 from official.models import CustomerRegistration
-from official.models import ModelSpecifications
+from official.models import Variant
 from main.models import Offer
 from official.models import Question
 from official.models import QuestionOption
@@ -153,9 +153,9 @@ def pick_model(request, slug):
 
 @login_required
 def question(request, id):
-    spec = ModelSpecifications.objects.get(id=id)
+    variant = Variant.objects.get(id=id)
     questions = Question.objects.all()
-    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=spec, is_submitted=False)[0]
+    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=variant, is_submitted=False)[0]
     replies = UserReply.objects.filter(user_request=user_request)
     if request.method == "POST":
         data = dict(request.POST.items())
@@ -169,7 +169,9 @@ def question(request, id):
             else:
                 answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
             answer.save()
-    context = {"spec": spec, "questions": questions, "replies": replies, "user_request": user_request}
+        user_request.is_submitted = True
+        user_request.save()
+    context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "user/question.html", context)
 
 
@@ -187,12 +189,12 @@ def device_page(request, slug):
 
 
 def getspecdata(request, id):
-    spec_data = ModelSpecifications.objects.get(id=id)
+    spec_data = Variant.objects.get(id=id)
     data = {
         "name": spec_data.brand_model.name,
         "modelimage": spec_data.brand_model.image.url,
         "ram": spec_data.RAM,
-        "price": spec_data.price,
+        "min_price": spec_data.min_price,
     }
     return JsonResponse(data)
 

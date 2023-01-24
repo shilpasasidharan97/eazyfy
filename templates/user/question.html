@@ -1,4 +1,4 @@
-{% extends 'user/partials/base.html' %} {% load static tags %} {% block content %}
+{% extends 'user/partials/base.html' %} {% load static tags humanize %} {% block content %}
 
 <style>
   .box {
@@ -26,8 +26,6 @@
       <div class="col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-3">
         <div class="wizard card-like mb-3">
 
-
-
           <form action="" method="post">
             {% csrf_token %}
             <div class="wizard-header">
@@ -35,8 +33,6 @@
             </div>
 
             <div class="wizard-body">
-
-
               {% for q in questions %}
 
               <section class="question">
@@ -52,9 +48,9 @@
                         data-value="{{op.pk}}">
                       <div class="d-flex flex-column align-items-center">
                         {% if op.image %}
-                        <img src="{{op.image.url}}" alt="">
+                        <img src="{{op.image.url}}" alt="" style="height:100px">
                         {% endif %}
-                        <p class="ml-2">{{op.text}}</p>
+                        <p class="ml-2 text-start">{{op.text}}</p>
                       </div>
                     </label>
                   </div>
@@ -85,8 +81,15 @@
               <img class="card-img-top" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="Card image cap" />
             </div>
             <div class="col-8 col-lg-8 col-md-8">
-              <h5 class="">{{spec.brand_model.name}}</h5>
-              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{spec.price}}</span></div>
+              <h5 class="">{{variant.brand_model.name}}</h5>
+              <div class="variant_info mt-2">
+                <small class="d-block">RAM: {{ variant.RAM }}</small>
+                <small class="d-block">Color: {{ variant.color }}</small>
+                <small class="d-block">Storage: {{ variant.internal_storage }}</small>
+              </div>
+
+              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{variant.min_price|intcomma}} -
+                  {{variant.max_price|intcomma}}</span></div>
             </div>
           </div>
 
@@ -106,68 +109,7 @@
 
   </div>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content" style="width: 739px;">
-        <div class="container-fluid ps-md-0">
-          <div class="row g-0">
-            <div class="d-none d-md-flex col-md-4 col-lg-4 bg-image" style="background-color: #660095; height: 639px;">
-              <h2 style="color: white; padding: 17px;">Login/Sign Up</h2>
 
-              <div class="col-lg-12">
-                <img style="margin-left: -179px; margin-top: 361px;" src="{% static 'user/imgs/theme/login.png' %}" />
-              </div>
-            </div>
-
-            <div class="col-lg-1"></div>
-            <div class="col-md-7 col-lg-6">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="login d-flex align-items-center py-5">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-md-9 col-lg-12 mx-auto">
-                      <h1 class="login-heading mb-4">Welcome back!</h1>
-
-                      <!-- Sign In Form -->
-                      <form>
-                        <div class="form-floating mb-3">
-                          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-                          <label for="floatingInput">Enter your phone number</label>
-                        </div>
-                        <!-- <div class="form-floating mb-3">
-                          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                          <label for="floatingPassword">Password</label>
-                        </div> -->
-
-                        <div class="form-check mb-3">
-                          <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck" />
-                          <label class="form-check-label" for="rememberPasswordCheck">
-                            I agree with terms and conditions
-                          </label>
-                        </div>
-
-                        <div class="d-grid">
-                          <a href="{% url 'main:payment' %}" class="btn text-uppercase fw-bold"> Sign in </a>
-                        </div>
-                      </form>
-                      <!-- <h4>login to unlock the best price</h4> -->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 {% endblock %}

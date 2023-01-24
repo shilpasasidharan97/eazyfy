@@ -9,7 +9,7 @@ from .models import BrandModel
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
-from .models import ModelSpecifications
+from .models import Variant
 from main.models import Offer
 from .models import PickUpBoy
 from .models import Question
@@ -236,16 +236,16 @@ def editModel(request, id):
 # modelspecification adding
 def model_specification(request, id):
     brand = BrandModel.objects.get(brand__id=id)
-    models_spec = ModelSpecifications.objects.filter(brand_model=brand)
+    models_spec = Variant.objects.filter(brand_model=brand)
     if request.method == "POST":
         ram = request.POST["ram"]
         internal_storage = request.POST["internal_storage"]
         year = request.POST["year"]
         color = request.POST["color"]
-        price = request.POST["price"]
+        min_price = request.POST["min_price"]
 
-        new_model = ModelSpecifications(
-            brand_model=brand, RAM=ram, color=color, internal_storage=internal_storage, year=year, price=price
+        new_model = Variant(
+            brand_model=brand, RAM=ram, color=color, internal_storage=internal_storage, year=year, min_price=min_price
         )
         new_model.save()
     context = {"models_spec": models_spec}

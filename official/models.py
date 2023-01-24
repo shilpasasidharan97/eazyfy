@@ -121,28 +121,28 @@ class Brand(models.Model):
 
 
 class BrandModel(models.Model):
+    def get_image_path(instance, filename):
+        return "models/{0}/{1}".format(instance.brand.name, filename)
+
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    image = models.FileField(upload_to="models/")
+    image = models.FileField(upload_to=get_image_path)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
 
-    def get_varients(self):
-        return ModelSpecifications.objects.filter(brand_model=self)
+    def get_variants(self):
+        return Variant.objects.filter(brand_model=self)
 
     def __str__(self):
         return str(self.name)
 
 
-class ModelSpecifications(models.Model):
+class Variant(models.Model):
     brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
     color = models.CharField(max_length=30)
     internal_storage = models.CharField(max_length=30)
-    year = models.IntegerField(null=True)
-    price = models.FloatField(null=True)
-
-    class Meta:
-        verbose_name_plural = "Model Specifications"
+    min_price = models.DecimalField(max_digits=10, decimal_places=2)
+    max_price = models.DecimalField(max_digits=10, decimal_places=2)
 
     def __str__(self):
         return str(self.brand_model)
@@ -237,7 +237,7 @@ class Question(models.Model):
 
 class UserRequest(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE)
-    phonemodel = models.ForeignKey(ModelSpecifications, on_delete=models.CASCADE)
+    phonemodel = models.ForeignKey(Variant, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     final_amount = models.FloatField(default=0)
     is_submitted = models.BooleanField(default=False)

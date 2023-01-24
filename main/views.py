@@ -6,7 +6,7 @@ from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
 from official.models import CustomerRegistration
-from official.models import ModelSpecifications
+from official.models import Variant
 from main.models import Offer
 from official.models import Question
 from official.models import QuestionOption

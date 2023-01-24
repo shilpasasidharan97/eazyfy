@@ -1,5 +1,5 @@
 from pathlib import Path
-
+from collections import OrderedDict
 from decouple import config
 
 
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.humanize",
     "phone_field",
     "official",
     "franchise",
@@ -138,6 +139,33 @@ ADMIN_INDEX_SHOW_REMAINING_APPS_TO_SUPERUSERS = True
 ADMIN_INDEX_AUTO_CREATE_APP_GROUP = True
 ADMIN_INDEX_SHOW_MENU = True
 ADMIN_INDEX_HIDE_APP_INDEX_PAGES = True
+
+APP_ORDER = OrderedDict(
+    [
+        (
+            "official",
+            [
+                "Brand",
+                "BrandModel",
+                "Variant",
+                "UserRequest",
+                "UserReply",
+                "AdminSendRecord",
+                "AdminWallet",
+                "CustomerProfile",
+                "CustomerRegistration",
+                "DeviceType",
+                "Franchise",
+                "FranchiseWallet",
+                "OrderPayment",
+                "PickUpBoy",
+                "Question",
+                "QuestionOption",
+                "User",
+            ],
+        )
+    ]
+)
 
 
 DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}

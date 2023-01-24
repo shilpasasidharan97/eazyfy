@@ -120,6 +120,7 @@ video {
 *,
 .search-input,
 a,
+small,
 body,
 button,
 p,
@@ -3094,8 +3095,8 @@ table .product-thumbnail img {
 
 .custom-modal .modal-dialog .btn-close {
   position: absolute;
-  right: 30px;
-  top: 30px;
+  right: 20px;
+  top: 20px;
   z-index: 2
 }
 
@@ -3596,7 +3597,9 @@ table .product-thumbnail img {
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex
+  display: flex;
+  justify-content: center;
+  -webkit-box-align: center;
 }
 
 .product-cart-wrap .product-img-action-wrap .product-img a img {
@@ -3616,7 +3619,15 @@ table .product-thumbnail img {
 
 .product-cart-wrap .product-img-action-wrap .product-img-zoom a img {
   -webkit-transition: 1.5s cubic-bezier(0, 0, .05, 1);
-  transition: 1.5s cubic-bezier(0, 0, .05, 1)
+  transition: 1.5s cubic-bezier(0, 0, .05, 1);
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  object-position: center;
+}
+
+.product-cart-wrap .product-img-action-wrap h6 {
+  margin-top: 10px;
 }
 
 .product-cart-wrap .product-action-1 {
@@ -4400,9 +4411,14 @@ table .product-thumbnail img {
   background: #fff;
   color: #000;
   font-weight: 500;
-  height: 30px;
   display: flex;
   align-items: center;
+}
+
+.size-filter.list-filter a:hover {
+  color: #fff;
+  background-color: #640097;
+  border-color: #640097
 }
 
 .size-filter.list-filter li a {

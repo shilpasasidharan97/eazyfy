@@ -7,7 +7,7 @@ from .models import CustomerRegistration
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
-from .models import ModelSpecifications
+from .models import Variant
 from .models import OrderPayment
 from .models import PickUpBoy
 from .models import Question
@@ -49,21 +49,28 @@ class PickUpBoyAdmin(admin.ModelAdmin):
 @admin.register(Brand)
 class BrandAdmin(admin.ModelAdmin):
     list_display = ("name", "image")
-    search_fields = ("name", "image")
+    search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
+
+
+class VariantInline(admin.TabularInline):
+    model = Variant
+    extra = 0
 
 
 @admin.register(BrandModel)
 class BrandModelAdmin(admin.ModelAdmin):
-    list_display = ("brand", "name", "image")
-    search_fields = ("brand", "name", "image")
+    list_display = ("name", "brand", "image")
+    search_fields = ("name",)
+    list_filter = ("brand",)
     prepopulated_fields = {"slug": ("name",)}
+    inlines = [VariantInline]
 
 
-@admin.register(ModelSpecifications)
-class ModelSpecificationsAdmin(admin.ModelAdmin):
-    list_display = ("brand_model", "RAM", "internal_storage", "color", "year")
-    search_fields = ("brand_model", "RAM", "internal_storage", "color", "year")
+@admin.register(Variant)
+class VariantAdmin(admin.ModelAdmin):
+    list_display = ("brand_model", "RAM", "internal_storage", "color")
+    search_fields = ("brand_model", "RAM", "internal_storage", "color")
 
 
 class QuestionOptionInline(admin.TabularInline):
