@@ -1,5 +1,9 @@
+from .models import BannerImage
+from .models import City
+from .models import Contact
+from .models import Offer
+from .models import Team
 from django.contrib import admin
-from .models import City, BannerImage, Offer, Team, Contact
 
 
 @admin.register(City)

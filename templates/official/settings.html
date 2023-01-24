@@ -15,39 +15,22 @@
             </div>
         </form>
 
-
-        <!-- <div>
-    <img src="{{ banner.url }}" alt="">
-</div>
- -->
-
-
         {% for banner in bannerImage %}
         <div class="">
             <div class="project-info">
-                <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
-
+                <div class="col-xl-9 my-2 col-lg-8 col-sm-6">
                     <div class="d-flex align-items-center">
-                        <div class="project-media ">
-                            {% if banner.banner %}
-                            <img src="{{ banner.banner.url }}" alt="">
-                            {% endif %}
+                        <div class="project-media">
+                            <img src="{{ banner.image.url }}" alt="" style="width:100%;height:100px;">
                         </div>
                         <div class="ms-2">
                             <h5 class="mb-0 pt-1 font-w50 text-black"></h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
-                    <div class="d-flex align-items-end">
-
-                        <!-- <div class="ms-2">
-                    <a onclick="" class="btn btn-outline-info"
-                        data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg1">edit</a>
-                </div> -->
-                        <div class="ms-2">
-                            <button onclick="deleteBanner({{banner.id}})" class="btn btn-outline-danger">Delete</button>
-                        </div>
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 text-end">
+                    <div class="ms-2">
+                        <button onclick="deleteBanner({{banner.id}})" class="btn btn-outline-danger">Delete</button>
                     </div>
                 </div>
             </div>
@@ -70,15 +53,14 @@
 
         {% for offer in offerImage %}
 
-
         <div class="">
             <div class="project-info">
-                <div class="col-xl-7 my-2 col-lg-4 col-sm-6">
+                <div class="col-xl-9 my-2 col-lg-4 col-sm-6">
 
                     <div class="d-flex align-items-center">
                         <div class="project-media">
                             {% if offer.offer %}
-                            <img src="{{ offer.offer.url }}" alt="">
+                            <img src="{{ offer.offer.url }}" alt="" style="width:100%;height:100px;">
                             {% endif %}
                         </div>
                         <div class="ms-2">
@@ -86,17 +68,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-5 my-2 col-lg-6 col-sm-6 text-end">
-                    <div class="d-flex align-items-end">
-
-                        <!-- <div class="ms-2">
-                    <a onclick="" class="btn btn-outline-info"
-                        data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg1">edit</a>
-                </div> -->
-                        <div class="ms-2">
-                            <button onclick="onclick=deleteOffer({{offer.id}})"
-                                class="btn btn-outline-danger">Delete</button>
-                        </div>
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 text-end">
+                    <div class="ms-2">
+                        <button onclick="onclick=deleteOffer({{offer.id}})"
+                            class="btn btn-outline-danger">Delete</button>
                     </div>
                 </div>
             </div>
@@ -105,52 +80,51 @@
         {% endfor %}
 
     </div>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function deleteBanner(id) {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                    window.location.href = "/official/delete_banner/" + id
-                }
-            })
-        }
-    </script>
+</div>
 
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        function deleteOffer(id) {
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!'
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    Swal.fire(
-                        'Deleted!',
-                        'Your file has been deleted.',
-                        'success'
-                    )
-                    window.location.href = "/official/delete_offer/" + id
-                }
-            })
-        }
-    </script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function deleteBanner(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                window.location.href = "/official/delete_banner/" + id
+            }
+        })
+    }
 
-    {% endblock %}
+    function deleteOffer(id) {
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                window.location.href = "/official/delete_offer/" + id
+            }
+        })
+    }
+</script>
+
+{% endblock %}

@@ -1,18 +1,15 @@
-import json
 import uuid
 
-from main.models import BannerImage, Team
 from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
 from official.models import CustomerRegistration
-from official.models import Variant
-from main.models import Offer
 from official.models import Question
 from official.models import QuestionOption
 from official.models import User
 from official.models import UserReply
 from official.models import UserRequest
+from official.models import Variant
 from user.mixin import MessageHandler
 
 import pyotp
@@ -24,10 +21,54 @@ from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.shortcuts import get_object_or_404
+
+
+def pick_model(request, slug):
+    brand = get_object_or_404(Brand, slug=slug)
+    context = {"brand": brand}
+    return render(request, "user/pick_model.html", context)
+
+
+def device_page(request, slug):
+    model = BrandModel.objects.get(slug=slug)
+    context = {"model": model}
+    return render(request, "user/device_page.html", context)
+
+
+@login_required
+def question(request, id):
+    variant = Variant.objects.get(id=id)
+    questions = Question.objects.all()
+    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=variant, is_submitted=False)[0]
+    replies = UserReply.objects.filter(user_request=user_request)
+    if request.method == "POST":
+        data = dict(request.POST.items())
+        data.pop("csrfmiddlewaretoken")
+        for key, value in data.items():
+            question = Question.objects.get(id=key)
+            option = QuestionOption.objects.get(id=value)
+            if UserReply.objects.filter(user_request=user_request, question=question).exists():
+                answer = UserReply.objects.get(user_request=user_request, question=question)
+                answer.option = option
+            else:
+                answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
+            answer.save()
+        user_request.is_submitted = True
+        user_request.save()
+        return redirect("user:request_page", id=user_request.id)
+    context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
+    return render(request, "user/question.html", context)
+
+
+def request_page(request, id):
+    user_request = UserRequest.objects.get(id=id)
+    replies = UserReply.objects.filter(user_request=user_request)
+    context = {"user_request": user_request, "replies": replies}
+    return render(request, "user/request_page.html", context)
 
 
 def customer_login(request):
@@ -142,61 +183,6 @@ def resend_otp(request, token):
     user.auth_token = user_secret_key
     user.save()
     return redirect(f"/otp-page/{user.test_id}")
-
-
-# BRAND MODELS
-def pick_model(request, slug):
-    brand = get_object_or_404(Brand, slug=slug)
-    context = {"brand": brand}
-    return render(request, "user/pick_model.html", context)
-
-
-@login_required
-def question(request, id):
-    variant = Variant.objects.get(id=id)
-    questions = Question.objects.all()
-    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=variant, is_submitted=False)[0]
-    replies = UserReply.objects.filter(user_request=user_request)
-    if request.method == "POST":
-        data = dict(request.POST.items())
-        data.pop("csrfmiddlewaretoken")
-        for key, value in data.items():
-            question = Question.objects.get(id=key)
-            option = QuestionOption.objects.get(id=value)
-            if UserReply.objects.filter(user_request=user_request, question=question).exists():
-                answer = UserReply.objects.get(user_request=user_request, question=question)
-                answer.option = option
-            else:
-                answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
-            answer.save()
-        user_request.is_submitted = True
-        user_request.save()
-    context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
-    return render(request, "user/question.html", context)
-
-
-@csrf_exempt
-def save_answer(request):
-    json.loads(request.POST["data"])
-    return JsonResponse({"msg": "Success"})
-
-
-# MODEL SPECIFICATIONS
-def device_page(request, slug):
-    model = BrandModel.objects.get(slug=slug)
-    context = {"model": model}
-    return render(request, "user/device_page.html", context)
-
-
-def getspecdata(request, id):
-    spec_data = Variant.objects.get(id=id)
-    data = {
-        "name": spec_data.brand_model.name,
-        "modelimage": spec_data.brand_model.image.url,
-        "ram": spec_data.RAM,
-        "min_price": spec_data.min_price,
-    }
-    return JsonResponse(data)
 
 
 def handler404(request, exception):

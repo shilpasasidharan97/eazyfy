@@ -379,17 +379,13 @@ var Zenix = function () {
 		$_SELECT_PICKER.selectpicker();
 	}
 
-	var handleSupport = function () {
-		var support = '<script id="DZScript" src="https://dzassets.s3.amazonaws.com/w3-global.js?btn_dir=right"></script>';
-		jQuery('body').append(support);
-	}
 
 
 	/* Function ============ */
 	return {
 		init: function () {
 			handleTheme();
-			handleMetisMenu();
+			// handleMetisMenu();
 			handleAllChecked();
 			handleNavigation();
 			handleCurrentActive();
@@ -414,15 +410,13 @@ var Zenix = function () {
 			vHeight();
 			handleChatSidebar();
 			handleCkEditor();
-			handleImageSelect();
+			// handleImageSelect();
 		},
 
 
 		load: function () {
 			handleTheme();
-			handleSelectPicker();
-			handleImageSelect();
-			handleSupport();
+
 		},
 
 		resize: function () {
@@ -439,16 +433,16 @@ var Zenix = function () {
 }();
 
 /* Document.ready Start */
-jQuery(document).ready(function () {
-	$('[data-toggle="popover"]').popover();
-	'use strict';
-	Zenix.init();
-	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-		return new bootstrap.Popover(popoverTriggerEl)
-	})
+// jQuery(document).ready(function () {
+// 	$('[data-toggle="popover"]').popover();
+// 	'use strict';
+// 	Zenix.init();
+// 	var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+// 	var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+// 		return new bootstrap.Popover(popoverTriggerEl)
+// 	})
 
-});
+// });
 /* Document.ready END */
 
 /* Window Load START */

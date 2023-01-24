@@ -1,31 +1,9 @@
-import json
-import uuid
-
-from main.models import BannerImage, Team
-from official.models import Brand
-from official.models import BrandModel
-from official.models import CustomerProfile
-from official.models import CustomerRegistration
-from official.models import Variant
+from main.models import BannerImage
 from main.models import Offer
-from official.models import Question
-from official.models import QuestionOption
-from official.models import User
-from official.models import UserReply
-from official.models import UserRequest
-from user.mixin import MessageHandler
+from main.models import Team
+from official.models import Brand
 
-import pyotp
-from django.contrib import messages
-from django.contrib.auth import authenticate
-from django.contrib.auth import get_user_model
-from django.contrib.auth import login
-from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
-from django.shortcuts import redirect
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
 
 
 def index(request):

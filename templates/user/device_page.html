@@ -160,22 +160,5 @@
     </div>
 </section>
 
-<script>
-    function Specdata(id) {
-        $.ajax({
-            url: "/getspecdata/" + id,
-            type: 'GET',
-
-            success: function (responce) {
-                $('#specimg').attr("src", responce.modelimage)
-                $('#specname').html(responce.name)
-                $('#ram').html(responce.ram)
-                $('#price').html(responcemin_price)
-                // $('#fphoto').attr("src", responce.value.photo)
-
-            }
-        })
-    }
-</script>
 
 {% endblock %}

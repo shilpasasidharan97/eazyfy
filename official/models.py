@@ -3,9 +3,8 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
 from django.db import models
-from phone_field import PhoneField
-from django.utils.translation import gettext_lazy as _
 from django.utils.text import slugify
+from phone_field import PhoneField
 
 
 class UserManager(BaseUserManager):
@@ -47,7 +46,12 @@ class User(AbstractUser):
     objects = UserManager()
 
     def __str__(self):
-        return str(self.phone_number)
+        if self.first_name and self.last_name:
+            return str(self.first_name + " " + self.last_name)
+        elif self.first_name:
+            return str(self.first_name)
+        else:
+            return str(self.phone_number)
 
 
 class Franchise(models.Model):
@@ -236,11 +240,16 @@ class Question(models.Model):
 
 
 class UserRequest(models.Model):
+    request_id = models.CharField(max_length=100, default=str(uuid.uuid4)[:8].upper(), editable=False)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     phonemodel = models.ForeignKey(Variant, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     final_amount = models.FloatField(default=0)
     is_submitted = models.BooleanField(default=False)
+    is_quoted = models.BooleanField(default=False)
+
+    def get_replies(self):
+        return UserReply.objects.filter(user_request=self)
 
     def __str__(self):
         return str(self.user)

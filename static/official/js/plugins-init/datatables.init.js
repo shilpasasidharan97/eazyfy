@@ -157,6 +157,6 @@
 		var data = table.row(this).data();
 	});
 
-	jQuery('.dataTables_wrapper select').selectpicker();
+	// jQuery('.dataTables_wrapper select').selectpicker();
 
 })(jQuery);

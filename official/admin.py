@@ -7,7 +7,6 @@ from .models import CustomerRegistration
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
-from .models import Variant
 from .models import OrderPayment
 from .models import PickUpBoy
 from .models import Question
@@ -15,6 +14,7 @@ from .models import QuestionOption
 from .models import User
 from .models import UserReply
 from .models import UserRequest
+from .models import Variant
 from django.contrib import admin
 
 
@@ -115,4 +115,10 @@ class UserReplyAdmin(admin.ModelAdmin):
 
 
 admin.site.register(DeviceType)
-admin.site.register(UserRequest)
+
+
+@admin.register(UserRequest)
+class UserRequestAdmin(admin.ModelAdmin):
+    list_display = ("user", "phonemodel")
+    list_filter = ("user", "phonemodel", "is_submitted", "is_quoted")
+    readonly_fields = ("request_id",)

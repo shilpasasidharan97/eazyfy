@@ -5,11 +5,8 @@
 <div class="row page-titles mx-0">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
-            <h4> User Request</h4>
+            <h4> User Requests</h4>
         </div>
-    </div>
-    <div class="col-sm-6 p-md-0 justify-content-sm-end mt-2 mt-sm-0 d-flex">
-
     </div>
 </div>
 
@@ -18,17 +15,19 @@
     <div class="card-action card-tabs  me-auto">
         <ul class="nav nav-tabs style-2">
             <li class="nav-item">
-                <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">All Requset
-                    <span class="badge badge-pill shadow-primary badge-primary">154</span></a>
+                <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">All Requests
+                    <span class="badge badge-pill shadow-primary badge-primary">{{all_requests|length}}</span></a>
             </li>
             <li class="nav-item">
                 <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">
-                    Pending Request <span class="badge badge-pill badge-info shadow-info">2</span>
+                    Pending Requests <span
+                        class="badge badge-pill badge-info shadow-info">{{unquoted_requests|length}}</span>
                 </a>
             </li>
             <li class="nav-item">
                 <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">
-                    Complete Request <span class="badge badge-pill badge-warning shadow-warning">4</span>
+                    Complete Requests <span
+                        class="badge badge-pill badge-warning shadow-warning">{{quoted_requests|length}}</span>
                 </a>
             </li>
         </ul>
@@ -36,26 +35,27 @@
 </div>
 <div class="tab-content project-list-group" id="myTabContent">
     <div class="tab-pane fade active show" id="navpills-1">
+        {% for rq in all_requests %}
         <div class="card">
             <div class="project-info">
                 <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">#P-000441425</p>
+                    <p class="text-primary mb-1">#{{rq.request_id}}</p>
                     <h5 class="title font-w600 mb-2">
-                        <a href="" class="text-black">JOHN JOE</a>
+                        <a href="" class="text-black">{{rq.user}}</a>
                     </h5>
                     <div class="text-dark">
                         <i class="far fa-calendar me-3" aria-hidden="true"></i>
-                        Created on Sep 8th, 2020
+                        {{rq.date}}
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
+                            <img src="{{rq.phonemodel.brand_model.image.url}}" alt="">
                         </div>
                         <div class="ms-2">
-                            <span>Phone</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            <span>{{rq.phonemodel.brand_model.brand}}</span>
+                            <h5 class="mb-0 pt-1 font-w50 text-black">{{rq.phonemodel.brand_model}}</h5>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>Phone Number</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user}}</h5>
                         </div>
                     </div>
                 </div>
@@ -71,151 +71,44 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>email</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user.email}}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                     <div class="d-flex project-status align-items-center">
-                        <a href="{% url 'official:userdetails' %}" type="button" class="btn btn-outline-primary">View
+                        <a href="{% url 'official:request_details' rq.id %}" type="button"
+                            class="btn btn-outline-primary">View
                             Details</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">#P-000441425</p>
-                    <h5 class="title font-w600 mb-2">
-                        <a href="" class="text-black">JOHN JOE</a>
-                    </h5>
-                    <div class="text-dark">
-                        <i class="far fa-calendar me-3" aria-hidden="true"></i>
-                        Created on Sep 8th, 2020
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Phone</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-2">
-                            <span>Phone Number</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-2">
-                            <span>email</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <a href="" type="button" class="btn btn-outline-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">#P-000441425</p>
-                    <h5 class="title font-w600 mb-2">
-                        <a href="" class="text-black">JOHN JOE</a>
-                    </h5>
-                    <div class="text-dark">
-                        <i class="far fa-calendar me-3" aria-hidden="true"></i>
-                        Created on Sep 8th, 2020
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
-                        </div>
-                        <div class="ms-2">
-                            <span>Phone</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-2">
-                            <span>Phone Number</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex align-items-center">
-                        <div class="ms-2">
-                            <span>email</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
-                    <div class="d-flex project-status align-items-center">
-                        <a href="" type="button" class="btn btn-outline-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <nav class="mt-5">
-            <ul class="pagination pagination-gutter pagination-primary no-bg">
-                <li class="page-item page-indicator">
-                    <a class="page-link" href="javascript:void(0)">
-                        <i class="la la-angle-left"></i></a>
-                </li>
-                <li class="page-item "><a class="page-link" href="javascript:void(0)">1</a>
-                </li>
-                <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                <li class="page-item page-indicator">
-                    <a class="page-link" href="javascript:void(0)">
-                        <i class="la la-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav>
+        {% endfor %}
     </div>
 
     <div class="tab-pane fade" id="navpills-2">
+        {% for rq in unquoted_requests %}
         <div class="card">
             <div class="project-info">
                 <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">#P-000441425</p>
+                    <p class="text-primary mb-1">#{{rq.request_id}}</p>
                     <h5 class="title font-w600 mb-2">
-                        <a href="" class="text-black">JOHN JOE</a>
+                        <a href="" class="text-black">{{rq.user}}</a>
                     </h5>
                     <div class="text-dark">
                         <i class="far fa-calendar me-3" aria-hidden="true"></i>
-                        Created on Sep 8th, 2020
+                        {{rq.date}}
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
+                            <img src="{{rq.phonemodel.brand_model.image.url}}" alt="">
                         </div>
                         <div class="ms-2">
-                            <span>Phone</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            <span>{{rq.phonemodel.brand_model.brand}}</span>
+                            <h5 class="mb-0 pt-1 font-w50 text-black">{{rq.phonemodel.brand_model}}</h5>
                         </div>
                     </div>
                 </div>
@@ -223,7 +116,7 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>Phone Number</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user}}</h5>
                         </div>
                     </div>
                 </div>
@@ -231,40 +124,44 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>email</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user.email}}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                     <div class="d-flex project-status align-items-center">
-                        <a href="" type="button" class="btn btn-outline-primary">View Details</a>
+                        <a href="{% url 'official:request_details' rq.id %}" type="button"
+                            class="btn btn-outline-primary">View
+                            Details</a>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 
     <div class="tab-pane fade" id="navpills-3">
+        {% for rq in quoted_requests %}
         <div class="card">
             <div class="project-info">
                 <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
-                    <p class="text-primary mb-1">#P-000441425</p>
+                    <p class="text-primary mb-1">#{{rq.request_id}}</p>
                     <h5 class="title font-w600 mb-2">
-                        <a href="" class="text-black">JOHN JOE</a>
+                        <a href="" class="text-black">{{rq.user}}</a>
                     </h5>
                     <div class="text-dark">
                         <i class="far fa-calendar me-3" aria-hidden="true"></i>
-                        Created on Sep 8th, 2020
+                        {{rq.date}}
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="">
+                            <img src="{{rq.phonemodel.brand_model.image.url}}" alt="">
                         </div>
                         <div class="ms-2">
-                            <span>Phone</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">iphone 13 pro</h5>
+                            <span>{{rq.phonemodel.brand_model.brand}}</span>
+                            <h5 class="mb-0 pt-1 font-w50 text-black">{{rq.phonemodel.brand_model}}</h5>
                         </div>
                     </div>
                 </div>
@@ -272,7 +169,7 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>Phone Number</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">789365441</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user}}</h5>
                         </div>
                     </div>
                 </div>
@@ -280,17 +177,20 @@
                     <div class="d-flex align-items-center">
                         <div class="ms-2">
                             <span>email</span>
-                            <h5 class="mb-0 pt-1 font-w500 text-black">john@gmail.com</h5>
+                            <h5 class="mb-0 pt-1 font-w500 text-black">{{rq.user.email}}</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                     <div class="d-flex project-status align-items-center">
-                        <a href="" type="button" class="btn btn-outline-primary">View Details</a>
+                        <a href="{% url 'official:request_details' rq.id %}" type="button"
+                            class="btn btn-outline-primary">View
+                            Details</a>
                     </div>
                 </div>
             </div>
         </div>
+        {% endfor %}
     </div>
 
 
