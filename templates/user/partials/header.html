@@ -164,7 +164,7 @@
         <div class="container">
             <div class="header-wrap">
                 <div class="logo logo-width-1">
-                    <a href="{% url 'user:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}"
+                    <a href="{% url 'main:index' %}"><img src="{% static 'user/imgs/theme/EAZYFY-LOGO.png' %}"
                             alt="logo" /></a>
                 </div>
                 <div class="header-right text-brand">
@@ -190,9 +190,8 @@
                             <div class="header-action-icon-2">
                                 <div class="location" data-toggle="modal" data-target="#onloadModal">
                                     <i class="fa fa-location px-2"></i>
-
                                     <button style="color: #621299; background-color: #fff;" data-bs-toggle="modal"
-                                        data-bs-target="#onloadModal">America</button>
+                                        data-bs-target="#onloadModal" id="modal_toggler">America</button>
                                 </div>
                             </div>
                             <div class="header-action-icon-2">
@@ -219,7 +218,7 @@
         <div class="container pt-5">
             <div class="header-wrap header-space-between position-relative">
                 <div class="logo logo-width-1 d-block d-lg-none">
-                    <a href="{% url 'user:index' %}"> <img src="{% static 'user/imgs/theme/EAZYFY .png' %}"
+                    <a href="{% url 'main:index' %}"> <img src="{% static 'user/imgs/theme/EAZYFY .png' %}"
                             alt="logo" /></a>
                 </div>
                 <div class="mobile-search search-style-3 mobile-header-border">
@@ -233,44 +232,44 @@
                         <nav>
                             <ul>
                                 <li>
-                                    <a href="{% url 'user:index' %}" class="{% if is_index %}active{% endif %}">Home
+                                    <a href="{% url 'main:index' %}" class="{% if is_index %}active{% endif %}">Home
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:sell' %}"
+                                    <a href="{% url 'main:sell_phone' %}"
                                         class="{% if is_sellphone %} active {% endif %}">Sell phones <i
                                             class="fi-rs-angle-down"></i></a>
-                                    {% if brand %}
+                                    {% if brands %}
                                     <ul class="sub-menu">
-                                        {% for item in brand %}
-                                        <li><a href="{% url 'user:shops' item.id %}">{{ item.name }}</a></li>
+                                        {% for brand in brands %}
+                                        <li><a href="{% url 'user:pick_model' brand.slug %}">{{ item.name }}</a></li>
                                         {% endfor %}
                                     </ul>
                                     {% endif %}
                                 </li>
                                 <li class="position-static">
-                                    <a href="{% url 'user:buyphone' %}"
+                                    <a href="{% url 'main:buyphone' %}"
                                         class="{% if is_buyphone %} active {% endif %}">Buy phones</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:repair_phone' %}"
+                                    <a href="{% url 'main:repair_phone' %}"
                                         class="{% if is_repair %} active {% endif %}">Repair Phone </a>
                                 </li>
 
                                 <li>
-                                    <a href="{% url 'user:comingsoon' %}"
+                                    <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_gadget %} active {% endif %}">Sell gadgets </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'user:findnewgadget' %}"
+                                    <a href="{% url 'main:find_new_gadget' %}"
                                         class="{% if is_newgadget %} active {% endif %}">Find new gadgets</a>
                                 </li>
                                 <li>
                                     <a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="{% url 'user:about' %}">About Us</a></li>
-                                        <li><a href="{% url 'user:contact' %}">Contact</a></li>
-                                        <li><a href="{% url 'user:account' %}">My Account</a></li>
+                                        <li><a href="{% url 'main:about' %}">About Us</a></li>
+                                        <li><a href="{% url 'main:contact' %}">Contact</a></li>
+                                        <li><a href="{% url 'main:account' %}">My Account</a></li>
 
                                         {% if status == 1%}
                                         <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
@@ -278,8 +277,8 @@
                                         <li><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% endif %}
 
-                                        <li><a href="{% url 'user:privacy' %}">Privacy Policy</a></li>
-                                        <li><a href="{% url 'user:terms-and-conditions' %}">Terms of Service</a></li>
+                                        <li><a href="{% url 'main:privacy' %}">Privacy Policy</a></li>
+                                        <li><a href="{% url 'main:terms_and_conditions' %}">Terms of Service</a></li>
 
                                         {% if status == 1 %}
                                         <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
@@ -317,7 +316,8 @@
                 <div class="location">
                     <i class="fa fa-location px-2"></i>
 
-                    <h5 style="color: #621299;" data-bs-toggle="modal" data-bs-target="#onloadModal">America</h5>
+                    <h5 style="color: #621299;" id="mobile_modal_toggler" data-bs-toggle="modal"
+                        data-bs-target="#onloadModal">America</h5>
                 </div>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">
@@ -346,45 +346,45 @@
                 <nav>
                     <ul class="mobile-menu">
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:index' %}"><span class="menu-expand"></span>Home</a>
+                            <a href="{% url 'main:index' %}"><span class="menu-expand"></span>Home</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:sell' %}"><span class="menu-expand"></span>Sell Phone</a>
+                            <a href="{% url 'main:sell_phone' %}"><span class="menu-expand"></span>Sell Phone</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:buyphone' %}"><span class="menu-expand"></span>Buy Phone</a>
+                            <a href="{% url 'main:buyphone' %}"><span class="menu-expand"></span>Buy Phone</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:repair_phone' %}"><span class="menu-expand"></span>Repair Phone </a>
+                            <a href="{% url 'main:repair_phone' %}"><span class="menu-expand"></span>Repair Phone </a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:comingsoon' %}"><span class="menu-expand"></span>Sell gadgets</a>
+                            <a href="{% url 'main:comingsoon' %}"><span class="menu-expand"></span>Sell gadgets</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:comingsoon' %}"><span class="menu-expand"></span>Find New Gadget</a>
+                            <a href="{% url 'main:comingsoon' %}"><span class="menu-expand"></span>Find New Gadget</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:about' %}"><span class="menu-expand"></span>About us</a>
+                            <a href="{% url 'main:about' %}"><span class="menu-expand"></span>About us</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:contact' %}"><span class="menu-expand"></span>contact</a>
+                            <a href="{% url 'main:contact' %}"><span class="menu-expand"></span>contact</a>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="{% url 'user:login' %}"><span class="menu-expand"></span>login & Register</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:privacy' %}"><span class="menu-expand"></span>privacy Policy</a>
+                            <a href="{% url 'main:privacy' %}"><span class="menu-expand"></span>privacy Policy</a>
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:terms-and-conditions' %}"><span class="menu-expand"></span>terms of
+                            <a href="{% url 'main:terms_and_conditions' %}"><span class="menu-expand"></span>terms of
                                 service</a>
                         </li>
                         <li class="menu-item-has-children">

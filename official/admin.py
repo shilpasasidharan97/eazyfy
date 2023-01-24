@@ -1,6 +1,5 @@
 from .models import AdminSendRecord
 from .models import AdminWallet
-from .models import BannerImage
 from .models import Brand
 from .models import BrandModel
 from .models import CustomerProfile
@@ -9,7 +8,6 @@ from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import ModelSpecifications
-from .models import Offer
 from .models import OrderPayment
 from .models import PickUpBoy
 from .models import Question
@@ -52,12 +50,14 @@ class PickUpBoyAdmin(admin.ModelAdmin):
 class BrandAdmin(admin.ModelAdmin):
     list_display = ("name", "image")
     search_fields = ("name", "image")
+    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(BrandModel)
 class BrandModelAdmin(admin.ModelAdmin):
     list_display = ("brand", "name", "image")
     search_fields = ("brand", "name", "image")
+    prepopulated_fields = {"slug": ("name",)}
 
 
 @admin.register(ModelSpecifications)
@@ -107,7 +107,5 @@ class UserReplyAdmin(admin.ModelAdmin):
     list_filter = ("user_request",)
 
 
-admin.site.register(BannerImage)
-admin.site.register(Offer)
 admin.site.register(DeviceType)
 admin.site.register(UserRequest)

@@ -11,14 +11,13 @@
                             </h4>
                         </div>
                         <div class="col my-4 my-md-0 des">
-                            <!-- <h5 class="font-size-15 ml-4 mb-0">...and receive <strong>$25 coupon for first
-                                    shopping.</strong></h5> -->
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
                     <!-- Subscribe Form -->
-                    <form class="form-subcriber d-flex wow fadeIn animated">
+                    <form class="form-subcriber d-flex wow fadeIn animated" action="" method="post">
+                        {% csrf_token %}
                         <input type="email" class="form-control bg-white font-small" placeholder="Enter your email">
                         <button class="btn bg-dark text-white" type="submit">Subscribe</button>
                     </form>
@@ -128,9 +127,9 @@
 
         <div class="container pb-20 wow fadeIn animated">
             <div class="row">
-                <div class="col-lg-6 mx-aut py-3">
+                <div class="col-lg-12 mx-aut py-3">
                     <p class="font-sm text-muted mb-0 text-center">
-                        &copy; 2022, <strong class="text-brand">Eazyfy</strong>
+                        &copy; {% now 'Y' %} <strong class="text-brand">Eazyfy - All rights reserved</strong>
                 </div>
             </div>
         </div>

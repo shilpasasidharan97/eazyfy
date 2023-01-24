@@ -84,14 +84,14 @@
     function subQuestionAdding() {
         var question = $("#question").val()
         $.ajax({
-            url: "/official/suquestionAdding",
+            url: "/official/sub_qs_adding",
             type: "POST",
             data: {
                 "qst": question,
             },
             success: function (responce) {
                 // alert(response.qest_pk)
-                window.location.href = '/official/suquestionAddingPage/' + responce.qest_pk
+                window.location.href = '/official/sub_qs_adding_page/' + responce.qest_pk
             }
         })
     }

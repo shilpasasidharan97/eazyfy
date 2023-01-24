@@ -1,0 +1,139 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+    .hotdeal {
+        border-radius: 10px;
+    }
+
+    .input-search input {
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding: 0 60px 0 20px;
+        font-size: 18px;
+    }
+
+    .input-search.active input {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .input-search .autocom-box {
+        padding: 0;
+        opacity: 0;
+        pointer-events: none;
+        max-height: 280px;
+        overflow-y: auto;
+    }
+
+    .input-search.active .autocom-box {
+        padding: 10px 8px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .autocom-box li {
+        list-style: none;
+        padding: 8px 12px;
+        display: none;
+        width: 100%;
+        cursor: default;
+        border-radius: 3px;
+    }
+
+    .input-search.active .autocom-box li {
+        display: block;
+    }
+
+    .autocom-box li:hover {
+        background: white;
+    }
+
+    .input-search .icon {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 55px;
+        width: 55px;
+        text-align: center;
+        line-height: 55px;
+        font-size: 20px;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+
+<main class="main">
+    <div class="featured section-padding">
+
+        <!-- BRAND -->
+        <section class="featured section-padding mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+
+                    <div class="col-lg-8">
+                        <h3 class="section-title mb-20">Pick a brand to get started </h3>
+                    </div>
+
+                    <div class="col-lg-4 text-end">
+                        <div class="flwidth layout vertical list-search center-center">
+
+
+                            <a class="flwidth">
+                                <label for="list-search-input"
+                                    class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
+                                    <span id="search-icon" class="search-icon layout center-center">
+                                        <img alt="product_search" class=""
+                                            src="{% static 'user/imgs/ProductSearch.svg' %}">
+                                    </span>
+
+                                    <div class="input-search">
+                                        <input name="search" type="search" placeholder="search your brand"
+                                            class="font16-14 flwidth card mar-r10 search-input live-search">
+                                        <div class="autocom-box">
+
+                                        </div>
+                                    </div>
+                                </label>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for brand in brands %}
+                    <div class="col-lg-2 col-4" style="padding: 2%;">
+                        <div class="card2">
+                            <div class="card-body">
+                                <div class="product-cart-wrap small hover-up">
+                                    <div class="product-img-action-wrap">
+                                        <div class="product-img product-img-zoom">
+                                            <a href="{% url 'main:comingsoon' %}">
+                                                <img class="default-img" src="{{brand.image.url}}" alt="">
+                                                <img class="hover-img" src="{{brand.image.url}}" alt="">
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+
+        {% include 'partials/offers.html' %}
+        {% include 'partials/why_us.html' %}
+        {% include 'partials/most_selling.html' %}
+        {% include 'partials/faq.html' %}
+
+</main>
+
+
+{% endblock %}

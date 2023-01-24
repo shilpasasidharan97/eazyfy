@@ -90,13 +90,13 @@
 
                     <li class="list-group-item">
                         <span class="mb-0 title">Ram</span> :
-                        {% for ram in model.get_ram %}
+                        {% for ram in model.get_varients %}
                         <span class="text-black ms-2">{{ram.RAM}}gb , </span>
                         {% endfor %}
                     </li>
                     <li class="list-group-item">
                         <span class="mb-0 title">Internal Storage</span> :
-                        {% for int in model.get_ram %}
+                        {% for int in model.get_varients %}
                         <span class="text-black ms-2">{{int.internal_storage}}gb </span>
                         {% endfor %}
                     </li>

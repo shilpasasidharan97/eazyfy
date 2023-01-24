@@ -3,14 +3,14 @@ import datetime
 from user.helpers import payment_mail
 
 from .models import AdminSendRecord
-from .models import BannerImage
+from main.models import BannerImage
 from .models import Brand
 from .models import BrandModel
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import ModelSpecifications
-from .models import Offer
+from main.models import Offer
 from .models import PickUpBoy
 from .models import Question
 from .models import QuestionOption
@@ -45,10 +45,6 @@ def loginPage(request):
                 return redirect("franchise:index")
             if user.is_pickupboy:
                 return redirect("pickupboy:index")
-            # elif user.is_customer:
-            #     return redirect('user:about')
-            # elif user.Student !=None:
-            #     return redirect('student:home')
         else:
             msg = "* Incorrect email or password *"
             return render(request, "official/login.html", {"msg": msg})
@@ -79,7 +75,15 @@ def franchise(request):
         password = request.POST["password"]
         address = request.POST["address"]
         photo = request.FILES.get("photo", "not found")
-        franchise = Franchise(name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address, password=password)
+        franchise = Franchise(
+            name=name,
+            franchise_id=franchise_id,
+            email=email,
+            phone=phone,
+            photo=photo,
+            address=address,
+            password=password,
+        )
         franchise.save()
 
         User = get_user_model()
@@ -134,11 +138,16 @@ def viewFranchiseDetails(request, id):
     franchise_details = Franchise.objects.get(id=id)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
     wallet = FranchiseWallet.objects.get(franchise=franchise_details)
-    context = {"franchise_details": franchise_details, "pickup_boys": pickup_boys, "wallet": wallet, "count": pickup_boys.count()}
+    context = {
+        "franchise_details": franchise_details,
+        "pickup_boys": pickup_boys,
+        "wallet": wallet,
+        "count": pickup_boys.count(),
+    }
     return render(request, "official/view_franchise.html", context)
 
 
-def DeleteFranchise(request, id):
+def delete_franchise(request, id):
     Franchise.objects.get(id=id).delete()
     return redirect("/official/franchise")
 
@@ -170,7 +179,7 @@ def getbranddata(request, id):
 
 
 # @csrf_exempt
-def editBrand(request, id):
+def edit_brand(request, id):
     newId = str(id)
     brand_name = request.POST["bname" + newId]
     brand_photo = request.FILES.get("bphoto" + newId, "notfount")
@@ -182,7 +191,7 @@ def editBrand(request, id):
     return redirect("official:brand")
 
 
-def DeleteBrand(request, id):
+def delete_brand(request, id):
     Brand.objects.get(id=id).delete()
     return redirect("/official/brand")
 
@@ -200,7 +209,7 @@ def Model(request, id):
     return render(request, "official/model.html", context)
 
 
-def getModelData(request, id):
+def get_model_data(request, id):
     getmodel = BrandModel.objects.get(id=id)
     data = {
         # "fkid":getmodel.brand.id,
@@ -225,7 +234,7 @@ def editModel(request, id):
 
 
 # modelspecification adding
-def modelSpecification(request, id):
+def model_specification(request, id):
     brand = BrandModel.objects.get(brand__id=id)
     models_spec = ModelSpecifications.objects.filter(brand_model=brand)
     if request.method == "POST":
@@ -235,7 +244,9 @@ def modelSpecification(request, id):
         color = request.POST["color"]
         price = request.POST["price"]
 
-        new_model = ModelSpecifications(brand_model=brand, RAM=ram, color=color, internal_storage=internal_storage, year=year, price=price)
+        new_model = ModelSpecifications(
+            brand_model=brand, RAM=ram, color=color, internal_storage=internal_storage, year=year, price=price
+        )
         new_model.save()
     context = {"models_spec": models_spec}
     return render(request, "official/specification.html", context)
@@ -264,7 +275,7 @@ def questions(request):
 
 
 # QUESTION ADDING
-def questionAdding(request):
+def question_adding(request):
     models = BrandModel.objects.all()
     qst = Question.objects.all().count()
     qstcount = qst + 1
@@ -301,7 +312,7 @@ def subquestionFirst(request):
     return JsonResponse(data)
 
 
-def subquestionPage(request, id):
+def subquestion_page(request, id):
     question = Question.objects.get(id=id)
     device_type = DeviceType.objects.get(device_type="Mobile")
     qst_count = Question.objects.filter().count()
@@ -311,26 +322,26 @@ def subquestionPage(request, id):
         image = request.FILES["images"]
         new_sub_qst = QuestionOption(question=question, image=image, text=description)
         new_sub_qst.save()
-        return redirect("/official/suquestionAddingPage/" + str(question.id))
+        return redirect("/official/sub_qs_adding_page/" + str(question.id))
     context = {"question": question, "qst_count": qst_count, "sub_qst": sub_qst, "device_type": device_type}
     return render(request, "official/sub-question.html", context)
 
 
 @csrf_exempt
-def suquestionAddingData(request):
+def sub_qs_addingData(request):
     request.POST.get("imgk")
     data = {"msg": "msg"}
     return JsonResponse(data)
 
 
 # deduction Amount setting
-def deductionSettings(request):
+def deduction_settings(request):
     all_barnd = BrandModel.objects.all()
     context = {"models": all_barnd}
     return render(request, "official/deduction.html", context)
 
 
-def questionForDeduction(request, id):
+def question_for_deduction(request, id):
     all_questions = QuestionOption.objects.all()
     brandmodel = BrandModel.objects.get(id=id)
 
@@ -385,7 +396,7 @@ def wallet(request):
 
 
 # WALLET_FRANCHISE_LIST AND STATUS
-def franchiseWallet(request):
+def franchise_wallet(request):
     all_franchise = FranchiseWallet.objects.all()
     context = {"is_wallet": True, "franchise": all_franchise}
     return render(request, "official/wallet_franchise.html", context)
@@ -398,14 +409,16 @@ def viewPayment(request, id):
 
 
 @csrf_exempt
-def savePayment(request, id):
+def save_payment(request, id):
     now = datetime.datetime.now()
     paid_amount = request.POST["amount"]
     franchise_obj = Franchise.objects.get(id=id)
     franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
     franchise_balance = franchisewallet.wallet_amount
     balance_amount = float(paid_amount) + float(franchise_balance)
-    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(last_paid_amount=paid_amount, date=now, wallet_amount=balance_amount)
+    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(
+        last_paid_amount=paid_amount, date=now, wallet_amount=balance_amount
+    )
     record = AdminSendRecord(franchise=franchise_obj, amount=paid_amount, date=now)
     messages.success(request, "success")
     payment_mail(franchisewallet.id)
@@ -435,7 +448,7 @@ def settings(request):
     return render(request, "official/settings.html", context)
 
 
-def DeleteBanner(request, id):
+def delete_banner(request, id):
     BannerImage.objects.get(id=id).delete()
     return redirect("/official/settings")
 
@@ -448,6 +461,6 @@ def offers(request):
     return redirect("/official/settings")
 
 
-def DeleteOffer(request, id):
+def delete_offer(request, id):
     Offer.objects.get(id=id).delete()
     return redirect("/official/settings")

@@ -1,6 +1,6 @@
+from official.models import UserReply
+
 from django import template
-from django.conf import settings
-from official.models import Question, UserReply, UserRequest, QuestionOption
 
 
 register = template.Library()

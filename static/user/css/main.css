@@ -9,6 +9,14 @@
 @import url(plugins/slick.css);
 @import url(plugins/perfect-scrollbar.css);
 
+body {
+  padding-right: 0 !important
+}
+
+small {
+  font-size: 12px !important;
+}
+
 .btn-login .btn,
 .btn.btn-small {
   min-width: unset
@@ -320,7 +328,8 @@ textarea:focus {
 .img-hover-scale img {
   -webkit-transition: -webkit-transform .5s;
   transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s
+  transition: transform .5s, -webkit-transform .5s;
+  border-radius: 1.5rem;
 }
 
 .img-hover-scale:hover img {
@@ -1905,9 +1914,6 @@ label {
     height: 67px !important
   }
 
-  .exchange-card {
-    margin-top: 0 !important
-  }
 
   .product-name-responsive {
     font-size: 10px !important
@@ -5315,6 +5321,7 @@ span.has-dot::before {
 
 .mobile-header-wrapper-style.sidebar-visible {
   visibility: visible;
+  display: block;
   opacity: 1;
   -webkit-transform: translate(0, 0);
   transform: translate(0, 0)
@@ -5908,6 +5915,7 @@ span.has-dot::before {
 .mobile-header-wrapper-style {
   position: fixed;
   top: 0;
+  display: none;
   width: 360px;
   min-height: 100vh;
   bottom: 0;
@@ -6201,7 +6209,7 @@ span.has-dot::before {
 
 .header-style-3 .header-middle-ptb-1,
 .section-padding {
-  padding: 25px 0
+  padding: 40px 0
 }
 
 .header-style-3 .main-categori-wrap>a,
@@ -9394,7 +9402,8 @@ span.fi-rs-apps {
 }
 
 .servicetext {
-  font-size: 13px !important
+  font-size: 13px !important;
+  display: block;
 }
 
 @media only screen and (max-width:650px) {
@@ -9495,10 +9504,6 @@ h3.section-title {
 .offer2 {
   border-radius: 10px;
   margin-bottom: 10px
-}
-
-.exchange-card {
-  margin-top: 29px
 }
 
 .section-new-padding {

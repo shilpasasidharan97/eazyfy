@@ -1,0 +1,325 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+<main class="main">
+    <!-- BRAND -->
+    <section class="featured section-padding mt-5">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+                    <h3 class="section-title mb-20">Buy Phone </h3>
+                </div>
+
+                <div class="col-lg-4 text-end">
+                    <div class="flwidth layout vertical list-search center-center">
+
+
+                        <a class="flwidth">
+                            <label for="list-search-input"
+                                class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
+                                <span id="search-icon" class="search-icon layout center-center">
+                                    <img alt="product_search" class="" src="{% static 'user/imgs/ProductSearch.svg' %}">
+                                </span>
+
+
+                                <div class="input-search">
+                                    <input name="search" type="search" placeholder="search your brand"
+                                        class="font16-14 flwidth card mar-r10 search-input live-search">
+                                    <div class="autocom-box">
+
+                                    </div>
+                                </div>
+                            </label>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                {% for brand in brands %}
+                <div class="col-lg-2 col-4" style="padding: 2%;">
+                    <div class="card2">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="{% url 'main:comingsoon' %}">
+                                            <img class="default-img" src="{{brand.image.url}}" alt="">
+                                            <img class="hover-img" src="{{brand.image.url}}" alt="">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </section>
+
+    {% include 'partials/offers.html' %}
+    {% include 'partials/why_us.html' %}
+
+    <!-- MOST SELLING BRAND -->
+    <section class="popular-categories section-padding mt-15">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most </span>selling brand</h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+                <div class="carausel-6-columns" id="carausel-6-columns">
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="{% url 'main:comingsoon' %}"><img src="{% static 'user/imgs/banner/apple.jpg' %}"
+                                    alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">T-Shirt</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"> <img src="{% static 'user/imgs/banner/honor.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Bags</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/hp.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Sandan</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/nok.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Scarf Cap</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/one.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Shoes</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/sam.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Pillowcase</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/oppo.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Jumpsuits</a></h5> -->
+                    </div>
+                    <div class="card-1">
+                        <figure class=" img-hover-scale overflow-hidden">
+                            <a href="#"><img src="{% static 'user/imgs/banner/real.jpg' %}" alt=""></a>
+                        </figure>
+                        <!-- <h5><a href="#">Hats</a></h5> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MOST SELLING MODELS -->
+    <section class="section-padding section-new-padding">
+        <div class="container wow fadeIn animated">
+            <h3 class="section-title mb-20"><span>Most</span> Selling model </h3>
+            <div class="carausel-6-columns-cover position-relative">
+                <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-2-arrows">
+                </div>
+                <div class="carausel-6-columns carausel-arrow-center" id="carausel-6-columns-2">
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}"
+                                        alt="">
+
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob3.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob3.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob 2.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob 2.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+
+                        </div>
+                    </div>
+                    <!--End product-cart-wrap-2-->
+                    <div class="product-cart-wrap small hover-up">
+                        <div class="product-img-action-wrap">
+                            <div class="product-img product-img-zoom">
+                                <a href="#">
+                                    <img class="default-img selling-phone" src="{% static 'user/imgs/shop/mob.jpg' %}"
+                                        alt="">
+                                    <img class="hover-img" src="{% static 'user/imgs/shop/mob.jpg' %}" alt="">
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="product-content-wrap">
+                            <h6 class="product-name-responsive"><a href="#">One plus note c2</a></h6>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    {% include 'partials/faq.html' %}
+
+
+</main>
+
+<script>
+    let liContainer = document.querySelector(".autocom-box")
+    let inputElem = document.querySelector(".live-search")
+    let searchInput = document.querySelector(".input-search")
+    const data = '{{data}}'
+    console.log(data[0])
+
+    let suggestions = [
+        {% for i in brand %}`<a href = "{% url 'main:comingsoon'%}">  </a>`, {% endfor %}
+    ];
+
+    inputElem.addEventListener("keyup", function () {
+        let inputValue = inputElem.value
+        if (inputValue) {
+            searchInput.classList.add("active")
+            let filteredWord = suggestions.filter(function (word) {
+                return word.toLowerCase().includes(inputValue.toLowerCase())
+                // return word.toLowerCase().startsWith(inputValue.toLowerCase())
+            })
+
+            suggestionWordsGenerator(filteredWord)
+
+        } else {
+            searchInput.classList.remove("active")
+        }
+
+    })
+
+    let customListItem
+
+    function suggestionWordsGenerator(wordArray) {
+        let suggestionWord = wordArray.map(function (word) {
+            return "<li>" + word + "</li>"
+        }).join("")
+
+        if (suggestionWord) {
+            liContainer.innerHTML = suggestionWord
+        } else {
+            liContainer.innerHTML = "<li>" + inputElem.value + "</li>"
+        }
+        Select()
+    }
+
+    function Select() {
+        let allListItems = liContainer.querySelectorAll("li")
+        allListItems.forEach(function (wordItem) {
+            wordItem.addEventListener("click", function (e) {
+                inputElem.value = e.target.textContent
+                searchInput.classList.remove("active")
+            })
+        })
+    }
+</script>
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% load static %}
+<section class="popular-categories section-padding section-new-padding">
+    <div class="container wow fadeIn animated">
+        <h3 class="section-title mb-20"><span>Select</span> your phone brand</h3>
+
+        <div class="carausel-6-columns-cover position-relative">
+            <div class="slider-arrow slider-arrow-2 carausel-6-columns-arrow" id="carausel-6-columns-arrows"></div>
+            <div class="carausel-6-columns" id="carausel-6-columns">
+                {% for brand in brands %}
+                <div class="card-1">
+                    <figure class="img-hover-scale overflow-hidden">
+                        <a href="{% url 'user:pick_model' brand.slug %}">
+                            <img src="{{brand.image.url}}" alt="" />
+                        </a>
+                    </figure>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>

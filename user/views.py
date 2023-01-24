@@ -1,15 +1,18 @@
 import json
 import uuid
 
-from official.models import BannerImage
+from main.models import BannerImage, Team
 from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
 from official.models import CustomerRegistration
 from official.models import ModelSpecifications
-from official.models import Offer
-from official.models import Question, UserReply, UserRequest, QuestionOption
+from main.models import Offer
+from official.models import Question
+from official.models import QuestionOption
 from official.models import User
+from official.models import UserReply
+from official.models import UserRequest
 from user.mixin import MessageHandler
 
 import pyotp
@@ -24,10 +27,10 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from django.shortcuts import get_object_or_404
 
 
-# CUSTOMER LOGIN
-def customerlogin(request):
+def customer_login(request):
     if request.method == "POST":
         countryCode = request.POST["countryCode"]
         number = request.POST["number"]
@@ -37,15 +40,14 @@ def customerlogin(request):
         if user is not None:
             login(request, user)
             if user.is_customer:
-                return redirect("user:index")
+                return redirect("main:index")
             return redirect("user:login")
         return redirect("user:login")
     else:
         return render(request, "user/login.html")
 
 
-# CUSTOMER REGISTRATION
-def UserRegistration(request):
+def user_registration(request):
     if request.method == "POST":
         name = request.POST["name"]
         email = request.POST["email"]
@@ -56,10 +58,18 @@ def UserRegistration(request):
         phonenumber_with_countrycode = country_code + phone
         secret = pyotp.random_base32()
         if password == cpassword:
-            customer = CustomerRegistration(email=email, phone_number=phonenumber_with_countrycode, password=password, name=name)
+            customer = CustomerRegistration(
+                email=email, phone_number=phonenumber_with_countrycode, password=password, name=name
+            )
             customer.save()
             User = get_user_model()
-            customers = User.objects.create_user(email=email, phone_number=phonenumber_with_countrycode, password=password, customer=customer, is_customer=True)
+            customers = User.objects.create_user(
+                email=email,
+                phone_number=phonenumber_with_countrycode,
+                password=password,
+                customer=customer,
+                is_customer=True,
+            )
             profile = CustomerProfile.objects.create(user=customers, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
         msg = "Password does not match"
@@ -68,9 +78,8 @@ def UserRegistration(request):
     return render(request, "user/registration.html")
 
 
-# PHONE NUMBER VALIDATION
 @csrf_exempt
-def checkPhoneNumber(request):
+def check_phone_number(request):
     phone = request.POST["phone"]
     if User.objects.filter(phone_number=phone).exists():
         data = {"status": 1, "msg": "User Alreay Exists in the same phone number"}
@@ -79,7 +88,6 @@ def checkPhoneNumber(request):
     return JsonResponse(data)
 
 
-# SEND OTP
 def otp_fun(request, id):
     profile = CustomerProfile.objects.get(test_id=id)
     totp = pyotp.TOTP(profile.auth_token, interval=300)
@@ -88,12 +96,11 @@ def otp_fun(request, id):
         enter_otp = request.POST["otp"]
         verification = totp.verify(enter_otp)
         if verification:
-            return redirect("user:index")
+            return redirect("main:index")
     MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 
 
-# forgot password
 def forgot(request):
     if request.method == "POST":
         email = request.POST["email"]
@@ -111,8 +118,7 @@ def forgot(request):
     return render(request, "user/forgot.html")
 
 
-# RESET PASSWORD
-def resetPassword(request, token):
+def reset_password(request, token):
     profile_obj = CustomerProfile.objects.filter(forget_password_token=token).first()
     context = {"user_id": profile_obj.user.id}
     if request.method == "POST":
@@ -130,8 +136,7 @@ def resetPassword(request, token):
     return render(request, "user/reset_password.html", context)
 
 
-# RESEND OTP
-def resendOtp(request, token):
+def resend_otp(request, token):
     user = CustomerProfile.objects.filter(test_id=token).last()
     user_secret_key = pyotp.random_base32()
     user.auth_token = user_secret_key
@@ -139,58 +144,11 @@ def resendOtp(request, token):
     return redirect(f"/otp-page/{user.test_id}")
 
 
-# DASHBOARD
-def index(request):
-    banner = BannerImage.objects.all()
-    offer = Offer.objects.all()
-    brand = Brand.objects.all()
-    user = request.user
-    context = {"is_index": True, "user": user, "banner": banner, "offer": offer, "brand": brand}
-    return render(request, "user/index.html", context)
-
-
-# ABOUT
-def about(request):
-    return render(request, "user/about.html")
-
-
-# CONTACT
-def contact(request):
-    return render(request, "user/contact.html")
-
-
-# TERMS AND CONDITIONS
-def termsAndConditions(request):
-    return render(request, "user/terms-and-conditions.html")
-
-
-# SELL YOUR PHONE
-def sell(request):
-    brand = Brand.objects.all()
-    context = {"is_sellphone": True, "brand": brand}
-    return render(request, "user/sellphone.html", context)
-
-
-# ACCOUNTS
-def account(request):
-    return render(request, "user/account.html")
-
-
-# PRIVACY AND POLICY
-def privacyAndPolicy(request):
-    return render(request, "user/privacy-policy.html")
-
-
 # BRAND MODELS
-def shops(request, id):
-    model = BrandModel.objects.filter(brand__id=id)
-    searchModel = BrandModel.objects.filter(brand__id=id)
-    data = []
-    for pos in searchModel:
-        item = {"pk": pos.pk, "modelName": pos.name}
-        data.append(item)
-    context = {"data": data, "searchModel": searchModel, "model": model}
-    return render(request, "user/shops.html", context)
+def pick_model(request, slug):
+    brand = get_object_or_404(Brand, slug=slug)
+    context = {"brand": brand}
+    return render(request, "user/pick_model.html", context)
 
 
 @login_required
@@ -222,60 +180,27 @@ def save_answer(request):
 
 
 # MODEL SPECIFICATIONS
-def spec(request, id):
-    specification = BrandModel.objects.get(id=id)
-    context = {"specification": specification, "id": id}
-    return render(request, "user/spec-product.html", context)
+def device_page(request, slug):
+    model = BrandModel.objects.get(slug=slug)
+    context = {"model": model}
+    return render(request, "user/device_page.html", context)
 
 
 def getspecdata(request, id):
     spec_data = ModelSpecifications.objects.get(id=id)
-    data = {"name": spec_data.brand_model.name, "modelimage": spec_data.brand_model.image.url, "ram": spec_data.RAM, "price": spec_data.price}
+    data = {
+        "name": spec_data.brand_model.name,
+        "modelimage": spec_data.brand_model.image.url,
+        "ram": spec_data.RAM,
+        "price": spec_data.price,
+    }
     return JsonResponse(data)
-
-
-# BUY PHONE
-def buyPhone(request):
-    brand = Brand.objects.all()
-    context = {"is_buyphone": True, "brand": brand}
-    return render(request, "user/buyphone.html", context)
-
-
-# REPAIR PHONE
-def repairPhone(request):
-    context = {"is_repair": True}
-    return render(request, "user/repairphone.html", context)
-
-
-def payment(request):
-    return render(request, "user/payment.html")
-
-
-# COMING SOON
-def comingsoon(request):
-    context = {"is_gadget": True}
-    return render(request, "user/comingsoon.html", context)
-
-
-def findnewgadget(request):
-    context = {"is_newgadget": True}
-    return render(request, "user/findnewgadget.html", context)
-
-
-def sellPhone(request):
-    brand = Brand.objects.all()
-    data = []
-    for pos in brand:
-        item = {"pk": pos.pk, "brandName": pos.name}
-        data.append(item)
-    context = {"data": data, "brand": brand}
-    return render(request, "user/sell-phone.html", context)
 
 
 def handler404(request, exception):
     return render(request, "user/404.html", status=404)
 
 
-def userLogout(request):
+def user_logout(request):
     logout(request)
-    return redirect("user:index")
+    return redirect("main:index")

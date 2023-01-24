@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
 from django.db import models
 from phone_field import PhoneField
+from django.utils.translation import gettext_lazy as _
+from django.utils.text import slugify
 
 
 class UserManager(BaseUserManager):
@@ -49,12 +51,12 @@ class User(AbstractUser):
 
 
 class Franchise(models.Model):
-    franchise_id = models.CharField(max_length=20, default="")
-    name = models.CharField(max_length=40, default="")
+    franchise_id = models.CharField(max_length=20)
+    name = models.CharField(max_length=40)
     email = models.EmailField(null=True)
-    phone = models.CharField(max_length=15, default="", blank=True)
+    phone = models.CharField(max_length=15, blank=True)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
-    address = models.CharField(max_length=500, default="")
+    address = models.CharField(max_length=500)
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -63,13 +65,13 @@ class Franchise(models.Model):
 
 class PickUpBoy(models.Model):
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE)
-    pickup_id = models.CharField(max_length=20, default="")
-    name = models.CharField(max_length=40, default="")
+    pickup_id = models.CharField(max_length=20)
+    name = models.CharField(max_length=40)
     email = models.EmailField(null=True)
-    phone = models.CharField(max_length=15, default="")
+    phone = models.CharField(max_length=15)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
-    place = models.CharField(max_length=40, default="")
-    address = models.CharField(max_length=500, default="")
+    place = models.CharField(max_length=40)
+    address = models.CharField(max_length=500)
     password = models.CharField(max_length=20)
 
     def __str__(self):
@@ -77,10 +79,10 @@ class PickUpBoy(models.Model):
 
 
 class CustomerRegistration(models.Model):
-    name = models.CharField(max_length=50, default="", blank=True)
+    name = models.CharField(max_length=50, blank=True)
     email = models.EmailField(max_length=500, null=True)
     phone_number = PhoneField(null=True)
-    password = models.CharField(max_length=20, default="")
+    password = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.name)
@@ -91,9 +93,9 @@ class CustomerRegistration(models.Model):
 
 class CustomerProfile(models.Model):
     user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="profile")
-    auth_token = models.CharField(max_length=100, blank=True, default="")
+    auth_token = models.CharField(max_length=100, blank=True)
     test_id = models.CharField(max_length=100, default=uuid.uuid4)
-    forget_password_token = models.CharField(max_length=100, blank=True, default="")
+    forget_password_token = models.CharField(max_length=100, blank=True)
 
     def __str__(self):
         return str(self.user)
@@ -101,21 +103,30 @@ class CustomerProfile(models.Model):
 
 class Brand(models.Model):
     image = models.FileField(upload_to="Brand", null=True)
-    name = models.CharField(max_length=100, default="")
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
 
     class Meta:
         verbose_name_plural = "Brand"
 
+    def get_brand_models(self):
+        return BrandModel.objects.filter(brand=self)
+
     def __str__(self):
         return str(self.name)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Brand, self).save(*args, **kwargs)
 
 
 class BrandModel(models.Model):
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
-    image = models.FileField(upload_to="Brand Model", null=True)
-    name = models.CharField(max_length=100, default="")
+    image = models.FileField(upload_to="models/")
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=100, unique=True)
 
-    def get_ram(self):
+    def get_varients(self):
         return ModelSpecifications.objects.filter(brand_model=self)
 
     def __str__(self):
@@ -125,8 +136,8 @@ class BrandModel(models.Model):
 class ModelSpecifications(models.Model):
     brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
     RAM = models.CharField(max_length=100, null="True")
-    color = models.CharField(max_length=30, default="")
-    internal_storage = models.CharField(max_length=30, default="")
+    color = models.CharField(max_length=30)
+    internal_storage = models.CharField(max_length=30)
     year = models.IntegerField(null=True)
     price = models.FloatField(null=True)
 
@@ -186,25 +197,11 @@ class OrderPayment(models.Model):
         return self.name
 
 
-class BannerImage(models.Model):
-    banner = models.FileField(upload_to="gallery/", null=True, blank=True)
-
-    def __str__(self):
-        return str(self.banner)
-
-
-class Offer(models.Model):
-    offer = models.FileField(upload_to="gallery/", null=True, blank=True)
-
-    def __str__(self):
-        return str(self.offer)
-
-
 # survey models
 class QuestionOption(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, null=True, blank=True)
     image = models.FileField(upload_to="Question Image", blank=True, null=True)
-    text = models.CharField(max_length=500, default="")
+    text = models.CharField(max_length=500)
     identifier = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Able to Make and Receive Calls")
 
     class Meta:
@@ -218,8 +215,15 @@ class Question(models.Model):
     question_type_choices = (("image", "Image"), ("Objective", "Objective"), ("MCQ", "MCQ"))
 
     question_type = models.CharField(max_length=15, choices=question_type_choices)
-    question = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Are you able to make and receive calls?")
-    subtext = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Check your device for cellular network connectivity issues.")
+    question = models.CharField(
+        max_length=500, blank=True, null=True, help_text="Eg: Are you able to make and receive calls?"
+    )
+    subtext = models.CharField(
+        max_length=500,
+        blank=True,
+        null=True,
+        help_text="Eg: Check your device for cellular network connectivity issues.",
+    )
 
     class Meta:
         verbose_name_plural = "Question"

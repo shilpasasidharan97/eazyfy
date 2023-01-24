@@ -26,6 +26,7 @@ INSTALLED_APPS = [
     "franchise",
     "pickupboy",
     "user",
+    "main",
 ]
 
 MIDDLEWARE = [
@@ -54,6 +55,7 @@ TEMPLATES = [
                 "user.context_processors.main_context",
                 "franchise.context_processor.main_context",
                 "pickupboy.context_processors.main_context",
+                "main.context_processors.main_context",
             ]
         },
     }
@@ -66,7 +68,14 @@ WSGI_APPLICATION = "eazyfy.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {"ENGINE": config("DB_ENGINE"), "NAME": config("DB_NAME"), "USER": config("DB_USER"), "PASSWORD": config("DB_PASSWORD"), "HOST": config("DB_HOST"), "PORT": "5432"}
+    "default": {
+        "ENGINE": config("DB_ENGINE"),
+        "NAME": config("DB_NAME"),
+        "USER": config("DB_USER"),
+        "PASSWORD": config("DB_PASSWORD"),
+        "HOST": config("DB_HOST"),
+        "PORT": "",
+    }
 }
 
 

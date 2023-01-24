@@ -32,7 +32,13 @@ def index(request):
     for i in payment_from_admin:
         total_amount += i.amount
 
-    context = {"franchise": franchise, "is_index": True, "payment_from_admin": payment_from_admin, "total_amount": total_amount, "count": count}
+    context = {
+        "franchise": franchise,
+        "is_index": True,
+        "payment_from_admin": payment_from_admin,
+        "total_amount": total_amount,
+        "count": count,
+    }
     return render(request, "franchise/index.html", context)
 
 
@@ -51,7 +57,17 @@ def add_pickupboy(request):
         address = request.POST["address"]
         photo = request.FILES["photo"]
 
-        pickup_boy = PickUpBoy(franchise=franchise, pickup_id=pickup_boy_id, name=name, email=email, phone=phone, photo=photo, place=place, address=address, password=password)
+        pickup_boy = PickUpBoy(
+            franchise=franchise,
+            pickup_id=pickup_boy_id,
+            name=name,
+            email=email,
+            phone=phone,
+            photo=photo,
+            place=place,
+            address=address,
+            password=password,
+        )
         pickup_boy.save()
 
         User = get_user_model()
@@ -89,7 +105,9 @@ def editform(request, id):
     pickupboyplace = request.POST["pickupboyplace"]
     paddress = request.POST["paddress"]
 
-    PickUpBoy.objects.filter(id=id).update(pickup_id=pid, name=pname, email=pemail, phone=pickupboyphone, place=pickupboyplace, address=paddress)
+    PickUpBoy.objects.filter(id=id).update(
+        pickup_id=pid, name=pname, email=pemail, phone=pickupboyphone, place=pickupboyplace, address=paddress
+    )
     get_user_model().objects.filter(pickup_boy=id).update(phone_number=pickupboyphone, email=pemail)
     data = {"ss": "csac"}
     return JsonResponse(data)

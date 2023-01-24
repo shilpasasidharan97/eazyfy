@@ -1,0 +1,14 @@
+<section class="home-slider position-relative">
+    <div class="hero-slider-1 style-3 dot-style-1 dot-style-1-position-1">
+        {% for banner in banners %}
+        <div class="single-hero-slider single-animation-wrap">
+            <div class="slider-1-height-3 slider-animated-1">
+                <div class="slider-img">
+                    <img src="{{ banner.image.url }}" alt="" />
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <div class="slider-arrow hero-slider-1-arrow style-3"></div>
+</section>
