@@ -1,6 +1,6 @@
 from eazyfy.decorators import auth_pickupboy
 from official.models import OrderPayment
-from official.models import PickUpBoy
+from official.models import PickUpBoy, UserRequest
 
 import razorpay
 from django.contrib.auth import get_user_model
@@ -48,14 +48,24 @@ def complete_selfy(request):
 @auth_pickupboy
 @login_required(login_url="/official/loginpage")
 def total_order(request):
-    context = {"is_order": True}
+    pickupboy = request.user.pickup_boy
+    requests = UserRequest.objects.filter(
+        is_submitted=True,
+        is_assigned_to_franchise=True,
+        pickupboy=pickupboy,
+        is_franchise_accepted=True,
+        franchise=pickupboy.franchise,
+    )
+    context = {"is_order": True, "requests": requests}
     return render(request, "pickup-boy/total-order.html", context)
 
 
 @auth_pickupboy
 @login_required(login_url="/official/loginpage")
-def product_details(request):
-    return render(request, "pickup-boy/product-details.html")
+def product_details(request, pk):
+    request_details = UserRequest.objects.get(id=pk)
+    context = {"request_details": request_details}
+    return render(request, "pickup-boy/order_details.html", context)
 
 
 @auth_pickupboy

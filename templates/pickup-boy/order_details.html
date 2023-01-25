@@ -1,0 +1,209 @@
+{% extends 'pickup-boy/partials/base.html' %}
+{% block content %}
+{% load static humanize crispy_forms_tags %}
+
+<div class="row page-titles mx-0 align-items-center">
+    <div class="col-sm-6 p-md-0">
+        <div class="welcome-text">
+            <h4>Order: #{{request_details.request_id}}</h4>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="franchiseSetModal">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <h5 class="modal-title">Modal title</h5> -->
+                <button type="button" class="btn-close" data-bs-dismiss="modal">
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xl-12 col-12">
+
+        <div class="card border">
+            <div class="card-body">
+                <div class="my-post-content">
+                    <div class="profile-personal-info">
+                        <h4 class="text-primary mb-4">Personal Information</h4>
+                        {% if request_details.is_franchise_accepted %}
+                        <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                                <h5 class="f-w-500">Name <span class="pull-end">:</span>
+                                </h5>
+                            </div>
+                            <div class="col-sm-9 col-7"><span>{{request_details.user}}</span>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                                <h5 class="f-w-500">Email <span class="pull-end">:</span>
+                                </h5>
+                            </div>
+                            <div class="col-sm-9 col-7"><span>{{request_details.user.email}}</span>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-sm-3 col-5">
+                                <h5 class="f-w-500">Phone <span class="pull-end">:</span></h5>
+                            </div>
+                            <div class="col-sm-9 col-7">
+                                <span>{{request_details.user.phone_number}}</span>
+                            </div>
+                        </div>
+                        {% else %}
+                        <p>Content hidden as the order is not accepted by you</p>
+                        {% endif %}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% if request_details.pickupboy %}
+        <div class="card border">
+            <div class="card-body">
+                <h4 class="text-primary mb-4">Product Details</h4>
+                <div class="row">
+                    <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane fade active show" id="phone1">
+                                <img class="img-fluid" src="/static/official/images/product/11.jpg" alt="">
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="phone2">
+                                <img class="img-fluid" src="/static/official/images/product/22.jpg" alt="">
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="phone3">
+                                <img class="img-fluid" src="/static/official/images/product/11.jpg" alt="">
+                            </div>
+                            <div role="tabpanel" class="tab-pane fade" id="for">
+                                <img class="img-fluid" src="/static/official/images/product/22.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
+                            <!-- Nav tabs -->
+                            <ul class="nav slide-item-list mt-3" role="tablist">
+                                <li role="presentation" class="show">
+                                    <a href="#phone1" role="tab" data-bs-toggle="tab" class="active"
+                                        aria-selected="true">
+                                        <img class="img-fluid" src="/static/official/images/tab/1.1.jpg" alt=""
+                                            width="50">
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#phone2" role="tab" data-bs-toggle="tab" class=""
+                                        aria-selected="false"><img class="img-fluid"
+                                            src="/static/official/images/tab/2.2.jpg" alt="" width="50"></a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#phone3" role="tab" data-bs-toggle="tab" class=""
+                                        aria-selected="false"><img class="img-fluid"
+                                            src="/static/official/images/tab/1.1.jpg" alt="" width="50"></a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#for" role="tab" data-bs-toggle="tab" class="" aria-selected="false"><img
+                                            class="img-fluid" src="/static/official/images/tab/2.2jpg" alt=""
+                                            width="50"></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--Tab slider End-->
+                    <div class="col-xl-9 col-lg-6  col-md-6 col-xxl-7 col-sm-12">
+                        <div class="product-detail-content">
+                            <div class="new-arrival-content pr">
+                                <h4>{{request_details.phonemodel.brand_model}}</h4>
+                                <p>Brand: {{request_details.phonemodel.brand_model.brand}}</p>
+                                <p>RAM: {{request_details.phonemodel.RAM}}</p>
+                                <p>Color: {{request_details.phonemodel.color}}</p>
+                                <p>Internal Storage: {{request_details.phonemodel.internal_storage}}
+                                </p>
+                                <p>Min Price: {{request_details.phonemodel.min_price|intcomma}}</p>
+                                <p>Max Price: {{request_details.phonemodel.max_price|intcomma}}</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-end flex-wrap mt-4">
+                            <div class="filtaring-area mb-2 me-3">
+                                <div class="size-filter">
+                                    <h4 class="m-b-15"></h4>
+
+                                    <a type="button" href="/pickupboy/complete/"
+                                        class="btn btn-outline-success">Compelete</a>
+                                    <a type="button" href="/pickupboy/verification-questions/"
+                                        class="btn btn-outline-warning">Requote</a>
+                                    <a type="button" href="/pickupboy/fail/" class="btn btn-outline-danger">Fail</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <div class="card border">
+            <div class="card-body">
+                <div class="pt-3">
+                    <div class="settings-form">
+                        <h4 class="text-primary">Qna </h4>
+                        <ul>
+                            {% for item in request_details.get_replies %}
+                            <li class="row">
+                                <strong class="col-md-4">{{item.question}} </strong>
+                                <p>{{item.option.text}} - {{item.option.identifier}}</p>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script>
+    document.getElementById("acceptButton").addEventListener("click", function () {
+        var url = this.getAttribute("data-url");
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+        xhr.setRequestHeader("X-CSRFToken", getCookie("csrftoken"));
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                var response = JSON.parse(xhr.responseText);
+                if (response.status === "success") {
+                    location.reload();
+                }
+            }
+        }
+        xhr.send();
+    });
+
+    function getCookie(name) {
+        var value = "; " + document.cookie;
+        var parts = value.split("; " + name + "=");
+        if (parts.length === 2) return parts.pop().split(";").shift();
+    }
+
+
+</script>
+{% endblock %}
