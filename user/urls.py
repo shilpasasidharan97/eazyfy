@@ -18,5 +18,5 @@ urlpatterns = [
     path("reset_password/<token>/", views.reset_password, name="reset_password"),
     path("login/", views.customer_login, name="login"),
     path("resendotp/<token>/", views.resend_otp, name="resendotp"),
-    path("user-logout/", views.user_logout, name="user-logout"),
+    path("user_logout/", views.user_logout, name="user_logout"),
 ]

@@ -10,9 +10,10 @@ from official.models import User
 from official.models import UserReply
 from official.models import UserRequest
 from official.models import Variant
-from user.mixin import MessageHandler
-from .forms import UserRequestInfoForm
+from user.mixin import send_message
+
 import pyotp
+from .forms import UserRequestInfoForm
 from .helpers import send_forget_password_mail
 from django.contrib import messages
 from django.contrib.auth import authenticate
@@ -145,12 +146,13 @@ def otp_fun(request, id):
     profile = CustomerProfile.objects.get(test_id=id)
     totp = pyotp.TOTP(profile.auth_token, interval=300)
     otp = totp.now()
+    print(otp)
     if request.method == "POST":
         enter_otp = request.POST["otp"]
         verification = totp.verify(enter_otp)
         if verification:
             return redirect("main:index")
-    MessageHandler(profile.user.phone_number, otp).send_otp_on_phone()
+    send_message(otp, profile.user.phone_number)
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 
 

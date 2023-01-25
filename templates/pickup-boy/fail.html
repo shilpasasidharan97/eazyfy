@@ -1,6 +1,6 @@
 {% extends 'pickup-boy/partials/base.html' %}
 {% block content %}
-{% load static %}
+{% load static crispy_forms_tags %}
 <div class="row">
     <div class="col-md-6">
         <div class="card border">
@@ -9,38 +9,13 @@
             </div>
             <div class="card-body">
 
-                <div class="form-group">
-                    <label class="text-label">Brand</label>
-                    <input type="text" name="firstName" class="form-control" placeholder="Brand" required="">
-                </div>
-
-                <div class="form-group">
-                    <label class="text-label">Mobile Model</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Mobile Model" required="">
-                </div>
-
-                <div class="form-group">
-                    <label class="text-label">IMEI Number</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="IMEI Number" required="">
-                </div>
-
-                <div class="form-group">
-                    <label class="text-label">Example data</label>
-                    <input type="text" name="lastName" class="form-control" placeholder="Example data" required="">
-                </div>
-
-                <div class="form-group">
-                    <label class="text-label">Reason</label>
-                    <textarea name="" id="" cols="30" rows="10" type="text" name="place" class="form-control"
-                        placeholder="write here" required=""></textarea>
-                </div>
-
-
-                <div class="text-center">
-                    <button type="button" class="btn btn-secondary mb-2 btn-lg" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalCenter">Fail</button>
-                </div>
-
+                <form action="" method="post" enctype="multipart/form-data" class="">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div class="form-group w-100 text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
 
             </div>
         </div>

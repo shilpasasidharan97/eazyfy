@@ -28790,9 +28790,9 @@ svg text {
 .form-control {
   background: #fff;
   border: 0.0625rem solid #EEEEEE;
-  padding: 0.3125rem 1.25rem;
+  padding: 0.3125rem 0.7rem;
   color: #6e6e6e;
-  height: 3.5rem;
+  height: 3rem;
   border-radius: 0.5rem;
 }
 
@@ -42726,4 +42726,97 @@ html[dir="rtl"] [direction="rtl"][data-sidebar-style="compact"]:not([data-layout
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
   padding: 5px;
+}
+
+.preview_form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#div_id_imei_number {
+  width: 100%;
+}
+
+.preview_form [id$="_image"] {
+  margin: 20px 20px 20px 0;
+}
+
+.preview_form [id$="_image"] label {
+  width: 100px;
+  height: 100px;
+  border: 1px dashed #888ea8;
+  border-radius: 10px;
+  margin-bottom: 0;
+  cursor: pointer;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.preview_form input[type="file"] {
+  display: none;
+}
+
+.preview_form .form-text {
+  margin: 0;
+  text-align: center;
+
+}
+
+.preview_image {
+  padding: 10px;
+  margin: 0 20px 20px 0;
+  border: 1px solid #eeeeee;
+  border-radius: 10px;
+}
+
+.preview_image img {
+  border-radius: 10px;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.question h6 {
+  margin: 10px 0 8px 0;
+  font-family: 'Montserrat';
+  font-weight: 500;
+  font-size: calc(0.875rem + (16 - 14) * ((100vw - 320px) / (1920 - 320)));
+  line-height: calc(1.125rem + (24 - 18) * ((100vw - 320px) / (1920 - 320)));
+
+}
+
+.question input[type="radio"] {
+  margin-right: 10px;
+  height: 19px;
+  text-align: left;
+  width: 20px;
+}
+
+.radio-wrapper {
+  min-width: 130px;
+  margin-right: .5rem;
+  margin-bottom: .5rem;
+}
+
+section.question {
+  margin-bottom: 20px;
+}
+
+.radio-wrapper .form-check-label {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dee2e6;
+  padding: 8px 12px 8px 12px;
+  border-radius: 10px;
+  justify-content: flex-start;
+}
+
+.radio-wrapper.MCQ .form-check-label {
+  position: relative;
+}
+
+.radio-wrapper.MCQ .form-check-label input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
 }

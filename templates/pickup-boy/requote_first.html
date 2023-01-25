@@ -1,0 +1,135 @@
+{% extends 'pickup-boy/partials/base.html' %} {% block content %} {% load static tags humanize crispy_forms_tags %}
+<style>
+    .box {
+        border: 1px solid;
+        border-color: rgba(112, 112, 112, 0.12);
+        background-color: #fafafa;
+        border-radius: 5px;
+        padding: 0px 20px;
+    }
+
+    #green {
+        display: none;
+    }
+
+    #red {
+        display: none;
+    }
+
+</style>
+
+<div class="row">
+
+    <div class="col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-3">
+        <div class="wizard card-like mb-3">
+
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="wizard-header">
+                    <h3 class="section-title mb-20">Tell us few things about your device</h3>
+                </div>
+
+                <div class="wizard-body">
+                    {% for q in questions %}
+
+                    <section class="question">
+                        <h6>{{forloop.counter}}. {{q.question}}</h6>
+                        {% if q.subtext %}<span>{{q.subtext}}</span>{% endif %}
+
+                        <div class="d-flex mt-3">
+                            {% for op in q.get_options %}
+                            <div class="radio-wrapper {{q.question_type}}">
+                                <label class="form-check-label" for="{{op.pk}}">
+                                    <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}"
+                                        name="{{q.pk}}" value="{{op.pk}}" data-identifier="{{op.identifier}}"
+                                        data-question="{{q.pk}}" data-value="{{op.pk}}">
+                                    <div class="d-flex flex-column align-items-center">
+                                        {% if op.image %}
+                                        <img src="{{op.image.url}}" alt="" style="height:100px">
+                                        {% endif %}
+                                        <p class="ml-2 text-start mb-0">{{op.text}}</p>
+                                    </div>
+                                </label>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </section>
+                    {% endfor %}
+
+                </div>
+
+                <div class="wizard-footer">
+                    <div class="col-xs-6 pull-right text-center">
+                        <button type="submit" class="btn btn-secondary">CONTINUE</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-4 d-lg-block">
+
+        <div class="wizard card-like h-100">
+
+            <div class="row mb-3">
+                <div class="col-4 col-lg-4 col-md-4">
+                    <img class="card-img-top" src="{{variant.brand_model.image.url}}" alt="Card image cap" />
+                </div>
+                <div class="col-8 col-lg-8 col-md-8">
+                    <h5 class="">{{variant.brand_model.name}}</h5>
+                    <div class="variant_info mt-2">
+                        <small class="d-block">RAM: {{ variant.RAM }}</small>
+                        <small class="d-block">Color: {{ variant.color }}</small>
+                        <small class="d-block">Storage: {{ variant.internal_storage }}</small>
+                    </div>
+
+                    <div class="pricebtn" style="color: #5f009a;">&#8377; <span
+                            id="price">{{variant.min_price|intcomma}} -
+                            {{variant.max_price|intcomma}}</span></div>
+                </div>
+            </div>
+
+            <div class="row border-top">
+                <div class="col-12 py-3">
+                    <h4 class="mb-15 text-brand mb-0">Device Evaluation</h4>
+                    <ul style="list-style-type: circle;" id="evaluation">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script>
+    $(document).ready(function () {
+        $('input[type=radio]').change(function () {
+            var identifier = $(this).data('identifier');
+            var question = $(this).data('question');
+            var value = $(this).data('value');
+            var li = '<li data-pk="' + value + '" data-question="' + question + '">' + identifier + '</li>';
+            var item = $('#evaluation li[data-question=' + question + ']');
+            if (item.length) {
+                item.replaceWith(li);
+            } else {
+                $('#evaluation').append(li);
+            }
+        });
+        // append the selected option to the evaluation list
+        $('input[type=radio]:checked').each(function () {
+            var identifier = $(this).data('identifier');
+            var question = $(this).data('question');
+            var value = $(this).data('value');
+            var li = '<li data-pk="' + value + '" data-question="' + question + '">' + identifier + '</li>';
+            $('#evaluation').append(li);
+        });
+    });
+</script>
+{% endblock %}

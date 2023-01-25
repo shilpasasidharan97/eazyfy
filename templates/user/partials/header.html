@@ -280,7 +280,7 @@
                                         <li><a href="{% url 'main:terms_and_conditions' %}">Terms of Service</a></li>
 
                                         {% if status == 1 %}
-                                        <li><a href="{% url 'user:user-logout' %}">Logout</a></li>
+                                        <li><a href="{% url 'user:user_logout' %}">Logout</a></li>
 
                                         {% endif %}
                                     </ul>
@@ -387,7 +387,7 @@
                                 service</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:user-logout' %}"><span class="menu-expand"></span>Logout </a>
+                            <a href="{% url 'user:user_logout' %}"><span class="menu-expand"></span>Logout </a>
                         </li>
                     </ul>
                 </nav>

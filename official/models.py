@@ -263,6 +263,11 @@ class UserRequest(models.Model):
     address = models.TextField("Address of person who will deliver the product", null=True, blank=True)
     city = models.CharField(max_length=100, null=True, blank=True)
     pincode = models.CharField(max_length=100, null=True, blank=True)
+    status = models.CharField(
+        max_length=100,
+        choices=(("pending", "pending"), ("complete", "complete"), ("requote", "requote"), ("fail", "fail")),
+        default="pending",
+    )
 
     def get_replies(self):
         return UserReply.objects.filter(user_request=self)
@@ -278,3 +283,29 @@ class UserReply(models.Model):
 
     def __str__(self):
         return str(self.user_request)
+
+
+class PickupData(models.Model):
+    user_request = models.OneToOneField("UserRequest", on_delete=models.CASCADE)
+    status = models.CharField(
+        max_length=100,
+        choices=(("pending", "pending"), ("complete", "complete"), ("requote", "requote"), ("fail", "fail")),
+        default="pending",
+    )
+    imei_number = models.CharField(max_length=100, null=True, blank=True)
+    front_image = models.ImageField("front side of the phone", upload_to="Front Image", null=True, blank=True)
+    back_image = models.ImageField("back side of the phone", upload_to="Back Image", null=True, blank=True)
+    top_image = models.ImageField("top side of the phone", upload_to="Top Side", null=True, blank=True)
+    bottom_image = models.ImageField("bottom side of the phone", upload_to="Bottom Side", null=True, blank=True)
+    right_image = models.ImageField("right side of the phone", upload_to="Right Side", null=True, blank=True)
+    left_image = models.ImageField("left side of the phone", upload_to="Left Side", null=True, blank=True)
+    selfie_image = models.ImageField("Selfie with Customer", upload_to="selfie", null=True, blank=True)
+    remarks = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return str(self.user_request)
+
+    def save(self, *args, **kwargs):
+        self.user_request.status = self.status
+        self.user_request.save()
+        super().save(*args, **kwargs)

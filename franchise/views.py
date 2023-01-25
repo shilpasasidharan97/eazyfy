@@ -1,16 +1,17 @@
 from eazyfy.decorators import auth_franchise
-from official.models import Franchise, FranchiseWallet
+from official.models import Franchise
+from official.models import FranchiseWallet
 from official.models import PickUpBoy
 from official.models import UserRequest
 
+from .forms import PickupAssignForm
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .forms import PickupAssignForm
-from django.contrib import messages
 
 
 @auth_franchise

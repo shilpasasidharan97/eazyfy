@@ -7,6 +7,7 @@ from .models import Franchise
 from .models import FranchiseWallet
 from .models import OrderPayment
 from .models import PickUpBoy
+from .models import PickupData
 from .models import Question
 from .models import QuestionOption
 from .models import User
@@ -190,5 +191,11 @@ class UserRequestAdmin(admin.ModelAdmin):
         "is_franchise_accepted",
         "is_assigned_to_pickup",
         "is_quoted",
+        "status",
     )
-    readonly_fields = ("request_id",)
+    readonly_fields = ("request_id", "status")
+
+
+@admin.register(PickupData)
+class PickupDataAdmin(admin.ModelAdmin):
+    pass

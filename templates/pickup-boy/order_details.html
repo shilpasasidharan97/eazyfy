@@ -81,45 +81,10 @@
                     <div class="col-xl-3 col-lg-6  col-md-6 col-xxl-5 ">
                         <!-- Tab panes -->
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane fade active show" id="phone1">
-                                <img class="img-fluid" src="/static/official/images/product/11.jpg" alt="">
+                            <div role="tabpanel" class="tab-pane p-4 text-center fade active show" id="phone1">
+                                <img class="img-fluid" src="{{request_details.phonemodel.brand_model.image.url}}" alt=""
+                                    style="height:330px">
                             </div>
-                            <div role="tabpanel" class="tab-pane fade" id="phone2">
-                                <img class="img-fluid" src="/static/official/images/product/22.jpg" alt="">
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="phone3">
-                                <img class="img-fluid" src="/static/official/images/product/11.jpg" alt="">
-                            </div>
-                            <div role="tabpanel" class="tab-pane fade" id="for">
-                                <img class="img-fluid" src="/static/official/images/product/22.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="tab-slide-content new-arrival-product mb-4 mb-xl-0">
-                            <!-- Nav tabs -->
-                            <ul class="nav slide-item-list mt-3" role="tablist">
-                                <li role="presentation" class="show">
-                                    <a href="#phone1" role="tab" data-bs-toggle="tab" class="active"
-                                        aria-selected="true">
-                                        <img class="img-fluid" src="/static/official/images/tab/1.1.jpg" alt=""
-                                            width="50">
-                                    </a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#phone2" role="tab" data-bs-toggle="tab" class=""
-                                        aria-selected="false"><img class="img-fluid"
-                                            src="/static/official/images/tab/2.2.jpg" alt="" width="50"></a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#phone3" role="tab" data-bs-toggle="tab" class=""
-                                        aria-selected="false"><img class="img-fluid"
-                                            src="/static/official/images/tab/1.1.jpg" alt="" width="50"></a>
-                                </li>
-                                <li role="presentation">
-                                    <a href="#for" role="tab" data-bs-toggle="tab" class="" aria-selected="false"><img
-                                            class="img-fluid" src="/static/official/images/tab/2.2jpg" alt=""
-                                            width="50"></a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                     <!--Tab slider End-->
@@ -136,21 +101,68 @@
                                 <p>Max Price: {{request_details.phonemodel.max_price|intcomma}}</p>
                             </div>
                         </div>
+
+                        {% if pickup_data.status == "pending" %}
                         <div class="d-flex align-items-end flex-wrap mt-4">
                             <div class="filtaring-area mb-2 me-3">
                                 <div class="size-filter">
-                                    <h4 class="m-b-15"></h4>
-
-                                    <a type="button" href="/pickupboy/complete/"
+                                    <a type="button" href="{% url 'pickupboy:complete' request_details.pk %}"
                                         class="btn btn-outline-success">Compelete</a>
-                                    <a type="button" href="/pickupboy/verification-questions/"
-                                        class="btn btn-outline-warning">Requote</a>
-                                    <a type="button" href="/pickupboy/fail/" class="btn btn-outline-danger">Fail</a>
-
+                                    <a type="button" href="{% url 'pickupboy:requote_first' request_details.pk %}"
+                                        class=" btn btn-outline-warning">Requote</a>
+                                    <a type="button" href="{% url 'pickupboy:fail' request_details.pk %}"
+                                        class=" btn btn-outline-danger">Fail</a>
                                 </div>
                             </div>
                         </div>
+                        {% else %}
+                        <strong class="d-block mt-3 text-uppercase">Status: {{pickup_data.status}}</strong>
+                        {% endif %}
                     </div>
+
+                    {% if pickup_data.status == "completed" %}
+                    <div class="col-md-12 mt-4">
+                        <div class="d-flex flex-wrap">
+                            {% if pickup_data.front_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.front_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Front Image</p>
+                            </div>
+                            {% endif %}
+                            {% if pickup_data.back_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.back_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Back Image</p>
+                            </div>
+                            {% endif %}
+                            {% if pickup_data.top_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.top_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Top Image</p>
+                            </div>
+                            {% endif %}
+                            {% if pickup_data.bottom_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.bottom_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Bottom Image</p>
+                            </div>
+                            {% endif %}
+                            {% if pickup_data.right_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.right_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Right Image</p>
+                            </div>
+                            {% endif %}
+                            {% if pickup_data.left_image %}
+                            <div class="preview_image">
+                                <img src="{{pickup_data.left_image.url}}" alt="" class="img-fluid">
+                                <p class="mb-0 mt-1 text-center">Left Image</p>
+                            </div>
+                            {% endif %}
+                        </div>
+
+                    </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

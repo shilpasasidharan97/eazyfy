@@ -4,9 +4,11 @@ from main.models import BannerImage
 from main.models import Offer
 from user.helpers import payment_mail
 
+from .forms import FranchiseAssignForm
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import PickUpBoy
+from .models import PickupData
 from .models import UserRequest
 from django.contrib import messages
 from django.contrib.auth import authenticate
@@ -18,7 +20,6 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .forms import FranchiseAssignForm
 
 
 @login_required
@@ -42,6 +43,7 @@ def user_request_list(request):
 @login_required
 def request_details(request, id):
     request_details = UserRequest.objects.get(id=id)
+    pickup_data, _ = PickupData.objects.get_or_create(user_request=request_details)
     form = FranchiseAssignForm(request.POST or None, instance=request_details)
     if request.method == "POST":
         if form.is_valid():
@@ -50,8 +52,8 @@ def request_details(request, id):
             data.save()
             messages.success(request, "Request Assigned Successfully")
             return redirect("official:userrequestlist")
-    context = {"is_request": True, "request_details": request_details, "form": form}
-    return render(request, "official/view_userdetails.html", context)
+    context = {"is_request": True, "request_details": request_details, "form": form, "pickup_data": pickup_data}
+    return render(request, "official/order_details.html", context)
 
 
 # login
@@ -161,11 +163,11 @@ def editform(request, id):
 
 @login_required
 def viewFranchiseDetails(request, id):
-    franchise_details = Franchise.objects.get(id=id)
-    pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
-    wallet = FranchiseWallet.objects.get(franchise=franchise_details)
+    franchise = Franchise.objects.get(id=id)
+    pickup_boys = PickUpBoy.objects.filter(franchise=franchise)
+    wallet = FranchiseWallet.objects.filter(franchise=franchise)
     context = {
-        "franchise_details": franchise_details,
+        "franchise_details": franchise,
         "pickup_boys": pickup_boys,
         "wallet": wallet,
         "count": pickup_boys.count(),
@@ -181,8 +183,8 @@ def delete_franchise(request, id):
 
 @login_required
 def pickUpBoyList(request, id):
-    franchise_details = Franchise.objects.get(id=id)
-    context = {"franchise_details": franchise_details}
+    franchise = Franchise.objects.get(id=id)
+    context = {"franchise_details": franchise}
     return render(request, "official/pickupboy_list.html", context)
 
 
@@ -195,7 +197,8 @@ def transactionHistory(request):
 
 @login_required
 def wallet(request):
-    context = {"is_wallet": True}
+    transactions = FranchiseWallet.objects.all()
+    context = {"is_wallet": True, "transactions": transactions}
     return render(request, "official/wallet.html", context)
 
 
@@ -248,7 +251,6 @@ def settings(request):
         bannerObject = BannerImage(banner=banner)
         bannerObject.save()
     context = {"bannerImage": bannerImage, "offerImage": offerImage}
-
     return render(request, "official/settings.html", context)
 
 

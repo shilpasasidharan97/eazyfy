@@ -4,7 +4,7 @@
     <div class="col-md-6">
         <div class="card border">
             <div class="card-header">
-                <h4 class="card-title">Complete Pickup</h4>
+                <h4 class="card-title">Requote Order</h4>
             </div>
             <div class="card-body">
                 <form action="" method="post" enctype="multipart/form-data" class="preview_form">
@@ -18,7 +18,7 @@
         </div>
     </div>
 
-    {% if pickup_data.status == "completed" %}
+    {% if pickup_data.status == "requote" %}
     <div class="col-md-6">
         <div class="d-flex flex-wrap">
             {% if pickup_data.front_image %}

@@ -6,29 +6,30 @@
         <div class="row">
             <div class="col-lg-10 m-auto">
                 <div class="row">
-                    <div class="col-lg-2"></div>
 
-                    <div class="col-lg-8">
-                        <div class="login_wrap widget-taber-content p-30 background-white border-radius-5">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="card p-5">
                             <div class="padding_eight_all bg-white">
+                                <h4 class="font-weight-bold text-center mb-4">Enter OTP</h4>
 
 
                                 <form action="" method="POST">
                                     {% csrf_token %}
                                     <div class="" id="otp">
                                         <div class="form-group">
-                                            <input required="" type="number" class="form-control square input" name="otp" placeholder="Enter Your OTP">
+                                            <input required="" type="number" class="form-control square input"
+                                                name="otp" placeholder="Enter Your OTP">
                                         </div>
-                                        <div class="form-group otp">
+                                        <div class="form-group otp d-flex justify-content-between">
                                             <button type="submit" class="btn btn-sm text-white"
                                                 name="OTP">Confirm</button>
-                                            <a href="{% url 'user:resendotp' token %}"
-                                                class="">Resent</a>
+                                            <a class="text-end" href="{% url 'user:resendotp' token %}" class="">Resent
+                                                OTP</a>
                                         </div>
                                     </div>
                                 </form>
 
-                                
+
                             </div>
                         </div>
                     </div>
