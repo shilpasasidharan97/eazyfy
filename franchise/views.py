@@ -2,6 +2,7 @@ from eazyfy.decorators import auth_franchise
 from official.models import AdminSendRecord
 from official.models import Franchise
 from official.models import PickUpBoy
+from official.models import UserRequest
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import login_required
@@ -9,17 +10,10 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from .forms import PickupAssignForm
+from django.contrib import messages
 
 
-@login_required(login_url="/official/loginpage")
-@auth_franchise
-def header(request):
-    franchise = request.user.franchise
-    context = {"franchise": franchise}
-    return render(request, "franchise/header.html", context)
-
-
-# DASHBOARD
 @auth_franchise
 @login_required(login_url="/official/loginpage")
 def index(request):
@@ -42,7 +36,6 @@ def index(request):
     return render(request, "franchise/index.html", context)
 
 
-# PICK-UP BOY ADDING
 @auth_franchise
 @login_required(login_url="/official/loginpage")
 def add_pickupboy(request):
@@ -78,7 +71,6 @@ def add_pickupboy(request):
     return render(request, "franchise/add-pickupboy.html", context)
 
 
-# EDITDATA OF PICKUPBOY
 @csrf_exempt
 def getprofiledata(request, id):
     details = PickUpBoy.objects.get(id=id)
@@ -90,12 +82,10 @@ def getprofiledata(request, id):
         "phone": details.phone,
         "place": details.place,
         "address": details.address,
-        # "photo": details.photo.url,
     }
     return JsonResponse({"value": data})
 
 
-# PICKUPBOY EDITING
 @csrf_exempt
 def editform(request, id):
     pid = request.POST["pid"]
@@ -113,13 +103,11 @@ def editform(request, id):
     return JsonResponse(data)
 
 
-# DELETE PICKUPBOY
 def Deletepickupboy(request, id):
     PickUpBoy.objects.get(id=id).delete()
     return redirect("/franchise/add-pickupboy")
 
 
-# PROFILE AND PROFILE EDITING
 @auth_franchise
 @login_required(login_url="/official/loginpage")
 def profile(request):
@@ -141,11 +129,13 @@ def profile(request):
     return render(request, "franchise/profile.html", context)
 
 
-# ORDER LIST
 @auth_franchise
 @login_required(login_url="/official/loginpage")
 def order(request):
-    context = {"is_order": True}
+    franchise = request.user.franchise
+    requests = UserRequest.objects.filter(is_submitted=True, is_assigned_to_franchise=True, franchise=franchise)
+    self_assigned_requests = requests.filter(is_assigned_to_pickup=True)
+    context = {"is_request": True, "self_assigned_requests": self_assigned_requests, "requests": requests}
     return render(request, "franchise/order.html", context)
 
 
@@ -156,3 +146,28 @@ def transactions(request):
     payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by("date")
     context = {"payment_from_admin": payment_from_admin}
     return render(request, "franchise/transactions.html", context)
+
+
+@auth_franchise
+@login_required(login_url="/official/loginpage")
+def order_details(request, id):
+    request_details = UserRequest.objects.get(id=id)
+    form = PickupAssignForm(request.POST or None, instance=request_details)
+    if request.method == "POST":
+        if form.is_valid():
+            data = form.save()
+            data.is_assigned_to_franchise = True
+            data.save()
+            messages.success(request, "Request Assigned Successfully")
+            return redirect("franchise:order")
+    context = {"is_order_details": True, "request_details": request_details, "form": form}
+    return render(request, "franchise/order_details.html", context)
+
+
+@auth_franchise
+@login_required(login_url="/official/loginpage")
+def accept_order(request, id):
+    request_details = UserRequest.objects.get(id=id)
+    request_details.is_franchise_accepted = True
+    request_details.save()
+    return JsonResponse({"status": "success"})

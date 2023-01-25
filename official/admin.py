@@ -16,6 +16,80 @@ from .models import UserReply
 from .models import UserRequest
 from .models import Variant
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.forms import UserChangeForm
+from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext_lazy as _
+
+
+class MyUserCreationForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
+        fields = ("phone_number", "email", "password1", "password2", "is_franchise", "is_pickupboy", "is_customer")
+        exclude = ("username",)
+
+
+class MyUserChangeForm(UserChangeForm):
+    class Meta(UserChangeForm.Meta):
+        model = User
+        fields = (
+            "phone_number",
+            "email",
+            "password",
+            "is_franchise",
+            "is_pickupboy",
+            "is_customer",
+            "is_staff",
+            "is_active",
+        )
+        exclude = ("username",)
+
+
+class MyUserAdmin(UserAdmin):
+    USERNAME_FIELD = "phone_number"
+    form = MyUserChangeForm
+    add_form = MyUserCreationForm
+    # UserForm
+    fieldsets = (
+        (_("Authentication"), {"fields": ("phone_number", "password")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
+        (
+            _("Permissions"),
+            {
+                "fields": (
+                    "is_active",
+                    "is_staff",
+                    "is_superuser",
+                    "groups",
+                    "is_franchise",
+                    "is_pickupboy",
+                    "is_customer",
+                    "franchise",
+                    "customer",
+                    "pickup_boy",
+                )
+            },
+        ),
+        ("Important dates", {"fields": ("last_login", "date_joined")}),
+    )
+
+    list_display = ("phone_number", "email", "is_franchise", "is_pickupboy", "is_customer", "is_staff", "is_active")
+    search_fields = ("phone_number", "email")
+    list_filter = ("is_franchise", "is_pickupboy", "is_customer", "is_staff", "is_active")
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": ("phone_number", "password1", "password2", "is_franchise", "is_pickupboy", "is_customer"),
+            },
+        ),
+    )
+    ordering = ("phone_number",)
+    exclude = ("username",)
+
+
+admin.site.register(User, MyUserAdmin)
 
 
 @admin.register(CustomerProfile)
@@ -26,12 +100,6 @@ class CustomerProfileAdmin(admin.ModelAdmin):
 @admin.register(OrderPayment)
 class OrderPaymentAdmin(admin.ModelAdmin):
     pass
-
-
-@admin.register(User)
-class UserAdmin(admin.ModelAdmin):
-    list_display = ("franchise", "pickup_boy", "customer")
-    search_fields = ("franchise", "pickup_boy")
 
 
 @admin.register(Franchise)
@@ -119,6 +187,22 @@ admin.site.register(DeviceType)
 
 @admin.register(UserRequest)
 class UserRequestAdmin(admin.ModelAdmin):
-    list_display = ("user", "phonemodel")
-    list_filter = ("user", "phonemodel", "is_submitted", "is_quoted")
+    list_display = (
+        "user",
+        "phonemodel",
+        "is_submitted",
+        "is_assigned_to_franchise",
+        "is_franchise_accepted",
+        "is_assigned_to_pickup",
+        "is_quoted",
+    )
+    list_filter = (
+        "user",
+        "phonemodel",
+        "is_submitted",
+        "is_assigned_to_franchise",
+        "is_franchise_accepted",
+        "is_assigned_to_pickup",
+        "is_quoted",
+    )
     readonly_fields = ("request_id",)

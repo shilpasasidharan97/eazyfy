@@ -5,16 +5,10 @@ from main.models import Offer
 from user.helpers import payment_mail
 
 from .models import AdminSendRecord
-from .models import Brand
-from .models import BrandModel
-from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import PickUpBoy
-from .models import Question
-from .models import QuestionOption
 from .models import UserRequest
-from .models import Variant
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -25,22 +19,39 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from .forms import FranchiseAssignForm
 
 
+@login_required
 def user_request_list(request):
     requests = UserRequest.objects.filter(is_submitted=True)
+    assigned_to_franchise_requests = requests.filter(is_assigned_to_franchise=True)
+    unassigned_to_franchise_requests = requests.filter(is_assigned_to_franchise=False)
+    assigned_to_pickup_requests = requests.filter(is_assigned_to_pickup=True)
+    quoted_requests = requests.filter(is_quoted=True)
     context = {
         "is_request": True,
         "all_requests": requests,
-        "quoted_requests": requests.filter(is_quoted=True),
-        "unquoted_requests": requests.filter(is_quoted=False),
+        "assigned_to_franchise_requests": assigned_to_franchise_requests,
+        "unassigned_to_franchise_requests": unassigned_to_franchise_requests,
+        "assigned_to_pickup_requests": assigned_to_pickup_requests,
+        "quoted_requests": quoted_requests,
     }
     return render(request, "official/user_request.html", context)
 
 
+@login_required
 def request_details(request, id):
     request_details = UserRequest.objects.get(id=id)
-    context = {"is_request": True, "request_details": request_details}
+    form = FranchiseAssignForm(request.POST or None, instance=request_details)
+    if request.method == "POST":
+        if form.is_valid():
+            data = form.save()
+            data.is_assigned_to_franchise = True
+            data.save()
+            messages.success(request, "Request Assigned Successfully")
+            return redirect("official:userrequestlist")
+    context = {"is_request": True, "request_details": request_details, "form": form}
     return render(request, "official/view_userdetails.html", context)
 
 
@@ -51,6 +62,7 @@ def loginPage(request):
         password = request.POST["password"]
 
         user = authenticate(request, phone_number=phone, password=password)
+        print(user)
         if user is not None:
             login(request, user)
             if user.is_superuser:
@@ -112,7 +124,7 @@ def franchise(request):
     return render(request, "official/franchise.html", context)
 
 
-# edit franchise
+@login_required
 def EditFranchise(request, id):
     franchise = request.user.franchise
     franchise = Franchise.objects.get(id=id)
@@ -148,6 +160,7 @@ def editform(request, id):
     return JsonResponse(data)
 
 
+@login_required
 def viewFranchiseDetails(request, id):
     franchise_details = Franchise.objects.get(id=id)
     pickup_boys = PickUpBoy.objects.filter(franchise=franchise_details)
@@ -161,37 +174,41 @@ def viewFranchiseDetails(request, id):
     return render(request, "official/view_franchise.html", context)
 
 
+@login_required
 def delete_franchise(request, id):
     Franchise.objects.get(id=id).delete()
     return redirect("/official/franchise")
 
 
+@login_required
 def pickUpBoyList(request, id):
     franchise_details = Franchise.objects.get(id=id)
     context = {"franchise_details": franchise_details}
     return render(request, "official/pickupboy_list.html", context)
 
 
+@login_required
 def transactionHistory(request):
     transactions = AdminSendRecord.objects.all()
     context = {"is_transaction": True, "transactions": transactions}
     return render(request, "official/transaction_history.html", context)
 
 
-# WALLET HISTORY
+@login_required
 def wallet(request):
     payment_to_franchise = AdminSendRecord.objects.all()
     context = {"is_wallet": True, "payment_to_franchise": payment_to_franchise}
     return render(request, "official/wallet.html", context)
 
 
-# WALLET_FRANCHISE_LIST AND STATUS
+@login_required
 def franchise_wallet(request):
     all_franchise = FranchiseWallet.objects.all()
     context = {"is_wallet": True, "franchise": all_franchise}
     return render(request, "official/wallet_franchise.html", context)
 
 
+@login_required
 def viewPayment(request, id):
     details = FranchiseWallet.objects.get(id=id)
     data = {"id": details.franchise.id, "franchise_id": details.franchise.franchise_id, "name": details.franchise.name}
@@ -217,15 +234,18 @@ def save_payment(request, id):
     return JsonResponse(data)
 
 
+@login_required
 def profile(request):
     return render(request, "official/profile.html")
 
 
+@login_required
 def logout_view(request):
     logout(request)
     return redirect("/official/loginpage")
 
 
+@login_required
 def settings(request):
     offerImage = Offer.objects.all()
     bannerImage = BannerImage.objects.all()
@@ -238,11 +258,13 @@ def settings(request):
     return render(request, "official/settings.html", context)
 
 
+@login_required
 def delete_banner(request, id):
     BannerImage.objects.get(id=id).delete()
     return redirect("/official/settings")
 
 
+@login_required
 def offers(request):
     if request.method == "POST":
         offer = request.FILES.get("offers")
@@ -251,6 +273,7 @@ def offers(request):
     return redirect("/official/settings")
 
 
+@login_required
 def delete_offer(request, id):
     Offer.objects.get(id=id).delete()
     return redirect("/official/settings")

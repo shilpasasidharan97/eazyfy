@@ -240,13 +240,21 @@ class Question(models.Model):
 
 
 class UserRequest(models.Model):
-    request_id = models.CharField(max_length=100, default=str(uuid.uuid4)[:8].upper(), editable=False)
+    def get_request_id():
+        return str(uuid.uuid4()).upper()[-8:]
+
+    request_id = models.CharField(max_length=100, default=get_request_id, editable=False)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     phonemodel = models.ForeignKey(Variant, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     final_amount = models.FloatField(default=0)
     is_submitted = models.BooleanField(default=False)
+    is_assigned_to_franchise = models.BooleanField(default=False)
+    is_franchise_accepted = models.BooleanField(default=False)
+    is_assigned_to_pickup = models.BooleanField(default=False)
     is_quoted = models.BooleanField(default=False)
+    franchise = models.ForeignKey("Franchise", on_delete=models.CASCADE, null=True, blank=True)
+    pickupboy = models.ForeignKey("PickUpBoy", on_delete=models.CASCADE, null=True, blank=True)
 
     def get_replies(self):
         return UserReply.objects.filter(user_request=self)

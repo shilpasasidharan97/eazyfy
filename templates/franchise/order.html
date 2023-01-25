@@ -39,390 +39,92 @@
         <ul class="nav nav-tabs style-2">
             <li class="nav-item">
                 <a href="#navpills-1" class="nav-link active" data-bs-toggle="tab" aria-expanded="false">Total
-                    Orders<span class="badge badge-pill shadow-primary badge-primary">154</span></a>
+                    Orders<span class="badge badge-pill shadow-primary badge-primary">{{requests|length}}</span></a>
             </li>
             <li class="nav-item">
-                <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">Requests<span
-                        class="badge badge-pill badge-info shadow-info">2</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#navpills-3" class="nav-link" data-bs-toggle="tab" aria-expanded="true">Completed<span
-                        class="badge badge-pill badge-warning shadow-warning">4</span></a>
-            </li>
-            <li class="nav-item">
-                <a href="#navpills-4" class="nav-link" data-bs-toggle="tab" aria-expanded="true">
-                    Order Queues<span class="badge badge-pill badge-danger shadow-danger"><i
-                            class="fa fa-shopping-cart"></i></span>
-                </a>
+                <a href="#navpills-2" class="nav-link" data-bs-toggle="tab" aria-expanded="false">Pickup Assigned<span
+                        class="badge badge-pill badge-info shadow-info">{{self_assigned_requests|length}}</span></a>
             </li>
         </ul>
     </div>
 </div>
 <div class="tab-content project-list-group" id="myTabContent">
     <div class="tab-pane fade active show" id="navpills-1">
+
+        {% for rq in requests %}
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 col-lg-3 col-sm-6 col-12">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                    <p class="text-primary mb-1">#{{rq.request_id}}</p>
+
+                    <div class="text-dark">
+                        <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                        {{rq.date}}
+                    </div>
+                </div>
+                <div class="col-xl-6 my-2 col-lg-4 col-sm-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
+                            <img src="{{rq.phonemodel.brand_model.image.url}}" alt="">
                         </div>
                         <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
+                            <span>{{rq.phonemodel.brand_model.brand}}</span>
+                            <h5 class="mb-0 pt-1 font-w50 text-black">{{rq.phonemodel.brand_model}}</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 text-center mt-4">
-                    <a type="button" href="{% url 'pickupboy:product-details' %}" class="btn btn-outline-info">View</a>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 d-sm-block d-lg-none mt-4">
-                    <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-sm-6 col-12 text-center mt-4">
-                    <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                        data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                </div>
-                <div class="col-xl-3 col-lg-3 col-sm-6 col-6 text-center d-sm-block d-lg-block d-none mt-4">
-                    <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
+
+                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 ">
+                    <div class="d-flex project-status align-items-center justify-content-end">
+                        <a href="{% url 'franchise:order_details' rq.id %}" type="button"
+                            class="btn btn-outline-primary">View
+                            Details</a>
+                    </div>
                 </div>
             </div>
         </div>
-        {% comment %}
-        <nav class="mt-5">
-            <ul class="pagination pagination-gutter pagination-primary no-bg">
-                <li class="page-item page-indicator">
-                    <a class="page-link" href="javascript:void(0)"> <i class="la la-angle-left"></i></a>
-                </li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0)">1</a></li>
-                <li class="page-item active"><a class="page-link" href="javascript:void(0)">2</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0)">3</a></li>
-                <li class="page-item"><a class="page-link" href="javascript:void(0)">4</a></li>
-                <li class="page-item page-indicator">
-                    <a class="page-link" href="javascript:void(0)"> <i class="la la-angle-right"></i></a>
-                </li>
-            </ul>
-        </nav>
-        {% endcomment %}
+        {% endfor %}
     </div>
 
     <div class="tab-pane fade" id="navpills-2">
+        {% for rq in self_assigned_requests %}
         <div class="card">
             <div class="project-info">
-                <div class="col-xl-3 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
+                <div class="col-xl-3 my-2 col-lg-4 col-sm-6">
+                    <p class="text-primary mb-1">#{{rq.request_id}}</p>
 
+                    <div class="text-dark">
+                        <i class="far fa-calendar me-3" aria-hidden="true"></i>
+                        {{rq.date}}
+                    </div>
+                </div>
+                <div class="col-xl-2 my-2 col-lg-4 col-sm-6">
                     <div class="d-flex align-items-center">
                         <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
+                            <img src="{{rq.phonemodel.brand_model.image.url}}" alt="">
                         </div>
                         <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
+                            <span>{{rq.phonemodel.brand_model.brand}}</span>
+                            <h5 class="mb-0 pt-1 font-w50 text-black">{{rq.phonemodel.brand_model}}</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
+
+                <div class="col-xl-2 my-2 col-lg-6 col-sm-6">
                     <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
+                        <a href="{% url 'franchise:order_details' rq.id %}" type="button"
+                            class="btn btn-outline-primary">View
+                            Details</a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
-    <div class="tab-pane fade" id="navpills-3">
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
 
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"
-                            data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" href="{% url 'pickupboy:customer-selfy' %}" class="btn btn-outline-danger"
-                            data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">Select Pick-up Boy</a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <a type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
-                            data-bs-target="#exampleModalCenter">Select Pick-up Boy </a>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- ####################NAVPILL END ##########################-->
-
-    <!-- ####################NAVPILL ##########################-->
-    <div class="tab-pane fade" id="navpills-4">
-        <div class="card">
-            <div class="project-info">
-                <div class="col-xl-3 my-2 col-lg-4 col-sm-6 col-6">
-                    <p class="text-primary mb-1">ORDERID : 000441425</p>
-
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <img src="{% static 'official/images/users/pic1.jpg' %}" alt="" />
-                        </div>
-                        <div class="ms-2">
-                            <span>Client</span>
-                            <h5 class="mb-0 pt-1 font-w50 text-black">Alex Noer</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6"></div>
-                <div class="col-xl-2 my-2 col-lg-4 col-sm-6 col-6">
-                    <div class="d-flex align-items-center">
-                        <div class="project-media">
-                            <a type="button" href="{% url 'pickupboy:product-details' %}"
-                                class="btn btn-outline-info">View</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="ms-2">
-                        <div class="d-flex align-items-center">
-                            <div class="project-media">
-                                <img src="{% static 'official/images/users/pic2.jpg' %}" alt="" />
-                            </div>
-                            <div class="ms-2">
-                                <span>Pickup Boy</span>
-                                <h5 class="mb-0 pt-1 font-w50 text-black">Irfan</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-2 my-2 col-lg-6 col-sm-6 col-6">
-                    <div class="d-flex project-status align-items-center">
-                        <span class="btn bgl-warning text-warning status-btn me-3">Pending</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
-<!-- modal -->
+
 
 <div class="modal fade" id="exampleModalCenter" style="display: none;" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">

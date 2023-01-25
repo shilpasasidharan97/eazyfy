@@ -9,10 +9,6 @@ from django.shortcuts import redirect
 from django.shortcuts import render
 
 
-def base(request):
-    return render(request, "pickup-boy/partials/base.html")
-
-
 # PROFILE AND PROFILE EDITING
 @auth_pickupboy
 @login_required(login_url="/official/loginpage")

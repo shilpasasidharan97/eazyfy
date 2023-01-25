@@ -44,6 +44,11 @@
                                         <img src="{% static 'official/images/eazyfy.png' %}" class="loginlogo" alt="">
                                     </div>
                                     <h4 class="text-center mb-4">Sign in your account</h4>
+                                    {% if msg %}
+                                    <div class="alert alert-danger" role="alert">
+                                        {{msg}}
+                                    </div>
+                                    {% endif %}
                                     <form action="" method="POST">
                                         {% csrf_token %}
                                         <div class="form-group">
@@ -55,12 +60,6 @@
                                             <input type="password" class="form-control" name="password">
                                         </div>
                                         <div class="form-row d-flex justify-content-between mt-4 mb-2">
-                                            <!-- <div class="form-group">
-                                               <div class="custom-control custom-checkbox ms-1">
-													<input type="checkbox" class="form-check-input" id="basic_checkbox_1">
-													<label class="form-check-label" for="basic_checkbox_1">Remember my preference</label>
-												</div>
-                                            </div> -->
                                             <div class="form-group">
                                                 <a href="">Forgot Password?</a>
                                             </div>

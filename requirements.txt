@@ -13,3 +13,4 @@ twilio==7.15.1
 urllib3==1.26.12
 razorpay
 django-admin-index
+crispy-bootstrap5
