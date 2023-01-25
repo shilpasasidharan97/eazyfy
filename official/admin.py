@@ -1,5 +1,3 @@
-from .models import AdminSendRecord
-from .models import AdminWallet
 from .models import Brand
 from .models import BrandModel
 from .models import CustomerProfile
@@ -160,18 +158,6 @@ class CustomerRegistrationAdmin(admin.ModelAdmin):
 
 @admin.register(FranchiseWallet)
 class FranchiseWalletAdmin(admin.ModelAdmin):
-    list_display = ("franchise", "wallet_amount", "date")
-    search_fields = ("franchise", "wallet_amount", "date")
-
-
-@admin.register(AdminWallet)
-class AdminWalletAdmin(admin.ModelAdmin):
-    list_display = ("franchise", "amount", "date")
-    search_fields = ("franchise", "amount", "date")
-
-
-@admin.register(AdminSendRecord)
-class AdminSendRecordAdmin(admin.ModelAdmin):
     list_display = ("franchise", "amount", "date")
     search_fields = ("franchise", "amount", "date")
 

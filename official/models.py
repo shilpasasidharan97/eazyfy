@@ -63,6 +63,21 @@ class Franchise(models.Model):
     address = models.CharField(max_length=500)
     password = models.CharField(max_length=20)
 
+    def get_credits(self):
+        return FranchiseWallet.objects.filter(franchise=self, type="to_franchise")
+
+    def get_debits(self):
+        return FranchiseWallet.objects.filter(franchise=self, type="to_admin")
+
+    def get_total_credits(self):
+        return sum([i.amount for i in self.get_credits()])
+
+    def get_total_debits(self):
+        return sum([i.amount for i in self.get_debits()])
+
+    def get_balance(self):
+        return self.get_total_credits() - self.get_total_debits()
+
     def __str__(self):
         return str(self.name)
 
@@ -165,27 +180,11 @@ class DeviceType(models.Model):
 
 class FranchiseWallet(models.Model):
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
-    wallet_amount = models.FloatField(null=True, blank=True, default=0)
-    last_paid_amount = models.FloatField(null=True, blank=True, default=0)
-    date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.franchise)
-
-
-class AdminWallet(models.Model):
-    franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
     amount = models.FloatField(null=True, blank=True, default=0)
     date = models.DateTimeField(auto_now_add=True)
-
-    def __str__(self):
-        return str(self.franchise)
-
-
-class AdminSendRecord(models.Model):
-    franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE, null=True, blank=True)
-    amount = models.FloatField(null=True, blank=True)
-    date = models.DateField()
+    type = models.CharField(
+        max_length=100, choices=(("to_franchise", "to_franchise"), ("to_admin", "to_admin")), default="to_franchise"
+    )
 
     def __str__(self):
         return str(self.franchise)
@@ -255,6 +254,15 @@ class UserRequest(models.Model):
     is_quoted = models.BooleanField(default=False)
     franchise = models.ForeignKey("Franchise", on_delete=models.CASCADE, null=True, blank=True)
     pickupboy = models.ForeignKey("PickUpBoy", on_delete=models.CASCADE, null=True, blank=True)
+    prefferred_contact = models.CharField(max_length=100, null=True, blank=True)
+
+    name = models.CharField("Name of person who will deliver the product", max_length=100, null=True, blank=True)
+    phone = models.CharField(
+        "Contact number of person who will deliver the product", max_length=100, null=True, blank=True
+    )
+    address = models.TextField("Address of person who will deliver the product", null=True, blank=True)
+    city = models.CharField(max_length=100, null=True, blank=True)
+    pincode = models.CharField(max_length=100, null=True, blank=True)
 
     def get_replies(self):
         return UserReply.objects.filter(user_request=self)

@@ -32,10 +32,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for transaction in payment_from_admin %}
+                            {% for transaction in transactions %}
                             <tr class="odd" role="row">
                                 <td>{{ forloop.counter }}</td>
-                                <td><span class="badge light badge-success">Credit</span></td>
+                                <td>
+                                    {% if transaction.type == "to_franchise" %}
+                                    <span class="badge light badge-success">Credit</span>
+                                    {% else %}
+                                    <span class="badge light badge-danger">Debit</span>
+                                    {% endif %}
+                                </td>
                                 <td>{{ transaction.amount}}</td>
                                 <td>{{ transaction.date}}</td>
                             </tr>

@@ -121,9 +121,13 @@ video {
 .search-input,
 a,
 small,
+input,
+textarea,
+select,
 body,
 button,
 p,
+label,
 li,
 span {
   font-family: Montserrat, sans-serif
@@ -9479,7 +9483,6 @@ button,
 input[type=number],
 input[type=search],
 input[type=tel],
-input[type=text],
 select,
 textarea {
   border: 0;

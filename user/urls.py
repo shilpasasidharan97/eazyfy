@@ -8,6 +8,7 @@ urlpatterns = [
     path("sell/<str:slug>/", views.pick_model, name="pick_model"),
     path("sell/model/<str:slug>/", views.device_page, name="device_page"),
     path("sell/model/variant/survey/<str:id>/", views.question, name="question"),
+    path("sell/info/<str:id>/", views.info_page, name="info_page"),
     path("sell/request/<str:id>/", views.request_page, name="request_page"),
     # later
     path("registration/", views.user_registration, name="registration"),

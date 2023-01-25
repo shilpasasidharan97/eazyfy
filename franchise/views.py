@@ -1,6 +1,5 @@
 from eazyfy.decorators import auth_franchise
-from official.models import AdminSendRecord
-from official.models import Franchise
+from official.models import Franchise, FranchiseWallet
 from official.models import PickUpBoy
 from official.models import UserRequest
 
@@ -18,21 +17,9 @@ from django.contrib import messages
 @login_required(login_url="/official/loginpage")
 def index(request):
     franchise = request.user.franchise
-    payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by("date")
-    pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
-    count = pickup_boy_list.count()
-
-    total_amount = 0
-    for i in payment_from_admin:
-        total_amount += i.amount
-
-    context = {
-        "franchise": franchise,
-        "is_index": True,
-        "payment_from_admin": payment_from_admin,
-        "total_amount": total_amount,
-        "count": count,
-    }
+    incomes = FranchiseWallet.objects.filter(franchise=franchise, type="to_franchise")
+    expenses = FranchiseWallet.objects.filter(franchise=franchise, type="to_admin")
+    context = {"franchise": franchise, "is_index": True, "incomes": incomes, "expenses": expenses}
     return render(request, "franchise/index.html", context)
 
 
@@ -143,8 +130,8 @@ def order(request):
 @login_required(login_url="/official/loginpage")
 def transactions(request):
     franchise = request.user.franchise
-    payment_from_admin = AdminSendRecord.objects.filter(franchise=franchise).order_by("date")
-    context = {"payment_from_admin": payment_from_admin}
+    transactions = FranchiseWallet.objects.filter(franchise=franchise).order_by("date")
+    context = {"transactions": transactions}
     return render(request, "franchise/transactions.html", context)
 
 
@@ -153,6 +140,7 @@ def transactions(request):
 def order_details(request, id):
     request_details = UserRequest.objects.get(id=id)
     form = PickupAssignForm(request.POST or None, instance=request_details)
+    form.fields["pickupboy"].queryset = PickUpBoy.objects.filter(franchise=request.user.franchise)
     if request.method == "POST":
         if form.is_valid():
             data = form.save()

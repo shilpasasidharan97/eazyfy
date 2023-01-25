@@ -11,7 +11,7 @@ from official.models import UserReply
 from official.models import UserRequest
 from official.models import Variant
 from user.mixin import MessageHandler
-
+from .forms import UserRequestInfoForm
 import pyotp
 from .helpers import send_forget_password_mail
 from django.contrib import messages
@@ -57,9 +57,7 @@ def question(request, id):
             else:
                 answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
             answer.save()
-        user_request.is_submitted = True
-        user_request.save()
-        return redirect("user:request_page", id=user_request.id)
+        return redirect("user:info_page", id=user_request.id)
     context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "user/question.html", context)
 
@@ -69,6 +67,20 @@ def request_page(request, id):
     replies = UserReply.objects.filter(user_request=user_request)
     context = {"user_request": user_request, "replies": replies}
     return render(request, "user/request_page.html", context)
+
+
+def info_page(request, id):
+    user_request = UserRequest.objects.get(id=id)
+    form = UserRequestInfoForm(
+        request.POST or None, instance=user_request, initial={"phone": request.user.phone_number}
+    )
+    if form.is_valid():
+        form.save()
+        user_request.is_submitted = True
+        user_request.save()
+        return redirect("user:request_page", id=user_request.id)
+    context = {"form": form, "user_request": user_request}
+    return render(request, "user/info_page.html", context)
 
 
 def customer_login(request):

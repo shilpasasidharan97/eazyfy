@@ -4,7 +4,6 @@ from main.models import BannerImage
 from main.models import Offer
 from user.helpers import payment_mail
 
-from .models import AdminSendRecord
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import PickUpBoy
@@ -189,15 +188,14 @@ def pickUpBoyList(request, id):
 
 @login_required
 def transactionHistory(request):
-    transactions = AdminSendRecord.objects.all()
+    transactions = FranchiseWallet.objects.all()
     context = {"is_transaction": True, "transactions": transactions}
     return render(request, "official/transaction_history.html", context)
 
 
 @login_required
 def wallet(request):
-    payment_to_franchise = AdminSendRecord.objects.all()
-    context = {"is_wallet": True, "payment_to_franchise": payment_to_franchise}
+    context = {"is_wallet": True}
     return render(request, "official/wallet.html", context)
 
 
@@ -223,13 +221,9 @@ def save_payment(request, id):
     franchisewallet = FranchiseWallet.objects.get(franchise=franchise_obj)
     franchise_balance = franchisewallet.wallet_amount
     balance_amount = float(paid_amount) + float(franchise_balance)
-    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(
-        last_paid_amount=paid_amount, date=now, wallet_amount=balance_amount
-    )
-    record = AdminSendRecord(franchise=franchise_obj, amount=paid_amount, date=now)
+    franchise_amount = FranchiseWallet.objects.filter(franchise_id=id).update(date=now, wallet_amount=balance_amount)
     messages.success(request, "success")
     payment_mail(franchisewallet.id)
-    record.save()
     data = {"sss": "sss", "franchise_amount": franchise_amount}
     return JsonResponse(data)
 

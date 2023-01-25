@@ -155,8 +155,6 @@ APP_ORDER = OrderedDict(
                 "Variant",
                 "UserRequest",
                 "UserReply",
-                "AdminSendRecord",
-                "AdminWallet",
                 "CustomerProfile",
                 "CustomerRegistration",
                 "DeviceType",

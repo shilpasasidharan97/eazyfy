@@ -1,0 +1,40 @@
+{% extends 'user/partials/base.html' %} {% load static tags humanize crispy_forms_tags %} {% block content %}
+
+
+<section class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-3 mx-auto">
+                <div class="card shadow border-0">
+                    <div class="card-body p-5">
+                        <div class="card-image mb-3 text-center">
+                            <img src="{{user_request.phonemodel.brand_model.image.url}}" alt="" class=" img-fluid"
+                                style="height:180px">
+                            <h5 class="mt-2">{{user_request.phonemodel.brand_model.name}}</h5>
+                            <div class="phonemodel_info mt-2">
+                                <small class="me-2">RAM: {{ user_request.phonemodel.RAM }}</small>
+                                <small class="me-2">Color: {{ user_request.phonemodel.color }}</small>
+                                <small class="me-2">Storage: {{ user_request.phonemodel.internal_storage}}</small>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                {{form|crispy}}
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
