@@ -3568,8 +3568,6 @@ table .product-thumbnail img {
 
 .product-cart-wrap {
   position: relative;
-  border: 1px solid #d9c0e5;
-  border-radius: 25px;
   overflow: hidden;
   transition: .2s;
   -moz-transition: .2s;
