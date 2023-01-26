@@ -9,10 +9,8 @@ from django.contrib import admin
 
 
 @admin.register(OtpModel)
-class CityAdmin(admin.ModelAdmin):
-    list_display = ["city_name"]
-
-
+class OtpModelAdmin(admin.ModelAdmin):
+    list_display = ["otp","timestamp"]
 
 
 @admin.register(City)
