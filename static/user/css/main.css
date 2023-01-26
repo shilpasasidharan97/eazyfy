@@ -2010,7 +2010,7 @@ label {
 
 .hero-slider-1.style-3.dot-style-1.dot-style-1-position-1 ul,
 .hero-slider-1.style-4.dot-style-1.dot-style-1-position-1 ul {
-  bottom: 10px
+  bottom: 0;
 }
 
 .hero-slider-content-2 h1 {
@@ -9093,7 +9093,10 @@ span.fi-rs-apps {
 }
 
 @media only screen and (max-width:480px) {
-
+  .hero-slider-1.style-3.dot-style-1.dot-style-1-position-1 ul,
+  .hero-slider-1.style-4.dot-style-1.dot-style-1-position-1 ul {
+    display: none;
+  }
   .hero-slider-content-2 p,
   .table td {
     width: 100%
@@ -9399,10 +9402,6 @@ span.fi-rs-apps {
   .header-height-2 {
     min-height: 40px
   }
-
-  .col-lg-4 .banner-img {
-    margin-bottom: 30px
-  }
 }
 
 @media only screen and (max-width:375px) {
@@ -9521,10 +9520,12 @@ h3.section-title {
   font-size: 12px;
   line-height: .2rem
 }
-
-.offer2 {
+.banner-img .offer2 {
   border-radius: 10px;
   margin-bottom: 10px
+}
+.banner-img:last-child .offer2 {
+  margin-bottom: 0
 }
 
 .section-new-padding {
