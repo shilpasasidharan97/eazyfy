@@ -1,5 +1,5 @@
 import uuid
-
+from main.models import OtpModel
 from official.models import Brand
 from official.models import BrandModel
 from official.models import CustomerProfile
@@ -146,7 +146,7 @@ def otp_fun(request, id):
     profile = CustomerProfile.objects.get(test_id=id)
     totp = pyotp.TOTP(profile.auth_token, interval=300)
     otp = totp.now()
-    print(otp)
+    OtpModel(otp=otp).save()
     if request.method == "POST":
         enter_otp = request.POST["otp"]
         verification = totp.verify(enter_otp)
