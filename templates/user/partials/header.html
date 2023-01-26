@@ -159,12 +159,14 @@
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block border-bottom py-2">
         <div class="container">
             <div class="header-wrap">
-                <div class="logo logo-width-1">
-                    <a href="{% url 'main:index' %}">
-                        <img src="{% static 'user/imgs/theme/logo.png' %}"
-                            alt="logo" /></a>
-                </div>
+
                 <div class="header-right text-brand">
+                    <div class="logo logo-width-1">
+                        <a href="{% url 'main:index' %}">
+                            <img src="{% static 'user/imgs/theme/logo.png' %}"
+                                alt="logo" />
+                        </a>
+                    </div>
                     <div class="">
                         <form action="#">
                             <div class="flwidth layout vertical list-search text-center">
@@ -238,18 +240,19 @@
                                             class="fi-rs-angle-down"></i></a>
                                     {% if brands %}
                                     <ul class="sub-menu">
-                                        {% for brand in brands %}
+                                        {% for brand in brands|slice:"5" %}
                                         <li><a href="{% url 'user:pick_model' brand.slug %}">{{ brand.name }}</a></li>
                                         {% endfor %}
+                                        <li><a href="{% url 'main:sell_phone' %}">View All</a></li>
                                     </ul>
                                     {% endif %}
                                 </li>
                                 <li class="position-static">
-                                    <a href="{% url 'main:buyphone' %}"
+                                    <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_buyphone %} active {% endif %}">Buy phones</a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'main:repair_phone' %}"
+                                    <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_repair %} active {% endif %}">Repair Phone </a>
                                 </li>
 
@@ -258,7 +261,7 @@
                                         class="{% if is_gadget %} active {% endif %}">Sell gadgets </a>
                                 </li>
                                 <li>
-                                    <a href="{% url 'main:find_new_gadget' %}"
+                                    <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_newgadget %} active {% endif %}">Find new gadgets</a>
                                 </li>
                                 <li>

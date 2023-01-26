@@ -10,8 +10,7 @@
                             <h4 class="font-size-20 mb-0 ml-3 text-white" style="font-size: 17px;">Sign up to Newsletter
                             </h4>
                         </div>
-                        <div class="col my-4 my-md-0 des">
-                        </div>
+
                     </div>
                 </div>
                 <div class="col-lg-5">
@@ -27,6 +26,28 @@
         </div>
     </section>
 
+    <section class="section-padding pb-0 border-bottom">
+        <div class="container">
+            <div class="footer-item">
+                <h5 class="mb-2">Sell Your Old Mobile Phone On flypik</h5>
+                <p>Want to sell old phone online and get some quick cash? Then, there is no better place than flypik; we assure you that. Forget all those troubles of going to a shop, pleading for the best price and then crossing your fingers for the safety of your data. flypik is the new one-stop to sell old phone online; it’s like a wish granted by god. Yes, you heard it right. </p>
+                <p>With flypik’s smooth user experience, you can sell old phones online with just a few clicks. So, stay at your home, and sell old mobile phones right in the comfort of your home at the best possible price. No, that’s not a typo - it’s 100 per cent guaranteed. Introducing flypik, India’s biggest re-commerce website.</p>
+            </div>
+            <div class="footer-item">
+                <h5 class="mb-2">Why Sell On flypik?</h5>
+                <p>flypik allows you to sell old phones, laptops and other gadgets for instant cash, and you can use this money to purchase newer and better models. In addition, flypik has partnered with several top brands in the country, including Apple, Samsung, Xiaomi, Oppo, Vivo, Amazon, Nokia, Vijay Sales, Reliance Digital, Hp, OnePlus, Dell, Realme and more, for offline and online exchange offers..</p>
+                <p>flypik’s algorithmically generated price quotes are the fairest in the industry. All flypik needs is certain details about your old phone’s condition, age, model number, and warranty period, and you’re good to go.</p>
+                <p>Based on this data, flypik will offer you the ideal cash value if you sell old phones, laptops or gadgets. We have an exclusive home pickup facility for mobile phones. So all you have to do is book an appointment at your comfortable time, and our representative will reach out to you. There’s no haggling, no having to step out of your home, and the entire process can be completed in the shortest possible time.</p>
+                <p>Moreover, there are no privacy concerns with flypik. We take optimum precautions while purchasing any old mobile phone. Each old phone goes through a complete data cleaning process, ensuring maximum security for our customers.</p>
+            </div>
+            <div class="footer-item">
+                <h5 class="mb-3">Brands</h5>
+                <div class="d-flex flex-wrap">
+                    {% for brand in brands %}<a href="{% url 'user:pick_model' brand.slug %}">{{brand}}</a>{% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="section-padding footer-mid">
         <div class="container pt-15 pb-20">
