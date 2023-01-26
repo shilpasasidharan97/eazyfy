@@ -8,7 +8,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = config("SECRET_KEY")
 
-DEBUG = config("DEBUG", cast=bool, default=False)
+DEBUG = config("DEBUG", cast=bool, default=True)
 
 ALLOWED_HOSTS = ["*"]
 
@@ -107,6 +107,8 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_URL = "/login/"
+LOGOUT_URL = "/user_logout/"
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -130,9 +132,12 @@ EMAIL_HOST_USER = config("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = config("EMAIL_HOST_PASSWORD")
 EMAIL_USE_TLS = config("EMAIL_USE_TLS")
 
+ADMIN_WALLET_AMOUNT = 100000
 
 TWILIO_ACCOUNT_SID = config("TWILIO_ACCOUNT_SID")
 TWILIO_AUTH_TOKEN = config("TWILIO_AUTH_TOKEN")
+MESSAGING_SERVICE_SID = config("MESSAGING_SERVICE_SID")
+
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"

@@ -190,7 +190,7 @@
                                 <div class="location" data-toggle="modal" data-target="#onloadModal">
                                     <i class="fa fa-location px-2"></i>
                                     <button style="color: #621299; background-color: #fff;" data-bs-toggle="modal"
-                                        data-bs-target="#onloadModal" id="modal_toggler">America</button>
+                                        data-bs-target="#onloadModal" id="modal_toggler">Calicut</button>
                                 </div>
                             </div>
                             <div class="header-action-icon-2">
@@ -241,7 +241,7 @@
                                     {% if brands %}
                                     <ul class="sub-menu">
                                         {% for brand in brands %}
-                                        <li><a href="{% url 'user:pick_model' brand.slug %}">{{ item.name }}</a></li>
+                                        <li><a href="{% url 'user:pick_model' brand.slug %}">{{ brand.name }}</a></li>
                                         {% endfor %}
                                     </ul>
                                     {% endif %}
@@ -316,7 +316,7 @@
                     <i class="fa fa-location px-2"></i>
 
                     <h5 style="color: #621299;" id="mobile_modal_toggler" data-bs-toggle="modal"
-                        data-bs-target="#onloadModal">America</h5>
+                        data-bs-target="#onloadModal">Calicut</h5>
                 </div>
             </div>
             <div class="mobile-menu-close close-style-wrap close-style-position-inherit">

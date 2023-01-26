@@ -100,6 +100,7 @@ def complete(request, id):
     if form.is_valid():
         form.save()
         request_details.status = "completed"
+        request_details.status = "completed"
         request_details.save()
         return redirect("pickupboy:checkout", id=id)
     context = {"request_details": request_details, "form": form, "pickup_data": pickup_data}
@@ -116,6 +117,7 @@ def fail(request, id):
     if form.is_valid():
         form.save()
         request_details.status = "failed"
+        pickup_data.status = "failed"
         request_details.save()
         return redirect("pickupboy:total_order")
     return render(request, "pickup-boy/fail.html", context)
@@ -141,7 +143,7 @@ def requote_first(request, id):
             else:
                 answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
             answer.save()
-        return redirect("user:info_page", id=user_request.id)
+        return redirect("pickupboy:requote_next", id=user_request.id)
     context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
     return render(request, "pickup-boy/requote_first.html", context)
 
@@ -163,15 +165,16 @@ def requote_next(request, id):
 
 def checkout(request, id):
     request_details = UserRequest.objects.get(id=id)
+    pickup_data, _ = PickupData.objects.get_or_create(user_request=request_details)
+    context = {"request_details": request_details, "pickup_data": pickup_data}
     if request.method == "POST":
         name = request.POST.get("name")
-        amount = int(request.POST.get("amount")) * 100
         client = razorpay.Client(auth=("rzp_test_bKtMj90QOs6Af2", "vNLvdBnrIGSHG2C4BiWoDGvd"))
-        payment = client.order.create({"amount": amount, "currency": "INR", "payment_capture": "1"})
-        coffe = OrderPayment(name=name, amound=amount, payment_id=payment["id"])
+        payment = client.order.create({"amount": request_details.final_amount, "currency": "INR", "payment_capture": "1"})
+        coffe = OrderPayment(name=name, amount=request_details.final_amount, payment_id=payment["id"])
         return render(
             request,
             "pickup-boy/checkout.html",
             {"payment": payment, "coffe": coffe, "request_details": request_details},
         )
-    return render(request, "pickup-boy/checkout.html")
+    return render(request, "pickup-boy/checkout.html",context)

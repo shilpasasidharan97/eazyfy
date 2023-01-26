@@ -1,1 +1,1889 @@
-[{"model": "sessions.session", "pk": "10qzmch1lsiudasusgnm2dih2uka8omv", "fields": {"session_data": ".eJxVjM0OwiAQhN-FsyGwKD8evfcZml0WpGogKe3J-O6GpAe9Teb7Zt5ixn0r897TOi8srsIocfotCeMz1UH4gfXeZGx1WxeSQ5EH7XJqnF63w_07KNjLWAeGkBRrgpECGcjGaQru4k2i7MF60EFlqw0ljFFpMt7HeAbrGFl8vgAOOAs:1pKTQz:NvhKdL63THhJ7M4Iad6lQFUQ6o9dVPkr0IlHRvF5Ab0", "expire_date": "2023-02-08T00:14:37.667Z"}}, {"model": "sessions.session", "pk": "bwpxfg1h09kv1adsiy7oc32hcxa0zp9b", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2pBSKAwu3fcMZIYBqRqalHZlvLtt0oVu_3vvv0XAbS1ha2kJE4ur0EpcfkfC-Ez1IPzAep9lnOu6TCQPRZ60yXHm9Lqd7t9BwVb22nTeKJMZ9IDG2cgD9JGcTy5DF7XbWaKswVqjomeFyhskCzkBE_QsPl_3gDgg:1pKetl:N4ZqIkEvygV7ptYMv0YLKxXpJg6xpZIJl5FcGSip1xA", "expire_date": "2023-02-08T12:29:05.364Z"}}, {"model": "sessions.session", "pk": "kjf8xvcpe1v86vm5n19mzgv74yrq95xz", "fields": {"session_data": ".eJxVjMsOwiAQRf-FtSEwvIpL934DGWCQqoGktCvjv2uTLnR7zzn3xQJuaw3boCXMmZ0ZeHb6HSOmB7Wd5Du2W-ept3WZI98VftDBrz3T83K4fwcVR_3WU7HosQBAlElMOSrpfCFNGUBjcYBSOUE2F4mgozMaklBkjLXkkIi9PxeBOF8:1pKVRA:tvxj-aSpm6TsLDDbAZMiTk-6El63tunWZwXhvlgcQUg", "expire_date": "2023-02-08T02:22:56.799Z"}}, {"model": "sessions.session", "pk": "q88g5wlq154m6px3wk7t7wqlyupme93z", "fields": {"session_data": ".eJxVjM0OwiAQhN-FsyGwKD8evfcZml0WpGogKe3J-O6GpAe9Teb7Zt5ixn0r897TOi8srsIocfotCeMz1UH4gfXeZGx1WxeSQ5EH7XJqnF63w_07KNjLWAeGkBRrgpECGcjGaQru4k2i7MF60EFlqw0ljFFpMt7HeAbrGFl8vgAOOAs:1pKesj:lI8LYGZ4lcGA1uAM1vIfbPWXq8UaWfBu71BhmFNwIj8", "expire_date": "2023-02-08T12:28:01.656Z"}}, {"model": "sessions.session", "pk": "u6d1h2pmvr3crr4ksw6322r3k959lqj7", "fields": {"session_data": ".eJxVjEEOwiAQRe_C2pBSKAwu3fcMZIYBqRqalHZlvLtt0oVu_3vvv0XAbS1ha2kJE4ur0EpcfkfC-Ez1IPzAep9lnOu6TCQPRZ60yXHm9Lqd7t9BwVb22nTeKJMZ9IDG2cgD9JGcTy5DF7XbWaKswVqjomeFyhskCzkBE_QsPl_3gDgg:1pB1oi:rjjuYL4TLWUB0_-7HQR9bosricAGwSo8jOZ0TZoquL0", "expire_date": "2023-01-12T22:56:04.167Z"}}, {"model": "official.user", "pk": 16, "fields": {"password": "pbkdf2_sha256$390000$blRlJz8m84OX1MZkeWHW0r$9H+TEDt15uJsjXiJOlu617RJBD7fjH9B2RVxSNPg84g=", "last_login": "2022-12-16T06:06:08Z", "is_superuser": false, "first_name": "", "last_name": "", "date_joined": "2022-11-12T05:41:21Z", "email": "admin@gmail.com", "phone_number": "8547768153", "franchise": null, "pickup_boy": null, "customer": 10, "is_franchise": false, "is_pickupboy": false, "is_customer": true, "is_active": true, "is_staff": false, "groups": [], "user_permissions": []}}, {"model": "official.user", "pk": 28, "fields": {"password": "pbkdf2_sha256$390000$KTroJRkVazcUrGTUNYJjCk$iZcJ9MEpR/s+yx7TUjCr0CLi92G2jvWL1zUNjhVW5CY=", "last_login": "2022-12-29T15:25:57Z", "is_superuser": false, "first_name": "", "last_name": "", "date_joined": "2022-11-23T04:28:02Z", "email": "", "phone_number": "9876543211", "franchise": 10, "pickup_boy": null, "customer": null, "is_franchise": true, "is_pickupboy": false, "is_customer": false, "is_active": true, "is_staff": false, "groups": [], "user_permissions": []}}, {"model": "official.user", "pk": 29, "fields": {"password": "pbkdf2_sha256$390000$Crthluw1shAZ6jdOg0V91R$kPEsSjUWoY+blxpTjXpgONU1ekqMZul7o7JiMp8l4XU=", "last_login": "2023-01-25T02:22:56.701Z", "is_superuser": false, "first_name": "", "last_name": "", "date_joined": "2022-11-23T04:36:16Z", "email": "", "phone_number": "9876543212", "franchise": null, "pickup_boy": 13, "customer": null, "is_franchise": false, "is_pickupboy": true, "is_customer": false, "is_active": true, "is_staff": false, "groups": [], "user_permissions": []}}, {"model": "official.user", "pk": 30, "fields": {"password": "pbkdf2_sha256$390000$NJy0NJ3WvJOffRszXnqSkD$CB6D9jLlrBNrvLX3urMIaj2LqtbBB3c79cmSQ/xFeK0=", "last_login": "2023-01-25T12:28:01.515Z", "is_superuser": false, "first_name": "", "last_name": "", "date_joined": "2022-11-23T11:19:15Z", "email": "", "phone_number": "8086634711", "franchise": 11, "pickup_boy": null, "customer": null, "is_franchise": true, "is_pickupboy": false, "is_customer": false, "is_active": true, "is_staff": false, "groups": [], "user_permissions": []}}, {"model": "official.user", "pk": 31, "fields": {"password": "pbkdf2_sha256$390000$ydTXz4apTnh9LlnSY1gGDM$DN+lOKG+IzdKbZKrZMK9FTyrs1JKYOs2q4n4vaRQHNI=", "last_login": "2023-01-25T12:29:05.279Z", "is_superuser": true, "first_name": "", "last_name": "", "date_joined": "2022-12-29T22:48:06.585Z", "email": null, "phone_number": "9876543210", "franchise": null, "pickup_boy": null, "customer": null, "is_franchise": false, "is_pickupboy": false, "is_customer": false, "is_active": true, "is_staff": true, "groups": [], "user_permissions": []}}, {"model": "official.franchise", "pk": 10, "fields": {"franchise_id": "01", "name": "calicut", "email": "viveknhc@gmail.com", "phone": "09876", "photo": "franchise/bang.png", "address": "address", "password": "12345"}}, {"model": "official.franchise", "pk": 11, "fields": {"franchise_id": "56789", "name": "realme 2", "email": "viveknhc@gmail.com", "phone": "98765", "photo": "franchise/banner-10_iwHpLnK.jpg", "address": "yyt", "password": "12345"}}, {"model": "official.pickupboy", "pk": 13, "fields": {"franchise": 11, "pickup_id": "02", "name": "shilpa", "email": "shilpasasidharan97@gmail.com", "phone": "56789", "photo": "franchise/menu-banner-8.jpg", "place": "QABwzSdivI", "address": "LxmADVrwHb", "password": "12345"}}, {"model": "official.customerregistration", "pk": 1, "fields": {"name": "vivek", "email": "viveknhc@gmail.com", "phone_number": "+918547768153", "password": "1234"}}, {"model": "official.customerregistration", "pk": 2, "fields": {"name": "shilpa", "email": "shilpasasidharan97@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerregistration", "pk": 3, "fields": {"name": "shilpa", "email": "shilpasasidharan97@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerregistration", "pk": 4, "fields": {"name": "vivek", "email": "shilpasasidharan97@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerregistration", "pk": 5, "fields": {"name": "vivek", "email": "shilpasasidharan97@gmail.com", "phone_number": "+918547768153", "password": "123"}}, {"model": "official.customerregistration", "pk": 6, "fields": {"name": "vivek", "email": "viveknhc@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerregistration", "pk": 7, "fields": {"name": "swathi", "email": "viveknhc@gmail.com", "phone_number": "8547768153+91", "password": "1234"}}, {"model": "official.customerregistration", "pk": 8, "fields": {"name": "vivek", "email": "viveknhc@gmail.com", "phone_number": "8547768153+91", "password": "12"}}, {"model": "official.customerregistration", "pk": 9, "fields": {"name": "vivek", "email": "viveknhc@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerregistration", "pk": 10, "fields": {"name": "aswandh", "email": "admin@gmail.com", "phone_number": "+918547768153", "password": "12"}}, {"model": "official.customerprofile", "pk": 9, "fields": {"user": 16, "auth_token": "HGY2KKMSQS63O6YXGMKJDRSY2HCUVTD4", "test_id": "75b933d5-8b10-4332-bb39-1f189795d08e", "forget_password_token": ""}}, {"model": "official.brand", "pk": 4, "fields": {"image": "Brand/real.jpg", "name": "RealMe", "slug": "realme"}}, {"model": "official.brand", "pk": 9, "fields": {"image": "Brand/apple.jpg", "name": "Apple", "slug": "apple"}}, {"model": "official.brand", "pk": 11, "fields": {"image": "Brand/iqoo.jpg", "name": "Iqoo", "slug": "iqoo"}}, {"model": "official.brand", "pk": 12, "fields": {"image": "Brand/mi.jpg", "name": "mi", "slug": "mi"}}, {"model": "official.brand", "pk": 13, "fields": {"image": "Brand/lenovo.jpg", "name": "lenovo", "slug": "lenovo"}}, {"model": "official.brand", "pk": 15, "fields": {"image": "Brand/honor.jpg", "name": "HONOR", "slug": "honor"}}, {"model": "official.brand", "pk": 16, "fields": {"image": "Brand/nok.jpg", "name": "Nokia", "slug": "nokia"}}, {"model": "official.brand", "pk": 17, "fields": {"image": "Brand/one.jpg", "name": "Oneplus", "slug": "oneplus"}}, {"model": "official.brand", "pk": 18, "fields": {"image": "Brand/sam.jpg", "name": "Samsung", "slug": "samsung"}}, {"model": "official.brand", "pk": 19, "fields": {"image": "Brand/oppo.jpg", "name": "Oppo", "slug": "oppo"}}, {"model": "official.brand", "pk": 21, "fields": {"image": "Brand/moto.jpg", "name": "Motorola", "slug": "motorola"}}, {"model": "official.brand", "pk": 22, "fields": {"image": "Brand/vivo.jpg", "name": "Vivo", "slug": "vivo"}}, {"model": "official.brand", "pk": 23, "fields": {"image": "Brand/nothing.jpg", "name": "Nothing", "slug": "nothing"}}, {"model": "official.brand", "pk": 24, "fields": {"image": "Brand/google_29yozRA.jpg", "name": "Google", "slug": "google"}}, {"model": "official.brand", "pk": 25, "fields": {"image": "Brand/poco.jpg", "name": "Poco", "slug": "poco"}}, {"model": "official.brandmodel", "pk": 6, "fields": {"brand": 4, "image": "Brand Model/mob_3.jpg", "name": "realme 1", "slug": "realme-1"}}, {"model": "official.brandmodel", "pk": 8, "fields": {"brand": 9, "image": "models/Apple/apple-watch-edition-42mm.jpg", "name": " Watch Edition 42mm (1st gen)", "slug": "ipad-pro-129-2022"}}, {"model": "official.brandmodel", "pk": 9, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-129-2022.jpg", "name": "iPad Pro 12.9 (2022)", "slug": "ipad-pro-12-9-2022"}}, {"model": "official.brandmodel", "pk": 10, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-11-2022.jpg", "name": "iPad Pro 11 (2022)", "slug": "ipad-pro-11-2022"}}, {"model": "official.brandmodel", "pk": 11, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-10-2022.jpg", "name": "iPad (2022)", "slug": "ipad-2022"}}, {"model": "official.brandmodel", "pk": 12, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-14-pro-max-.jpg", "name": "iPhone 14 Pro Max", "slug": "iphone-14-pro-max"}}, {"model": "official.brandmodel", "pk": 13, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-14-pro.jpg", "name": "iPhone 14 Pro", "slug": "iphone-14-pro"}}, {"model": "official.brandmodel", "pk": 14, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-14-plus.jpg", "name": "iPhone 14 Plus", "slug": "iphone-14-plus"}}, {"model": "official.brandmodel", "pk": 15, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-14.jpg", "name": "iPhone 14", "slug": "iphone-14"}}, {"model": "official.brandmodel", "pk": 16, "fields": {"brand": 9, "image": "models/Apple/apple-watch-ultra.jpg", "name": "Watch Ultra", "slug": "watch-ultra"}}, {"model": "official.brandmodel", "pk": 17, "fields": {"brand": 9, "image": "models/Apple/apple-watch-8.jpg", "name": "Watch Series 8", "slug": "watch-series-8"}}, {"model": "official.brandmodel", "pk": 18, "fields": {"brand": 9, "image": "models/Apple/apple-watch-8-aluminum.jpg", "name": "Watch Series 8 Aluminum", "slug": "watch-series-8-aluminum"}}, {"model": "official.brandmodel", "pk": 19, "fields": {"brand": 9, "image": "models/Apple/apple-watch-8se-2022.jpg", "name": "Watch SE (2022)", "slug": "watch-se-2022"}}, {"model": "official.brandmodel", "pk": 20, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-se-2022.jpg", "name": "iPhone SE (2022)", "slug": "iphone-se-2022"}}, {"model": "official.brandmodel", "pk": 21, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-air-2022-new.jpg", "name": "iPad Air (2022)", "slug": "ipad-air-2022"}}, {"model": "official.brandmodel", "pk": 22, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-13-pro-max.jpg", "name": "iPhone 13 Pro Max", "slug": "iphone-13-pro-max"}}, {"model": "official.brandmodel", "pk": 23, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-13-pro.jpg", "name": "iPhone 13 Pro", "slug": "iphone-13-pro"}}, {"model": "official.brandmodel", "pk": 24, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-13.jpg", "name": "iPhone 13", "slug": "iphone-13"}}, {"model": "official.brandmodel", "pk": 25, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-13-mini.jpg", "name": "iPhone 13 mini", "slug": "iphone-13-mini"}}, {"model": "official.brandmodel", "pk": 26, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini-2021.jpg", "name": "iPad mini (2021)", "slug": "ipad-mini-2021"}}, {"model": "official.brandmodel", "pk": 27, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-102-2021-.jpg", "name": "iPad 10.2 (2021)", "slug": "ipad-10-2-2021"}}, {"model": "official.brandmodel", "pk": 28, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-7-titanium.jpg", "name": "Watch Edition Series 7", "slug": "watch-edition-series-7"}}, {"model": "official.brandmodel", "pk": 29, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-7-stainless-steel.jpg", "name": "Watch Series 7", "slug": "watch-series-7"}}, {"model": "official.brandmodel", "pk": 30, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-7-aluminum.jpg", "name": "Watch Series 7 Aluminum", "slug": "watch-series-7-aluminum"}}, {"model": "official.brandmodel", "pk": 31, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-129-2021.jpg", "name": "iPad Pro 12.9 (2021)", "slug": "ipad-pro-12-9-2021"}}, {"model": "official.brandmodel", "pk": 32, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-11-2021.jpg", "name": "iPad Pro 11 (2021)", "slug": "ipad-pro-11-2021"}}, {"model": "official.brandmodel", "pk": 33, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-12-pro-max-.jpg", "name": "iPhone 12 Pro Max", "slug": "iphone-12-pro-max"}}, {"model": "official.brandmodel", "pk": 34, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-12-pro--.jpg", "name": "iPhone 12 Pro", "slug": "iphone-12-pro"}}, {"model": "official.brandmodel", "pk": 35, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-12.jpg", "name": "iPhone 12", "slug": "iphone-12"}}, {"model": "official.brandmodel", "pk": 36, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-12-mini.jpg", "name": "iPhone 12 mini", "slug": "iphone-12-mini"}}, {"model": "official.brandmodel", "pk": 37, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-air4-2020.jpg", "name": "iPad Air (2020)", "slug": "ipad-air-2020"}}, {"model": "official.brandmodel", "pk": 38, "fields": {"brand": 9, "image": "models/Apple/apple-ipad8-102-inches-2020.jpg", "name": "iPad 10.2 (2020)", "slug": "ipad-10-2-2020"}}, {"model": "official.brandmodel", "pk": 39, "fields": {"brand": 9, "image": "models/Apple/apple-watch-se.jpg", "name": "Watch SE", "slug": "watch-se"}}, {"model": "official.brandmodel", "pk": 40, "fields": {"brand": 9, "image": "models/Apple/apple-watch-s6.jpg", "name": "Watch Series 6 Aluminum", "slug": "watch-series-6-aluminum"}}, {"model": "official.brandmodel", "pk": 41, "fields": {"brand": 9, "image": "models/Apple/apple-watch-s6-steel.jpg", "name": "Watch Series 6", "slug": "watch-series-6"}}, {"model": "official.brandmodel", "pk": 42, "fields": {"brand": 9, "image": "models/Apple/apple-watch-s6-titanium.jpg", "name": "Watch Edition Series 6", "slug": "watch-edition-series-6"}}, {"model": "official.brandmodel", "pk": 43, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-se-2020.jpg", "name": "iPhone SE (2020)", "slug": "iphone-se-2020"}}, {"model": "official.brandmodel", "pk": 44, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-12-2020.jpg", "name": "iPad Pro 12.9 (2020)", "slug": "ipad-pro-12-9-2020"}}, {"model": "official.brandmodel", "pk": 45, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-11-2020.jpg", "name": "iPad Pro 11 (2020)", "slug": "ipad-pro-11-2020"}}, {"model": "official.brandmodel", "pk": 46, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-11-pro.jpg", "name": "iPhone 11 Pro Max", "slug": "iphone-11-pro-max"}}, {"model": "official.brandmodel", "pk": 47, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-11-pro-max-.jpg", "name": "iPhone 11 Pro", "slug": "iphone-11-pro"}}, {"model": "official.brandmodel", "pk": 48, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-11.jpg", "name": "iPhone 11", "slug": "iphone-11"}}, {"model": "official.brandmodel", "pk": 49, "fields": {"brand": 9, "image": "models/Apple/apple-ipad7-102-inches.jpg", "name": " iPad 10.2 (2019)", "slug": "ipad-10-2-2019"}}, {"model": "official.brandmodel", "pk": 50, "fields": {"brand": 9, "image": "models/Apple/apple-watch-edition-series-5.jpg", "name": " Watch Edition Series 5", "slug": "watch-edition-series-5"}}, {"model": "official.brandmodel", "pk": 51, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-5.jpg", "name": " Watch Series 5", "slug": "watch-series-5"}}, {"model": "official.brandmodel", "pk": 52, "fields": {"brand": 9, "image": "models/Apple/apple-watch-aluminum-series-5.jpg", "name": " Watch Series 5 Aluminum", "slug": "watch-series-5-aluminum"}}, {"model": "official.brandmodel", "pk": 53, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-air3-2019.jpg", "name": " iPad Air (2019)", "slug": "ipad-air-2019"}}, {"model": "official.brandmodel", "pk": 54, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini-2019.jpg", "name": " iPad mini (2019)", "slug": "ipad-mini-2019"}}, {"model": "official.brandmodel", "pk": 55, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-129-2018.jpg", "name": " iPad Pro 12.9 (2018)", "slug": "ipad-pro-12-9-2018"}}, {"model": "official.brandmodel", "pk": 56, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-11-2018.jpg", "name": " iPad Pro 11 (2018)", "slug": "ipad-pro-11-2018"}}, {"model": "official.brandmodel", "pk": 57, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-xs-max-new1.jpg", "name": " iPhone XS Max", "slug": "iphone-xs-max"}}, {"model": "official.brandmodel", "pk": 58, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-xs-new.jpg", "name": " iPhone XS", "slug": "iphone-xs"}}, {"model": "official.brandmodel", "pk": 59, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-xr-new.jpg", "name": " iPhone XR", "slug": "iphone-xr"}}, {"model": "official.brandmodel", "pk": 60, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-4-steel.jpg", "name": " Watch Series 4", "slug": "watch-series-4"}}, {"model": "official.brandmodel", "pk": 61, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series-4-aluminum.jpg", "name": " Watch Series 4 Aluminum", "slug": "watch-series-4-aluminum"}}, {"model": "official.brandmodel", "pk": 62, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-97-2018.jpg", "name": " iPad 9.7 (2018)", "slug": "ipad-9-7-2018"}}, {"model": "official.brandmodel", "pk": 63, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-x.jpg", "name": " iPhone X", "slug": "iphone-x"}}, {"model": "official.brandmodel", "pk": 64, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-8-plus-new.jpg", "name": " iPhone 8 Plus", "slug": "iphone-8-plus"}}, {"model": "official.brandmodel", "pk": 65, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-8-new.jpg", "name": " iPhone 8", "slug": "iphone-8"}}, {"model": "official.brandmodel", "pk": 66, "fields": {"brand": 9, "image": "models/Apple/apple-watch-edition-series3.jpg", "name": " Watch Edition Series 3", "slug": "watch-edition-series-3"}}, {"model": "official.brandmodel", "pk": 67, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series3-.jpg", "name": " Watch Series 3", "slug": "watch-series-3"}}, {"model": "official.brandmodel", "pk": 68, "fields": {"brand": 9, "image": "models/Apple/apple-watch-series3-sport-.jpg", "name": " Watch Series 3 Aluminum", "slug": "watch-series-3-aluminum"}}, {"model": "official.brandmodel", "pk": 69, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-129-2017.jpg", "name": " iPad Pro 12.9 (2017)", "slug": "ipad-pro-12-9-2017"}}, {"model": "official.brandmodel", "pk": 70, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-105-2017.jpg", "name": " iPad Pro 10.5 (2017)", "slug": "ipad-pro-10-5-2017"}}, {"model": "official.brandmodel", "pk": 71, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-97-2017.jpg", "name": " iPad 9.7 (2017)", "slug": "ipad-9-7-2017"}}, {"model": "official.brandmodel", "pk": 72, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-edition-42mm.jpg", "name": " Watch Edition Series 2 42mm", "slug": "watch-edition-series-2-42mm"}}, {"model": "official.brandmodel", "pk": 73, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-edition-38mm.jpg", "name": " Watch Edition Series 2 38mm", "slug": "watch-edition-series-2-38mm"}}, {"model": "official.brandmodel", "pk": 74, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-42mm.jpg", "name": " Watch Series 2 42mm", "slug": "watch-series-2-42mm"}}, {"model": "official.brandmodel", "pk": 75, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-38mm.jpg", "name": " Watch Series 2 38mm", "slug": "watch-series-2-38mm"}}, {"model": "official.brandmodel", "pk": 76, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-sport-42mm.jpg", "name": " Watch Series 2 Aluminum 42mm", "slug": "watch-series-2-aluminum-42mm"}}, {"model": "official.brandmodel", "pk": 77, "fields": {"brand": 9, "image": "models/Apple/apple-watch1-sport-42mm.jpg", "name": " Watch Series 1 Aluminum 42mm", "slug": "watch-series-1-aluminum-42mm"}}, {"model": "official.brandmodel", "pk": 78, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-sport-38mm.jpg", "name": " Watch Series 2 Aluminum 38mm", "slug": "watch-series-2-aluminum-38mm"}}, {"model": "official.brandmodel", "pk": 79, "fields": {"brand": 9, "image": "models/Apple/apple-watch2-s2-sport-38mm.jpg", "name": " Watch Series 1 Aluminum 38mm", "slug": "watch-series-1-aluminum-38mm"}}, {"model": "official.brandmodel", "pk": 80, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-7-plus-r2.jpg", "name": " iPhone 7 Plus", "slug": "iphone-7-plus"}}, {"model": "official.brandmodel", "pk": 81, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-7r4.jpg", "name": " iPhone 7", "slug": "iphone-7"}}, {"model": "official.brandmodel", "pk": 82, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-97.jpg", "name": " iPad Pro 9.7 (2016)", "slug": "ipad-pro-9-7-2016"}}, {"model": "official.brandmodel", "pk": 83, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-5se-ofic.jpg", "name": "iPhone SE", "slug": "iphone-se"}}, {"model": "official.brandmodel", "pk": 84, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-6s-plus.jpg", "name": " iPhone 6s Plus", "slug": "iphone-6s-plus"}}, {"model": "official.brandmodel", "pk": 85, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-6s1.jpg", "name": " iPhone 6s", "slug": "iphone-6s"}}, {"model": "official.brandmodel", "pk": 86, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-pro-.jpg", "name": " iPad Pro 12.9 (2015)", "slug": "ipad-pro-12-9-2015"}}, {"model": "official.brandmodel", "pk": 87, "fields": {"brand": 9, "image": "models/Apple/ipad-mini-41.jpg", "name": " iPad mini 4 (2015)", "slug": "ipad-mini-4-2015"}}, {"model": "official.brandmodel", "pk": 88, "fields": {"brand": 9, "image": "models/Apple/apple-watch-edition-42mm.jpg", "name": " Watch Edition 42mm (1st gen)", "slug": "watch-edition-42mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 89, "fields": {"brand": 9, "image": "models/Apple/apple-watch-edition-38mm.jpg", "name": "Watch Edition 38mm (1st gen)", "slug": "watch-edition-38mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 90, "fields": {"brand": 9, "image": "models/Apple/apple-watch-42mm.jpg", "name": "Watch 42mm (1st gen)", "slug": "watch-42mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 91, "fields": {"brand": 9, "image": "models/Apple/apple-watch-38mm.jpg", "name": "Watch 38mm (1st gen)", "slug": "watch-38mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 92, "fields": {"brand": 9, "image": "models/Apple/apple-watch-sport-42mm2.jpg", "name": "Watch Sport 42mm (1st gen)", "slug": "watch-sport-42mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 93, "fields": {"brand": 9, "image": "models/Apple/apple-watch-sport-38mm.jpg", "name": "Watch Sport 38mm (1st gen)", "slug": "watch-sport-38mm-1st-gen"}}, {"model": "official.brandmodel", "pk": 94, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-air-2-new.jpg", "name": "iPad Air 2", "slug": "ipad-air-2"}}, {"model": "official.brandmodel", "pk": 95, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini-3-new.jpg", "name": "iPad mini 3", "slug": "ipad-mini-3"}}, {"model": "official.brandmodel", "pk": 96, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-6-plus2.jpg", "name": "iPhone 6 Plus", "slug": "iphone-6-plus"}}, {"model": "official.brandmodel", "pk": 97, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-6-4.jpg", "name": "iPhone 6", "slug": "iphone-6"}}, {"model": "official.brandmodel", "pk": 98, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-air.jpg", "name": "iPad Air", "slug": "ipad-air"}}, {"model": "official.brandmodel", "pk": 99, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini2.jpg", "name": "iPad mini 2", "slug": "ipad-mini-2"}}, {"model": "official.brandmodel", "pk": 100, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-5s-ofic.jpg", "name": "iPhone 5s", "slug": "iphone-5s"}}, {"model": "official.brandmodel", "pk": 101, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-5c-new2.jpg", "name": "iPhone 5c", "slug": "iphone-5c"}}, {"model": "official.brandmodel", "pk": 102, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini-final.jpg", "name": "iPad mini Wi-Fi", "slug": "ipad-mini-wi-fi"}}, {"model": "official.brandmodel", "pk": 103, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-mini-final.jpg", "name": "iPad mini Wi-Fi + Cellular", "slug": "ipad-mini-wi-fi-cellular"}}, {"model": "official.brandmodel", "pk": 104, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-3-new.jpg", "name": "iPad 4 Wi-Fi", "slug": "ipad-4-wi-fi"}}, {"model": "official.brandmodel", "pk": 105, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-3-new.jpg", "name": "iPad 4 Wi-Fi + Cellular", "slug": "ipad-4-wi-fi-cellular"}}, {"model": "official.brandmodel", "pk": 106, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-5-ofic.jpg", "name": "iPhone 5", "slug": "iphone-5"}}, {"model": "official.brandmodel", "pk": 107, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-3-new.jpg", "name": "iPad 3 Wi-Fi + Cellular", "slug": "ipad-3-wi-fi-cellular"}}, {"model": "official.brandmodel", "pk": 108, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-3-new.jpg", "name": "iPad 3 Wi-Fi", "slug": "ipad-3-wi-fi"}}, {"model": "official.brandmodel", "pk": 109, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-4s-new.jpg", "name": "iPhone 4s", "slug": "iphone-4s"}}, {"model": "official.brandmodel", "pk": 110, "fields": {"brand": 9, "image": "models/Apple/apple-ipad2-new.jpg", "name": "iPad 2 Wi-Fi + 3G", "slug": "ipad-2-wi-fi-3g"}}, {"model": "official.brandmodel", "pk": 111, "fields": {"brand": 9, "image": "models/Apple/apple-ipad2-new.jpg", "name": "iPad 2 Wi-Fi", "slug": "ipad-2-wi-fi"}}, {"model": "official.brandmodel", "pk": 112, "fields": {"brand": 9, "image": "models/Apple/apple-ipad2-new.jpg", "name": "iPad 2 CDMA", "slug": "ipad-2-cdma"}}, {"model": "official.brandmodel", "pk": 113, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-4-ofic-final.jpg", "name": "iPhone 4", "slug": "iphone-4"}}, {"model": "official.brandmodel", "pk": 114, "fields": {"brand": 9, "image": "models/Apple/apple-iphone4-cdma.jpg", "name": "iPhone 4 CDMA", "slug": "iphone-4-cdma"}}, {"model": "official.brandmodel", "pk": 115, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-original.jpg", "name": "iPad Wi-Fi + 3G", "slug": "ipad-wi-fi-3g"}}, {"model": "official.brandmodel", "pk": 116, "fields": {"brand": 9, "image": "models/Apple/apple-ipad-original.jpg", "name": "iPad Wi-Fi", "slug": "ipad-wi-fi"}}, {"model": "official.brandmodel", "pk": 117, "fields": {"brand": 9, "image": "models/Apple/apple-iphone-3gs-ofic.jpg", "name": "iPhone 3GS", "slug": "iphone-3gs"}}, {"model": "official.brandmodel", "pk": 118, "fields": {"brand": 9, "image": "models/Apple/apple-iphone3g.jpg", "name": "iPhone 3G", "slug": "iphone-3g"}}, {"model": "official.brandmodel", "pk": 119, "fields": {"brand": 9, "image": "models/Apple/apple-iphone.gif", "name": "iPhone", "slug": "iphone"}}, {"model": "official.variant", "pk": 7, "fields": {"brand_model": 6, "RAM": "8", "color": "red", "internal_storage": "128", "min_price": "1000.00", "max_price": "10000.00"}}, {"model": "official.variant", "pk": 8, "fields": {"brand_model": 6, "RAM": "12", "color": "yellow", "internal_storage": "256", "min_price": "1000.00", "max_price": "10000.00"}}, {"model": "official.variant", "pk": 9, "fields": {"brand_model": 83, "RAM": "4", "color": "Silver", "internal_storage": "16", "min_price": "5000.00", "max_price": "6000.00"}}, {"model": "official.variant", "pk": 10, "fields": {"brand_model": 83, "RAM": "4", "color": "Gold", "internal_storage": "16", "min_price": "5050.00", "max_price": "6050.00"}}, {"model": "official.devicetype", "pk": 1, "fields": {"device_type": "Mobile"}}, {"model": "official.devicetype", "pk": 2, "fields": {"device_type": "TV"}}, {"model": "official.devicetype", "pk": 3, "fields": {"device_type": "Laptop"}}, {"model": "official.franchisewallet", "pk": 10, "fields": {"franchise": 11, "amount": 5000.0, "date": "2022-12-07T09:23:05.913Z", "type": "to_franchise"}}, {"model": "official.franchisewallet", "pk": 11, "fields": {"franchise": 11, "amount": 500.0, "date": "2023-01-25T12:44:49.576Z", "type": "to_admin"}}, {"model": "official.questionoption", "pk": 26, "fields": {"question": 102, "image": "", "text": "Yes", "identifier": "With Valid Bill"}}, {"model": "official.questionoption", "pk": 27, "fields": {"question": 102, "image": "", "text": "No", "identifier": "Without Bill"}}, {"model": "official.questionoption", "pk": 28, "fields": {"question": 98, "image": "", "text": "Yes", "identifier": "Able to make and receive calls"}}, {"model": "official.questionoption", "pk": 29, "fields": {"question": 98, "image": "", "text": "No", "identifier": "Not Able to make and receive calls"}}, {"model": "official.questionoption", "pk": 30, "fields": {"question": 101, "image": "", "text": "Yes", "identifier": "Under Warranty"}}, {"model": "official.questionoption", "pk": 31, "fields": {"question": 101, "image": "", "text": "No", "identifier": "Not Under Warranty"}}, {"model": "official.questionoption", "pk": 32, "fields": {"question": 100, "image": "", "text": "Yes", "identifier": "Original Screen"}}, {"model": "official.questionoption", "pk": 33, "fields": {"question": 100, "image": "", "text": "No", "identifier": "Not Original Screen"}}, {"model": "official.questionoption", "pk": 34, "fields": {"question": 99, "image": "", "text": "Yes", "identifier": "Touch Working"}}, {"model": "official.questionoption", "pk": 35, "fields": {"question": 99, "image": "", "text": "No", "identifier": "Touch Faulty"}}, {"model": "official.questionoption", "pk": 36, "fields": {"question": 103, "image": "Question Image/62a31a9a6c17e.png", "text": "Broken/scratch on device screen", "identifier": "Broken/scratch on device screen"}}, {"model": "official.questionoption", "pk": 37, "fields": {"question": 103, "image": "Question Image/62a31ad88c473.png", "text": "Dead spot/visible lines on screen", "identifier": "Dead spot/visible lines on screen"}}, {"model": "official.questionoption", "pk": 38, "fields": {"question": 103, "image": "Question Image/62a31b0b3b18d.png", "text": "Scratch/Dent on device body", "identifier": "Scratch/Dent on device body"}}, {"model": "official.questionoption", "pk": 39, "fields": {"question": 103, "image": "Question Image/62a87a14b538f.png", "text": "Device panel missing/broken", "identifier": "Device panel missing/broken"}}, {"model": "official.question", "pk": 98, "fields": {"question_type": "Objective", "question": "Are you able to make and receive calls?", "subtext": "Check your device for cellular network connectivity issues."}}, {"model": "official.question", "pk": 99, "fields": {"question_type": "Objective", "question": "Is your device's touch screen working properly?", "subtext": "Check the touch screen functionality of your phone."}}, {"model": "official.question", "pk": 100, "fields": {"question_type": "Objective", "question": "Is your phone's screen original?", "subtext": "Pick \"Yes\" if screen was never changed or was changed by Authorized Service Center. Pick \"No\" if screen was changed at local shop."}}, {"model": "official.question", "pk": 101, "fields": {"question_type": "Objective", "question": "Is your device under brand warranty?", "subtext": "You can get a better price for your device if it's under brand's warranty with a valid bill."}}, {"model": "official.question", "pk": 102, "fields": {"question_type": "Objective", "question": "Do you have valid bill with same IMEI?", "subtext": "Make sure your bill has device IMEI mentioned on it."}}, {"model": "official.question", "pk": 103, "fields": {"question_type": "MCQ", "question": "Select screen/body defects that are applicable!", "subtext": null}}, {"model": "official.userrequest", "pk": 4, "fields": {"request_id": "4C6960BF", "user": 31, "phonemodel": 9, "date": "2023-01-24T20:04:35.402Z", "final_amount": 0.0, "is_submitted": true, "is_assigned_to_franchise": true, "is_franchise_accepted": true, "is_assigned_to_pickup": false, "is_quoted": false, "franchise": 11, "pickupboy": 13, "prefferred_contact": null, "name": null, "phone": null, "address": "", "city": null, "pincode": null}}, {"model": "official.userrequest", "pk": 7, "fields": {"request_id": "<FUNCTIO", "user": 31, "phonemodel": 9, "date": "2023-01-24T23:04:01.858Z", "final_amount": 0.0, "is_submitted": true, "is_assigned_to_franchise": false, "is_franchise_accepted": false, "is_assigned_to_pickup": false, "is_quoted": false, "franchise": null, "pickupboy": null, "prefferred_contact": null, "name": null, "phone": null, "address": null, "city": null, "pincode": null}}, {"model": "official.userrequest", "pk": 8, "fields": {"request_id": "<FUNCTIO", "user": 31, "phonemodel": 9, "date": "2023-01-24T23:04:20.826Z", "final_amount": 0.0, "is_submitted": true, "is_assigned_to_franchise": false, "is_franchise_accepted": false, "is_assigned_to_pickup": false, "is_quoted": false, "franchise": null, "pickupboy": null, "prefferred_contact": null, "name": null, "phone": null, "address": null, "city": null, "pincode": null}}, {"model": "official.userrequest", "pk": 9, "fields": {"request_id": "4F9945ED", "user": 31, "phonemodel": 7, "date": "2023-01-25T11:23:27.876Z", "final_amount": 0.0, "is_submitted": true, "is_assigned_to_franchise": false, "is_franchise_accepted": false, "is_assigned_to_pickup": false, "is_quoted": false, "franchise": null, "pickupboy": null, "prefferred_contact": null, "name": null, "phone": null, "address": null, "city": null, "pincode": null}}, {"model": "official.userrequest", "pk": 10, "fields": {"request_id": "69B589C8", "user": 31, "phonemodel": 7, "date": "2023-01-25T11:36:26.838Z", "final_amount": 0.0, "is_submitted": true, "is_assigned_to_franchise": false, "is_franchise_accepted": false, "is_assigned_to_pickup": false, "is_quoted": false, "franchise": null, "pickupboy": null, "prefferred_contact": null, "name": "Claire Frederick", "phone": "+1 (432) 119-9036", "address": "Corrupti aliquip et", "city": "Corrupti id excepturi atque possimus veritatis qui est consequatur consequat Aut", "pincode": "Exercitationem accusamus laborum facilis possimus exercitation quis excepturi ea"}}, {"model": "official.userreply", "pk": 15, "fields": {"question": 98, "user_request": 4, "option": 28}}, {"model": "official.userreply", "pk": 16, "fields": {"question": 99, "user_request": 4, "option": 35}}, {"model": "official.userreply", "pk": 17, "fields": {"question": 100, "user_request": 4, "option": 32}}, {"model": "official.userreply", "pk": 18, "fields": {"question": 101, "user_request": 4, "option": 30}}, {"model": "official.userreply", "pk": 19, "fields": {"question": 102, "user_request": 4, "option": 26}}, {"model": "official.userreply", "pk": 20, "fields": {"question": 103, "user_request": 4, "option": 37}}, {"model": "official.userreply", "pk": 27, "fields": {"question": 98, "user_request": 7, "option": 28}}, {"model": "official.userreply", "pk": 28, "fields": {"question": 99, "user_request": 7, "option": 35}}, {"model": "official.userreply", "pk": 29, "fields": {"question": 100, "user_request": 7, "option": 32}}, {"model": "official.userreply", "pk": 30, "fields": {"question": 101, "user_request": 7, "option": 30}}, {"model": "official.userreply", "pk": 31, "fields": {"question": 102, "user_request": 7, "option": 26}}, {"model": "official.userreply", "pk": 32, "fields": {"question": 103, "user_request": 7, "option": 36}}, {"model": "official.userreply", "pk": 33, "fields": {"question": 98, "user_request": 8, "option": 28}}, {"model": "official.userreply", "pk": 34, "fields": {"question": 99, "user_request": 8, "option": 35}}, {"model": "official.userreply", "pk": 35, "fields": {"question": 100, "user_request": 8, "option": 33}}, {"model": "official.userreply", "pk": 36, "fields": {"question": 101, "user_request": 8, "option": 30}}, {"model": "official.userreply", "pk": 37, "fields": {"question": 102, "user_request": 8, "option": 27}}, {"model": "official.userreply", "pk": 38, "fields": {"question": 103, "user_request": 8, "option": 38}}, {"model": "official.userreply", "pk": 39, "fields": {"question": 98, "user_request": 9, "option": 29}}, {"model": "official.userreply", "pk": 40, "fields": {"question": 99, "user_request": 9, "option": 34}}, {"model": "official.userreply", "pk": 41, "fields": {"question": 100, "user_request": 9, "option": 32}}, {"model": "official.userreply", "pk": 42, "fields": {"question": 101, "user_request": 9, "option": 31}}, {"model": "official.userreply", "pk": 43, "fields": {"question": 102, "user_request": 9, "option": 27}}, {"model": "official.userreply", "pk": 44, "fields": {"question": 103, "user_request": 9, "option": 37}}, {"model": "official.userreply", "pk": 45, "fields": {"question": 98, "user_request": 10, "option": 29}}, {"model": "official.userreply", "pk": 46, "fields": {"question": 99, "user_request": 10, "option": 34}}, {"model": "official.userreply", "pk": 47, "fields": {"question": 100, "user_request": 10, "option": 33}}, {"model": "official.userreply", "pk": 48, "fields": {"question": 101, "user_request": 10, "option": 30}}, {"model": "official.userreply", "pk": 49, "fields": {"question": 102, "user_request": 10, "option": 27}}, {"model": "official.userreply", "pk": 50, "fields": {"question": 103, "user_request": 10, "option": 36}}, {"model": "main.bannerimage", "pk": 1, "fields": {"name": "Banner 2", "image": "banners/b1.jpg"}}, {"model": "main.bannerimage", "pk": 2, "fields": {"name": "Banner 1", "image": "banners/b2.jpg"}}, {"model": "main.offer", "pk": 1, "fields": {"offer": "offers/bnre1.jpg"}}, {"model": "main.offer", "pk": 2, "fields": {"offer": "offers/bnre2.jpg"}}, {"model": "main.offer", "pk": 3, "fields": {"offer": "offers/bnre2_lZYYLGp.jpg"}}, {"model": "main.team", "pk": 1, "fields": {"image": "team/photo-1495603889488-42d1d66e5523.jpeg", "name": "Alex Carry", "designation": "CFO", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."}}, {"model": "main.team", "pk": 2, "fields": {"image": "team/photo-1495603889488-42d1d66e5523_c3d9r0u.jpeg", "name": "John Smith", "designation": "CFO", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."}}, {"model": "main.team", "pk": 3, "fields": {"image": "team/photo-1495603889488-42d1d66e5523_dQgkHs7.jpeg", "name": "George Alex", "designation": "CFO", "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."}}]
+[
+
+    {
+        "model": "official.user",
+        "pk": 16,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$blRlJz8m84OX1MZkeWHW0r$9H+TEDt15uJsjXiJOlu617RJBD7fjH9B2RVxSNPg84g=",
+            "last_login": "2022-12-16T06:06:08Z",
+            "is_superuser": false,
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2022-11-12T05:41:21Z",
+            "email": "admin@gmail.com",
+            "phone_number": "8547768153",
+            "franchise": null,
+            "pickup_boy": null,
+            "customer": 10,
+            "is_franchise": false,
+            "is_pickupboy": false,
+            "is_customer": true,
+            "is_active": true,
+            "is_staff": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 28,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$KTroJRkVazcUrGTUNYJjCk$iZcJ9MEpR/s+yx7TUjCr0CLi92G2jvWL1zUNjhVW5CY=",
+            "last_login": "2022-12-29T15:25:57Z",
+            "is_superuser": false,
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2022-11-23T04:28:02Z",
+            "email": "",
+            "phone_number": "9876543211",
+            "franchise": 10,
+            "pickup_boy": null,
+            "customer": null,
+            "is_franchise": true,
+            "is_pickupboy": false,
+            "is_customer": false,
+            "is_active": true,
+            "is_staff": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 29,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$Crthluw1shAZ6jdOg0V91R$kPEsSjUWoY+blxpTjXpgONU1ekqMZul7o7JiMp8l4XU=",
+            "last_login": "2023-01-25T02:22:56.701Z",
+            "is_superuser": false,
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2022-11-23T04:36:16Z",
+            "email": "",
+            "phone_number": "9876543212",
+            "franchise": null,
+            "pickup_boy": 13,
+            "customer": null,
+            "is_franchise": false,
+            "is_pickupboy": true,
+            "is_customer": false,
+            "is_active": true,
+            "is_staff": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 30,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$NJy0NJ3WvJOffRszXnqSkD$CB6D9jLlrBNrvLX3urMIaj2LqtbBB3c79cmSQ/xFeK0=",
+            "last_login": "2023-01-25T12:28:01.515Z",
+            "is_superuser": false,
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2022-11-23T11:19:15Z",
+            "email": "",
+            "phone_number": "8086634711",
+            "franchise": 11,
+            "pickup_boy": null,
+            "customer": null,
+            "is_franchise": true,
+            "is_pickupboy": false,
+            "is_customer": false,
+            "is_active": true,
+            "is_staff": false,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 31,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$ydTXz4apTnh9LlnSY1gGDM$DN+lOKG+IzdKbZKrZMK9FTyrs1JKYOs2q4n4vaRQHNI=",
+            "last_login": "2023-01-25T12:29:05.279Z",
+            "is_superuser": true,
+            "first_name": "",
+            "last_name": "",
+            "date_joined": "2022-12-29T22:48:06.585Z",
+            "email": null,
+            "phone_number": "9876543210",
+            "franchise": null,
+            "pickup_boy": null,
+            "customer": null,
+            "is_franchise": false,
+            "is_pickupboy": false,
+            "is_customer": false,
+            "is_active": true,
+            "is_staff": true,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.franchise",
+        "pk": 10,
+        "fields": {
+            "franchise_id": "01",
+            "name": "calicut",
+            "email": "viveknhc@gmail.com",
+            "phone": "09876",
+            "photo": "franchise/bang.png",
+            "address": "address",
+            "password": "12345"
+        }
+    },
+    {
+        "model": "official.franchise",
+        "pk": 11,
+        "fields": {
+            "franchise_id": "56789",
+            "name": "realme 2",
+            "email": "viveknhc@gmail.com",
+            "phone": "98765",
+            "photo": "franchise/banner-10_iwHpLnK.jpg",
+            "address": "yyt",
+            "password": "12345"
+        }
+    },
+    {
+        "model": "official.pickupboy",
+        "pk": 13,
+        "fields": {
+            "franchise": 11,
+            "pickup_id": "02",
+            "name": "shilpa",
+            "email": "shilpasasidharan97@gmail.com",
+            "phone": "56789",
+            "photo": "franchise/menu-banner-8.jpg",
+            "place": "QABwzSdivI",
+            "address": "LxmADVrwHb",
+            "password": "12345"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 1,
+        "fields": {
+            "name": "vivek",
+            "email": "viveknhc@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "1234"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 2,
+        "fields": {
+            "name": "shilpa",
+            "email": "shilpasasidharan97@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 3,
+        "fields": {
+            "name": "shilpa",
+            "email": "shilpasasidharan97@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 4,
+        "fields": {
+            "name": "vivek",
+            "email": "shilpasasidharan97@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 5,
+        "fields": {
+            "name": "vivek",
+            "email": "shilpasasidharan97@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "123"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 6,
+        "fields": {
+            "name": "vivek",
+            "email": "viveknhc@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 7,
+        "fields": {
+            "name": "swathi",
+            "email": "viveknhc@gmail.com",
+            "phone_number": "8547768153+91",
+            "password": "1234"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 8,
+        "fields": {
+            "name": "vivek",
+            "email": "viveknhc@gmail.com",
+            "phone_number": "8547768153+91",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 9,
+        "fields": {
+            "name": "vivek",
+            "email": "viveknhc@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerregistration",
+        "pk": 10,
+        "fields": {
+            "name": "aswandh",
+            "email": "admin@gmail.com",
+            "phone_number": "+918547768153",
+            "password": "12"
+        }
+    },
+    {
+        "model": "official.customerprofile",
+        "pk": 9,
+        "fields": {
+            "user": 16,
+            "auth_token": "HGY2KKMSQS63O6YXGMKJDRSY2HCUVTD4",
+            "test_id": "75b933d5-8b10-4332-bb39-1f189795d08e",
+            "forget_password_token": ""
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 4,
+        "fields": {
+            "image": "Brand/real.jpg",
+            "name": "RealMe",
+            "slug": "realme"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 9,
+        "fields": {
+            "image": "Brand/apple.jpg",
+            "name": "Apple",
+            "slug": "apple"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 11,
+        "fields": {
+            "image": "Brand/iqoo.jpg",
+            "name": "Iqoo",
+            "slug": "iqoo"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 12,
+        "fields": {
+            "image": "Brand/mi.jpg",
+            "name": "mi",
+            "slug": "mi"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 13,
+        "fields": {
+            "image": "Brand/lenovo.jpg",
+            "name": "lenovo",
+            "slug": "lenovo"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 15,
+        "fields": {
+            "image": "Brand/honor.jpg",
+            "name": "HONOR",
+            "slug": "honor"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 16,
+        "fields": {
+            "image": "Brand/nok.jpg",
+            "name": "Nokia",
+            "slug": "nokia"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 17,
+        "fields": {
+            "image": "Brand/one.jpg",
+            "name": "Oneplus",
+            "slug": "oneplus"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 18,
+        "fields": {
+            "image": "Brand/sam.jpg",
+            "name": "Samsung",
+            "slug": "samsung"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 19,
+        "fields": {
+            "image": "Brand/oppo.jpg",
+            "name": "Oppo",
+            "slug": "oppo"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 21,
+        "fields": {
+            "image": "Brand/moto.jpg",
+            "name": "Motorola",
+            "slug": "motorola"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 22,
+        "fields": {
+            "image": "Brand/vivo.jpg",
+            "name": "Vivo",
+            "slug": "vivo"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 23,
+        "fields": {
+            "image": "Brand/nothing.jpg",
+            "name": "Nothing",
+            "slug": "nothing"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 24,
+        "fields": {
+            "image": "Brand/google_29yozRA.jpg",
+            "name": "Google",
+            "slug": "google"
+        }
+    },
+    {
+        "model": "official.brand",
+        "pk": 25,
+        "fields": {
+            "image": "Brand/poco.jpg",
+            "name": "Poco",
+            "slug": "poco"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 6,
+        "fields": {
+            "brand": 4,
+            "image": "Brand Model/mob_3.jpg",
+            "name": "realme 1",
+            "slug": "realme-1"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 8,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-42mm.jpg",
+            "name": " Watch Edition 42mm (1st gen)",
+            "slug": "ipad-pro-129-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 9,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-129-2022.jpg",
+            "name": "iPad Pro 12.9 (2022)",
+            "slug": "ipad-pro-12-9-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 10,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-11-2022.jpg",
+            "name": "iPad Pro 11 (2022)",
+            "slug": "ipad-pro-11-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 11,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-10-2022.jpg",
+            "name": "iPad (2022)",
+            "slug": "ipad-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 12,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-14-pro-max-.jpg",
+            "name": "iPhone 14 Pro Max",
+            "slug": "iphone-14-pro-max"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 13,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-14-pro.jpg",
+            "name": "iPhone 14 Pro",
+            "slug": "iphone-14-pro"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 14,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-14-plus.jpg",
+            "name": "iPhone 14 Plus",
+            "slug": "iphone-14-plus"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 15,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-14.jpg",
+            "name": "iPhone 14",
+            "slug": "iphone-14"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 16,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-ultra.jpg",
+            "name": "Watch Ultra",
+            "slug": "watch-ultra"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 17,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-8.jpg",
+            "name": "Watch Series 8",
+            "slug": "watch-series-8"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 18,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-8-aluminum.jpg",
+            "name": "Watch Series 8 Aluminum",
+            "slug": "watch-series-8-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 19,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-8se-2022.jpg",
+            "name": "Watch SE (2022)",
+            "slug": "watch-se-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 20,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-se-2022.jpg",
+            "name": "iPhone SE (2022)",
+            "slug": "iphone-se-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 21,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air-2022-new.jpg",
+            "name": "iPad Air (2022)",
+            "slug": "ipad-air-2022"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 22,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-13-pro-max.jpg",
+            "name": "iPhone 13 Pro Max",
+            "slug": "iphone-13-pro-max"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 23,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-13-pro.jpg",
+            "name": "iPhone 13 Pro",
+            "slug": "iphone-13-pro"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 24,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-13.jpg",
+            "name": "iPhone 13",
+            "slug": "iphone-13"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 25,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-13-mini.jpg",
+            "name": "iPhone 13 mini",
+            "slug": "iphone-13-mini"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 26,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-2021.jpg",
+            "name": "iPad mini (2021)",
+            "slug": "ipad-mini-2021"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 27,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-102-2021-.jpg",
+            "name": "iPad 10.2 (2021)",
+            "slug": "ipad-10-2-2021"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 28,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-7-titanium.jpg",
+            "name": "Watch Edition Series 7",
+            "slug": "watch-edition-series-7"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 29,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-7-stainless-steel.jpg",
+            "name": "Watch Series 7",
+            "slug": "watch-series-7"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 30,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-7-aluminum.jpg",
+            "name": "Watch Series 7 Aluminum",
+            "slug": "watch-series-7-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 31,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-129-2021.jpg",
+            "name": "iPad Pro 12.9 (2021)",
+            "slug": "ipad-pro-12-9-2021"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 32,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-11-2021.jpg",
+            "name": "iPad Pro 11 (2021)",
+            "slug": "ipad-pro-11-2021"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 33,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-12-pro-max-.jpg",
+            "name": "iPhone 12 Pro Max",
+            "slug": "iphone-12-pro-max"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 34,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-12-pro--.jpg",
+            "name": "iPhone 12 Pro",
+            "slug": "iphone-12-pro"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 35,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-12.jpg",
+            "name": "iPhone 12",
+            "slug": "iphone-12"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 36,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-12-mini.jpg",
+            "name": "iPhone 12 mini",
+            "slug": "iphone-12-mini"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 37,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air4-2020.jpg",
+            "name": "iPad Air (2020)",
+            "slug": "ipad-air-2020"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 38,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad8-102-inches-2020.jpg",
+            "name": "iPad 10.2 (2020)",
+            "slug": "ipad-10-2-2020"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 39,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-se.jpg",
+            "name": "Watch SE",
+            "slug": "watch-se"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 40,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-s6.jpg",
+            "name": "Watch Series 6 Aluminum",
+            "slug": "watch-series-6-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 41,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-s6-steel.jpg",
+            "name": "Watch Series 6",
+            "slug": "watch-series-6"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 42,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-s6-titanium.jpg",
+            "name": "Watch Edition Series 6",
+            "slug": "watch-edition-series-6"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 43,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-se-2020.jpg",
+            "name": "iPhone SE (2020)",
+            "slug": "iphone-se-2020"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 44,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-12-2020.jpg",
+            "name": "iPad Pro 12.9 (2020)",
+            "slug": "ipad-pro-12-9-2020"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 45,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-11-2020.jpg",
+            "name": "iPad Pro 11 (2020)",
+            "slug": "ipad-pro-11-2020"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 46,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-11-pro.jpg",
+            "name": "iPhone 11 Pro Max",
+            "slug": "iphone-11-pro-max"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 47,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-11-pro-max-.jpg",
+            "name": "iPhone 11 Pro",
+            "slug": "iphone-11-pro"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 48,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-11.jpg",
+            "name": "iPhone 11",
+            "slug": "iphone-11"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 49,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad7-102-inches.jpg",
+            "name": " iPad 10.2 (2019)",
+            "slug": "ipad-10-2-2019"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 50,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-series-5.jpg",
+            "name": " Watch Edition Series 5",
+            "slug": "watch-edition-series-5"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 51,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-5.jpg",
+            "name": " Watch Series 5",
+            "slug": "watch-series-5"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 52,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-aluminum-series-5.jpg",
+            "name": " Watch Series 5 Aluminum",
+            "slug": "watch-series-5-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 53,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air3-2019.jpg",
+            "name": " iPad Air (2019)",
+            "slug": "ipad-air-2019"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 54,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-2019.jpg",
+            "name": " iPad mini (2019)",
+            "slug": "ipad-mini-2019"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 55,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-129-2018.jpg",
+            "name": " iPad Pro 12.9 (2018)",
+            "slug": "ipad-pro-12-9-2018"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 56,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-11-2018.jpg",
+            "name": " iPad Pro 11 (2018)",
+            "slug": "ipad-pro-11-2018"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 57,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-xs-max-new1.jpg",
+            "name": " iPhone XS Max",
+            "slug": "iphone-xs-max"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 58,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-xs-new.jpg",
+            "name": " iPhone XS",
+            "slug": "iphone-xs"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 59,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-xr-new.jpg",
+            "name": " iPhone XR",
+            "slug": "iphone-xr"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 60,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-4-steel.jpg",
+            "name": " Watch Series 4",
+            "slug": "watch-series-4"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 61,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series-4-aluminum.jpg",
+            "name": " Watch Series 4 Aluminum",
+            "slug": "watch-series-4-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 62,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-97-2018.jpg",
+            "name": " iPad 9.7 (2018)",
+            "slug": "ipad-9-7-2018"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 63,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-x.jpg",
+            "name": " iPhone X",
+            "slug": "iphone-x"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 64,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-8-plus-new.jpg",
+            "name": " iPhone 8 Plus",
+            "slug": "iphone-8-plus"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 65,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-8-new.jpg",
+            "name": " iPhone 8",
+            "slug": "iphone-8"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 66,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-series3.jpg",
+            "name": " Watch Edition Series 3",
+            "slug": "watch-edition-series-3"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 67,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series3-.jpg",
+            "name": " Watch Series 3",
+            "slug": "watch-series-3"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 68,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-series3-sport-.jpg",
+            "name": " Watch Series 3 Aluminum",
+            "slug": "watch-series-3-aluminum"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 69,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-129-2017.jpg",
+            "name": " iPad Pro 12.9 (2017)",
+            "slug": "ipad-pro-12-9-2017"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 70,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-105-2017.jpg",
+            "name": " iPad Pro 10.5 (2017)",
+            "slug": "ipad-pro-10-5-2017"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 71,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-97-2017.jpg",
+            "name": " iPad 9.7 (2017)",
+            "slug": "ipad-9-7-2017"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 72,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-edition-42mm.jpg",
+            "name": " Watch Edition Series 2 42mm",
+            "slug": "watch-edition-series-2-42mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 73,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-edition-38mm.jpg",
+            "name": " Watch Edition Series 2 38mm",
+            "slug": "watch-edition-series-2-38mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 74,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-42mm.jpg",
+            "name": " Watch Series 2 42mm",
+            "slug": "watch-series-2-42mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 75,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-38mm.jpg",
+            "name": " Watch Series 2 38mm",
+            "slug": "watch-series-2-38mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 76,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-sport-42mm.jpg",
+            "name": " Watch Series 2 Aluminum 42mm",
+            "slug": "watch-series-2-aluminum-42mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 77,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch1-sport-42mm.jpg",
+            "name": " Watch Series 1 Aluminum 42mm",
+            "slug": "watch-series-1-aluminum-42mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 78,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": " Watch Series 2 Aluminum 38mm",
+            "slug": "watch-series-2-aluminum-38mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 79,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": " Watch Series 1 Aluminum 38mm",
+            "slug": "watch-series-1-aluminum-38mm"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 80,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-7-plus-r2.jpg",
+            "name": " iPhone 7 Plus",
+            "slug": "iphone-7-plus"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 81,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-7r4.jpg",
+            "name": " iPhone 7",
+            "slug": "iphone-7"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 82,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-97.jpg",
+            "name": " iPad Pro 9.7 (2016)",
+            "slug": "ipad-pro-9-7-2016"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 83,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5se-ofic.jpg",
+            "name": "iPhone SE",
+            "slug": "iphone-se"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 84,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6s-plus.jpg",
+            "name": " iPhone 6s Plus",
+            "slug": "iphone-6s-plus"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 85,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6s1.jpg",
+            "name": " iPhone 6s",
+            "slug": "iphone-6s"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 86,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-pro-.jpg",
+            "name": " iPad Pro 12.9 (2015)",
+            "slug": "ipad-pro-12-9-2015"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 87,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/ipad-mini-41.jpg",
+            "name": " iPad mini 4 (2015)",
+            "slug": "ipad-mini-4-2015"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 88,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-42mm.jpg",
+            "name": " Watch Edition 42mm (1st gen)",
+            "slug": "watch-edition-42mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 89,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-edition-38mm.jpg",
+            "name": "Watch Edition 38mm (1st gen)",
+            "slug": "watch-edition-38mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 90,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-42mm.jpg",
+            "name": "Watch 42mm (1st gen)",
+            "slug": "watch-42mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 91,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-38mm.jpg",
+            "name": "Watch 38mm (1st gen)",
+            "slug": "watch-38mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 92,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-sport-42mm2.jpg",
+            "name": "Watch Sport 42mm (1st gen)",
+            "slug": "watch-sport-42mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 93,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-watch-sport-38mm.jpg",
+            "name": "Watch Sport 38mm (1st gen)",
+            "slug": "watch-sport-38mm-1st-gen"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 94,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air-2-new.jpg",
+            "name": "iPad Air 2",
+            "slug": "ipad-air-2"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 95,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-3-new.jpg",
+            "name": "iPad mini 3",
+            "slug": "ipad-mini-3"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 96,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6-plus2.jpg",
+            "name": "iPhone 6 Plus",
+            "slug": "iphone-6-plus"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 97,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-6-4.jpg",
+            "name": "iPhone 6",
+            "slug": "iphone-6"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 98,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-air.jpg",
+            "name": "iPad Air",
+            "slug": "ipad-air"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 99,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini2.jpg",
+            "name": "iPad mini 2",
+            "slug": "ipad-mini-2"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 100,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5s-ofic.jpg",
+            "name": "iPhone 5s",
+            "slug": "iphone-5s"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 101,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5c-new2.jpg",
+            "name": "iPhone 5c",
+            "slug": "iphone-5c"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 102,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi",
+            "slug": "ipad-mini-wi-fi"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 103,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi + Cellular",
+            "slug": "ipad-mini-wi-fi-cellular"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 104,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi",
+            "slug": "ipad-4-wi-fi"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 105,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi + Cellular",
+            "slug": "ipad-4-wi-fi-cellular"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 106,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-5-ofic.jpg",
+            "name": "iPhone 5",
+            "slug": "iphone-5"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 107,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi + Cellular",
+            "slug": "ipad-3-wi-fi-cellular"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 108,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi",
+            "slug": "ipad-3-wi-fi"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 109,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-4s-new.jpg",
+            "name": "iPhone 4s",
+            "slug": "iphone-4s"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 110,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi + 3G",
+            "slug": "ipad-2-wi-fi-3g"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 111,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi",
+            "slug": "ipad-2-wi-fi"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 112,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 CDMA",
+            "slug": "ipad-2-cdma"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 113,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-4-ofic-final.jpg",
+            "name": "iPhone 4",
+            "slug": "iphone-4"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 114,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone4-cdma.jpg",
+            "name": "iPhone 4 CDMA",
+            "slug": "iphone-4-cdma"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 115,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi + 3G",
+            "slug": "ipad-wi-fi-3g"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 116,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi",
+            "slug": "ipad-wi-fi"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 117,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone-3gs-ofic.jpg",
+            "name": "iPhone 3GS",
+            "slug": "iphone-3gs"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 118,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone3g.jpg",
+            "name": "iPhone 3G",
+            "slug": "iphone-3g"
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": 119,
+        "fields": {
+            "brand": 9,
+            "image": "models/Apple/apple-iphone.gif",
+            "name": "iPhone",
+            "slug": "iphone"
+        }
+    },
+    {
+        "model": "official.variant",
+        "pk": 7,
+        "fields": {
+            "brand_model": 6,
+            "RAM": "8",
+            "color": "red",
+            "internal_storage": "128",
+            "min_price": "1000.00",
+            "max_price": "10000.00"
+        }
+    },
+    {
+        "model": "official.variant",
+        "pk": 8,
+        "fields": {
+            "brand_model": 6,
+            "RAM": "12",
+            "color": "yellow",
+            "internal_storage": "256",
+            "min_price": "1000.00",
+            "max_price": "10000.00"
+        }
+    },
+    {
+        "model": "official.variant",
+        "pk": 9,
+        "fields": {
+            "brand_model": 83,
+            "RAM": "4",
+            "color": "Silver",
+            "internal_storage": "16",
+            "min_price": "5000.00",
+            "max_price": "6000.00"
+        }
+    },
+    {
+        "model": "official.variant",
+        "pk": 10,
+        "fields": {
+            "brand_model": 83,
+            "RAM": "4",
+            "color": "Gold",
+            "internal_storage": "16",
+            "min_price": "5050.00",
+            "max_price": "6050.00"
+        }
+    },
+    {
+        "model": "official.devicetype",
+        "pk": 1,
+        "fields": {
+            "device_type": "Mobile"
+        }
+    },
+    {
+        "model": "official.devicetype",
+        "pk": 2,
+        "fields": {
+            "device_type": "TV"
+        }
+    },
+    {
+        "model": "official.devicetype",
+        "pk": 3,
+        "fields": {
+            "device_type": "Laptop"
+        }
+    },
+    {
+        "model": "official.franchisewallet",
+        "pk": 10,
+        "fields": {
+            "franchise": 11,
+            "amount": 5000.0,
+            "date": "2022-12-07T09:23:05.913Z",
+            "type": "to_franchise"
+        }
+    },
+    {
+        "model": "official.franchisewallet",
+        "pk": 11,
+        "fields": {
+            "franchise": 11,
+            "amount": 500.0,
+            "date": "2023-01-25T12:44:49.576Z",
+            "type": "to_admin"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 26,
+        "fields": {
+            "question": 102,
+            "image": "",
+            "text": "Yes",
+            "identifier": "With Valid Bill"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 27,
+        "fields": {
+            "question": 102,
+            "image": "",
+            "text": "No",
+            "identifier": "Without Bill"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 28,
+        "fields": {
+            "question": 98,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Able to make and receive calls"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 29,
+        "fields": {
+            "question": 98,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Able to make and receive calls"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 30,
+        "fields": {
+            "question": 101,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Under Warranty"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 31,
+        "fields": {
+            "question": 101,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Under Warranty"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 32,
+        "fields": {
+            "question": 100,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Original Screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 33,
+        "fields": {
+            "question": 100,
+            "image": "",
+            "text": "No",
+            "identifier": "Not Original Screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 34,
+        "fields": {
+            "question": 99,
+            "image": "",
+            "text": "Yes",
+            "identifier": "Touch Working"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 35,
+        "fields": {
+            "question": 99,
+            "image": "",
+            "text": "No",
+            "identifier": "Touch Faulty"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 36,
+        "fields": {
+            "question": 103,
+            "image": "Question Image/62a31a9a6c17e.png",
+            "text": "Broken/scratch on device screen",
+            "identifier": "Broken/scratch on device screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 37,
+        "fields": {
+            "question": 103,
+            "image": "Question Image/62a31ad88c473.png",
+            "text": "Dead spot/visible lines on screen",
+            "identifier": "Dead spot/visible lines on screen"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 38,
+        "fields": {
+            "question": 103,
+            "image": "Question Image/62a31b0b3b18d.png",
+            "text": "Scratch/Dent on device body",
+            "identifier": "Scratch/Dent on device body"
+        }
+    },
+    {
+        "model": "official.questionoption",
+        "pk": 39,
+        "fields": {
+            "question": 103,
+            "image": "Question Image/62a87a14b538f.png",
+            "text": "Device panel missing/broken",
+            "identifier": "Device panel missing/broken"
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 98,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Are you able to make and receive calls?",
+            "subtext": "Check your device for cellular network connectivity issues."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 99,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your device's touch screen working properly?",
+            "subtext": "Check the touch screen functionality of your phone."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 100,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your phone's screen original?",
+            "subtext": "Pick \"Yes\" if screen was never changed or was changed by Authorized Service Center. Pick \"No\" if screen was changed at local shop."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 101,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Is your device under brand warranty?",
+            "subtext": "You can get a better price for your device if it's under brand's warranty with a valid bill."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 102,
+        "fields": {
+            "question_type": "Objective",
+            "question": "Do you have valid bill with same IMEI?",
+            "subtext": "Make sure your bill has device IMEI mentioned on it."
+        }
+    },
+    {
+        "model": "official.question",
+        "pk": 103,
+        "fields": {
+            "question_type": "MCQ",
+            "question": "Select screen/body defects that are applicable!",
+            "subtext": null
+        }
+    },
+    {
+        "model": "main.bannerimage",
+        "pk": 1,
+        "fields": {
+            "name": "Banner 2",
+            "image": "banners/b1.jpg"
+        }
+    },
+    {
+        "model": "main.bannerimage",
+        "pk": 2,
+        "fields": {
+            "name": "Banner 1",
+            "image": "banners/b2.jpg"
+        }
+    },
+    {
+        "model": "main.offer",
+        "pk": 1,
+        "fields": {
+            "offer": "offers/bnre1.jpg"
+        }
+    },
+    {
+        "model": "main.offer",
+        "pk": 2,
+        "fields": {
+            "offer": "offers/bnre2.jpg"
+        }
+    },
+    {
+        "model": "main.offer",
+        "pk": 3,
+        "fields": {
+            "offer": "offers/bnre2_lZYYLGp.jpg"
+        }
+    },
+    {
+        "model": "main.team",
+        "pk": 1,
+        "fields": {
+            "image": "team/photo-1495603889488-42d1d66e5523.jpeg",
+            "name": "Alex Carry",
+            "designation": "CFO",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."
+        }
+    },
+    {
+        "model": "main.team",
+        "pk": 2,
+        "fields": {
+            "image": "team/photo-1495603889488-42d1d66e5523_c3d9r0u.jpeg",
+            "name": "John Smith",
+            "designation": "CFO",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."
+        }
+    },
+    {
+        "model": "main.team",
+        "pk": 3,
+        "fields": {
+            "image": "team/photo-1495603889488-42d1d66e5523_dQgkHs7.jpeg",
+            "name": "George Alex",
+            "designation": "CFO",
+            "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nemo harum repellendus aut itaque. Temporibus quaerat dolores ut, cupiditate molestiae commodi! Distinctio praesentium, debitis aut minima doloribus earum quia commodi."
+        }
+    }
+]

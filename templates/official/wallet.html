@@ -1,6 +1,6 @@
 {% extends 'official/partials/base.html' %}
 {% block content %}
-{% load static %}
+{% load static humanize %}
 
 
 <div class="row page-titles mx-0 p-3">
@@ -25,7 +25,7 @@
             <div class="card-info">
                 <p class="mb-1 text-white fs-14">Main Balance</p>
                 <div class="d-flex justify-content-between mt-3">
-                    <h2 class="num-text text-white mb-5 font-w600">₹ 000,000.00</h2>
+                    <h2 class="num-text text-white mb-5 font-w600">₹ {{admin_wallet_amount|intcomma}}</h2>
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for payment in payment_to_franchise|slice:":4" %}
+                            {% for payment in admin_transactions %}
                             <tr>
                                 <td>{{payment.franchise}}</td>
                                 <td>{{payment.date}}</td>
@@ -85,17 +85,13 @@
                             </tr>
                         </thead>
                         <tbody>
+                            {% for payment in franchise_transactions %}
                             <tr>
-                                <td class="text-left">Franchise 1</td>
-                                <td>12/10/2022</td>
-                                <td class="text-right">₹ 134,12</td>
+                                <td>{{payment.franchise}}</td>
+                                <td>{{payment.date}}</td>
+                                <td class="text-right">{{payment.amount}}</td>
                             </tr>
-                            <tr>
-                                <td class="text-left">Franchise 1</td>
-                                <td>12/10/2022</td>
-                                <td class="text-right">₹ 134,12</td>
-                            </tr>
-
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>

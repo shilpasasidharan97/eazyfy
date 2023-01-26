@@ -116,15 +116,15 @@ def user_registration(request):
                 email=email, phone_number=phonenumber_with_countrycode, password=password, name=name
             )
             customer.save()
-            User = get_user_model()
-            customers = User.objects.create_user(
+            UserModel = get_user_model()
+            user = UserModel.objects.create_user(
                 email=email,
                 phone_number=phonenumber_with_countrycode,
                 password=password,
                 customer=customer,
                 is_customer=True,
             )
-            profile = CustomerProfile.objects.create(user=customers, auth_token=secret)
+            profile = CustomerProfile.objects.create(user=user, auth_token=secret)
             return redirect(f"/otp-page/{profile.test_id}")
         msg = "Password does not match"
         context = {"msg": msg}
@@ -151,7 +151,7 @@ def otp_fun(request, id):
         enter_otp = request.POST["otp"]
         verification = totp.verify(enter_otp)
         if verification:
-            return redirect("main:index")
+            return redirect("main:login")
     send_message(otp, profile.user.phone_number)
     return render(request, "user/otp_generation.html", {"token": profile.test_id})
 

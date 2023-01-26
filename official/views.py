@@ -3,8 +3,8 @@ import datetime
 from main.models import BannerImage
 from main.models import Offer
 from user.helpers import payment_mail
-
-from .forms import FranchiseAssignForm
+from django.conf import settings
+from .forms import FranchiseAssignForm, AddAmountForm
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import PickUpBoy
@@ -198,14 +198,32 @@ def transactionHistory(request):
 @login_required
 def wallet(request):
     transactions = FranchiseWallet.objects.all()
-    context = {"is_wallet": True, "transactions": transactions}
+    admin_transactions = transactions.filter(type="to_franchise")
+    franchise_transactions = transactions.filter(type="to_admin")
+    admin_transactions_sum = sum(w.amount for w in admin_transactions)
+    franchise_transactions_sum = sum(w.amount for w in franchise_transactions)
+    admin_wallet_amount = int(settings.ADMIN_WALLET_AMOUNT) - admin_transactions_sum + franchise_transactions_sum
+    context = {
+        "is_wallet": True,
+        "transactions": transactions,
+        "admin_wallet_amount":admin_wallet_amount,
+        "admin_transactions":admin_transactions,
+        "franchise_transactions":franchise_transactions,
+    }
     return render(request, "official/wallet.html", context)
 
 
 @login_required
 def franchise_wallet(request):
-    all_franchise = FranchiseWallet.objects.all()
-    context = {"is_wallet": True, "franchise": all_franchise}
+    franchises = Franchise.objects.all()
+    form = AddAmountForm(request.POST or None)
+    if request.method == "POST":
+        if form.is_valid():
+            data = form.save(commit=False)
+            data.type = "to_franchise"
+            data.save()
+            return redirect("official:franchisewallet")
+    context = {"is_wallet": True, "franchises": franchises, "form":form}
     return render(request, "official/wallet_franchise.html", context)
 
 
@@ -243,7 +261,7 @@ def logout_view(request):
 
 
 @login_required
-def settings(request):
+def official_settings(request):
     offerImage = Offer.objects.all()
     bannerImage = BannerImage.objects.all()
     if request.method == "POST":

@@ -14,7 +14,7 @@
                     <script>
                         var options = {
                             "key": "rzp_test_bKtMj90QOs6Af2", // Enter the Key ID generated from the Dashboard
-                            "amount": "{{ payment.amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                            "amount": "{{ request_details.final_amount}}", // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
                             "currency": "INR",
                             "name": "Coffe Corp",
                             "description": "Test Transaction",
