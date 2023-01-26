@@ -4361,10 +4361,12 @@ table .product-thumbnail img {
 }
 
 .list-filter {
-  margin: 0;
+  margin: 0 5px 5px 0;
   padding: 0
 }
-
+.list-filter:last-child {
+  margin-right: 0;
+}
 .list-filter li a {
   color: #555;
   display: block;
@@ -4405,7 +4407,7 @@ table .product-thumbnail img {
 
 .size-filter.list-filter a {
   border-radius: 4px;
-  padding: 5px 18px;
+  padding: 5px 15px;
   background: #fff;
   color: #000;
   font-weight: 500;
@@ -4624,16 +4626,9 @@ table .product-thumbnail img {
 }
 
 .product-detail-rating {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
+
   padding: 15px 0;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between
+
 }
 
 .product-more-infor {

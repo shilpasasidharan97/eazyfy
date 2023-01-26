@@ -63,7 +63,7 @@
 
                         <div class="row">
                             <div class="col-sm-4 col-md-6">
-                                <div class="product-img-action-wrap text-center">
+                                <div class="product-img-action-wrap text-center p-2">
                                     <div class="product-img product-img-zoom ">
                                         <img class="default-img " src="{{ model.image.url }}" alt="">
                                     </div>
@@ -71,26 +71,28 @@
                             </div>
 
                             <div class="col-sm-8 col-md-6">
-                                <h2 class="title-detail text-md-start text-center ">{{ model.name|upper }}</h2>
-                                <div class="product-detail-rating">
+                                <h2 class="title-detail text-md-start text-center">{{ model.name|upper }}</h2>
+                                <div class="product-detail-rating text-md-start text-center">
                                     <div class="pro-details-brand">
-                                        <h5 style="color: violet;"> 300+ <a href=""> already sold on easyfy</a></h5>
+                                        <h5 style="color: violet;"> 300+ <a href="">
+                                                already sold on easyfy</a></h5>
                                     </div>
                                 </div>
                                 <div class="detail-info">
 
-                                    <div class="bt-1 border-color-1 mt-15 mb-15">
-                                        <h6>Choose a variant</h6>
+                                    <div class="bt-1 border-color-1 mt-15 mb-15 text-md-start text-center">
+                                        <p class="text-center mb-0">Choose a variant</p>
                                     </div>
 
-                                    <div class="attr-detail attr-size d-flex mb-15">
+                                    <div class="attr-detail attr-size d-flex mb-15 justify-content-center">
                                         {% for variant in model.get_variants %}
-                                        <div class="list-filter size-filter font-small me-2">
+                                        <div class="list-filter size-filter font-small">
                                             <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ variant.id }}"
                                                 class="btn btn-secondary d-inline-block">
-                                                <span class="d-block">RAM: {{ variant.RAM }}</span>
-                                                <span class="d-block">Color: {{ variant.color }}</span>
-                                                <span class="d-block">Storage: {{ variant.internal_storage }}</span>
+                                                <span class="d-block fs-12">RAM: {{ variant.RAM }}</span>
+                                                <span class="d-block fs-12">Color: {{ variant.color }}</span>
+                                                <span class="d-block fs-12">
+                                                    Storage: {{ variant.internal_storage}}</span>
                                             </a>
                                         </div>
                                         {% endfor %}
