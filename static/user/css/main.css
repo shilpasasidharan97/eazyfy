@@ -9232,13 +9232,6 @@ span.fi-rs-apps {
   .pb-60 {
     padding-bottom: 30px !important
   }
-
-  .mb-60,
-  .mb-xs-30,
-  .product-cart-wrap:not(:last-child) {
-    margin-bottom: 30px !important
-  }
-
   .hero-slider-1.style-3 .hero-slider-content-2 {
     position: relative;
     text-align: left;
