@@ -152,6 +152,9 @@ class BrandModel(models.Model):
     def get_variants(self):
         return Variant.objects.filter(brand_model=self)
 
+    class Meta:
+        ordering = ("name",)
+
     def __str__(self):
         return str(self.name)
 
