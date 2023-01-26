@@ -9520,11 +9520,11 @@ h3.section-title {
   font-size: 12px;
   line-height: .2rem
 }
-.banner-img .offer2 {
+.banners .col-lg-4 .banner-img .offer2 {
   border-radius: 10px;
   margin-bottom: 10px
 }
-.banner-img:last-child .offer2 {
+.banners .col-lg-4:last-child .banner-img .offer2 {
   margin-bottom: 0
 }
 
