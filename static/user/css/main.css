@@ -1974,7 +1974,10 @@ label {
   }
 
   .service-category {
-    margin: 10px 0;
+    margin: 0;
+    padding: 0 5px;
+
+
     flex: 0 0 auto
   }
 }
