@@ -1707,7 +1707,6 @@ label {
   color: #777
 }
 
-.deal>div,
 .hero-slider-1.style-3 img,
 .leaflet-map,
 .nice-select .list,
@@ -2640,7 +2639,6 @@ label {
   align-items: center
 }
 
-.deal,
 .deal .product-price {
   display: -webkit-box;
   display: -ms-flexbox
@@ -3250,13 +3248,10 @@ table .product-thumbnail img {
 
 .deal {
   width: 100%;
-  display: flex;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
   background-color: #f5f6f9;
   background-position: center center;
   background-repeat: no-repeat;
-  min-height: 420px
+  justify-content: center;
 }
 
 .deal h2 {
