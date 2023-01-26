@@ -14,12 +14,11 @@
                             <a href="{% url 'user:device_page' product.slug %}">
                                 <img class="default-img selling-phone" src="{{product.image.url}}"
                                     alt="" />
-                                <img class="hover-img" src="{{product.image.url}}" alt="" />
                             </a>
                         </div>
                     </div>
                     <div class="product-content-wrap">
-                        <h6 class="product-name-responsive"><a href="#">{{product.name}}</a></h6>
+                        <h6 class="product-name-responsive"><a href="{% url 'user:device_page' product.slug %}">{{product.name}}</a></h6>
                     </div>
                 </div>
                 {% endfor %}
