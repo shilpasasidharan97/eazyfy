@@ -3,9 +3,15 @@
         {% for banner in banners %}
         <div class="single-hero-slider single-animation-wrap">
             <div class="slider-1-height-3 slider-animated-1">
+                {% if banner.link %}
+                <a class="slider-img" href="{{banner.link}}">
+                    <img src="{{ banner.image.url }}" alt="" />
+                </a>
+                {% else %}
                 <div class="slider-img">
                     <img src="{{ banner.image.url }}" alt="" />
                 </div>
+                {% endif %}
             </div>
         </div>
         {% endfor %}

@@ -16,6 +16,7 @@ class City(models.Model):
 class BannerImage(models.Model):
     name = models.CharField(max_length=100)
     image = models.FileField(upload_to="banners/")
+    link = models.URLField(blank=True,null=True)
 
     def __str__(self):
         return str(self.name)

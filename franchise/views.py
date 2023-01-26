@@ -158,5 +158,6 @@ def order_details(request, id):
 def accept_order(request, id):
     request_details = UserRequest.objects.get(id=id)
     request_details.is_franchise_accepted = True
+
     request_details.save()
     return JsonResponse({"status": "success"})

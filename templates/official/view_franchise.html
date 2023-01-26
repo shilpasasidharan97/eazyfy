@@ -2,7 +2,7 @@
 {% block content %}
 {% load static %}
 
-<div class="row page-titles mx-0">
+<div class="row page-titles mx-0 p-3">
     <div class="col-sm-6 p-md-0">
         <div class="welcome-text">
             <h4>{{franchise_details.name|title}}</h4>
@@ -24,7 +24,7 @@
                                 <div class="card-info">
                                     <p class="mb-1 text-white fs-14">Main Balance</p>
                                     <div class="d-flex justify-content-between">
-                                        <h2 class="num-text text-white mb-5 font-w600">₹{{ wallet.wallet_amount }}</h2>
+                                        <h2 class="num-text text-white mb-5 font-w600">₹{{ franchise_details.get_balance }}</h2>
                                         <svg width="36" height="36" viewBox="0 0 36 36" fill="none"
                                             xmlns="http://www.w3.org/2000/svg">
                                             <path

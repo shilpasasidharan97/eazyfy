@@ -147,6 +147,7 @@ class BrandModel(models.Model):
     image = models.FileField(upload_to=get_image_path)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
+    is_mostselling = models.BooleanField(default=False)
 
     def get_variants(self):
         return Variant.objects.filter(brand_model=self)
