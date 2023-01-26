@@ -823,7 +823,7 @@ h6.post-title {
 .product-sidebar .single-post i,
 .shop-product-fillter-header .categor-list li,
 h6 {
-  font-size: 12px
+  font-size: calc(0.625rem + (12 - 10) * ((100vw - 320px) / (1920 - 320)))
 }
 
 p {
