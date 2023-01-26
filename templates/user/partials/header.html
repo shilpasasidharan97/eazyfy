@@ -243,7 +243,7 @@
                                         {% for brand in brands|slice:"5" %}
                                         <li><a href="{% url 'user:pick_model' brand.slug %}">{{ brand.name }}</a></li>
                                         {% endfor %}
-                                        <li><a href="{% url 'main:sell_phone' %}">View All</a></li>
+                                        <li class="view_all"><a href="{% url 'main:sell_phone' %}">View All</a></li>
                                     </ul>
                                     {% endif %}
                                 </li>
@@ -343,7 +343,7 @@
                 </div>
 
                 <nav>
-                    <ul class="mobile-menu">
+                    <ul class="mobile-menu mt-3">
                         <li class="menu-item-has-children">
                             <a href="{% url 'main:index' %}"><span class="menu-expand"></span>Home</a>
                         </li>

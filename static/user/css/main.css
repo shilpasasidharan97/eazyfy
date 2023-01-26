@@ -6362,7 +6362,7 @@ span.fi-rs-apps {
 
 .main-menu>nav>ul>li>a {
   display: inline-block;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   color: #1a1a1a
 }
@@ -6379,7 +6379,7 @@ span.fi-rs-apps {
   top: 100%;
   background-color: #fff;
   min-width: 250px;
-  padding: 25px 15px;
+  padding: 0;
   -webkit-transition: .25s;
   transition: .25s;
   opacity: 0;
@@ -6393,8 +6393,14 @@ span.fi-rs-apps {
 .main-menu>nav>ul>li ul.sub-menu li {
   line-height: 1;
   display: block;
-  margin-bottom: 21px;
-  position: relative
+  margin-bottom: 0;
+  position: relative;
+  font-size: 12px;
+}
+.main-menu>nav>ul>li ul.sub-menu li.view_all {
+  background: #66009521;
+  font-weight: bold;
+  color: #660095;
 }
 
 .main-menu>nav>ul>li ul.sub-menu li ul.level-menu {
@@ -6580,7 +6586,7 @@ span.fi-rs-apps {
 }
 
 .main-menu.main-menu-lh-2>nav>ul>li {
-  line-height: 60px
+  line-height: 45px
 }
 
 .main-menu.main-menu-lh-3>nav>ul>li {
@@ -6597,7 +6603,7 @@ span.fi-rs-apps {
   font-size: 15px;
   color: #555;
   display: block;
-  padding: 0 15px
+  padding: 15px
 }
 
 .footer-list li a:hover,
@@ -9510,7 +9516,8 @@ textarea {
 }
 
 h3.section-title {
-  font-size: 20px
+  font-size: 20px;
+  margin-bottom: 25px;
 }
 
 .why_us_desc {
