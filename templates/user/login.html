@@ -15,7 +15,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-lg-6">
+                <div class="col-lg-6 mx-auto">
                     <div class="card p-5">
                         <div class="padding_eight_all bg-white">
                             <div class="heading_s1">
@@ -39,18 +39,11 @@
                                     </button>
                                 </div>
                             </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-6 d-sm-block">
-                    <div class="text-center border-radius-10 mb-md-5 mb-lg-0 mb-sm-5 signup">
-                        <div class="p-30 heading_s1 pt-75">
-                            <h3>Welcome!</h3>
-                        </div>
-                        <p>Dont have an account</p>
-                        <div class="">
-                            <a href="{% url 'user:registration' %}" class="btn btn-outline-">Sign Up</a>
+                            <div class="text-muted">Dont have an account?
+                                <a href="{% url 'user:registration' %}">
+                                    Create an account
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
