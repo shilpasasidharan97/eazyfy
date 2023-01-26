@@ -1480,7 +1480,8 @@ label {
 .layout,
 .location,
 .username {
-  display: flex
+  display: flex;
+  align-items: center;
 }
 
 .custome-checkbox input[type=checkbox]:checked+.form-check-label::before {
