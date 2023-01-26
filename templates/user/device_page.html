@@ -16,12 +16,7 @@
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
                         <div class="detail-gallery text-center">
                             <img class="default-img " src="{{ variant.brand_model.image.url}}" alt="">
-                            <div class="mt-20">
-                                <span class="d-block text-brand fs-6">Price: {{ variant.min_price|intcomma }} -
-                                    {{variant.max_price|intcomma}}</span>
-                            </div>
                         </div>
-
                     </div>
 
                     <div class="col-md-6 col-sm-6 col-xs-6 col-6">
@@ -43,6 +38,15 @@
                         </div>
                         <!-- Detail Info -->
                     </div>
+
+                    <div class="col-12">
+                        <div class="mt-20 text-center">
+                            <span class="d-block fs-6 fw-bold text-brand text-success">
+                                Price: {{variant.min_price|intcomma }} -
+                                {{variant.max_price|intcomma}}</span>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -81,10 +85,11 @@
                                 <div class="detail-info">
 
                                     <div class="bt-1 border-color-1 mt-15 mb-15 text-md-start text-center">
-                                        <p class="text-center mb-0">Choose a variant</p>
+                                        <p class="text-md-start text-center mb-0">Choose a variant</p>
                                     </div>
 
-                                    <div class="attr-detail attr-size d-flex mb-15 justify-content-center">
+                                    <div
+                                        class="attr-detail attr-size d-flex mb-15 justify-content-md-start justify-content-center">
                                         {% for variant in model.get_variants %}
                                         <div class="list-filter size-filter font-small">
                                             <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ variant.id }}"

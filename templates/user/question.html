@@ -77,9 +77,11 @@
         <div class="wizard card-like h-100">
 
           <div class="row mb-3">
+
             <div class="col-4 col-lg-4 col-md-4">
               <img class="card-img-top" src="{{variant.brand_model.image.url}}" alt="Card image cap" />
             </div>
+
             <div class="col-8 col-lg-8 col-md-8">
               <h5 class="">{{variant.brand_model.name}}</h5>
               <div class="variant_info mt-2">
@@ -87,10 +89,16 @@
                 <small class="d-block">Color: {{ variant.color }}</small>
                 <small class="d-block">Storage: {{ variant.internal_storage }}</small>
               </div>
-
-              <div class="pricebtn" style="color: #5f009a;">&#8377; <span id="price">{{variant.min_price|intcomma}} -
-                  {{variant.max_price|intcomma}}</span></div>
             </div>
+
+            <div class="col-12">
+              <div class="pricebtn" style="color: #5f009a;">
+                &#8377; <span id="price">
+                  {{variant.min_price|intcomma}} -
+                  {{variant.max_price|intcomma}}</span>
+              </div>
+            </div>
+
           </div>
 
           <div class="row border-top">
