@@ -176,8 +176,8 @@ APP_ORDER = OrderedDict(
 )
 
 
-DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
-CSRF_TRUSTED_ORIGINS = [
-    "https://pvanfas-vigilant-rotary-phone-rprxprv5xgv3pv5j-8000.preview.app.github.dev",
-    "https://pvanfas-vigilant-rotary-phone-rprxprv5xgv3pv5j-7000.preview.app.github.dev",
-]
+# DATABASES = {"default": {"ENGINE": "django.db.backends.sqlite3", "NAME": BASE_DIR / "db.sqlite3"}}
+# CSRF_TRUSTED_ORIGINS = [
+#     "https://pvanfas-vigilant-rotary-phone-rprxprv5xgv3pv5j-8000.preview.app.github.dev",
+#     "https://pvanfas-vigilant-rotary-phone-rprxprv5xgv3pv5j-7000.preview.app.github.dev",
+# ]
