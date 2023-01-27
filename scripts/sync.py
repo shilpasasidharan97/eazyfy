@@ -48,22 +48,20 @@ def get_filepaths(url, brand_slug, brand_pk):
 
 data = [
     {
-        "brand_slug": "nokia",
-        "brand_pk": 16,
+        "brand_slug": "lg",
+        "brand_pk": 29,
         "urls": [
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p2.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p3.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p4.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p5.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p6.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p7.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p8.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p9.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p10.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p11.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p12.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p13.php",
-            "https://www.gsmarena.com/nokia-phones-f-1-0-p14.php",
+            "https://www.gsmarena.com/lg-phones-20.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p2.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p3.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p4.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p5.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p6.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p7.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p8.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p9.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p10.php",
+            "https://www.gsmarena.com/lg-phones-f-20-0-p11.php",
         ],
     }
 ]
