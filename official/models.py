@@ -125,6 +125,7 @@ class Brand(models.Model):
     image = models.FileField(upload_to="Brand", null=True)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
+    references = models.TextField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Brand"
@@ -145,6 +146,7 @@ class BrandModel(models.Model):
     def get_image_path(instance, filename):
         return "models/{0}/{1}".format(instance.brand.slug, filename)
 
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     image = models.FileField(upload_to=get_image_path)
     name = models.CharField(max_length=100)

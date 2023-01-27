@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
-
+import uuid
 
 items = []
 filepaths = []
@@ -10,7 +10,6 @@ filepaths = []
 def get_data(url, brand_slug, brand_pk):
     page = requests.get(url)
     soup = BeautifulSoup(page.content, "html.parser")
-    start_number = 208
     for li in soup.find("div", class_="makers").find_all("li"):
         a_tag = li.find("a")
         img_tag = li.find("img")
@@ -21,7 +20,7 @@ def get_data(url, brand_slug, brand_pk):
         items.append(
             {
                 "model": "official.brandmodel",
-                "pk": start_number,
+                "pk": uuid.uuid4(),
                 "fields": {
                     "brand": brand_pk,
                     "image": image,
@@ -32,7 +31,6 @@ def get_data(url, brand_slug, brand_pk):
                 },
             }
         )
-        start_number += 1
     return items
 
 
