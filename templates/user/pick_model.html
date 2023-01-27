@@ -89,7 +89,8 @@
                                 <div class="product-img-action-wrap">
                                     <div class="product-img product-img-zoom">
                                         <a href="{% url 'user:device_page' model.slug %}">
-                                            <img class="default-img model-img" src="{{ model.image.url }}" alt="">
+                                            <img class="default-img model-img" src="{{ model.image.url }}" alt=""
+                                                loading="lazy">
                                         </a>
                                     </div>
                                     <h6>{{ model.name }}</h6>
