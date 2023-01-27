@@ -143,12 +143,13 @@ class Brand(models.Model):
 
 class BrandModel(models.Model):
     def get_image_path(instance, filename):
-        return "models/{0}/{1}".format(instance.brand.name, filename)
+        return "models/{0}/{1}".format(instance.brand.slug, filename)
 
     brand = models.ForeignKey(Brand, on_delete=models.CASCADE)
     image = models.FileField(upload_to=get_image_path)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
+    description = models.TextField(blank=True, null=True)
     is_mostselling = models.BooleanField(default=False)
 
     def get_variants(self):
