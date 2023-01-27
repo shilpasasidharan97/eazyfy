@@ -133,6 +133,9 @@ class Brand(models.Model):
     def get_brand_models(self):
         return BrandModel.objects.filter(brand=self)
 
+    def devices_count(self):
+        return self.get_brand_models().count()
+
     def __str__(self):
         return str(self.name)
 

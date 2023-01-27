@@ -116,7 +116,7 @@ class PickUpBoyAdmin(admin.ModelAdmin):
 
 @admin.register(Brand)
 class BrandAdmin(ImportExportActionModelAdmin):
-    list_display = ("name", "image")
+    list_display = ("name", "devices_count")
     search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
 
