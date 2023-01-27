@@ -1,4 +1,2774 @@
-[
+
     {
         "model": "official.brandmodel",
-        "pk": 
+        "pk": "74175d4a-4c9c-46ab-ac88-5132cdc8579f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2022.jpg",
+            "name": "iPad Pro 12.9 (2022)",
+            "slug": "ipad-pro-12.9-(2022)",
+            "description": "Apple iPad Pro 12.9 (2022) tablet. Announced Oct 2022. Features 12.9\u2033  display, Apple M2 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "6c19425b-f194-4107-940f-10f9f3c7148d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2022.jpg",
+            "name": "iPad Pro 11 (2022)",
+            "slug": "ipad-pro-11-(2022)",
+            "description": "Apple iPad Pro 11 (2022) tablet. Announced Oct 2022. Features 11.0\u2033  display, Apple M2 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f42fc7cb-7f68-473c-8532-b143e7133e33",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-10-2022.jpg",
+            "name": "iPad (2022)",
+            "slug": "ipad-(2022)",
+            "description": "Apple iPad (2022) tablet. Announced Oct 2022. Features 10.9\u2033  display, Apple A14 Bionic chipset, 256 GB storage, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "419fa5d3-3693-45e4-8cd5-2604d1040727",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro-max-.jpg",
+            "name": "iPhone 14 Pro Max",
+            "slug": "iphone-14-pro-max",
+            "description": "Apple iPhone 14 Pro Max smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A16 Bionic chipset, 4323 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "34e8bc1f-1a07-4a66-a21d-55a0045d57de",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro.jpg",
+            "name": "iPhone 14 Pro",
+            "slug": "iphone-14-pro",
+            "description": "Apple iPhone 14 Pro smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A16 Bionic chipset, 3200 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "39f7d982-c359-450b-be96-659aa329681c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-plus.jpg",
+            "name": "iPhone 14 Plus",
+            "slug": "iphone-14-plus",
+            "description": "Apple iPhone 14 Plus smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4323 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0af63ca9-f965-48b8-bc07-823924534772",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14.jpg",
+            "name": "iPhone 14",
+            "slug": "iphone-14",
+            "description": "Apple iPhone 14 smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3279 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "35980c0b-c203-48cb-87a6-92d6112cd9e1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-ultra.jpg",
+            "name": "Watch Ultra",
+            "slug": "watch-ultra",
+            "description": "Apple Watch Ultra watch. Announced Sep 2022. Features 1.92\u2033  display, Apple S8 chipset, 542 mAh battery, 32 GB storage, MIL-STD 810H certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "23a8395b-adc2-4a57-9958-0e91f7a01cb2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8.jpg",
+            "name": "Watch Series 8",
+            "slug": "watch-series-8",
+            "description": "Apple Watch Series 8 watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "552fcb2c-f4bb-4152-8fff-91b58939a760",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8-aluminum.jpg",
+            "name": "Watch Series 8 Aluminum",
+            "slug": "watch-series-8-aluminum",
+            "description": "Apple Watch Series 8 Aluminum watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "45c97064-bc7e-464c-8188-875b5a567dbf",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8se-2022.jpg",
+            "name": "Watch SE (2022)",
+            "slug": "watch-se-(2022)",
+            "description": "Apple Watch SE (2022) watch. Announced Sep 2022. Features 1.78\u2033  display, Apple S8 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2365635f-1e4e-437a-90b6-431c2e754a02",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2022.jpg",
+            "name": "iPhone SE (2022)",
+            "slug": "iphone-se-(2022)",
+            "description": "Apple iPhone SE (2022) smartphone. Announced Mar 2022. Features 4.7\u2033  display, Apple A15 Bionic chipset, 2018 mAh battery, 256 GB storage, 4 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "10530fcb-719c-4f4c-9d5c-6f14388a6d60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air-2022-new.jpg",
+            "name": "iPad Air (2022)",
+            "slug": "ipad-air-(2022)",
+            "description": "Apple iPad Air (2022) tablet. Announced Mar 2022. Features 10.9\u2033  display, Apple M1 chipset, 256 GB storage, 8 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "32858848-dca3-4a0a-805f-0883095b317d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro-max.jpg",
+            "name": "iPhone 13 Pro Max",
+            "slug": "iphone-13-pro-max",
+            "description": "Apple iPhone 13 Pro Max smartphone. Announced Sep 2021. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4352 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "fc8cd435-79ed-4385-8ab4-67886d6aff91",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro.jpg",
+            "name": "iPhone 13 Pro",
+            "slug": "iphone-13-pro",
+            "description": "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a2dadebc-0a5c-4882-ba92-dd91cf2046e3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13.jpg",
+            "name": "iPhone 13",
+            "slug": "iphone-13",
+            "description": "Apple iPhone 13 smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3240 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "07f29c01-99e5-4cfe-a881-c4f6962933d6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-mini.jpg",
+            "name": "iPhone 13 mini",
+            "slug": "iphone-13-mini",
+            "description": "Apple iPhone 13 mini smartphone. Announced Sep 2021. Features 5.4\u2033  display, Apple A15 Bionic chipset, 2438 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d98c4748-af36-4ff7-9616-0695db4667ae",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-2021.jpg",
+            "name": "iPad mini (2021)",
+            "slug": "ipad-mini-(2021)",
+            "description": "Apple iPad mini (2021) tablet. Announced Sep 2021. Features 8.3\u2033  display, Apple A15 Bionic chipset, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "78451f18-b80c-4e17-b592-5b099b31b43a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-102-2021-.jpg",
+            "name": "iPad 10.2 (2021)",
+            "slug": "ipad-10.2-(2021)",
+            "description": "Apple iPad 10.2 (2021) tablet. Announced Sep 2021. Features 10.2\u2033  display, Apple A13 Bionic chipset, 8557 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "ae5f5fa7-e004-4734-b4fb-c9dff3c2bf24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-titanium.jpg",
+            "name": "Watch Edition Series 7",
+            "slug": "watch-edition-series-7",
+            "description": "Apple Watch Edition Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "058983c3-497c-4ab6-af7f-00bd1d3c0a24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-stainless-steel.jpg",
+            "name": "Watch Series 7",
+            "slug": "watch-series-7",
+            "description": "Apple Watch Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "95c242a0-f07f-43db-aecd-19e97cab4571",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-aluminum.jpg",
+            "name": "Watch Series 7 Aluminum",
+            "slug": "watch-series-7-aluminum",
+            "description": "Apple Watch Series 7 Aluminum watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "515f44d2-2e49-4ce9-9415-c64268bc5238",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2021.jpg",
+            "name": "iPad Pro 12.9 (2021)",
+            "slug": "ipad-pro-12.9-(2021)",
+            "description": "Apple iPad Pro 12.9 (2021) tablet. Announced Apr 2021. Features 12.9\u2033  display, Apple M1 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "4025b290-6138-42ad-8f0c-6ab2b250ce60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2021.jpg",
+            "name": "iPad Pro 11 (2021)",
+            "slug": "ipad-pro-11-(2021)",
+            "description": "Apple iPad Pro 11 (2021) tablet. Announced Apr 2021. Features 11.0\u2033  display, Apple M1 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "789ca887-3924-4c8c-8609-1e34b6e06890",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro-max-.jpg",
+            "name": "iPhone 12 Pro Max",
+            "slug": "iphone-12-pro-max",
+            "description": "Apple iPhone 12 Pro Max smartphone. Announced Oct 2020. Features 6.7\u2033  display, Apple A14 Bionic chipset, 3687 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b1b04627-899b-4f5d-baf9-a97f6d09f26c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro--.jpg",
+            "name": "iPhone 12 Pro",
+            "slug": "iphone-12-pro",
+            "description": "Apple iPhone 12 Pro smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "022aae2d-202b-4ec2-9107-c4d6b2d88599",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12.jpg",
+            "name": "iPhone 12",
+            "slug": "iphone-12",
+            "description": "Apple iPhone 12 smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1cf00024-493f-46b4-a2b2-aa9e4031864e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-mini.jpg",
+            "name": "iPhone 12 mini",
+            "slug": "iphone-12-mini",
+            "description": "Apple iPhone 12 mini smartphone. Announced Oct 2020. Features 5.4\u2033  display, Apple A14 Bionic chipset, 2227 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1dc99dfb-9e05-4fe3-baaf-f8e793641d1d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air4-2020.jpg",
+            "name": "iPad Air (2020)",
+            "slug": "ipad-air-(2020)",
+            "description": "Apple iPad Air (2020) tablet. Announced Sep 2020. Features 10.9\u2033  display, Apple A14 Bionic chipset, 7606 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "aed96b1b-60a9-4e6b-abbe-d1fd5a919857",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad8-102-inches-2020.jpg",
+            "name": "iPad 10.2 (2020)",
+            "slug": "ipad-10.2-(2020)",
+            "description": "Apple iPad 10.2 (2020) tablet. Announced Sep 2020. Features 10.2\u2033  display, Apple A12 Bionic chipset, 128 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "568bce3f-f0d0-4ca7-9a12-185c742bdbd1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-se.jpg",
+            "name": "Watch SE",
+            "slug": "watch-se",
+            "description": "Apple Watch SE watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S5 chipset, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "7c60728f-2278-44e8-bcb2-8fe5b6e577ab",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6.jpg",
+            "name": "Watch Series 6 Aluminum",
+            "slug": "watch-series-6-aluminum",
+            "description": "Apple Watch Series 6 Aluminum watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2ac100bd-dadb-421b-9a29-789fcef35a9f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-steel.jpg",
+            "name": "Watch Series 6",
+            "slug": "watch-series-6",
+            "description": "Apple Watch Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e5d63cfa-1f85-41a3-af86-8772bfa42461",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-titanium.jpg",
+            "name": "Watch Edition Series 6",
+            "slug": "watch-edition-series-6",
+            "description": "Apple Watch Edition Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8b1463e9-8901-47c3-b72d-d4685dcc89fe",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2020.jpg",
+            "name": "iPhone SE (2020)",
+            "slug": "iphone-se-(2020)",
+            "description": "Apple iPhone SE (2020) smartphone. Announced Apr 2020. Features 4.7\u2033  display, Apple A13 Bionic chipset, 1821 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e1d2b1b4-28d0-464d-a8a9-5401e980d0f4",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-12-2020.jpg",
+            "name": "iPad Pro 12.9 (2020)",
+            "slug": "ipad-pro-12.9-(2020)",
+            "description": "Apple iPad Pro 12.9 (2020) tablet. Announced Mar 2020. Features 12.9\u2033  display, Apple A12Z Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "01563921-5292-4117-9103-a64f9290d082",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2020.jpg",
+            "name": "iPad Pro 11 (2020)",
+            "slug": "ipad-pro-11-(2020)",
+            "description": "Apple iPad Pro 11 (2020) tablet. Announced Mar 2020. Features 11.0\u2033  display, Apple A12Z Bionic chipset, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d38aadd4-3d55-452a-bfc2-ce5c48fd870a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro.jpg",
+            "name": "iPhone 11 Pro Max",
+            "slug": "iphone-11-pro-max",
+            "description": "Apple iPhone 11 Pro Max smartphone. Announced Sep 2019. Features 6.5\u2033  display, Apple A13 Bionic chipset, 3969 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0c188ca7-086a-4421-b635-c711db18d782",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro-max-.jpg",
+            "name": "iPhone 11 Pro",
+            "slug": "iphone-11-pro",
+            "description": "Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8\u2033  display, Apple A13 Bionic chipset, 3046 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "cb9df362-8e34-4325-b7d3-a686d1d1b5ec",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11.jpg",
+            "name": "iPhone 11",
+            "slug": "iphone-11",
+            "description": "Apple iPhone 11 smartphone. Announced Sep 2019. Features 6.1\u2033  display, Apple A13 Bionic chipset, 3110 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "74175d4a-4c9c-46ab-ac88-5132cdc8579f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2022.jpg",
+            "name": "iPad Pro 12.9 (2022)",
+            "slug": "ipad-pro-12.9-(2022)",
+            "description": "Apple iPad Pro 12.9 (2022) tablet. Announced Oct 2022. Features 12.9\u2033  display, Apple M2 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "6c19425b-f194-4107-940f-10f9f3c7148d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2022.jpg",
+            "name": "iPad Pro 11 (2022)",
+            "slug": "ipad-pro-11-(2022)",
+            "description": "Apple iPad Pro 11 (2022) tablet. Announced Oct 2022. Features 11.0\u2033  display, Apple M2 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f42fc7cb-7f68-473c-8532-b143e7133e33",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-10-2022.jpg",
+            "name": "iPad (2022)",
+            "slug": "ipad-(2022)",
+            "description": "Apple iPad (2022) tablet. Announced Oct 2022. Features 10.9\u2033  display, Apple A14 Bionic chipset, 256 GB storage, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "419fa5d3-3693-45e4-8cd5-2604d1040727",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro-max-.jpg",
+            "name": "iPhone 14 Pro Max",
+            "slug": "iphone-14-pro-max",
+            "description": "Apple iPhone 14 Pro Max smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A16 Bionic chipset, 4323 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "34e8bc1f-1a07-4a66-a21d-55a0045d57de",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro.jpg",
+            "name": "iPhone 14 Pro",
+            "slug": "iphone-14-pro",
+            "description": "Apple iPhone 14 Pro smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A16 Bionic chipset, 3200 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "39f7d982-c359-450b-be96-659aa329681c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-plus.jpg",
+            "name": "iPhone 14 Plus",
+            "slug": "iphone-14-plus",
+            "description": "Apple iPhone 14 Plus smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4323 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0af63ca9-f965-48b8-bc07-823924534772",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14.jpg",
+            "name": "iPhone 14",
+            "slug": "iphone-14",
+            "description": "Apple iPhone 14 smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3279 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "35980c0b-c203-48cb-87a6-92d6112cd9e1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-ultra.jpg",
+            "name": "Watch Ultra",
+            "slug": "watch-ultra",
+            "description": "Apple Watch Ultra watch. Announced Sep 2022. Features 1.92\u2033  display, Apple S8 chipset, 542 mAh battery, 32 GB storage, MIL-STD 810H certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "23a8395b-adc2-4a57-9958-0e91f7a01cb2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8.jpg",
+            "name": "Watch Series 8",
+            "slug": "watch-series-8",
+            "description": "Apple Watch Series 8 watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "552fcb2c-f4bb-4152-8fff-91b58939a760",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8-aluminum.jpg",
+            "name": "Watch Series 8 Aluminum",
+            "slug": "watch-series-8-aluminum",
+            "description": "Apple Watch Series 8 Aluminum watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "45c97064-bc7e-464c-8188-875b5a567dbf",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8se-2022.jpg",
+            "name": "Watch SE (2022)",
+            "slug": "watch-se-(2022)",
+            "description": "Apple Watch SE (2022) watch. Announced Sep 2022. Features 1.78\u2033  display, Apple S8 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2365635f-1e4e-437a-90b6-431c2e754a02",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2022.jpg",
+            "name": "iPhone SE (2022)",
+            "slug": "iphone-se-(2022)",
+            "description": "Apple iPhone SE (2022) smartphone. Announced Mar 2022. Features 4.7\u2033  display, Apple A15 Bionic chipset, 2018 mAh battery, 256 GB storage, 4 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "10530fcb-719c-4f4c-9d5c-6f14388a6d60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air-2022-new.jpg",
+            "name": "iPad Air (2022)",
+            "slug": "ipad-air-(2022)",
+            "description": "Apple iPad Air (2022) tablet. Announced Mar 2022. Features 10.9\u2033  display, Apple M1 chipset, 256 GB storage, 8 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "32858848-dca3-4a0a-805f-0883095b317d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro-max.jpg",
+            "name": "iPhone 13 Pro Max",
+            "slug": "iphone-13-pro-max",
+            "description": "Apple iPhone 13 Pro Max smartphone. Announced Sep 2021. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4352 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "fc8cd435-79ed-4385-8ab4-67886d6aff91",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro.jpg",
+            "name": "iPhone 13 Pro",
+            "slug": "iphone-13-pro",
+            "description": "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a2dadebc-0a5c-4882-ba92-dd91cf2046e3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13.jpg",
+            "name": "iPhone 13",
+            "slug": "iphone-13",
+            "description": "Apple iPhone 13 smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3240 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "07f29c01-99e5-4cfe-a881-c4f6962933d6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-mini.jpg",
+            "name": "iPhone 13 mini",
+            "slug": "iphone-13-mini",
+            "description": "Apple iPhone 13 mini smartphone. Announced Sep 2021. Features 5.4\u2033  display, Apple A15 Bionic chipset, 2438 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d98c4748-af36-4ff7-9616-0695db4667ae",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-2021.jpg",
+            "name": "iPad mini (2021)",
+            "slug": "ipad-mini-(2021)",
+            "description": "Apple iPad mini (2021) tablet. Announced Sep 2021. Features 8.3\u2033  display, Apple A15 Bionic chipset, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "78451f18-b80c-4e17-b592-5b099b31b43a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-102-2021-.jpg",
+            "name": "iPad 10.2 (2021)",
+            "slug": "ipad-10.2-(2021)",
+            "description": "Apple iPad 10.2 (2021) tablet. Announced Sep 2021. Features 10.2\u2033  display, Apple A13 Bionic chipset, 8557 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "ae5f5fa7-e004-4734-b4fb-c9dff3c2bf24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-titanium.jpg",
+            "name": "Watch Edition Series 7",
+            "slug": "watch-edition-series-7",
+            "description": "Apple Watch Edition Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "058983c3-497c-4ab6-af7f-00bd1d3c0a24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-stainless-steel.jpg",
+            "name": "Watch Series 7",
+            "slug": "watch-series-7",
+            "description": "Apple Watch Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "95c242a0-f07f-43db-aecd-19e97cab4571",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-aluminum.jpg",
+            "name": "Watch Series 7 Aluminum",
+            "slug": "watch-series-7-aluminum",
+            "description": "Apple Watch Series 7 Aluminum watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "515f44d2-2e49-4ce9-9415-c64268bc5238",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2021.jpg",
+            "name": "iPad Pro 12.9 (2021)",
+            "slug": "ipad-pro-12.9-(2021)",
+            "description": "Apple iPad Pro 12.9 (2021) tablet. Announced Apr 2021. Features 12.9\u2033  display, Apple M1 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "4025b290-6138-42ad-8f0c-6ab2b250ce60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2021.jpg",
+            "name": "iPad Pro 11 (2021)",
+            "slug": "ipad-pro-11-(2021)",
+            "description": "Apple iPad Pro 11 (2021) tablet. Announced Apr 2021. Features 11.0\u2033  display, Apple M1 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "789ca887-3924-4c8c-8609-1e34b6e06890",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro-max-.jpg",
+            "name": "iPhone 12 Pro Max",
+            "slug": "iphone-12-pro-max",
+            "description": "Apple iPhone 12 Pro Max smartphone. Announced Oct 2020. Features 6.7\u2033  display, Apple A14 Bionic chipset, 3687 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b1b04627-899b-4f5d-baf9-a97f6d09f26c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro--.jpg",
+            "name": "iPhone 12 Pro",
+            "slug": "iphone-12-pro",
+            "description": "Apple iPhone 12 Pro smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "022aae2d-202b-4ec2-9107-c4d6b2d88599",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12.jpg",
+            "name": "iPhone 12",
+            "slug": "iphone-12",
+            "description": "Apple iPhone 12 smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1cf00024-493f-46b4-a2b2-aa9e4031864e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-mini.jpg",
+            "name": "iPhone 12 mini",
+            "slug": "iphone-12-mini",
+            "description": "Apple iPhone 12 mini smartphone. Announced Oct 2020. Features 5.4\u2033  display, Apple A14 Bionic chipset, 2227 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1dc99dfb-9e05-4fe3-baaf-f8e793641d1d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air4-2020.jpg",
+            "name": "iPad Air (2020)",
+            "slug": "ipad-air-(2020)",
+            "description": "Apple iPad Air (2020) tablet. Announced Sep 2020. Features 10.9\u2033  display, Apple A14 Bionic chipset, 7606 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "aed96b1b-60a9-4e6b-abbe-d1fd5a919857",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad8-102-inches-2020.jpg",
+            "name": "iPad 10.2 (2020)",
+            "slug": "ipad-10.2-(2020)",
+            "description": "Apple iPad 10.2 (2020) tablet. Announced Sep 2020. Features 10.2\u2033  display, Apple A12 Bionic chipset, 128 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "568bce3f-f0d0-4ca7-9a12-185c742bdbd1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-se.jpg",
+            "name": "Watch SE",
+            "slug": "watch-se",
+            "description": "Apple Watch SE watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S5 chipset, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "7c60728f-2278-44e8-bcb2-8fe5b6e577ab",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6.jpg",
+            "name": "Watch Series 6 Aluminum",
+            "slug": "watch-series-6-aluminum",
+            "description": "Apple Watch Series 6 Aluminum watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2ac100bd-dadb-421b-9a29-789fcef35a9f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-steel.jpg",
+            "name": "Watch Series 6",
+            "slug": "watch-series-6",
+            "description": "Apple Watch Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e5d63cfa-1f85-41a3-af86-8772bfa42461",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-titanium.jpg",
+            "name": "Watch Edition Series 6",
+            "slug": "watch-edition-series-6",
+            "description": "Apple Watch Edition Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8b1463e9-8901-47c3-b72d-d4685dcc89fe",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2020.jpg",
+            "name": "iPhone SE (2020)",
+            "slug": "iphone-se-(2020)",
+            "description": "Apple iPhone SE (2020) smartphone. Announced Apr 2020. Features 4.7\u2033  display, Apple A13 Bionic chipset, 1821 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e1d2b1b4-28d0-464d-a8a9-5401e980d0f4",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-12-2020.jpg",
+            "name": "iPad Pro 12.9 (2020)",
+            "slug": "ipad-pro-12.9-(2020)",
+            "description": "Apple iPad Pro 12.9 (2020) tablet. Announced Mar 2020. Features 12.9\u2033  display, Apple A12Z Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "01563921-5292-4117-9103-a64f9290d082",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2020.jpg",
+            "name": "iPad Pro 11 (2020)",
+            "slug": "ipad-pro-11-(2020)",
+            "description": "Apple iPad Pro 11 (2020) tablet. Announced Mar 2020. Features 11.0\u2033  display, Apple A12Z Bionic chipset, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d38aadd4-3d55-452a-bfc2-ce5c48fd870a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro.jpg",
+            "name": "iPhone 11 Pro Max",
+            "slug": "iphone-11-pro-max",
+            "description": "Apple iPhone 11 Pro Max smartphone. Announced Sep 2019. Features 6.5\u2033  display, Apple A13 Bionic chipset, 3969 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0c188ca7-086a-4421-b635-c711db18d782",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro-max-.jpg",
+            "name": "iPhone 11 Pro",
+            "slug": "iphone-11-pro",
+            "description": "Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8\u2033  display, Apple A13 Bionic chipset, 3046 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "cb9df362-8e34-4325-b7d3-a686d1d1b5ec",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11.jpg",
+            "name": "iPhone 11",
+            "slug": "iphone-11",
+            "description": "Apple iPhone 11 smartphone. Announced Sep 2019. Features 6.1\u2033  display, Apple A13 Bionic chipset, 3110 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f5115dad-7920-4469-810c-674189b6f926",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad7-102-inches.jpg",
+            "name": "iPad 10.2 (2019)",
+            "slug": "ipad-10.2-(2019)",
+            "description": "Apple iPad 10.2 (2019) tablet. Announced Sep 2019. Features 10.2\u2033  display, Apple A10 Fusion chipset, 8827 mAh battery, 128 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "60794b6d-c39e-4958-a390-9015e1340edd",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-series-5.jpg",
+            "name": "Watch Edition Series 5",
+            "slug": "watch-edition-series-5",
+            "description": "Apple Watch Edition Series 5 watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "18f1dd45-c129-4587-bf29-07d56c567155",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-5.jpg",
+            "name": "Watch Series 5",
+            "slug": "watch-series-5",
+            "description": "Apple Watch Series 5 watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "3efe892d-ace7-4722-be04-1c5018aee564",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-aluminum-series-5.jpg",
+            "name": "Watch Series 5 Aluminum",
+            "slug": "watch-series-5-aluminum",
+            "description": "Apple Watch Series 5 Aluminum watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "5f2633d4-b70e-4649-9fff-3f94e3bb4c5d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air3-2019.jpg",
+            "name": "iPad Air (2019)",
+            "slug": "ipad-air-(2019)",
+            "description": "Apple iPad Air (2019) tablet. Announced Mar 2019. Features 10.5\u2033  display, Apple A12 Bionic chipset, 8134 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0504812e-9c17-4d6c-bd0a-2f2b97273393",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-2019.jpg",
+            "name": "iPad mini (2019)",
+            "slug": "ipad-mini-(2019)",
+            "description": "Apple iPad mini (2019) tablet. Announced Mar 2019. Features 7.9\u2033  display, Apple A12 Bionic chipset, 5124 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "81eba11f-b52d-45ff-a542-bccad2dba709",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2018.jpg",
+            "name": "iPad Pro 12.9 (2018)",
+            "slug": "ipad-pro-12.9-(2018)",
+            "description": "Apple iPad Pro 12.9 (2018) tablet. Announced Oct 2018. Features 12.9\u2033  display, Apple A12X Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0299997d-fbf3-46a5-b566-a86bb22125a3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2018.jpg",
+            "name": "iPad Pro 11 (2018)",
+            "slug": "ipad-pro-11-(2018)",
+            "description": "Apple iPad Pro 11 (2018) tablet. Announced Oct 2018. Features 11.0\u2033  display, Apple A12X Bionic chipset, 7812 mAh battery, 1024 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "24ff4554-cc37-411d-a0b3-b05654c50df1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xs-max-new1.jpg",
+            "name": "iPhone XS Max",
+            "slug": "iphone-xs-max",
+            "description": "Apple iPhone XS Max smartphone. Announced Sep 2018. Features 6.5\u2033  display, Apple A12 Bionic chipset, Dual: 12 MP (f/1.8, 26mm, 1/2.55\u2033, 1.4\u00b5m) + 12 MP primary camera, 7 MP front camera, 3174 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "483005d3-723a-4a6a-8586-29d6634d398f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xs-new.jpg",
+            "name": "iPhone XS",
+            "slug": "iphone-xs",
+            "description": "Apple iPhone XS smartphone. Announced Sep 2018. Features 5.8\u2033  display, Apple A12 Bionic chipset, Dual: 12 MP (f/1.8, 26mm, 1/2.55\u2033, 1.4\u00b5m) + 12 MP primary camera, 7 MP front camera, 2658 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e3dfef63-fdad-4753-8392-eb0841127343",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xr-new.jpg",
+            "name": "iPhone XR",
+            "slug": "iphone-xr",
+            "description": "Apple iPhone XR smartphone. Announced Sep 2018. Features 6.1\u2033  display, Apple A12 Bionic chipset, 12 MP primary camera, 7 MP front camera, 2942 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "39dd9420-8aef-4821-bfe6-da0736b9249a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-4-steel.jpg",
+            "name": "Watch Series 4",
+            "slug": "watch-series-4",
+            "description": "Apple Watch Series 4 watch. Announced Sep 2018. Features 1.78\u2033  display, Apple S4 chipset, 292 mAh battery, 16 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "deeea178-6c14-42e7-a572-4a4eb8e8a444",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-4-aluminum.jpg",
+            "name": "Watch Series 4 Aluminum",
+            "slug": "watch-series-4-aluminum",
+            "description": "Apple Watch Series 4 Aluminum watch. Announced Sep 2018. Features 1.78\u2033  display, Apple S4 chipset, 16 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "33510713-4cac-4eb6-a8ec-686a660317ba",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-97-2018.jpg",
+            "name": "iPad 9.7 (2018)",
+            "slug": "ipad-9.7-(2018)",
+            "description": "Apple iPad 9.7 (2018) tablet. Announced Mar 2018. Features 9.7\u2033  display, Apple A10 Fusion chipset, 8 MP primary camera, 1.2 MP front camera, 8827 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e5527d30-e429-4c1d-8c40-43231c7e2488",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-x.jpg",
+            "name": "iPhone X",
+            "slug": "iphone-x",
+            "description": "Apple iPhone X smartphone. Announced Sep 2017. Features 5.8\u2033  display, Apple A11 Bionic chipset, Dual: 12 MP (f/1.8, 28mm, 1.22\u00b5m) + 12 MP primary camera, 7 MP front camera, 2716 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "5c306aac-2d05-4328-9e8d-08024882111e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-8-plus-new.jpg",
+            "name": "iPhone 8 Plus",
+            "slug": "iphone-8-plus",
+            "description": "Apple iPhone 8 Plus smartphone. Announced Sep 2017. Features 5.5\u2033  display, Apple A11 Bionic chipset, Dual: 12 MP (f/1.8, 28mm, OIS) + 12 MP primary camera, 7 MP front camera, 2691 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f4b8649c-87eb-4394-925f-1b2c53698392",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-8-new.jpg",
+            "name": "iPhone 8",
+            "slug": "iphone-8",
+            "description": "Apple iPhone 8 smartphone. Announced Sep 2017. Features 4.7\u2033  display, Apple A11 Bionic chipset, 12 MP primary camera, 7 MP front camera, 1821 mAh battery, 256 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "be32a40d-fc08-472f-b93d-0b50694a05fb",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-series3.jpg",
+            "name": "Watch Edition Series 3",
+            "slug": "watch-edition-series-3",
+            "description": "Apple Watch Edition Series 3 watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 341 mAh battery, 16 GB storage, 768 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b251aafe-922e-4f66-bac5-a1257a5c8b7e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series3-.jpg",
+            "name": "Watch Series 3",
+            "slug": "watch-series-3",
+            "description": "Apple Watch Series 3 watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 279 mAh battery, 16 GB storage, 768 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b76bbbcd-fe45-43b8-950c-6ba3b3310b86",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series3-sport-.jpg",
+            "name": "Watch Series 3 Aluminum",
+            "slug": "watch-series-3-aluminum",
+            "description": "Apple Watch Series 3 Aluminum watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 279 mAh battery, 16 GB storage, 768 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "81c7116f-fb0a-4cb8-9b32-133ec0779d7a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2017.jpg",
+            "name": "iPad Pro 12.9 (2017)",
+            "slug": "ipad-pro-12.9-(2017)",
+            "description": "Apple iPad Pro 12.9 (2017) tablet. Announced Jun 2017. Features 12.9\u2033  display, Apple A10X Fusion chipset, 12 MP primary camera, 7 MP front camera, 10891 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "3fe7d52a-091e-4850-8abc-c91f41085a66",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-105-2017.jpg",
+            "name": "iPad Pro 10.5 (2017)",
+            "slug": "ipad-pro-10.5-(2017)",
+            "description": "Apple iPad Pro 10.5 (2017) tablet. Announced Jun 2017. Features 10.5\u2033  display, Apple A10X Fusion chipset, 12 MP primary camera, 7 MP front camera, 8134 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "861fc31e-42b6-4be0-bd77-7bfc2379c0d2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-97-2017.jpg",
+            "name": "iPad 9.7 (2017)",
+            "slug": "ipad-9.7-(2017)",
+            "description": "Apple iPad 9.7 (2017) tablet. Announced Mar 2017. Features 9.7\u2033  display, Apple A9 chipset, 8 MP primary camera, 1.2 MP front camera, 8827 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "65162ba8-1874-425d-993d-e6bdb3f8207f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-edition-42mm.jpg",
+            "name": "Watch Edition Series 2 42mm",
+            "slug": "watch-edition-series-2-42mm",
+            "description": "Apple Watch Edition Series 2 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2b67c71d-e633-4c1c-86fe-cf8977323cca",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-edition-38mm.jpg",
+            "name": "Watch Edition Series 2 38mm",
+            "slug": "watch-edition-series-2-38mm",
+            "description": "Apple Watch Edition Series 2 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "51748e41-fcac-4ff8-b848-d3a7f70719c1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-42mm.jpg",
+            "name": "Watch Series 2 42mm",
+            "slug": "watch-series-2-42mm",
+            "description": "Apple Watch Series 2 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b551047e-4afe-4332-856e-ab88a81ae1c6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-38mm.jpg",
+            "name": "Watch Series 2 38mm",
+            "slug": "watch-series-2-38mm",
+            "description": "Apple Watch Series 2 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "181d5607-b483-4ca1-865d-bab4eb525895",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-42mm.jpg",
+            "name": "Watch Series 2 Aluminum 42mm",
+            "slug": "watch-series-2-aluminum-42mm",
+            "description": "Apple Watch Series 2 Aluminum 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "68fdd75d-2399-4640-a238-423c0f5f91c1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch1-sport-42mm.jpg",
+            "name": "Watch Series 1 Aluminum 42mm",
+            "slug": "watch-series-1-aluminum-42mm",
+            "description": "Apple Watch Series 1 Aluminum 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S1P chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "38c63b06-9926-4f68-94c6-83f4c6233c42",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": "Watch Series 2 Aluminum 38mm",
+            "slug": "watch-series-2-aluminum-38mm",
+            "description": "Apple Watch Series 2 Aluminum 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "83f849a0-8dff-484e-8395-3631c673a828",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": "Watch Series 1 Aluminum 38mm",
+            "slug": "watch-series-1-aluminum-38mm",
+            "description": "Apple Watch Series 1 Aluminum 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S1P chipset, 205 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "aefe5795-35c8-436a-a44b-08c223d40bd5",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-7-plus-r2.jpg",
+            "name": "iPhone 7 Plus",
+            "slug": "iphone-7-plus",
+            "description": "Apple iPhone 7 Plus smartphone. Announced Sep 2016. Features 5.5\u2033  display, Apple A10 Fusion chipset, Dual: 12 MP (f/1.8, 28mm, 1/3\u2033, OIS) + 12 MP primary camera, 7 MP front camera, 2900 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b4e5b019-d069-44bf-a45b-c9ec8bd00274",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-7r4.jpg",
+            "name": "iPhone 7",
+            "slug": "iphone-7",
+            "description": "Apple iPhone 7 smartphone. Announced Sep 2016. Features 4.7\u2033  display, Apple A10 Fusion chipset, 12 MP primary camera, 7 MP front camera, 1960 mAh battery, 256 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "03a65ca0-235d-40b3-ab56-1bdba853cde2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-97.jpg",
+            "name": "iPad Pro 9.7 (2016)",
+            "slug": "ipad-pro-9.7-(2016)",
+            "description": "Apple iPad Pro 9.7 (2016) tablet. Announced Mar 2016. Features 9.7\u2033  display, Apple A9X chipset, 12 MP primary camera, 5 MP front camera, 7306 mAh battery, 256 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f083379f-3381-44fd-b2af-eccecf50831c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-5se-ofic.jpg",
+            "name": "iPhone SE",
+            "slug": "iphone-se",
+            "description": "Apple iPhone SE smartphone. Announced Mar 2016. Features 4.0\u2033  display, Apple A9 chipset, 12 MP primary camera, 1.2 MP front camera, 1624 mAh battery, 128 GB storage, 2 GB RAM.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "45e896ec-59f0-4ba5-a026-d3af46ab5f47",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6s-plus.jpg",
+            "name": "iPhone 6s Plus",
+            "slug": "iphone-6s-plus",
+            "description": "Apple iPhone 6s Plus smartphone. Announced Sep 2015. Features 5.5\u2033  display, Apple A9 chipset, 12 MP primary camera, 5 MP front camera, 2750 mAh battery, 128 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d61c0b1d-79cd-40f3-8cc6-71c890f19a49",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6s1.jpg",
+            "name": "iPhone 6s",
+            "slug": "iphone-6s",
+            "description": "Apple iPhone 6s smartphone. Announced Sep 2015. Features 4.7\u2033  display, Apple A9 chipset, 12 MP primary camera, 5 MP front camera, 1715 mAh battery, 128 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a3880e0c-b5a7-4730-8f0e-3cf105122987",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-.jpg",
+            "name": "iPad Pro 12.9 (2015)",
+            "slug": "ipad-pro-12.9-(2015)",
+            "description": "Apple iPad Pro 12.9 (2015) tablet. Announced Sep 2015. Features 12.9\u2033  display, Apple A9X chipset, 8 MP primary camera, 1.2 MP front camera, 10307 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "ad5a616e-d3b7-45b0-bbd5-ae2adb2a902a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/ipad-mini-41.jpg",
+            "name": "iPad mini 4 (2015)",
+            "slug": "ipad-mini-4-(2015)",
+            "description": "Apple iPad mini 4 (2015) tablet. Announced Sep 2015. Features 7.9\u2033  display, Apple A8 chipset, 5124 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8ac854b0-dc1c-457f-909a-adfad5f5272b",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-42mm.jpg",
+            "name": "Watch Edition 42mm (1st gen)",
+            "slug": "watch-edition-42mm-(1st-gen)",
+            "description": "Apple Watch Edition 42mm (1st gen) watch. Announced Sep 2014. Features 1.65\u2033  display, Apple S1 chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "74175d4a-4c9c-46ab-ac88-5132cdc8579f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2022.jpg",
+            "name": "iPad Pro 12.9 (2022)",
+            "slug": "ipad-pro-12.9-(2022)",
+            "description": "Apple iPad Pro 12.9 (2022) tablet. Announced Oct 2022. Features 12.9\u2033  display, Apple M2 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "6c19425b-f194-4107-940f-10f9f3c7148d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2022.jpg",
+            "name": "iPad Pro 11 (2022)",
+            "slug": "ipad-pro-11-(2022)",
+            "description": "Apple iPad Pro 11 (2022) tablet. Announced Oct 2022. Features 11.0\u2033  display, Apple M2 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f42fc7cb-7f68-473c-8532-b143e7133e33",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-10-2022.jpg",
+            "name": "iPad (2022)",
+            "slug": "ipad-(2022)",
+            "description": "Apple iPad (2022) tablet. Announced Oct 2022. Features 10.9\u2033  display, Apple A14 Bionic chipset, 256 GB storage, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "419fa5d3-3693-45e4-8cd5-2604d1040727",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro-max-.jpg",
+            "name": "iPhone 14 Pro Max",
+            "slug": "iphone-14-pro-max",
+            "description": "Apple iPhone 14 Pro Max smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A16 Bionic chipset, 4323 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "34e8bc1f-1a07-4a66-a21d-55a0045d57de",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-pro.jpg",
+            "name": "iPhone 14 Pro",
+            "slug": "iphone-14-pro",
+            "description": "Apple iPhone 14 Pro smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A16 Bionic chipset, 3200 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "39f7d982-c359-450b-be96-659aa329681c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14-plus.jpg",
+            "name": "iPhone 14 Plus",
+            "slug": "iphone-14-plus",
+            "description": "Apple iPhone 14 Plus smartphone. Announced Sep 2022. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4323 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0af63ca9-f965-48b8-bc07-823924534772",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-14.jpg",
+            "name": "iPhone 14",
+            "slug": "iphone-14",
+            "description": "Apple iPhone 14 smartphone. Announced Sep 2022. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3279 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "35980c0b-c203-48cb-87a6-92d6112cd9e1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-ultra.jpg",
+            "name": "Watch Ultra",
+            "slug": "watch-ultra",
+            "description": "Apple Watch Ultra watch. Announced Sep 2022. Features 1.92\u2033  display, Apple S8 chipset, 542 mAh battery, 32 GB storage, MIL-STD 810H certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "23a8395b-adc2-4a57-9958-0e91f7a01cb2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8.jpg",
+            "name": "Watch Series 8",
+            "slug": "watch-series-8",
+            "description": "Apple Watch Series 8 watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "552fcb2c-f4bb-4152-8fff-91b58939a760",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8-aluminum.jpg",
+            "name": "Watch Series 8 Aluminum",
+            "slug": "watch-series-8-aluminum",
+            "description": "Apple Watch Series 8 Aluminum watch. Announced Sep 2022. Features 1.9\u2033  display, Apple S8 chipset, 308 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "45c97064-bc7e-464c-8188-875b5a567dbf",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-8se-2022.jpg",
+            "name": "Watch SE (2022)",
+            "slug": "watch-se-(2022)",
+            "description": "Apple Watch SE (2022) watch. Announced Sep 2022. Features 1.78\u2033  display, Apple S8 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2365635f-1e4e-437a-90b6-431c2e754a02",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2022.jpg",
+            "name": "iPhone SE (2022)",
+            "slug": "iphone-se-(2022)",
+            "description": "Apple iPhone SE (2022) smartphone. Announced Mar 2022. Features 4.7\u2033  display, Apple A15 Bionic chipset, 2018 mAh battery, 256 GB storage, 4 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "10530fcb-719c-4f4c-9d5c-6f14388a6d60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air-2022-new.jpg",
+            "name": "iPad Air (2022)",
+            "slug": "ipad-air-(2022)",
+            "description": "Apple iPad Air (2022) tablet. Announced Mar 2022. Features 10.9\u2033  display, Apple M1 chipset, 256 GB storage, 8 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "32858848-dca3-4a0a-805f-0883095b317d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro-max.jpg",
+            "name": "iPhone 13 Pro Max",
+            "slug": "iphone-13-pro-max",
+            "description": "Apple iPhone 13 Pro Max smartphone. Announced Sep 2021. Features 6.7\u2033  display, Apple A15 Bionic chipset, 4352 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "fc8cd435-79ed-4385-8ab4-67886d6aff91",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-pro.jpg",
+            "name": "iPhone 13 Pro",
+            "slug": "iphone-13-pro",
+            "description": "Apple iPhone 13 Pro smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3095 mAh battery, 1024 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a2dadebc-0a5c-4882-ba92-dd91cf2046e3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13.jpg",
+            "name": "iPhone 13",
+            "slug": "iphone-13",
+            "description": "Apple iPhone 13 smartphone. Announced Sep 2021. Features 6.1\u2033  display, Apple A15 Bionic chipset, 3240 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "07f29c01-99e5-4cfe-a881-c4f6962933d6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-13-mini.jpg",
+            "name": "iPhone 13 mini",
+            "slug": "iphone-13-mini",
+            "description": "Apple iPhone 13 mini smartphone. Announced Sep 2021. Features 5.4\u2033  display, Apple A15 Bionic chipset, 2438 mAh battery, 512 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d98c4748-af36-4ff7-9616-0695db4667ae",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-2021.jpg",
+            "name": "iPad mini (2021)",
+            "slug": "ipad-mini-(2021)",
+            "description": "Apple iPad mini (2021) tablet. Announced Sep 2021. Features 8.3\u2033  display, Apple A15 Bionic chipset, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "78451f18-b80c-4e17-b592-5b099b31b43a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-102-2021-.jpg",
+            "name": "iPad 10.2 (2021)",
+            "slug": "ipad-10.2-(2021)",
+            "description": "Apple iPad 10.2 (2021) tablet. Announced Sep 2021. Features 10.2\u2033  display, Apple A13 Bionic chipset, 8557 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "ae5f5fa7-e004-4734-b4fb-c9dff3c2bf24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-titanium.jpg",
+            "name": "Watch Edition Series 7",
+            "slug": "watch-edition-series-7",
+            "description": "Apple Watch Edition Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "058983c3-497c-4ab6-af7f-00bd1d3c0a24",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-stainless-steel.jpg",
+            "name": "Watch Series 7",
+            "slug": "watch-series-7",
+            "description": "Apple Watch Series 7 watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "95c242a0-f07f-43db-aecd-19e97cab4571",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-7-aluminum.jpg",
+            "name": "Watch Series 7 Aluminum",
+            "slug": "watch-series-7-aluminum",
+            "description": "Apple Watch Series 7 Aluminum watch. Announced Sep 2021. Features 1.9\u2033  display, Apple S7 chipset, 309 mAh battery, 32 GB storage, 1000 MB RAM, IP6X certified, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "515f44d2-2e49-4ce9-9415-c64268bc5238",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2021.jpg",
+            "name": "iPad Pro 12.9 (2021)",
+            "slug": "ipad-pro-12.9-(2021)",
+            "description": "Apple iPad Pro 12.9 (2021) tablet. Announced Apr 2021. Features 12.9\u2033  display, Apple M1 chipset, 10758 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "4025b290-6138-42ad-8f0c-6ab2b250ce60",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2021.jpg",
+            "name": "iPad Pro 11 (2021)",
+            "slug": "ipad-pro-11-(2021)",
+            "description": "Apple iPad Pro 11 (2021) tablet. Announced Apr 2021. Features 11.0\u2033  display, Apple M1 chipset, 7538 mAh battery, 2048 GB storage, 16 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "789ca887-3924-4c8c-8609-1e34b6e06890",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro-max-.jpg",
+            "name": "iPhone 12 Pro Max",
+            "slug": "iphone-12-pro-max",
+            "description": "Apple iPhone 12 Pro Max smartphone. Announced Oct 2020. Features 6.7\u2033  display, Apple A14 Bionic chipset, 3687 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b1b04627-899b-4f5d-baf9-a97f6d09f26c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-pro--.jpg",
+            "name": "iPhone 12 Pro",
+            "slug": "iphone-12-pro",
+            "description": "Apple iPhone 12 Pro smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 512 GB storage, 6 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "022aae2d-202b-4ec2-9107-c4d6b2d88599",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12.jpg",
+            "name": "iPhone 12",
+            "slug": "iphone-12",
+            "description": "Apple iPhone 12 smartphone. Announced Oct 2020. Features 6.1\u2033  display, Apple A14 Bionic chipset, 2815 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1cf00024-493f-46b4-a2b2-aa9e4031864e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-12-mini.jpg",
+            "name": "iPhone 12 mini",
+            "slug": "iphone-12-mini",
+            "description": "Apple iPhone 12 mini smartphone. Announced Oct 2020. Features 5.4\u2033  display, Apple A14 Bionic chipset, 2227 mAh battery, 256 GB storage, 4 GB RAM, Ceramic Shield glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "1dc99dfb-9e05-4fe3-baaf-f8e793641d1d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air4-2020.jpg",
+            "name": "iPad Air (2020)",
+            "slug": "ipad-air-(2020)",
+            "description": "Apple iPad Air (2020) tablet. Announced Sep 2020. Features 10.9\u2033  display, Apple A14 Bionic chipset, 7606 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "aed96b1b-60a9-4e6b-abbe-d1fd5a919857",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad8-102-inches-2020.jpg",
+            "name": "iPad 10.2 (2020)",
+            "slug": "ipad-10.2-(2020)",
+            "description": "Apple iPad 10.2 (2020) tablet. Announced Sep 2020. Features 10.2\u2033  display, Apple A12 Bionic chipset, 128 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "568bce3f-f0d0-4ca7-9a12-185c742bdbd1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-se.jpg",
+            "name": "Watch SE",
+            "slug": "watch-se",
+            "description": "Apple Watch SE watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S5 chipset, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "7c60728f-2278-44e8-bcb2-8fe5b6e577ab",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6.jpg",
+            "name": "Watch Series 6 Aluminum",
+            "slug": "watch-series-6-aluminum",
+            "description": "Apple Watch Series 6 Aluminum watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2ac100bd-dadb-421b-9a29-789fcef35a9f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-steel.jpg",
+            "name": "Watch Series 6",
+            "slug": "watch-series-6",
+            "description": "Apple Watch Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e5d63cfa-1f85-41a3-af86-8772bfa42461",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-s6-titanium.jpg",
+            "name": "Watch Edition Series 6",
+            "slug": "watch-edition-series-6",
+            "description": "Apple Watch Edition Series 6 watch. Announced Sep 2020. Features 1.78\u2033  display, Apple S6 chipset, 304 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8b1463e9-8901-47c3-b72d-d4685dcc89fe",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-se-2020.jpg",
+            "name": "iPhone SE (2020)",
+            "slug": "iphone-se-(2020)",
+            "description": "Apple iPhone SE (2020) smartphone. Announced Apr 2020. Features 4.7\u2033  display, Apple A13 Bionic chipset, 1821 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e1d2b1b4-28d0-464d-a8a9-5401e980d0f4",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-12-2020.jpg",
+            "name": "iPad Pro 12.9 (2020)",
+            "slug": "ipad-pro-12.9-(2020)",
+            "description": "Apple iPad Pro 12.9 (2020) tablet. Announced Mar 2020. Features 12.9\u2033  display, Apple A12Z Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "01563921-5292-4117-9103-a64f9290d082",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2020.jpg",
+            "name": "iPad Pro 11 (2020)",
+            "slug": "ipad-pro-11-(2020)",
+            "description": "Apple iPad Pro 11 (2020) tablet. Announced Mar 2020. Features 11.0\u2033  display, Apple A12Z Bionic chipset, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d38aadd4-3d55-452a-bfc2-ce5c48fd870a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro.jpg",
+            "name": "iPhone 11 Pro Max",
+            "slug": "iphone-11-pro-max",
+            "description": "Apple iPhone 11 Pro Max smartphone. Announced Sep 2019. Features 6.5\u2033  display, Apple A13 Bionic chipset, 3969 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0c188ca7-086a-4421-b635-c711db18d782",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11-pro-max-.jpg",
+            "name": "iPhone 11 Pro",
+            "slug": "iphone-11-pro",
+            "description": "Apple iPhone 11 Pro smartphone. Announced Sep 2019. Features 5.8\u2033  display, Apple A13 Bionic chipset, 3046 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "cb9df362-8e34-4325-b7d3-a686d1d1b5ec",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-11.jpg",
+            "name": "iPhone 11",
+            "slug": "iphone-11",
+            "description": "Apple iPhone 11 smartphone. Announced Sep 2019. Features 6.1\u2033  display, Apple A13 Bionic chipset, 3110 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f5115dad-7920-4469-810c-674189b6f926",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad7-102-inches.jpg",
+            "name": "iPad 10.2 (2019)",
+            "slug": "ipad-10.2-(2019)",
+            "description": "Apple iPad 10.2 (2019) tablet. Announced Sep 2019. Features 10.2\u2033  display, Apple A10 Fusion chipset, 8827 mAh battery, 128 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "60794b6d-c39e-4958-a390-9015e1340edd",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-series-5.jpg",
+            "name": "Watch Edition Series 5",
+            "slug": "watch-edition-series-5",
+            "description": "Apple Watch Edition Series 5 watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "18f1dd45-c129-4587-bf29-07d56c567155",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-5.jpg",
+            "name": "Watch Series 5",
+            "slug": "watch-series-5",
+            "description": "Apple Watch Series 5 watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "3efe892d-ace7-4722-be04-1c5018aee564",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-aluminum-series-5.jpg",
+            "name": "Watch Series 5 Aluminum",
+            "slug": "watch-series-5-aluminum",
+            "description": "Apple Watch Series 5 Aluminum watch. Announced Sep 2019. Features 1.78\u2033  display, Apple S5 chipset, 296 mAh battery, 32 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "5f2633d4-b70e-4649-9fff-3f94e3bb4c5d",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air3-2019.jpg",
+            "name": "iPad Air (2019)",
+            "slug": "ipad-air-(2019)",
+            "description": "Apple iPad Air (2019) tablet. Announced Mar 2019. Features 10.5\u2033  display, Apple A12 Bionic chipset, 8134 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0504812e-9c17-4d6c-bd0a-2f2b97273393",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-2019.jpg",
+            "name": "iPad mini (2019)",
+            "slug": "ipad-mini-(2019)",
+            "description": "Apple iPad mini (2019) tablet. Announced Mar 2019. Features 7.9\u2033  display, Apple A12 Bionic chipset, 5124 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "81eba11f-b52d-45ff-a542-bccad2dba709",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2018.jpg",
+            "name": "iPad Pro 12.9 (2018)",
+            "slug": "ipad-pro-12.9-(2018)",
+            "description": "Apple iPad Pro 12.9 (2018) tablet. Announced Oct 2018. Features 12.9\u2033  display, Apple A12X Bionic chipset, 9720 mAh battery, 1024 GB storage, 6 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0299997d-fbf3-46a5-b566-a86bb22125a3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-11-2018.jpg",
+            "name": "iPad Pro 11 (2018)",
+            "slug": "ipad-pro-11-(2018)",
+            "description": "Apple iPad Pro 11 (2018) tablet. Announced Oct 2018. Features 11.0\u2033  display, Apple A12X Bionic chipset, 7812 mAh battery, 1024 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "24ff4554-cc37-411d-a0b3-b05654c50df1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xs-max-new1.jpg",
+            "name": "iPhone XS Max",
+            "slug": "iphone-xs-max",
+            "description": "Apple iPhone XS Max smartphone. Announced Sep 2018. Features 6.5\u2033  display, Apple A12 Bionic chipset, Dual: 12 MP (f/1.8, 26mm, 1/2.55\u2033, 1.4\u00b5m) + 12 MP primary camera, 7 MP front camera, 3174 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "483005d3-723a-4a6a-8586-29d6634d398f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xs-new.jpg",
+            "name": "iPhone XS",
+            "slug": "iphone-xs",
+            "description": "Apple iPhone XS smartphone. Announced Sep 2018. Features 5.8\u2033  display, Apple A12 Bionic chipset, Dual: 12 MP (f/1.8, 26mm, 1/2.55\u2033, 1.4\u00b5m) + 12 MP primary camera, 7 MP front camera, 2658 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e3dfef63-fdad-4753-8392-eb0841127343",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-xr-new.jpg",
+            "name": "iPhone XR",
+            "slug": "iphone-xr",
+            "description": "Apple iPhone XR smartphone. Announced Sep 2018. Features 6.1\u2033  display, Apple A12 Bionic chipset, 12 MP primary camera, 7 MP front camera, 2942 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "39dd9420-8aef-4821-bfe6-da0736b9249a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-4-steel.jpg",
+            "name": "Watch Series 4",
+            "slug": "watch-series-4",
+            "description": "Apple Watch Series 4 watch. Announced Sep 2018. Features 1.78\u2033  display, Apple S4 chipset, 292 mAh battery, 16 GB storage, 1000 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "deeea178-6c14-42e7-a572-4a4eb8e8a444",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series-4-aluminum.jpg",
+            "name": "Watch Series 4 Aluminum",
+            "slug": "watch-series-4-aluminum",
+            "description": "Apple Watch Series 4 Aluminum watch. Announced Sep 2018. Features 1.78\u2033  display, Apple S4 chipset, 16 GB storage, 1000 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "33510713-4cac-4eb6-a8ec-686a660317ba",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-97-2018.jpg",
+            "name": "iPad 9.7 (2018)",
+            "slug": "ipad-9.7-(2018)",
+            "description": "Apple iPad 9.7 (2018) tablet. Announced Mar 2018. Features 9.7\u2033  display, Apple A10 Fusion chipset, 8 MP primary camera, 1.2 MP front camera, 8827 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e5527d30-e429-4c1d-8c40-43231c7e2488",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-x.jpg",
+            "name": "iPhone X",
+            "slug": "iphone-x",
+            "description": "Apple iPhone X smartphone. Announced Sep 2017. Features 5.8\u2033  display, Apple A11 Bionic chipset, Dual: 12 MP (f/1.8, 28mm, 1.22\u00b5m) + 12 MP primary camera, 7 MP front camera, 2716 mAh battery, 256 GB storage, 3 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "5c306aac-2d05-4328-9e8d-08024882111e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-8-plus-new.jpg",
+            "name": "iPhone 8 Plus",
+            "slug": "iphone-8-plus",
+            "description": "Apple iPhone 8 Plus smartphone. Announced Sep 2017. Features 5.5\u2033  display, Apple A11 Bionic chipset, Dual: 12 MP (f/1.8, 28mm, OIS) + 12 MP primary camera, 7 MP front camera, 2691 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f4b8649c-87eb-4394-925f-1b2c53698392",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-8-new.jpg",
+            "name": "iPhone 8",
+            "slug": "iphone-8",
+            "description": "Apple iPhone 8 smartphone. Announced Sep 2017. Features 4.7\u2033  display, Apple A11 Bionic chipset, 12 MP primary camera, 7 MP front camera, 1821 mAh battery, 256 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "be32a40d-fc08-472f-b93d-0b50694a05fb",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-series3.jpg",
+            "name": "Watch Edition Series 3",
+            "slug": "watch-edition-series-3",
+            "description": "Apple Watch Edition Series 3 watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 341 mAh battery, 16 GB storage, 768 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b251aafe-922e-4f66-bac5-a1257a5c8b7e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series3-.jpg",
+            "name": "Watch Series 3",
+            "slug": "watch-series-3",
+            "description": "Apple Watch Series 3 watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 279 mAh battery, 16 GB storage, 768 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b76bbbcd-fe45-43b8-950c-6ba3b3310b86",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-series3-sport-.jpg",
+            "name": "Watch Series 3 Aluminum",
+            "slug": "watch-series-3-aluminum",
+            "description": "Apple Watch Series 3 Aluminum watch. Announced Sep 2017. Features 1.65\u2033  display, Apple S3 chipset, 279 mAh battery, 16 GB storage, 768 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "81c7116f-fb0a-4cb8-9b32-133ec0779d7a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-129-2017.jpg",
+            "name": "iPad Pro 12.9 (2017)",
+            "slug": "ipad-pro-12.9-(2017)",
+            "description": "Apple iPad Pro 12.9 (2017) tablet. Announced Jun 2017. Features 12.9\u2033  display, Apple A10X Fusion chipset, 12 MP primary camera, 7 MP front camera, 10891 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "3fe7d52a-091e-4850-8abc-c91f41085a66",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-105-2017.jpg",
+            "name": "iPad Pro 10.5 (2017)",
+            "slug": "ipad-pro-10.5-(2017)",
+            "description": "Apple iPad Pro 10.5 (2017) tablet. Announced Jun 2017. Features 10.5\u2033  display, Apple A10X Fusion chipset, 12 MP primary camera, 7 MP front camera, 8134 mAh battery, 512 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "861fc31e-42b6-4be0-bd77-7bfc2379c0d2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-97-2017.jpg",
+            "name": "iPad 9.7 (2017)",
+            "slug": "ipad-9.7-(2017)",
+            "description": "Apple iPad 9.7 (2017) tablet. Announced Mar 2017. Features 9.7\u2033  display, Apple A9 chipset, 8 MP primary camera, 1.2 MP front camera, 8827 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "65162ba8-1874-425d-993d-e6bdb3f8207f",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-edition-42mm.jpg",
+            "name": "Watch Edition Series 2 42mm",
+            "slug": "watch-edition-series-2-42mm",
+            "description": "Apple Watch Edition Series 2 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2b67c71d-e633-4c1c-86fe-cf8977323cca",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-edition-38mm.jpg",
+            "name": "Watch Edition Series 2 38mm",
+            "slug": "watch-edition-series-2-38mm",
+            "description": "Apple Watch Edition Series 2 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "51748e41-fcac-4ff8-b848-d3a7f70719c1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-42mm.jpg",
+            "name": "Watch Series 2 42mm",
+            "slug": "watch-series-2-42mm",
+            "description": "Apple Watch Series 2 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b551047e-4afe-4332-856e-ab88a81ae1c6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-38mm.jpg",
+            "name": "Watch Series 2 38mm",
+            "slug": "watch-series-2-38mm",
+            "description": "Apple Watch Series 2 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "181d5607-b483-4ca1-865d-bab4eb525895",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-42mm.jpg",
+            "name": "Watch Series 2 Aluminum 42mm",
+            "slug": "watch-series-2-aluminum-42mm",
+            "description": "Apple Watch Series 2 Aluminum 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S2 chipset, 334 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "68fdd75d-2399-4640-a238-423c0f5f91c1",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch1-sport-42mm.jpg",
+            "name": "Watch Series 1 Aluminum 42mm",
+            "slug": "watch-series-1-aluminum-42mm",
+            "description": "Apple Watch Series 1 Aluminum 42mm watch. Announced Sep 2016. Features 1.65\u2033  display, Apple S1P chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "38c63b06-9926-4f68-94c6-83f4c6233c42",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": "Watch Series 2 Aluminum 38mm",
+            "slug": "watch-series-2-aluminum-38mm",
+            "description": "Apple Watch Series 2 Aluminum 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S2 chipset, 273 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "83f849a0-8dff-484e-8395-3631c673a828",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch2-s2-sport-38mm.jpg",
+            "name": "Watch Series 1 Aluminum 38mm",
+            "slug": "watch-series-1-aluminum-38mm",
+            "description": "Apple Watch Series 1 Aluminum 38mm watch. Announced Sep 2016. Features 1.5\u2033  display, Apple S1P chipset, 205 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "aefe5795-35c8-436a-a44b-08c223d40bd5",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-7-plus-r2.jpg",
+            "name": "iPhone 7 Plus",
+            "slug": "iphone-7-plus",
+            "description": "Apple iPhone 7 Plus smartphone. Announced Sep 2016. Features 5.5\u2033  display, Apple A10 Fusion chipset, Dual: 12 MP (f/1.8, 28mm, 1/3\u2033, OIS) + 12 MP primary camera, 7 MP front camera, 2900 mAh battery, 256 GB storage, 3 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b4e5b019-d069-44bf-a45b-c9ec8bd00274",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-7r4.jpg",
+            "name": "iPhone 7",
+            "slug": "iphone-7",
+            "description": "Apple iPhone 7 smartphone. Announced Sep 2016. Features 4.7\u2033  display, Apple A10 Fusion chipset, 12 MP primary camera, 7 MP front camera, 1960 mAh battery, 256 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "03a65ca0-235d-40b3-ab56-1bdba853cde2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-97.jpg",
+            "name": "iPad Pro 9.7 (2016)",
+            "slug": "ipad-pro-9.7-(2016)",
+            "description": "Apple iPad Pro 9.7 (2016) tablet. Announced Mar 2016. Features 9.7\u2033  display, Apple A9X chipset, 12 MP primary camera, 5 MP front camera, 7306 mAh battery, 256 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f083379f-3381-44fd-b2af-eccecf50831c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-5se-ofic.jpg",
+            "name": "iPhone SE",
+            "slug": "iphone-se",
+            "description": "Apple iPhone SE smartphone. Announced Mar 2016. Features 4.0\u2033  display, Apple A9 chipset, 12 MP primary camera, 1.2 MP front camera, 1624 mAh battery, 128 GB storage, 2 GB RAM.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "45e896ec-59f0-4ba5-a026-d3af46ab5f47",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6s-plus.jpg",
+            "name": "iPhone 6s Plus",
+            "slug": "iphone-6s-plus",
+            "description": "Apple iPhone 6s Plus smartphone. Announced Sep 2015. Features 5.5\u2033  display, Apple A9 chipset, 12 MP primary camera, 5 MP front camera, 2750 mAh battery, 128 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d61c0b1d-79cd-40f3-8cc6-71c890f19a49",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6s1.jpg",
+            "name": "iPhone 6s",
+            "slug": "iphone-6s",
+            "description": "Apple iPhone 6s smartphone. Announced Sep 2015. Features 4.7\u2033  display, Apple A9 chipset, 12 MP primary camera, 5 MP front camera, 1715 mAh battery, 128 GB storage, 2 GB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a3880e0c-b5a7-4730-8f0e-3cf105122987",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-pro-.jpg",
+            "name": "iPad Pro 12.9 (2015)",
+            "slug": "ipad-pro-12.9-(2015)",
+            "description": "Apple iPad Pro 12.9 (2015) tablet. Announced Sep 2015. Features 12.9\u2033  display, Apple A9X chipset, 8 MP primary camera, 1.2 MP front camera, 10307 mAh battery, 256 GB storage, 4 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "ad5a616e-d3b7-45b0-bbd5-ae2adb2a902a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/ipad-mini-41.jpg",
+            "name": "iPad mini 4 (2015)",
+            "slug": "ipad-mini-4-(2015)",
+            "description": "Apple iPad mini 4 (2015) tablet. Announced Sep 2015. Features 7.9\u2033  display, Apple A8 chipset, 5124 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8ac854b0-dc1c-457f-909a-adfad5f5272b",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-42mm.jpg",
+            "name": "Watch Edition 42mm (1st gen)",
+            "slug": "watch-edition-42mm-(1st-gen)",
+            "description": "Apple Watch Edition 42mm (1st gen) watch. Announced Sep 2014. Features 1.65\u2033  display, Apple S1 chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "b4590a1e-0812-4242-bebb-8169f3e7f27a",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-edition-38mm.jpg",
+            "name": "Watch Edition 38mm (1st gen)",
+            "slug": "watch-edition-38mm-(1st-gen)",
+            "description": "Apple Watch Edition 38mm (1st gen) watch. Announced Sep 2014. Features 1.5\u2033  display, Apple S1 chipset, 205 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "40abaf14-b0c2-4e4b-87dd-0af942668f71",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-42mm.jpg",
+            "name": "Watch 42mm (1st gen)",
+            "slug": "watch-42mm-(1st-gen)",
+            "description": "Apple Watch 42mm (1st gen) watch. Announced Sep 2014. Features 1.65\u2033  display, Apple S1 chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "25209b27-b55f-44a9-9dc5-27911347deb7",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-38mm.jpg",
+            "name": "Watch 38mm (1st gen)",
+            "slug": "watch-38mm-(1st-gen)",
+            "description": "Apple Watch 38mm (1st gen) watch. Announced Sep 2014. Features 1.5\u2033  display, Apple S1 chipset, 205 mAh battery, 8 GB storage, 512 MB RAM, Sapphire crystal glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8f7e5734-1b12-4211-8a65-62224c67fc61",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-sport-42mm2.jpg",
+            "name": "Watch Sport 42mm (1st gen)",
+            "slug": "watch-sport-42mm-(1st-gen)",
+            "description": "Apple Watch Sport 42mm (1st gen) watch. Announced Sep 2014. Features 1.65\u2033  display, Apple S1 chipset, 250 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "9971e3fb-7ad4-4276-b3a1-dbc766495620",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-watch-sport-38mm.jpg",
+            "name": "Watch Sport 38mm (1st gen)",
+            "slug": "watch-sport-38mm-(1st-gen)",
+            "description": "Apple Watch Sport 38mm (1st gen) watch. Announced Sep 2014. Features 1.5\u2033  display, Apple S1 chipset, 205 mAh battery, 8 GB storage, 512 MB RAM, Ion-X strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "26f4042c-fa76-41a3-b24a-3234d1e9ce32",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air-2-new.jpg",
+            "name": "iPad Air 2",
+            "slug": "ipad-air-2",
+            "description": "Apple iPad Air 2 tablet. Announced Oct 2014. Features 9.7\u2033  display, Apple A8X chipset, 8 MP primary camera, 1.2 MP front camera, 7340 mAh battery, 128 GB storage, 2 GB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a610a555-20b2-41d0-93fc-389558371adf",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-3-new.jpg",
+            "name": "iPad mini 3",
+            "slug": "ipad-mini-3",
+            "description": "Apple iPad mini 3 tablet. Announced Oct 2014. Features 7.9\u2033  display, Apple A7 chipset, 5 MP primary camera, 1.2 MP front camera, 6470 mAh battery, 128 GB storage, 1000 MB RAM, Oleophobic coating.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "227611e8-4001-4dd3-b13b-bf32b7a33dd8",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6-plus2.jpg",
+            "name": "iPhone 6 Plus",
+            "slug": "iphone-6-plus",
+            "description": "Apple iPhone 6 Plus smartphone. Announced Sep 2014. Features 5.5\u2033  display, Apple A8 chipset, 8 MP primary camera, 1.2 MP front camera, 2915 mAh battery, 128 GB storage, 1000 MB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "c6bf68b9-0f1e-4efb-90d3-346a51cbf26b",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-6-4.jpg",
+            "name": "iPhone 6",
+            "slug": "iphone-6",
+            "description": "Apple iPhone 6 smartphone. Announced Sep 2014. Features 4.7\u2033  display, Apple A8 chipset, 8 MP primary camera, 1.2 MP front camera, 1810 mAh battery, 128 GB storage, 1000 MB RAM, Ion-strengthened glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "745d538b-1a58-4681-ba27-447baee2a767",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-air.jpg",
+            "name": "iPad Air",
+            "slug": "ipad-air",
+            "description": "Apple iPad Air tablet. Announced Oct 2013. Features 9.7\u2033  display, Apple A7 chipset, 5 MP primary camera, 1.2 MP front camera, 8820 mAh battery, 128 GB storage, 1000 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "850d43b2-4357-49df-bb3e-755559f93c31",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini2.jpg",
+            "name": "iPad mini 2",
+            "slug": "ipad-mini-2",
+            "description": "Apple iPad mini 2 tablet. Announced Oct 2013. Features 7.9\u2033  display, Apple A7 chipset, 5 MP primary camera, 1.2 MP front camera, 6470 mAh battery, 128 GB storage, 1000 MB RAM, Oleophobic coating.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f180feca-d91a-4cbf-b12e-feb5913ba4b4",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-5s-ofic.jpg",
+            "name": "iPhone 5s",
+            "slug": "iphone-5s",
+            "description": "Apple iPhone 5s smartphone. Announced Sep 2013. Features 4.0\u2033  display, Apple A7 chipset, 8 MP primary camera, 1.2 MP front camera, 1560 mAh battery, 64 GB storage, 1000 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "c3b60c11-ab53-49ac-a77b-afff5fd42750",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-5c-new2.jpg",
+            "name": "iPhone 5c",
+            "slug": "iphone-5c",
+            "description": "Apple iPhone 5c smartphone. Announced Sep 2013. Features 4.0\u2033  display, Apple A6 chipset, 8 MP primary camera, 1.2 MP front camera, 1510 mAh battery, 32 GB storage, 1000 MB RAM.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "e137607b-cab9-4aaa-b90a-24b877e4e348",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi",
+            "slug": "ipad-mini-wi-fi",
+            "description": "Apple iPad mini Wi-Fi tablet. Announced Oct 2012. Features 7.9\u2033  display, Apple A5 chipset, 5 MP primary camera, 1.2 MP front camera, 64 GB storage, 512 MB RAM, Oleophobic coating.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "96dbb429-785e-4c29-addd-76510d50e1e9",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-mini-final.jpg",
+            "name": "iPad mini Wi-Fi + Cellular",
+            "slug": "ipad-mini-wi-fi-+-cellular",
+            "description": "Apple iPad mini Wi-Fi + Cellular tablet. Announced Oct 2012. Features 7.9\u2033  display, Apple A5 chipset, 5 MP primary camera, 1.2 MP front camera, 64 GB storage, 512 MB RAM, Oleophobic coating.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f0b697dc-3b96-4d9a-91e3-bf0d9edddb9e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi",
+            "slug": "ipad-4-wi-fi",
+            "description": "Apple iPad 4 Wi-Fi tablet. Announced Oct 2012. Features 9.7\u2033  display, Apple A6X chipset, 5 MP primary camera, 1.2 MP front camera, 11560 mAh battery, 128 GB storage, 1000 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0da3288e-9de0-4379-b252-3d3b69ed038e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-3-new.jpg",
+            "name": "iPad 4 Wi-Fi + Cellular",
+            "slug": "ipad-4-wi-fi-+-cellular",
+            "description": "Apple iPad 4 Wi-Fi + Cellular tablet. Announced Oct 2012. Features 9.7\u2033  display, Apple A6X chipset, 5 MP primary camera, 1.2 MP front camera, 11560 mAh battery, 128 GB storage, 1000 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "fa30d260-8b57-49c9-88ea-895396681c9c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-5-ofic.jpg",
+            "name": "iPhone 5",
+            "slug": "iphone-5",
+            "description": "Apple iPhone 5 smartphone. Announced Sep 2012. Features 4.0\u2033  display, Apple A6 chipset, 8 MP primary camera, 1.2 MP front camera, 1440 mAh battery, 64 GB storage, 1000 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0bd538f9-a746-4b96-b402-989b37418752",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi + Cellular",
+            "slug": "ipad-3-wi-fi-+-cellular",
+            "description": "Apple iPad 3 Wi-Fi + Cellular tablet. Announced Mar 2012. Features 9.7\u2033  display, Apple A5X chipset, 5 MP primary camera, 11560 mAh battery, 64 GB storage, 1000 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "f6c1bb84-ed9f-406f-b5dc-573f5cea74b3",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-3-new.jpg",
+            "name": "iPad 3 Wi-Fi",
+            "slug": "ipad-3-wi-fi",
+            "description": "Apple iPad 3 Wi-Fi tablet. Announced Mar 2012. Features 9.7\u2033  display, Apple A5X chipset, 5 MP primary camera, 11560 mAh battery, 64 GB storage, 1000 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "2589981f-8d35-45e1-a1e2-b88ede762740",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-4s-new.jpg",
+            "name": "iPhone 4s",
+            "slug": "iphone-4s",
+            "description": "Apple iPhone 4s smartphone. Announced Oct 2011. Features 3.5\u2033  display, Apple A5 chipset, 8 MP primary camera, 1432 mAh battery, 64 GB storage, 512 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0885e916-156f-470d-9a3e-2fc1fca308fb",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi + 3G",
+            "slug": "ipad-2-wi-fi-+-3g",
+            "description": "Apple iPad 2 Wi-Fi + 3G tablet. Announced Mar 2011. Features 9.7\u2033  display, Apple A5 chipset, 0.7 MP primary camera, 6930 mAh battery, 64 GB storage, 512 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "4ad5fd45-9206-4d83-bd20-b29879be0bf6",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 Wi-Fi",
+            "slug": "ipad-2-wi-fi",
+            "description": "Apple iPad 2 Wi-Fi tablet. Announced Mar 2011. Features 9.7\u2033  display, Apple A5 chipset, 0.7 MP primary camera, 6930 mAh battery, 64 GB storage, 512 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "04733491-12ad-4e9d-8341-844a2d80ce5e",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad2-new.jpg",
+            "name": "iPad 2 CDMA",
+            "slug": "ipad-2-cdma",
+            "description": "Apple iPad 2 CDMA tablet. Announced Mar 2011. Features 9.7\u2033  display, Apple A5 chipset, 0.7 MP primary camera, 6930 mAh battery, 64 GB storage, 512 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "d60e075a-7038-436e-bde3-efb67b0367ba",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-4-ofic-final.jpg",
+            "name": "iPhone 4",
+            "slug": "iphone-4",
+            "description": "Apple iPhone 4 smartphone. Announced Jun 2010. Features 3.5\u2033  display, Apple A4 chipset, 5 MP primary camera, 1420 mAh battery, 32 GB storage, 512 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "0515ef41-d011-4f4c-8e48-17d28acbbf2c",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone4-cdma.jpg",
+            "name": "iPhone 4 CDMA",
+            "slug": "iphone-4-cdma",
+            "description": "Apple iPhone 4 CDMA smartphone. Announced Jan 2011. Features 3.5\u2033  display, Apple A4 chipset, 5 MP primary camera, 1420 mAh battery, 32 GB storage, 512 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "12229a8c-4d6a-463a-8125-3070b44adb13",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi + 3G",
+            "slug": "ipad-wi-fi-+-3g",
+            "description": "Apple iPad Wi-Fi + 3G tablet. Announced Jan 2010. Features 9.7\u2033  display, Apple A4 chipset, 64 GB storage, 256 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "bffd62e8-2288-474b-b08f-a22a8bfcc5be",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-ipad-original.jpg",
+            "name": "iPad Wi-Fi",
+            "slug": "ipad-wi-fi",
+            "description": "Apple iPad Wi-Fi tablet. Announced Jan 2010. Features 9.7\u2033  display, Apple A4 chipset, 64 GB storage, 256 MB RAM, Scratch-resistant glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "a4d95a97-e993-4823-9d5a-0fb1378dfaf2",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone-3gs-ofic.jpg",
+            "name": "iPhone 3GS",
+            "slug": "iphone-3gs",
+            "description": "Apple iPhone 3GS smartphone. Announced Jun 2009. Features 3.5\u2033  display, 3.15 MP primary camera, 1400 mAh battery, 32 GB storage, 256 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "16bc8aa1-a3b9-4b22-be76-38d79c904049",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone3g.jpg",
+            "name": "iPhone 3G",
+            "slug": "iphone-3g",
+            "description": "Apple iPhone 3G smartphone. Announced Jun 2008. Features 3.5\u2033  display, 2 MP primary camera, 1220 mAh battery, 16 GB storage, 128 MB RAM, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "c5199b48-38d5-4efe-9e9d-55b3cbe7f6a5",
+        "fields": {
+            "brand": 9,
+            "image": "models/apple/apple-iphone.gif",
+            "name": "iPhone",
+            "slug": "iphone",
+            "description": "Apple iPhone smartphone. Announced Jan 2007. Features 3.5\u2033  display, 2 MP primary camera, 1400 mAh battery, 16 GB storage, Corning Gorilla Glass.",
+            "is_mostselling": 0
+        }
+    }
+]
