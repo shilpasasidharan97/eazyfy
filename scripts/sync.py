@@ -48,12 +48,22 @@ def get_filepaths(url, brand_slug, brand_pk):
 
 data = [
     {
-        "brand_slug": "apple",
-        "brand_pk": 9,
+        "brand_slug": "nokia",
+        "brand_pk": 16,
         "urls": [
-            "https://www.gsmarena.com/apple-phones-48.php",
-            "https://www.gsmarena.com/apple-phones-f-48-0-p2.php",
-            "https://www.gsmarena.com/apple-phones-f-48-0-p3.php"
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p2.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p3.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p4.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p5.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p6.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p7.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p8.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p9.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p10.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p11.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p12.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p13.php",
+            "https://www.gsmarena.com/nokia-phones-f-1-0-p14.php",
         ],
     }
 ]
@@ -64,7 +74,7 @@ def run():
     for url in data:
         for u in url["urls"]:
             final += get_data(u, url["brand_slug"], url["brand_pk"])
-            # get_filepaths(u, url["brand_slug"], url["brand_pk"])
+            get_filepaths(u, url["brand_slug"], url["brand_pk"])
 
     with open("data.json", "w") as f:
         json.dump(final, f, indent=4)
