@@ -1,4 +1,4 @@
-from eazyfy.decorators import auth_pickupboy
+from flypik.decorators import auth_pickupboy
 from official.models import OrderPayment
 from official.models import PickUpBoy
 from official.models import PickupData

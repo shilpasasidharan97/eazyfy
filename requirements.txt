@@ -14,3 +14,4 @@ urllib3==1.26.12
 razorpay
 django-import-export
 crispy-bootstrap5
+django-extensions

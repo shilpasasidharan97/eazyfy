@@ -1,4 +1,4 @@
-from eazyfy.decorators import auth_franchise
+from flypik.decorators import auth_franchise
 from official.models import Franchise
 from official.models import FranchiseWallet
 from official.models import PickUpBoy
