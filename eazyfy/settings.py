@@ -18,6 +18,7 @@ ALLOWED_HOSTS = ["*"]
 INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
+    "import_export",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -56,7 +57,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "user.context_processors.main_context",
                 "franchise.context_processor.main_context",
                 "pickupboy.context_processors.main_context",
                 "main.context_processors.main_context",

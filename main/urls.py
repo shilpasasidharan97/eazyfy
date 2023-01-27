@@ -13,8 +13,6 @@ urlpatterns = [
     path("sell_phone/", views.sell_phone, name="sell_phone"),
     path("buy_phone/", views.buy_phone, name="buyphone"),
     path("repair_phone/", views.repair_phone, name="repair_phone"),
-    path("payment/", views.payment, name="payment"),
     path("comingsoon/", views.comingsoon, name="comingsoon"),
     path("find_new_gadget/", views.find_new_gadget, name="find_new_gadget"),
-    path("account/", views.account, name="account"),
 ]

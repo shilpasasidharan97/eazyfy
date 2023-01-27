@@ -1,159 +1,4 @@
 {% load static %}
-<style>
-    /* dropdown franchise */
-
-    body {
-        background-color: #fff;
-    }
-
-    .layout.center-justified,
-    .layout.center-center {
-        justify-content: center;
-    }
-
-    .layout.center,
-    .layout.center-center {
-        align-items: center;
-        border-radius: 10px;
-        padding: 0px 6px;
-    }
-
-    .layout.vertical {
-        flex-direction: column;
-    }
-
-    .list-search,
-    .list-search .list-container {
-        max-width: 510px;
-    }
-
-    .list-search {
-        position: relative;
-    }
-
-    .layout.horizontal {
-        flex-direction: row;
-    }
-
-    .list-search .drill-search {
-        min-width: 330px;
-        border: 1px solid rgba(112, 112, 112, 0.12);
-    }
-
-    .card-shadow {
-        box-shadow: 0 0 10px 0 rgb(0 0 0 / 11%);
-        background-color: #ffffff;
-    }
-
-    .layout {
-        display: flex;
-    }
-
-    a,
-    button,
-    select,
-    textarea,
-    input[type="number"],
-    input[type="search"],
-    input[type="tel"] {
-        border: 0;
-        outline: 0;
-        appearance: none;
-        -webkit-appearance: none;
-    }
-
-    .card {
-        background-color: #ffffff;
-    }
-
-    .mar-r10 {
-        margin-right: 10px;
-    }
-
-    .search-input {
-        font-family: Montserrat, sans-serif;
-    }
-
-    /* Dropdown */
-
-    .dropdown {
-        display: inline-block;
-        position: relative;
-    }
-
-    .dd-button {
-        display: inline-block;
-        border: 1px solid gray;
-        border-radius: 4px;
-        padding: 10px 30px 10px 20px;
-        background-color: #f6f6f6;
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    .dd-button:after {
-        content: "";
-        position: absolute;
-        top: 50%;
-        right: 15px;
-        transform: translateY(-50%);
-        width: 0;
-        height: 0;
-        border-left: 5px solid transparent;
-        border-right: 5px solid transparent;
-        border-top: 5px solid black;
-    }
-
-    .dd-button:hover {
-        background-color: #eeeeee;
-    }
-
-    .dd-input {
-        display: none;
-    }
-
-    .dd-menu {
-        position: absolute;
-        top: 100%;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        padding: 0;
-        margin: 2px 0 0 0;
-        box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
-        list-style-type: none;
-    }
-
-    .dd-input+.dd-menu {
-        display: none;
-    }
-
-    .dd-input:checked+.dd-menu {
-        display: block;
-    }
-
-    .dd-menu li {
-        padding: 10px 20px;
-        cursor: pointer;
-        white-space: nowrap;
-    }
-
-    .dd-menu li:hover {
-        background-color: #f6f6f6;
-    }
-
-    .dd-menu li a {
-        display: block;
-        margin: -10px -20px;
-        padding: 10px 20px;
-    }
-
-    .dd-menu li.divider {
-        padding: 0;
-        border-bottom: 1px solid #cccccc;
-    }
-
-</style>
 
 <header class="header-area header-style-1 header-height-2">
     <div class="header-middle header-middle-ptb-1 d-none d-lg-block border-bottom py-2">
@@ -163,8 +8,7 @@
                 <div class="header-right text-brand">
                     <div class="logo logo-width-1">
                         <a href="{% url 'main:index' %}">
-                            <img src="{% static 'user/imgs/theme/logo.png' %}"
-                                alt="logo" />
+                            <img src="{% static 'user/imgs/theme/logo.png' %}" alt="logo" />
                         </a>
                     </div>
                     <div class="">
@@ -194,11 +38,10 @@
                                 </div>
                             </div>
                             <div class="header-action-icon-2">
-                                {% if status == 1 %}
+                                {% if request.user.is_authenticated %}
                                 <div class="username p-2">
                                     <i class="fa fa-user px-2"></i>
-
-                                    <h5 style="color: #621299;">{{ user.customer.name }}</h5>
+                                    <h5 style="color: #621299;">{{ request.user }}</h5>
                                 </div>
                                 {% else %}
                                 <a href="{% url 'user:login' %}">
@@ -269,20 +112,13 @@
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'main:about' %}">About Us</a></li>
                                         <li><a href="{% url 'main:contact' %}">Contact</a></li>
-                                        <li><a href="{% url 'main:account' %}">My Account</a></li>
-
-                                        {% if status == 1%}
-                                        <li hidden><a href="{% url 'user:registration' %}">login/register</a></li>
-                                        {% else %}
-                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
-                                        {% endif %}
-
                                         <li><a href="{% url 'main:privacy' %}">Privacy Policy</a></li>
                                         <li><a href="{% url 'main:terms_and_conditions' %}">Terms of Service</a></li>
 
-                                        {% if status == 1 %}
+                                        {% if request.user.is_authenticated %}
                                         <li><a href="{% url 'user:user_logout' %}">Logout</a></li>
-
+                                        {% else %}
+                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
                                         {% endif %}
                                     </ul>
                                 </li>
@@ -329,11 +165,10 @@
         <div class="mobile-header-content-area">
             <div class="mobile-menu-wrap mobile-header-border">
                 <div>
-                    {% if status == 1 %}
+                    {% if request.user.is_authenticated %}
                     <div class="username p-2">
                         <i class="fa fa-user px-2"></i>
-
-                        <h5 style="color: #621299;">{{ user.customer.name|upper }}</h5>
+                        <h5 style="color: #621299;">{{ request.user }}</h5>
                     </div>
                     {% else %}
                     <a href="{% url 'user:login' %}">

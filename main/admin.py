@@ -2,15 +2,14 @@ from .models import BannerImage
 from .models import City
 from .models import Contact
 from .models import Offer
-from .models import Team
 from .models import OtpModel
-
+from .models import Team
 from django.contrib import admin
 
 
 @admin.register(OtpModel)
 class OtpModelAdmin(admin.ModelAdmin):
-    list_display = ["otp","timestamp"]
+    list_display = ["otp", "timestamp"]
 
 
 @admin.register(City)

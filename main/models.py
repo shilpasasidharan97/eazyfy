@@ -16,7 +16,7 @@ class City(models.Model):
 class BannerImage(models.Model):
     name = models.CharField(max_length=100)
     image = models.FileField(upload_to="banners/")
-    link = models.URLField(blank=True,null=True)
+    link = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
@@ -52,7 +52,7 @@ class Contact(models.Model):
 
 class OtpModel(models.Model):
     otp = models.CharField(max_length=100)
-    timestamp = models.DateTimeField(auto_now_add = True)
+    timestamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return str(self.otp)

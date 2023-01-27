@@ -5,6 +5,7 @@ from django.contrib.auth.models import BaseUserManager
 from django.db import models
 from django.utils.text import slugify
 from phone_field import PhoneField
+from django.urls import reverse
 
 
 class UserManager(BaseUserManager):
@@ -135,8 +136,9 @@ class Brand(models.Model):
         return str(self.name)
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
-        super(Brand, self).save(*args, **kwargs)
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
 
 class BrandModel(models.Model):
@@ -152,8 +154,16 @@ class BrandModel(models.Model):
     def get_variants(self):
         return Variant.objects.filter(brand_model=self)
 
+    def get_absolute_url(self):
+        return reverse("user:device_page", kwargs={"slug": self.slug})
+
     class Meta:
         ordering = ("name",)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.name)
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return str(self.name)

@@ -1,4 +1,5 @@
 import uuid
+
 from main.models import OtpModel
 from official.models import Brand
 from official.models import BrandModel

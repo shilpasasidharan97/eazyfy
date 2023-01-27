@@ -2,12 +2,11 @@ from eazyfy.decorators import auth_pickupboy
 from official.models import OrderPayment
 from official.models import PickUpBoy
 from official.models import PickupData
-from official.models import UserRequest
 from official.models import Question
 from official.models import QuestionOption
 from official.models import UserReply
 from official.models import UserRequest
-from official.models import Variant
+
 import razorpay
 from .forms import PickupCompleteForm
 from .forms import PickupFailForm
@@ -170,11 +169,13 @@ def checkout(request, id):
     if request.method == "POST":
         name = request.POST.get("name")
         client = razorpay.Client(auth=("rzp_test_bKtMj90QOs6Af2", "vNLvdBnrIGSHG2C4BiWoDGvd"))
-        payment = client.order.create({"amount": request_details.final_amount, "currency": "INR", "payment_capture": "1"})
+        payment = client.order.create(
+            {"amount": request_details.final_amount, "currency": "INR", "payment_capture": "1"}
+        )
         coffe = OrderPayment(name=name, amount=request_details.final_amount, payment_id=payment["id"])
         return render(
             request,
             "pickup-boy/checkout.html",
             {"payment": payment, "coffe": coffe, "request_details": request_details},
         )
-    return render(request, "pickup-boy/checkout.html",context)
+    return render(request, "pickup-boy/checkout.html", context)

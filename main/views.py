@@ -9,9 +9,8 @@ from django.shortcuts import render
 def index(request):
     banners = BannerImage.objects.all()
     offers = Offer.objects.all()
-    brands = Brand.objects.all()
     user = request.user
-    context = {"is_index": True, "user": user, "banners": banners, "offers": offers, "brands": brands}
+    context = {"is_index": True, "user": user, "banners": banners, "offers": offers}
     return render(request, "main/index.html", context)
 
 
@@ -45,14 +44,6 @@ def repair_phone(request):
 
 def privacy_policy(request):
     return render(request, "main/privacy-policy.html")
-
-
-def account(request):
-    return render(request, "main/account.html")
-
-
-def payment(request):
-    return render(request, "main/payment.html")
 
 
 def comingsoon(request):

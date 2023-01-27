@@ -19,6 +19,7 @@ from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext_lazy as _
+from import_export.admin import ImportExportActionModelAdmin
 
 
 class MyUserCreationForm(UserCreationForm):
@@ -114,7 +115,7 @@ class PickUpBoyAdmin(admin.ModelAdmin):
 
 
 @admin.register(Brand)
-class BrandAdmin(admin.ModelAdmin):
+class BrandAdmin(ImportExportActionModelAdmin):
     list_display = ("name", "image")
     search_fields = ("name",)
     prepopulated_fields = {"slug": ("name",)}
@@ -126,7 +127,7 @@ class VariantInline(admin.TabularInline):
 
 
 @admin.register(BrandModel)
-class BrandModelAdmin(admin.ModelAdmin):
+class BrandModelAdmin(ImportExportActionModelAdmin):
     list_display = ("name", "brand", "image")
     search_fields = ("name",)
     list_filter = ("brand",)

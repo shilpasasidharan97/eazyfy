@@ -1,4 +1,5 @@
-from .models import UserRequest, FranchiseWallet
+from .models import FranchiseWallet
+from .models import UserRequest
 from django import forms
 
 

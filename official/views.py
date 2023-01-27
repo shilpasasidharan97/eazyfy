@@ -3,13 +3,15 @@ import datetime
 from main.models import BannerImage
 from main.models import Offer
 from user.helpers import payment_mail
-from django.conf import settings
-from .forms import FranchiseAssignForm, AddAmountForm
+
+from .forms import AddAmountForm
+from .forms import FranchiseAssignForm
 from .models import Franchise
 from .models import FranchiseWallet
 from .models import PickUpBoy
 from .models import PickupData
 from .models import UserRequest
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import get_user_model
@@ -206,9 +208,9 @@ def wallet(request):
     context = {
         "is_wallet": True,
         "transactions": transactions,
-        "admin_wallet_amount":admin_wallet_amount,
-        "admin_transactions":admin_transactions,
-        "franchise_transactions":franchise_transactions,
+        "admin_wallet_amount": admin_wallet_amount,
+        "admin_transactions": admin_transactions,
+        "franchise_transactions": franchise_transactions,
     }
     return render(request, "official/wallet.html", context)
 
@@ -223,7 +225,7 @@ def franchise_wallet(request):
             data.type = "to_franchise"
             data.save()
             return redirect("official:franchisewallet")
-    context = {"is_wallet": True, "franchises": franchises, "form":form}
+    context = {"is_wallet": True, "franchises": franchises, "form": form}
     return render(request, "official/wallet_franchise.html", context)
 
 
