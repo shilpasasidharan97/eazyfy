@@ -1,8 +1,10 @@
 import requests
 from bs4 import BeautifulSoup
+import json
 
 
 items = []
+filepaths = []
 
 
 def get_data(url, brand_slug, brand_pk):
@@ -27,12 +29,23 @@ def get_data(url, brand_slug, brand_pk):
                     "slug": name.lower().replace(" ", "-"),
                     "description": description,
                     "is_mostselling": 0,
-                    # "photo_url": photo_url,
                 },
             }
         )
         start_number += 1
     return items
+
+
+def get_filepaths(url, brand_slug, brand_pk):
+    page = requests.get(url)
+    soup = BeautifulSoup(page.content, "html.parser")
+    for li in soup.find("div", class_="makers").find_all("li"):
+        img_tag = li.find("img")
+        photo_url = img_tag["src"]
+        media_url = f"wget {photo_url}"
+        # write to a text file one by one
+        with open("media_urls.txt", "a") as f:
+            f.write(media_url + "\n")
 
 
 data = [
@@ -51,10 +64,8 @@ final = []
 for url in data:
     for u in url["urls"]:
         final += get_data(u, url["brand_slug"], url["brand_pk"])
+        get_filepaths(u, url["brand_slug"], url["brand_pk"])
 
-
-# convert to json file
-import json
 
 with open("hello.json", "w") as f:
     json.dump(final, f, indent=4)
