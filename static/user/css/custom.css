@@ -62,6 +62,10 @@ input[type="tel"] {
     -webkit-appearance: none;
 }
 
+input[type="search"] {
+    font-size: 13px;
+}
+
 .card {
     background-color: #ffffff;
 }
@@ -292,8 +296,14 @@ input[type="tel"] {
     font-weight: 600;
 }
 
-.term-condition {
+.content_page h2 {
     font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.content_page {
+    line-height: 1.7;
 }
 
 @media (max-width: 959.95px) {
@@ -347,4 +357,25 @@ input[type="tel"] {
     .terms {
         font-size: 17px !important;
     }
+}
+
+.search_label {
+    position: relative;
+}
+
+.search_icon {
+    position: absolute;
+    right: 10px;
+    top: 57%;
+    transform: translateY(-50%);
+    z-index: 10;
+    display: block;
+}
+
+.ui-menu .ui-menu-divider {
+    height: 15px;
+}
+
+.map_btn {
+    font-size: 12px;
 }

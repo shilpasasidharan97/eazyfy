@@ -128,8 +128,9 @@ class VariantInline(admin.TabularInline):
 
 @admin.register(BrandModel)
 class BrandModelAdmin(ImportExportActionModelAdmin):
-    list_display = ("name", "brand", "image", "id")
-    search_fields = ("name",)
+    list_display = ("name", "brand", "category", "id")
+    list_editable = ("category",)
+    search_fields = ("name", "slug")
     list_filter = ("brand",)
     prepopulated_fields = {"slug": ("name",)}
     inlines = [VariantInline]

@@ -23,8 +23,8 @@ def contact(request):
     return render(request, "main/contact.html")
 
 
-def terms_and_conditions(request):
-    return render(request, "main/terms_and_conditions.html")
+def terms_of_use(request):
+    return render(request, "main/terms_of_use.html")
 
 
 def sell_phone(request):

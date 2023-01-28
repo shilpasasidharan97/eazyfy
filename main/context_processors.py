@@ -2,6 +2,7 @@ import json
 from .models import City
 from official.models import Brand
 from official.models import BrandModel
+from django.urls import reverse
 
 
 def main_context(request):
@@ -10,7 +11,9 @@ def main_context(request):
     most_selling_models = models.filter(is_mostselling=True)
     cities = City.objects.all()
     status = 1 if request.session.exists(request.session.session_key) else 0
-    # models_data = json.dumps(list(models.values()))
+    search_suggestions = [
+        {"name": model.name, "link": reverse("user:device_page", kwargs={"slug": model.slug})} for model in models
+    ]
     context = {
         "domain": request.META["HTTP_HOST"],
         "cities": cities,
@@ -18,6 +21,6 @@ def main_context(request):
         "models": models,
         "most_selling_models": most_selling_models,
         "status": status,
-        # "models_data": models_data,
+        "search_links": search_suggestions,
     }
     return context

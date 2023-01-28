@@ -36,7 +36,7 @@
                         <h6>{{forloop.counter}}. {{q.question}}</h6>
                         {% if q.subtext %}<span>{{q.subtext}}</span>{% endif %}
 
-                        <div class="d-flex mt-3">
+                        <div class="d-flex mt-3 flex-wrap">
                             {% for op in q.get_options %}
                             <div class="radio-wrapper {{q.question_type}}">
                                 <label class="form-check-label" for="{{op.pk}}">

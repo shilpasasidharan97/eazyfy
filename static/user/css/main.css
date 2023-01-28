@@ -1483,9 +1483,11 @@ label {
   display: flex;
   align-items: center;
 }
+
 .flwidth input {
   height: 36px;
 }
+
 .custome-checkbox input[type=checkbox]:checked+.form-check-label::before {
   background-color: #539f23;
   border-color: #539f23
@@ -3082,7 +3084,7 @@ table .product-thumbnail img {
 }
 
 .bg-green {
-  background-color: #dfd0ea
+  background-color: #f0edf3cf
 }
 
 .custom-modal .modal-dialog {
@@ -3537,7 +3539,8 @@ table .product-thumbnail img {
 .single-content>ol {
   list-style-type: decimal;
   margin-bottom: 30px;
-  padding-left: 1em
+  margin-left: 1em;
+  color: #644570;
 }
 
 .single-content>ol li:not(:last-child) {
@@ -3794,9 +3797,9 @@ table .product-thumbnail img {
 .widget-category ul>li a:hover {
   color: #088178
 }
-.sticky-bar {
 
-}
+.sticky-bar {}
+
 .product-cart-wrap .product-content-wrap h2 {
   font-size: 16px;
   font-weight: 600
@@ -4364,9 +4367,11 @@ table .product-thumbnail img {
   margin: 0 5px 5px 0;
   padding: 0
 }
+
 .list-filter:last-child {
   margin-right: 0;
 }
+
 .list-filter li a {
   color: #555;
   display: block;
@@ -6384,6 +6389,7 @@ span.fi-rs-apps {
   position: relative;
   font-size: 12px;
 }
+
 .main-menu>nav>ul>li ul.sub-menu li.view_all {
   background: #66009521;
   font-weight: bold;
@@ -9083,10 +9089,12 @@ span.fi-rs-apps {
 }
 
 @media only screen and (max-width:480px) {
+
   .hero-slider-1.style-3.dot-style-1.dot-style-1-position-1 ul,
   .hero-slider-1.style-4.dot-style-1.dot-style-1-position-1 ul {
     display: none;
   }
+
   .hero-slider-content-2 p,
   .table td {
     width: 100%
@@ -9222,6 +9230,7 @@ span.fi-rs-apps {
   .pb-60 {
     padding-bottom: 30px !important
   }
+
   .hero-slider-1.style-3 .hero-slider-content-2 {
     position: relative;
     text-align: left;
@@ -9503,10 +9512,12 @@ h3.section-title {
   font-size: 12px;
   line-height: .2rem
 }
+
 .banners .col-lg-4 .banner-img .offer2 {
   border-radius: 10px;
   margin-bottom: 10px
 }
+
 .banners .col-lg-4:last-child .banner-img .offer2 {
   margin-bottom: 0
 }
@@ -9544,6 +9555,7 @@ h3.section-title {
   min-width: 130px;
   margin-right: .5rem;
   margin-bottom: .5rem;
+  max-width: 45%;
 }
 
 section.question {
@@ -9568,55 +9580,71 @@ section.question {
   top: 10px;
   left: 10px;
 }
+
 .why_img {
-    width: 100%;
-    height: 78px;
-    object-fit: contain;
+  width: 100%;
+  height: 78px;
+  object-fit: contain;
 
 }
+
 .fs-10 {
   font-size: 10px;
 }
+
 .fs-11 {
   font-size: 11px;
 }
+
 .fs-12 {
   font-size: 12px;
 }
+
 .fs-13 {
   font-size: 13px;
 }
+
 .fs-14 {
   font-size: 14px;
 }
+
 .fs-15 {
   font-size: 15px;
 }
+
 .fs-16 {
   font-size: 16px;
 }
+
 .fs-17 {
   font-size: 17px;
 }
+
 .fs-18 {
   font-size: 18px;
 }
+
 .fs-19 {
   font-size: 19px;
 }
+
 .fs-20 {
   font-size: 20px;
 }
+
 .footer-item {
   margin-bottom: 20px;
 }
-.footer-item h5{
+
+.footer-item h5 {
   font-weight: bold;
 }
-.footer-item p{
+
+.footer-item p {
   font-size: 12px;
 }
-.footer-item a{
+
+.footer-item a {
   font-size: 12px;
   border: 1px solid #e9ecef;
   padding: 5px 10px;
@@ -9624,9 +9652,16 @@ section.question {
   margin-bottom: 10px;
   border-radius: 6px;
 }
+
 .whyusfont {
   font-weight: bold;
 }
+
 .h-100 {
   height: 100%;
+}
+
+.final_words {
+  font-weight: 500;
+  color: #640097;
 }

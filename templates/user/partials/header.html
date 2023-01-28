@@ -11,20 +11,18 @@
                             <img src="{% static 'user/imgs/theme/logo.png' %}" alt="logo" />
                         </a>
                     </div>
-                    <div class="">
+                    <div class="w-100">
                         <form action="#">
-                            <div class="flwidth layout vertical list-search text-center">
-                                <a class="flwidth">
-                                    <label for="list-search-input"
-                                        class="layout horizontal center pad10 flwidth drill-search card-shadow radius-10">
-                                        <span id="search-icon" class="search-icon layout center-center">
-                                            <img alt="product_search" class=""
-                                                src="{% static 'user/imgs/ProductSearch.svg' %}" />
-                                        </span>
-                                        <input type="search" id="pd_list_search_input" autocomplete="off"
-                                            placeholder="Search" class="font16-14 flwidth card mar-r10 search-input" />
-                                    </label>
-                                </a>
+                            <div class="flwidth layout vertical list-search text-center mx-auto">
+                                <label for="list-search-input"
+                                    class="search_label w-100">
+                                    <span class="search_icon">
+                                        <img alt="product_search" class=""
+                                            src="{% static 'user/imgs/ProductSearch.svg' %}" />
+                                    </span>
+                                    <input id="pd_list_search_input"
+                                        placeholder="Search" class="flwidth card mar-r10" />
+                                </label>
                             </div>
                         </form>
                     </div>
@@ -65,7 +63,7 @@
                 </div>
                 <div class="mobile-search search-style-3 mobile-header-border">
                     <form action="#" class="d-lg-none">
-                        <input type="search" id="pd_list_search_input" autocomplete="off" placeholder="Search.."
+                        <input id="pd_list_search_input" placeholder="Search.."
                             class="font16-14 flwidth card mar-r10 search-input" />
                     </form>
                 </div>
@@ -111,14 +109,14 @@
                                     <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_gadget %} active {% endif %}">Sell earbud </a>
                                 </li>
-                               
+
                                 <li>
                                     <a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">
                                         <li><a href="{% url 'main:about' %}">About Us</a></li>
                                         <li><a href="{% url 'main:contact' %}">Contact</a></li>
                                         <li><a href="{% url 'main:privacy' %}">Privacy Policy</a></li>
-                                        <li><a href="{% url 'main:terms_and_conditions' %}">Terms of Service</a></li>
+                                        <li><a href="{% url 'main:terms_of_use' %}">Terms of Use</a></li>
 
                                         {% if request.user.is_authenticated %}
                                         <li><a href="{% url 'user:user_logout' %}">Logout</a></li>
@@ -223,7 +221,7 @@
                         </li>
 
                         <li class="menu-item-has-children">
-                            <a href="{% url 'main:terms_and_conditions' %}"><span class="menu-expand"></span>terms of
+                            <a href="{% url 'main:terms_of_use' %}"><span class="menu-expand"></span>terms of
                                 service</a>
                         </li>
                         <li class="menu-item-has-children">

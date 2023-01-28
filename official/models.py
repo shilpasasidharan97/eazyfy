@@ -7,6 +7,18 @@ from django.utils.text import slugify
 from phone_field import PhoneField
 from django.urls import reverse
 
+DEVICE_CATEGORY = (
+    ("mobile", "Mobile"),
+    ("laptop", "Laptop"),
+    ("tablet", "Tablet"),
+    ("accessories", "Accessories"),
+    ("camera", "Camera"),
+    ("earbud", "Earbud"),
+    ("headphone", "Headphone"),
+    ("smartwatch", "Smartwatch"),
+    ("smartband", "Smartband"),
+)
+
 
 class UserManager(BaseUserManager):
     def create_user(self, phone_number, password=None, **extra_fields):
@@ -130,11 +142,35 @@ class Brand(models.Model):
     class Meta:
         verbose_name_plural = "Brand"
 
-    def get_brand_models(self):
-        return BrandModel.objects.filter(brand=self)
+    def get_mobile_models(self):
+        return BrandModel.objects.filter(brand=self, category="mobile")
+
+    def get_laptop_models(self):
+        return BrandModel.objects.filter(brand=self, category="laptop")
+
+    def get_tablet_models(self):
+        return BrandModel.objects.filter(brand=self, category="tablet")
+
+    def get_accessories_models(self):
+        return BrandModel.objects.filter(brand=self, category="accessories")
+
+    def get_camera_models(self):
+        return BrandModel.objects.filter(brand=self, category="camera")
+
+    def get_earbud_models(self):
+        return BrandModel.objects.filter(brand=self, category="earbud")
+
+    def get_headphone_models(self):
+        return BrandModel.objects.filter(brand=self, category="headphone")
+
+    def get_smartwatch_models(self):
+        return BrandModel.objects.filter(brand=self, category="smartwatch")
+
+    def get_smartband_models(self):
+        return BrandModel.objects.filter(brand=self, category="smartband")
 
     def devices_count(self):
-        return self.get_brand_models().count()
+        return self.get_mobile_models().count()
 
     def __str__(self):
         return str(self.name)
@@ -156,6 +192,7 @@ class BrandModel(models.Model):
     slug = models.SlugField(max_length=100, unique=True)
     description = models.TextField(blank=True, null=True)
     is_mostselling = models.BooleanField(default=False)
+    category = models.CharField(max_length=100, choices=DEVICE_CATEGORY, default="mobile")
 
     def get_variants(self):
         return Variant.objects.filter(brand_model=self)
@@ -223,7 +260,7 @@ class OrderPayment(models.Model):
 # survey models
 class QuestionOption(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE, null=True, blank=True)
-    image = models.FileField(upload_to="Question Image", blank=True, null=True)
+    image = models.FileField(upload_to="question_images", blank=True, null=True)
     text = models.CharField(max_length=500)
     identifier = models.CharField(max_length=500, blank=True, null=True, help_text="Eg: Able to Make and Receive Calls")
 
@@ -313,13 +350,13 @@ class PickupData(models.Model):
         default="pending",
     )
     imei_number = models.CharField(max_length=100, null=True, blank=True)
-    front_image = models.ImageField("front side of the phone", upload_to="Front Image", null=True, blank=True)
-    back_image = models.ImageField("back side of the phone", upload_to="Back Image", null=True, blank=True)
-    top_image = models.ImageField("top side of the phone", upload_to="Top Side", null=True, blank=True)
-    bottom_image = models.ImageField("bottom side of the phone", upload_to="Bottom Side", null=True, blank=True)
-    right_image = models.ImageField("right side of the phone", upload_to="Right Side", null=True, blank=True)
-    left_image = models.ImageField("left side of the phone", upload_to="Left Side", null=True, blank=True)
-    selfie_image = models.ImageField("Selfie with Customer", upload_to="selfie", null=True, blank=True)
+    front_image = models.ImageField("front side of the phone", upload_to="pickup/FrontImage", null=True, blank=True)
+    back_image = models.ImageField("back side of the phone", upload_to="pickup/BackImage", null=True, blank=True)
+    top_image = models.ImageField("top side of the phone", upload_to="pickup/TopSide", null=True, blank=True)
+    bottom_image = models.ImageField("bottom side of the phone", upload_to="pickup/BottomSide", null=True, blank=True)
+    right_image = models.ImageField("right side of the phone", upload_to="pickup/RightSide", null=True, blank=True)
+    left_image = models.ImageField("left side of the phone", upload_to="pickup/LeftSide", null=True, blank=True)
+    selfie_image = models.ImageField("Selfie with Customer", upload_to="pickup/Selfie", null=True, blank=True)
     remarks = models.TextField(blank=True, null=True)
 
     def __str__(self):

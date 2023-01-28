@@ -18,7 +18,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
-
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="{% static 'user/css/main.css' %}?v=1.3">
     <link rel="stylesheet" href="{% static 'user/css/more.css' %}?v=1.3">
     <link rel="stylesheet" href="{% static 'user/css/wizard.css' %}?v=1.3">
@@ -56,6 +56,7 @@
     <script src="{% static 'user/js/plugins/isotope.js' %}?v=1.3"></script>
     <script src="{% static 'user/js/plugins/scrollup.js' %}?v=1.3"></script>
     <script src="{% static 'user/js/plugins/jquery.vticker-min.js' %}?v=1.3"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
     <script src="{% static 'user/js/plugins/jquery.theia.sticky.js' %}?v=1.3"></script>
 
@@ -65,7 +66,9 @@
     <script src="{% static 'user/js/wizard.js' %}?v=1.3"></script>
 
     <script>
-        const models = {{ models_data| safe }}
+        $( function() {
+            var a = {{search_links|safe|default:"[]" }};
+          } );
     </script>
 
     {% block js %} {% endblock %}
