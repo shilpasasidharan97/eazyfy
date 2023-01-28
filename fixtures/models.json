@@ -349,18 +349,6 @@
     },
     {
         "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
         "pk": "2552a04d-ea60-438a-ab8f-2e2c93bccc15",
         "fields": {
             "brand": 30,
@@ -812,18 +800,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -1760,18 +1736,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -3200,18 +3164,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -5108,18 +5060,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -7501,18 +7441,6 @@
     },
     {
         "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
         "pk": "2552a04d-ea60-438a-ab8f-2e2c93bccc15",
         "fields": {
             "brand": 30,
@@ -7544,6 +7472,18 @@
             "name": "3v",
             "slug": "3v",
             "description": "alcatel 3v Android smartphone. Announced Feb 2018. Features 6.0\u2033  display, MT8735A chipset, Dual: 12 MP (f/2.2, 1/2.8\u2033, 1.25 \u03bcm, PDAF) + 2 MP primary camera, 5 MP front camera, 3000 mAh battery, 32 GB storage, 2 GB RAM.",
+            "is_mostselling": 0
+        }
+    },
+    {
+        "model": "official.brandmodel",
+        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
+        "fields": {
+            "brand": 30,
+            "image": "models/alcatel/alcatel-7-.jpg",
+            "name": "7",
+            "slug": "7",
+            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -10364,18 +10304,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -13712,18 +13640,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -17540,18 +17456,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
@@ -21848,18 +21752,6 @@
             "name": "Tetra",
             "slug": "tetra",
             "description": "alcatel Tetra Android smartphone. Announced Sep 2018. Features 5.0\u2033  display, MT6739WM chipset, 2050 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-7-.jpg",
-            "name": "7",
-            "slug": "7",
-            "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
             "is_mostselling": 0
         }
     },
