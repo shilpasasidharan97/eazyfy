@@ -79,7 +79,7 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'main:sell_phone' %}"
-                                        class="{% if is_sellphone %} active {% endif %}">Sell phones <i
+                                        class="{% if is_sellphone %} active {% endif %}">Sell phone <i
                                             class="fi-rs-angle-down"></i></a>
                                     {% if brands %}
                                     <ul class="sub-menu">
@@ -92,21 +92,26 @@
                                 </li>
                                 <li class="position-static">
                                     <a href="{% url 'main:comingsoon' %}"
-                                        class="{% if is_buyphone %} active {% endif %}">Buy phones</a>
+                                        class="{% if is_buyphone %} active {% endif %}">Buy phone</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'main:comingsoon' %}"
                                         class="{% if is_repair %} active {% endif %}">Repair Phone </a>
                                 </li>
+                                <li>
+                                    <a href="{% url 'main:comingsoon' %}"
+                                        class="{% if is_repair %} active {% endif %}">Sell Laptop </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'main:comingsoon' %}"
+                                        class="{% if is_repair %} active {% endif %}">Sell Camera </a>
+                                </li>
 
                                 <li>
                                     <a href="{% url 'main:comingsoon' %}"
-                                        class="{% if is_gadget %} active {% endif %}">Sell gadgets </a>
+                                        class="{% if is_gadget %} active {% endif %}">Sell earbud </a>
                                 </li>
-                                <li>
-                                    <a href="{% url 'main:comingsoon' %}"
-                                        class="{% if is_newgadget %} active {% endif %}">Find new gadgets</a>
-                                </li>
+                               
                                 <li>
                                     <a href="#">More <i class="fi-rs-angle-down"></i></a>
                                     <ul class="sub-menu">

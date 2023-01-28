@@ -82,7 +82,7 @@ data = [
 
 def run():
     for model in BrandModel.objects.all():
-        if Variant.objects.filter(model=model).count() == 0:
+        if Variant.objects.filter(brand_model=model).count() == 0:
             Variant.objects.create(
                 brand_model=model,
                 RAM="Standard",
