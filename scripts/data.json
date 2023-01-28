@@ -1,12 +1,12 @@
 {
     "model": "official.brandmodel",
-    "pk": "de7e5872-fa43-45d9-88e2-7ec37fbe1ff8",
+    "pk": "ae23b547-e325-43b1-a836-cdaa0d92d77e",
     "fields": {
         "brand": 30,
-        "image": "models/alcatel/alcatel-5-.jpg",
-        "name": "5",
-        "slug": "5",
-        "description": "alcatel 5 Android smartphone. Announced Feb 2018. Features 5.7\u2033  display, MT6750 chipset, 12 MP primary camera, Dual: 13 MP (f/2.0, 1.4 \u03bcm) + 5 MP front camera, 3000 mAh battery, 32 GB storage, 3 GB RAM.",
+        "image": "models/alcatel/alcatel-3-.jpg",
+        "name": "3",
+        "slug": "3",
+        "description": "alcatel 3 Android smartphone. Announced Feb 2018. Features 5.5\u2033  display, MT6739 chipset, 13 MP primary camera, 5 MP front camera, 3000 mAh battery, 16 GB storage, 2 GB RAM.",
         "is_mostselling": 0
     }
 },
