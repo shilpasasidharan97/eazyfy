@@ -42,26 +42,27 @@ def get_filepaths(url, brand_slug, brand_pk):
         photo_url = img_tag["src"]
         media_url = f"wget {photo_url}"
         # write to a text file one by one
-        with open("media_urls.txt", "a") as f:
+        with open("scripts/media_urls.txt", "a") as f:
             f.write(media_url + "\n")
 
 
 data = [
     {
-        "brand_slug": "lg",
-        "brand_pk": 29,
+        "brand_slug": "motorola",
+        "brand_pk": 21,
         "urls": [
-            "https://www.gsmarena.com/lg-phones-20.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p2.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p3.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p4.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p5.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p6.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p7.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p8.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p9.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p10.php",
-            "https://www.gsmarena.com/lg-phones-f-20-0-p11.php",
+            "https://www.gsmarena.com/motorola-phones-4.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p2.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p3.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p4.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p5.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p6.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p7.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p8.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p9.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p10.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p11.php",
+            "https://www.gsmarena.com/motorola-phones-f-4-0-p12.php",
         ],
     }
 ]
@@ -74,5 +75,5 @@ def run():
             final += get_data(u, url["brand_slug"], url["brand_pk"])
             get_filepaths(u, url["brand_slug"], url["brand_pk"])
 
-    with open("data.json", "w") as f:
+    with open("scripts/data.json", "w") as f:
         json.dump(final, f, indent=4)
