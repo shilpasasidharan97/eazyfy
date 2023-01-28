@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import uuid
+from official.models import Variant, BrandModel
 
 items = []
 filepaths = []
@@ -68,12 +69,25 @@ data = [
 ]
 
 
-def run():
-    final = []
-    for url in data:
-        for u in url["urls"]:
-            final += get_data(u, url["brand_slug"], url["brand_pk"])
-            get_filepaths(u, url["brand_slug"], url["brand_pk"])
+# def run():
+#     final = []
+#     for url in data:
+#         for u in url["urls"]:
+#             final += get_data(u, url["brand_slug"], url["brand_pk"])
+#             get_filepaths(u, url["brand_slug"], url["brand_pk"])
 
-    with open("scripts/data.json", "w") as f:
-        json.dump(final, f, indent=4)
+#     with open("scripts/data.json", "w") as f:
+#         json.dump(final, f, indent=4)
+
+
+def run():
+    for model in BrandModel.objects.all():
+        if Variant.objects.filter(model=model).count() == 0:
+            Variant.objects.create(
+                brand_model=model,
+                RAM="Standard",
+                color="Standard",
+                internal_storage="Standard",
+                min_price=0,
+                max_price=0,
+            )
