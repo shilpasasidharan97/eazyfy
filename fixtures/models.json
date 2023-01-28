@@ -12613,18 +12613,6 @@
     },
     {
         "model": "official.brandmodel",
-        "pk": "f0f820b0-f35a-46ea-8ed3-d5a882f8817c",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-onetouch355.jpg",
-            "name": "OT-355",
-            "slug": "ot-355",
-            "description": "alcatel OT-355 phone. Announced Feb 2011. Features 1.8\u2033  display, 650 mAh battery, 1 MB storage.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
         "pk": "f29516fd-bf6b-4c1a-bcba-5b1b8d810cb7",
         "fields": {
             "brand": 30,
@@ -15925,18 +15913,6 @@
     },
     {
         "model": "official.brandmodel",
-        "pk": "f0f820b0-f35a-46ea-8ed3-d5a882f8817c",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-onetouch355.jpg",
-            "name": "OT-355",
-            "slug": "ot-355",
-            "description": "alcatel OT-355 phone. Announced Feb 2011. Features 1.8\u2033  display, 650 mAh battery, 1 MB storage.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
         "pk": "f29516fd-bf6b-4c1a-bcba-5b1b8d810cb7",
         "fields": {
             "brand": 30,
@@ -19700,18 +19676,6 @@
             "name": "OT-361",
             "slug": "ot-361",
             "description": "alcatel OT-361 phone. Announced Feb 2011. Features 1.77\u2033  display, 650 mAh battery, 2 MB storage.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "f0f820b0-f35a-46ea-8ed3-d5a882f8817c",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-onetouch355.jpg",
-            "name": "OT-355",
-            "slug": "ot-355",
-            "description": "alcatel OT-355 phone. Announced Feb 2011. Features 1.8\u2033  display, 650 mAh battery, 1 MB storage.",
             "is_mostselling": 0
         }
     },
@@ -23960,18 +23924,6 @@
             "name": "OT-361",
             "slug": "ot-361",
             "description": "alcatel OT-361 phone. Announced Feb 2011. Features 1.77\u2033  display, 650 mAh battery, 2 MB storage.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "f0f820b0-f35a-46ea-8ed3-d5a882f8817c",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-onetouch355.jpg",
-            "name": "OT-355",
-            "slug": "ot-355",
-            "description": "alcatel OT-355 phone. Announced Feb 2011. Features 1.8\u2033  display, 650 mAh battery, 1 MB storage.",
             "is_mostselling": 0
         }
     },
@@ -25470,7 +25422,7 @@
             "brand": 30,
             "image": "models/alcatel/alot355.gif",
             "name": "OT 355",
-            "slug": "ot-355",
+            "slug": "alcatel-ot-355",
             "description": "alcatel OT 355 phone. Announced Q1 2004. Features CSTN, 64K colors display, 720 mAh battery.",
             "is_mostselling": 0
         }
