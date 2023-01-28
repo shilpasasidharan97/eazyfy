@@ -1309,18 +1309,6 @@
     },
     {
         "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
         "pk": "ec8f389b-33ea-4283-b024-8f5a673be6c5",
         "fields": {
             "brand": 30,
@@ -2228,18 +2216,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -3620,18 +3596,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -5492,18 +5456,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -7856,18 +7808,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -10700,18 +10640,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -14022,7 +13950,7 @@
             "brand": 30,
             "image": "models/alcatel/alcatel-watch.jpg",
             "name": "Watch",
-            "slug": "watch",
+            "slug": "alcatel-watch",
             "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
@@ -17804,18 +17732,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
@@ -22076,18 +21992,6 @@
             "name": "Fierce XL",
             "slug": "fierce-xl",
             "description": "alcatel Fierce XL Android smartphone. Announced Oct 2015. Features 5.5\u2033  display, Snapdragon 210 chipset, 8 MP primary camera, 2 MP front camera, 2500 mAh battery, 16 GB storage, 2 GB RAM, Asahi Dragontrail Glass.",
-            "is_mostselling": 0
-        }
-    },
-    {
-        "model": "official.brandmodel",
-        "pk": "36cae7cc-dece-4edf-bd83-093c17200897",
-        "fields": {
-            "brand": 30,
-            "image": "models/alcatel/alcatel-watch.jpg",
-            "name": "Watch",
-            "slug": "watch",
-            "description": "alcatel Watch watch. Announced Sep 2015. Features 1.22\u2033  display, STM 429 chipset, 210 mAh battery, 8 MB RAM.",
             "is_mostselling": 0
         }
     },
