@@ -1,12 +1,12 @@
 {
     "model": "official.brandmodel",
-    "pk": "8681e5a2-40d2-41e5-9020-88fa35a72029",
+    "pk": "de7e5872-fa43-45d9-88e2-7ec37fbe1ff8",
     "fields": {
         "brand": 30,
-        "image": "models/alcatel/alcatel-7-.jpg",
-        "name": "7",
-        "slug": "7",
-        "description": "alcatel 7 Android smartphone. Announced Aug 2018. Features 6.0\u2033  display, MT6763T Helio P23 chipset, 4000 mAh battery, 32 GB storage, 2 GB RAM, Asahi Glass.",
+        "image": "models/alcatel/alcatel-5-.jpg",
+        "name": "5",
+        "slug": "5",
+        "description": "alcatel 5 Android smartphone. Announced Feb 2018. Features 5.7\u2033  display, MT6750 chipset, 12 MP primary camera, Dual: 13 MP (f/2.0, 1.4 \u03bcm) + 5 MP front camera, 3000 mAh battery, 32 GB storage, 3 GB RAM.",
         "is_mostselling": 0
     }
 },
