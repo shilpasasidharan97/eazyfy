@@ -1,8 +1,8 @@
 from main.models import BannerImage
 from main.models import Offer
 from main.models import Team
-from official.models import Brand
-
+from official.models import Brand, BrandModel
+from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 
 
@@ -42,6 +42,11 @@ def sell_watches(request):
     return render(request, "main/sell_watches.html", context)
 
 
+def sell_tablets(request):
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_tablets.html", context)
+
+
 def repair_phone(request):
     context = {"is_repair": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
     return render(request, "main/repairphone.html", context)
@@ -59,3 +64,27 @@ def comingsoon(request):
 def find_new_gadget(request):
     context = {"is_newgadget": True}
     return render(request, "main/find_new_gadget.html", context)
+
+
+def pick_mobile_model(request, slug):
+    brand = get_object_or_404(Brand, slug=slug)
+    context = {"brand": brand}
+    return render(request, "main/pick_mobile_model.html", context)
+
+
+def pick_watch_model(request, slug):
+    brand = get_object_or_404(Brand, slug=slug)
+    context = {"brand": brand}
+    return render(request, "main/pick_watch_model.html", context)
+
+
+def pick_tablet_model(request, slug):
+    brand = get_object_or_404(Brand, slug=slug)
+    context = {"brand": brand}
+    return render(request, "main/pick_tablet_model.html", context)
+
+
+def device_page(request, slug):
+    model = BrandModel.objects.get(slug=slug)
+    context = {"model": model}
+    return render(request, "main/device_page.html", context)

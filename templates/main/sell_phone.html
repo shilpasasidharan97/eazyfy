@@ -110,8 +110,12 @@
                                 <div class="product-cart-wrap small hover-up">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="{% url 'user:pick_mobile_model' brand.slug %}">
+                                            <a href="{% url 'main:pick_mobile_model' brand.slug %}">
+                                                {% if brand.image %}
                                                 <img class="default-img" src="{{brand.image.url}}" alt="">
+                                                {% else %}
+                                                <img class="default-img" src="https://placehold.jp/ffffff/000000/192x192.png?text={{brand.name}}" alt="">
+                                                {% endif %}
                                             </a>
                                         </div>
                                     </div>

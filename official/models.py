@@ -135,7 +135,7 @@ class CustomerProfile(models.Model):
 
 
 class Brand(models.Model):
-    image = models.FileField(upload_to="Brand", null=True)
+    image = models.FileField(upload_to="Brand", null=True, blank=True)
     name = models.CharField(max_length=100)
     slug = models.SlugField(max_length=100, unique=True)
     references = models.TextField(blank=True, null=True)
@@ -199,7 +199,7 @@ class BrandModel(models.Model):
         return Variant.objects.filter(brand_model=self)
 
     def get_absolute_url(self):
-        return reverse("user:device_page", kwargs={"slug": self.slug})
+        return reverse("main:device_page", kwargs={"slug": self.slug})
 
     class Meta:
         ordering = ("name",)

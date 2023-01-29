@@ -12,7 +12,7 @@ def main_context(request):
     cities = City.objects.all()
     status = 1 if request.session.exists(request.session.session_key) else 0
     search_suggestions = [
-        {"name": model.name, "link": reverse("user:device_page", kwargs={"slug": model.slug})} for model in models
+        {"name": model.name, "link": reverse("main:device_page", kwargs={"slug": model.slug})} for model in models
     ]
     context = {
         "domain": request.META["HTTP_HOST"],

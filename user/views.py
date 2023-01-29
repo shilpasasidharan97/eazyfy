@@ -29,24 +29,6 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 
-def pick_mobile_model(request, slug):
-    brand = get_object_or_404(Brand, slug=slug)
-    context = {"brand": brand}
-    return render(request, "user/pick_mobile_model.html", context)
-
-
-def pick_watch_model(request, slug):
-    brand = get_object_or_404(Brand, slug=slug)
-    context = {"brand": brand}
-    return render(request, "user/pick_watch_model.html", context)
-
-
-def device_page(request, slug):
-    model = BrandModel.objects.get(slug=slug)
-    context = {"model": model}
-    return render(request, "user/device_page.html", context)
-
-
 @login_required
 def question(request, id):
     variant = Variant.objects.get(id=id)

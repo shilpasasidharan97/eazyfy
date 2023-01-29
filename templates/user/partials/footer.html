@@ -43,7 +43,7 @@
             <div class="footer-item">
                 <h5 class="mb-3">Brands</h5>
                 <div class="d-flex flex-wrap">
-                    {% for brand in brands %}<a href="{% url 'user:pick_mobile_model' brand.slug %}">{{brand}}</a>{% endfor %}
+                    {% for brand in brands %}<a href="{% url 'main:pick_mobile_model' brand.slug %}">{{brand}}</a>{% endfor %}
                 </div>
             </div>
         </div>

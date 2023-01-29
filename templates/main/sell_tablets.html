@@ -1,6 +1,7 @@
 {% extends 'user/partials/base.html' %}
 {% load static %}
 {% block content %}
+
 <style>
     .hotdeal {
         border-radius: 10px;
@@ -109,7 +110,7 @@
                                 <div class="product-cart-wrap small hover-up">
                                     <div class="product-img-action-wrap">
                                         <div class="product-img product-img-zoom">
-                                            <a href="{% url 'main:pick_mobile_model' brand.slug %}">
+                                            <a href="{% url 'main:pick_tablet_model' brand.slug %}">
                                                 {% if brand.image %}
                                                 <img class="default-img" src="{{brand.image.url}}" alt="">
                                                 {% else %}
@@ -123,18 +124,17 @@
                         </div>
                     </div>
                     {% endfor %}
-
-
                 </div>
             </div>
         </section>
 
 
-        {% include 'partials/offers.html' %}
         {% include 'partials/why_us.html' %}
         {% include 'partials/most_selling.html' %}
         {% include 'partials/faq.html' %}
+        {% include 'partials/offers.html' %}
 
 </main>
+
 
 {% endblock %}

@@ -5,9 +5,6 @@ from django.urls import path
 app_name = "user"
 
 urlpatterns = [
-    path("sell/mobile/<str:slug>/", views.pick_mobile_model, name="pick_mobile_model"),
-    path("sell/watch/<str:slug>/", views.pick_watch_model, name="pick_watch_model"),
-    path("sell/model/<str:slug>/", views.device_page, name="device_page"),
     path("sell/model/variant/survey/<str:id>/", views.question, name="question"),
     path("sell/info/<str:id>/", views.info_page, name="info_page"),
     path("sell/request/<str:id>/", views.request_page, name="request_page"),
