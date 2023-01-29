@@ -1,7 +1,7 @@
-import json
-from .models import City
 from official.models import Brand
 from official.models import BrandModel
+
+from .models import City
 from django.urls import reverse
 
 

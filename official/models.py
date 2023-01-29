@@ -3,9 +3,10 @@ import uuid
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.models import BaseUserManager
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 from phone_field import PhoneField
-from django.urls import reverse
+
 
 DEVICE_CATEGORY = (
     ("mobile", "Mobile"),

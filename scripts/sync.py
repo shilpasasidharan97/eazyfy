@@ -1,8 +1,11 @@
+import uuid
+
+from official.models import BrandModel
+from official.models import Variant
+
 import requests
 from bs4 import BeautifulSoup
-import json
-import uuid
-from official.models import Variant, BrandModel
+
 
 items = []
 filepaths = []
