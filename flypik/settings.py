@@ -175,5 +175,3 @@ APP_ORDER = OrderedDict(
         )
     ]
 )
-
-
