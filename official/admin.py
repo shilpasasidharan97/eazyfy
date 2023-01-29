@@ -1,7 +1,6 @@
 from .models import Brand
 from .models import BrandModel
-from .models import CustomerProfile
-from .models import CustomerRegistration
+from .models import Customer
 from .models import DeviceType
 from .models import Franchise
 from .models import FranchiseWallet
@@ -22,79 +21,24 @@ from django.utils.translation import gettext_lazy as _
 from import_export.admin import ImportExportActionModelAdmin
 
 
-class MyUserCreationForm(UserCreationForm):
-    class Meta(UserCreationForm.Meta):
-        model = User
-        fields = ("phone_number", "email", "password1", "password2", "is_franchise", "is_pickupboy", "is_customer")
-        exclude = ("username",)
-
-
-class MyUserChangeForm(UserChangeForm):
-    class Meta(UserChangeForm.Meta):
-        model = User
-        fields = (
-            "phone_number",
-            "email",
-            "password",
-            "is_franchise",
-            "is_pickupboy",
-            "is_customer",
-            "is_staff",
-            "is_active",
-        )
-        exclude = ("username",)
-
-
 class MyUserAdmin(UserAdmin):
-    USERNAME_FIELD = "phone_number"
-    form = MyUserChangeForm
-    add_form = MyUserCreationForm
-    # UserForm
+    add_form = UserCreationForm
+    form = UserChangeForm
+    model = User
+    list_display = ("email", "is_staff", "is_active", "is_superuser")
+    list_filter = ("email", "is_staff", "is_active", "is_superuser")
     fieldsets = (
-        (_("Authentication"), {"fields": ("phone_number", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "email")}),
-        (
-            _("Permissions"),
-            {
-                "fields": (
-                    "is_active",
-                    "is_staff",
-                    "is_superuser",
-                    "groups",
-                    "is_franchise",
-                    "is_pickupboy",
-                    "is_customer",
-                    "franchise",
-                    "customer",
-                    "pickup_boy",
-                )
-            },
-        ),
-        ("Important dates", {"fields": ("last_login", "date_joined")}),
+        (None, {"fields": ("email", "password", "usertype")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name")}),
+        (_("Permissions"), {"fields": ("is_staff", "is_active", "is_superuser")}),
+        (_("Important dates"), {"fields": ("last_login", "date_joined")}),
     )
-
-    list_display = ("phone_number", "email", "is_franchise", "is_pickupboy", "is_customer", "is_staff", "is_active")
-    search_fields = ("phone_number", "email")
-    list_filter = ("is_franchise", "is_pickupboy", "is_customer", "is_staff", "is_active")
-    add_fieldsets = (
-        (
-            None,
-            {
-                "classes": ("wide",),
-                "fields": ("phone_number", "password1", "password2", "is_franchise", "is_pickupboy", "is_customer"),
-            },
-        ),
-    )
-    ordering = ("phone_number",)
-    exclude = ("username",)
+    add_fieldsets = ((None, {"classes": ("wide",), "fields": ("email", "password1", "password2")}),)
+    search_fields = ("email",)
+    ordering = ("email",)
 
 
 admin.site.register(User, MyUserAdmin)
-
-
-@admin.register(CustomerProfile)
-class CustomerProfileAdmin(admin.ModelAdmin):
-    pass
 
 
 @admin.register(OrderPayment)
@@ -104,12 +48,14 @@ class OrderPaymentAdmin(admin.ModelAdmin):
 
 @admin.register(Franchise)
 class FranchiseAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("user",)
     list_display = ("franchise_id", "name", "phone")
     search_fields = ("franchise_id", "name", "phone")
 
 
 @admin.register(PickUpBoy)
 class PickUpBoyAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("user", "franchise")
     list_display = ("name", "phone", "franchise")
     search_fields = ("name", "phone", "franchise")
 
@@ -154,9 +100,10 @@ class QuestionAdmin(admin.ModelAdmin):
     inlines = [QuestionOptionInline]
 
 
-@admin.register(CustomerRegistration)
-class CustomerRegistrationAdmin(admin.ModelAdmin):
-    list_display = ("name", "email", "phone_number")
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    autocomplete_fields = ("user",)
+    list_display = ("user", "name", "email", "phone_number")
 
 
 @admin.register(FranchiseWallet)
@@ -177,7 +124,7 @@ admin.site.register(DeviceType)
 @admin.register(UserRequest)
 class UserRequestAdmin(admin.ModelAdmin):
     list_display = (
-        "user",
+        "customer",
         "phonemodel",
         "is_submitted",
         "is_assigned_to_franchise",
@@ -186,7 +133,7 @@ class UserRequestAdmin(admin.ModelAdmin):
         "is_quoted",
     )
     list_filter = (
-        "user",
+        "customer",
         "phonemodel",
         "is_submitted",
         "is_assigned_to_franchise",

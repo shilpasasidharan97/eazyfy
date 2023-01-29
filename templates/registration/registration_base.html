@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <title>Flypick - Sell your Mobiles</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" type="image/x-icon" href="assets/imgs/theme/favicon.svg">
+    <link rel="shortcut icon" type="image/png" href="{% static 'user/imgs/theme/eazyfyfav.png' %}">
+    <link rel="favicon" type="image/png" href="{% static 'user/imgs/theme/eazyfyfav.png' %}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="{% static 'user/css/main.css' %}?v=1.3">
+    <link rel="stylesheet" href="{% static 'user/css/more.css' %}?v=1.3">
+    <link rel="stylesheet" href="{% static 'user/css/wizard.css' %}?v=1.3">
+    <link rel="stylesheet" href="{% static 'user/css/checkbox.css' %}?v=1.3">
+    <link rel="stylesheet" href="{% static 'user/css/custom.css' %}?v=1.3">
+
+    <script src="{% static 'user/js/vendor/modernizr-3.6.0.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/vendor/jquery-3.6.0.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/vendor/jquery-migrate-3.3.0.min.js' %}?v=1.3"></script>
+</head>
+
+<body>
+
+    {% include 'user/partials/header.html' %}
+
+    <main>
+        <section class="pt-100 pb-100">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-6 mx-auto">
+                        <div class="card p-5">
+                            <div class="padding_eight_all bg-white">
+                                {% block content %}
+                                {% endblock %}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    {% include 'partials/footer.html' %}
+
+
+    <script src="{% static 'user/js/vendor/bootstrap.bundle.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/slick.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/jquery.syotimer.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/wow.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/jquery-ui.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/perfect-scrollbar.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/magnific-popup.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/select2.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/waypoints.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/counterup.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/jquery.countdown.min.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/images-loaded.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/isotope.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/scrollup.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/plugins/jquery.vticker-min.js' %}?v=1.3"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+    <script src="{% static 'user/js/plugins/jquery.theia.sticky.js' %}?v=1.3"></script>
+
+    <!-- Template  JS -->
+    <script src="{% static 'user/js/main.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/shop.js' %}?v=1.3"></script>
+    <script src="{% static 'user/js/wizard.js' %}?v=1.3"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

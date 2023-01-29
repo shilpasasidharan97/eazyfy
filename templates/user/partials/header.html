@@ -42,7 +42,7 @@
                                     <h5 style="color: #621299;">{{ request.user }}</h5>
                                 </div>
                                 {% else %}
-                                <a href="{% url 'user:login' %}">
+                                <a href="{% url 'auth_login' %}">
                                     <button class="btn btn-login"><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
                                 </a>
                                 {% endif %}
@@ -119,9 +119,9 @@
                                         <li><a href="{% url 'main:terms_of_use' %}">Terms of Use</a></li>
 
                                         {% if request.user.is_authenticated %}
-                                        <li><a href="{% url 'user:user_logout' %}">Logout</a></li>
+                                        <li><a href="{% url 'auth_logout' %}">Logout</a></li>
                                         {% else %}
-                                        <li><a href="{% url 'user:registration' %}">login/register</a></li>
+                                        <li><a href="{% url 'registration_register' %}">login/register</a></li>
                                         {% endif %}
                                     </ul>
                                 </li>
@@ -174,7 +174,7 @@
                         <h5 style="color: #621299;">{{ request.user }}</h5>
                     </div>
                     {% else %}
-                    <a href="{% url 'user:login' %}">
+                    <a href="{% url 'auth_login' %}">
                         <button class="btn btn-login"><i class="fi-rs-shopping-bag mr-5"></i>Login</button>
                     </a>
                     {% endif %}
@@ -213,7 +213,7 @@
                             <a href="{% url 'main:contact' %}"><span class="menu-expand"></span>contact</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:login' %}"><span class="menu-expand"></span>login & Register</a>
+                            <a href="{% url 'auth_login' %}"><span class="menu-expand"></span>login & Register</a>
                         </li>
 
                         <li class="menu-item-has-children">
@@ -225,7 +225,7 @@
                                 service</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="{% url 'user:user_logout' %}"><span class="menu-expand"></span>Logout </a>
+                            <a href="{% url 'auth_logout' %}"><span class="menu-expand"></span>Logout </a>
                         </li>
                     </ul>
                 </nav>

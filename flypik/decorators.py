@@ -26,6 +26,6 @@ def auth_customer(func):
         if request.user.is_authenticated:
             if request.user.customer:
                 return func(request, *args, **kwargs)
-        return redirect("user:login")
+        return redirect("auth_login")
 
     return wrap

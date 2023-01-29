@@ -19,6 +19,7 @@ INSTALLED_APPS = [
     "crispy_forms",
     "crispy_bootstrap5",
     "import_export",
+    "registration",
     "django_extensions",
     "django.contrib.admin",
     "django.contrib.auth",
@@ -58,8 +59,6 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
-                "franchise.context_processor.main_context",
-                "pickupboy.context_processors.main_context",
                 "main.context_processors.main_context",
             ]
         },
@@ -126,6 +125,16 @@ STATIC_ROOT = BASE_DIR / "assets"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+ACCOUNT_ACTIVATION_DAYS = 7
+REGISTRATION_AUTO_LOGIN = True
+SEND_ACTIVATION_EMAIL = False
+REGISTRATION_EMAIL_SUBJECT_PREFIX = ""
+
+REGISTRATION_OPEN = True
+LOGIN_URL = "/accounts/login/"
+LOGOUT_URL = "/accounts/logout/"
+LOGIN_REDIRECT_URL = "/"
+
 EMAIL_BACKEND = config("EMAIL_BACKEND")
 EMAIL_HOST = config("EMAIL_HOST")
 EMAIL_PORT = config("EMAIL_PORT")
@@ -159,19 +168,29 @@ APP_ORDER = OrderedDict(
                 "Brand",
                 "BrandModel",
                 "Variant",
+                "User",
+                "Franchise",
+                "PickUpBoy",
+                "Customer",
                 "UserRequest",
                 "UserReply",
-                "CustomerProfile",
-                "CustomerRegistration",
                 "DeviceType",
-                "Franchise",
                 "FranchiseWallet",
                 "OrderPayment",
-                "PickUpBoy",
                 "Question",
                 "QuestionOption",
-                "User",
             ],
         )
     ]
 )
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
+        "USER": "",
+        "PASSWORD": "",
+        "HOST": "",
+        "PORT": "",
+    }
+}

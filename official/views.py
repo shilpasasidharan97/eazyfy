@@ -62,9 +62,7 @@ def request_details(request, id):
 def loginPage(request):
     if request.method == "POST":
         phone = request.POST["phone"]
-        password = request.POST["password"]
-
-        user = authenticate(request, phone_number=phone, password=password)
+        user = authenticate(request, phone_number=phone)
         print(user)
         if user is not None:
             login(request, user)
@@ -101,22 +99,15 @@ def franchise(request):
         franchise_id = request.POST["franchise_id"]
         phone = request.POST["phone"]
         email = request.POST["email"]
-        password = request.POST["password"]
         address = request.POST["address"]
         photo = request.FILES.get("photo", "not found")
         franchise = Franchise(
-            name=name,
-            franchise_id=franchise_id,
-            email=email,
-            phone=phone,
-            photo=photo,
-            address=address,
-            password=password,
+            name=name, franchise_id=franchise_id, email=email, phone=phone, photo=photo, address=address
         )
         franchise.save()
 
         User = get_user_model()
-        User.objects.create_user(phone_number=phone, password=password, franchise=franchise, is_franchise=True)
+        User.objects.create_user(phone_number=phone, franchise=franchise, is_franchise=True)
         wallet = FranchiseWallet(franchise=franchise)
         messages.success(request, "Franchise added successfully")
         wallet.save()
