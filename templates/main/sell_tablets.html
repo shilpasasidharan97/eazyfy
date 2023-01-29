@@ -104,6 +104,7 @@
                 </div>
                 <div class="row">
                     {% for brand in brands %}
+                    {% if brand.get_tablet_models %}
                     <div class="col-lg-2 col-4" style="padding: 2%;">
                         <div class="card2 border">
                             <div class="card-body">
@@ -123,6 +124,7 @@
                             </div>
                         </div>
                     </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
