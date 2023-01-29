@@ -47,6 +47,21 @@ def sell_tablets(request):
     return render(request, "main/sell_tablets.html", context)
 
 
+def sell_laptops(request):
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_laptops.html", context)
+
+
+def sell_camera(request):
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_camera.html", context)
+
+
+def sell_buds(request):
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_buds.html", context)
+
+
 def repair_phone(request):
     context = {"is_repair": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
     return render(request, "main/repairphone.html", context)
