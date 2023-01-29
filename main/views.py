@@ -28,13 +28,18 @@ def terms_of_use(request):
 
 
 def sell_phone(request):
-    context = {"is_sellphone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
-    return render(request, "main/sellphone.html", context)
+    context = {"is_sell_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_phone.html", context)
 
 
 def buy_phone(request):
-    context = {"is_buyphone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
-    return render(request, "main/buyphone.html", context)
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/buy_phone.html", context)
+
+
+def sell_watches(request):
+    context = {"is_buy_phone": True, "brands": Brand.objects.all(), "offers": Offer.objects.all()}
+    return render(request, "main/sell_watches.html", context)
 
 
 def repair_phone(request):

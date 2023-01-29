@@ -9,7 +9,7 @@
                 {% for brand in brands %}
                 <div class="card-1">
                     <figure class="img-hover-scale overflow-hidden">
-                        <a href="{% url 'user:pick_model' brand.slug %}">
+                        <a href="{% url 'user:pick_mobile_model' brand.slug %}">
                             <img src="{{brand.image.url}}" alt="" />
                         </a>
                     </figure>

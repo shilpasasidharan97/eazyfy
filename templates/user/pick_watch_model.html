@@ -1,0 +1,109 @@
+{% extends 'user/partials/base.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+    .input-search input {
+        width: 100%;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        padding: 0 60px 0 20px;
+        font-size: 18px;
+    }
+
+    .input-search.active input {
+        border-radius: 5px 5px 0 0;
+    }
+
+    .input-search .autocom-box {
+        padding: 0;
+        opacity: 0;
+        pointer-events: none;
+        max-height: 280px;
+        overflow-y: auto;
+    }
+
+    .input-search.active .autocom-box {
+        padding: 10px 8px;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .autocom-box li {
+        list-style: none;
+        padding: 8px 12px;
+        display: none;
+        width: 100%;
+        cursor: default;
+        border-radius: 3px;
+    }
+
+    .input-search.active .autocom-box li {
+        display: block;
+    }
+
+    .autocom-box li:hover {
+        background: #644bff;
+    }
+
+    .input-search .icon {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        height: 55px;
+        width: 55px;
+        text-align: center;
+        line-height: 55px;
+        font-size: 20px;
+        color: #644bff;
+        cursor: pointer;
+    }
+
+</style>
+<main class="main">
+
+    <div class="featured section-padding pb-0">
+        <div class="container">
+            <h3 class="section-title">Select Your Model</h3>
+        </div>
+    </div>
+
+    <section class="featured section-padding">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="text-center-mob font16-12 font-medium pad-b16 jss87"> {{brand}}</div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                {% for model in brand.get_smartwatch_models %}
+                <div class="col-lg-2 col-3" style="padding: 1%;">
+                    <div class="card2 border">
+                        <div class="card-body">
+                            <div class="product-cart-wrap small hover-up">
+                                <div class="product-img-action-wrap">
+                                    <div class="product-img product-img-zoom">
+                                        <a href="{% url 'user:device_page' model.slug %}">
+                                            <img class="default-img model-img" src="{{ model.image.url }}" alt=""
+                                                loading="lazy">
+                                        </a>
+                                    </div>
+                                    <h6>{{ model.name }}</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+</main>
+{% endblock %}

@@ -77,12 +77,12 @@
                                 </li>
                                 <li>
                                     <a href="{% url 'main:sell_phone' %}"
-                                        class="{% if is_sellphone %} active {% endif %}">Sell phone <i
+                                        class="{% if is_sell_phone %} active {% endif %}">Sell phone <i
                                             class="fi-rs-angle-down"></i></a>
                                     {% if brands %}
                                     <ul class="sub-menu">
                                         {% for brand in brands|slice:"5" %}
-                                        <li><a href="{% url 'user:pick_model' brand.slug %}">{{ brand.name }}</a></li>
+                                        <li><a href="{% url 'user:pick_mobile_model' brand.slug %}">{{ brand.name }}</a></li>
                                         {% endfor %}
                                         <li class="view_all"><a href="{% url 'main:sell_phone' %}">View All</a></li>
                                     </ul>
@@ -90,7 +90,7 @@
                                 </li>
                                 <li class="position-static">
                                     <a href="{% url 'main:comingsoon' %}"
-                                        class="{% if is_buyphone %} active {% endif %}">Buy phone</a>
+                                        class="{% if is_buy_phone %} active {% endif %}">Buy phone</a>
                                 </li>
                                 <li>
                                     <a href="{% url 'main:comingsoon' %}"
