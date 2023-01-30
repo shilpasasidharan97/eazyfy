@@ -1,7 +1,6 @@
 import uuid
 
 from django.contrib.auth.models import AbstractUser
-from django.contrib.auth.models import BaseUserManager
 from django.db import models
 from django.urls import reverse
 from django.utils.text import slugify
@@ -21,43 +20,12 @@ DEVICE_CATEGORY = (
 )
 
 
-class UserManager(BaseUserManager):
-    def create_user(self, phone_number, password=None, **extra_fields):
-        if not phone_number:
-            raise ValueError("User must have a phone_number")
-        user = self.model(phone_number=phone_number, **extra_fields)
-        user.set_password(password)
-        user.save(using=self._db)
-        if user:
-            return user
-
-    def create_superuser(self, phone_number, password=None, **extra_fields):
-        if not phone_number:
-            raise ValueError("User must have a email")
-        user = self.model(phone_number=phone_number, **extra_fields)
-        user.set_password(password)
-        user.is_superuser = True
-        user.is_staff = True
-        user.save(using=self._db)
-        return user
-
-
 class User(AbstractUser):
-    username = None
-    email = models.EmailField(max_length=150, null=True, blank=True)
-    phone_number = models.CharField(max_length=15, unique=True)
-    franchise = models.ForeignKey("Franchise", on_delete=models.CASCADE, null=True, blank=True)
-    pickup_boy = models.ForeignKey("PickUpBoy", on_delete=models.CASCADE, null=True, blank=True)
-    customer = models.ForeignKey("CustomerRegistration", on_delete=models.CASCADE, null=True, blank=True)
-    is_franchise = models.BooleanField(default=False)
-    is_pickupboy = models.BooleanField(default=False)
-    is_customer = models.BooleanField(default=False)
-    is_active = models.BooleanField(default=True)
-    is_staff = models.BooleanField(default=False)
-
-    USERNAME_FIELD = "phone_number"
-    REQUIRED_FIELDS = []
-    objects = UserManager()
+    usertype = models.CharField(
+        max_length=20,
+        choices=(("franchise", "Franchise"), ("pickupboy", "Pickupboy"), ("customer", "Customer")),
+        default="customer",
+    )
 
     def __str__(self):
         if self.first_name and self.last_name:
@@ -65,17 +33,17 @@ class User(AbstractUser):
         elif self.first_name:
             return str(self.first_name)
         else:
-            return str(self.phone_number)
+            return str(self.username)
 
 
 class Franchise(models.Model):
+    user = models.OneToOneField("User", on_delete=models.CASCADE, blank=True, null=True, related_name="franchise")
     franchise_id = models.CharField(max_length=20)
     name = models.CharField(max_length=40)
     email = models.EmailField(null=True)
     phone = models.CharField(max_length=15, blank=True)
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
     address = models.CharField(max_length=500)
-    password = models.CharField(max_length=20)
 
     def get_credits(self):
         return FranchiseWallet.objects.filter(franchise=self, type="to_franchise")
@@ -97,6 +65,7 @@ class Franchise(models.Model):
 
 
 class PickUpBoy(models.Model):
+    user = models.OneToOneField("User", on_delete=models.CASCADE, blank=True, null=True, related_name="pickupboy")
     franchise = models.ForeignKey(Franchise, on_delete=models.CASCADE)
     pickup_id = models.CharField(max_length=20)
     name = models.CharField(max_length=40)
@@ -105,33 +74,19 @@ class PickUpBoy(models.Model):
     photo = models.FileField(upload_to="franchise", null=True, blank=True)
     place = models.CharField(max_length=40)
     address = models.CharField(max_length=500)
-    password = models.CharField(max_length=20)
 
     def __str__(self):
         return str(self.name)
 
 
-class CustomerRegistration(models.Model):
-    name = models.CharField(max_length=50, blank=True)
-    email = models.EmailField(max_length=500, null=True)
-    phone_number = PhoneField(null=True)
-    password = models.CharField(max_length=20)
+class Customer(models.Model):
+    user = models.OneToOneField("User", on_delete=models.CASCADE, blank=True, null=True, related_name="customer")
+    name = models.CharField(max_length=50, blank=True, null=True)
+    email = models.EmailField(max_length=500, blank=True, null=True)
+    phone_number = PhoneField(blank=True, null=True)
 
     def __str__(self):
         return str(self.name)
-
-    class Meta:
-        verbose_name_plural = "Customer"
-
-
-class CustomerProfile(models.Model):
-    user = models.ForeignKey("User", on_delete=models.CASCADE, related_name="profile")
-    auth_token = models.CharField(max_length=100, blank=True)
-    test_id = models.CharField(max_length=100, default=uuid.uuid4)
-    forget_password_token = models.CharField(max_length=100, blank=True)
-
-    def __str__(self):
-        return str(self.user)
 
 
 class Brand(models.Model):
@@ -301,7 +256,7 @@ class UserRequest(models.Model):
         return str(uuid.uuid4()).upper()[-8:]
 
     request_id = models.CharField(max_length=100, default=get_request_id, editable=False)
-    user = models.ForeignKey("User", on_delete=models.CASCADE)
+    customer = models.ForeignKey("Customer", on_delete=models.CASCADE)
     phonemodel = models.ForeignKey(Variant, on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now_add=True)
     final_amount = models.FloatField(default=0)
@@ -331,7 +286,7 @@ class UserRequest(models.Model):
         return UserReply.objects.filter(user_request=self)
 
     def __str__(self):
-        return str(self.user)
+        return str(self.customer)
 
 
 class UserReply(models.Model):

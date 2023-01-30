@@ -1,4 +1,4 @@
-from official.models import Brand
+from official.models import Brand, Customer
 from official.models import BrandModel
 
 from .models import City
@@ -10,6 +10,10 @@ def main_context(request):
     models = BrandModel.objects.all()
     most_selling_models = models.filter(is_mostselling=True)
     cities = City.objects.all()
+    if request.user.is_authenticated and request.user.usertype == "customer":
+        if not Customer.objects.filter(user=request.user).exists():
+            Customer(user=request.user).save()
+
     status = 1 if request.session.exists(request.session.session_key) else 0
     search_suggestions = [
         {"name": model.name, "link": reverse("main:device_page", kwargs={"slug": model.slug})} for model in models

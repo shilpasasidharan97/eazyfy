@@ -125,10 +125,9 @@ def fail(request, id):
 @auth_pickupboy
 @login_required(login_url="/official/loginpage")
 def requote_first(request, id):
-    request_details = UserRequest.objects.get(id=id)
-    variant = request_details.phonemodel
+    user_request = UserRequest.objects.get(id=id)
+    variant = user_request.phonemodel
     questions = Question.objects.all()
-    user_request = UserRequest.objects.get_or_create(user=request.user, phonemodel=variant, is_submitted=False)[0]
     replies = UserReply.objects.filter(user_request=user_request)
     if request.method == "POST":
         data = dict(request.POST.items())

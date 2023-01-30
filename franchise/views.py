@@ -33,7 +33,6 @@ def add_pickupboy(request):
         pickup_boy_id = request.POST["pickup_boy_id"]
         phone = request.POST["phone"]
         email = request.POST["email"]
-        password = request.POST["password"]
         place = request.POST["place"]
         address = request.POST["address"]
         photo = request.FILES["photo"]
@@ -47,12 +46,11 @@ def add_pickupboy(request):
             photo=photo,
             place=place,
             address=address,
-            password=password,
         )
         pickup_boy.save()
 
         User = get_user_model()
-        User.objects.create_user(phone_number=phone, password=password, pickup_boy=pickup_boy, is_pickupboy=True)
+        User.objects.create_user(phone_number=phone, pickup_boy=pickup_boy, is_pickupboy=True)
         return redirect("franchise:add-pickupboy")
     pickup_boy_list = PickUpBoy.objects.filter(franchise=franchise).order_by("name")
     context = {"is_addpickupboy": True, "pickup_boy_list": pickup_boy_list}
