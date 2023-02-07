@@ -86,11 +86,4 @@ data = [
 def run():
     for model in BrandModel.objects.all():
         if Variant.objects.filter(brand_model=model).count() == 0:
-            Variant.objects.create(
-                brand_model=model,
-                RAM="Standard",
-                color="Standard",
-                internal_storage="Standard",
-                min_price=0,
-                max_price=0,
-            )
+            Variant.objects.create(brand_model=model, name="Standard", min_price=0, max_price=0)

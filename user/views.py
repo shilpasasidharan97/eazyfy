@@ -12,7 +12,8 @@ from official.models import UserRequest
 from official.models import Variant
 
 from .forms import UserRequestInfoForm
-from .functions import send_otp
+from main.functions import send_otp
+from main.functions import custom_redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
@@ -41,9 +42,11 @@ def question(request, id):
             option = QuestionOption.objects.get(id=value)
             if UserReply.objects.filter(user_request=user_request, question=question).exists():
                 answer = UserReply.objects.get(user_request=user_request, question=question)
-                answer.option = option
             else:
-                answer = UserReply.objects.create(question=question, option=option, user_request=user_request)
+                answer = UserReply.objects.create(question=question, user_request=user_request)
+            # add option to answer:manytomanyfield
+            answer.option.add(option)
+
             answer.save()
         return redirect("user:info_page", id=user_request.id)
     context = {"variant": variant, "questions": questions, "replies": replies, "user_request": user_request}
@@ -60,9 +63,7 @@ def request_page(request, id):
 @login_required
 def info_page(request, id):
     user_request = UserRequest.objects.get(id=id)
-    form = UserRequestInfoForm(
-        request.POST or None, instance=user_request, initial={"phone": request.user.phone_number}
-    )
+    form = UserRequestInfoForm(request.POST or None, instance=user_request)
     if form.is_valid():
         form.save()
         user_request.is_submitted = True
@@ -82,19 +83,21 @@ def login_page(request):
         return redirect("/")
     if request.method == "POST":
         if form.is_valid():
-            data = form.save(commit=False)
-            data.otp = random.randint(100000, 999999)
-            data.save()
-            send_otp(data.phone_number, data.otp)
+            otp_instance = form.save(commit=False)
+            otp_instance.otp = random.randint(100000, 999999)
+            otp_instance.save()
             encryption_key = uuid.uuid4()
             user = (
-                User.objects.filter(username=data.phone_number).first()
-                if User.objects.filter(username=data.phone_number).exists()
+                User.objects.filter(username=otp_instance.phone_number).first()
+                if User.objects.filter(username=otp_instance.phone_number).exists()
                 else User.objects.create_user(
-                    username=data.phone_number, enc_key=encryption_key, password=str(encryption_key)[::-1]
+                    username=otp_instance.phone_number, enc_key=encryption_key, password=str(encryption_key)[::-1]
                 )
             )
-            return redirect("user:verify_page", pk=user.pk)
+            send_otp(otp_instance)
+            # redirect to "user:verify_page", pk=user.pk, keep next in url if exists
+            next = request.GET.get("next", "")
+            return custom_redirect("user:verify_page", user.pk, next=next)
     return render(request, "user/login.html", context={"form": form})
 
 
@@ -107,7 +110,6 @@ def verify_page(request, pk):
             user = authenticate(username=user_instance.username, password=str(user_instance.enc_key)[::-1])
             if user is not None:
                 login(request, user)
-
             return redirect(request.GET.get("next", "/"))
         else:
             messages.error(request, "Invalid OTP")
@@ -117,10 +119,8 @@ def verify_page(request, pk):
 def resend_page(request, pk):
     user_instance = get_object_or_404(User, pk=pk)
     otp_instance = PhoneOTP.objects.filter(phone_number=user_instance.username).first()
-    otp_instance.otp = random.randint(100000, 999999)
-    otp_instance.save()
-    send_otp(otp_instance.phone_number, otp_instance.otp)
-    return JsonResponse({"message": "OTP sent successfully"})
+    send_otp(otp_instance)
+    return JsonResponse({"status": True, "message": "OTP sent successfully"})
 
 
 def logout_page(request):

@@ -12,8 +12,6 @@
                             <div class="padding_eight_all bg-white">
                                 <h4 class="font-weight-bold text-center mb-4">Enter OTP</h4>
 
-
-
                                 <small class="text-center d-block mb-3">OTP has been sent to your mobile number, Please
                                     enter the OTP
                                     to verify your mobile number</small>
@@ -23,27 +21,26 @@
                                     <div class="" id="otp">
                                         <div class="form-group">
                                             <input required="" type="number" class="form-control square input"
-                                                name="otp" placeholder="Enter Your OTP">
+                                                name="otp" placeholder="Enter Your OTP" id="id_otp">
                                         </div>
-
-                                        {% if messages %}
-                                        <div class="alert alert-danger py-1 px-2">
-                                            {% for message in messages %}
-                                            <p class="mb-0 fs-10">{{ message }}</p>
-                                            {% endfor %}
+                                        <div id="message_container">
+                                            {% if messages %}
+                                            <div class="alert alert-danger py-1 px-2">
+                                                {% for message in messages %}
+                                                <p class="mb-0 fs-10">{{ message }}</p>
+                                                {% endfor %}
+                                            </div>
+                                            {% endif %}
                                         </div>
-                                        {% endif %}
 
                                         <div class="form-group otp d-flex justify-content-between">
                                             <button type="submit" class="btn btn-sm text-white"
                                                 name="OTP">Confirm</button>
-                                            <a class="text-end" href="{% url 'user:resend_page' user_instance.pk %}"
-                                                class="">Resent
-                                                OTP</a>
+                                            <a class="text-end ajax_btn" href="javascript:void(0)"
+                                                data-url="{% url 'user:resend_page' user_instance.pk %}">Resent OTP</a>
                                         </div>
                                     </div>
                                 </form>
-
 
                             </div>
                         </div>
@@ -55,4 +52,11 @@
 </section>
 
 
+{% endblock %}
+
+{% block js %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js'></script>
+<script>
+    var phoneMask = IMask(document.getElementById('id_otp'), { mask: '000000' });
+</script>
 {% endblock %}

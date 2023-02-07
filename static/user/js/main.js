@@ -641,4 +641,43 @@
         showItems: 1
     });
 
+
+    $(document).on("click", ".ajax_btn", function (e) {
+        e.preventDefault();
+        var key = $(this).attr("data-key");
+        var url = $(this).attr("data-url");
+        var title = $(this).attr("data-title");
+        $.ajax({
+            type: "GET",
+            url: url,
+            dataType: "json",
+            data: { pk: key },
+            success: function (data) {
+                var status = data.status;
+                var message = data.message;
+
+                if (status) {
+                    title ? (title = title) : (title = "Success");
+                    // if the page has html with class .alert, delete it
+                    // then append the new alert to the #message_container
+                    $(".alert").remove();
+                    $("#message_container").append(
+                        '<div class="alert alert-success py-1 px-2 fade show" role="alert"><p class="mb-0 fs-10">' + message + '</p ></div > '
+                    );
+                } else {
+                    title ? (title = title) : (title = "An Error Occurred");
+                    $(".alert").remove();
+                    $("#message_container").append(
+                        '<div class="alert alert-danger py-1 px-2 fade show" role="alert"><p class="mb-0 fs-10">' + message + '</p ></div > '
+                    );
+                }
+            },
+            error: function (data) {
+                var title = "An error occurred";
+                var message = "An error occurred. Please try again later.";
+                Swal.fire({ title: title, html: message, icon: "error" });
+            },
+        });
+    });
+
 })(jQuery);

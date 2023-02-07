@@ -1,24 +1,4 @@
 {% extends 'user/partials/base.html' %} {% load static tags humanize %} {% block content %}
-
-<style>
-  .box {
-    border: 1px solid;
-    border-color: rgba(112, 112, 112, 0.12);
-    background-color: #fafafa;
-    border-radius: 5px;
-    padding: 0px 20px;
-  }
-
-  #green {
-    display: none;
-  }
-
-  #red {
-    display: none;
-  }
-
-</style>
-
 <section class="py-5">
   <div class="container">
     <div class="row">
@@ -39,10 +19,12 @@
                 <h6>{{forloop.counter}}. {{q.question}}</h6>
                 {% if q.subtext %}<span>{{q.subtext}}</span>{% endif %}
 
+                {% if q.question_type == 'Objective' %}
                 <div class="d-flex mt-3 flex-wrap">
                   {% for op in q.get_options %}
                   <div class="radio-wrapper {{q.question_type}}">
-                    <label class="form-check-label" for="{{op.pk}}">
+                    <input type="hidden" name="question_type" value="Objective">
+                    <label class="form-check-label p-0" for="{{op.pk}}">
                       <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
                         value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
                         data-value="{{op.pk}}">
@@ -50,14 +32,41 @@
                         {% if op.image %}
                         <img src="{{op.image.url}}" alt="" style="height:100px">
                         {% endif %}
-                        <p class="ml-2 text-start">{{op.text}}</p>
+                        <div class="p-2">
+                          <p class="text-primary text-center fs-12">{{op.text}}</p>
+                        </div>
                       </div>
                     </label>
                   </div>
                   {% endfor %}
-
                 </div>
+                {% endif %}
+
+                {% if q.question_type == 'MCQ' %}
+                <div class="d-flex mt-3 flex-wrap">
+                  {% for op in q.get_options %}
+                  <div class="radio-wrapper {{q.question_type}}">
+                    <input type="hidden" name="question_type" value="MCQ">
+                    <label class="form-check-label p-0" for="{{op.pk}}">
+                      <input type="checkbox" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
+                        value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
+                        data-value="{{op.pk}}">
+                      <div class="d-flex flex-column align-items-center">
+                        {% if op.image %}
+                        <img src="{{op.image.url}}" alt="" style="height:100px">
+                        {% endif %}
+                        <div class="p-2">
+                          <p class="text-primary text-center fs-12">{{op.text}}</p>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
               </section>
+
               {% endfor %}
 
             </div>
@@ -85,9 +94,7 @@
             <div class="col-8 col-lg-8 col-md-8">
               <h5 class="">{{variant.brand_model.name}}</h5>
               <div class="variant_info mt-2">
-                <small class="d-block">RAM: {{ variant.RAM }}</small>
-                <small class="d-block">Color: {{ variant.color }}</small>
-                <small class="d-block">Storage: {{ variant.internal_storage }}</small>
+                <small class="d-block">Variant: {{ variant.name }}</small>
               </div>
             </div>
 
@@ -146,6 +153,17 @@
       var li = '<li data-pk="' + value + '" data-question="' + question + '">' + identifier + '</li>';
       $('#evaluation').append(li);
     });
+
+    // on checkbox change, if checkbox is checked, add class border-primary to closest label
+    // else remove the class
+    $('input[type=checkbox]').change(function () {
+      if ($(this).is(':checked')) {
+        $(this).closest('label').addClass('border-primary');
+      } else {
+        $(this).closest('label').removeClass('border-primary');
+      }
+    });
+
   });
 </script>
 {% endblock %}

@@ -53,27 +53,12 @@
                             {{spec.year}}
                         </div>
                     </div>
-                    <div class="col-xl-1 my-2 col-lg-6 col-sm-12">
-                        <div class="d-flex align-items-center">
-                            <div class="ms-2">
-                                <span>RAM</span>
-                                <h5 class="mb-0 pt-1 font-w50 text-black">{{spec.RAM}} GB</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-1 my-2 col-lg-6 col-sm-12">
-                        <div class="d-flex align-items-center">
-                            <div class="ms-2">
-                                <span>Color</span>
-                                <h5 class="mb-0 pt-1 font-w50 text-black">{{spec.color}}</h5>
-                            </div>
-                        </div>
-                    </div>
+
                     <div class="col-xl-2 my-2 col-lg-6 col-sm-12">
                         <div class="d-flex align-items-center">
                             <div class="ms-2">
                                 <span>Internal Storage</span>
-                                <h5 class="mb-0 pt-1 font-w500 text-black">{{spec.internal_storage}} GB</h5>
+                                <h5 class="mb-0 pt-1 font-w500 text-black">{{spec.name}}</h5>
                             </div>
                         </div>
                     </div>
@@ -81,7 +66,7 @@
                         <div class="d-flex align-items-center">
                             <div class="ms-2">
                                 <span>Price</span>
-                                <h5 class="mb-0 pt-1 font-w500 text-black"> {{specmin_price}}</h5>
+                                <h5 class="mb-0 pt-1 font-w500 text-black"> {{spec.min_price}}</h5>
                             </div>
                         </div>
                     </div>
@@ -133,24 +118,8 @@
                         {% csrf_token %}
                         <div class="row">
                             <div class="mb-3 col-md-6">
-                                <label class="form-label">RAM</label>
-                                <input type="text" class="form-control" name="ram">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Internal Storage</label>
-                                <input type="number" class="form-control" name="internal_storage">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Price</label>
-                                <input type="number" class="form-control" name="price">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Year</label>
-                                <input type="text" class="form-control" name="year">
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label class="form-label">Color</label>
-                                <input type="integer" class="form-control" name="color">
+                                <label class="form-label">Name</label>
+                                <input type="integer" class="form-control" name="name">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary text-end">Submit</button>
@@ -176,18 +145,11 @@
                 <div class="basic-form">
                     <div class="row">
                         <div class="mb-3 col-md-6">
-                            <label class="form-label">RAM</label>
-                            <input type="text" class="form-control" id="miram" name="miram" value="">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" id="miram" name="name" value="">
                             <input type="number" hidden class="form-control" id="pk">
                         </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label">Internal Storage</label>
-                            <input type="number" class="form-control" id="mistore" name="mistore" value="">
-                        </div>
-                        <div class="mb-3 col-md-6">
-                            <label class="form-label">Price</label>
-                            <input type="integer" class="form-control" id="miprice" name="miprice" value="">
-                        </div>
+
                     </div>
                     <button type="submit" class="btn btn-primary text-end align-items-end"
                         onclick="Editspec()">Change</button>

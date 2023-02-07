@@ -25,9 +25,7 @@
                             <div class="product-detail-rating">
                                 <div class="pro-details-brand row">
                                     <div class="mt-10">
-                                        <span class="d-block text-brand">RAM: {{ variant.RAM }}</span>
-                                        <span class="d-block text-brand">Color: {{ variant.color }}</span>
-                                        <span class="d-block text-brand">Storage: {{ variant.internal_storage }}</span>
+                                        <span class="d-block text-brand">Variant: {{ variant.name }}</span>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +57,7 @@
 <!-- spec dynamic -->
 <section class="mb-50 mt-50">
     <div class="container">
-        <h3 class="section-title">{{model.name}}</h3>
+        <h3 class="section-title">Sell Old {{model.brand}} {{model.name}}</h3>
         <div class="row flex-row-reverse">
             <div class="col-12">
                 <div class="card card-body p-5">
@@ -83,6 +81,7 @@
                                     </div>
                                 </div>
                                 <div class="detail-info">
+                                    <p>{{model.description|linebreaksbr}}</p>
 
                                     <div class="bt-1 border-color-1 mt-15 mb-15 text-md-start text-center">
                                         <p class="text-md-start text-center mb-0">Choose a variant</p>
@@ -93,11 +92,11 @@
                                         {% for variant in model.get_variants %}
                                         <div class="list-filter size-filter font-small">
                                             <a data-bs-toggle="modal" data-bs-target="#quickViewModal{{ variant.id }}"
-                                                class="btn btn-secondary d-inline-block">
-                                                <span class="d-block fs-12">RAM: {{ variant.RAM }}</span>
-                                                <span class="d-block fs-12">Color: {{ variant.color }}</span>
-                                                <span class="d-block fs-12">
-                                                    Storage: {{ variant.internal_storage}}</span>
+                                                class="btn btn-secondary d-inline-flex">
+                                                <input type="radio">
+                                                <div class="data">
+                                                    <span class="d-block fs-14">{{ variant.name }}</span>
+                                                </div>
                                             </a>
                                         </div>
                                         {% endfor %}

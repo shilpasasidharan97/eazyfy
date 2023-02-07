@@ -155,6 +155,7 @@ class BrandModel(models.Model):
     category = models.CharField(max_length=100, choices=DEVICE_CATEGORY, default="mobile")
 
     def get_variants(self):
+        print(Variant.objects.filter(brand_model=self))
         return Variant.objects.filter(brand_model=self)
 
     def get_absolute_url(self):
@@ -174,9 +175,7 @@ class BrandModel(models.Model):
 
 class Variant(models.Model):
     brand_model = models.ForeignKey(BrandModel, on_delete=models.CASCADE)
-    RAM = models.CharField(max_length=100, null="True")
-    color = models.CharField(max_length=30)
-    internal_storage = models.CharField(max_length=30)
+    name = models.CharField(max_length=30)
     min_price = models.DecimalField(max_digits=10, decimal_places=2)
     max_price = models.DecimalField(max_digits=10, decimal_places=2)
 
@@ -244,6 +243,7 @@ class Question(models.Model):
         null=True,
         help_text="Eg: Check your device for cellular network connectivity issues.",
     )
+    step = models.IntegerField(default=1, choices=((1, 1), (2, 2), (3, 3), (4, 4)))
 
     class Meta:
         verbose_name_plural = "Question"

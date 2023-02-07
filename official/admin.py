@@ -84,8 +84,9 @@ class BrandModelAdmin(ImportExportActionModelAdmin):
 
 @admin.register(Variant)
 class VariantAdmin(admin.ModelAdmin):
-    list_display = ("brand_model", "RAM", "internal_storage", "color")
-    search_fields = ("brand_model", "RAM", "internal_storage", "color")
+    list_display = ("brand_model", "name")
+    search_fields = ("brand_model__name", "name")
+    autocomplete_fields = ("brand_model",)
 
 
 class QuestionOptionInline(admin.TabularInline):
