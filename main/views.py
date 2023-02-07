@@ -1,18 +1,11 @@
 from main.models import BannerImage
 from main.models import Offer
 from main.models import Team
-from official.models import Brand, User
+from official.models import Brand
 from official.models import BrandModel
-from django.template.loader import render_to_string
-from django.utils import timezone
-from django.views.decorators.csrf import csrf_exempt
-from registration.views import RegistrationView
+
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
-from django.contrib.auth.forms import UserCreationForm
-
-from django.shortcuts import redirect
-from django.contrib import messages
 
 
 def index(request):

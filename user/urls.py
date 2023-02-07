@@ -8,6 +8,11 @@ urlpatterns = [
     path("sell/model/variant/survey/<str:id>/", views.question, name="question"),
     path("sell/info/<str:id>/", views.info_page, name="info_page"),
     path("sell/request/<str:id>/", views.request_page, name="request_page"),
+    path("accounts/login/", views.login_page, name="auth_login"),
+    path("accounts/logout/", views.logout_page, name="auth_logout"),
+    path("accounts/register/", views.register_page, name="registration_register"),
+    path("accounts/verify/<int:phone/", views.verify_page, name="verify_page"),
+    path("accounts/verify/resend/<int:phone/", views.resend_page, name="resend_page"),
     # later
     # path("registration/", views.user_registration, name="registration"),
     # path("checkphonenumber/", views.check_phone_number, name="checkphonenumber"),

@@ -12,10 +12,6 @@
     <div class="submit">
         <button type="submit" class="btn btn-primary btn-block">SIGN IN</button>
     </div>
-    <div class="mt-3">
-        <a  href="{% url 'auth_password_reset' %}" class="">{% translate "Forgot your password?" %}</a>
-        <a  href="{% url 'registration_register' %}" class="float-end">{% translate "Register for new Account" %}</a>
-    </div>
 </form>
 
 {% endblock content %}
@@ -23,6 +19,6 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js'></script>
 <script>
     document.querySelector("#div_id_username label").innerHTML = "Phone Number<span class='asteriskField'>*</span>";
-    var phoneMask = IMask(document.getElementById('id_username'), {mask: '+{91}-000-000-0000'});
+    var phoneMask = IMask(document.getElementById('id_username'), { mask: '+{91}-000-000-0000' });
 </script>
 {% endblock %}

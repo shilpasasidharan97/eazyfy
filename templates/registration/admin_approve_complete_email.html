@@ -7,12 +7,12 @@
 </head>
 
 <body>
-<p>
-    {% blocktrans %}
-    Your account is now approved. You can 
-    {% endblocktrans %}
-    <a href="http://{{site.domain}}{% url 'auth_login' %}">{% translate "log in." %}</a>
-</p>
+    <p>
+        {% blocktrans %}
+        Your account is now approved. You can
+        {% endblocktrans %}
+        <a href="http://{{site.domain}}{% url 'user:auth_login' %}">{% translate "log in." %}</a>
+    </p>
 </body>
 
 </html>

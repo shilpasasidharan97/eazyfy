@@ -1,3 +1,5 @@
+from .choices import COUNTRY_CODE_CHOICES
+from django.core.exceptions import ValidationError
 from django.db import models
 
 
@@ -50,9 +52,16 @@ class Contact(models.Model):
         return str(self.name)
 
 
-class OtpModel(models.Model):
-    otp = models.CharField(max_length=100)
+class PhoneOTP(models.Model):
+    def validate_only_numbers(value):
+        if not value.isdigit():
+            raise ValidationError("Phone number must contain only numbers.")
+
+    country_code = models.CharField(max_length=10, default="+91", choices=COUNTRY_CODE_CHOICES)
+    phone_number = models.CharField(max_length=12, validators=[validate_only_numbers])
+    otp = models.IntegerField()
     timestamp = models.DateTimeField(auto_now_add=True)
+    is_verified = models.BooleanField(default=False)
 
     def __str__(self):
         return str(self.otp)

@@ -1,5 +1,78 @@
 [
-
+    {
+        "model": "sessions.session",
+        "pk": "t1r0ni5hx9gj0ugs3vbqgmm4t229qga1",
+        "fields": {
+            "session_data": ".eJxVjDsOwjAQBe_iGln-fyjpOYO19m5wANlSnFSIu0OkFNC-mXkvlmBba9oGLWlGdmaSnX63DOVBbQd4h3brvPS2LnPmu8IPOvi1Iz0vh_t3UGHUb60RlSCbtaU4Oe1lCJICgTSuWKecDDE7kwMYEDLbSCRABHTkUflJE3t_ANO8N6s:1pMDUp:MH56jsuvHv0v-itfGOpgKnkyAy9WwcsUHbXgto8oPpg",
+            "expire_date": "2023-02-12T19:37:47.077Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "wpt292kc2f5w49ijkfctrtkdg0r0b58e",
+        "fields": {
+            "session_data": ".eJxVjDsOwyAQRO9CHSFgF7BTpvcZEJ8lOIlAMnYV5e6xJRdJM8W8N_Nmzm9rcVunxc2JXZlil98u-PikeoD08PXeeGx1XebAD4WftPOpJXrdTvfvoPhe9rWlqBEVaI-WKAMiGp3HZGVCMVgBmowZsrFiD4hSSz1CRghKgs8Z2ecLvao2yA:1pMDhf:1AYDSKee5jyCfM_ug3TDpy_ALJP9fKWvibV25rA7XeE",
+            "expire_date": "2023-02-12T19:51:03.993Z"
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$Rqt3BtZurJixhffTKt5HeQ$wdlVga5oMIJEzD2MKC6pRQ4JYNYwqtf3XFYsYgTlrZI=",
+            "last_login": "2023-01-29T17:46:10.514Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-01-29T17:46:07.036Z",
+            "usertype": "customer",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.user",
+        "pk": 2,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$QdKpVmPBYyuTudpCZqyZsl$rKIHeux7/Whrm7TgkNLVlhOyvOhnevOkf7AHDSa/CXE=",
+            "last_login": "2023-01-29T19:51:03.939Z",
+            "is_superuser": false,
+            "username": "+91-888-888-8888",
+            "first_name": "",
+            "last_name": "",
+            "email": "huty@mailinator.com",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2023-01-29T19:31:06.878Z",
+            "usertype": "customer",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "official.customer",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "name": null,
+            "email": null,
+            "phone_number": null
+        }
+    },
+    {
+        "model": "official.customer",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "name": null,
+            "email": null,
+            "phone_number": null
+        }
+    },
     {
         "model": "official.brand",
         "pk": 4,
@@ -110347,7 +110420,6 @@
             "device_type": "Laptop"
         }
     },
-
     {
         "model": "official.questionoption",
         "pk": 26,
@@ -110542,7 +110614,31 @@
             "subtext": null
         }
     },
-
+    {
+        "model": "official.userrequest",
+        "pk": 2,
+        "fields": {
+            "request_id": "5E230511",
+            "customer": 4,
+            "phonemodel": 4205,
+            "date": "2023-01-29T19:52:40.906Z",
+            "final_amount": 0.0,
+            "is_submitted": false,
+            "is_assigned_to_franchise": false,
+            "is_franchise_accepted": false,
+            "is_assigned_to_pickup": false,
+            "is_quoted": false,
+            "franchise": null,
+            "pickupboy": null,
+            "prefferred_contact": null,
+            "name": null,
+            "phone": null,
+            "address": null,
+            "city": null,
+            "pincode": null,
+            "status": "pending"
+        }
+    },
     {
         "model": "main.bannerimage",
         "pk": 3,

@@ -292,7 +292,7 @@ class UserRequest(models.Model):
 class UserReply(models.Model):
     question = models.ForeignKey("Question", on_delete=models.CASCADE)
     user_request = models.ForeignKey("UserRequest", on_delete=models.CASCADE)
-    option = models.ForeignKey("QuestionOption", on_delete=models.CASCADE, null=True, blank=True)
+    option = models.ManyToManyField("QuestionOption", blank=True)
 
     def __str__(self):
         return str(self.user_request)

@@ -1,5 +1,6 @@
-from official.models import Brand, Customer
+from official.models import Brand
 from official.models import BrandModel
+from official.models import Customer
 
 from .models import City
 from django.urls import reverse

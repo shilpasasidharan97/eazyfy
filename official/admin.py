@@ -25,10 +25,10 @@ class MyUserAdmin(UserAdmin):
     add_form = UserCreationForm
     form = UserChangeForm
     model = User
-    list_display = ("email", "is_staff", "is_active", "is_superuser")
+    list_display = ("__str__", "is_staff", "is_active", "is_superuser")
     list_filter = ("email", "is_staff", "is_active", "is_superuser")
     fieldsets = (
-        (None, {"fields": ("email", "password", "usertype")}),
+        (None, {"fields": ("username", "email", "password", "usertype")}),
         (_("Personal info"), {"fields": ("first_name", "last_name")}),
         (_("Permissions"), {"fields": ("is_staff", "is_active", "is_superuser")}),
         (_("Important dates"), {"fields": ("last_login", "date_joined")}),
@@ -114,7 +114,7 @@ class FranchiseWalletAdmin(admin.ModelAdmin):
 
 @admin.register(UserReply)
 class UserReplyAdmin(admin.ModelAdmin):
-    list_display = ("question", "user_request", "option")
+    list_display = ("question", "user_request")
     list_filter = ("user_request",)
 
 
