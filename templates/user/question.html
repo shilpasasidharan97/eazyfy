@@ -19,11 +19,32 @@
                 <h6>{{forloop.counter}}. {{q.question}}</h6>
                 {% if q.subtext %}<span>{{q.subtext}}</span>{% endif %}
 
+                {% if q.question_type == 'YesorNo' %}
+                <div class="d-flex mt-3 flex-wrap">
+                  {% for op in q.get_options %}
+                  <div class="radio-wrapper {{q.question_type}}">
+                    <label class="form-check-label p-0 ps-5" for="{{op.pk}}">
+                      <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
+                        value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
+                        data-value="{{op.pk}}">
+                      <div class="d-flex flex-column align-items-center">
+                        {% if op.image %}
+                        <img src="{{op.image.url}}" alt="" style="height:100px">
+                        {% endif %}
+                        <div class="p-2">
+                          <p class="text-primary text-center fs-12">{{op.text}}</p>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                  {% endfor %}
+                </div>
+                {% endif %}
+
                 {% if q.question_type == 'Objective' %}
                 <div class="d-flex mt-3 flex-wrap">
                   {% for op in q.get_options %}
                   <div class="radio-wrapper {{q.question_type}}">
-                    <input type="hidden" name="question_type" value="Objective">
                     <label class="form-check-label p-0" for="{{op.pk}}">
                       <input type="radio" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
                         value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"
@@ -46,7 +67,6 @@
                 <div class="d-flex mt-3 flex-wrap">
                   {% for op in q.get_options %}
                   <div class="radio-wrapper {{q.question_type}}">
-                    <input type="hidden" name="question_type" value="MCQ">
                     <label class="form-check-label p-0" for="{{op.pk}}">
                       <input type="checkbox" {% get_answer q user_request op %} id="{{op.pk}}" name="{{q.pk}}"
                         value="{{op.pk}}" data-identifier="{{op.identifier}}" data-question="{{q.pk}}"

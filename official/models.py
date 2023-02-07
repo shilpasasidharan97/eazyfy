@@ -231,7 +231,7 @@ class QuestionOption(models.Model):
 
 
 class Question(models.Model):
-    question_type_choices = (("image", "Image"), ("Objective", "Objective"), ("MCQ", "MCQ"))
+    question_type_choices = (("YesorNo", "Yes or No"), ("Objective", "Objective"), ("MCQ", "MCQ"))
 
     question_type = models.CharField(max_length=15, choices=question_type_choices)
     question = models.CharField(
