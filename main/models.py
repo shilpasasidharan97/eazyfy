@@ -65,3 +65,8 @@ class PhoneOTP(models.Model):
 
     def __str__(self):
         return str(self.otp)
+
+    class Meta:
+        verbose_name = "Phone OTP"
+        verbose_name_plural = "Phone OTPs"
+        ordering = ["-timestamp"]

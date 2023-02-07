@@ -43,3 +43,11 @@
 </main>
 
 {% endblock %}
+
+
+{% block js %}
+<script src='https://cdnjs.cloudflare.com/ajax/libs/imask/6.4.3/imask.min.js'></script>
+<script>
+    var phoneMask = IMask(document.getElementById('id_phone_number'), { mask: '0000000000' });
+</script>
+{% endblock %}

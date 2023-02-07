@@ -15,6 +15,11 @@ from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
+from main.models import PhoneOTP
+import random
+from django.shortcuts import get_object_or_404
+from django.core.exceptions import ValidationError
+from django.contrib import messages
 
 
 @login_required
@@ -69,36 +74,56 @@ def handler404(request, exception):
     return render(request, "user/404.html", status=404)
 
 
+def send_otp(phone_number, otp):
+    print(f"OTP: {otp}")
+
+
 def login_page(request):
     form = PhoneOTPForm(request.POST or None)
     if request.user.is_authenticated:
         return redirect("/")
     if request.method == "POST":
         if form.is_valid():
-            phone_number = form.cleaned_data.get("phone_number")
-            country_code = form.cleaned_data.get("country_code")
-            username = f"{country_code}{phone_number}"
+            data = form.save(commit=False)
+            data.otp = random.randint(100000, 999999)
+            data.save()
+            send_otp(data.phone_number, data.otp)
             user = (
-                User.objects.filter(username=username).first()
-                if User.objects.filter(username=username).exists()
-                else User.objects.create_user(username=username)
+                User.objects.filter(username=data.phone_number).first()
+                if User.objects.filter(username=data.phone_number).exists()
+                else User.objects.create_user(username=data.phone_number)
             )
-            print(user)
-
+            return redirect("user:verify_page", pk=user.pk)
     return render(request, "user/login.html", context={"form": form})
 
 
+def verify_page(request, pk):
+    user_instance = get_object_or_404(User, pk=pk)
+    otp_instance = PhoneOTP.objects.filter(phone_number=user_instance.username).first()
+    if request.method == "POST":
+        otp = request.POST.get("otp")
+        if otp_instance.otp == int(otp):
+            user = authenticate(username=user_instance.username, password=otp)
+            # TODO: authenticate user here
+            print(user)
+            if user is not None:
+                login(request, user)
+
+            return redirect(request.GET.get("next", "/"))
+        else:
+            messages.error(request, "Invalid OTP")
+    return render(request, "user/verify.html", context={"user_instance": user_instance, "otp_instance": otp_instance})
+
+
+def resend_page(request, pk):
+    user_instance = get_object_or_404(User, pk=pk)
+    otp_instance = PhoneOTP.objects.filter(phone_number=user_instance.username).first()
+    otp_instance.otp = random.randint(100000, 999999)
+    otp_instance.save()
+    send_otp(otp_instance.phone_number, otp_instance.otp)
+    return JsonResponse({"message": "OTP sent successfully"})
+
+
 def logout_page(request):
-    pass
-
-
-def register_page(request):
-    pass
-
-
-def verify_page(request):
-    pass
-
-
-def resend_page(request):
-    pass
+    logout(request)
+    return redirect("/")

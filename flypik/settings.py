@@ -124,7 +124,7 @@ STATIC_ROOT = BASE_DIR / "assets"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend", "main.backends.PhoneOTPAuthenticationBackend"]
+AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
 
 
 ACCOUNT_ACTIVATION_DAYS = 7

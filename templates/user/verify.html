@@ -13,6 +13,11 @@
                                 <h4 class="font-weight-bold text-center mb-4">Enter OTP</h4>
 
 
+
+                                <small class="text-center d-block mb-3">OTP has been sent to your mobile number, Please
+                                    enter the OTP
+                                    to verify your mobile number</small>
+
                                 <form action="" method="POST">
                                     {% csrf_token %}
                                     <div class="" id="otp">
@@ -20,10 +25,20 @@
                                             <input required="" type="number" class="form-control square input"
                                                 name="otp" placeholder="Enter Your OTP">
                                         </div>
+
+                                        {% if messages %}
+                                        <div class="alert alert-danger py-1 px-2">
+                                            {% for message in messages %}
+                                            <p class="mb-0 fs-10">{{ message }}</p>
+                                            {% endfor %}
+                                        </div>
+                                        {% endif %}
+
                                         <div class="form-group otp d-flex justify-content-between">
                                             <button type="submit" class="btn btn-sm text-white"
                                                 name="OTP">Confirm</button>
-                                            <a class="text-end" href="{% url 'user:resendotp' token %}" class="">Resent
+                                            <a class="text-end" href="{% url 'user:resend_page' user_instance.pk %}"
+                                                class="">Resent
                                                 OTP</a>
                                         </div>
                                     </div>
