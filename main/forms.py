@@ -1,4 +1,5 @@
-from .models import Contact, PhoneOTP
+from .models import Contact
+from .models import PhoneOTP
 from django import forms
 
 

@@ -26,6 +26,7 @@ class User(AbstractUser):
         choices=(("franchise", "Franchise"), ("pickupboy", "Pickupboy"), ("customer", "Customer")),
         default="customer",
     )
+    enc_key = models.UUIDField(default=uuid.uuid4, editable=False)
 
     def __str__(self):
         if self.first_name and self.last_name:
@@ -34,6 +35,9 @@ class User(AbstractUser):
             return str(self.first_name)
         else:
             return str(self.username)
+
+    def get_password(self):
+        return str(self.enc_key)[::-1]
 
 
 class Franchise(models.Model):

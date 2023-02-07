@@ -1,3 +1,8 @@
+import random
+import uuid
+
+from main.forms import PhoneOTPForm
+from main.models import PhoneOTP
 from official.models import Customer
 from official.models import Question
 from official.models import QuestionOption
@@ -5,21 +10,18 @@ from official.models import User
 from official.models import UserReply
 from official.models import UserRequest
 from official.models import Variant
-from main.forms import PhoneOTPForm
+
 from .forms import UserRequestInfoForm
+from .functions import send_otp
+from django.contrib import messages
 from django.contrib.auth import authenticate
 from django.contrib.auth import login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.shortcuts import redirect
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-from main.models import PhoneOTP
-import random
-from django.shortcuts import get_object_or_404
-from django.core.exceptions import ValidationError
-from django.contrib import messages
 
 
 @login_required
@@ -74,10 +76,6 @@ def handler404(request, exception):
     return render(request, "user/404.html", status=404)
 
 
-def send_otp(phone_number, otp):
-    print(f"OTP: {otp}")
-
-
 def login_page(request):
     form = PhoneOTPForm(request.POST or None)
     if request.user.is_authenticated:
@@ -88,10 +86,13 @@ def login_page(request):
             data.otp = random.randint(100000, 999999)
             data.save()
             send_otp(data.phone_number, data.otp)
+            encryption_key = uuid.uuid4()
             user = (
                 User.objects.filter(username=data.phone_number).first()
                 if User.objects.filter(username=data.phone_number).exists()
-                else User.objects.create_user(username=data.phone_number)
+                else User.objects.create_user(
+                    username=data.phone_number, enc_key=encryption_key, password=str(encryption_key)[::-1]
+                )
             )
             return redirect("user:verify_page", pk=user.pk)
     return render(request, "user/login.html", context={"form": form})
@@ -103,9 +104,7 @@ def verify_page(request, pk):
     if request.method == "POST":
         otp = request.POST.get("otp")
         if otp_instance.otp == int(otp):
-            user = authenticate(username=user_instance.username, password=otp)
-            # TODO: authenticate user here
-            print(user)
+            user = authenticate(username=user_instance.username, password=str(user_instance.enc_key)[::-1])
             if user is not None:
                 login(request, user)
 
